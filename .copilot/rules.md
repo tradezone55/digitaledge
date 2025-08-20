@@ -1,0 +1,41 @@
+---
+alwaysApply: true
+---
+
+# Your rule content
+
+### General
+
+Rules:
+
+- For any changes you make, summarize in the `changelog.md` file with the CORRECT timestamp — make sure you get the exact date.
+- All chat conversations should be in English.
+
+### UI
+
+Rules:
+
+- Use `shadcn UI` components.
+- Use `Tailwind CSS` for styling.
+- Maintain a consistent design system inline with the Figma design.
+
+
+### Build & Run
+
+Rules:
+
+- Always run `npm lint` before pushing code.
+- Always run `npm format` before pushing code.
+- Always run `npm test` before pushing code.
+- Always run `npm build` before pushing code.
+- Always try to build and run the application locally before pushing code.
+
+### Git Workflow
+
+Rules:
+
+- Always create a new branch named according to the feature or fix you're working on (e.g., `feature/add-user-form`, `fix/bug-login-error`).
+- Always commit your changes with clear, descriptive commit messages.
+- Always push your branch and raise a Pull Request (PR) to the `staging` branch — **never commit directly to `main`.
+- Tag reviewers as needed and provide context in the PR description.
+- Always **ask or confirm before force-pushing, rebasing shared branches, or merging into staging/main**.
