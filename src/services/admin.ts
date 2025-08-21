@@ -71,7 +71,8 @@ const getAllUsers = async () => {
   const { data: users, error } = await supabase
     .from("users")
     .select("*")
-    .order("created_at", { ascending: false });
+    .order("created_at", { ascending: false })
+    .eq("role", "user");
 
   if (error) {
     console.error("Error fetching users:", error);
@@ -138,7 +139,9 @@ const deleteUserAPI = async (user_id: string) => {
 
   if (subscriptionError) {
     console.error("Error deleting user subscriptions:", subscriptionError);
-    throw new Error(subscriptionError.message || "Failed to delete user subscriptions");
+    throw new Error(
+      subscriptionError.message || "Failed to delete user subscriptions"
+    );
   }
 
   // Then delete the user
@@ -174,7 +177,7 @@ const toggleUserStatusAPI = async (user_id: string, is_active: boolean) => {
   return {
     user: data,
     success: true,
-    message: `User ${is_active ? 'activated' : 'deactivated'} successfully`,
+    message: `User ${is_active ? "activated" : "deactivated"} successfully`,
   };
 };
 
