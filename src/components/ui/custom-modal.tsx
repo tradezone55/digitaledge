@@ -14,9 +14,10 @@ export function CustomModal({
   open,
   onOpenChange,
   trigger,
+  closable = true,
 }: CustomModalProps) {
   return (
-    <Dialog open={open} onOpenChange={onOpenChange}>
+    <Dialog open={open} onOpenChange={closable ? onOpenChange : undefined}>
       {
         trigger && (
           <DialogTrigger asChild>
@@ -24,7 +25,19 @@ export function CustomModal({
           </DialogTrigger>
         )
       }
-      <DialogContent className="sm:max-w-[425px] bg-gray-700 text-white">
+      <DialogContent
+        className="sm:max-w-[425px] bg-gray-700 text-white"
+        onPointerDownOutside={(e) => {
+          if (!closable) {
+            e.preventDefault();
+          }
+        }}
+        onEscapeKeyDown={(e) => {
+          if (!closable) {
+            e.preventDefault();
+          }
+        }}
+      >
         <DialogHeader>
           <DialogTitle>{title}</DialogTitle>
           <DialogDescription>
@@ -44,4 +57,5 @@ interface CustomModalProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
   trigger?: React.ReactNode;
+  closable?: boolean;
 }

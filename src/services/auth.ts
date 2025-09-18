@@ -195,7 +195,6 @@ const checkProfileCompleteness = async () => {
     .from('users')
     .select('*')
     .eq('user_id', data.user.id)
-    .eq('is_active', true)
     .single();
     
   if (userProfileError) {
@@ -211,8 +210,13 @@ const checkProfileCompleteness = async () => {
   if (!userProfileData.name) missingFields.push('name');
   if (!userProfileData.email) missingFields.push('email');
   
+  // Check if profile is complete: has name, email, is_active=true, and role='user'
+  const isComplete = missingFields.length === 0 && 
+    userProfileData.is_active === true && 
+    userProfileData.role === 'user';
+  
   return {
-    isComplete: missingFields.length === 0,
+    isComplete,
     user: userProfileData,
     missingFields,
   };
@@ -237,5 +241,69 @@ const checkUserStatus = async () => {
   }
 }
 
+const verifyOTP = async () => {
+  try {
+    const { data, error } = await supabase.auth.getUser();
+    if (error || !data.user) {
+      throw new Error('User not authenticated');
+    }
 
-export { sendMagicLink, sendAdminMagicLink, setupProfile, logout, getUser, checkProfileCompleteness, checkUserStatus };
+    // Check if user exists in our database
+    const { data: userProfileData, error: userProfileError } = await supabase
+      .from('users')
+      .select('*')
+      .eq('user_id', data.user.id)
+      .maybeSingle();
+
+    if (userProfileError && userProfileError.code !== 'PGRST116') {
+      throw new Error(userProfileError.message);
+    }
+
+    // If user doesn't exist in our database, they need to create a profile
+    if (!userProfileData) {
+      return {
+        success: true,
+        needsProfile: true,
+        user: {
+          id: data.user.id,
+          email: data.user.email || '',
+          name: '',
+          role: 'user',
+          is_active: true,
+          user_id: data.user.id,
+        },
+        message: 'Please complete your profile setup',
+      };
+    }
+
+    // Check if profile is complete
+    const missingFields = [];
+    if (!userProfileData.name) missingFields.push('name');
+    if (!userProfileData.email) missingFields.push('email');
+
+    const needsProfile = missingFields.length > 0 || 
+      userProfileData.is_active !== true || 
+      userProfileData.role !== 'user';
+
+    if (needsProfile) {
+      return {
+        success: true,
+        needsProfile: true,
+        user: userProfileData,
+        message: 'Please complete your profile setup',
+      };
+    }
+
+    return {
+      success: true,
+      needsProfile: false,
+      user: userProfileData,
+      message: 'Authentication successful',
+    };
+  } catch (error) {
+    throw new Error(error instanceof Error ? error.message : 'Authentication failed');
+  }
+};
+
+
+export { sendMagicLink, sendAdminMagicLink, setupProfile, logout, getUser, checkProfileCompleteness, checkUserStatus, verifyOTP };

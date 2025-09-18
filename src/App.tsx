@@ -8,7 +8,6 @@ import CustomLoader from "./components/CustomLoader/page";
 const Home = lazy(() => import("./pages/Home"));
 const LoginPage = lazy(() => import("./pages/auth/login"));
 const AuthCallback = lazy(() => import("./pages/auth/callback"));
-const ProfileSetupPage = lazy(() => import("./pages/profile-setup"));
 const ProtectedRoute = lazy(() => import("./protectedRoute/ProtectedRoute"));
 const AdminLoginPage = lazy(() => import("./pages/admin/auth/login"));
 const AdminAuthCallback = lazy(() => import("./pages/admin/auth/callback"));
@@ -41,7 +40,6 @@ function App() {
               <Route index element={<Home />} />
               <Route path="checkout" element={<CheckoutPage />} />
               <Route path="demo" element={<DemoQuiz />} />
-              <Route path="profile-setup" element={<ProfileSetupPage />} />
             </Route>
           </Routes>
         </Suspense>

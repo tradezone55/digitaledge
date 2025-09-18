@@ -1,5 +1,87 @@
 # Changelog
 
+## [2025-09-18] - Callback Flow Enhancement and Profile Setup Integration
+
+### Added
+- **verifyOTP Function**: Added new `verifyOTP` function in auth service to handle magic link verification
+  - Checks if user exists in database and validates profile completeness
+  - Returns user data with `needsProfile` flag for incomplete profiles
+  - Handles both new users and existing users with incomplete profiles
+
+### Changed
+- **Callback Page**: Updated `/auth/callback` to use ProfileSetupModal instead of NameSetupModal
+  - Replaced non-existent `NameSetupModal` with existing `ProfileSetupModal` component
+  - Simplified user flow: verify OTP → check profile completeness → show modal if needed → redirect to home
+  - Removed unused state variables and cleaned up component logic
+  - Modal is non-closable during profile setup to ensure completion
+
+- **Auth Service**: Enhanced with comprehensive user verification logic
+  - `verifyOTP` function checks user existence and profile completeness
+  - Returns structured response with user data and profile status
+  - Handles edge cases for new users and incomplete profiles
+
+### Technical Details
+- **User Flow**: Magic link → callback verification → profile check → modal (if needed) → home redirect
+- **Profile Validation**: Checks for name, email, is_active=true, and role='user'
+- **Error Handling**: Proper error messages and fallback to login page on authentication failure
+- **State Management**: Clean integration with user store and authentication state
+
+## [2025-09-18] - Profile Setup Modal Implementation
+
+### Added
+- **Profile Setup Modal**: Converted profile setup from separate page to modal component on Home page
+  - Created `ProfileSetupModal` component (`src/components/ProfileSetupModal.tsx`) with form logic from original profile-setup page
+  - Added `useProfileCompleteness` hook (`src/hooks/useProfileCompleteness.ts`) to check profile completion status
+  - Enhanced `CustomModal` component with closable prop for non-closable modal functionality
+  - Integrated modal into Home page with conditional rendering based on profile completeness
+
+### Changed
+- **Home Page**: Updated Home.tsx to conditionally show ProfileSetupModal when user's profile is incomplete
+  - Modal appears automatically when user has incomplete profile (missing name, email, or invalid is_active/role status)
+  - Modal cannot be closed until user provides required information and profile conditions are met
+  - Profile completion conditions: name provided, email provided, is_active = true, role = 'user'
+  - Automatic page reload on successful profile completion to refresh user data
+
+- **Modal Prevention**: Implemented modal close prevention mechanism
+  - Modal becomes non-closable when profile is incomplete
+  - Prevents escape key from closing modal
+  - Prevents clicking outside modal from closing it
+  - Users must complete profile setup to continue using the application
+
+### Fixed
+- **Profile Completeness Check**: Fixed logic in `checkProfileCompleteness` function
+  - Removed `is_active` filter from database query to properly check incomplete profiles
+  - Added proper validation for all required fields (name, email, is_active=true, role='user')
+  - Fixed profile completion logic to correctly identify incomplete profiles
+
+- **Form Schema**: Updated `profileSetupSchema` to only require name and email fields
+  - Removed role and is_active from form validation as these are set automatically
+  - Simplified form validation to focus on user-provided data only
+
+- **Modal Close Prevention**: Fixed modal close prevention logic in Home component
+  - Simplified onOpenChange handler to properly prevent modal closing
+  - Ensured modal cannot be dismissed until profile is complete
+
+### Removed
+- **Profile Setup Route**: Removed `/home/profile-setup` route from App.tsx
+- **Original Page**: Deleted `src/pages/profile-setup.tsx` as functionality moved to modal
+
+### Technical Details
+- **Profile Validation**: Checks for complete profile with name, email, is_active=true, and role='user'
+- **Modal State**: Uses closable=false prop when profile incomplete to prevent dismissal
+- **User Experience**: Seamless transition from incomplete to complete profile state
+- **Data Persistence**: Maintains all existing profile setup functionality and data validation
+- **Build Verification**: Successfully builds and runs with no linting errors
+
+### Files Modified
+- `src/components/ProfileSetupModal.tsx` (new)
+- `src/hooks/useProfileCompleteness.ts` (new)
+- `src/pages/Home.tsx` (updated)
+- `src/components/ui/custom-modal.tsx` (enhanced)
+- `src/App.tsx` (updated - removed route)
+- `src/services/auth.ts` (fixed profile completeness check)
+- `src/schemas/auth.ts` (simplified form schema)
+
 ## [2025-01-17] - Migrated to Day.js for Date Handling
 
 ### Added

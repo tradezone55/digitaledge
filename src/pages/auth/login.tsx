@@ -43,7 +43,7 @@ const LoginPage: React.FC = () => {
     const isInRegistrationFlow = localStorage.getItem('isInRegistrationFlow');
     if (isInRegistrationFlow === 'true') {
       toast.info('Please complete your profile setup first');
-      navigate('/home/profile-setup');
+      navigate('/home');
     }
   }, [navigate]);
 
