@@ -1,10 +1,14 @@
 
+import CustomLoader from "@/components/CustomLoader/page";
+import useCurrentUser from "@/hooks/useCurrentUser";
+import { useUserStatusCheck } from "@/hooks/useUserStatusCheck";
 import { Navigate, Outlet } from "react-router";
-import CustomLoader from "../components/CustomLoader/page";
-import useCurrentUser from "../hooks/useCurrentUser";
 
 const ProtectedRoute: React.FC = () => {
   const { isAuthenticated, isLoading, currentUser } = useCurrentUser();
+
+  // Check user status periodically and handle automatic logout
+  useUserStatusCheck();
 
   // Show loading while validating
   if (isLoading) {
@@ -17,10 +21,10 @@ const ProtectedRoute: React.FC = () => {
 
   // Redirect to login if not authenticated
   if (!isAuthenticated || !currentUser) {
-    return <Navigate to="/" replace />;
+    return <Navigate to="/auth/login" replace />;
   }
 
-  return <Outlet />;
+  return <Outlet />
 };
 
 export default ProtectedRoute;

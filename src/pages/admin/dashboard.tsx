@@ -1,18 +1,14 @@
 import React from "react";
-import { Shield, LogOut } from "lucide-react";
+import { Shield } from "lucide-react";
 import { useAdminStore } from "../../stores/admin";
-import { useNavigate } from "react-router-dom";
 import AdminDashboard from "../../components/AdminDashboard";
 import LogoutUser from "@/components/LogoutUser";
 
 const AdminDashboardPage: React.FC = () => {
-  const { admin, clearAdmin } = useAdminStore();
-  const navigate = useNavigate();
+  const { admin } = useAdminStore();
 
-  const handleLogout = () => {
-    clearAdmin();
-    navigate("/admin/login");
-  };
+
+
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#0b0f16] to-[#1e293b]">
@@ -32,7 +28,7 @@ const AdminDashboardPage: React.FC = () => {
                 <p className="text-sm text-white">{admin?.name}</p>
                 <p className="text-xs text-gray-400">{admin?.email}</p>
               </div>
-              <LogoutUser redirectTo="/admin/login" />
+              <LogoutUser redirectTo="/admin/auth/login" />
             </div>
           </div>
         </div>

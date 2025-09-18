@@ -1,8 +1,7 @@
 import { CustomModal } from "@/components/ui/custom-modal";
 import Input from "@/components/ui/Input";
-import { inputLists } from "@/constants/sign-up";
-import { RegisterFormData, registerSchema } from "@/schemas/auth";
-import { registerAPI } from "@/services/auth";
+import { ProfileSetupFormData, profileSetupSchema } from "@/schemas/auth";
+import { setupProfile } from "@/services/auth";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useForm } from "react-hook-form";
@@ -10,6 +9,32 @@ import { toast } from "react-toastify";
 import Button from "@/components/ui/Button";
 import { useModalStore } from "@/stores/modalStore";
 import { Plus } from "lucide-react";
+import { adminCreateUserAPI } from "@/services/admin";
+
+interface InputField {
+  label: string;
+  type: string;
+  placeholder: string;
+  name: string;
+  required: boolean;
+}
+
+const inputLists: InputField[] = [
+  {
+    label: "Full Name",
+    type: "text",
+    placeholder: "Enter full name",
+    name: "name",
+    required: true,
+  },
+  {
+    label: "Email",
+    type: "email",
+    placeholder: "Enter email address",
+    name: "email",
+    required: true,
+  },
+];
 
 const AddUser = () => {
   const { modal, onConfirm, onCancel } = useModalStore()
@@ -18,12 +43,18 @@ const AddUser = () => {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<RegisterFormData>({
-    resolver: zodResolver(registerSchema),
+  } = useForm<ProfileSetupFormData>({
+    resolver: zodResolver(profileSetupSchema),
+    defaultValues: {
+      name: "",
+      email: "",
+      role: "user",
+      is_active: true,
+    },
   });
 
   const { mutate, isPending } = useMutation({
-    mutationFn: registerAPI,
+    mutationFn: adminCreateUserAPI,
     onSuccess: (data) => {
       if (data?.success) {
         toast.success("New User added");
@@ -36,7 +67,7 @@ const AddUser = () => {
     },
   });
 
-  const onSubmit = (data: RegisterFormData) => {
+  const onSubmit = (data: ProfileSetupFormData) => {
     mutate(data);
   };
   return (
@@ -60,8 +91,8 @@ const AddUser = () => {
           <Input
             key={input.name.toString()}
             {...input}
-            {...register(input.name as keyof RegisterFormData)}
-            error={errors[input.name as keyof RegisterFormData]}
+            {...register(input.name as keyof ProfileSetupFormData)}
+            error={errors[input.name as keyof ProfileSetupFormData]}
             required={input.required}
           />
         ))}

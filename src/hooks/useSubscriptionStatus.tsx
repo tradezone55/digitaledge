@@ -2,11 +2,13 @@
 import { useEffect, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { fetchSubscription } from "../services/subscription";
+import useCurrentUser from "./useCurrentUser";
 
 export function useSubscriptionStatus() {
+  const { currentUser } = useCurrentUser();
   const { data: subscription, isLoading } = useQuery({
     queryKey: ["subscriptions"],
-    queryFn: fetchSubscription,
+    queryFn: () => fetchSubscription(currentUser?.user?.id),
   });
 
   const [status, setStatus] = useState({
@@ -44,6 +46,8 @@ export function useSubscriptionStatus() {
       // Check if subscription is still active
       const isSubscriptionActive = now <= end;
 
+      console.log(isSubscriptionActive);
+
       // Check if we're in grace period
       const isInGracePeriod = !isSubscriptionActive && now <= graceEndDate;
 
@@ -58,8 +62,8 @@ export function useSubscriptionStatus() {
       // Calculate grace period days left
       const graceDaysLeft = isInGracePeriod
         ? Math.ceil(
-            (graceEndDate.getTime() - now.getTime()) / (1000 * 60 * 60 * 24)
-          )
+          (graceEndDate.getTime() - now.getTime()) / (1000 * 60 * 60 * 24)
+        )
         : 0;
 
       setStatus({

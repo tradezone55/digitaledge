@@ -1,8 +1,9 @@
-import React from "react";
-import { Edit, Trash2 } from "lucide-react";
+import React, { useState } from "react";
+import { Edit, Trash2, CreditCard } from "lucide-react";
 import Button from "../ui/Button";
 import { User } from "../../types/subscription";
 import AddUser from "./user/AddUser";
+import SubscribeUser from "./user/SubscribeUser";
 import { Switch } from "../ui/switch";
 import { toggleUserStatusAPI } from "../../services/admin";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
@@ -29,6 +30,8 @@ const UsersTab: React.FC<UsersTabProps> = ({
   setShowDeleteUserModal,
 }) => {
   const queryClient = useQueryClient();
+  const [showSubscribeModal, setShowSubscribeModal] = useState(false);
+  const [selectedUserForSubscription, setSelectedUserForSubscription] = useState<User | null>(null);
 
   const { mutate: toggleUserStatus, isPending: togglingStatus } = useMutation({
     mutationFn: ({ user_id, is_active }: { user_id: string; is_active: boolean }) =>
@@ -46,6 +49,17 @@ const UsersTab: React.FC<UsersTabProps> = ({
 
   const handleToggleStatus = (user: User, newStatus: boolean) => {
     toggleUserStatus({ user_id: user.user_id, is_active: newStatus });
+  };
+
+  const hasActiveSubscription = (userId: string) => {
+    return subscriptions?.some(sub =>
+      sub.user_id === userId && sub.status === 'active'
+    );
+  };
+
+  const handleSubscribeUser = (user: User) => {
+    setSelectedUserForSubscription(user);
+    setShowSubscribeModal(true);
   };
 
 
@@ -109,6 +123,26 @@ const UsersTab: React.FC<UsersTabProps> = ({
                   </td>
                   <td className="p-2">
                     <div className="flex items-center gap-2">
+                      {!hasActiveSubscription(user.id) ? (
+                        <Button
+                          size="sm"
+                          onClick={() => handleSubscribeUser(user)}
+                          className="bg-green-600 text-white flex items-center gap-2 justify-center hover:bg-green-700"
+                        >
+                          <CreditCard className="size-4" />
+                          <span>Subscribe</span>
+                        </Button>
+                      ) : (
+                        <Button
+                          size="sm"
+                          onClick={() => handleSubscribeUser(user)}
+                          className="bg-green-600 text-white flex items-center gap-2 justify-center hover:bg-green-700"
+                          disabled
+                        >
+                          <CreditCard className="size-4" />
+                          <span>Subscribed</span>
+                        </Button>
+                      )}
                       <Button
                         size="sm"
                         onClick={() => {
@@ -150,6 +184,13 @@ const UsersTab: React.FC<UsersTabProps> = ({
           </tbody>
         </table>
       </div>
+
+      {/* Subscribe User Modal */}
+      <SubscribeUser
+        user={selectedUserForSubscription}
+        open={showSubscribeModal}
+        onOpenChange={setShowSubscribeModal}
+      />
     </div>
   );
 };

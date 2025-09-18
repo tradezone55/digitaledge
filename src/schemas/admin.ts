@@ -1,14 +1,10 @@
 import { z } from 'zod'
 
-export const adminLoginSchema = z.object({
+export const adminMagicLinkSchema = z.object({
   email: z
     .string()
     .min(1, 'Email is required')
     .email({ message: 'Please enter a valid email address' }),
-  password: z
-    .string()
-    .min(1, 'Password is required')
-    .min(6, 'Password must be at least 6 characters long')
 })
 
 export const adminUserManagementSchema = z.object({
