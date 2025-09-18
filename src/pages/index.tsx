@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { CheckCircle2, Zap, Shield, Smartphone, BookOpen, Trophy, Sparkles, Cpu, Server, ArrowRight, Star, MessageCircle, Timer, Gauge, ChevronLeft, ChevronRight } from "lucide-react";
+import { CheckCircle2, Zap, Shield, Smartphone, Trophy, Sparkles, Cpu, Server, ArrowRight, Star, MessageCircle, Timer, Gauge, ChevronLeft, ChevronRight } from "lucide-react";
 import Logo from "@/components/ui/Logo";
 import { Link } from "react-router-dom";
 import DemoQuiz from "@/components/DemoQuiz";
@@ -12,14 +12,14 @@ import DemoQuiz from "@/components/DemoQuiz";
 
 // Updated color system to use orange-500 theme
 const primaryGradient = "bg-gradient-to-r from-orange-500 via-orange-600 to-orange-700";
-const accentGradient = "bg-gradient-to-r from-orange-400 via-orange-500 to-orange-600";
+
 const glass = "backdrop-blur-xl bg-orange-500/10 border border-orange-500/20";
 const glow = "shadow-lg shadow-orange-500/25";
 
 // 👉 Set this to your live timed-quiz URL (can be an app route or a hosted quiz page)
 // Example: const QUIZ_URL = "https://network-mastery.netlify.app/quiz?mode=timed";
-const QUIZ_URL = ""; // leave empty for now; the modal will show setup instructions
-const hasQuizUrl = typeof QUIZ_URL === "string" && /^https?:/i.test(QUIZ_URL);
+
+
 
 const features = [
   { icon: <CheckCircle2 className="w-6 h-6 text-white" />, title: "Exam-Style Questions", desc: "Practice mapped to CompTIA Network+ objectives." },
@@ -347,7 +347,7 @@ export default function EnhancedLandingPage() {
                 </ul>
                 <p className="text-gray-400 text-xs">Access Guarantee: If you can't access after purchase, we'll grant free access until it's fixed.</p>
                 <Link
-                  to="/login"
+                  to="/auth/login"
                   className="ml-auto px-6 py-3 rounded-2xl font-bold bg-orange-500 hover:bg-orange-600 text-white transition-all duration-200"
                 >
                   Join Now
@@ -534,7 +534,7 @@ export default function EnhancedLandingPage() {
                 Close
               </button>
             </div>
-            <DemoQuiz redirectTo="/login" />
+            <DemoQuiz redirectTo="/auth/login" />
           </div>
         </div>
       )}
