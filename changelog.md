@@ -1,5 +1,396 @@
 # Changelog
 
+## [2025-01-17] - Migrated to Day.js for Date Handling
+
+### Added
+- **Day.js Integration**: Replaced native Date objects with Day.js library
+  - Installed dayjs package and isSameOrAfter plugin
+  - Simplified date calculations with automatic edge case handling
+  - Improved date formatting and validation logic
+
+### Improved
+- **Date Calculations**: Simplified month addition logic in SubscribeUser component
+  - Replaced complex manual month calculation with dayjs.add() method
+  - Automatic handling of month-end edge cases (e.g., Jan 31 + 1 month = Feb 28/29)
+  - Cleaner, more readable date manipulation code
+
+### Technical Details
+- Added dayjs import and isSameOrAfter plugin extension
+- Replaced new Date() with dayjs() for current date
+- Updated date validation to use dayjs.isSameOrAfter() method
+- Simplified date formatting with dayjs.format('YYYY-MM-DD')
+
+## [2025-01-17] - Enhanced Date Validation and Timezone Handling
+
+### Improved
+- **Date Validation**: Enhanced start date validation logic
+  - Improved timezone handling by explicitly setting time to 00:00:00
+  - Added null check to prevent validation errors on empty values
+  - Better date comparison logic to ensure accurate past date detection
+  - Maintained existing HTML5 min attribute for browser-level validation
+
+### Technical Details
+- Enhanced validation function to handle edge cases with timezone differences
+- Added explicit time component to date strings for consistent comparison
+- Improved error handling for empty date values
+
+## [2025-01-17] - Enhanced Date Calculation and Validation
+
+### Improved
+- **Smart Date Calculation**: Enhanced automatic date calculation logic in SubscribeUser component
+  - Fixed month addition to properly handle edge cases (e.g., Jan 31 + 1 month = Feb 28/29)
+  - Added automatic start date setting to today when plan is selected
+  - Improved year rollover handling for multi-year subscriptions
+  - Better handling of month-end dates to prevent invalid dates
+
+- **Date Validation**: Added comprehensive date validation
+  - Start date cannot be in the past (minimum date set to today)
+  - Added custom validation with user-friendly error messages
+  - HTML5 date input constraints for better UX
+
+### Technical Details
+- Enhanced `useEffect` hook to handle both plan selection and date changes
+- Improved date arithmetic using proper month/year calculations
+- Added fallback logic for edge cases in date calculations
+- Maintained backward compatibility with existing subscription plans
+
+## [2025-01-17] - React Hook Form Implementation with Auto Date Setting
+
+### Added
+- **React Hook Form Integration**: Converted SubscribeUser component to use React Hook Form
+  - Replaced manual state management with `useForm` hook
+  - Added form validation with proper error messages
+  - Implemented automatic form reset on modal close
+  - Enhanced form handling with TypeScript interfaces
+
+- **Automatic Date Calculation**: Implemented smart date setting functionality
+  - End date automatically calculates when plan and start date are selected
+  - Real-time updates using `watch` and `useEffect` hooks
+  - End date field is read-only to prevent manual editing
+  - Clear user feedback about automatic calculation
+
+- **Simplified Plan Options**: Updated subscription plans to focus on core offerings
+  - Reduced from 4 plans to 2 essential options: 1 Month and 6 Month plans
+  - Updated plan values to be more descriptive (`1month`, `6month`)
+  - Maintained duration-based automatic end date calculation
+
+### Enhanced
+- **Form Validation**: Added comprehensive validation using React Hook Form
+  - Required field validation for plan selection and start date
+  - Custom error messages for better user experience
+  - Visual error indicators with red text styling
+  - Form submission prevention until all required fields are valid
+
+- **User Experience**: Improved form interaction and feedback
+  - End date field shows helpful text explaining automatic calculation
+  - Read-only styling for end date field to indicate it's calculated
+  - Smooth form reset when modal is closed
+  - Better visual hierarchy with error message styling
+
+### Technical Improvements
+- **Type Safety**: Added proper TypeScript interfaces for form data
+  - `SubscriptionFormData` interface for form structure
+  - Type-safe form registration and validation
+  - Proper error handling with typed error messages
+
+- **Performance**: Optimized form handling with React Hook Form
+  - Reduced unnecessary re-renders with controlled form state
+  - Efficient date calculation using `useEffect` with proper dependencies
+  - Automatic form cleanup and reset functionality
+
+### Files Modified
+- `src/components/admin/user/SubscribeUser.tsx`: Complete React Hook Form conversion
+
+## [2025-01-17] - Implemented Admin User Subscription Feature
+
+### Added
+- **Admin User Subscription Feature**: Complete functionality for admins to subscribe users
+  - New `SubscribeUser` modal component with plan selection and date management
+  - Auto-generation of unique transaction IDs with format `ADMIN_{timestamp}_{random}`
+  - Default amount set to $1.00 with no user input required
+  - Support for multiple subscription plans (Basic, Premium, Enterprise, Annual)
+  - Automatic end date calculation based on selected plan duration
+  - Optional reason field for admin notes
+
+- **Enhanced Admin Services**: 
+  - New `createAdminSubscription` function with full validation
+  - Admin authentication verification before subscription creation
+  - Target user existence validation
+  - Unique transaction ID generation utility
+
+- **Updated Users Tab**:
+  - Subscribe button for users without active subscriptions
+  - Visual indication of subscription status
+  - Integrated subscription modal workflow
+
+### Technical Details
+- **Transaction ID Format**: `ADMIN_{timestamp}_{random}` (e.g., `ADMIN_1705507200000_ABC123`)
+- **Default Amount**: $1.00 (hardcoded as specified)
+- **Plan Durations**: Basic (1 month), Premium (3 months), Enterprise (6 months), Annual (12 months)
+- **Status**: All admin-created subscriptions default to "active" status
+- **Validation**: Full admin role verification and user existence checks
+
+### Files Modified
+- `src/components/admin/user/SubscribeUser.tsx` (new)
+- `src/services/admin.ts` (enhanced)
+- `src/components/admin/UsersTab.tsx` (enhanced)
+
+## [2025-01-17] - Converted Admin Login to Magic Link Authentication
+
+### Added
+- **Admin Magic Link Authentication**: Converted admin login from password-based to magic link authentication
+  - Admin users now receive magic links via email instead of using passwords
+  - Enhanced security with no password storage or transmission
+  - Consistent authentication flow with regular user login
+
+### Enhanced Security
+- **Role-Based Access Control**: Added comprehensive admin role verification
+  - Admin callback handler checks user role before granting access
+  - Prevents non-admin users from accessing admin dashboard
+  - Validates admin account status (active/inactive)
+  - Automatic logout and redirect for unauthorized access attempts
+
+### Technical Improvements
+- **Admin Magic Link Service**: Created `sendAdminMagicLink` function in auth service
+  - Separate callback URL for admin authentication (`/admin/auth/callback`)
+  - Prevents user creation for admin login attempts
+  - Proper error handling and user feedback
+
+- **Admin Callback Handler**: New dedicated callback page for admin authentication
+  - Validates admin role from database
+  - Checks account status before allowing access
+  - Secure redirect to admin dashboard on successful authentication
+
+- **Updated Admin Service**: Removed password-based login functionality
+  - Updated `getAdminUser` to use Supabase auth session
+  - Added role verification in admin user fetching
+  - Cleaned up unused interfaces and functions
+
+### UI/UX Improvements
+- **Simplified Admin Login Form**: Removed password field from admin login
+  - Clean, single-field email input
+  - Updated button text and loading states
+  - Consistent messaging with magic link flow
+
+### Files Modified
+- `src/pages/admin/auth/login.tsx`: Converted to magic link form
+- `src/pages/admin/auth/callback.tsx`: New admin callback handler
+- `src/services/auth.ts`: Added `sendAdminMagicLink` function
+- `src/services/admin.ts`: Updated admin authentication logic
+- `src/schemas/admin.ts`: Updated schema for magic link validation
+- `src/App.tsx`: Added admin callback route
+
+### Security Features
+- **Role Verification**: Multiple layers of admin role checking
+- **Account Status Validation**: Ensures only active admin accounts can access
+- **Automatic Logout**: Invalid sessions are automatically cleared
+- **Error Handling**: Comprehensive error messages for different failure scenarios
+
+## [2025-01-17] - Implemented Lazy Loading for All Pages
+
+### Added
+- **Lazy Loading Implementation**: Converted all page imports to use React.lazy() for code splitting
+  - All pages now load on-demand instead of being bundled together
+  - Improved initial bundle size and faster initial page load
+  - Better user experience with progressive loading
+
+### Technical Improvements
+- **Code Splitting**: Each page is now a separate chunk that loads only when needed
+- **Suspense Integration**: Wrapped all routes with Suspense component and CustomLoader
+- **Performance Optimization**: Reduced initial JavaScript bundle size
+- **Build Verification**: Confirmed successful build with separate chunks for each component
+
+### Files Modified
+- `src/App.tsx`: Converted imports to lazy loading and added Suspense wrapper
+
+## [2025-01-17] - Enhanced Auth Callback Redirect Logic
+
+### Added
+- **Improved Auth Callback Logic**: Enhanced redirect logic in callback.tsx based on user profile status
+  - If name, email, and is_active are all true: redirect to home page
+  - If profile is incomplete (missing name or email): redirect to profile setup page
+  - If is_active is false: logout user and redirect to login page with error message
+
+### Technical Improvements
+- **User Experience**: Better handling of inactive users with clear error messaging
+- **Security**: Proper logout flow for inactive users to prevent unauthorized access
+- **Code Quality**: More explicit conditional logic for different user states
+
+## [2025-01-17] - Bug Fixes and Code Cleanup
+
+### Fixed
+- **Import Issues**: Fixed unused import and incorrect import path in profile-setup.tsx
+  - Removed unused `supabase` import that was causing linter warnings
+  - Fixed import path for `useCurrentUser` hook from `@/hooks/useCurrentUser` to `../hooks/useCurrentUser`
+  - All linter errors resolved and build passes successfully
+
+### Technical Improvements
+- **Code Quality**: Improved code maintainability by removing unused imports
+- **Build Process**: Verified that all builds pass without errors
+- **Linting**: All ESLint warnings resolved
+
+## [2025-01-17] - Enhanced Auth/Profile Flow
+
+### Added
+- **Registration Flow Protection**: Implemented navigation blocking after registration
+  - Added `isInRegistrationFlow` localStorage flag to track registration state
+  - Login page now redirects users back to profile setup if they're in registration flow
+  - Automatic flag cleanup when profile setup is completed or protected routes are accessed
+
+- **Enhanced Profile Setup Experience**: Improved user onboarding flow
+  - Email field is now pre-filled from authenticated user data and made read-only
+  - Name field is pre-filled if it already exists in the user's profile
+  - Updated welcome message: "Welcome! Please complete your profile to enjoy the platform"
+  - Removed "Back to Login" link to prevent navigation away from profile setup
+
+- **Stricter Profile Completion Enforcement**: Enhanced profile validation
+  - Protected routes now enforce complete profile before allowing access
+  - Combined profile completeness checks for better performance
+  - Automatic redirect to profile setup for incomplete profiles
+
+### Changed
+- **Profile Setup Page**: 
+  - Email field is automatically populated from Supabase auth user data
+  - Name field is pre-filled if it already exists in the user's profile
+  - Email field is read-only to prevent modification
+  - Updated description text to be more welcoming
+  - Removed navigation link back to login page
+
+- **Login Page**:
+  - Added check for registration flow flag
+  - Automatic redirect to profile setup with informative message
+
+- **Protected Routes**:
+  - Enhanced profile completeness validation
+  - Automatic cleanup of registration flow flag
+  - Improved error handling for user data access
+
+- **Auth Callback**:
+  - Added registration flow flag setting for incomplete profiles
+  - Better tracking of user registration state
+
+### Technical Details
+- Used localStorage to persist registration flow state across page reloads
+- Enhanced form handling with pre-filled email values
+- Improved error handling and user feedback
+- Maintained backward compatibility with existing authentication flow
+
+## [2025-01-17] - Magic Link Authentication Refactor
+
+### Added
+- **Magic Link Authentication**: Completely refactored authentication to use Supabase magic links only
+  - `sendMagicLink` function for secure email-based authentication
+  - `AuthCallback` component to handle magic link authentication flow
+  - Automatic profile completeness checking after authentication
+  - Redirect logic based on user profile status
+
+- **Profile Setup Flow**: New profile completion system for new users
+  - `ProfileSetupPage` component for collecting missing user information
+  - `setupProfile` function to create/update user profiles
+  - Automatic `is_active` status setting and default role assignment
+  - Profile completeness validation before allowing access
+
+- **Enhanced User Management**: Improved user lifecycle management
+  - `checkProfileCompleteness` function to validate user data
+  - Automatic user activation upon profile completion
+  - Default 'user' role assignment for new profiles
+  - Profile validation in protected routes
+
+### Changed
+- **Authentication Service**: Completely rewritten authentication system
+  - Removed password-based authentication (`loginAPI`, `registerAPI`)
+  - Added magic link authentication with `sendMagicLink`
+  - Updated `getUser` function with improved error handling
+  - Added profile setup functionality with `setupProfile`
+
+- **Login Page**: Transformed to magic link interface
+  - Single email input field instead of email/password
+  - "Send Magic Link" button with loading states
+  - Updated form validation schema for email-only input
+  - Removed password-related UI elements
+
+- **Protected Routes**: Enhanced access control
+  - Added `is_active` status checking
+  - Profile completeness validation (name and email required)
+  - Automatic redirection to profile setup for incomplete profiles
+  - Improved error handling and user feedback
+
+- **Subscription Service**: Added profile validation
+  - Profile completeness check before allowing subscriptions
+  - User activation status validation
+  - Clear error messages for incomplete profiles
+  - Automatic blocking of subscription attempts for inactive users
+
+### Removed
+- **Registration Flow**: Completely removed traditional sign-up process
+  - Deleted `src/pages/auth/sign-up.tsx`
+  - Removed `src/constants/sign-up.ts`
+  - Removed `registerAPI` function from auth service
+  - Removed `registerSchema` from auth schemas
+  - Removed signup route from App.tsx
+
+- **Password Authentication**: Eliminated password-based login
+  - Removed password input fields from login form
+  - Removed password validation schemas
+  - Removed password-related API functions
+  - Simplified authentication flow to email-only
+
+### Enhanced
+- **Admin User Management**: Updated admin components for new auth system
+  - Modified `AddUser` component to use profile setup flow
+  - Updated form schemas to match new authentication approach
+  - Maintained admin functionality while adapting to magic link system
+
+- **User Experience**: Streamlined authentication process
+  - Single-step email authentication
+  - Automatic profile setup for new users
+  - Clear guidance for profile completion
+  - Seamless transition from authentication to application access
+
+### Technical Features
+- **Magic Link Integration**: Full Supabase magic link implementation
+  - Email-based authentication with secure tokens
+  - Automatic session management
+  - Proper callback handling with error recovery
+  - Redirect URL configuration for production deployment
+
+- **Profile Validation**: Comprehensive user data validation
+  - Real-time profile completeness checking
+  - Automatic user activation upon profile completion
+  - Default role assignment for new users
+  - Database consistency with proper error handling
+
+- **Security Enhancements**: Improved authentication security
+  - No password storage or management required
+  - Email-based verification for all authentication
+  - Automatic session validation
+  - Proper user activation controls
+
+### Database Schema
+- **User Table Updates**: Enhanced user management
+  - `is_active` field controls user access
+  - Automatic role assignment ('user' by default)
+  - Profile completeness tracking
+  - Proper foreign key relationships maintained
+
+### Routes Updated
+- **New Routes**:
+  - `/auth/callback` - Magic link authentication callback
+  - `/profile-setup` - Profile completion page
+- **Removed Routes**:
+  - `/signup` - Registration page (no longer needed)
+- **Updated Routes**:
+  - `/login` - Now magic link only
+  - All protected routes now check `is_active` status
+
+### User Flow
+1. **Login**: User enters email → receives magic link → clicks link
+2. **Authentication**: Magic link validates → user authenticated
+3. **Profile Check**: System checks if profile is complete
+4. **Profile Setup**: If incomplete → redirect to profile setup page
+5. **Access**: If complete and active → redirect to home page
+6. **Subscription**: Only active users with complete profiles can subscribe
+
 ## [2024-12-19] - Testimonials Carousel Implementation
 
 ### Added

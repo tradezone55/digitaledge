@@ -1,6 +1,27 @@
 import supabase from "../supabase";
 
 export const subscriptionApi = async (payload: SubscriptionPayload) => {
+  // Check if user profile is complete before allowing subscription
+  const { data: { user }, error: authError } = await supabase.auth.getUser();
+
+  if (authError || !user) {
+    throw new Error("User not authenticated");
+  }
+
+  const { data: userProfile, error: profileError } = await supabase
+    .from('users')
+    .select('name, email, is_active')
+    .eq('user_id', user.id)
+    .single();
+
+  if (profileError || !userProfile) {
+    throw new Error("User profile not found");
+  }
+
+  if (!userProfile.is_active || !userProfile.name || !userProfile.email) {
+    throw new Error("Please complete your profile before subscribing");
+  }
+
   const { error } = await supabase
     .from("subscriptions")
     .insert({
@@ -21,17 +42,13 @@ export const subscriptionApi = async (payload: SubscriptionPayload) => {
   return true;
 };
 
-export const fetchSubscription = async () => {
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
+export const fetchSubscription = async (id: string) => {
 
-  if (!user) return null;
-
+  if (!id) return null;
   const { data: sub } = await supabase
     .from("subscriptions")
     .select("*")
-    .eq("user_id", user.id)
+    .eq("user_id", id)
     .eq("status", "active")
     .order("end_date", { ascending: false })
     .limit(1)

@@ -1,55 +1,45 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation } from "@tanstack/react-query";
 import { toast } from "react-toastify";
-import { Shield, Eye, EyeOff } from "lucide-react";
+import { Shield } from "lucide-react";
 import Button from "../../../components/ui/Button";
 import Input from "../../../components/ui/Input";
 import Logo from "../../../components/ui/Logo";
-import { adminLoginSchema } from "../../../schemas/admin";
-import { useAdminStore } from "../../../stores/admin";
-import { adminLoginAPI } from "../../../services/admin";
+import { adminMagicLinkSchema } from "../../../schemas/admin";
+import { sendAdminMagicLink } from "../../../services/auth";
 
 
 
 interface AdminLoginFormData {
   email: string;
-  password: string;
 }
 
 const AdminLoginPage: React.FC = () => {
-  const navigate = useNavigate();
-  const { setAdmin, setAuthenticated } = useAdminStore();
-  const [showPassword, setShowPassword] = React.useState(false);
 
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm<AdminLoginFormData>({
-    resolver: zodResolver(adminLoginSchema),
+    resolver: zodResolver(adminMagicLinkSchema),
   });
 
-  const { mutate: login, isPending } = useMutation({
-    mutationFn: adminLoginAPI,
+  const { mutate: sendLink, isPending } = useMutation({
+    mutationFn: sendAdminMagicLink,
     onSuccess: (data) => {
       if (data?.success) {
-        console.log(data, "data");
         toast.success(data.message);
-        setAdmin(data.user);
-        setAuthenticated(true);
-        navigate("/admin/dashboard", { replace: true });
       }
     },
     onError: (error) => {
-      toast.error(error.message || "Admin login failed");
+      toast.error(error.message || "Failed to send admin magic link");
     },
   });
 
   const onSubmit = (data: AdminLoginFormData) => {
-    login(data);
+    sendLink(data);
   };
 
   return (
@@ -62,7 +52,7 @@ const AdminLoginPage: React.FC = () => {
           </div>
           <h1 className="text-2xl font-bold text-white mb-2">Admin Access</h1>
           <p className="text-gray-400">
-            Enter your admin credentials to access the dashboard
+            Enter your admin email to receive a secure magic link
           </p>
         </div>
 
@@ -78,37 +68,15 @@ const AdminLoginPage: React.FC = () => {
               required
             />
 
-            <div className="relative">
-              <Input
-                label="Password"
-                type={showPassword ? "text" : "password"}
-                placeholder="Enter your password"
-                {...register("password")}
-                error={errors.password}
-                required
-              />
-              <button
-                type="button"
-                onClick={() => setShowPassword(!showPassword)}
-                className="absolute right-3 top-9 text-gray-400 hover:text-white transition-colors"
-              >
-                {showPassword ? (
-                  <EyeOff className="w-5 h-5" />
-                ) : (
-                  <Eye className="w-5 h-5" />
-                )}
-              </button>
-            </div>
-
             <Button
               type="submit"
               disabled={isPending}
               loading={isPending}
-              loadingText="Signing in..."
+              loadingText="Sending magic link..."
               className="mt-6"
             >
               <Shield className="w-4 h-4 mr-2" />
-              Admin Login
+              Send Admin Magic Link
             </Button>
           </form>
         </div>
