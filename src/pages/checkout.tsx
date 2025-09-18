@@ -4,6 +4,7 @@ import useAddSubscription from "../hooks/useAddSubscription";
 import useCurrentUser from "../hooks/useCurrentUser";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
+import CustomBack from "@/components/ui/custom-back";
 
 const AMOUNT_1 = Number(import.meta.env.VITE_BASIC_PLAN_AMOUNT);
 const AMOUNT_2 = Number(import.meta.env.VITE_ADVANCED_PLAN_AMOUNT);
@@ -166,7 +167,8 @@ export default function CheckoutPage() {
   }, [selectedPlan, isPayPalLoaded]);
   return (
     <div className=" lg:p-40 p-4 text-[#e6edf3] font-sans bg-[#0b0f16] min-h-screen">
-      <div className="flex flex-col gap-4">
+      <CustomBack onGoBack={() => navigate("/home")} />
+      <div className="flex flex-col gap-4 lg:mt-5 mt-[60px]">
         <h1 className="text-2xl font-semibold flex items-center gap-2 text-white">
           Secure Checkout — <Logo size="sm" />
         </h1>

@@ -1,65 +1,95 @@
-import React, { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { useUserStore } from '../../stores';
-import { checkProfileCompleteness, logout } from '../../services/auth';
-import { toast } from 'react-toastify';
-import supabase from '../../supabase';
-import CustomLoader from '../../components/CustomLoader/page';
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router";
+import { useMutation } from "@tanstack/react-query";
+import { toast } from "react-toastify";
+import { verifyOTP } from "../../services/auth";
+import { useUserStore } from "@/stores";
+import type { IUser } from "@/types/user";
+import AuthLayout from "../../components/layout/AuthLayout";
+import Button from "@/components/ui/Button";
+import ProfileSetupModal from "../../components/ProfileSetupModal";
 
-const AuthCallback: React.FC = () => {
+const VerifyOTPPage: React.FC = () => {
   const navigate = useNavigate();
   const { setUser, setAuthenticated } = useUserStore();
+  const [showProfileModal, setShowProfileModal] = useState(false);
+
+  const { mutate: verify, isPending } = useMutation({
+    mutationFn: verifyOTP,
+    onSuccess: (data) => {
+      if (data?.success) {
+        const user = data.user as IUser;
+
+        // Check if user needs to create profile or has incomplete profile
+        if (data.needsProfile) {
+          setShowProfileModal(true);
+        } else {
+          toast.success(data.message);
+          setUser(user);
+          setAuthenticated(true);
+          navigate("/home");
+        }
+      }
+    },
+    onError: (error) => {
+      toast.error(error.message);
+      navigate("/auth/login");
+    },
+  });
+
+  const handleProfileModalClose = (open: boolean) => {
+    setShowProfileModal(open);
+    // Profile setup is handled by the modal's onComplete callback
+  };
+
+  const handleProfileComplete = () => {
+    toast.success("Welcome! Your profile is now complete.");
+    // The ProfileSetupModal will handle setting the user and authentication
+    // We just need to redirect to home
+    navigate("/home");
+  };
 
   useEffect(() => {
-    const handleAuthCallback = async () => {
-      try {
-        // Handle the auth callback
-        const { data, error } = await supabase.auth.getUser();
+    // Automatically verify the OTP when the page loads
+    verify();
+  }, [verify]);
 
-        if (error) {
-          toast.error('Authentication failed');
-          navigate('/auth/login');
-          return;
-        }
+  return (
+    <>
+      <AuthLayout
+        description="Verifying your magic link..."
+        link="/auth/login"
+        linkText="Back to login"
+        linkContent=""
+      >
+        <div className="w-full space-y-4 text-center">
+          <div className="flex flex-col items-center space-y-4">
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
+            <p className="text-gray-600">
+              {isPending ? "Verifying your magic link..." : "Redirecting you to your dashboard..."}
+            </p>
+          </div>
 
-        if (!data.user) {
-          toast.error('No active session found');
-          navigate('/auth/login');
-          return;
-        }
+          <div className="mt-6">
+            <Button
+              onClick={() => navigate("/auth/login")}
+              className="w-full p-2 rounded-md bg-gray-100 text-gray-700 hover:bg-gray-200"
+              disabled={isPending}
+            >
+              Back to Login
+            </Button>
+          </div>
+        </div>
+      </AuthLayout>
 
-        // Check if user profile is complete
-        const profileCheck = await checkProfileCompleteness();
-
-        if (profileCheck.isComplete && profileCheck.user?.is_active) {
-          // Profile is complete and user is active - redirect to home
-          setUser(profileCheck.user);
-          setAuthenticated(true);
-          navigate('/home');
-        } else if (profileCheck.user && !profileCheck.user.is_active) {
-          // User exists but is inactive - logout and redirect to login
-          await logout();
-          setUser(null);
-          setAuthenticated(false);
-          toast.error('Your account is inactive. Please contact support.');
-          navigate('/auth/login');
-        } else {
-          // Profile is incomplete (missing name or email) - redirect to profile setup
-          // Set flag to indicate user is in registration flow
-          localStorage.setItem('isInRegistrationFlow', 'true');
-          navigate('/home/profile-setup');
-        }
-      } catch (error) {
-        console.error('Auth callback error:', error);
-        toast.error('Authentication failed');
-        navigate('/auth/login');
-      }
-    };
-
-    handleAuthCallback();
-  }, [navigate, setUser, setAuthenticated]);
-
-  return <CustomLoader />;
+      <ProfileSetupModal
+        open={showProfileModal}
+        onOpenChange={handleProfileModalClose}
+        onComplete={handleProfileComplete}
+        closable={false}
+      />
+    </>
+  );
 };
 
-export default AuthCallback;
+export default VerifyOTPPage;

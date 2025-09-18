@@ -1,18 +1,16 @@
 import React, { useEffect } from "react";
-import AuthLayout from "../components/layout/AuthLayout";
-import Input from "../components/ui/Input";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import Button from "../components/ui/Button";
+import Button from "./ui/Button";
+import Input from "./ui/Input";
 import { toast } from "react-toastify";
 import { setupProfile } from "../services/auth";
 import { useMutation } from "@tanstack/react-query";
-import { useNavigate } from "react-router-dom";
 import { useUserStore } from "../stores";
 import { IUser } from "../types/user";
 import { profileSetupSchema, ProfileSetupFormData } from "../schemas/auth";
 import supabase from "../supabase";
-import useCurrentUser from "@/hooks/useCurrentUser";
+import { CustomModal } from "./ui/custom-modal";
 
 interface InputField {
   label: string;
@@ -23,10 +21,20 @@ interface InputField {
   readOnly?: boolean;
 }
 
-const ProfileSetupPage: React.FC = () => {
-  const navigate = useNavigate();
-  const { setUser, setAuthenticated } = useUserStore();
+interface ProfileSetupModalProps {
+  open: boolean;
+  onOpenChange: (open: boolean) => void;
+  onComplete?: () => void;
+  closable?: boolean;
+}
 
+const ProfileSetupModal: React.FC<ProfileSetupModalProps> = ({
+  open,
+  onOpenChange,
+  onComplete,
+  closable = true
+}) => {
+  const { setUser, setAuthenticated } = useUserStore();
 
   const {
     register,
@@ -36,7 +44,6 @@ const ProfileSetupPage: React.FC = () => {
   } = useForm<ProfileSetupFormData>({
     resolver: zodResolver(profileSetupSchema),
   });
-
 
   // Pre-fill email and name from authenticated user
   useEffect(() => {
@@ -62,8 +69,10 @@ const ProfileSetupPage: React.FC = () => {
       }
     };
 
-    getUserData();
-  }, [setValue]);
+    if (open) {
+      getUserData();
+    }
+  }, [setValue, open]);
 
   const { mutate: setupUserProfile, isPending } = useMutation({
     mutationFn: setupProfile,
@@ -74,7 +83,8 @@ const ProfileSetupPage: React.FC = () => {
         setAuthenticated(true);
         // Clear registration flow flag
         localStorage.removeItem('isInRegistrationFlow');
-        navigate("/home");
+        onOpenChange(false);
+        onComplete?.();
       }
     },
     onError: (error) => {
@@ -87,15 +97,15 @@ const ProfileSetupPage: React.FC = () => {
   };
 
   return (
-    <AuthLayout
+    <CustomModal
+      title="Complete Your Profile"
       description="Welcome! Please complete your profile to enjoy the platform"
-      link=""
-      linkText=""
-      linkContent=""
+      open={open}
+      onOpenChange={onOpenChange}
+      closable={closable}
     >
       <form
-        action=""
-        className="w-full space-y-4"
+        className="w-full space-y-4 mt-4"
         onSubmit={handleSubmit(onSubmit)}
       >
         {inputLists.map((input) => (
@@ -125,11 +135,11 @@ const ProfileSetupPage: React.FC = () => {
           </Button>
         </div>
       </form>
-    </AuthLayout>
+    </CustomModal>
   );
 };
 
-export default ProfileSetupPage;
+export default ProfileSetupModal;
 
 const inputLists: InputField[] = [
   {

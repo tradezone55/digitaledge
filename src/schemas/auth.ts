@@ -1,3 +1,4 @@
+import supabase from '@/supabase'
 import { z } from 'zod'
 
 export const loginSchema = z.object({
@@ -20,8 +21,6 @@ export const profileSetupSchema = z.object({
     .string()
     .min(1, 'Email is required')
     .email({ message: 'Please enter a valid email address' }),
-  role: z.enum(['user', 'admin']),
-  is_active: z.boolean(),
 })
 
 export const forgotPasswordSchema = z.object({
@@ -44,6 +43,53 @@ export const resetPasswordSchema = z.object({
   message: 'Passwords do not match',
   path: ['confirmPassword']
 })
+
+const verifyOTP = async () => {
+  const { data, error } = await supabase.auth.getUser();
+  if (error || !data.user)
+    throw new Error(error?.message || "Session not found");
+
+  const { data: userProfileData, error: userProfileError } = await supabase
+    .from("users")
+    .select("*")
+    .eq("id", data.user.id)
+    .maybeSingle();
+  if (userProfileError && userProfileError.code !== "PGRST116") {
+    throw new Error(userProfileError?.message || "User not found");
+  }
+
+  // If no profile exists, return user data with needsProfile flag
+  if (!userProfileData) {
+    return {
+      user: {
+        id: data.user.id,
+        email: data.user.email,
+        name: "",
+        user_id: "",
+        is_active: true,
+      },
+      success: true,
+      message: "User authenticated but profile needs to be created",
+      needsProfile: true,
+    };
+  }
+
+  // Check if user is active
+  if (!userProfileData.is_active) {
+    // Sign out the user immediately if they are inactive
+    await supabase.auth.signOut();
+    throw new Error(
+      "Your account has been deactivated. Please contact support."
+    );
+  }
+
+  return {
+    user: userProfileData,
+    success: true,
+    message: "Login successful",
+    needsProfile: false,
+  };
+};  
 
 export type LoginFormData = z.infer<typeof loginSchema>
 export type ProfileSetupFormData = z.infer<typeof profileSetupSchema>
