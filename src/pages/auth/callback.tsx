@@ -18,13 +18,13 @@ const AuthCallback: React.FC = () => {
 
         if (error) {
           toast.error('Authentication failed');
-          navigate('/login');
+          navigate('/auth/login');
           return;
         }
 
         if (!data.user) {
           toast.error('No active session found');
-          navigate('/login');
+          navigate('/auth/login');
           return;
         }
 
@@ -42,17 +42,17 @@ const AuthCallback: React.FC = () => {
           setUser(null);
           setAuthenticated(false);
           toast.error('Your account is inactive. Please contact support.');
-          navigate('/login');
+          navigate('/auth/login');
         } else {
           // Profile is incomplete (missing name or email) - redirect to profile setup
           // Set flag to indicate user is in registration flow
           localStorage.setItem('isInRegistrationFlow', 'true');
-          navigate('/profile-setup');
+          navigate('/home/profile-setup');
         }
       } catch (error) {
         console.error('Auth callback error:', error);
         toast.error('Authentication failed');
-        navigate('/login');
+        navigate('/auth/login');
       }
     };
 
