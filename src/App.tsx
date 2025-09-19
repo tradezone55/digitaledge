@@ -1,5 +1,5 @@
 import "./App.css";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { Suspense, lazy } from "react";
 import { QueryProvider } from "./providers/QueryProvider";
 import CustomLoader from "./components/CustomLoader/page";
@@ -26,10 +26,13 @@ function App() {
             {/* Public Routes */}
             <Route path="/" element={<EnhancedLandingPage />} />
             <Route path="/auth/login" element={<LoginPage />} />
+            <Route path="/login" element={<Navigate to={"/auth/login"} />} />
             <Route path="/auth/callback" element={<AuthCallback />} />
 
             {/* Admin Routes */}
             <Route path="/admin/auth/login" element={<AdminLoginPage />} />
+            <Route path="/admin/login" element={<Navigate to={"/admin/auth/login"} />} />
+
             <Route path="/admin/auth/callback" element={<AdminAuthCallback />} />
             <Route path="/admin" element={<AdminProtectedRoute />}>
               <Route path="dashboard" index element={<AdminDashboardPage />} />

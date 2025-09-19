@@ -2,13 +2,19 @@ import { createAdminClient } from "@/supabase/adminServer";
 import supabase from "../supabase";
 import { Subscription } from "../types/subscription";
 import { ProfileSetupFormData } from "@/schemas/auth";
+import dayjs from "dayjs";
+import utc from "dayjs/plugin/utc";
+import timezone from "dayjs/plugin/timezone";
+
+// Configure dayjs plugins
+dayjs.extend(utc);
+dayjs.extend(timezone);
 
 // Admin login is now handled via magic link in auth.ts
 
 interface AdminUserManagementPayload {
   user_id: string;
-  action: "grant_access" | "revoke_access" | "extend_subscription";
-  months?: number;
+  months: number;
   reason?: string;
 }
 
@@ -88,9 +94,99 @@ const getAllSubscriptions = async () => {
 };
 
 const adminUserManagementAPI = async (
-  _payload: AdminUserManagementPayload
+  payload: AdminUserManagementPayload
 ) => {
-  // TODO: Implement admin user management functionality
+  // Verify admin authentication
+  const { data: { user }, error: authError } = await supabase.auth.getUser();
+  
+  if (authError || !user) {
+    throw new Error('Admin not authenticated');
+  }
+
+  const { data: userProfileData, error: userProfileError } = await supabase
+    .from('users')
+    .select('*')
+    .eq('user_id', user.id)
+    .single();
+    
+  if (userProfileError || !userProfileData) {
+    throw new Error('Admin profile not found');
+  }
+
+  // Verify admin role
+  if (userProfileData.role !== 'admin') {
+    throw new Error('Access denied. Admin privileges required.');
+  }
+
+  const { user_id, months, reason } = payload;
+
+  // Check if user already has an active subscription
+  const { data: existingSubscription, error: subscriptionError } = await supabase
+    .from('subscriptions')
+    .select('*')
+    .eq('user_id', user_id)
+    .eq('status', 'active')
+    .maybeSingle();
+
+  if (subscriptionError) {
+    throw new Error('Failed to check existing subscription');
+  }
+
+  const startDate = dayjs().utc().toISOString();
+  const endDate = dayjs().utc().add(months, 'month').toISOString();
+  const transactionId = generateTransactionId();
+
+  if (existingSubscription) {
+    // Extend existing subscription
+    const newEndDate = dayjs(existingSubscription.end_date).utc().add(months, 'month').toISOString();
+    
+    const { data, error } = await supabase
+      .from('subscriptions')
+      .update({
+        end_date: newEndDate,
+        admin_reason: reason,
+        updated_at: dayjs().utc().toISOString()
+      })
+      .eq('id', existingSubscription.id)
+      .select()
+      .single();
+
+    if (error) {
+      throw new Error(error.message || 'Failed to extend subscription');
+    }
+
+    return {
+      subscription: data,
+      success: true,
+      message: `Subscription extended by ${months} month(s) successfully. New end date: ${dayjs(newEndDate).format('YYYY-MM-DD HH:mm:ss UTC')}`,
+    };
+  } else {
+    // Create new subscription
+    const { data, error } = await supabase
+      .from('subscriptions')
+      .insert({
+        user_id,
+        plan: 'admin_granted',
+        status: 'active',
+        start_date: startDate,
+        end_date: endDate,
+        transaction_id: transactionId,
+        amount: 0,
+        admin_reason: reason,
+      })
+      .select()
+      .single();
+
+    if (error) {
+      throw new Error(error.message || 'Failed to create subscription');
+    }
+
+    return {
+      subscription: data,
+      success: true,
+      message: `Subscription created for ${months} month(s) successfully. End date: ${dayjs(endDate).format('YYYY-MM-DD HH:mm:ss UTC')}`,
+    };
+  }
 };
 
 const updateUserAPI = async (payload: UpdateUserPayload) => {

@@ -9,8 +9,7 @@ export const adminMagicLinkSchema = z.object({
 
 export const adminUserManagementSchema = z.object({
   user_id: z.string().min(1, 'User ID is required'),
-  action: z.enum(['grant_access', 'revoke_access', 'extend_subscription']),
-  months: z.number().optional(),
+  months: z.number().min(1, 'Months must be at least 1'),
   reason: z.string().optional()
 })
 

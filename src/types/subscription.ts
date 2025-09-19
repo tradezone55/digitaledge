@@ -30,8 +30,7 @@ export interface Subscription {
 
 export interface AdminUserManagementPayload {
   user_id: string;
-  action: 'grant_access' | 'revoke_access' | 'extend_subscription';
-  months?: number;
+  months: number;
   reason?: string;
 }
 

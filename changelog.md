@@ -1,5 +1,50 @@
 # Changelog
 
+## [2025-01-27] - Simplified Admin User Management
+
+### Changed
+- **AdminUserManagementPayload Interface**: Removed action types ('grant', 'revoke_access', 'extend_subscription') and simplified to only handle subscription extension
+- **adminUserManagementAPI**: Simplified function to only extend user subscriptions, removing grant and revoke functionality
+- **UserActionModal**: Updated to only handle subscription extension, removed action type selection
+- **AdminDashboard**: Removed actionType state and related props
+- **SubscriptionsTab**: Removed setActionType prop and related functionality
+- **Schemas**: Updated adminUserManagementSchema to remove action field and make months required
+- **Types**: Updated AdminUserManagementPayload interface to match simplified functionality
+
+### Removed
+- Action type selection from user management interface
+- Grant and revoke access functionality
+- Complex action handling logic in favor of simple subscription extension
+
+## [2025-01-27] - Bug Fixes for Admin User Management
+
+### Fixed
+- **UserActionModal.tsx**: Fixed undefined `actionData` variable by creating proper action data object with correct typing
+- **AdminUserManagementPayload Interface**: Added missing `action` field to interface definition
+- **Type Safety**: Improved type safety for admin user management actions with proper union types
+- **Linting Issues**: Resolved unused variable warnings and type compatibility errors
+
+## [2025-01-27] - Admin User Management and Subscription Extension
+
+### Added
+- **Admin User Management API**: Implemented comprehensive `adminUserManagementAPI` function with three main actions:
+  - `grant_access`: Creates new subscription or extends existing one for specified months
+  - `revoke_access`: Revokes all active subscriptions for a user
+  - `extend_subscription`: Extends existing active subscription by adding months to current end_date
+- **Dayjs Integration**: Added dayjs with UTC and timezone plugins for proper timestamp handling
+- **Subscription Extension Logic**: 
+  - Uses dayjs to add months to existing `end_date` timestamps
+  - Handles timezone-aware operations with UTC conversion
+  - Provides detailed success messages with new end dates
+  - Validates admin authentication and permissions before operations
+
+### Technical Details
+- **Time Handling**: All date operations use dayjs with UTC timezone for consistency
+- **Database Operations**: Proper error handling and validation for subscription updates
+- **Admin Security**: Verifies admin role and authentication before allowing operations
+- **Transaction IDs**: Generates unique transaction IDs for new subscriptions
+- **Error Messages**: Comprehensive error handling with descriptive messages
+
 ## [2025-09-18] - Callback Flow Enhancement and Profile Setup Integration
 
 ### Added

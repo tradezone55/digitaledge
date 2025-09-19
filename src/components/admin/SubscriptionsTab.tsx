@@ -9,7 +9,6 @@ interface SubscriptionsTabProps {
   formatDate: (date: string) => string;
   formatCurrency: (amount: number) => string;
   setSelectedUser: (user: User | null) => void;
-  setActionType: (type: "grant" | "revoke" | "extend") => void;
   setShowUserModal: (show: boolean) => void;
 }
 
@@ -19,7 +18,6 @@ const SubscriptionsTab: React.FC<SubscriptionsTabProps> = ({
   formatDate,
   formatCurrency,
   setSelectedUser,
-  setActionType,
   setShowUserModal,
 }) => {
   return (
@@ -86,8 +84,8 @@ const SubscriptionsTab: React.FC<SubscriptionsTabProps> = ({
                             name: sub.users.name,
                             role: "user",
                             created_at: "",
+                            is_active: true,
                           });
-                          setActionType("extend");
                           setShowUserModal(true);
                         }}
                       >
