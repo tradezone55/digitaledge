@@ -21,6 +21,8 @@ export const profileSetupSchema = z.object({
     .string()
     .min(1, 'Email is required')
     .email({ message: 'Please enter a valid email address' }),
+  role: z.enum(['admin', 'user']).optional(),
+  is_active: z.boolean().optional(),
 })
 
 export const forgotPasswordSchema = z.object({

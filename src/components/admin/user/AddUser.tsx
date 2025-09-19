@@ -1,7 +1,6 @@
 import { CustomModal } from "@/components/ui/custom-modal";
 import Input from "@/components/ui/Input";
 import { ProfileSetupFormData, profileSetupSchema } from "@/schemas/auth";
-import { setupProfile } from "@/services/auth";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useForm } from "react-hook-form";
