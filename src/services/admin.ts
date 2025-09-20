@@ -213,33 +213,26 @@ const updateUserAPI = async (payload: UpdateUserPayload) => {
 };
 
 const deleteUserAPI = async (user_id: string) => {
-  // First delete related subscriptions
-  const { error: subscriptionError } = await supabase
-    .from("subscriptions")
-    .delete()
-    .eq("user_id", user_id);
+    const adminClient = createAdminClient();
+  // Delete from custom tables via RPC
+  const { error: rpcError } = await adminClient.rpc("delete_user_tables", {
+    user_uuid: user_id,
+  });
 
-  if (subscriptionError) {
-    console.error("Error deleting user subscriptions:", subscriptionError);
-    throw new Error(
-      subscriptionError.message || "Failed to delete user subscriptions"
-    );
+  if (rpcError) {
+    console.error("Error deleting user tables:", rpcError);
+    throw new Error(rpcError.message || "Failed to delete user tables");
   }
 
-  // Then delete the user
-  const { error: userError } = await supabase
-    .from("users")
-    .delete()
-    .eq("user_id", user_id);
-
-  if (userError) {
-    console.error("Error deleting user:", userError);
-    throw new Error(userError.message || "Failed to delete user");
+  // Delete from authentication (GoTrue admin)
+  const { error: authError } = await adminClient.auth.admin.deleteUser(user_id);
+  if (authError) {
+    console.error("Error deleting user from authentication:", authError);
+    throw new Error(authError.message || "Failed to delete user from authentication");
   }
-
   return {
     success: true,
-    message: "User deleted successfully",
+    message: "User deleted successfully from all tables and auth",
   };
 };
 
