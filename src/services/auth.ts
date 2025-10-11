@@ -113,6 +113,7 @@ const setupProfile = async (payload: ProfileSetupPayload) => {
   }
 
   let userProfile;
+  let isNewUser = false;
   
   if (existingUser) {
     // Update existing user
@@ -146,6 +147,33 @@ const setupProfile = async (payload: ProfileSetupPayload) => {
     
     if (insertError) throw new Error(insertError.message);
     userProfile = newUser;
+    isNewUser = true;
+  }
+
+  // If this is a new user, create a 60-day free trial subscription
+  if (isNewUser) {
+    const startDate = new Date();
+    const endDate = new Date();
+    endDate.setDate(endDate.getDate() + 60); // Add 60 days
+
+    const { error: subscriptionError } = await supabase
+      .from('subscriptions')
+      .insert([{
+        user_id: userProfile.id,
+        plan: 'trial',
+        status: 'trial',
+        start_date: startDate.toISOString(),
+        end_date: endDate.toISOString(),
+        transaction_id: 'TRIAL-' + userProfile.id.substring(0, 8),
+        amount: 0,
+        admin_reason: 'Automatic 60-day free trial for new user registration',
+      }]);
+
+    if (subscriptionError) {
+      console.error('Error creating trial subscription:', subscriptionError);
+      // Don't throw error here - user profile was created successfully
+      // We can handle trial creation failure gracefully
+    }
   }
 
   return {

@@ -49,7 +49,7 @@ export const fetchSubscription = async (id: string) => {
     .from("subscriptions")
     .select("*")
     .eq("user_id", id)
-    .eq("status", "active")
+    .in("status", ["active", "trial"])
     .order("end_date", { ascending: false })
     .limit(1)
     .maybeSingle();
