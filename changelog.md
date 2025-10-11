@@ -1,5 +1,38 @@
 # Changelog
 
+## [2025-10-11] - Added SupportBanner Component to Landing and Authenticated Screens
+
+### Added
+- **SupportBanner Component**: Added support button linking to Ko-fi for project support
+  - Compact mode for header and footer placements
+  - Full mode for standalone placements
+  - Gradient orange button with heart icon
+  - Hover animations and transitions
+
+### Changed
+- **Landing Page (index.tsx)**: Added SupportBanner to header navigation
+  - Positioned on the right side next to "Get Early Access" button
+  - Only visible on desktop (md:block)
+  - Uses compact mode for better header integration
+
+- **AccessScreen Component**: Added SupportBanner to header and footer
+  - **Header**: Positioned beside DigitalEdge logo for primary visibility (hidden on mobile)
+  - **Footer**: Positioned between system name and "Powered by DigitalEdge"
+  - Uses compact mode for both header and footer integration
+  - Responsive layout adjustments with proper spacing
+
+- **UnAccessScreen Component**: Added SupportBanner to footer
+  - Positioned above "Powered by Logo"
+  - Uses compact mode for footer integration
+  - Flex column layout for proper alignment
+
+### Technical Details
+- **Component Props**: Added optional `compact` boolean prop to SupportBanner
+  - Compact mode: Smaller padding (px-4 py-2), smaller text (text-sm), smaller icon (w-4 h-4)
+  - Full mode: Default styling with larger padding and icons
+- **Styling**: Consistent orange gradient theme matching design system
+- **External Link**: Opens in new tab with security attributes (target="_blank", rel="noopener noreferrer")
+
 ## [2025-10-11] - Implemented 60-Day Free Trial for New User Registration
 
 ### Added

@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import Logo from "./ui/Logo";
 import LogoutUser from "./LogoutUser";
 import { useSubscriptionStatus } from "../hooks/useSubscriptionStatus";
+import SupportBanner from "./SupportBanner";
 
 const UnAccessScreen = () => {
   const navigate = useNavigate();
@@ -39,8 +40,11 @@ const UnAccessScreen = () => {
             </button>
           </div>
         </div>
-        <footer className="text-xs text-gray-500 text-center gap-1">
-          Powered by <Logo size="md" />
+        <footer className="text-xs text-gray-500 text-center gap-3 flex flex-col items-center">
+          <SupportBanner compact />
+          <div className="flex items-center gap-1">
+            Powered by <Logo size="md" />
+          </div>
         </footer>
       </div>
     </div>
