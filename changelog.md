@@ -1,5 +1,72 @@
 # Changelog
 
+## [2025-10-11] - Implemented 60-Day Free Trial for New User Registration
+
+### Added
+- **Automatic 60-Day Free Trial**: New users now receive automatic 60-day free trial upon registration
+  - Trial subscription automatically created when user completes profile setup
+  - Trial period starts immediately upon profile completion
+  - No payment required during trial period
+  - Trial status tracked with dedicated "trial" subscription status
+  - After 60 days, users are prompted to subscribe via PayPal
+
+- **Trial Subscription Management**:
+  - Added "trial" status to subscription system
+  - Trial subscriptions have $0.00 amount and "TRIAL-{user_id}" transaction ID
+  - Trial end date automatically calculated as 60 days from profile setup
+  - Admin reason field populated with "Automatic 60-day free trial for new user registration"
+
+### Changed
+- **Database Schema**: Updated subscriptions table to support "trial" status
+  - Added "trial" to CHECK constraint for status field
+  - Trial subscriptions tracked alongside active/expired/cancelled subscriptions
+
+- **Profile Setup Flow**: Enhanced `setupProfile` function to auto-create trial subscription
+  - Detects new user registration vs. existing user profile update
+  - Automatically creates 60-day trial subscription for new users only
+  - Graceful error handling if trial creation fails (user profile still created)
+
+- **Subscription Checking**: Updated subscription fetching logic
+  - `fetchSubscription` now queries for both "active" AND "trial" status subscriptions
+  - Trial subscriptions grant same access as paid subscriptions
+  - Grace period does not apply to trial subscriptions (only paid subscriptions)
+
+- **UI/UX Updates**:
+  - Access screen displays "Free trial ends in X Days" for trial users (green color)
+  - Regular subscriptions show "Subscription ends in X Days" (orange color)
+  - UnAccessScreen updated to show appropriate message when trial/subscription ends
+  - "Subscribe Now" button replaces "Get Access" when trial expires
+
+- **Subscription Status Hook**: Enhanced `useSubscriptionStatus` to handle trial status
+  - Added `isTrial` boolean flag to subscription status
+  - Trial users have full access during trial period
+  - Grace period only applies to paid subscriptions, not trials
+  - Proper differentiation between trial and paid subscription status
+
+### Technical Details
+- **Trial Duration**: 60 days from profile completion
+- **Trial Status**: "trial" (new subscription status type)
+- **Transaction ID Format**: "TRIAL-{first 8 chars of user_id}"
+- **Amount**: $0.00 for all trial subscriptions
+- **Access Control**: Trial subscriptions grant full access same as paid subscriptions
+- **Grace Period**: Does not apply to trial subscriptions (only paid subscriptions)
+- **User Flow**: 
+  1. New user registers via magic link
+  2. User completes profile setup
+  3. System automatically creates 60-day trial subscription
+  4. User has full access for 60 days
+  5. After 60 days, user is prompted to subscribe via PayPal
+  6. No grace period for expired trials
+
+### Files Modified
+- `database/setup.sql` - Added "trial" to subscription status CHECK constraint
+- `src/services/auth.ts` - Enhanced setupProfile to auto-create trial subscriptions
+- `src/services/subscription.tsx` - Updated fetchSubscription to query trial status
+- `src/hooks/useSubscriptionStatus.tsx` - Added isTrial flag and trial-specific logic
+- `src/components/AccessScreen.tsx` - Added trial status display with green color
+- `src/pages/Home.tsx` - Pass isTrial prop to AccessScreen component
+- `src/components/UnAccessScreen.tsx` - Updated messaging for trial expiration
+
 ## [2025-01-27] - Simplified Admin User Management
 
 ### Changed

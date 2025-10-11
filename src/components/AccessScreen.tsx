@@ -55,6 +55,7 @@ interface AccessScreenProps {
   inGracePeriod?: boolean;
   graceDaysLeft?: number;
   daysLeft: number;
+  isTrial?: boolean;
 }
 
 type DomainId = 1 | 2 | 3 | 4 | 5;
@@ -63,6 +64,7 @@ const AccessScreen = ({
   inGracePeriod = false,
   graceDaysLeft = 0,
   daysLeft,
+  isTrial = false,
 }: AccessScreenProps) => {
   const user = useUserStore((state) => state.user);
   const { saveTestResult } = useSaveLocalTestResult();
@@ -1588,8 +1590,17 @@ const AccessScreen = ({
               Welcome Back, <span className="text-blue-400 ">{user?.name}</span>{" "}
             </p>
             <p className="text-gray-200 font-semibold">
-              Subscription ends in{" "}
-              <span className="text-orange-500 mx-1">{daysLeft} Days</span>
+              {isTrial ? (
+                <>
+                  Free trial ends in{" "}
+                  <span className="text-green-500 mx-1">{daysLeft} Days</span>
+                </>
+              ) : (
+                <>
+                  Subscription ends in{" "}
+                  <span className="text-orange-500 mx-1">{daysLeft} Days</span>
+                </>
+              )}
             </p>
           </div>
 

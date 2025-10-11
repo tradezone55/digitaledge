@@ -17,6 +17,7 @@ export function useSubscriptionStatus() {
     daysLeft: 0,
     inGracePeriod: false,
     graceDaysLeft: 0,
+    isTrial: false,
   });
 
   useEffect(() => {
@@ -28,12 +29,14 @@ export function useSubscriptionStatus() {
           daysLeft: 0,
           inGracePeriod: false,
           graceDaysLeft: 0,
+          isTrial: false,
         });
         return;
       }
 
       const now = new Date();
       const end = new Date(subscription?.end_date);
+      const isTrial = subscription?.status === 'trial';
 
       // Get grace period from environment variable (default to 3 days)
       const gracePeriodDays = parseInt(
@@ -48,8 +51,8 @@ export function useSubscriptionStatus() {
 
       console.log(isSubscriptionActive);
 
-      // Check if we're in grace period
-      const isInGracePeriod = !isSubscriptionActive && now <= graceEndDate;
+      // Check if we're in grace period (only for non-trial subscriptions)
+      const isInGracePeriod = !isTrial && !isSubscriptionActive && now <= graceEndDate;
 
       // Overall access (active subscription OR grace period)
       const access = isSubscriptionActive || isInGracePeriod;
@@ -72,6 +75,7 @@ export function useSubscriptionStatus() {
         daysLeft: access ? daysLeft : 0,
         inGracePeriod: isInGracePeriod,
         graceDaysLeft,
+        isTrial,
       });
     };
 

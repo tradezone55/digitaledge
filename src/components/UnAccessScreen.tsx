@@ -27,16 +27,15 @@ const UnAccessScreen = () => {
             <h1 className="text-2xl font-bold mb-2">Access Denied</h1>
             <p className="text-base text-[#94a3b8] mb-6">
               {graceDaysLeft > 0
-                ? `Your subscription has expired, but you have ${graceDaysLeft} day${
-                    graceDaysLeft !== 1 ? "s" : ""
-                  } left to renew and maintain access.`
-                : "You need an active subscription to use this app."}
+                ? `Your subscription has expired, but you have ${graceDaysLeft} day${graceDaysLeft !== 1 ? "s" : ""
+                } left to renew and maintain access.`
+                : "Your free trial or subscription has ended. Please subscribe to continue using the app."}
             </p>
             <button
               className="bg-blue-600 hover:bg-blue-700 text-white rounded-lg px-6 py-3 font-semibold text-base shadow-md transition-colors duration-200"
               onClick={handleGetAccess}
             >
-              {graceDaysLeft > 0 ? "Renew Subscription" : "Get Access"}
+              {graceDaysLeft > 0 ? "Renew Subscription" : "Subscribe Now"}
             </button>
           </div>
         </div>

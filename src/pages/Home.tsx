@@ -6,7 +6,7 @@ import { useSubscriptionStatus } from "../hooks/useSubscriptionStatus";
 import { useProfileCompleteness } from "../hooks/useProfileCompleteness";
 
 const Home = () => {
-  const { loading, access, inGracePeriod, graceDaysLeft, daysLeft } =
+  const { loading, access, inGracePeriod, graceDaysLeft, daysLeft, isTrial } =
     useSubscriptionStatus();
   const { isProfileComplete, isLoading: profileLoading } = useProfileCompleteness();
 
@@ -21,6 +21,7 @@ const Home = () => {
           inGracePeriod={inGracePeriod}
           graceDaysLeft={graceDaysLeft}
           daysLeft={graceDaysLeft + daysLeft}
+          isTrial={isTrial}
         />
         <ProfileSetupModal
           open={true}
@@ -46,6 +47,7 @@ const Home = () => {
       inGracePeriod={inGracePeriod}
       graceDaysLeft={graceDaysLeft}
       daysLeft={graceDaysLeft + daysLeft}
+      isTrial={isTrial}
     />
   );
 };
