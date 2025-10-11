@@ -4,6 +4,7 @@ import { CheckCircle2, Zap, Shield, Smartphone, Trophy, Sparkles, Cpu, Server, A
 import Logo from "@/components/ui/Logo";
 import { Link } from "react-router-dom";
 import DemoQuiz from "@/components/DemoQuiz";
+import SupportBanner from "@/components/SupportBanner";
 
 // ------------------------------------------------------
 // Enhanced Landing Page — Aligned with design system
@@ -188,12 +189,15 @@ export default function EnhancedLandingPage() {
               Results
             </a>
           </nav>
-          <a
-            href="#cta"
-            className={`hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-xl font-semibold ${primaryGradient} ${glow} text-white hover:shadow-lg hover:shadow-orange-500/30 transition-all duration-200`}
-          >
-            Get Early Access <ArrowRight className="w-4 h-4 text-white" />
-          </a>
+          <div className="flex items-center gap-4">
+
+            <a
+              href="#cta"
+              className={`hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-xl font-semibold ${primaryGradient} ${glow} text-white hover:shadow-lg hover:shadow-orange-500/30 transition-all duration-200`}
+            >
+              Get Early Access <ArrowRight className="w-4 h-4 text-white" />
+            </a>
+          </div>
         </div>
       </header>
 
@@ -541,6 +545,9 @@ export default function EnhancedLandingPage() {
 
       {/* Enhanced Footer */}
       <footer className="mt-10 border-t border-gray-700">
+        <div className="max-w-7xl mx-auto p-5 w-full flex items-center justify-center">
+          <SupportBanner compact />
+        </div>
         <Section className="py-10">
           <div className="mx-auto max-w-7xl flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="text-gray-400 text-sm flex items-center gap-2">© {new Date().getFullYear()} <Logo size="sm" /> — All rights reserved.</div>

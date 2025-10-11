@@ -13,6 +13,7 @@ import Logo from "../components/ui/Logo";
 import LogoutUser from "../components/LogoutUser";
 import { useUserStore } from "../stores";
 import { useSaveLocalTestResult } from "../hooks/useLocalTestResults";
+import SupportBanner from "../components/SupportBanner";
 
 // Type definitions
 interface Question {
@@ -1548,13 +1549,16 @@ const AccessScreen = ({
             </p>
           </div>
 
-          {/* DigitalEdge Branding */}
-          <div className="flex items-center gap-2 justify-between lg:w-[200px] w-full">
-            <div className="flex flex-col lg:items-end items-start lg:ml-6 gap-3">
-              <Logo size="lg" />
-              <div className="text-xs text-blue-400">
-                Powered by DigitalEdge
+          {/* DigitalEdge Branding & Support */}
+          <div className="flex items-center gap-4 justify-between lg:w-auto w-full">
+            <div className="flex flex-col lg:items-end items-start lg:ml-6 gap-10">
+              <div>
+                <Logo size="lg" />
+                <div className="text-xs text-blue-400">
+                  Powered by DigitalEdge
+                </div>
               </div>
+              <SupportBanner compact />
             </div>
             <LogoutUser className="lg:hidden flex" />
           </div>
@@ -1764,19 +1768,22 @@ const AccessScreen = ({
 
       {/* Footer */}
       <div className="bg-gray-800 border-t border-gray-700 p-4">
-        <div className="max-w-6xl mx-auto flex justify-between items-center lg:flex-row flex-col gap-2">
+        <div className="max-w-6xl mx-auto flex justify-between items-center lg:flex-row flex-col gap-4">
           <div className="text-sm text-gray-400">
             CompTIA Network+ Domain Testing System
           </div>
-          <div className="flex items-center gap-2">
-            <div className="text-sm text-blue-400">Powered by</div>
+          <div className="flex items-center gap-4 lg:flex-row flex-col-reverse">
+            <SupportBanner compact />
             <div className="flex items-center gap-2">
-              <div className="w-6 h-6 bg-gradient-to-br from-blue-400 to-cyan-400 rounded flex items-center justify-center">
-                <div className="text-white font-bold text-xs">D</div>
-              </div>
-              <div className="text-sm font-semibold">
-                <span className="text-orange-400">DIGITAL</span>
-                <span className="text-blue-400">EDGE</span>
+              <div className="text-sm text-blue-400">Powered by</div>
+              <div className="flex items-center gap-2">
+                <div className="w-6 h-6 bg-gradient-to-br from-blue-400 to-cyan-400 rounded flex items-center justify-center">
+                  <div className="text-white font-bold text-xs">D</div>
+                </div>
+                <div className="text-sm font-semibold">
+                  <span className="text-orange-400">DIGITAL</span>
+                  <span className="text-blue-400">EDGE</span>
+                </div>
               </div>
             </div>
           </div>
