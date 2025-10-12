@@ -3,8 +3,8 @@ import useLogout from '../hooks/useLogout'
 import Button from './ui/Button'
 
 
-const LogoutUser = ({ className, redirectTo = "/" }: LogoutUserProps) => {
-  const { logout, isPending } = useLogout(redirectTo)
+const LogoutUser = ({ className }: LogoutUserProps) => {
+  const { logout, isPending } = useLogout()
   return (
     <div>
       <Button
@@ -24,5 +24,4 @@ const LogoutUser = ({ className, redirectTo = "/" }: LogoutUserProps) => {
 export default LogoutUser
 interface LogoutUserProps {
   className?: string
-  redirectTo?: string
 }

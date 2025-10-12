@@ -340,7 +340,9 @@ export default function EnhancedLandingPage() {
 
               <div className="mt-6 flex flex-wrap items-end gap-6">
                 <div>
-                  <div className="text-5xl font-black tracking-tight text-white">$19</div>
+                  <div className="text-4xl font-black tracking-tight text-white">
+                    Free 60 day trial
+                  </div>
                   <div className="text-gray-400 text-sm">intro price during beta</div>
                 </div>
                 <ul className="text-sm text-gray-300 space-y-2">

@@ -5,7 +5,7 @@ import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import { clearAllAppData } from "../utils/localStorage";
 
-const useLogout = (redirectTo = "/") => {
+const useLogout = () => {
   const navigate = useNavigate();
   const { clearUser } = useUserStore();
   const { mutate, isPending } = useMutation({
@@ -17,7 +17,7 @@ const useLogout = (redirectTo = "/") => {
         // Clear all localStorage data using utility function
         clearAllAppData();
         localStorage.clear();
-        navigate(redirectTo, { replace: true });
+        navigate("https://hub.digitaledgeprep.com", { replace: true });
       }
     },
     onError: (error) => {

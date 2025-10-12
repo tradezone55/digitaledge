@@ -1,5 +1,26 @@
 # Changelog
 
+## [2025-10-12] - Enhanced Logout Functionality with External Hub Redirect
+
+### Changed
+- **useLogout Hook**: Improved logout process with external redirect
+  - Added redirect to `https://hub.digitaledgeprep.com` after successful logout
+  - Enhanced localStorage clearing using both `clearAllAppData()` utility and `localStorage.clear()`
+  - Maintained user state clearing and toast notifications
+  - Uses replace navigation to prevent back button issues
+
+- **LogoutUser Component**: Enhanced UI and UX
+  - Added loading state with "Logging out..." text during logout process
+  - Updated button styling for better visual consistency
+  - Improved hover states and transitions
+  - Component now properly displays loading indicator during logout operation
+
+### Technical Details
+- **Security**: Ensures complete session cleanup before redirect
+- **UX**: Loading states provide clear feedback during logout process
+- **Navigation**: Uses replace option to prevent navigation history issues
+- **State Management**: Properly clears both Zustand store and localStorage
+
 ## [2025-10-11] - Added SupportBanner Component to Landing and Authenticated Screens
 
 ### Added
