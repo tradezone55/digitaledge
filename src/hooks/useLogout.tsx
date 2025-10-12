@@ -2,11 +2,9 @@ import { useMutation } from "@tanstack/react-query";
 import { logout } from "../services/auth";
 import { useUserStore } from "../stores";
 import { toast } from "react-toastify";
-import { useNavigate } from "react-router-dom";
 import { clearAllAppData } from "../utils/localStorage";
 
 const useLogout = () => {
-  const navigate = useNavigate();
   const { clearUser } = useUserStore();
   const { mutate, isPending } = useMutation({
     mutationFn: logout,
@@ -17,7 +15,7 @@ const useLogout = () => {
         // Clear all localStorage data using utility function
         clearAllAppData();
         localStorage.clear();
-        navigate("https://hub.digitaledgeprep.com", { replace: true });
+        window.location.href = "https://hub.digitaledgeprep.com";
       }
     },
     onError: (error) => {
