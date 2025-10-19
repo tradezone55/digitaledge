@@ -1,8 +1,10 @@
 import "./App.css";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
-import { Suspense, lazy } from "react";
+import {Suspense, lazy, useEffect, useState} from "react";
 import { QueryProvider } from "./providers/QueryProvider";
 import CustomLoader from "./components/CustomLoader/page";
+import { isBeta } from "./flags";
+import { getLangFromURLorStorage, loadUILabels, switchLang } from "./i18n";
 
 // Lazy load all pages
 const Home = lazy(() => import("./pages/Home"));
@@ -18,8 +20,34 @@ const EnhancedLandingPage = lazy(() => import("./pages"));
 const AdminProtectedRoute = lazy(() => import("./protectedRoute/AdminProtectedRoute"));
 
 function App() {
-  return (
+  
+  const [lang, setLang] = useState<"en" | "es">(getLangFromURLorStorage());
+  const showBilingual = isBeta();
+
+  useEffect(() => {
+    if (!showBilingual) return;
+    loadUILabels(lang).catch(() => {});
+  }, [lang, showBilingual]);
+
+  const handleLangChange = (next: "en" | "es") => {
+    setLang(next);
+    switchLang(next);
+  };
+return (
     <QueryProvider>
+      {/* Language toggle – only visible in beta mode (?beta=1) */}
+      {showBilingual && (
+        <div
+          style={{ position: "fixed", top: 10, right: 10, zIndex: 9999, display: "flex", gap: "8px",
+                   alignItems: "center", background: "rgba(0,0,0,0.6)", border: "1px solid #333",
+                   padding: "6px 10px", borderRadius: "10px", backdropFilter: "blur(4px)" }}
+        >
+          <button onClick={() => handleLangChange("en")} aria-label="Switch to English">🇺🇸 EN</button>
+          <span>|</span>
+          <button onClick={() => handleLangChange("es")} aria-label="Cambiar a Español">🇪🇸 ES</button>
+        </div>
+      )}
+
       <BrowserRouter>
         <Suspense fallback={<CustomLoader />}>
           <Routes>

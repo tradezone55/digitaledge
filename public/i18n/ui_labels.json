@@ -1,0 +1,36 @@
+{
+  "en": {
+    "start": "Start",
+    "resume": "Resume",
+    "pause": "Pause",
+    "submit": "Submit",
+    "next": "Next",
+    "score": "Score",
+    "timeRemaining": "Time Remaining",
+    "question": "Question",
+    "of": "of",
+    "fullExam": "Full Exam",
+    "domainMode": "Domain Mode",
+    "returnToHub": "Return to Hub",
+    "support": "Support",
+    "subscribe": "Subscribe",
+    "live": "Live"
+  },
+  "es": {
+    "start": "Iniciar",
+    "resume": "Continuar",
+    "pause": "Pausar",
+    "submit": "Enviar",
+    "next": "Siguiente",
+    "score": "Puntuación",
+    "timeRemaining": "Tiempo restante",
+    "question": "Pregunta",
+    "of": "de",
+    "fullExam": "Examen Completo",
+    "domainMode": "Modo por Dominio",
+    "returnToHub": "Volver al Hub",
+    "support": "Apoyo",
+    "subscribe": "Suscribirse",
+    "live": "En vivo"
+  }
+}
