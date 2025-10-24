@@ -1,5 +1,48 @@
 # Changelog
 
+## [2025-01-27] - Outlook Magic Link Authentication Fix
+
+### Fixed
+- **Outlook Magic Link Authentication**: Fixed session logout issue when users click login links from Outlook
+  - Enhanced auth callback handling to properly process URL hash parameters from magic links
+  - Added session validation in both user and admin auth callbacks
+  - Implemented global auth state listener to handle session changes across the application
+  - Improved error handling and fallback mechanisms for authentication failures
+
+### Technical Details
+- **Auth Callback Enhancement**: Updated `src/pages/auth/callback.tsx` to use `supabase.auth.getSession()` before `getUser()`
+- **Admin Callback Enhancement**: Updated `src/pages/admin/auth/callback.tsx` with same session handling improvements
+- **Global Auth State Management**: Added `AuthStateListener` component in `App.tsx` to handle auth state changes globally
+- **Session Persistence**: Improved session handling to prevent unexpected logouts from email clients
+
+### Root Cause
+The issue was caused by the authentication callback not properly handling URL hash parameters that contain Supabase session tokens. When users clicked magic links from Outlook, the session tokens in the URL hash weren't being processed, causing the session to not be established properly.
+
+## [2025-01-27] - Internationalization Support Implementation
+
+### Added
+- **Internationalization (i18n) Support**: Comprehensive multi-language support for the application
+  - Added i18n configuration with support for multiple languages (EN, ES, FR, PT, ZH-CN)
+  - Implemented language switching functionality in App.tsx
+  - Enhanced Logo component with internationalization support
+  - Updated main.tsx to properly initialize i18n
+  - Added language support to index page
+  - Updated HTML document with proper language attributes
+
+### Changed
+- **App.tsx**: Integrated i18n functionality and language switching
+- **Logo.tsx**: Added internationalization support for logo component
+- **i18n/config.ts**: Enhanced i18n configuration with proper locale detection
+- **main.tsx**: Updated to initialize i18n properly
+- **index.tsx**: Added language support to main page
+- **index.html**: Added language attributes for proper locale detection
+
+### Technical Details
+- Implemented react-i18next for translation management
+- Added proper locale detection and fallback mechanisms
+- Enhanced user experience with seamless language switching
+- Maintained consistent translation structure across all components
+
 ## [2025-01-27] - Language Route to Query Parameters Migration
 
 ### Changed

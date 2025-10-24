@@ -9,6 +9,7 @@ import AuthLayout from "../../components/layout/AuthLayout";
 import Button from "@/components/ui/Button";
 import ProfileSetupModal from "../../components/ProfileSetupModal";
 import { useLanguageNavigation } from "../../utils/navigation";
+import supabase from "../../supabase";
 
 const VerifyOTPPage: React.FC = () => {
   const navigate = useNavigate();
@@ -52,9 +53,38 @@ const VerifyOTPPage: React.FC = () => {
   };
 
   useEffect(() => {
-    // Automatically verify the OTP when the page loads
-    verify();
-  }, [verify]);
+    const handleAuthCallback = async () => {
+      try {
+        // Handle the auth callback from URL hash parameters
+        const { data, error } = await supabase.auth.getSession();
+
+        if (error) {
+          console.error('Auth callback error:', error);
+          toast.error('Authentication failed. Please try again.');
+          navigate(getLanguagePath("auth/login"));
+          return;
+        }
+
+        if (!data.session) {
+          // No session found, try to get user anyway (fallback)
+          console.log('No session found, attempting to verify OTP...');
+          verify();
+          return;
+        }
+
+        // Session found, proceed with verification
+        console.log('Session found, proceeding with verification...');
+        verify();
+      } catch (error) {
+        console.error('Auth callback error:', error);
+        toast.error('Authentication failed. Please try again.');
+        navigate(getLanguagePath("auth/login"));
+      }
+    };
+
+    // Handle the auth callback
+    handleAuthCallback();
+  }, [verify, navigate, getLanguagePath]);
 
   return (
     <>

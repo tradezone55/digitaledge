@@ -15,6 +15,21 @@ const AdminAuthCallback: React.FC = () => {
   useEffect(() => {
     const handleAdminAuthCallback = async () => {
       try {
+        // Handle the auth callback from URL hash parameters
+        const { data: sessionData, error: sessionError } = await supabase.auth.getSession();
+
+        if (sessionError) {
+          console.error('Admin auth callback session error:', sessionError);
+          toast.error('Admin authentication failed');
+          navigate(getLanguagePath('admin/auth/login'));
+          return;
+        }
+
+        if (!sessionData.session) {
+          // No session found, try to get user anyway (fallback)
+          console.log('No admin session found, attempting to get user...');
+        }
+
         // Handle the auth callback
         const { data, error } = await supabase.auth.getUser();
 

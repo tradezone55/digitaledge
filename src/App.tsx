@@ -4,6 +4,8 @@ import { Suspense, lazy, useEffect } from "react";
 import { QueryProvider } from "./providers/QueryProvider";
 import CustomLoader from "./components/CustomLoader/page";
 import { useTranslation } from "react-i18next";
+import supabase from "./supabase";
+import { useUserStore } from "./stores";
 
 // Lazy load all pages
 const Home = lazy(() => import("./pages/Home"));
@@ -43,11 +45,36 @@ const LanguageDetector = () => {
   return null;
 };
 
+// Auth state listener component
+const AuthStateListener = () => {
+  const { clearUser } = useUserStore();
+
+  useEffect(() => {
+    // Listen for auth state changes
+    const { data: { subscription } } = supabase.auth.onAuthStateChange(
+      async (event, session) => {
+        console.log('Auth state changed:', event, session);
+
+        if (event === 'SIGNED_OUT' || !session) {
+          clearUser();
+        }
+      }
+    );
+
+    return () => {
+      subscription.unsubscribe();
+    };
+  }, [clearUser]);
+
+  return null;
+};
+
 function App() {
   console.log('App component rendering');
   return (
     <QueryProvider>
       <BrowserRouter>
+        <AuthStateListener />
         <LanguageDetector />
         <Suspense fallback={<CustomLoader />}>
           <div>
