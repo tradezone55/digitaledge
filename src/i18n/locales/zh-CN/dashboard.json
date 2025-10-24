@@ -1,0 +1,10 @@
+{
+  "welcome": "欢迎回来",
+  "subscription": {
+    "trialEndsIn": "免费试用在 {{days}} 天后结束",
+    "subscriptionEndsIn": "订阅在 {{days}} 天后结束"
+  },
+  "system": {
+    "title": "CompTIA Network+ 域测试系统"
+  }
+}

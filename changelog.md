@@ -1,5 +1,294 @@
 # Changelog
 
+## [2025-01-27] - Language Route to Query Parameters Migration
+
+### Changed
+- **Language Routing System**: Migrated from route-based language handling to query parameter-based system
+  - Updated `App.tsx` to remove `/:lang/*` route pattern and use query parameters instead
+  - Modified `LanguageDetector` component to read language from `?lang=` query parameter
+  - Updated `LanguageSwitch` component to use query parameters for language switching
+  - Changed navigation utilities to generate paths with `?lang=` query parameter
+  - Updated i18n configuration to detect language from query parameters instead of path segments
+
+### Technical Details
+- **URL Structure Change**: 
+  - **Before**: `/en/home`, `/es/auth/login`, `/zh-CN/admin/dashboard`
+  - **After**: `/home?lang=en`, `/auth/login?lang=es`, `/admin/dashboard?lang=zh-CN`
+- **Language Detection**: Updated i18n configuration to use `querystring` detection with `lookupQuerystring: 'lang'`
+- **Navigation**: All language-aware navigation now uses query parameters instead of path prefixes
+- **Backward Compatibility**: Automatic redirect from old path-based URLs to new query parameter format
+
+### Benefits
+- **Cleaner URLs**: Language information is now in query parameters, making URLs more readable
+- **Better SEO**: Language-specific content can be better indexed by search engines
+- **Simplified Routing**: Removed complex nested routing structure for language handling
+- **Consistent Navigation**: All language switching now uses the same query parameter approach
+
+## [2025-01-27] - URL Query Parameters with localStorage Fallback Implementation
+
+### Added
+- **URL Query Parameter State Management**: Implemented comprehensive URL parameter system with localStorage fallback
+  - Created new utility file `/src/utils/urlParams.ts` for managing URL query parameters
+  - Added URL parameter support for quiz state including domain, question, score, session status, and time
+  - Implemented localStorage fallback mechanism for offline scenarios and session persistence
+  - Added automatic URL parameter synchronization with application state
+
+### Changed
+- **AccessScreen.tsx**: Converted state management to use URL parameters with localStorage fallback
+  - Updated all quiz state variables to sync with URL parameters
+  - Modified session restoration logic to prioritize URL parameters over localStorage
+  - Updated timer, session management, and domain selection to use URL parameter system
+  - Implemented wrapper functions that update both local state and URL parameters simultaneously
+
+- **State Management**: Enhanced state persistence with dual-layer approach
+  - URL parameters serve as primary state source for sharing and bookmarking
+  - localStorage provides fallback for offline scenarios and session recovery
+  - Automatic synchronization between URL parameters and localStorage
+  - Session restoration prioritizes URL parameters when available
+
+### Technical Details
+- **URL Parameter Structure**: Implemented comprehensive URL parameter system
+  - `domain`: Current domain being studied (1-5)
+  - `question`: Current question number in session
+  - `score`: Current score in session
+  - `sessionActive`: Whether quiz session is currently active
+  - `sessionComplete`: Whether quiz session is completed
+  - `showResults`: Whether results screen is displayed
+  - `timeElapsed`: Time elapsed in current session
+
+- **Utility Functions**: Created comprehensive URL parameter management utilities
+  - `parseURLParams()`: Parse URL query parameters into state object
+  - `updateURLParams()`: Update URL with new state parameters
+  - `getStateWithFallback()`: Get state from URL with localStorage fallback
+  - `setStateWithPersistence()`: Set state in both URL and localStorage
+  - `useQuizStateManager()`: React hook for managing quiz state with URL persistence
+  - `restoreStateFromURL()`: Restore application state from URL parameters
+
+- **Integration Features**: Seamless integration with existing functionality
+  - Backward compatibility with existing localStorage-based session management
+  - Automatic URL parameter updates during quiz progression
+  - Session restoration from URL parameters on page load
+  - History management to avoid cluttering browser history
+  - Error handling and graceful fallback to localStorage
+
+- **Benefits**: Enhanced user experience and functionality
+  - Shareable quiz sessions via URL links
+  - Bookmarkable quiz progress
+  - Browser back/forward navigation support
+  - Session recovery across browser refreshes
+  - Offline capability with localStorage fallback
+
+## [2025-01-27] - Demo Quiz Interface Translation Implementation
+
+### Added
+- **Demo Quiz Interface Translation**: Implemented full translation support for demo quiz interface
+  - Added comprehensive translation keys for all demo quiz UI elements
+  - Updated DemoQuiz.tsx component to use translation keys instead of hardcoded English text
+  - Added translation support for demo quiz results, progress indicators, and navigation buttons
+  - Implemented dynamic parameter support for scores, time, and question numbers in translations
+  - **Fixed Time and Score Labels**: Separated label translations from value translations for proper localization
+
+### Changed
+- **DemoQuiz.tsx**: Replaced all hardcoded English text with translation keys
+  - Updated demo completion screen with translated messages
+  - Added translation support for score displays, time tracking, and progress indicators
+  - Updated navigation buttons (Start Demo, Skip Demo, Next, Finish) to use translations
+  - Implemented translation for review sections and answer explanations
+
+- **Translation Files**: Added demo quiz translation keys to all language files
+  - `/src/i18n/locales/en/quiz.json` - English demo translations
+  - `/src/i18n/locales/es/quiz.json` - Spanish demo translations
+  - `/src/i18n/locales/fr/quiz.json` - French demo translations
+  - `/src/i18n/locales/pt/quiz.json` - Portuguese demo translations
+  - `/src/i18n/locales/zh-CN/quiz.json` - Chinese demo translations
+
+### Technical Details
+- Added new `demo` section to quiz.json files with comprehensive translation keys
+- Translation keys include: title, description, startDemo, skipDemo, demoComplete, scoreDescription, questionsCorrect, finalScore, timeTaken, getFullAccess, reviewIncorrect, questionNumber, yourAnswer, correctAnswer, explanation, demoProgress, timeLabel, time, scoreLabel, score, next, finish
+- **Label Separation**: Separated time and score labels from values for proper translation
+  - `timeLabel` and `scoreLabel` for translated labels
+  - `time` and `score` for values with parameter interpolation
+- All translations maintain consistent terminology across languages
+- Dynamic parameter interpolation for scores, percentages, and question numbers
+- Maintained all existing functionality while adding full translation support
+
+## [2025-01-27] - Quiz Results Screen Translation Implementation
+
+### Added
+- **Quiz Results Screen Translation**: Implemented full translation support for quiz results screen
+  - Replaced all hardcoded English text in ResultsScreen component with translation keys
+  - Updated congratulations messages, score displays, and review sections to use i18n
+  - Added support for dynamic domain numbers in translated messages
+  - Implemented translation for all result-related UI elements including buttons and explanations
+
+### Changed
+- **AccessScreen.tsx**: Updated ResultsScreen component to use translation keys from quiz.json
+  - Replaced hardcoded text with `t('quiz:results.*')` calls
+  - Added dynamic parameter support for domain numbers in messages
+  - Maintained all existing functionality while adding translation support
+
+### Technical Details
+- All translation keys already existed in quiz.json files for all supported languages
+- No new translation files needed to be created
+- Translation keys used: congratulations, keepStudying, passedDomain, need70Percent, questionsCorrect, finalScore, timeTaken, reviewIncorrect, perfectScore, yourAnswer, whyIncorrect, advanceToNext, retryDomain, certificationReady, masteredAllDomains
+
+## [2025-01-27] - Quiz Questions Translation Implementation
+
+### Added
+- **Comprehensive Quiz Question Translation System**: Implemented full translation support for all quiz questions across 5 languages
+  - Created translated question pools for English, Spanish, French, Portuguese, and Chinese (Simplified)
+  - Added `questions.json` files for each language with complete question translations
+  - Updated i18n configuration to include questions namespace
+  - Modified AccessScreen.tsx to use translated questions with fallback to hardcoded questions
+  - Updated DemoQuiz.tsx to use translated questions for demo functionality
+  - Implemented dynamic question loading based on current language selection
+
+### Technical Implementation
+- **Translation Files**: Created comprehensive question translation files for all supported languages
+  - `/src/i18n/locales/en/questions.json` - English questions
+  - `/src/i18n/locales/es/questions.json` - Spanish questions  
+  - `/src/i18n/locales/fr/questions.json` - French questions
+  - `/src/i18n/locales/pt/questions.json` - Portuguese questions
+  - `/src/i18n/locales/zh-CN/questions.json` - Chinese (Simplified) questions
+
+- **Component Updates**:
+  - Updated `AccessScreen.tsx` with `getTranslatedQuestions()` function
+  - Updated `DemoQuiz.tsx` with `getTranslatedDemoQuestions()` function
+  - Added fallback mechanism to ensure questions always display
+  - Maintained backward compatibility with existing question structure
+
+- **i18n Configuration**:
+  - Added questions namespace to i18n configuration
+  - Updated resource imports to include question translations
+  - Ensured proper namespace loading for all languages
+
+### Features
+- **Multi-Language Quiz Support**: Users can now take quizzes in their preferred language
+- **Automatic Language Detection**: Questions automatically display in the user's selected language
+- **Fallback System**: If translations are not available, system falls back to English questions
+- **Consistent Question Structure**: All translated questions maintain the same structure and functionality
+- **Domain-Specific Questions**: Questions are organized by CompTIA Network+ domains (1-5)
+
+### Languages Supported
+- English (en) - Default language
+- Spanish (es) - Español
+- French (fr) - Français  
+- Portuguese (pt) - Português
+- Chinese Simplified (zh-CN) - 中文（简体）
+
+## [2025-01-27] - Multi-Language Internationalization (i18n) Implementation
+
+### Fixed
+- **Landing Page Translation Coverage**: Completed translation of all hardcoded text
+  - Added translations for "Live Practice" badge text
+  - Added translations for "Timed Quiz" modal title
+  - Added translations for "Close" button text
+  - Added translations for accessibility aria-labels (testimonial navigation)
+  - Updated all 5 language files (en, es, fr, pt, zh-CN) with consistent translations
+  - Replaced hardcoded strings with translation keys in landing page component
+- **Translation Namespace Issues**: Fixed navigation and button translation keys
+  - Fixed `navigation.howItWorks`, `navigation.pricing`, `navigation.results` not working
+  - Added proper namespace prefixes (`common:`) for all navigation, button, and footer translations
+  - All translation keys now properly reference their respective namespaces (landing vs common)
+- **Language-Aware Navigation**: Fixed URL routing issues with double paths
+  - Created `useLanguageNavigation` utility hook for consistent language-aware routing
+  - Fixed all navigation calls to use proper language prefixes (e.g., `/en/auth/login` instead of `/auth/login`)
+  - Updated login page, callback pages, checkout page, and all other navigation calls
+  - Fixed admin authentication callback routing
+  - Resolved issue where URLs like `/en/auth/login/auth/login` were being generated
+- **Complete Translation Coverage**: Added missing translations for all hardcoded text
+  - **UnAccessScreen Component**: Translated "Access Denied", subscription messages, and button text
+  - **ProfileSetupModal Component**: Translated modal title, description, form labels, and button text
+  - **SupportBanner Component**: Translated "Support on Ko-fi" text
+  - **AuthLayout Component**: Translated "Sign up" and "Already have an account?" text
+  - **Admin Components**: Translated all admin interface text including error messages, user management, and form labels
+  - **Translation Keys Added**: 
+    - `access.denied`, `access.subscriptionExpired`, `access.trialEnded`, `access.renewSubscription`, `access.subscribeNow`
+    - `profile.completeTitle`, `profile.completeDescription`, `profile.fullName`, `profile.completeProfile`, `profile.settingUpProfile`
+    - `support.supportOnKoFi`
+    - `admin.accessRequired`, `admin.failedToLoad`, `admin.retry`, `admin.userManagement`, `admin.addUser`, `admin.deleteUser`, etc.
+    - `auth.alreadyHaveAccount`, `auth.signUp`
+  - **All Languages Updated**: English, Spanish, French, Portuguese, and Chinese translations added
+  - **Component Updates**: All components now use translation keys instead of hardcoded text
+
+## [2025-01-27] - Multi-Language Internationalization (i18n) Implementation
+
+### Added
+- **Multi-Language Support**: Comprehensive internationalization for 5 languages
+  - English (en) - Default language
+  - Spanish (es) - Español
+  - Mandarin Chinese (zh-CN) - 中文
+  - French (fr) - Français  
+  - Portuguese (pt) - Português
+- **Language Switcher Component**: Global language selector with flag icons
+  - Dropdown interface with keyboard navigation support
+  - Persistent language selection via localStorage
+  - URL path-based language routing (e.g., `/es/home`, `/zh-CN/admin`)
+- **Translation Infrastructure**: Organized translation files by feature
+  - `common.json` - Shared UI elements (buttons, navigation, errors)
+  - `landing.json` - Landing page marketing content
+  - `auth.json` - Authentication pages and forms
+  - `quiz.json` - Quiz interface and domain information
+  - `dashboard.json` - User dashboard content
+- **URL Language Routing**: Path-based language detection
+  - Automatic redirect from root paths to language-prefixed URLs
+  - Language context preservation across navigation
+  - Fallback to English for unsupported language codes
+
+### Changed
+- **Landing Page**: Fully translated marketing content and navigation
+- **Authentication Pages**: Translated login forms and error messages
+- **Quiz Interface**: Translated domain names, session controls, and results
+- **User Dashboard**: Translated welcome messages and subscription status
+- **Navigation**: Language switcher integrated into all user-facing headers
+- **Router Configuration**: Updated to support language path prefixes
+
+### Technical Details
+- **Dependencies**: Added react-i18next, i18next, i18next-browser-languagedetector
+- **Configuration**: i18n setup with localStorage persistence and URL detection
+- **Components**: LanguageSwitch component with accessibility features
+- **Routing**: Enhanced App.tsx with language detection and redirect logic
+- **Translation Keys**: Structured translation system with interpolation support
+
+### Files Modified
+- `src/i18n/config.ts` - i18n configuration and setup
+- `src/components/LanguageSwitch.tsx` - Language switcher component
+- `src/App.tsx` - Router updates for language support
+- `src/main.tsx` - i18n initialization
+- `src/pages/index.tsx` - Landing page translations
+- `src/pages/auth/login.tsx` - Authentication translations
+- `src/components/AccessScreen.tsx` - Quiz interface translations
+- `src/components/LogoutUser.tsx` - Button translations
+- `src/components/layout/AuthLayout.tsx` - Layout with language switcher
+- Translation files in `src/i18n/locales/` for all 5 languages
+
+## [2025-10-20] - Enhanced Magic Link Error Handling
+
+### Changed
+- **Magic Link Authentication**: Improved error handling for magic link email failures
+  - Added specific error detection for "unexpected_failure" errors
+  - Enhanced error messages to guide users when email service is not configured
+  - Added validation for `VITE_APP_URL` environment variable
+  - Improved error handling for SMTP and email configuration issues
+  - Added response data validation to ensure successful API calls
+  - Better error propagation with user-friendly messages
+
+### Fixed
+- **Error Handling**: Fixed issue where generic errors weren't being caught properly
+  - Now catches 500 status errors and "unexpected_failure" codes
+  - Provides clear guidance when email service is misconfigured
+  - Handles edge cases where response data is missing
+  - Improved error message clarity for users
+
+### Technical Details
+- Added checks for all required environment variables (`VITE_SUPABASE_URL`, `VITE_SUPABASE_KEY`, `VITE_APP_URL`)
+- Enhanced error detection to catch SMTP, email configuration, and rate limit issues
+- Improved error handling for both regular and admin magic link authentication
+- Added proper error type checking to prevent generic error messages
+
+### Files Modified
+- `src/services/auth.ts` - Enhanced `sendMagicLink` and `sendAdminMagicLink` functions
+
 ## [2025-10-12] - Enhanced Logout Functionality with External Hub Redirect
 
 ### Changed

@@ -1,0 +1,154 @@
+{
+  "domains": {
+    "1": [
+      {
+        "id": 1,
+        "question": "Which device operates at OSI Layer 3?",
+        "choices": ["Router", "WAP", "Switch", "Hub"],
+        "correct": 0,
+        "explanation": "Routers operate at Layer 3 (Network Layer), making routing decisions based on IP addresses.",
+        "wrongExplanations": [
+          null,
+          "WAP operates at Layer 2, handling wireless frame transmission.",
+          "Switches operate at Layer 2, making decisions based on MAC addresses.",
+          "Hubs operate at Layer 1, simply repeating signals."
+        ],
+        "topic": "1.2 — Network devices"
+      },
+      {
+        "id": 2,
+        "question": "What is the maximum cable length for Cat 6 Ethernet?",
+        "choices": ["50 meters", "100 meters", "200 meters", "500 meters"],
+        "correct": 1,
+        "explanation": "Cat 6 has a maximum length of 100 meters for optimal performance.",
+        "wrongExplanations": [
+          "50 meters is unnecessarily short for Cat 6.",
+          null,
+          "200 meters exceeds Cat 6 specifications.",
+          "500 meters would cause severe signal degradation."
+        ],
+        "topic": "1.3 — Cables & connectors"
+      },
+      {
+        "id": 3,
+        "question": "Which protocol operates at the Transport Layer?",
+        "choices": ["IP", "TCP", "Ethernet", "ARP"],
+        "correct": 1,
+        "explanation": "TCP operates at Layer 4, providing reliable data delivery.",
+        "wrongExplanations": [
+          "IP operates at Layer 3 for routing.",
+          null,
+          "Ethernet operates at Layer 2 for frame transmission.",
+          "ARP operates between Layers 2-3 for address resolution."
+        ],
+        "topic": "1.1 — OSI model"
+      },
+      {
+        "id": 4,
+        "question": "What is the IP address class of 172.16.0.1?",
+        "choices": ["Class A", "Class B", "Class C", "Class D"],
+        "correct": 1,
+        "explanation": "172.16.0.1 falls in the Class B range (128.0.0.0 to 191.255.255.255).",
+        "wrongExplanations": [
+          "Class A ranges from 1.0.0.0 to 126.255.255.255.",
+          null,
+          "Class C ranges from 192.0.0.0 to 223.255.255.255.",
+          "Class D is used for multicast (224.0.0.0 to 239.255.255.255)."
+        ],
+        "topic": "1.4 — IP addressing"
+      },
+      {
+        "id": 5,
+        "question": "How many host addresses are available in a /26 subnet?",
+        "choices": ["30", "62", "126", "254"],
+        "correct": 1,
+        "explanation": "A /26 subnet has 6 host bits, providing 2^6 - 2 = 62 usable host addresses.",
+        "wrongExplanations": [
+          "30 would be for a /27 subnet (5 host bits).",
+          null,
+          "126 would be for a /25 subnet (7 host bits).",
+          "254 would be for a /24 subnet (8 host bits)."
+        ],
+        "topic": "1.4 — IP addressing"
+      }
+    ],
+    "2": [
+      {
+        "id": 6,
+        "question": "Which wireless standard operates at 5 GHz?",
+        "choices": ["802.11b", "802.11g", "802.11n", "802.11ac"],
+        "correct": 3,
+        "explanation": "802.11ac operates exclusively at 5 GHz, providing higher bandwidth.",
+        "wrongExplanations": [
+          "802.11b operates at 2.4 GHz only.",
+          "802.11g operates at 2.4 GHz only.",
+          "802.11n can operate at both 2.4 GHz and 5 GHz.",
+          null
+        ],
+        "topic": "2.1 — Wireless technologies"
+      },
+      {
+        "id": 7,
+        "question": "What is the maximum speed of 802.11n?",
+        "choices": ["54 Mbps", "150 Mbps", "300 Mbps", "600 Mbps"],
+        "correct": 3,
+        "explanation": "802.11n can achieve up to 600 Mbps with 4x4 MIMO configuration.",
+        "wrongExplanations": [
+          "54 Mbps is the maximum for 802.11g.",
+          "150 Mbps is for single-stream 802.11n.",
+          "300 Mbps is for dual-stream 802.11n.",
+          null
+        ],
+        "topic": "2.1 — Wireless technologies"
+      }
+    ],
+    "3": [
+      {
+        "id": 8,
+        "question": "Which protocol is used for email delivery?",
+        "choices": ["HTTP", "SMTP", "FTP", "Telnet"],
+        "correct": 1,
+        "explanation": "SMTP (Simple Mail Transfer Protocol) is used for email delivery between mail servers.",
+        "wrongExplanations": [
+          "HTTP is used for web browsing.",
+          null,
+          "FTP is used for file transfer.",
+          "Telnet is used for remote terminal access."
+        ],
+        "topic": "3.1 — Application protocols"
+      }
+    ],
+    "4": [
+      {
+        "id": 9,
+        "question": "Which encryption method is used by WPA2?",
+        "choices": ["WEP", "TKIP", "AES", "RC4"],
+        "correct": 2,
+        "explanation": "WPA2 uses AES (Advanced Encryption Standard) for strong encryption.",
+        "wrongExplanations": [
+          "WEP is an older, insecure encryption method.",
+          "TKIP is used by WPA, not WPA2.",
+          null,
+          "RC4 is used by WEP and WPA, not WPA2."
+        ],
+        "topic": "4.1 — Wireless security"
+      }
+    ],
+    "5": [
+      {
+        "id": 10,
+        "question": "What is the first step in network troubleshooting?",
+        "choices": ["Identify the problem", "Test the theory", "Establish a plan", "Document findings"],
+        "correct": 0,
+        "explanation": "The first step is to identify and define the problem before taking any action.",
+        "wrongExplanations": [
+          null,
+          "Testing the theory comes after establishing a plan.",
+          "Establishing a plan comes after identifying the problem.",
+          "Documenting findings is the final step."
+        ],
+        "topic": "5.1 — Troubleshooting methodology"
+      }
+    ]
+  }
+}

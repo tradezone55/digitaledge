@@ -1,0 +1,154 @@
+{
+  "domains": {
+    "1": [
+      {
+        "id": 1,
+        "question": "哪个设备在OSI第3层运行？",
+        "choices": ["路由器", "WAP", "交换机", "集线器"],
+        "correct": 0,
+        "explanation": "路由器在第3层（网络层）运行，基于IP地址做出路由决策。",
+        "wrongExplanations": [
+          null,
+          "WAP在第2层运行，处理无线帧传输。",
+          "交换机在第2层运行，基于MAC地址做出决策。",
+          "集线器在第1层运行，只是重复信号。"
+        ],
+        "topic": "1.2 — 网络设备"
+      },
+      {
+        "id": 2,
+        "question": "Cat 6以太网的最大电缆长度是多少？",
+        "choices": ["50米", "100米", "200米", "500米"],
+        "correct": 1,
+        "explanation": "Cat 6的最佳性能最大长度为100米。",
+        "wrongExplanations": [
+          "50米对Cat 6来说不必要地短。",
+          null,
+          "200米超过了Cat 6的规格。",
+          "500米会导致严重的信号衰减。"
+        ],
+        "topic": "1.3 — 电缆和连接器"
+      },
+      {
+        "id": 3,
+        "question": "哪个协议在传输层运行？",
+        "choices": ["IP", "TCP", "以太网", "ARP"],
+        "correct": 1,
+        "explanation": "TCP在第4层运行，提供可靠的数据传输。",
+        "wrongExplanations": [
+          "IP在第3层运行用于路由。",
+          null,
+          "以太网在第2层运行用于帧传输。",
+          "ARP在第2-3层之间运行用于地址解析。"
+        ],
+        "topic": "1.1 — OSI模型"
+      },
+      {
+        "id": 4,
+        "question": "172.16.0.1的IP地址类别是什么？",
+        "choices": ["A类", "B类", "C类", "D类"],
+        "correct": 1,
+        "explanation": "172.16.0.1属于B类范围（128.0.0.0到191.255.255.255）。",
+        "wrongExplanations": [
+          "A类范围从1.0.0.0到126.255.255.255。",
+          null,
+          "C类范围从192.0.0.0到223.255.255.255。",
+          "D类用于组播（224.0.0.0到239.255.255.255）。"
+        ],
+        "topic": "1.4 — IP寻址"
+      },
+      {
+        "id": 5,
+        "question": "/26子网中有多少个主机地址可用？",
+        "choices": ["30", "62", "126", "254"],
+        "correct": 1,
+        "explanation": "/26子网有6个主机位，提供2^6 - 2 = 62个可用主机地址。",
+        "wrongExplanations": [
+          "30是/27子网（5个主机位）。",
+          null,
+          "126是/25子网（7个主机位）。",
+          "254是/24子网（8个主机位）。"
+        ],
+        "topic": "1.4 — IP寻址"
+      }
+    ],
+    "2": [
+      {
+        "id": 6,
+        "question": "哪个无线标准在5 GHz运行？",
+        "choices": ["802.11b", "802.11g", "802.11n", "802.11ac"],
+        "correct": 3,
+        "explanation": "802.11ac专门在5 GHz运行，提供更高的带宽。",
+        "wrongExplanations": [
+          "802.11b只在2.4 GHz运行。",
+          "802.11g只在2.4 GHz运行。",
+          "802.11n可以在2.4 GHz和5 GHz运行。",
+          null
+        ],
+        "topic": "2.1 — 无线技术"
+      },
+      {
+        "id": 7,
+        "question": "802.11n的最大速度是多少？",
+        "choices": ["54 Mbps", "150 Mbps", "300 Mbps", "600 Mbps"],
+        "correct": 3,
+        "explanation": "802.11n在4x4 MIMO配置下可以达到600 Mbps。",
+        "wrongExplanations": [
+          "54 Mbps是802.11g的最大值。",
+          "150 Mbps是单流802.11n。",
+          "300 Mbps是双流802.11n。",
+          null
+        ],
+        "topic": "2.1 — 无线技术"
+      }
+    ],
+    "3": [
+      {
+        "id": 8,
+        "question": "哪个协议用于电子邮件传递？",
+        "choices": ["HTTP", "SMTP", "FTP", "Telnet"],
+        "correct": 1,
+        "explanation": "SMTP（简单邮件传输协议）用于邮件服务器之间的电子邮件传递。",
+        "wrongExplanations": [
+          "HTTP用于网页浏览。",
+          null,
+          "FTP用于文件传输。",
+          "Telnet用于远程终端访问。"
+        ],
+        "topic": "3.1 — 应用协议"
+      }
+    ],
+    "4": [
+      {
+        "id": 9,
+        "question": "WPA2使用哪种加密方法？",
+        "choices": ["WEP", "TKIP", "AES", "RC4"],
+        "correct": 2,
+        "explanation": "WPA2使用AES（高级加密标准）进行强加密。",
+        "wrongExplanations": [
+          "WEP是一种较旧、不安全的加密方法。",
+          "TKIP用于WPA，不用于WPA2。",
+          null,
+          "RC4用于WEP和WPA，不用于WPA2。"
+        ],
+        "topic": "4.1 — 无线安全"
+      }
+    ],
+    "5": [
+      {
+        "id": 10,
+        "question": "网络故障排除的第一步是什么？",
+        "choices": ["识别问题", "测试理论", "制定计划", "记录发现"],
+        "correct": 0,
+        "explanation": "第一步是在采取任何行动之前识别和定义问题。",
+        "wrongExplanations": [
+          null,
+          "测试理论在制定计划之后。",
+          "制定计划在识别问题之后。",
+          "记录发现是最后一步。"
+        ],
+        "topic": "5.1 — 故障排除方法"
+      }
+    ]
+  }
+}

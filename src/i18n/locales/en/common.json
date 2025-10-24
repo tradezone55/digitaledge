@@ -1,0 +1,114 @@
+{
+  "buttons": {
+    "login": "Login",
+    "logout": "Logout",
+    "logoutLoading": "Logging out...",
+    "sendMagicLink": "Send Magic Link",
+    "sendingMagicLink": "Sending magic link...",
+    "startSession": "Start Session",
+    "next": "Next",
+    "finish": "Finish",
+    "retry": "Retry",
+    "backToDashboard": "Back to Dashboard",
+    "advanceToNext": "Advance to Domain {{domain}}",
+    "subscribeNow": "Subscribe Now",
+    "renewSubscription": "Renew Subscription",
+    "getEarlyAccess": "Get Early Access",
+    "seeFeatures": "See Features",
+    "takeTimedQuiz": "Take a Timed Quiz",
+    "viewExplanations": "View Explanations",
+    "joinNow": "Join Now",
+    "talkToUs": "Talk to Us",
+    "close": "Close"
+  },
+  "navigation": {
+    "features": "Features",
+    "howItWorks": "How it works",
+    "pricing": "Pricing",
+    "results": "Results"
+  },
+  "labels": {
+    "email": "Email",
+    "emailPlaceholder": "Enter your email address",
+    "welcomeBack": "Welcome Back",
+    "currentDomain": "Current Domain",
+    "questionsPerSession": "50 Q per session",
+    "time": "Time",
+    "score": "Score",
+    "question": "Q {{current}}/{{total}}"
+  },
+  "status": {
+    "loading": "Loading...",
+    "sessionRestored": "Session Restored",
+    "gracePeriodActive": "Grace Period Active",
+    "accessDenied": "Access Denied",
+    "certificationReady": "Certification Ready!"
+  },
+  "messages": {
+    "sessionRestoredDesc": "Your previous testing session has been restored. You can continue from question {{question}}.",
+    "gracePeriodDesc": "Your subscription has expired, but you have {{days}} day{{days !== 1 ? 's' : ''}} remaining in your grace period.",
+    "renewNow": "Renew now",
+    "toContinueAccess": "to continue uninterrupted access.",
+    "subscriptionEnded": "Your free trial or subscription has ended. Please subscribe to continue using the app.",
+    "gracePeriodExpired": "Your subscription has expired, but you have {{days}} day{{days !== 1 ? 's' : ''}} left to renew and maintain access.",
+    "profileSetupRequired": "Please complete your profile setup first",
+    "magicLinkSent": "Magic link sent successfully",
+    "magicLinkError": "Failed to send magic link"
+  },
+  "footer": {
+    "poweredBy": "Powered by",
+    "allRightsReserved": "All rights reserved",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "contact": "Contact"
+  },
+  "access": {
+    "denied": "Access Denied",
+    "subscriptionExpired": "Your subscription has expired, but you have {{days}} day{{days !== 1 ? 's' : ''}} left to renew and maintain access.",
+    "trialEnded": "Your free trial or subscription has ended. Please subscribe to continue using the app.",
+    "renewSubscription": "Renew Subscription",
+    "subscribeNow": "Subscribe Now"
+  },
+  "profile": {
+    "completeTitle": "Complete Your Profile",
+    "completeDescription": "Welcome! Please complete your profile to enjoy the platform",
+    "fullName": "Full Name",
+    "fullNamePlaceholder": "Enter your full name",
+    "emailPlaceholder": "Enter your email",
+    "completeProfile": "Complete Profile",
+    "settingUpProfile": "Setting up profile..."
+  },
+  "support": {
+    "supportOnKoFi": "Support on Ko-fi"
+  },
+  "admin": {
+    "accessRequired": "Admin access required",
+    "failedToLoad": "Failed to load admin data",
+    "retry": "Retry",
+    "userManagement": "User Management",
+    "addUser": "Add User",
+    "deleteUser": "Delete User",
+    "deleteUserDescription": "This action cannot be undone",
+    "areYouSureDelete": "Are you sure you want to delete this user?",
+    "deleteUserWarning": "This will permanently delete the user and all their subscription data.",
+    "userDetails": "User Details:",
+    "name": "Name:",
+    "email": "Email:",
+    "userId": "User ID:",
+    "cancel": "Cancel",
+    "deleting": "Deleting...",
+    "addNewUser": "Add New User",
+    "addNewUserDescription": "Add a new user to the system",
+    "creating": "Creating...",
+    "create": "Create",
+    "extendSubscription": "Extend Subscription",
+    "durationMonths": "Duration (months)",
+    "reasonOptional": "Reason (optional)",
+    "reasonPlaceholder": "Enter reason for this action...",
+    "user": "User",
+    "joined": "Joined",
+    "status": "Status",
+    "active": "Active",
+    "actions": "Actions"
+  }
+}

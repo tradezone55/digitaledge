@@ -3,13 +3,17 @@ import Logo from "./ui/Logo";
 import LogoutUser from "./LogoutUser";
 import { useSubscriptionStatus } from "../hooks/useSubscriptionStatus";
 import SupportBanner from "./SupportBanner";
+import { useLanguageNavigation } from "../utils/navigation";
+import { useTranslation } from "react-i18next";
 
 const UnAccessScreen = () => {
   const navigate = useNavigate();
   const { graceDaysLeft } = useSubscriptionStatus();
+  const { getLanguagePath } = useLanguageNavigation();
+  const { t } = useTranslation(['common']);
 
   const handleGetAccess = () => {
-    return navigate("/home/checkout");
+    return navigate(getLanguagePath("home/checkout"));
   };
 
   return (
@@ -25,18 +29,17 @@ const UnAccessScreen = () => {
                 🔒
               </span>
             </div>
-            <h1 className="text-2xl font-bold mb-2">Access Denied</h1>
+            <h1 className="text-2xl font-bold mb-2">{t('common:access.denied')}</h1>
             <p className="text-base text-[#94a3b8] mb-6">
               {graceDaysLeft > 0
-                ? `Your subscription has expired, but you have ${graceDaysLeft} day${graceDaysLeft !== 1 ? "s" : ""
-                } left to renew and maintain access.`
-                : "Your free trial or subscription has ended. Please subscribe to continue using the app."}
+                ? t('common:access.subscriptionExpired', { days: graceDaysLeft })
+                : t('common:access.trialEnded')}
             </p>
             <button
               className="bg-blue-600 hover:bg-blue-700 text-white rounded-lg px-6 py-3 font-semibold text-base shadow-md transition-colors duration-200"
               onClick={handleGetAccess}
             >
-              {graceDaysLeft > 0 ? "Renew Subscription" : "Subscribe Now"}
+              {graceDaysLeft > 0 ? t('common:access.renewSubscription') : t('common:access.subscribeNow')}
             </button>
           </div>
         </div>

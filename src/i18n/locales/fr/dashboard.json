@@ -1,0 +1,10 @@
+{
+  "welcome": "Bon Retour",
+  "subscription": {
+    "trialEndsIn": "L'essai gratuit se termine dans {{days}} Jours",
+    "subscriptionEndsIn": "L'abonnement se termine dans {{days}} Jours"
+  },
+  "system": {
+    "title": "Système de Test de Domaine CompTIA Network+"
+  }
+}

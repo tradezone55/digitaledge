@@ -11,6 +11,7 @@ import { IUser } from "../types/user";
 import { profileSetupSchema, ProfileSetupFormData } from "../schemas/auth";
 import supabase from "../supabase";
 import { CustomModal } from "./ui/custom-modal";
+import { useTranslation } from "react-i18next";
 
 interface InputField {
   label: string;
@@ -35,6 +36,7 @@ const ProfileSetupModal: React.FC<ProfileSetupModalProps> = ({
   closable = true
 }) => {
   const { setUser, setAuthenticated } = useUserStore();
+  const { t } = useTranslation(['common']);
 
   const {
     register,
@@ -98,8 +100,8 @@ const ProfileSetupModal: React.FC<ProfileSetupModalProps> = ({
 
   return (
     <CustomModal
-      title="Complete Your Profile"
-      description="Welcome! Please complete your profile to enjoy the platform"
+      title={t('common:profile.completeTitle')}
+      description={t('common:profile.completeDescription')}
       open={open}
       onOpenChange={onOpenChange}
       closable={closable}
@@ -108,7 +110,7 @@ const ProfileSetupModal: React.FC<ProfileSetupModalProps> = ({
         className="w-full space-y-4 mt-4"
         onSubmit={handleSubmit(onSubmit)}
       >
-        {inputLists.map((input) => (
+        {getInputLists(t).map((input) => (
           <Input
             key={input.name.toString()}
             {...input}
@@ -129,9 +131,9 @@ const ProfileSetupModal: React.FC<ProfileSetupModalProps> = ({
             className="w-full p-2 rounded-md bg-blue-600 text-white"
             disabled={isPending}
             loading={isPending}
-            loadingText="Setting up profile..."
+            loadingText={t('common:profile.settingUpProfile')}
           >
-            Complete Profile
+            {t('common:profile.completeProfile')}
           </Button>
         </div>
       </form>
@@ -141,18 +143,18 @@ const ProfileSetupModal: React.FC<ProfileSetupModalProps> = ({
 
 export default ProfileSetupModal;
 
-const inputLists: InputField[] = [
+const getInputLists = (t: any): InputField[] => [
   {
-    label: "Full Name",
+    label: t('common:profile.fullName'),
     type: "text",
-    placeholder: "Enter your full name",
+    placeholder: t('common:profile.fullNamePlaceholder'),
     name: "name",
     required: true,
   },
   {
-    label: "Email",
+    label: t('common:labels.email'),
     type: "email",
-    placeholder: "Enter your email",
+    placeholder: t('common:profile.emailPlaceholder'),
     name: "email",
     required: true,
     readOnly: true,

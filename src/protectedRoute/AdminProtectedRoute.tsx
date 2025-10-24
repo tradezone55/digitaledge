@@ -2,10 +2,12 @@ import React from "react";
 import { Navigate, Outlet } from "react-router";
 import { useAdminStore } from "../stores/admin";
 import CustomLoader from "../components/CustomLoader/page";
+import { useLanguageNavigation } from "../utils/navigation";
 
 
 const AdminProtectedRoute: React.FC = () => {
   const { isAuthenticated, isLoading } = useAdminStore();
+  const { getLanguagePath } = useLanguageNavigation();
 
   console.log(isAuthenticated, "isAuthenticated");
 
@@ -15,7 +17,7 @@ const AdminProtectedRoute: React.FC = () => {
 
   // Redirect to admin login if not authenticated
   if (!isAuthenticated) {
-    return <Navigate to="/admin/login" replace />;
+    return <Navigate to={getLanguagePath("admin/login")} replace />;
   }
 
   return <Outlet />;
