@@ -1,5 +1,9 @@
 import React from 'react'
 
+interface LogoProps {
+  size?: 'sm' | 'md' | 'lg'
+}
+
 const Logo: React.FC<LogoProps> = ({ size = 'md' }) => {
 
   const sizeMap = {
@@ -21,6 +25,3 @@ const Logo: React.FC<LogoProps> = ({ size = 'md' }) => {
 }
 
 export default Logo
-interface LogoProps {
-  size?: 'sm' | 'md' | 'lg'
-}

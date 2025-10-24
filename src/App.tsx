@@ -33,11 +33,10 @@ const LanguageDetector = () => {
         i18n.changeLanguage(languageParam);
       }
     } else {
-      // No language in query params, redirect to default language
-      const currentPath = location.pathname;
-      const currentSearch = location.search;
-      const newSearch = currentSearch ? `${currentSearch}&lang=en` : '?lang=en';
-      window.location.replace(`${currentPath}${newSearch}`);
+      // No language in query params, set default language without redirect
+      if (i18n.language !== 'en') {
+        i18n.changeLanguage('en');
+      }
     }
   }, [location.search, i18n]);
 
@@ -45,17 +44,18 @@ const LanguageDetector = () => {
 };
 
 function App() {
+  console.log('App component rendering');
   return (
     <QueryProvider>
       <BrowserRouter>
         <LanguageDetector />
         <Suspense fallback={<CustomLoader />}>
-          <Routes>
-            {/* All routes without language prefix */}
-            <Route path="/*" element={<LanguageRoutes />} />
-            {/* Redirect root to default language */}
-            <Route path="/" element={<Navigate to="/?lang=en" replace />} />
-          </Routes>
+          <div>
+            <Routes>
+              {/* All routes including root */}
+              <Route path="/*" element={<LanguageRoutes />} />
+            </Routes>
+          </div>
         </Suspense>
       </BrowserRouter>
     </QueryProvider>
@@ -64,10 +64,11 @@ function App() {
 
 // Main routes component (no longer language-specific)
 const LanguageRoutes = () => {
+  console.log('LanguageRoutes rendering');
   return (
     <Routes>
       {/* Public Routes */}
-      <Route index element={<EnhancedLandingPage />} />
+      <Route path="/" element={<EnhancedLandingPage />} />
       <Route path="auth/login" element={<LoginPage />} />
       <Route path="login" element={<Navigate to="auth/login" replace />} />
       <Route path="auth/callback" element={<AuthCallback />} />
