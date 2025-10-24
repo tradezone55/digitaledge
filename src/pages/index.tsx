@@ -49,6 +49,7 @@ const smoothScrollTo = (elementId: string) => {
 };
 
 export default function EnhancedLandingPage() {
+  console.log('EnhancedLandingPage rendering');
   const { t } = useTranslation(['landing', 'common']);
   const { getLanguagePath } = useLanguageNavigation();
   const [showQuizModal, setShowQuizModal] = useState(false);
