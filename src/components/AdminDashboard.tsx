@@ -15,10 +15,12 @@ import SearchBar from "./ui/SearchBar";
 import TabNavigation from "./admin/TabNavigation";
 import SkeletonLoader from "./admin/SkeletonLoader";
 import ErrorUI from "./admin/ErrorUI";
+import { useTranslation } from "react-i18next";
 
 
 const AdminDashboard: React.FC = () => {
   const { admin, clearAdmin } = useAdminStore();
+  const { t } = useTranslation(['common']);
   const [activeTab, setActiveTab] = useState<
     "overview" | "users" | "subscriptions"
   >("overview");
@@ -71,7 +73,7 @@ const AdminDashboard: React.FC = () => {
       <div className="bg-gray-800 rounded-lg p-6">
         <div className="text-center text-gray-400">
           <Shield className="w-12 h-12 mx-auto mb-4" />
-          <p>Admin access required</p>
+          <p>{t('common:admin.accessRequired')}</p>
         </div>
       </div>
     );

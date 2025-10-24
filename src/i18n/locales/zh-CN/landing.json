@@ -1,0 +1,103 @@
+{
+  "hero": {
+    "badge": "24小时内上线",
+    "title": "通过真实考试练习掌握Network+",
+    "subtitle": "由思科学院和AWS讲师设计的高影响力测试系统。像比赛日一样训练——计时、评分和解释。",
+    "examDomainsCovered": "涵盖考试域",
+    "cloudOnPremScenarios": "云和本地场景"
+  },
+  "features": {
+    "title": "功能",
+    "subtitle": "您需要的一切，以目标为导向训练，自信通过考试。",
+    "examStyleQuestions": {
+      "title": "考试风格题目",
+      "desc": "映射到CompTIA Network+目标的练习。"
+    },
+    "instantFeedback": {
+      "title": "即时反馈",
+      "desc": "解释每个答案背后的原因。"
+    },
+    "mobileFriendly": {
+      "title": "移动友好",
+      "desc": "随时随地训练——桌面、平板或手机。"
+    },
+    "instructorBuilt": {
+      "title": "讲师构建",
+      "desc": "由思科学院和AWS讲师设计。"
+    }
+  },
+  "howItWorks": {
+    "joinBeta": {
+      "title": "加入测试版",
+      "desc": "预订您的位置并接收访问链接。"
+    },
+    "startPracticing": {
+      "title": "开始练习",
+      "desc": "实时评分的计时测验。"
+    },
+    "trackProgress": {
+      "title": "跟踪进度",
+      "desc": "查看优势、差距和趋势。"
+    },
+    "passWithConfidence": {
+      "title": "自信通过",
+      "desc": "以自信而非压力迎接考试日。"
+    }
+  },
+  "pricing": {
+    "betaOffer": {
+      "badge": "限时测试版",
+      "title": "早期访问（测试版）",
+      "desc": "测试版期间的介绍价格。功能和内容可能会根据反馈而改变。",
+      "price": "免费60天试用",
+      "priceSubtext": "测试版期间的介绍价格",
+      "features": [
+        "完全访问所有域",
+        "计时测验和即时解释",
+        "进度跟踪仪表板",
+        "测试版更新和新问题包"
+      ],
+      "guarantee": "访问保证：如果您在购买后无法访问，我们将提供免费访问直到问题解决。"
+    },
+    "classroomLicense": {
+      "badge": "教育工作者",
+      "title": "课堂许可证",
+      "desc": "带有邀请码和讲师分析的位置包。",
+      "price": "定制"
+    }
+  },
+  "testimonials": {
+    "title": "有说服力的结果",
+    "quotes": [
+      {
+        "text": "这个培训开阔了我的眼界，加速了我对网络概念的掌握。",
+        "author": "A. Sahu, 博士",
+        "title": "教授和IEEE高级会员"
+      },
+      {
+        "text": "犀利、实用、引人入胜。第一周后我就为真正的考试做好了准备！",
+        "author": "网络管理员候选人",
+        "title": "训练营毕业生"
+      },
+      {
+        "text": "即时反馈起了作用。我终于理解了我的薄弱环节。",
+        "author": "IT学生",
+        "title": "测试版用户"
+      }
+    ]
+  },
+  "sampleQuiz": {
+    "title": "示例问题",
+    "question": "OSI模型的哪一层负责路径确定和逻辑寻址？",
+    "options": ["物理层", "数据链路层", "网络层", "传输层"],
+    "correctAnswer": "正确：C — 网络层（第3层）处理路由和逻辑寻址（IP）。"
+  },
+  "livePractice": "实时练习",
+  "timedQuiz": "计时测验",
+  "close": "关闭",
+  "ariaLabels": {
+    "previousTestimonials": "上一个推荐",
+    "nextTestimonials": "下一个推荐",
+    "goToTestimonial": "转到推荐 {{index}}"
+  }
+}

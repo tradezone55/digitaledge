@@ -9,6 +9,8 @@ import { sendMagicLink } from "../../services/auth";
 import { useMutation } from "@tanstack/react-query";
 import { useNavigate } from "react-router-dom";
 import { z } from "zod";
+import { useTranslation } from "react-i18next";
+import { useLanguageNavigation } from "../../utils/navigation";
 
 const magicLinkSchema = z.object({
   email: z
@@ -28,7 +30,9 @@ interface InputField {
 }
 
 const LoginPage: React.FC = () => {
+  const { t } = useTranslation(['auth', 'common']);
   const navigate = useNavigate();
+  const { getLanguagePath } = useLanguageNavigation();
 
   const {
     register,
@@ -38,24 +42,34 @@ const LoginPage: React.FC = () => {
     resolver: zodResolver(magicLinkSchema),
   });
 
+  const inputLists: InputField[] = [
+    {
+      label: t('common:labels.email'),
+      type: 'email',
+      placeholder: t('common:labels.emailPlaceholder'),
+      name: 'email',
+      required: true,
+    },
+  ];
+
   // Check if user is in registration flow and redirect them
   useEffect(() => {
     const isInRegistrationFlow = localStorage.getItem('isInRegistrationFlow');
     if (isInRegistrationFlow === 'true') {
-      toast.info('Please complete your profile setup first');
-      navigate('/home');
+      toast.info(t('messages.profileSetupRequired'));
+      navigate(getLanguagePath('home'));
     }
-  }, [navigate]);
+  }, [navigate, t, getLanguagePath]);
 
   const { mutate: sendLink, isPending } = useMutation({
     mutationFn: sendMagicLink,
     onSuccess: (data) => {
       if (data?.success) {
-        toast.success(data.message);
+        toast.success(t('messages.magicLinkSent'));
       }
     },
-    onError: (error) => {
-      toast.error(error.message);
+    onError: () => {
+      toast.error(t('messages.magicLinkError'));
     },
   });
 
@@ -65,7 +79,7 @@ const LoginPage: React.FC = () => {
 
   return (
     <AuthLayout
-      description="Enter your email to receive a magic link for secure login"
+      description={t('login.title')}
       link=""
       linkText=""
       linkContent=""
@@ -95,9 +109,9 @@ const LoginPage: React.FC = () => {
             className="w-full p-2 rounded-md bg-blue-600 text-white"
             disabled={isPending}
             loading={isPending}
-            loadingText="Sending magic link..."
+            loadingText={t('common:buttons.sendingMagicLink')}
           >
-            Send Magic Link
+            {t('common:buttons.sendMagicLink')}
           </Button>
         </div>
       </form>
@@ -106,13 +120,3 @@ const LoginPage: React.FC = () => {
 };
 
 export default LoginPage;
-
-const inputLists: InputField[] = [
-  {
-    label: "Email",
-    type: "email",
-    placeholder: "Enter your email address",
-    name: "email",
-    required: true,
-  },
-];

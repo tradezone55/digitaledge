@@ -1,0 +1,154 @@
+{
+  "domains": {
+    "1": [
+      {
+        "id": 1,
+        "question": "¿Qué dispositivo opera en la Capa 3 del OSI?",
+        "choices": ["Router", "WAP", "Switch", "Hub"],
+        "correct": 0,
+        "explanation": "Los routers operan en la Capa 3 (Capa de Red), tomando decisiones de enrutamiento basadas en direcciones IP.",
+        "wrongExplanations": [
+          null,
+          "WAP opera en la Capa 2, manejando la transmisión de tramas inalámbricas.",
+          "Los switches operan en la Capa 2, tomando decisiones basadas en direcciones MAC.",
+          "Los hubs operan en la Capa 1, simplemente repitiendo señales."
+        ],
+        "topic": "1.2 — Dispositivos de red"
+      },
+      {
+        "id": 2,
+        "question": "¿Cuál es la longitud máxima de cable para Ethernet Cat 6?",
+        "choices": ["50 metros", "100 metros", "200 metros", "500 metros"],
+        "correct": 1,
+        "explanation": "Cat 6 tiene una longitud máxima de 100 metros para un rendimiento óptimo.",
+        "wrongExplanations": [
+          "50 metros es innecesariamente corto para Cat 6.",
+          null,
+          "200 metros excede las especificaciones de Cat 6.",
+          "500 metros causaría una degradación severa de la señal."
+        ],
+        "topic": "1.3 — Cables y conectores"
+      },
+      {
+        "id": 3,
+        "question": "¿Qué protocolo opera en la Capa de Transporte?",
+        "choices": ["IP", "TCP", "Ethernet", "ARP"],
+        "correct": 1,
+        "explanation": "TCP opera en la Capa 4, proporcionando entrega confiable de datos.",
+        "wrongExplanations": [
+          "IP opera en la Capa 3 para enrutamiento.",
+          null,
+          "Ethernet opera en la Capa 2 para transmisión de tramas.",
+          "ARP opera entre las Capas 2-3 para resolución de direcciones."
+        ],
+        "topic": "1.1 — Modelo OSI"
+      },
+      {
+        "id": 4,
+        "question": "¿Cuál es la clase de dirección IP de 172.16.0.1?",
+        "choices": ["Clase A", "Clase B", "Clase C", "Clase D"],
+        "correct": 1,
+        "explanation": "172.16.0.1 cae en el rango de Clase B (128.0.0.0 a 191.255.255.255).",
+        "wrongExplanations": [
+          "La Clase A va de 1.0.0.0 a 126.255.255.255.",
+          null,
+          "La Clase C va de 192.0.0.0 a 223.255.255.255.",
+          "La Clase D se usa para multicast (224.0.0.0 a 239.255.255.255)."
+        ],
+        "topic": "1.4 — Direccionamiento IP"
+      },
+      {
+        "id": 5,
+        "question": "¿Cuántas direcciones de host están disponibles en una subred /26?",
+        "choices": ["30", "62", "126", "254"],
+        "correct": 1,
+        "explanation": "Una subred /26 tiene 6 bits de host, proporcionando 2^6 - 2 = 62 direcciones de host utilizables.",
+        "wrongExplanations": [
+          "30 sería para una subred /27 (5 bits de host).",
+          null,
+          "126 sería para una subred /25 (7 bits de host).",
+          "254 sería para una subred /24 (8 bits de host)."
+        ],
+        "topic": "1.4 — Direccionamiento IP"
+      }
+    ],
+    "2": [
+      {
+        "id": 6,
+        "question": "¿Qué estándar inalámbrico opera a 5 GHz?",
+        "choices": ["802.11b", "802.11g", "802.11n", "802.11ac"],
+        "correct": 3,
+        "explanation": "802.11ac opera exclusivamente a 5 GHz, proporcionando mayor ancho de banda.",
+        "wrongExplanations": [
+          "802.11b opera solo a 2.4 GHz.",
+          "802.11g opera solo a 2.4 GHz.",
+          "802.11n puede operar tanto a 2.4 GHz como a 5 GHz.",
+          null
+        ],
+        "topic": "2.1 — Tecnologías inalámbricas"
+      },
+      {
+        "id": 7,
+        "question": "¿Cuál es la velocidad máxima de 802.11n?",
+        "choices": ["54 Mbps", "150 Mbps", "300 Mbps", "600 Mbps"],
+        "correct": 3,
+        "explanation": "802.11n puede alcanzar hasta 600 Mbps con configuración MIMO 4x4.",
+        "wrongExplanations": [
+          "54 Mbps es el máximo para 802.11g.",
+          "150 Mbps es para 802.11n de flujo único.",
+          "300 Mbps es para 802.11n de doble flujo.",
+          null
+        ],
+        "topic": "2.1 — Tecnologías inalámbricas"
+      }
+    ],
+    "3": [
+      {
+        "id": 8,
+        "question": "¿Qué protocolo se usa para la entrega de correo electrónico?",
+        "choices": ["HTTP", "SMTP", "FTP", "Telnet"],
+        "correct": 1,
+        "explanation": "SMTP (Simple Mail Transfer Protocol) se usa para la entrega de correo entre servidores de correo.",
+        "wrongExplanations": [
+          "HTTP se usa para navegación web.",
+          null,
+          "FTP se usa para transferencia de archivos.",
+          "Telnet se usa para acceso remoto a terminal."
+        ],
+        "topic": "3.1 — Protocolos de aplicación"
+      }
+    ],
+    "4": [
+      {
+        "id": 9,
+        "question": "¿Qué método de cifrado usa WPA2?",
+        "choices": ["WEP", "TKIP", "AES", "RC4"],
+        "correct": 2,
+        "explanation": "WPA2 usa AES (Advanced Encryption Standard) para cifrado fuerte.",
+        "wrongExplanations": [
+          "WEP es un método de cifrado más antiguo e inseguro.",
+          "TKIP se usa en WPA, no en WPA2.",
+          null,
+          "RC4 se usa en WEP y WPA, no en WPA2."
+        ],
+        "topic": "4.1 — Seguridad inalámbrica"
+      }
+    ],
+    "5": [
+      {
+        "id": 10,
+        "question": "¿Cuál es el primer paso en la resolución de problemas de red?",
+        "choices": ["Identificar el problema", "Probar la teoría", "Establecer un plan", "Documentar hallazgos"],
+        "correct": 0,
+        "explanation": "El primer paso es identificar y definir el problema antes de tomar cualquier acción.",
+        "wrongExplanations": [
+          null,
+          "Probar la teoría viene después de establecer un plan.",
+          "Establecer un plan viene después de identificar el problema.",
+          "Documentar hallazgos es el paso final."
+        ],
+        "topic": "5.1 — Metodología de resolución de problemas"
+      }
+    ]
+  }
+}

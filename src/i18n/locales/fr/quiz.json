@@ -1,0 +1,86 @@
+{
+  "domains": {
+    "1": "Fondamentaux du Réseau",
+    "2": "Implémentations Réseau",
+    "3": "Opérations Réseau",
+    "4": "Sécurité Réseau",
+    "5": "Dépannage Réseau"
+  },
+  "session": {
+    "readyToTest": "Prêt à Tester le Domaine {{domain}} ?",
+    "sessionDescription": "Vous répondrez à 50 questions sélectionnées au hasard de {{domainName}}. Vous avez besoin de 70% pour passer au domaine suivant.",
+    "beginTest": "Commencer le Test du Domaine {{domain}}",
+    "sequentialMastery": "Système de maîtrise séquentielle : réussir ≥70%, nouvelle tentative automatique, pools de questions complets avec explications.",
+    "questionPoolInfo": "Questions complètes couvrant les objectifs d'examen.",
+    "poolSize": "Taille du Pool",
+    "perSession": "Par Session",
+    "passThreshold": "Seuil de Réussite",
+    "questions": "questions",
+    "passThresholdValue": "70% (35/50)"
+  },
+  "results": {
+    "congratulations": "Félicitations !",
+    "keepStudying": "Continuez à Étudier !",
+    "passedDomain": "Vous avez réussi le Domaine {{domain}} !",
+    "need70Percent": "Vous avez besoin de 70% pour passer au Domaine {{nextDomain}}",
+    "questionsCorrect": "Questions Correctes",
+    "finalScore": "Score Final",
+    "timeTaken": "Temps Pris",
+    "reviewIncorrect": "Révisez Vos Réponses Incorrectes",
+    "perfectScore": "Parfait ! Vous avez répondu correctement à toutes les questions !",
+    "yourAnswer": "Votre Réponse",
+    "whyIncorrect": "Pourquoi cette réponse est incorrecte :",
+    "advanceToNext": "Passer au Domaine {{domain}}",
+    "retryDomain": "Réessayer le Domaine {{domain}}",
+    "certificationReady": "Certification Prête !",
+    "masteredAllDomains": "Vous avez maîtrisé tous les 5 domaines !"
+  },
+  "attempts": {
+    "title": "Tentatives — Domaine {{domain}}",
+    "savedLocally": "Sauvegardé localement dans votre navigateur.",
+    "noAttempts": "Aucune tentative pour le moment",
+    "headers": {
+      "number": "#",
+      "date": "Date",
+      "score": "Score",
+      "duration": "Durée"
+    }
+  },
+  "questionPool": {
+    "title": "Banque de Questions",
+    "description": "Questions complètes couvrant les objectifs d'examen.",
+    "poolSize": "Taille de la Banque",
+    "perSession": "Par Session",
+    "perSessionValue": "50 questions",
+    "passThreshold": "Seuil de Réussite",
+    "passThresholdValue": "70% (35/50)"
+  },
+  "subscription": {
+    "trialEndsIn": "L'essai gratuit se termine dans {{days}} Jours",
+    "subscriptionEndsIn": "L'abonnement se termine dans {{days}} Jours"
+  },
+  "demo": {
+    "title": "Essayez Notre Démo",
+    "description": "Découvrez notre format de questions complet avec 5 questions d'exemple du Domaine 1. Obtenez des commentaires instantanés et des explications pour chaque réponse.",
+    "startDemo": "Commencer la Démo",
+    "skipDemo": "Passer la Démo",
+    "demoComplete": "Démo Terminée !",
+    "scoreDescription": "Vous avez répondu correctement à {{correct}} sur {{total}} questions ({{percentage}}%)",
+    "questionsCorrect": "Questions Correctes",
+    "finalScore": "Score Final",
+    "timeTaken": "Temps Pris",
+    "getFullAccess": "Obtenir l'Accès Complet",
+    "reviewIncorrect": "Révisez Vos Réponses Incorrectes",
+    "questionNumber": "Question {{number}} : {{question}}",
+    "yourAnswer": "Votre Réponse",
+    "correctAnswer": "Bonne Réponse",
+    "explanation": "Explication",
+    "demoProgress": "Démo Q {{current}}/{{total}}",
+    "timeLabel": "Temps",
+    "time": "{{time}}",
+    "scoreLabel": "Score",
+    "score": "{{score}}",
+    "next": "Suivant",
+    "finish": "Terminer"
+  }
+}

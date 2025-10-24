@@ -4,6 +4,8 @@ import './index.css'
 import App from './App'
 import { ToastContainer } from 'react-toastify'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import './i18n/config'
+
 // Create a client
 const queryClient = new QueryClient()
 const rootElement = document.getElementById('root')

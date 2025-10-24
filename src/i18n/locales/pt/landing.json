@@ -1,0 +1,103 @@
+{
+  "hero": {
+    "badge": "Lançamento em 24 Horas",
+    "title": "Domine Network+ com Prática de Exame Real",
+    "subtitle": "Um sistema de teste de alto impacto projetado por um instrutor da Cisco Academy e AWS. Treine como se fosse o dia do jogo—cronometrado, pontuado e explicado.",
+    "examDomainsCovered": "Domínios de Exame Cobertos",
+    "cloudOnPremScenarios": "Cenários Cloud e On-Premise"
+  },
+  "features": {
+    "title": "Recursos",
+    "subtitle": "Tudo que você precisa para treinar com propósito e passar com confiança.",
+    "examStyleQuestions": {
+      "title": "Perguntas de Estilo de Exame",
+      "desc": "Prática mapeada para os objetivos do CompTIA Network+."
+    },
+    "instantFeedback": {
+      "title": "Feedback Instantâneo",
+      "desc": "Explicações que ensinam o porquê por trás de cada resposta."
+    },
+    "mobileFriendly": {
+      "title": "Compatível com Mobile",
+      "desc": "Treine em qualquer lugar—desktop, tablet ou telefone."
+    },
+    "instructorBuilt": {
+      "title": "Construído por Instrutor",
+      "desc": "Projetado por um instrutor da Cisco Academy e AWS."
+    }
+  },
+  "howItWorks": {
+    "joinBeta": {
+      "title": "Junte-se ao Beta",
+      "desc": "Reserve seu lugar e receba um link de acesso."
+    },
+    "startPracticing": {
+      "title": "Comece a Praticar",
+      "desc": "Quizzes cronometrados com pontuação em tempo real."
+    },
+    "trackProgress": {
+      "title": "Acompanhe o Progresso",
+      "desc": "Veja forças, lacunas e tendências ao longo do tempo."
+    },
+    "passWithConfidence": {
+      "title": "Passe com Confiança",
+      "desc": "Chegue ao dia do exame com estilo—não estresse."
+    }
+  },
+  "pricing": {
+    "betaOffer": {
+      "badge": "Beta por Tempo Limitado",
+      "title": "Acesso Antecipado (Beta)",
+      "desc": "Preço introdutório durante o beta. Recursos e conteúdo podem mudar com base no feedback.",
+      "price": "Teste gratuito de 60 dias",
+      "priceSubtext": "preço introdutório durante o beta",
+      "features": [
+        "Acesso completo a todos os domínios",
+        "Quizzes cronometrados e explicações instantâneas",
+        "Painel de acompanhamento de progresso",
+        "Atualizações beta e novos pacotes de perguntas"
+      ],
+      "guarantee": "Garantia de Acesso: Se você não conseguir acessar após a compra, concederemos acesso gratuito até que seja corrigido."
+    },
+    "classroomLicense": {
+      "badge": "Educadores",
+      "title": "Licença de Sala de Aula",
+      "desc": "Pacotes de assentos com códigos de convite e análises de instrutor.",
+      "price": "Personalizado"
+    }
+  },
+  "testimonials": {
+    "title": "Resultados que Falam",
+    "quotes": [
+      {
+        "text": "Este treinamento abriu meus olhos e acelerou meu domínio dos conceitos de rede.",
+        "author": "A. Sahu, PhD",
+        "title": "Professor e Membro Sênior IEEE"
+      },
+      {
+        "text": "Afiado, prático e envolvente. Me senti pronto para o exame real após a primeira semana!",
+        "author": "Candidato a Administrador de Rede",
+        "title": "Graduado do Boot Camp"
+      },
+      {
+        "text": "O feedback instantâneo fez a diferença. Finalmente entendi meus pontos fracos.",
+        "author": "Estudante de TI",
+        "title": "Usuário Beta"
+      }
+    ]
+  },
+  "sampleQuiz": {
+    "title": "Pergunta de Exemplo",
+    "question": "Qual camada do modelo OSI é responsável pela determinação de caminho e endereçamento lógico?",
+    "options": ["Física", "Enlace de Dados", "Rede", "Transporte"],
+    "correctAnswer": "Correto: C — A camada de Rede (Camada 3) lida com roteamento e endereçamento lógico (IP)."
+  },
+  "livePractice": "Prática ao Vivo",
+  "timedQuiz": "Quiz Cronometrado",
+  "close": "Fechar",
+  "ariaLabels": {
+    "previousTestimonials": "Depoimentos anteriores",
+    "nextTestimonials": "Próximos depoimentos",
+    "goToTestimonial": "Ir para o depoimento {{index}}"
+  }
+}

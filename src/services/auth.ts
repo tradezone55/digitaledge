@@ -16,13 +16,16 @@ const sendMagicLink = async (payload: MagicLinkPayload) => {
     throw new Error('Supabase configuration is missing. Please check your environment variables.');
   }
   
-  const redirectUrl = import.meta.env.VITE_APP_URL || window.location.origin;
+  // Check if APP_URL is configured
+  if (!import.meta.env.VITE_APP_URL) {
+    throw new Error('Application URL is not configured. Please set VITE_APP_URL in your environment variables.');
+  }
   
   try {
-    const { error } = await supabase.auth.signInWithOtp({
+    const { data, error } = await supabase.auth.signInWithOtp({
       email: payload.email,
       options: {
-        emailRedirectTo: `${redirectUrl}/auth/callback`,
+        emailRedirectTo: `${import.meta.env.VITE_APP_URL}/auth/callback`,
         shouldCreateUser: true
       },
     });
@@ -37,9 +40,18 @@ const sendMagicLink = async (payload: MagicLinkPayload) => {
         throw new Error('Too many requests. Please wait a moment and try again.');
       } else if (error.message.includes('disabled')) {
         throw new Error('Email authentication is not enabled. Please contact support.');
+      } else if (error.message.includes('Email link is invalid') || error.message.includes('smtp')) {
+        throw new Error('Email service is not properly configured. Please contact support.');
+      } else if (error.status === 500 || error.message.includes('unexpected_failure')) {
+        throw new Error('Unable to send email. Please check your email configuration in Supabase or contact support.');
       } else {
         throw new Error(`Authentication error: ${error.message}`);
       }
+    }
+    
+    // Verify that data exists (successful response)
+    if (!data) {
+      throw new Error('No response received from authentication service. Please try again.');
     }
     
     return {
@@ -48,7 +60,14 @@ const sendMagicLink = async (payload: MagicLinkPayload) => {
     };
   } catch (err) {
     console.error('Magic link send error:', err);
-    throw err;
+    
+    // If it's already an Error object with a message, rethrow it
+    if (err instanceof Error) {
+      throw err;
+    }
+    
+    // Handle unexpected error formats
+    throw new Error('An unexpected error occurred. Please try again or contact support.');
   }
 };
 
@@ -61,7 +80,7 @@ const sendAdminMagicLink = async (payload: MagicLinkPayload) => {
   const redirectUrl = import.meta.env.VITE_APP_URL || window.location.origin;
   
   try {
-    const { error } = await supabase.auth.signInWithOtp({
+    const { data, error } = await supabase.auth.signInWithOtp({
       email: payload.email,
       options: {
         emailRedirectTo: `${redirectUrl}/admin/auth/callback`,
@@ -79,9 +98,18 @@ const sendAdminMagicLink = async (payload: MagicLinkPayload) => {
         throw new Error('Too many requests. Please wait a moment and try again.');
       } else if (error.message.includes('disabled')) {
         throw new Error('Email authentication is not enabled. Please contact support.');
+      } else if (error.message.includes('Email link is invalid') || error.message.includes('smtp')) {
+        throw new Error('Email service is not properly configured. Please contact support.');
+      } else if (error.status === 500 || error.message.includes('unexpected_failure')) {
+        throw new Error('Unable to send email. Please check your email configuration in Supabase or contact support.');
       } else {
         throw new Error(`Authentication error: ${error.message}`);
       }
+    }
+    
+    // Verify that data exists (successful response)
+    if (!data) {
+      throw new Error('No response received from authentication service. Please try again.');
     }
     
     return {
@@ -90,7 +118,14 @@ const sendAdminMagicLink = async (payload: MagicLinkPayload) => {
     };
   } catch (err) {
     console.error('Admin magic link send error:', err);
-    throw err;
+    
+    // If it's already an Error object with a message, rethrow it
+    if (err instanceof Error) {
+      throw err;
+    }
+    
+    // Handle unexpected error formats
+    throw new Error('An unexpected error occurred. Please try again or contact support.');
   }
 };
 

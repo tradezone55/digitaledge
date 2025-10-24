@@ -1,0 +1,10 @@
+{
+  "welcome": "Bienvenido de Nuevo",
+  "subscription": {
+    "trialEndsIn": "La prueba gratuita termina en {{days}} Días",
+    "subscriptionEndsIn": "La suscripción termina en {{days}} Días"
+  },
+  "system": {
+    "title": "Sistema de Pruebas de Dominio CompTIA Network+"
+  }
+}

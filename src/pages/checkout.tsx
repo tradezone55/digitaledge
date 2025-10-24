@@ -5,6 +5,7 @@ import useCurrentUser from "../hooks/useCurrentUser";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import CustomBack from "@/components/ui/custom-back";
+import { useLanguageNavigation } from "../utils/navigation";
 
 const AMOUNT_1 = Number(import.meta.env.VITE_BASIC_PLAN_AMOUNT);
 const AMOUNT_2 = Number(import.meta.env.VITE_ADVANCED_PLAN_AMOUNT);
@@ -14,6 +15,7 @@ export default function CheckoutPage() {
   const { mutate } = useAddSubscription();
   const { currentUser } = useCurrentUser();
   const user = currentUser?.user;
+  const { getLanguagePath } = useLanguageNavigation();
 
   console.log(AMOUNT_1, AMOUNT_2, MONTH_1, MONTH_2);
 
@@ -103,9 +105,9 @@ export default function CheckoutPage() {
         },
         onApprove: (_: any, actions: any) => {
           return actions.order.capture().then((details: any) => {
-            const status =
-              details.status ||
-              details.purchase_units?.[0]?.payments?.captures?.[0]?.status;
+            // const status =
+            //   details.status ||
+            //   details.purchase_units?.[0]?.payments?.captures?.[0]?.status;
             const startDate = new Date();
             const endDate = new Date();
             const plan = PLAN_MAP[selectedPlan as keyof typeof PLAN_MAP];
@@ -127,7 +129,7 @@ export default function CheckoutPage() {
               amount: plan.amount,
             });
             toast.success(`${user?.name} Subscription added successfully`);
-            navigate("/home");
+            navigate(getLanguagePath("home"));
           });
         },
         onError: (err: any) => {
@@ -167,7 +169,7 @@ export default function CheckoutPage() {
   }, [selectedPlan, isPayPalLoaded]);
   return (
     <div className=" lg:p-40 p-4 text-[#e6edf3] font-sans bg-[#0b0f16] min-h-screen">
-      <CustomBack onGoBack={() => navigate("/home")} />
+      <CustomBack onGoBack={() => navigate(getLanguagePath("home"))} />
       <div className="flex flex-col gap-4 lg:mt-5 mt-[60px]">
         <h1 className="text-2xl font-semibold flex items-center gap-2 text-white">
           Secure Checkout — <Logo size="sm" />

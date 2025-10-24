@@ -1,0 +1,114 @@
+{
+  "buttons": {
+    "login": "登录",
+    "logout": "退出登录",
+    "logoutLoading": "正在退出...",
+    "sendMagicLink": "发送魔法链接",
+    "sendingMagicLink": "正在发送魔法链接...",
+    "startSession": "开始会话",
+    "next": "下一步",
+    "finish": "完成",
+    "retry": "重试",
+    "backToDashboard": "返回仪表板",
+    "advanceToNext": "进入域 {{domain}}",
+    "subscribeNow": "立即订阅",
+    "renewSubscription": "续订订阅",
+    "getEarlyAccess": "获取早期访问",
+    "seeFeatures": "查看功能",
+    "takeTimedQuiz": "参加计时测验",
+    "viewExplanations": "查看解释",
+    "joinNow": "立即加入",
+    "talkToUs": "联系我们",
+    "close": "关闭"
+  },
+  "navigation": {
+    "features": "功能",
+    "howItWorks": "工作原理",
+    "pricing": "定价",
+    "results": "结果"
+  },
+  "labels": {
+    "email": "电子邮件",
+    "emailPlaceholder": "输入您的电子邮件地址",
+    "welcomeBack": "欢迎回来",
+    "currentDomain": "当前域",
+    "questionsPerSession": "每会话 50 题",
+    "time": "时间",
+    "score": "分数",
+    "question": "第 {{current}}/{{total}} 题"
+  },
+  "status": {
+    "loading": "加载中...",
+    "sessionRestored": "会话已恢复",
+    "gracePeriodActive": "宽限期活跃",
+    "accessDenied": "访问被拒绝",
+    "certificationReady": "认证准备就绪！"
+  },
+  "messages": {
+    "sessionRestoredDesc": "您之前的测试会话已恢复。您可以从第 {{question}} 题继续。",
+    "gracePeriodDesc": "您的订阅已过期，但您在宽限期内还有 {{days}} 天。",
+    "renewNow": "立即续订",
+    "toContinueAccess": "以继续不间断访问。",
+    "subscriptionEnded": "您的免费试用或订阅已结束。请订阅以继续使用应用程序。",
+    "gracePeriodExpired": "您的订阅已过期，但您还有 {{days}} 天可以续订并保持访问权限。",
+    "profileSetupRequired": "请先完成您的个人资料设置",
+    "magicLinkSent": "魔法链接发送成功",
+    "magicLinkError": "发送魔法链接失败"
+  },
+  "footer": {
+    "poweredBy": "技术支持",
+    "allRightsReserved": "版权所有",
+    "privacy": "隐私",
+    "terms": "条款",
+    "contact": "联系"
+  },
+  "access": {
+    "denied": "访问被拒绝",
+    "subscriptionExpired": "您的订阅已过期，但您还有{{days}}天时间续费并保持访问权限。",
+    "trialEnded": "您的免费试用或订阅已结束。请订阅以继续使用应用程序。",
+    "renewSubscription": "续费订阅",
+    "subscribeNow": "立即订阅"
+  },
+  "profile": {
+    "completeTitle": "完善您的个人资料",
+    "completeDescription": "欢迎！请完善您的个人资料以享受平台服务",
+    "fullName": "全名",
+    "fullNamePlaceholder": "输入您的全名",
+    "emailPlaceholder": "输入您的邮箱",
+    "completeProfile": "完善个人资料",
+    "settingUpProfile": "正在设置个人资料..."
+  },
+  "support": {
+    "supportOnKoFi": "在Ko-fi上支持"
+  },
+  "admin": {
+    "accessRequired": "需要管理员权限",
+    "failedToLoad": "加载管理员数据失败",
+    "retry": "重试",
+    "userManagement": "用户管理",
+    "addUser": "添加用户",
+    "deleteUser": "删除用户",
+    "deleteUserDescription": "此操作无法撤销",
+    "areYouSureDelete": "您确定要删除此用户吗？",
+    "deleteUserWarning": "这将永久删除用户及其所有订阅数据。",
+    "userDetails": "用户详情：",
+    "name": "姓名：",
+    "email": "邮箱：",
+    "userId": "用户ID：",
+    "cancel": "取消",
+    "deleting": "删除中...",
+    "addNewUser": "添加新用户",
+    "addNewUserDescription": "向系统添加新用户",
+    "creating": "创建中...",
+    "create": "创建",
+    "extendSubscription": "延长订阅",
+    "durationMonths": "持续时间（月）",
+    "reasonOptional": "原因（可选）",
+    "reasonPlaceholder": "输入此操作的原因...",
+    "user": "用户",
+    "joined": "加入时间",
+    "status": "状态",
+    "active": "活跃",
+    "actions": "操作"
+  }
+}

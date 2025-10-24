@@ -1,0 +1,154 @@
+{
+  "domains": {
+    "1": [
+      {
+        "id": 1,
+        "question": "Qual dispositivo opera na Camada 3 do OSI?",
+        "choices": ["Roteador", "WAP", "Switch", "Hub"],
+        "correct": 0,
+        "explanation": "Roteadores operam na Camada 3 (Camada de Rede), tomando decisões de roteamento baseadas em endereços IP.",
+        "wrongExplanations": [
+          null,
+          "WAP opera na Camada 2, lidando com transmissão de quadros sem fio.",
+          "Switches operam na Camada 2, tomando decisões baseadas em endereços MAC.",
+          "Hubs operam na Camada 1, simplesmente repetindo sinais."
+        ],
+        "topic": "1.2 — Dispositivos de rede"
+      },
+      {
+        "id": 2,
+        "question": "Qual é o comprimento máximo de cabo para Ethernet Cat 6?",
+        "choices": ["50 metros", "100 metros", "200 metros", "500 metros"],
+        "correct": 1,
+        "explanation": "Cat 6 tem um comprimento máximo de 100 metros para desempenho ótimo.",
+        "wrongExplanations": [
+          "50 metros é desnecessariamente curto para Cat 6.",
+          null,
+          "200 metros excede as especificações do Cat 6.",
+          "500 metros causaria degradação severa do sinal."
+        ],
+        "topic": "1.3 — Cabos e conectores"
+      },
+      {
+        "id": 3,
+        "question": "Qual protocolo opera na Camada de Transporte?",
+        "choices": ["IP", "TCP", "Ethernet", "ARP"],
+        "correct": 1,
+        "explanation": "TCP opera na Camada 4, fornecendo entrega confiável de dados.",
+        "wrongExplanations": [
+          "IP opera na Camada 3 para roteamento.",
+          null,
+          "Ethernet opera na Camada 2 para transmissão de quadros.",
+          "ARP opera entre as Camadas 2-3 para resolução de endereços."
+        ],
+        "topic": "1.1 — Modelo OSI"
+      },
+      {
+        "id": 4,
+        "question": "Qual é a classe de endereço IP de 172.16.0.1?",
+        "choices": ["Classe A", "Classe B", "Classe C", "Classe D"],
+        "correct": 1,
+        "explanation": "172.16.0.1 cai no intervalo da Classe B (128.0.0.0 a 191.255.255.255).",
+        "wrongExplanations": [
+          "A Classe A vai de 1.0.0.0 a 126.255.255.255.",
+          null,
+          "A Classe C vai de 192.0.0.0 a 223.255.255.255.",
+          "A Classe D é usada para multicast (224.0.0.0 a 239.255.255.255)."
+        ],
+        "topic": "1.4 — Endereçamento IP"
+      },
+      {
+        "id": 5,
+        "question": "Quantos endereços de host estão disponíveis em uma sub-rede /26?",
+        "choices": ["30", "62", "126", "254"],
+        "correct": 1,
+        "explanation": "Uma sub-rede /26 tem 6 bits de host, fornecendo 2^6 - 2 = 62 endereços de host utilizáveis.",
+        "wrongExplanations": [
+          "30 seria para uma sub-rede /27 (5 bits de host).",
+          null,
+          "126 seria para uma sub-rede /25 (7 bits de host).",
+          "254 seria para uma sub-rede /24 (8 bits de host)."
+        ],
+        "topic": "1.4 — Endereçamento IP"
+      }
+    ],
+    "2": [
+      {
+        "id": 6,
+        "question": "Qual padrão sem fio opera a 5 GHz?",
+        "choices": ["802.11b", "802.11g", "802.11n", "802.11ac"],
+        "correct": 3,
+        "explanation": "802.11ac opera exclusivamente a 5 GHz, fornecendo maior largura de banda.",
+        "wrongExplanations": [
+          "802.11b opera apenas a 2.4 GHz.",
+          "802.11g opera apenas a 2.4 GHz.",
+          "802.11n pode operar tanto a 2.4 GHz quanto a 5 GHz.",
+          null
+        ],
+        "topic": "2.1 — Tecnologias sem fio"
+      },
+      {
+        "id": 7,
+        "question": "Qual é a velocidade máxima do 802.11n?",
+        "choices": ["54 Mbps", "150 Mbps", "300 Mbps", "600 Mbps"],
+        "correct": 3,
+        "explanation": "802.11n pode atingir até 600 Mbps com configuração MIMO 4x4.",
+        "wrongExplanations": [
+          "54 Mbps é o máximo para 802.11g.",
+          "150 Mbps é para 802.11n de fluxo único.",
+          "300 Mbps é para 802.11n de fluxo duplo.",
+          null
+        ],
+        "topic": "2.1 — Tecnologias sem fio"
+      }
+    ],
+    "3": [
+      {
+        "id": 8,
+        "question": "Qual protocolo é usado para entrega de email?",
+        "choices": ["HTTP", "SMTP", "FTP", "Telnet"],
+        "correct": 1,
+        "explanation": "SMTP (Simple Mail Transfer Protocol) é usado para entrega de email entre servidores de email.",
+        "wrongExplanations": [
+          "HTTP é usado para navegação web.",
+          null,
+          "FTP é usado para transferência de arquivos.",
+          "Telnet é usado para acesso remoto a terminal."
+        ],
+        "topic": "3.1 — Protocolos de aplicação"
+      }
+    ],
+    "4": [
+      {
+        "id": 9,
+        "question": "Qual método de criptografia é usado pelo WPA2?",
+        "choices": ["WEP", "TKIP", "AES", "RC4"],
+        "correct": 2,
+        "explanation": "WPA2 usa AES (Advanced Encryption Standard) para criptografia forte.",
+        "wrongExplanations": [
+          "WEP é um método de criptografia mais antigo e inseguro.",
+          "TKIP é usado pelo WPA, não pelo WPA2.",
+          null,
+          "RC4 é usado pelo WEP e WPA, não pelo WPA2."
+        ],
+        "topic": "4.1 — Segurança sem fio"
+      }
+    ],
+    "5": [
+      {
+        "id": 10,
+        "question": "Qual é o primeiro passo na solução de problemas de rede?",
+        "choices": ["Identificar o problema", "Testar a teoria", "Estabelecer um plano", "Documentar descobertas"],
+        "correct": 0,
+        "explanation": "O primeiro passo é identificar e definir o problema antes de tomar qualquer ação.",
+        "wrongExplanations": [
+          null,
+          "Testar a teoria vem depois de estabelecer um plano.",
+          "Estabelecer um plano vem depois de identificar o problema.",
+          "Documentar descobertas é o passo final."
+        ],
+        "topic": "5.1 — Metodologia de solução de problemas"
+      }
+    ]
+  }
+}

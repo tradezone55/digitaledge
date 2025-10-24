@@ -1,0 +1,103 @@
+{
+  "hero": {
+    "badge": "Lanzamiento en 24 Horas",
+    "title": "Domina Network+ con Práctica de Examen Real",
+    "subtitle": "Un sistema de pruebas de alto impacto diseñado por un instructor de Cisco Academy y AWS. Entrena como si fuera el día del juego: cronometrado, puntuado y explicado.",
+    "examDomainsCovered": "Dominios de Examen Cubiertos",
+    "cloudOnPremScenarios": "Escenarios en la Nube y On-Premise"
+  },
+  "features": {
+    "title": "Características",
+    "subtitle": "Todo lo que necesitas para entrenar con propósito y aprobar con confianza.",
+    "examStyleQuestions": {
+      "title": "Preguntas de Estilo de Examen",
+      "desc": "Práctica mapeada a los objetivos de CompTIA Network+."
+    },
+    "instantFeedback": {
+      "title": "Retroalimentación Instantánea",
+      "desc": "Explicaciones que enseñan el por qué detrás de cada respuesta."
+    },
+    "mobileFriendly": {
+      "title": "Compatible con Móviles",
+      "desc": "Entrena en cualquier lugar: escritorio, tableta o teléfono."
+    },
+    "instructorBuilt": {
+      "title": "Construido por Instructor",
+      "desc": "Diseñado por un instructor de Cisco Academy y AWS."
+    }
+  },
+  "howItWorks": {
+    "joinBeta": {
+      "title": "Únete a la Beta",
+      "desc": "Reserva tu lugar y recibe un enlace de acceso."
+    },
+    "startPracticing": {
+      "title": "Comienza a Practicar",
+      "desc": "Cuestionarios cronometrados con puntuación en tiempo real."
+    },
+    "trackProgress": {
+      "title": "Rastrea el Progreso",
+      "desc": "Ve fortalezas, brechas y tendencias a lo largo del tiempo."
+    },
+    "passWithConfidence": {
+      "title": "Aprueba con Confianza",
+      "desc": "Llega al día del examen con estilo, no estrés."
+    }
+  },
+  "pricing": {
+    "betaOffer": {
+      "badge": "Beta de Tiempo Limitado",
+      "title": "Acceso Temprano (Beta)",
+      "desc": "Precio de introducción durante la beta. Las características y el contenido pueden cambiar según los comentarios.",
+      "price": "Prueba gratuita de 60 días",
+      "priceSubtext": "precio de introducción durante la beta",
+      "features": [
+        "Acceso completo a todos los dominios",
+        "Cuestionarios cronometrados y explicaciones instantáneas",
+        "Panel de seguimiento de progreso",
+        "Actualizaciones beta y nuevos paquetes de preguntas"
+      ],
+      "guarantee": "Garantía de Acceso: Si no puedes acceder después de la compra, te otorgaremos acceso gratuito hasta que se solucione."
+    },
+    "classroomLicense": {
+      "badge": "Educadores",
+      "title": "Licencia de Aula",
+      "desc": "Paquetes de asientos con códigos de invitación y análisis de instructor.",
+      "price": "Personalizado"
+    }
+  },
+  "testimonials": {
+    "title": "Resultados que Hablan",
+    "quotes": [
+      {
+        "text": "Esta capacitación abrió mis ojos y aceleró mi dominio de los conceptos de redes.",
+        "author": "A. Sahu, PhD",
+        "title": "Profesor y Miembro Senior de IEEE"
+      },
+      {
+        "text": "Agudo, práctico y atractivo. ¡Me sentí listo para el examen real después de la primera semana!",
+        "author": "Candidato a Administrador de Red",
+        "title": "Graduado de Boot Camp"
+      },
+      {
+        "text": "La retroalimentación instantánea marcó la diferencia. Finalmente entendí mis puntos débiles.",
+        "author": "Estudiante de TI",
+        "title": "Usuario Beta"
+      }
+    ]
+  },
+  "sampleQuiz": {
+    "title": "Pregunta de Muestra",
+    "question": "¿Qué capa del modelo OSI es responsable de la determinación de ruta y direccionamiento lógico?",
+    "options": ["Física", "Enlace de Datos", "Red", "Transporte"],
+    "correctAnswer": "Correcto: C — La capa de Red (Capa 3) maneja el enrutamiento y direccionamiento lógico (IP)."
+  },
+  "livePractice": "Práctica en Vivo",
+  "timedQuiz": "Cuestionario Cronometrado",
+  "close": "Cerrar",
+  "ariaLabels": {
+    "previousTestimonials": "Testimonios anteriores",
+    "nextTestimonials": "Siguientes testimonios",
+    "goToTestimonial": "Ir al testimonio {{index}}"
+  }
+}

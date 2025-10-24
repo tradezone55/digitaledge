@@ -3,10 +3,12 @@ import { useNavigate } from 'react-router';
 import { useUserStore } from '@/stores';
 import { checkUserStatus } from '@/services/auth';
 import { toast } from 'react-toastify';
+import { useLanguageNavigation } from '../utils/navigation';
 
 export const useUserStatusCheck = () => {
   const navigate = useNavigate();
   const { clearUser, isAuthenticated } = useUserStore();
+  const { getLanguagePath } = useLanguageNavigation();
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
@@ -20,7 +22,7 @@ export const useUserStatusCheck = () => {
         if (shouldLogout && !isActive) {
           clearUser();
           toast.error('Your account has been deactivated. You have been logged out.');
-          navigate('/auth/login');
+          navigate(getLanguagePath('auth/login'));
         }
       } catch (error) {
         console.error('Error checking user status:', error);
@@ -51,7 +53,7 @@ export const useUserStatusCheck = () => {
         if (shouldLogout && !isActive) {
           clearUser();
           toast.error('Your account has been deactivated. You have been logged out.');
-          navigate('/auth/login');
+          navigate(getLanguagePath('auth/login'));
         }
       } catch (error) {
         console.error('Error checking user status on focus:', error);

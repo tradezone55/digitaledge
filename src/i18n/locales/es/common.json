@@ -1,0 +1,114 @@
+{
+  "buttons": {
+    "login": "Iniciar Sesión",
+    "logout": "Cerrar Sesión",
+    "logoutLoading": "Cerrando sesión...",
+    "sendMagicLink": "Enviar Enlace Mágico",
+    "sendingMagicLink": "Enviando enlace mágico...",
+    "startSession": "Iniciar Sesión",
+    "next": "Siguiente",
+    "finish": "Finalizar",
+    "retry": "Reintentar",
+    "backToDashboard": "Volver al Panel",
+    "advanceToNext": "Avanzar al Dominio {{domain}}",
+    "subscribeNow": "Suscribirse Ahora",
+    "renewSubscription": "Renovar Suscripción",
+    "getEarlyAccess": "Obtener Acceso Temprano",
+    "seeFeatures": "Ver Características",
+    "takeTimedQuiz": "Tomar Cuestionario Cronometrado",
+    "viewExplanations": "Ver Explicaciones",
+    "joinNow": "Únete Ahora",
+    "talkToUs": "Háblanos",
+    "close": "Cerrar"
+  },
+  "navigation": {
+    "features": "Características",
+    "howItWorks": "Cómo funciona",
+    "pricing": "Precios",
+    "results": "Resultados"
+  },
+  "labels": {
+    "email": "Correo Electrónico",
+    "emailPlaceholder": "Ingresa tu dirección de correo electrónico",
+    "welcomeBack": "Bienvenido de Nuevo",
+    "currentDomain": "Dominio Actual",
+    "questionsPerSession": "50 P por sesión",
+    "time": "Tiempo",
+    "score": "Puntuación",
+    "question": "P {{current}}/{{total}}"
+  },
+  "status": {
+    "loading": "Cargando...",
+    "sessionRestored": "Sesión Restaurada",
+    "gracePeriodActive": "Período de Gracia Activo",
+    "accessDenied": "Acceso Denegado",
+    "certificationReady": "¡Certificación Lista!"
+  },
+  "messages": {
+    "sessionRestoredDesc": "Tu sesión de prueba anterior ha sido restaurada. Puedes continuar desde la pregunta {{question}}.",
+    "gracePeriodDesc": "Tu suscripción ha expirado, pero tienes {{days}} día{{days !== 1 ? 's' : ''}} restante{{days !== 1 ? 's' : ''}} en tu período de gracia.",
+    "renewNow": "Renovar ahora",
+    "toContinueAccess": "para continuar con acceso ininterrumpido.",
+    "subscriptionEnded": "Tu prueba gratuita o suscripción ha terminado. Por favor suscríbete para continuar usando la aplicación.",
+    "gracePeriodExpired": "Tu suscripción ha expirado, pero tienes {{days}} día{{days !== 1 ? 's' : ''}} para renovar y mantener el acceso.",
+    "profileSetupRequired": "Por favor completa la configuración de tu perfil primero",
+    "magicLinkSent": "Enlace mágico enviado exitosamente",
+    "magicLinkError": "Error al enviar enlace mágico"
+  },
+  "footer": {
+    "poweredBy": "Desarrollado por",
+    "allRightsReserved": "Todos los derechos reservados",
+    "privacy": "Privacidad",
+    "terms": "Términos",
+    "contact": "Contacto"
+  },
+  "access": {
+    "denied": "Acceso Denegado",
+    "subscriptionExpired": "Tu suscripción ha expirado, pero tienes {{days}} día{{days !== 1 ? 's' : ''}} restante{{days !== 1 ? 's' : ''}} para renovar y mantener el acceso.",
+    "trialEnded": "Tu prueba gratuita o suscripción ha terminado. Por favor suscríbete para continuar usando la aplicación.",
+    "renewSubscription": "Renovar Suscripción",
+    "subscribeNow": "Suscribirse Ahora"
+  },
+  "profile": {
+    "completeTitle": "Completa Tu Perfil",
+    "completeDescription": "¡Bienvenido! Por favor completa tu perfil para disfrutar de la plataforma",
+    "fullName": "Nombre Completo",
+    "fullNamePlaceholder": "Ingresa tu nombre completo",
+    "emailPlaceholder": "Ingresa tu email",
+    "completeProfile": "Completar Perfil",
+    "settingUpProfile": "Configurando perfil..."
+  },
+  "support": {
+    "supportOnKoFi": "Apoyo en Ko-fi"
+  },
+  "admin": {
+    "accessRequired": "Se requiere acceso de administrador",
+    "failedToLoad": "Error al cargar datos de administrador",
+    "retry": "Reintentar",
+    "userManagement": "Gestión de Usuarios",
+    "addUser": "Agregar Usuario",
+    "deleteUser": "Eliminar Usuario",
+    "deleteUserDescription": "Esta acción no se puede deshacer",
+    "areYouSureDelete": "¿Estás seguro de que quieres eliminar este usuario?",
+    "deleteUserWarning": "Esto eliminará permanentemente al usuario y todos sus datos de suscripción.",
+    "userDetails": "Detalles del Usuario:",
+    "name": "Nombre:",
+    "email": "Email:",
+    "userId": "ID de Usuario:",
+    "cancel": "Cancelar",
+    "deleting": "Eliminando...",
+    "addNewUser": "Agregar Nuevo Usuario",
+    "addNewUserDescription": "Agregar un nuevo usuario al sistema",
+    "creating": "Creando...",
+    "create": "Crear",
+    "extendSubscription": "Extender Suscripción",
+    "durationMonths": "Duración (meses)",
+    "reasonOptional": "Razón (opcional)",
+    "reasonPlaceholder": "Ingresa la razón de esta acción...",
+    "user": "Usuario",
+    "joined": "Se unió",
+    "status": "Estado",
+    "active": "Activo",
+    "actions": "Acciones"
+  }
+}

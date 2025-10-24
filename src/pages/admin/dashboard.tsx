@@ -28,7 +28,7 @@ const AdminDashboardPage: React.FC = () => {
                 <p className="text-sm text-white">{admin?.name}</p>
                 <p className="text-xs text-gray-400">{admin?.email}</p>
               </div>
-              <LogoutUser redirectTo="/admin/auth/login" />
+              <LogoutUser />
             </div>
           </div>
         </div>

@@ -8,10 +8,12 @@ import type { IUser } from "@/types/user";
 import AuthLayout from "../../components/layout/AuthLayout";
 import Button from "@/components/ui/Button";
 import ProfileSetupModal from "../../components/ProfileSetupModal";
+import { useLanguageNavigation } from "../../utils/navigation";
 
 const VerifyOTPPage: React.FC = () => {
   const navigate = useNavigate();
   const { setUser, setAuthenticated } = useUserStore();
+  const { getLanguagePath } = useLanguageNavigation();
   const [showProfileModal, setShowProfileModal] = useState(false);
 
   const { mutate: verify, isPending } = useMutation({
@@ -27,13 +29,13 @@ const VerifyOTPPage: React.FC = () => {
           toast.success(data.message);
           setUser(user);
           setAuthenticated(true);
-          navigate("/home");
+          navigate(getLanguagePath("home"));
         }
       }
     },
     onError: (error) => {
       toast.error(error.message);
-      navigate("/auth/login");
+      navigate(getLanguagePath("auth/login"));
     },
   });
 
@@ -46,7 +48,7 @@ const VerifyOTPPage: React.FC = () => {
     toast.success("Welcome! Your profile is now complete.");
     // The ProfileSetupModal will handle setting the user and authentication
     // We just need to redirect to home
-    navigate("/home");
+    navigate(getLanguagePath("home"));
   };
 
   useEffect(() => {
@@ -72,7 +74,7 @@ const VerifyOTPPage: React.FC = () => {
 
           <div className="mt-6">
             <Button
-              onClick={() => navigate("/auth/login")}
+              onClick={() => navigate(getLanguagePath("auth/login"))}
               className="w-full p-2 rounded-md bg-gray-100 text-gray-700 hover:bg-gray-200"
               disabled={isPending}
             >
