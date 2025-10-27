@@ -5,6 +5,34 @@ interface MagicLinkPayload {
   email: string;
 }
 
+// Common school/institutional email domains that might have delivery issues
+const INSTITUTIONAL_DOMAINS = [
+  '.edu', '.ac.', '.school.', '.university.', '.college.',
+  '.k12.', '.schools.', '.district.', '.gov'
+];
+
+// Email providers known to have magic link issues
+const PROBLEMATIC_EMAIL_PROVIDERS = [
+  'outlook.com', 'hotmail.com', 'live.com', 'msn.com',
+  'office365.com', 'microsoft.com'
+];
+
+// Check if email is from an institutional domain
+const isInstitutionalEmail = (email: string): boolean => {
+  const domain = email.toLowerCase().split('@')[1] || '';
+  return INSTITUTIONAL_DOMAINS.some(institutionalDomain => 
+    domain.includes(institutionalDomain)
+  );
+};
+
+// Check if email is from a provider known to have magic link issues
+const isProblematicEmailProvider = (email: string): boolean => {
+  const domain = email.toLowerCase().split('@')[1] || '';
+  return PROBLEMATIC_EMAIL_PROVIDERS.some(provider => 
+    domain.includes(provider)
+  );
+};
+
 interface ProfileSetupPayload {
   name: string;
   email: string;
@@ -19,6 +47,15 @@ const sendMagicLink = async (payload: MagicLinkPayload) => {
   // Check if APP_URL is configured
   if (!import.meta.env.VITE_APP_URL) {
     throw new Error('Application URL is not configured. Please set VITE_APP_URL in your environment variables.');
+  }
+
+  // Check if this is an institutional email or problematic provider and provide helpful guidance
+  if (isInstitutionalEmail(payload.email)) {
+    console.warn(`Institutional email detected: ${payload.email}. This may have delivery issues.`);
+  }
+  
+  if (isProblematicEmailProvider(payload.email)) {
+    console.warn(`Problematic email provider detected: ${payload.email}. Magic links may not work properly.`);
   }
   
   try {
@@ -44,6 +81,10 @@ const sendMagicLink = async (payload: MagicLinkPayload) => {
         throw new Error('Email service is not properly configured. Please contact support.');
       } else if (error.status === 500 || error.message.includes('unexpected_failure')) {
         throw new Error('Unable to send email. Please check your email configuration in Supabase or contact support.');
+      } else if (error.message.includes('blocked') || error.message.includes('domain')) {
+        throw new Error('This email domain may be blocked. Please try using a personal email address (Gmail, Yahoo, etc.) or contact support.');
+      } else if (error.message.includes('delivery') || error.message.includes('bounce')) {
+        throw new Error('Unable to deliver email to this address. Please check your email address or try a different email provider.');
       } else {
         throw new Error(`Authentication error: ${error.message}`);
       }
@@ -54,9 +95,18 @@ const sendMagicLink = async (payload: MagicLinkPayload) => {
       throw new Error('No response received from authentication service. Please try again.');
     }
     
+    // Provide different messages based on email type
+    let message = 'Magic link sent to your email! Please check your inbox and click the link to sign in.';
+    
+    if (isProblematicEmailProvider(payload.email)) {
+      message = 'Magic link sent to your email! IMPORTANT: If you\'re using Outlook/Hotmail, please check your spam folder and click the link immediately. Outlook sometimes blocks or previews these links, making them expire quickly. If the link doesn\'t work, try using Gmail or another email provider.';
+    } else if (isInstitutionalEmail(payload.email)) {
+      message = 'Magic link sent to your email! Please check your inbox, spam folder, and junk mail. If you don\'t receive it within 5 minutes, try using a personal email address (Gmail, Yahoo, etc.) as school emails sometimes block authentication emails.';
+    }
+
     return {
       success: true,
-      message: 'Magic link sent to your email! Please check your inbox and click the link to sign in.',
+      message,
     };
   } catch (err) {
     console.error('Magic link send error:', err);
@@ -102,6 +152,10 @@ const sendAdminMagicLink = async (payload: MagicLinkPayload) => {
         throw new Error('Email service is not properly configured. Please contact support.');
       } else if (error.status === 500 || error.message.includes('unexpected_failure')) {
         throw new Error('Unable to send email. Please check your email configuration in Supabase or contact support.');
+      } else if (error.message.includes('blocked') || error.message.includes('domain')) {
+        throw new Error('This email domain may be blocked. Please try using a personal email address (Gmail, Yahoo, etc.) or contact support.');
+      } else if (error.message.includes('delivery') || error.message.includes('bounce')) {
+        throw new Error('Unable to deliver email to this address. Please check your email address or try a different email provider.');
       } else {
         throw new Error(`Authentication error: ${error.message}`);
       }

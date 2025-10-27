@@ -65,11 +65,11 @@ const LoginPage: React.FC = () => {
     mutationFn: sendMagicLink,
     onSuccess: (data) => {
       if (data?.success) {
-        toast.success(t('messages.magicLinkSent'));
+        toast.success(data.message || t('messages.magicLinkSent'));
       }
     },
-    onError: () => {
-      toast.error(t('messages.magicLinkError'));
+    onError: (error: Error) => {
+      toast.error(error.message || t('messages.magicLinkError'));
     },
   });
 

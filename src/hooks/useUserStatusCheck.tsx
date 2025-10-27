@@ -5,11 +5,15 @@ import { checkUserStatus } from '@/services/auth';
 import { toast } from 'react-toastify';
 import { useLanguageNavigation } from '../utils/navigation';
 
+// Prevent multiple deactivation toasts
+let deactivationToastId: number | string | null = null;
+
 export const useUserStatusCheck = () => {
   const navigate = useNavigate();
   const { clearUser, isAuthenticated } = useUserStore();
   const { getLanguagePath } = useLanguageNavigation();
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
+  const hasShownDeactivationToast = useRef(false);
 
   useEffect(() => {
     if (!isAuthenticated) return;
@@ -19,9 +23,14 @@ export const useUserStatusCheck = () => {
       try {
         const { isActive, shouldLogout } = await checkUserStatus();
 
-        if (shouldLogout && !isActive) {
+        if (shouldLogout && !isActive && !hasShownDeactivationToast.current) {
+          // Dismiss previous toast if it exists
+          if (deactivationToastId) {
+            toast.dismiss(deactivationToastId);
+          }
           clearUser();
-          toast.error('Your account has been deactivated. You have been logged out.');
+          hasShownDeactivationToast.current = true;
+          deactivationToastId = toast.error('Your account has been deactivated. You have been logged out.', { toastId: 'deactivation' });
           navigate(getLanguagePath('auth/login'));
         }
       } catch (error) {
@@ -40,7 +49,7 @@ export const useUserStatusCheck = () => {
         clearInterval(intervalRef.current);
       }
     };
-  }, [isAuthenticated, clearUser, navigate]);
+  }, [isAuthenticated, clearUser, navigate, getLanguagePath]);
 
   // Also check on window focus (when user comes back to the app)
   useEffect(() => {
@@ -50,9 +59,14 @@ export const useUserStatusCheck = () => {
       try {
         const { isActive, shouldLogout } = await checkUserStatus();
 
-        if (shouldLogout && !isActive) {
+        if (shouldLogout && !isActive && !hasShownDeactivationToast.current) {
+          // Dismiss previous toast if it exists
+          if (deactivationToastId) {
+            toast.dismiss(deactivationToastId);
+          }
           clearUser();
-          toast.error('Your account has been deactivated. You have been logged out.');
+          hasShownDeactivationToast.current = true;
+          deactivationToastId = toast.error('Your account has been deactivated. You have been logged out.', { toastId: 'deactivation' });
           navigate(getLanguagePath('auth/login'));
         }
       } catch (error) {
@@ -62,5 +76,5 @@ export const useUserStatusCheck = () => {
 
     window.addEventListener('focus', handleFocus);
     return () => window.removeEventListener('focus', handleFocus);
-  }, [isAuthenticated, clearUser, navigate]);
+  }, [isAuthenticated, clearUser, navigate, getLanguagePath]);
 };

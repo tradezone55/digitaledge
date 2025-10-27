@@ -45,109 +45,2769 @@
       },
       {
         "id": 4,
-        "question": "Quelle est la classe d'adresse IP de 172.16.0.1 ?",
-        "choices": ["Classe A", "Classe B", "Classe C", "Classe D"],
+        "question": "Qu'est-ce qu'un commutateur utilise pour transférer les trames ?",
+        "choices": ["Adresses IP", "Adresses MAC", "Numéros de port", "Noms de domaine"],
         "correct": 1,
-        "explanation": "172.16.0.1 tombe dans la plage Classe B (128.0.0.0 à 191.255.255.255).",
+        "explanation": "Les commutateurs fonctionnent au niveau 2 et utilisent les adresses MAC pour transférer les trames.",
         "wrongExplanations": [
-          "La Classe A va de 1.0.0.0 à 126.255.255.255.",
+          "Les adresses IP sont utilisées par les routeurs au niveau 3.",
           null,
-          "La Classe C va de 192.0.0.0 à 223.255.255.255.",
-          "La Classe D est utilisée pour le multicast (224.0.0.0 à 239.255.255.255)."
+          "Les numéros de port sont utilisés par les protocoles de la couche transport.",
+          "Les noms de domaine sont résolus par DNS."
         ],
-        "topic": "1.4 — Adressage IP"
+        "topic": "1.2 — Appareils réseau"
       },
       {
         "id": 5,
-        "question": "Combien d'adresses d'hôte sont disponibles dans un sous-réseau /26 ?",
-        "choices": ["30", "62", "126", "254"],
+        "question": "Quel standard sans fil prend en charge la fréquence 6 GHz ?",
+        "choices": ["802.11ac", "802.11ax (Wi-Fi 6E)", "802.11n", "802.11g"],
         "correct": 1,
-        "explanation": "Un sous-réseau /26 a 6 bits d'hôte, fournissant 2^6 - 2 = 62 adresses d'hôte utilisables.",
+        "explanation": "Wi-Fi 6E (802.11ax) s'étend dans la bande 6 GHz pour réduire les interférences.",
         "wrongExplanations": [
-          "30 serait pour un sous-réseau /27 (5 bits d'hôte).",
+          "802.11ac fonctionne uniquement à 5 GHz.",
           null,
-          "126 serait pour un sous-réseau /25 (7 bits d'hôte).",
-          "254 serait pour un sous-réseau /24 (8 bits d'hôte)."
+          "802.11n fonctionne à 2.4 GHz et 5 GHz.",
+          "802.11g fonctionne uniquement à 2.4 GHz."
         ],
-        "topic": "1.4 — Adressage IP"
+        "topic": "1.4 — Standards sans fil"
+      },
+      {
+        "id": 6,
+        "question": "Quel est le masque de sous-réseau par défaut pour un réseau Classe C ?",
+        "choices": ["255.0.0.0", "255.255.0.0", "255.255.255.0", "255.255.255.255"],
+        "correct": 2,
+        "explanation": "Les réseaux Classe C utilisent 255.255.255.0 comme masque de sous-réseau par défaut.",
+        "wrongExplanations": [
+          "255.0.0.0 est le masque par défaut pour les réseaux Classe A.",
+          "255.255.0.0 est le masque par défaut pour les réseaux Classe B.",
+          null,
+          "255.255.255.255 est une route d'hôte, pas un masque de sous-réseau."
+        ],
+        "topic": "1.5 — Adressage IPv4"
+      },
+      {
+        "id": 7,
+        "question": "Quel type de câble est immunisé contre les EMI ?",
+        "choices": ["UTP", "STP", "Coaxial", "Fibre optique"],
+        "correct": 3,
+        "explanation": "Les câbles à fibre optique utilisent la lumière au lieu des signaux électriques, les rendant immunisés contre les interférences électromagnétiques.",
+        "wrongExplanations": [
+          "UTP est sensible aux EMI en raison du manque de blindage.",
+          "STP a une certaine protection contre les EMI mais n'est pas immunisé.",
+          "Les câbles coaxiaux peuvent être affectés par les EMI.",
+          null
+        ],
+        "topic": "1.3 — Câbles et connecteurs"
+      },
+      {
+        "id": 8,
+        "question": "Quel port HTTPS utilise par défaut ?",
+        "choices": ["80", "443", "8080", "22"],
+        "correct": 1,
+        "explanation": "HTTPS utilise le port 443 pour le trafic web sécurisé.",
+        "wrongExplanations": [
+          "Le port 80 est utilisé par HTTP (non chiffré).",
+          null,
+          "Le port 8080 est un port HTTP alternatif.",
+          "Le port 22 est utilisé par SSH."
+        ],
+        "topic": "1.7 — Services réseau"
+      },
+      {
+        "id": 9,
+        "question": "Quelle topologie a un point de défaillance unique ?",
+        "choices": ["Maillage", "Étoile", "Anneau", "Bus"],
+        "correct": 1,
+        "explanation": "La topologie étoile dépend d'un dispositif central ; s'il tombe en panne, tout le réseau tombe.",
+        "wrongExplanations": [
+          "La topologie maillage a plusieurs chemins et aucun point de défaillance unique.",
+          null,
+          "La topologie anneau peut continuer à fonctionner si un lien tombe en panne.",
+          "La topologie bus peut continuer avec une défaillance d'appareil."
+        ],
+        "topic": "1.1 — Topologies réseau"
+      },
+      {
+        "id": 10,
+        "question": "Quel est le débit maximal de 802.11ac ?",
+        "choices": ["54 Mbps", "600 Mbps", "1.3 Gbps", "9.6 Gbps"],
+        "correct": 2,
+        "explanation": "802.11ac peut atteindre jusqu'à 1.3 Gbps dans des conditions idéales.",
+        "wrongExplanations": [
+          "54 Mbps est le maximum pour 802.11g.",
+          "600 Mbps est le maximum pour 802.11n.",
+          null,
+          "9.6 Gbps est le maximum théorique pour 802.11ax."
+        ],
+        "topic": "1.4 — Standards sans fil"
+      },
+      {
+        "id": 11,
+        "question": "Quel appareil fonctionne à la fois aux couches 2 et 3 ?",
+        "choices": ["Hub", "Switch", "Switch multicouche", "Répéteur"],
+        "correct": 2,
+        "explanation": "Les switches multicouches peuvent effectuer à la fois des fonctions de commutation (couche 2) et de routage (couche 3).",
+        "wrongExplanations": [
+          "Les hubs fonctionnent uniquement à la couche 1.",
+          "Les switches fonctionnent uniquement à la couche 2.",
+          null,
+          "Les répéteurs fonctionnent uniquement à la couche 1."
+        ],
+        "topic": "1.2 — Appareils réseau"
+      },
+      {
+        "id": 12,
+        "question": "Que signifie DHCP ?",
+        "choices": ["Protocole de configuration d'hôte dynamique", "Protocole de contrôle d'hôte de domaine", "Protocole de communication d'hôte de données", "Processus de configuration d'hôte numérique"],
+        "correct": 0,
+        "explanation": "DHCP assigne automatiquement des adresses IP aux appareils sur un réseau.",
+        "wrongExplanations": [
+          null,
+          "DHCP ne contrôle pas les domaines.",
+          "DHCP ne communique pas de données.",
+          "DHCP n'est pas un processus numérique."
+        ],
+        "topic": "1.5 — Services réseau"
+      },
+      {
+        "id": 13,
+        "question": "Quelle est la longueur maximale d'un câble Ethernet Cat 6 ?",
+        "choices": ["50 mètres", "90 mètres", "100 mètres", "150 mètres"],
+        "correct": 2,
+        "explanation": "La longueur maximale recommandée pour un câble Ethernet Cat 6 est de 100 mètres.",
+        "wrongExplanations": [
+          "50 mètres est trop court pour Cat 6.",
+          "90 mètres est proche mais pas la limite maximale.",
+          null,
+          "150 mètres dépasse la limite recommandée."
+        ],
+        "topic": "1.3 — Câbles et connecteurs"
+      },
+      {
+        "id": 14,
+        "question": "Quel protocole fonctionne à la couche de transport ?",
+        "choices": ["IP", "TCP", "Ethernet", "HTTP"],
+        "correct": 1,
+        "explanation": "TCP (Transmission Control Protocol) fonctionne à la couche de transport du modèle OSI.",
+        "wrongExplanations": [
+          "IP fonctionne à la couche réseau.",
+          null,
+          "Ethernet fonctionne à la couche liaison de données.",
+          "HTTP fonctionne à la couche application."
+        ],
+        "topic": "1.1 — Modèle OSI"
+      },
+      {
+        "id": 15,
+        "question": "Qu'est-ce qu'un switch utilise pour transférer les trames ?",
+        "choices": ["Adresses IP", "Adresses MAC", "Adresses de port", "Adresses de domaine"],
+        "correct": 1,
+        "explanation": "Les switches utilisent les adresses MAC pour transférer les trames vers les ports appropriés.",
+        "wrongExplanations": [
+          "Les switches n'utilisent pas les adresses IP pour le transfert de trames.",
+          null,
+          "Les switches n'utilisent pas les adresses de port.",
+          "Les switches n'utilisent pas les adresses de domaine."
+        ],
+        "topic": "1.2 — Fonctionnement des switches"
+      },
+      {
+        "id": 16,
+        "question": "Quel standard sans fil prend en charge la fréquence de 6 GHz ?",
+        "choices": ["802.11n", "802.11ac", "802.11ax", "802.11g"],
+        "correct": 2,
+        "explanation": "802.11ax (Wi-Fi 6E) prend en charge la bande de 6 GHz pour des performances améliorées.",
+        "wrongExplanations": [
+          "802.11n fonctionne sur 2.4 GHz et 5 GHz.",
+          "802.11ac fonctionne sur 5 GHz uniquement.",
+          null,
+          "802.11g fonctionne sur 2.4 GHz uniquement."
+        ],
+        "topic": "1.4 — Standards sans fil"
+      },
+      {
+        "id": 17,
+        "question": "Quel est le masque de sous-réseau par défaut pour un réseau de classe C ?",
+        "choices": ["255.0.0.0", "255.255.0.0", "255.255.255.0", "255.255.255.255"],
+        "correct": 2,
+        "explanation": "Le masque de sous-réseau par défaut pour un réseau de classe C est 255.255.255.0 (/24).",
+        "wrongExplanations": [
+          "255.0.0.0 est le masque par défaut pour la classe A.",
+          "255.255.0.0 est le masque par défaut pour la classe B.",
+          null,
+          "255.255.255.255 est une adresse de diffusion."
+        ],
+        "topic": "1.6 — Adressage IPv4"
+      },
+      {
+        "id": 18,
+        "question": "Quel protocole résout les noms de domaine en adresses IP ?",
+        "choices": ["DHCP", "DNS", "SNMP", "FTP"],
+        "correct": 1,
+        "explanation": "DNS (Domain Name System) résout les noms de domaine en adresses IP.",
+        "wrongExplanations": [
+          "DHCP assigne des adresses IP.",
+          null,
+          "SNMP gère les appareils réseau.",
+          "FTP transfère des fichiers."
+        ],
+        "topic": "1.5 — Services DNS"
+      },
+      {
+        "id": 19,
+        "question": "Quelle est la plage d'adresses IP privées de classe A ?",
+        "choices": ["10.0.0.0 - 10.255.255.255", "172.16.0.0 - 172.31.255.255", "192.168.0.0 - 192.168.255.255", "169.254.0.0 - 169.254.255.255"],
+        "correct": 0,
+        "explanation": "La plage d'adresses IP privées de classe A est 10.0.0.0 à 10.255.255.255.",
+        "wrongExplanations": [
+          null,
+          "172.16.0.0 - 172.31.255.255 est la plage de classe B.",
+          "192.168.0.0 - 192.168.255.255 est la plage de classe C.",
+          "169.254.0.0 - 169.254.255.255 est la plage APIPA."
+        ],
+        "topic": "1.6 — Adresses IP privées"
+      },
+      {
+        "id": 20,
+        "question": "Quel est le but d'un hub réseau ?",
+        "choices": ["Filtrer le trafic", "Amplifier les signaux", "Répéter les signaux à tous les ports", "Routage intelligent"],
+        "correct": 2,
+        "explanation": "Un hub répète les signaux entrants à tous les ports, créant un domaine de collision.",
+        "wrongExplanations": [
+          "Les hubs ne filtrent pas le trafic.",
+          "Les hubs n'amplifient pas les signaux.",
+          null,
+          "Les hubs ne font pas de routage intelligent."
+        ],
+        "topic": "1.2 — Appareils réseau"
+      },
+      {
+        "id": 21,
+        "question": "Quel est le débit maximal théorique d'Ethernet Gigabit ?",
+        "choices": ["100 Mbps", "1 Gbps", "10 Gbps", "100 Gbps"],
+        "correct": 1,
+        "explanation": "Ethernet Gigabit peut atteindre un débit maximal théorique de 1 Gbps (1000 Mbps).",
+        "wrongExplanations": [
+          "100 Mbps est le débit d'Ethernet Fast.",
+          null,
+          "10 Gbps est le débit d'Ethernet 10 Gigabit.",
+          "100 Gbps est le débit d'Ethernet 100 Gigabit."
+        ],
+        "topic": "1.3 — Standards Ethernet"
+      },
+      {
+        "id": 22,
+        "question": "Quelle couche OSI gère l'adressage logique ?",
+        "choices": ["Couche physique", "Couche liaison de données", "Couche réseau", "Couche transport"],
+        "correct": 2,
+        "explanation": "La couche réseau (couche 3) gère l'adressage logique et le routage des paquets.",
+        "wrongExplanations": [
+          "La couche physique gère les signaux électriques.",
+          "La couche liaison de données gère l'adressage physique (MAC).",
+          null,
+          "La couche transport gère la segmentation et la réassemblage."
+        ],
+        "topic": "1.1 — Modèle OSI"
+      },
+      {
+        "id": 23,
+        "question": "Quel type de câble est utilisé pour les connexions longue distance ?",
+        "choices": ["UTP", "STP", "Fibre optique", "Coaxial"],
+        "correct": 2,
+        "explanation": "La fibre optique est utilisée pour les connexions longue distance car elle a une faible atténuation.",
+        "wrongExplanations": [
+          "UTP a des limitations de distance.",
+          "STP a des limitations de distance similaires à UTP.",
+          null,
+          "Le coaxial a des limitations de distance."
+        ],
+        "topic": "1.3 — Types de câbles"
+      },
+      {
+        "id": 24,
+        "question": "Qu'est-ce que NAT fait ?",
+        "choices": ["Chiffre le trafic", "Traduit les adresses IP privées en publiques", "Filtre les paquets", "Assigne des adresses IP"],
+        "correct": 1,
+        "explanation": "NAT (Network Address Translation) traduit les adresses IP privées en adresses IP publiques.",
+        "wrongExplanations": [
+          "NAT ne chiffre pas le trafic.",
+          null,
+          "NAT ne filtre pas les paquets.",
+          "DHCP assigne des adresses IP, pas NAT."
+        ],
+        "topic": "1.6 — Traduction d'adresses"
+      },
+      {
+        "id": 25,
+        "question": "Quel protocole utilise des ports pour identifier les applications ?",
+        "choices": ["IP", "TCP/UDP", "Ethernet", "ARP"],
+        "correct": 1,
+        "explanation": "TCP et UDP utilisent des numéros de port pour identifier les applications et services.",
+        "wrongExplanations": [
+          "IP utilise des adresses pour identifier les hôtes.",
+          null,
+          "Ethernet utilise des adresses MAC.",
+          "ARP résout les adresses IP en MAC."
+        ],
+        "topic": "1.1 — Protocoles de transport"
+      },
+      {
+        "id": 26,
+        "question": "Quelle est la différence entre un switch et un hub ?",
+        "choices": ["Un switch est plus rapide", "Un switch crée des domaines de collision séparés", "Un hub est plus sécurisé", "Aucune différence"],
+        "correct": 1,
+        "explanation": "Un switch crée des domaines de collision séparés pour chaque port, contrairement à un hub.",
+        "wrongExplanations": [
+          "La vitesse n'est pas la différence principale.",
+          null,
+          "Un hub n'est pas plus sécurisé qu'un switch.",
+          "Il y a des différences importantes entre les deux."
+        ],
+        "topic": "1.2 — Comparaison des appareils"
+      },
+      {
+        "id": 27,
+        "question": "Quel est le but d'un point d'accès sans fil ?",
+        "choices": ["Routage entre réseaux", "Connexion d'appareils sans fil à un réseau", "Filtrage de paquets", "Assignation d'adresses IP"],
+        "correct": 1,
+        "explanation": "Un point d'accès sans fil connecte les appareils sans fil à un réseau filaire.",
+        "wrongExplanations": [
+          "Les routeurs font le routage entre réseaux.",
+          null,
+          "Les pare-feu filtrent les paquets.",
+          "DHCP assigne les adresses IP."
+        ],
+        "topic": "1.4 — Appareils sans fil"
+      },
+      {
+        "id": 28,
+        "question": "Quelle est la plage d'adresses IPv6 de liaison locale ?",
+        "choices": ["2000::/3", "FC00::/7", "FE80::/10", "FF00::/8"],
+        "correct": 2,
+        "explanation": "FE80::/10 est la plage d'adresses IPv6 de liaison locale.",
+        "wrongExplanations": [
+          "2000::/3 est la plage d'adresses IPv6 globales unicast.",
+          "FC00::/7 est la plage d'adresses IPv6 locales uniques.",
+          null,
+          "FF00::/8 est la plage d'adresses IPv6 multicast."
+        ],
+        "topic": "1.7 — Adressage IPv6"
+      },
+      {
+        "id": 29,
+        "question": "Quel protocole gère la résolution d'adresses MAC ?",
+        "choices": ["DNS", "DHCP", "ARP", "ICMP"],
+        "correct": 2,
+        "explanation": "ARP (Address Resolution Protocol) résout les adresses IP en adresses MAC.",
+        "wrongExplanations": [
+          "DNS résout les noms de domaine en adresses IP.",
+          "DHCP assigne des adresses IP.",
+          null,
+          "ICMP est utilisé pour les messages de contrôle et d'erreur."
+        ],
+        "topic": "1.5 — Résolution d'adresses"
+      },
+      {
+        "id": 30,
+        "question": "Quelle est la fonction principale d'un routeur ?",
+        "choices": ["Amplifier les signaux", "Connecter des réseaux différents", "Filtrer le trafic", "Assigner des adresses IP"],
+        "correct": 1,
+        "explanation": "Un routeur connecte des réseaux différents et route le trafic entre eux.",
+        "wrongExplanations": [
+          "Les répéteurs amplifient les signaux.",
+          null,
+          "Les pare-feu filtrent le trafic.",
+          "DHCP assigne les adresses IP."
+        ],
+        "topic": "1.2 — Fonctionnement des routeurs"
+      },
+      {
+        "id": 31,
+        "question": "Quel est le débit maximal d'Ethernet Fast ?",
+        "choices": ["10 Mbps", "100 Mbps", "1 Gbps", "10 Gbps"],
+        "correct": 1,
+        "explanation": "Ethernet Fast peut atteindre un débit maximal de 100 Mbps.",
+        "wrongExplanations": [
+          "10 Mbps est le débit d'Ethernet standard.",
+          null,
+          "1 Gbps est le débit d'Ethernet Gigabit.",
+          "10 Gbps est le débit d'Ethernet 10 Gigabit."
+        ],
+        "topic": "1.3 — Standards Ethernet"
+      },
+      {
+        "id": 32,
+        "question": "Quelle couche OSI gère la transmission physique des données ?",
+        "choices": ["Couche application", "Couche transport", "Couche réseau", "Couche physique"],
+        "correct": 3,
+        "explanation": "La couche physique (couche 1) gère la transmission physique des données sur le média.",
+        "wrongExplanations": [
+          "La couche application gère les interfaces utilisateur.",
+          "La couche transport gère la segmentation.",
+          "La couche réseau gère le routage.",
+          null
+        ],
+        "topic": "1.1 — Modèle OSI"
+      },
+      {
+        "id": 33,
+        "question": "Quel protocole est utilisé pour la gestion des appareils réseau ?",
+        "choices": ["DNS", "DHCP", "SNMP", "FTP"],
+        "correct": 2,
+        "explanation": "SNMP (Simple Network Management Protocol) est utilisé pour la gestion et la surveillance des appareils réseau.",
+        "wrongExplanations": [
+          "DNS résout les noms de domaine.",
+          "DHCP assigne des adresses IP.",
+          null,
+          "FTP transfère des fichiers."
+        ],
+        "topic": "1.5 — Services de gestion"
+      },
+      {
+        "id": 34,
+        "question": "Quelle est la différence entre TCP et UDP ?",
+        "choices": ["TCP est plus rapide", "TCP fournit une livraison fiable", "UDP est plus sécurisé", "Aucune différence"],
+        "correct": 1,
+        "explanation": "TCP fournit une livraison fiable avec contrôle de flux et correction d'erreurs, contrairement à UDP.",
+        "wrongExplanations": [
+          "UDP est généralement plus rapide que TCP.",
+          null,
+          "TCP et UDP ont des niveaux de sécurité similaires.",
+          "Il y a des différences importantes entre les deux."
+        ],
+        "topic": "1.1 — Protocoles de transport"
+      },
+      {
+        "id": 35,
+        "question": "Quel est le but d'un serveur DNS ?",
+        "choices": ["Assigner des adresses IP", "Résoudre les noms de domaine", "Filtrer le trafic", "Chiffrer les données"],
+        "correct": 1,
+        "explanation": "Un serveur DNS résout les noms de domaine en adresses IP.",
+        "wrongExplanations": [
+          "DHCP assigne des adresses IP.",
+          null,
+          "Les pare-feu filtrent le trafic.",
+          "Les protocoles de chiffrement chiffrent les données."
+        ],
+        "topic": "1.5 — Services DNS"
+      },
+      {
+        "id": 36,
+        "question": "Quelle est la plage d'adresses IP privées de classe B ?",
+        "choices": ["10.0.0.0 - 10.255.255.255", "172.16.0.0 - 172.31.255.255", "192.168.0.0 - 192.168.255.255", "169.254.0.0 - 169.254.255.255"],
+        "correct": 1,
+        "explanation": "La plage d'adresses IP privées de classe B est 172.16.0.0 à 172.31.255.255.",
+        "wrongExplanations": [
+          "10.0.0.0 - 10.255.255.255 est la plage de classe A.",
+          null,
+          "192.168.0.0 - 192.168.255.255 est la plage de classe C.",
+          "169.254.0.0 - 169.254.255.255 est la plage APIPA."
+        ],
+        "topic": "1.6 — Adresses IP privées"
+      },
+      {
+        "id": 37,
+        "question": "Quel protocole est utilisé pour le transfert de fichiers ?",
+        "choices": ["HTTP", "FTP", "SMTP", "SNMP"],
+        "correct": 1,
+        "explanation": "FTP (File Transfer Protocol) est utilisé pour le transfert de fichiers entre systèmes.",
+        "wrongExplanations": [
+          "HTTP est utilisé pour le transfert de pages web.",
+          null,
+          "SMTP est utilisé pour l'envoi d'emails.",
+          "SNMP est utilisé pour la gestion réseau."
+        ],
+        "topic": "1.5 — Services de transfert"
+      },
+      {
+        "id": 38,
+        "question": "Quelle est la fonction d'un pare-feu ?",
+        "choices": ["Amplifier les signaux", "Filtrer le trafic réseau", "Assigner des adresses IP", "Résoudre les noms de domaine"],
+        "correct": 1,
+        "explanation": "Un pare-feu filtre le trafic réseau basé sur des règles de sécurité prédéfinies.",
+        "wrongExplanations": [
+          "Les répéteurs amplifient les signaux.",
+          null,
+          "DHCP assigne des adresses IP.",
+          "DNS résout les noms de domaine."
+        ],
+        "topic": "1.2 — Appareils de sécurité"
+      },
+      {
+        "id": 39,
+        "question": "Quel est le débit maximal d'802.11n ?",
+        "choices": ["54 Mbps", "150 Mbps", "600 Mbps", "1.3 Gbps"],
+        "correct": 2,
+        "explanation": "802.11n peut atteindre un débit maximal théorique de 600 Mbps.",
+        "wrongExplanations": [
+          "54 Mbps est le maximum pour 802.11g.",
+          "150 Mbps est le débit par flux pour 802.11n.",
+          null,
+          "1.3 Gbps est le maximum pour 802.11ac."
+        ],
+        "topic": "1.4 — Standards sans fil"
+      },
+      {
+        "id": 40,
+        "question": "Quelle est la différence entre IPv4 et IPv6 ?",
+        "choices": ["IPv6 est plus lent", "IPv6 a un espace d'adressage plus large", "IPv4 est plus sécurisé", "Aucune différence"],
+        "correct": 1,
+        "explanation": "IPv6 a un espace d'adressage beaucoup plus large (128 bits) par rapport à IPv4 (32 bits).",
+        "wrongExplanations": [
+          "IPv6 n'est pas plus lent qu'IPv4.",
+          null,
+          "IPv6 a des fonctionnalités de sécurité intégrées.",
+          "Il y a des différences importantes entre les deux."
+        ],
+        "topic": "1.7 — Comparaison IPv4/IPv6"
+      },
+      {
+        "id": 41,
+        "question": "Quel est le débit maximal d'802.11g ?",
+        "choices": ["11 Mbps", "54 Mbps", "150 Mbps", "600 Mbps"],
+        "correct": 1,
+        "explanation": "802.11g peut atteindre un débit maximal théorique de 54 Mbps.",
+        "wrongExplanations": [
+          "11 Mbps est le maximum pour 802.11b.",
+          null,
+          "150 Mbps est le débit par flux pour 802.11n.",
+          "600 Mbps est le maximum pour 802.11n."
+        ],
+        "topic": "1.4 — Standards sans fil"
+      },
+      {
+        "id": 42,
+        "question": "Quelle couche OSI gère la segmentation et la réassemblage ?",
+        "choices": ["Couche réseau", "Couche transport", "Couche session", "Couche présentation"],
+        "correct": 1,
+        "explanation": "La couche transport (couche 4) gère la segmentation et la réassemblage des données.",
+        "wrongExplanations": [
+          "La couche réseau gère le routage.",
+          null,
+          "La couche session gère les sessions.",
+          "La couche présentation gère le formatage des données."
+        ],
+        "topic": "1.1 — Modèle OSI"
+      },
+      {
+        "id": 43,
+        "question": "Quel protocole est utilisé pour l'envoi d'emails ?",
+        "choices": ["HTTP", "FTP", "SMTP", "SNMP"],
+        "correct": 2,
+        "explanation": "SMTP (Simple Mail Transfer Protocol) est utilisé pour l'envoi d'emails.",
+        "wrongExplanations": [
+          "HTTP est utilisé pour les pages web.",
+          "FTP est utilisé pour le transfert de fichiers.",
+          null,
+          "SNMP est utilisé pour la gestion réseau."
+        ],
+        "topic": "1.5 — Services de messagerie"
+      },
+      {
+        "id": 44,
+        "question": "Quelle est la fonction d'un répéteur ?",
+        "choices": ["Filtrer le trafic", "Amplifier les signaux", "Routage intelligent", "Assigner des adresses IP"],
+        "correct": 1,
+        "explanation": "Un répéteur amplifie les signaux pour étendre la portée d'un réseau.",
+        "wrongExplanations": [
+          "Les pare-feu filtrent le trafic.",
+          null,
+          "Les routeurs font le routage intelligent.",
+          "DHCP assigne les adresses IP."
+        ],
+        "topic": "1.2 — Appareils réseau"
+      },
+      {
+        "id": 45,
+        "question": "Quel est le débit maximal d'Ethernet standard (10BASE-T) ?",
+        "choices": ["1 Mbps", "10 Mbps", "100 Mbps", "1 Gbps"],
+        "correct": 1,
+        "explanation": "Ethernet standard (10BASE-T) peut atteindre un débit maximal de 10 Mbps.",
+        "wrongExplanations": [
+          "1 Mbps est trop lent pour Ethernet standard.",
+          null,
+          "100 Mbps est le débit d'Ethernet Fast.",
+          "1 Gbps est le débit d'Ethernet Gigabit."
+        ],
+        "topic": "1.3 — Standards Ethernet"
+      },
+      {
+        "id": 46,
+        "question": "Quelle est la plage d'adresses IP privées de classe C ?",
+        "choices": ["10.0.0.0 - 10.255.255.255", "172.16.0.0 - 172.31.255.255", "192.168.0.0 - 192.168.255.255", "169.254.0.0 - 169.254.255.255"],
+        "correct": 2,
+        "explanation": "La plage d'adresses IP privées de classe C est 192.168.0.0 à 192.168.255.255.",
+        "wrongExplanations": [
+          "10.0.0.0 - 10.255.255.255 est la plage de classe A.",
+          "172.16.0.0 - 172.31.255.255 est la plage de classe B.",
+          null,
+          "169.254.0.0 - 169.254.255.255 est la plage APIPA."
+        ],
+        "topic": "1.6 — Adresses IP privées"
+      },
+      {
+        "id": 47,
+        "question": "Quel protocole est utilisé pour la réception d'emails ?",
+        "choices": ["SMTP", "POP3/IMAP", "FTP", "HTTP"],
+        "correct": 1,
+        "explanation": "POP3 et IMAP sont utilisés pour la réception d'emails depuis un serveur de messagerie.",
+        "wrongExplanations": [
+          "SMTP est utilisé pour l'envoi d'emails.",
+          null,
+          "FTP est utilisé pour le transfert de fichiers.",
+          "HTTP est utilisé pour les pages web."
+        ],
+        "topic": "1.5 — Services de messagerie"
+      },
+      {
+        "id": 48,
+        "question": "Quelle est la fonction d'un commutateur multicouche ?",
+        "choices": ["Amplifier les signaux", "Effectuer du routage et de la commutation", "Filtrer le trafic", "Assigner des adresses IP"],
+        "correct": 1,
+        "explanation": "Un commutateur multicouche peut effectuer à la fois du routage (couche 3) et de la commutation (couche 2).",
+        "wrongExplanations": [
+          "Les répéteurs amplifient les signaux.",
+          null,
+          "Les pare-feu filtrent le trafic.",
+          "DHCP assigne les adresses IP."
+        ],
+        "topic": "1.2 — Appareils réseau"
+      },
+      {
+        "id": 49,
+        "question": "Quel est le débit maximal d'802.11b ?",
+        "choices": ["1 Mbps", "11 Mbps", "54 Mbps", "150 Mbps"],
+        "correct": 1,
+        "explanation": "802.11b peut atteindre un débit maximal théorique de 11 Mbps.",
+        "wrongExplanations": [
+          "1 Mbps est trop lent pour 802.11b.",
+          null,
+          "54 Mbps est le maximum pour 802.11g.",
+          "150 Mbps est le débit par flux pour 802.11n."
+        ],
+        "topic": "1.4 — Standards sans fil"
+      },
+      {
+        "id": 50,
+        "question": "Quelle est la fonction principale d'un serveur DHCP ?",
+        "choices": ["Résoudre les noms de domaine", "Assigner automatiquement des adresses IP", "Filtrer le trafic", "Chiffrer les données"],
+        "correct": 1,
+        "explanation": "Un serveur DHCP assigne automatiquement des adresses IP, des masques de sous-réseau et d'autres paramètres réseau aux clients.",
+        "wrongExplanations": [
+          "DNS résout les noms de domaine.",
+          null,
+          "Les pare-feu filtrent le trafic.",
+          "Les protocoles de chiffrement chiffrent les données."
+        ],
+        "topic": "1.5 — Services DHCP"
       }
     ],
     "2": [
       {
-        "id": 6,
-        "question": "Quel standard sans fil fonctionne à 5 GHz ?",
-        "choices": ["802.11b", "802.11g", "802.11n", "802.11ac"],
-        "correct": 3,
-        "explanation": "802.11ac fonctionne exclusivement à 5 GHz, fournissant une bande passante plus élevée.",
+        "id": 51,
+        "question": "Quel est l'objectif principal d'une DMZ ?",
+        "choices": ["Stocker des sauvegardes", "Isoler les serveurs publics", "Augmenter la bande passante", "Fournir un accès sans fil"],
+        "correct": 1,
+        "explanation": "Une DMZ (Zone Démilitarisée) isole les serveurs publics du réseau interne pour la sécurité.",
         "wrongExplanations": [
-          "802.11b fonctionne uniquement à 2.4 GHz.",
-          "802.11g fonctionne uniquement à 2.4 GHz.",
-          "802.11n peut fonctionner à la fois à 2.4 GHz et 5 GHz.",
-          null
+          "DMZ n'est pas conçue pour stocker des sauvegardes.",
+          null,
+          "DMZ n'augmente pas la capacité de bande passante.",
+          "DMZ ne fournit pas d'accès sans fil."
         ],
-        "topic": "2.1 — Technologies sans fil"
+        "topic": "2.1 — Segmentation réseau"
       },
       {
-        "id": 7,
-        "question": "Quelle est la vitesse maximale de 802.11n ?",
-        "choices": ["54 Mbps", "150 Mbps", "300 Mbps", "600 Mbps"],
-        "correct": 3,
-        "explanation": "802.11n peut atteindre jusqu'à 600 Mbps avec une configuration MIMO 4x4.",
+        "id": 52,
+        "question": "Quel protocole de routage est à vecteur de distance ?",
+        "choices": ["OSPF", "RIP", "BGP", "IS-IS"],
+        "correct": 1,
+        "explanation": "RIP (Protocole d'Information de Routage) est un protocole de routage à vecteur de distance qui utilise le nombre de sauts comme métrique.",
         "wrongExplanations": [
-          "54 Mbps est le maximum pour 802.11g.",
-          "150 Mbps est pour 802.11n à flux unique.",
-          "300 Mbps est pour 802.11n à double flux.",
+          "OSPF est un protocole à état de lien.",
+          null,
+          "BGP est un protocole à vecteur de chemin.",
+          "IS-IS est un protocole à état de lien."
+        ],
+        "topic": "2.2 — Protocoles de routage"
+      },
+      {
+        "id": 53,
+        "question": "Que fait la diffusion SSID ?",
+        "choices": ["Chiffre le trafic sans fil", "Rend le réseau sans fil visible", "Assigne des adresses IP", "Filtre les adresses MAC"],
+        "correct": 1,
+        "explanation": "La diffusion SSID rend le nom du réseau sans fil visible aux appareils à proximité.",
+        "wrongExplanations": [
+          "La diffusion SSID ne chiffre pas le trafic.",
+          null,
+          "La diffusion SSID n'assigne pas d'adresses IP.",
+          "La diffusion SSID ne filtre pas les adresses MAC."
+        ],
+        "topic": "2.3 — Implémentation sans fil"
+      },
+      {
+        "id": 54,
+        "question": "Quelle méthode d'équilibrage de charge utilise le temps de réponse du serveur ?",
+        "choices": ["Round-robin", "Moins de connexions", "Pondéré", "Dynamique"],
+        "correct": 3,
+        "explanation": "L'équilibrage de charge dynamique s'ajuste basé sur des métriques en temps réel comme le temps de réponse du serveur et la charge.",
+        "wrongExplanations": [
+          "Round-robin distribue les requêtes séquentiellement.",
+          "Moins de connexions route vers le serveur avec le moins de connexions actives.",
+          "Pondéré distribue basé sur la capacité prédéfinie du serveur.",
           null
         ],
-        "topic": "2.1 — Technologies sans fil"
+        "topic": "2.4 — Services réseau"
+      },
+      {
+        "id": 55,
+        "question": "Quel est l'objectif du miroitage de port ?",
+        "choices": ["Augmenter la bande passante", "Surveiller le trafic pour analyse", "Créer de la redondance", "Équilibrer la charge"],
+        "correct": 1,
+        "explanation": "Le miroitage de port (SPAN) copie le trafic d'un port vers un autre pour surveillance et analyse.",
+        "wrongExplanations": [
+          "Le miroitage de port n'augmente pas la bande passante.",
+          null,
+          "Le miroitage de port ne crée pas de redondance.",
+          "Le miroitage de port n'équilibre pas la charge."
+        ],
+        "topic": "2.5 — Surveillance réseau"
+      },
+      {
+        "id": 56,
+        "question": "Quelle VLAN est la valeur par défaut sur la plupart des commutateurs ?",
+        "choices": ["VLAN 0", "VLAN 1", "VLAN 10", "VLAN 100"],
+        "correct": 1,
+        "explanation": "VLAN 1 est la VLAN par défaut sur la plupart des commutateurs et ne peut pas être supprimée.",
+        "wrongExplanations": [
+          "VLAN 0 n'existe pas comme VLAN par défaut.",
+          null,
+          "VLAN 10 n'est pas la VLAN par défaut.",
+          "VLAN 100 n'est pas la VLAN par défaut."
+        ],
+        "topic": "2.2 — VLANs"
+      },
+      {
+        "id": 57,
+        "question": "Que fournit un serveur proxy ?",
+        "choices": ["Connexion internet directe", "Mise en cache et filtrage", "Assignation d'adresses IP", "Accès sans fil"],
+        "correct": 1,
+        "explanation": "Les serveurs proxy mettent en cache le contenu et filtrent les requêtes, améliorant les performances et la sécurité.",
+        "wrongExplanations": [
+          "Les serveurs proxy ne fournissent pas de connexion internet directe.",
+          null,
+          "DHCP assigne les adresses IP, pas les serveurs proxy.",
+          "Les serveurs proxy ne fournissent pas d'accès sans fil."
+        ],
+        "topic": "2.1 — Serveurs réseau"
+      },
+      {
+        "id": 58,
+        "question": "Quel protocole configure automatiquement les adresses IPv6 ?",
+        "choices": ["DHCPv4", "SLAAC", "ARP", "ICMP"],
+        "correct": 1,
+        "explanation": "SLAAC (Configuration automatique d'adresses sans état) permet aux appareils de configurer automatiquement leurs propres adresses IPv6.",
+        "wrongExplanations": [
+          "DHCPv4 est pour l'assignation d'adresses IPv4.",
+          null,
+          "ARP résout les adresses IP en adresses MAC.",
+          "ICMP est utilisé pour le signalement d'erreurs et les diagnostics."
+        ],
+        "topic": "2.3 — Configuration IPv6"
+      },
+      {
+        "id": 59,
+        "question": "Quel est le but d'un jump box ?",
+        "choices": ["Augmenter la bande passante", "Point d'accès sécurisé pour l'administration", "Équilibrage de charge", "Stockage de sauvegarde"],
+        "correct": 1,
+        "explanation": "Un jump box (hôte bastion) fournit un accès sécurisé et contrôlé aux systèmes dans différentes zones de sécurité.",
+        "wrongExplanations": [
+          "Les jump boxes n'augmentent pas la bande passante.",
+          null,
+          "Les jump boxes ne font pas d'équilibrage de charge.",
+          "Les jump boxes ne fournissent pas de stockage de sauvegarde."
+        ],
+        "topic": "2.1 — Sécurité réseau"
+      },
+      {
+        "id": 60,
+        "question": "Quelle métrique de routage utilise OSPF ?",
+        "choices": ["Nombre de sauts", "Bande passante (coût)", "Délai", "Fiabilité"],
+        "correct": 1,
+        "explanation": "OSPF utilise le coût basé sur la bande passante comme métrique de routage.",
+        "wrongExplanations": [
+          "Le nombre de sauts est utilisé par RIP, pas OSPF.",
+          null,
+          "Le délai n'est pas la métrique principale d'OSPF.",
+          "La fiabilité n'est pas la métrique principale d'OSPF."
+        ],
+        "topic": "2.2 — Protocoles de routage"
+      },
+      {
+        "id": 61,
+        "question": "Quel est le but du relais DHCP ?",
+        "choices": ["Assigner des IP statiques", "Transférer les requêtes DHCP à travers les sous-réseaux", "Chiffrer le trafic DHCP", "Mettre en cache les adresses IP"],
+        "correct": 1,
+        "explanation": "Le relais DHCP transfère les messages de diffusion DHCP à travers différents sous-réseaux vers un serveur DHCP.",
+        "wrongExplanations": [
+          "Le relais DHCP n'assigne pas d'IP statiques.",
+          null,
+          "Le relais DHCP ne chiffre pas le trafic.",
+          "Le relais DHCP ne met pas en cache les adresses IP."
+        ],
+        "topic": "2.3 — Services DHCP"
+      },
+      {
+        "id": 62,
+        "question": "Quelle authentification sans fil utilise un serveur RADIUS ?",
+        "choices": ["WPA2-Personnel", "WPA2-Entreprise", "Ouverte", "WEP"],
+        "correct": 1,
+        "explanation": "WPA2-Entreprise utilise l'authentification 802.1X avec un serveur RADIUS pour l'authentification centralisée des utilisateurs.",
+        "wrongExplanations": [
+          "WPA2-Personnel utilise des clés pré-partagées, pas RADIUS.",
+          null,
+          "L'authentification ouverte n'utilise pas RADIUS.",
+          "WEP n'utilise pas l'authentification RADIUS."
+        ],
+        "topic": "2.1 — Sécurité sans fil"
+      },
+      {
+        "id": 63,
+        "question": "Que nécessite le routage statique ?",
+        "choices": ["Mises à jour automatiques", "Configuration manuelle des routes", "Serveur DHCP", "Serveur DNS"],
+        "correct": 1,
+        "explanation": "Les routes statiques doivent être configurées manuellement par un administrateur et ne s'adaptent pas aux changements de réseau.",
+        "wrongExplanations": [
+          "Les routes statiques ne se mettent pas à jour automatiquement.",
+          null,
+          "Les routes statiques ne nécessitent pas DHCP.",
+          "Les routes statiques ne nécessitent pas DNS."
+        ],
+        "topic": "2.2 — Routage statique"
+      },
+      {
+        "id": 64,
+        "question": "Quel protocole est utilisé pour la synchronisation temporelle ?",
+        "choices": ["SNMP", "NTP", "SMTP", "FTP"],
+        "correct": 1,
+        "explanation": "NTP (Network Time Protocol) synchronise les horloges entre les appareils réseau.",
+        "wrongExplanations": [
+          "SNMP est utilisé pour la gestion réseau.",
+          null,
+          "SMTP est utilisé pour l'email.",
+          "FTP est utilisé pour le transfert de fichiers."
+        ],
+        "topic": "2.4 — Services temporels"
+      },
+      {
+        "id": 65,
+        "question": "Quel est le but d'un tronc VLAN ?",
+        "choices": ["Transporter le trafic pour une seule VLAN", "Transporter le trafic pour plusieurs VLANs", "Bloquer tout le trafic", "Assigner des adresses IP"],
+        "correct": 1,
+        "explanation": "Les troncs VLAN transportent le trafic pour plusieurs VLANs entre les commutateurs en utilisant l'étiquetage (typiquement 802.1Q).",
+        "wrongExplanations": [
+          "Les ports d'accès transportent le trafic pour une seule VLAN.",
+          null,
+          "Les troncs ne bloquent pas tout le trafic.",
+          "Les troncs n'assignent pas d'adresses IP."
+        ],
+        "topic": "2.2 — Troncs VLAN"
+      },
+      {
+        "id": 66,
+        "question": "Quel appareil peut prioriser le trafic VoIP ?",
+        "choices": ["Hub", "Commutateur non géré", "Routeur avec QoS", "Répéteur"],
+        "correct": 2,
+        "explanation": "Les routeurs avec QoS peuvent prioriser le trafic sensible au temps comme VoIP par rapport aux autres données.",
+        "wrongExplanations": [
+          "Les hubs ne peuvent pas prioriser le trafic.",
+          "Les commutateurs non gérés ne peuvent pas prioriser le trafic.",
+          null,
+          "Les répéteurs ne peuvent pas prioriser le trafic."
+        ],
+        "topic": "2.5 — Qualité de service"
+      },
+      {
+        "id": 67,
+        "question": "Que fournit l'agrégation de liens ?",
+        "choices": ["Bande passante et redondance accrues", "Connectivité sans fil", "Assignation d'IP", "Résolution de noms"],
+        "correct": 0,
+        "explanation": "L'agrégation de liens (LAG) combine plusieurs liens physiques en un lien logique pour une bande passante et une redondance accrues.",
+        "wrongExplanations": [
+          null,
+          "L'agrégation de liens ne fournit pas de connectivité sans fil.",
+          "L'agrégation de liens n'assigne pas d'adresses IP.",
+          "L'agrégation de liens ne résout pas les noms."
+        ],
+        "topic": "2.2 — Agrégation de liens"
+      },
+      {
+        "id": 68,
+        "question": "Quel protocole prévient les boucles dans les réseaux commutés ?",
+        "choices": ["RIP", "OSPF", "STP", "BGP"],
+        "correct": 2,
+        "explanation": "Le protocole Spanning Tree (STP) prévient les boucles en bloquant les chemins redondants dans les réseaux commutés.",
+        "wrongExplanations": [
+          "RIP est un protocole de routage, pas pour la commutation.",
+          "OSPF est un protocole de routage, pas pour la commutation.",
+          null,
+          "BGP est un protocole de routage, pas pour la commutation."
+        ],
+        "topic": "2.2 — Protocoles de commutation"
+      },
+      {
+        "id": 69,
+        "question": "Quel est le but d'un VPN site à site ?",
+        "choices": ["Connecter des utilisateurs individuels au réseau", "Connecter des réseaux entiers de manière sécurisée", "Fournir un accès sans fil", "Assigner des adresses IP"],
+        "correct": 1,
+        "explanation": "Les VPNs site à site créent des connexions sécurisées entre des réseaux entiers, souvent en connectant des bureaux distants.",
+        "wrongExplanations": [
+          "Les VPNs d'accès distant connectent des utilisateurs individuels.",
+          null,
+          "Les VPNs ne fournissent pas d'accès sans fil.",
+          "Les VPNs n'assignent pas d'adresses IP."
+        ],
+        "topic": "2.4 — VPNs"
+      },
+      {
+        "id": 70,
+        "question": "Quel type d'enregistrement DNS mappe un domaine à une adresse IP ?",
+        "choices": ["CNAME", "MX", "A", "PTR"],
+        "correct": 2,
+        "explanation": "Un enregistrement A (Address) mappe un nom de domaine à une adresse IPv4.",
+        "wrongExplanations": [
+          "CNAME mappe des alias à d'autres noms de domaine.",
+          "Les enregistrements MX spécifient les serveurs de messagerie.",
+          null,
+          "Les enregistrements PTR mappent les adresses IP aux noms de domaine."
+        ],
+        "topic": "2.4 — Services DNS"
+      },
+      {
+        "id": 71,
+        "question": "Que fait la sécurité de port sur un commutateur ?",
+        "choices": ["Chiffre le trafic", "Limite les appareils par adresse MAC", "Assigne les VLANs", "Fournit le routage"],
+        "correct": 1,
+        "explanation": "La sécurité de port restreint quels appareils (par adresse MAC) peuvent se connecter à des ports spécifiques du commutateur.",
+        "wrongExplanations": [
+          "La sécurité de port ne chiffre pas le trafic.",
+          null,
+          "La sécurité de port n'assigne pas les VLANs.",
+          "La sécurité de port ne fournit pas le routage."
+        ],
+        "topic": "2.1 — Sécurité de commutateur"
+      },
+      {
+        "id": 72,
+        "question": "Quel protocole de routage est le meilleur pour les grands réseaux d'entreprise ?",
+        "choices": ["RIP", "OSPF", "Routage statique", "Routage par défaut"],
+        "correct": 1,
+        "explanation": "OSPF est un protocole d'état de lien qui s'adapte bien et converge rapidement, le rendant idéal pour les grandes entreprises.",
+        "wrongExplanations": [
+          "RIP a des limitations de taille et de convergence.",
+          null,
+          "Le routage statique ne s'adapte pas aux changements.",
+          "Le routage par défaut ne convient que pour les petits réseaux."
+        ],
+        "topic": "2.2 — Protocoles de routage"
+      },
+      {
+        "id": 73,
+        "question": "Quel est le but de l'équilibrage de charge ?",
+        "choices": ["Augmenter la sécurité", "Distribuer le trafic sur plusieurs serveurs", "Réduire la latence", "Chiffrer les données"],
+        "correct": 1,
+        "explanation": "L'équilibrage de charge distribue le trafic entrant sur plusieurs serveurs pour améliorer les performances et la disponibilité.",
+        "wrongExplanations": [
+          "L'équilibrage de charge n'augmente pas directement la sécurité.",
+          null,
+          "L'équilibrage de charge peut réduire la latence mais ce n'est pas son but principal.",
+          "L'équilibrage de charge ne chiffre pas les données."
+        ],
+        "topic": "2.5 — Équilibrage de charge"
+      },
+      {
+        "id": 74,
+        "question": "Quelle est la différence entre un commutateur géré et non géré ?",
+        "choices": ["Vitesse différente", "Capacité de configuration et de surveillance", "Taille différente", "Coût uniquement"],
+        "correct": 1,
+        "explanation": "Les commutateurs gérés permettent la configuration, la surveillance et la gestion, contrairement aux commutateurs non gérés.",
+        "wrongExplanations": [
+          "La vitesse n'est pas la différence principale.",
+          null,
+          "La taille n'est pas la différence principale.",
+          "Le coût n'est pas la seule différence."
+        ],
+        "topic": "2.2 — Types de commutateurs"
+      },
+      {
+        "id": 75,
+        "question": "Quel est le but d'un serveur de terminaux ?",
+        "choices": ["Stocker des fichiers", "Fournir des applications centralisées", "Routage", "Surveillance réseau"],
+        "correct": 1,
+        "explanation": "Un serveur de terminaux fournit des applications centralisées que les clients peuvent utiliser à distance.",
+        "wrongExplanations": [
+          "Les serveurs de fichiers stockent des fichiers.",
+          null,
+          "Les routeurs font le routage.",
+          "Les outils de surveillance surveillent le réseau."
+        ],
+        "topic": "2.1 — Serveurs spécialisés"
+      },
+      {
+        "id": 76,
+        "question": "Quelle est la fonction d'un contrôleur de domaine ?",
+        "choices": ["Assigner des adresses IP", "Gérer l'authentification et les politiques", "Filtrer le trafic", "Surveiller les performances"],
+        "correct": 1,
+        "explanation": "Un contrôleur de domaine gère l'authentification des utilisateurs et l'application des politiques de sécurité.",
+        "wrongExplanations": [
+          "DHCP assigne les adresses IP.",
+          null,
+          "Les pare-feu filtrent le trafic.",
+          "Les outils de surveillance surveillent les performances."
+        ],
+        "topic": "2.1 — Services d'annuaire"
+      },
+      {
+        "id": 77,
+        "question": "Quel est le but de la virtualisation réseau ?",
+        "choices": ["Augmenter la vitesse", "Créer des réseaux logiques isolés", "Réduire les coûts", "Éliminer les commutateurs"],
+        "correct": 1,
+        "explanation": "La virtualisation réseau permet de créer des réseaux logiques isolés sur une infrastructure physique partagée.",
+        "wrongExplanations": [
+          "La virtualisation n'augmente pas directement la vitesse.",
+          null,
+          "La réduction des coûts est un avantage secondaire.",
+          "La virtualisation ne supprime pas les commutateurs."
+        ],
+        "topic": "2.3 — Virtualisation"
+      },
+      {
+        "id": 78,
+        "question": "Quelle est la différence entre un commutateur de couche 2 et de couche 3 ?",
+        "choices": ["Vitesse différente", "Capacité de routage", "Taille différente", "Coût uniquement"],
+        "correct": 1,
+        "explanation": "Un commutateur de couche 3 peut effectuer du routage (couche 3) en plus de la commutation (couche 2).",
+        "wrongExplanations": [
+          "La vitesse n'est pas la différence principale.",
+          null,
+          "La taille n'est pas la différence principale.",
+          "Le coût n'est pas la seule différence."
+        ],
+        "topic": "2.2 — Types de commutateurs"
+      },
+      {
+        "id": 79,
+        "question": "Quel est le but d'un serveur de fichiers ?",
+        "choices": ["Routage", "Stocker et partager des fichiers", "Authentification", "Surveillance"],
+        "correct": 1,
+        "explanation": "Un serveur de fichiers stocke et partage des fichiers avec les clients du réseau.",
+        "wrongExplanations": [
+          "Les routeurs font le routage.",
+          null,
+          "Les contrôleurs de domaine gèrent l'authentification.",
+          "Les outils de surveillance surveillent le réseau."
+        ],
+        "topic": "2.1 — Serveurs de fichiers"
+      },
+      {
+        "id": 80,
+        "question": "Quelle est la fonction d'un serveur web ?",
+        "choices": ["Routage", "Héberger et servir des pages web", "Authentification", "Surveillance"],
+        "correct": 1,
+        "explanation": "Un serveur web héberge et sert des pages web aux clients via HTTP/HTTPS.",
+        "wrongExplanations": [
+          "Les routeurs font le routage.",
+          null,
+          "Les contrôleurs de domaine gèrent l'authentification.",
+          "Les outils de surveillance surveillent le réseau."
+        ],
+        "topic": "2.1 — Serveurs web"
+      },
+      {
+        "id": 81,
+        "question": "Quel est le but de la surveillance réseau ?",
+        "choices": ["Augmenter la vitesse", "Surveiller les performances et détecter les problèmes", "Réduire les coûts", "Éliminer les erreurs"],
+        "correct": 1,
+        "explanation": "La surveillance réseau surveille les performances, la disponibilité et détecte les problèmes potentiels.",
+        "wrongExplanations": [
+          "La surveillance n'augmente pas directement la vitesse.",
+          null,
+          "La réduction des coûts est un avantage secondaire.",
+          "La surveillance ne peut pas éliminer toutes les erreurs."
+        ],
+        "topic": "2.5 — Surveillance réseau"
+      },
+      {
+        "id": 82,
+        "question": "Quelle est la différence entre un hub et un commutateur ?",
+        "choices": ["Vitesse différente", "Domaine de collision", "Taille différente", "Coût uniquement"],
+        "correct": 1,
+        "explanation": "Un hub crée un domaine de collision partagé, tandis qu'un commutateur crée des domaines de collision séparés.",
+        "wrongExplanations": [
+          "La vitesse n'est pas la différence principale.",
+          null,
+          "La taille n'est pas la différence principale.",
+          "Le coût n'est pas la seule différence."
+        ],
+        "topic": "2.2 — Comparaison des appareils"
+      },
+      {
+        "id": 83,
+        "question": "Quel est le but d'un serveur de messagerie ?",
+        "choices": ["Routage", "Envoyer et recevoir des emails", "Authentification", "Surveillance"],
+        "correct": 1,
+        "explanation": "Un serveur de messagerie gère l'envoi et la réception d'emails pour les utilisateurs du réseau.",
+        "wrongExplanations": [
+          "Les routeurs font le routage.",
+          null,
+          "Les contrôleurs de domaine gèrent l'authentification.",
+          "Les outils de surveillance surveillent le réseau."
+        ],
+        "topic": "2.1 — Serveurs de messagerie"
+      },
+      {
+        "id": 84,
+        "question": "Quelle est la fonction d'un serveur de base de données ?",
+        "choices": ["Routage", "Stocker et gérer des données", "Authentification", "Surveillance"],
+        "correct": 1,
+        "explanation": "Un serveur de base de données stocke et gère des données structurées pour les applications.",
+        "wrongExplanations": [
+          "Les routeurs font le routage.",
+          null,
+          "Les contrôleurs de domaine gèrent l'authentification.",
+          "Les outils de surveillance surveillent le réseau."
+        ],
+        "topic": "2.1 — Serveurs de base de données"
+      },
+      {
+        "id": 85,
+        "question": "Quel est le but de la redondance réseau ?",
+        "choices": ["Augmenter la vitesse", "Assurer la disponibilité en cas de panne", "Réduire les coûts", "Éliminer les erreurs"],
+        "correct": 1,
+        "explanation": "La redondance réseau assure la disponibilité du service en cas de panne d'un composant.",
+        "wrongExplanations": [
+          "La redondance n'augmente pas directement la vitesse.",
+          null,
+          "La redondance peut augmenter les coûts.",
+          "La redondance ne peut pas éliminer toutes les erreurs."
+        ],
+        "topic": "2.5 — Redondance"
+      },
+      {
+        "id": 86,
+        "question": "Quelle est la différence entre un commutateur et un routeur ?",
+        "choices": ["Vitesse différente", "Couche de fonctionnement", "Taille différente", "Coût uniquement"],
+        "correct": 1,
+        "explanation": "Un commutateur fonctionne à la couche 2 (liaison de données), tandis qu'un routeur fonctionne à la couche 3 (réseau).",
+        "wrongExplanations": [
+          "La vitesse n'est pas la différence principale.",
+          null,
+          "La taille n'est pas la différence principale.",
+          "Le coût n'est pas la seule différence."
+        ],
+        "topic": "2.2 — Comparaison des appareils"
+      },
+      {
+        "id": 87,
+        "question": "Quel est le but d'un serveur d'impression ?",
+        "choices": ["Routage", "Gérer les travaux d'impression", "Authentification", "Surveillance"],
+        "correct": 1,
+        "explanation": "Un serveur d'impression gère les travaux d'impression et les files d'attente pour les imprimantes réseau.",
+        "wrongExplanations": [
+          "Les routeurs font le routage.",
+          null,
+          "Les contrôleurs de domaine gèrent l'authentification.",
+          "Les outils de surveillance surveillent le réseau."
+        ],
+        "topic": "2.1 — Serveurs d'impression"
+      },
+      {
+        "id": 88,
+        "question": "Quelle est la fonction d'un serveur de sauvegarde ?",
+        "choices": ["Routage", "Sauvegarder et restaurer des données", "Authentification", "Surveillance"],
+        "correct": 1,
+        "explanation": "Un serveur de sauvegarde sauvegarde automatiquement les données et peut les restaurer en cas de besoin.",
+        "wrongExplanations": [
+          "Les routeurs font le routage.",
+          null,
+          "Les contrôleurs de domaine gèrent l'authentification.",
+          "Les outils de surveillance surveillent le réseau."
+        ],
+        "topic": "2.1 — Serveurs de sauvegarde"
+      },
+      {
+        "id": 89,
+        "question": "Quel est le but de la surveillance des performances ?",
+        "choices": ["Augmenter la vitesse", "Mesurer et optimiser les performances", "Réduire les coûts", "Éliminer les erreurs"],
+        "correct": 1,
+        "explanation": "La surveillance des performances mesure les métriques de performance et aide à identifier les goulots d'étranglement.",
+        "wrongExplanations": [
+          "La surveillance n'augmente pas directement la vitesse.",
+          null,
+          "La réduction des coûts est un avantage secondaire.",
+          "La surveillance ne peut pas éliminer toutes les erreurs."
+        ],
+        "topic": "2.5 — Surveillance des performances"
+      },
+      {
+        "id": 90,
+        "question": "Quel enregistrement DNS est utilisé pour les recherches inverses ?",
+        "choices": ["A", "CNAME", "PTR", "MX"],
+        "correct": 2,
+        "explanation": "Les enregistrements PTR (Pointer) mappent les adresses IP vers les noms de domaine pour les recherches DNS inverses.",
+        "wrongExplanations": [
+          "Les enregistrements A mappent les noms de domaine vers les adresses IP.",
+          "Les enregistrements CNAME mappent les alias vers d'autres noms de domaine.",
+          null,
+          "Les enregistrements MX spécifient les serveurs de messagerie."
+        ],
+        "topic": "2.4 — Services DNS"
       }
     ],
     "3": [
       {
-        "id": 8,
-        "question": "Quel protocole est utilisé pour la livraison d'email ?",
-        "choices": ["HTTP", "SMTP", "FTP", "Telnet"],
+        "id": 91,
+        "question": "Quel est l'objectif de la documentation réseau ?",
+        "choices": ["Remplacer les sauvegardes", "Suivre les changements et aider au dépannage", "Augmenter la bande passante", "Éliminer la surveillance"],
         "correct": 1,
-        "explanation": "SMTP (Simple Mail Transfer Protocol) est utilisé pour la livraison d'email entre serveurs de messagerie.",
+        "explanation": "La documentation réseau enregistre les configurations, changements et topologies pour aider à la gestion et au dépannage.",
         "wrongExplanations": [
-          "HTTP est utilisé pour la navigation web.",
+          "La documentation ne remplace pas les sauvegardes.",
           null,
-          "FTP est utilisé pour le transfert de fichiers.",
-          "Telnet est utilisé pour l'accès terminal distant."
+          "La documentation n'augmente pas la bande passante.",
+          "La documentation n'élimine pas la surveillance."
         ],
-        "topic": "3.1 — Protocoles d'application"
+        "topic": "3.1 — Documentation réseau"
+      },
+      {
+        "id": 92,
+        "question": "Quel type de sauvegarde ne sauvegarde que les données modifiées depuis la dernière sauvegarde ?",
+        "choices": ["Complète", "Incrémentale", "Différentielle", "Instantané"],
+        "correct": 1,
+        "explanation": "Les sauvegardes incrémentales ne copient que les données qui ont changé depuis la dernière sauvegarde de tout type.",
+        "wrongExplanations": [
+          "Les sauvegardes complètes copient toutes les données.",
+          null,
+          "Les sauvegardes différentielles copient les données modifiées depuis la dernière sauvegarde complète.",
+          "Les instantanés capturent l'état à un moment donné."
+        ],
+        "topic": "3.2 — Stratégies de sauvegarde"
+      },
+      {
+        "id": 93,
+        "question": "Que fournit une ligne de base de performance ?",
+        "choices": ["Statut de sécurité actuel", "Point de référence pour comportement réseau normal", "Programme de sauvegarde", "Assignations d'adresses IP"],
+        "correct": 1,
+        "explanation": "Une ligne de base de performance établit des métriques de comportement réseau normal pour comparaison lors du dépannage.",
+        "wrongExplanations": [
+          "Les lignes de base ne fournissent pas le statut de sécurité.",
+          null,
+          "Les lignes de base ne fournissent pas de programmes de sauvegarde.",
+          "Les lignes de base ne fournissent pas d'assignations d'IP."
+        ],
+        "topic": "3.3 — Surveillance réseau"
+      },
+      {
+        "id": 94,
+        "question": "Quel outil surveille le trafic réseau en temps réel ?",
+        "choices": ["Testeur de câble", "Analyseur de protocole", "Générateur de tonalité", "Multimètre"],
+        "correct": 1,
+        "explanation": "Les analyseurs de protocole (comme Wireshark) capturent et analysent le trafic réseau en temps réel.",
+        "wrongExplanations": [
+          "Les testeurs de câble testent l'intégrité physique du câble.",
+          null,
+          "Les générateurs de tonalité tracent les câbles.",
+          "Les multimètres mesurent les propriétés électriques."
+        ],
+        "topic": "3.4 — Outils de surveillance"
+      },
+      {
+        "id": 95,
+        "question": "Quel est l'objectif de la gestion des changements ?",
+        "choices": ["Éliminer tous les changements", "Contrôler et documenter les changements réseau", "Augmenter la vitesse réseau", "Remplacer les pare-feu"],
+        "correct": 1,
+        "explanation": "La gestion des changements assure que les changements sont planifiés, approuvés, documentés et peuvent être annulés si nécessaire.",
+        "wrongExplanations": [
+          "La gestion des changements n'élimine pas les changements.",
+          null,
+          "La gestion des changements n'augmente pas la vitesse.",
+          "La gestion des changements ne remplace pas les pare-feu."
+        ],
+        "topic": "3.1 — Gestion des changements"
+      },
+      {
+        "id": 96,
+        "question": "Quel est le but des stratégies de sauvegarde ?",
+        "choices": ["Augmenter la vitesse", "Protéger contre la perte de données", "Réduire les coûts", "Éliminer les erreurs"],
+        "correct": 1,
+        "explanation": "Les stratégies de sauvegarde protègent contre la perte de données en créant des copies de sécurité.",
+        "wrongExplanations": [
+          "Les sauvegardes n'augmentent pas la vitesse.",
+          null,
+          "Les sauvegardes peuvent augmenter les coûts.",
+          "Les sauvegardes ne peuvent pas éliminer toutes les erreurs."
+        ],
+        "topic": "3.2 — Stratégies de sauvegarde"
+      },
+      {
+        "id": 97,
+        "question": "Quelle est la différence entre sauvegarde complète et incrémentielle ?",
+        "choices": ["Vitesse différente", "Quantité de données sauvegardées", "Taille différente", "Coût uniquement"],
+        "correct": 1,
+        "explanation": "Une sauvegarde complète sauvegarde toutes les données, tandis qu'une sauvegarde incrémentielle ne sauvegarde que les changements.",
+        "wrongExplanations": [
+          "La vitesse n'est pas la différence principale.",
+          null,
+          "La taille n'est pas la différence principale.",
+          "Le coût n'est pas la seule différence."
+        ],
+        "topic": "3.2 — Types de sauvegarde"
+      },
+      {
+        "id": 98,
+        "question": "Quel est le but de la surveillance réseau ?",
+        "choices": ["Augmenter la vitesse", "Surveiller les performances et détecter les problèmes", "Réduire les coûts", "Éliminer les erreurs"],
+        "correct": 1,
+        "explanation": "La surveillance réseau surveille les performances, la disponibilité et détecte les problèmes potentiels.",
+        "wrongExplanations": [
+          "La surveillance n'augmente pas directement la vitesse.",
+          null,
+          "La réduction des coûts est un avantage secondaire.",
+          "La surveillance ne peut pas éliminer toutes les erreurs."
+        ],
+        "topic": "3.3 — Surveillance réseau"
+      },
+      {
+        "id": 99,
+        "question": "Quelle est la fonction de la gestion des changements ?",
+        "choices": ["Augmenter la vitesse", "Contrôler et documenter les modifications", "Réduire les coûts", "Éliminer les erreurs"],
+        "correct": 1,
+        "explanation": "La gestion des changements contrôle et documente les modifications apportées au réseau pour éviter les problèmes.",
+        "wrongExplanations": [
+          "La gestion des changements n'augmente pas la vitesse.",
+          null,
+          "La réduction des coûts est un avantage secondaire.",
+          "La gestion des changements ne peut pas éliminer toutes les erreurs."
+        ],
+        "topic": "3.4 — Gestion des changements"
+      },
+      {
+        "id": 100,
+        "question": "Quel est le but de la gestion des actifs ?",
+        "choices": ["Augmenter la vitesse", "Suivre et gérer les ressources réseau", "Réduire les coûts", "Éliminer les erreurs"],
+        "correct": 1,
+        "explanation": "La gestion des actifs suit et gère les ressources réseau pour optimiser l'utilisation et la maintenance.",
+        "wrongExplanations": [
+          "La gestion des actifs n'augmente pas la vitesse.",
+          null,
+          "La réduction des coûts est un avantage secondaire.",
+          "La gestion des actifs ne peut pas éliminer toutes les erreurs."
+        ],
+        "topic": "3.5 — Gestion des actifs"
+      },
+      {
+        "id": 101,
+        "question": "Quel est le but de la planification de reprise après sinistre ?",
+        "choices": ["Augmenter la vitesse", "Assurer la continuité des opérations", "Réduire les coûts", "Éliminer les erreurs"],
+        "correct": 1,
+        "explanation": "La planification de reprise après sinistre assure la continuité des opérations en cas de catastrophe.",
+        "wrongExplanations": [
+          "La planification n'augmente pas la vitesse.",
+          null,
+          "La réduction des coûts est un avantage secondaire.",
+          "La planification ne peut pas éliminer toutes les erreurs."
+        ],
+        "topic": "3.6 — Planification de reprise"
+      },
+      {
+        "id": 102,
+        "question": "Quelle est la fonction des métriques de performance ?",
+        "choices": ["Augmenter la vitesse", "Mesurer et analyser les performances", "Réduire les coûts", "Éliminer les erreurs"],
+        "correct": 1,
+        "explanation": "Les métriques de performance mesurent et analysent les performances du réseau pour identifier les problèmes.",
+        "wrongExplanations": [
+          "Les métriques n'augmentent pas la vitesse.",
+          null,
+          "La réduction des coûts est un avantage secondaire.",
+          "Les métriques ne peuvent pas éliminer toutes les erreurs."
+        ],
+        "topic": "3.7 — Métriques de performance"
+      },
+      {
+        "id": 103,
+        "question": "Quel est le but de la documentation des procédures ?",
+        "choices": ["Augmenter la vitesse", "Standardiser les processus", "Réduire les coûts", "Éliminer les erreurs"],
+        "correct": 1,
+        "explanation": "La documentation des procédures standardise les processus pour assurer la cohérence et la qualité.",
+        "wrongExplanations": [
+          "La documentation n'augmente pas la vitesse.",
+          null,
+          "La réduction des coûts est un avantage secondaire.",
+          "La documentation ne peut pas éliminer toutes les erreurs."
+        ],
+        "topic": "3.1 — Documentation des procédures"
+      },
+      {
+        "id": 104,
+        "question": "Quelle est la différence entre surveillance active et passive ?",
+        "choices": ["Vitesse différente", "Méthode de collecte de données", "Taille différente", "Coût uniquement"],
+        "correct": 1,
+        "explanation": "La surveillance active envoie des sondes, tandis que la surveillance passive écoute le trafic existant.",
+        "wrongExplanations": [
+          "La vitesse n'est pas la différence principale.",
+          null,
+          "La taille n'est pas la différence principale.",
+          "Le coût n'est pas la seule différence."
+        ],
+        "topic": "3.3 — Types de surveillance"
+      },
+      {
+        "id": 105,
+        "question": "Quel est le but des outils de surveillance SNMP ?",
+        "choices": ["Augmenter la vitesse", "Surveiller les appareils réseau", "Réduire les coûts", "Éliminer les erreurs"],
+        "correct": 1,
+        "explanation": "SNMP permet de surveiller et gérer les appareils réseau en collectant des informations sur leur état.",
+        "wrongExplanations": [
+          "SNMP n'augmente pas la vitesse.",
+          null,
+          "La réduction des coûts est un avantage secondaire.",
+          "SNMP ne peut pas éliminer toutes les erreurs."
+        ],
+        "topic": "3.4 — Outils SNMP"
+      },
+      {
+        "id": 106,
+        "question": "Quelle est la fonction des alertes réseau ?",
+        "choices": ["Augmenter la vitesse", "Notifier des problèmes", "Réduire les coûts", "Éliminer les erreurs"],
+        "correct": 1,
+        "explanation": "Les alertes réseau notifient les administrateurs des problèmes détectés pour une réponse rapide.",
+        "wrongExplanations": [
+          "Les alertes n'augmentent pas la vitesse.",
+          null,
+          "La réduction des coûts est un avantage secondaire.",
+          "Les alertes ne peuvent pas éliminer toutes les erreurs."
+        ],
+        "topic": "3.3 — Système d'alertes"
+      },
+      {
+        "id": 107,
+        "question": "Quel est le but de la gestion des capacités ?",
+        "choices": ["Augmenter la vitesse", "Planifier les besoins futurs", "Réduire les coûts", "Éliminer les erreurs"],
+        "correct": 1,
+        "explanation": "La gestion des capacités planifie les besoins futurs en ressources pour éviter les goulots d'étranglement.",
+        "wrongExplanations": [
+          "La gestion des capacités n'augmente pas la vitesse.",
+          null,
+          "La réduction des coûts est un avantage secondaire.",
+          "La gestion des capacités ne peut pas éliminer toutes les erreurs."
+        ],
+        "topic": "3.7 — Gestion des capacités"
+      },
+      {
+        "id": 108,
+        "question": "Quelle est la différence entre sauvegarde locale et distante ?",
+        "choices": ["Vitesse différente", "Emplacement de stockage", "Taille différente", "Coût uniquement"],
+        "correct": 1,
+        "explanation": "Les sauvegardes locales sont stockées sur site, tandis que les sauvegardes distantes sont stockées hors site.",
+        "wrongExplanations": [
+          "La vitesse n'est pas la différence principale.",
+          null,
+          "La taille n'est pas la différence principale.",
+          "Le coût n'est pas la seule différence."
+        ],
+        "topic": "3.2 — Emplacement des sauvegardes"
+      },
+      {
+        "id": 109,
+        "question": "Quel est le but de la documentation des configurations ?",
+        "choices": ["Augmenter la vitesse", "Enregistrer les paramètres", "Réduire les coûts", "Éliminer les erreurs"],
+        "correct": 1,
+        "explanation": "La documentation des configurations enregistre les paramètres pour faciliter la maintenance et le dépannage.",
+        "wrongExplanations": [
+          "La documentation n'augmente pas la vitesse.",
+          null,
+          "La réduction des coûts est un avantage secondaire.",
+          "La documentation ne peut pas éliminer toutes les erreurs."
+        ],
+        "topic": "3.1 — Documentation des configurations"
+      },
+      {
+        "id": 110,
+        "question": "Quelle est la fonction des rapports de performance ?",
+        "choices": ["Augmenter la vitesse", "Analyser les tendances", "Réduire les coûts", "Éliminer les erreurs"],
+        "correct": 1,
+        "explanation": "Les rapports de performance analysent les tendances pour identifier les problèmes et optimiser les performances.",
+        "wrongExplanations": [
+          "Les rapports n'augmentent pas la vitesse.",
+          null,
+          "La réduction des coûts est un avantage secondaire.",
+          "Les rapports ne peuvent pas éliminer toutes les erreurs."
+        ],
+        "topic": "3.7 — Rapports de performance"
+      },
+      {
+        "id": 111,
+        "question": "Quel est le but de la gestion des versions ?",
+        "choices": ["Augmenter la vitesse", "Suivre les changements de configuration", "Réduire les coûts", "Éliminer les erreurs"],
+        "correct": 1,
+        "explanation": "La gestion des versions suit les changements de configuration pour faciliter la restauration et le dépannage.",
+        "wrongExplanations": [
+          "La gestion des versions n'augmente pas la vitesse.",
+          null,
+          "La réduction des coûts est un avantage secondaire.",
+          "La gestion des versions ne peut pas éliminer toutes les erreurs."
+        ],
+        "topic": "3.4 — Gestion des versions"
+      },
+      {
+        "id": 112,
+        "question": "Quelle est la différence entre surveillance en temps réel et historique ?",
+        "choices": ["Vitesse différente", "Moment de collecte", "Taille différente", "Coût uniquement"],
+        "correct": 1,
+        "explanation": "La surveillance en temps réel collecte les données immédiatement, tandis que la surveillance historique analyse les données passées.",
+        "wrongExplanations": [
+          "La vitesse n'est pas la différence principale.",
+          null,
+          "La taille n'est pas la différence principale.",
+          "Le coût n'est pas la seule différence."
+        ],
+        "topic": "3.3 — Types de surveillance"
+      },
+      {
+        "id": 113,
+        "question": "Quel est le but de la planification de maintenance ?",
+        "choices": ["Augmenter la vitesse", "Planifier les interventions", "Réduire les coûts", "Éliminer les erreurs"],
+        "correct": 1,
+        "explanation": "La planification de maintenance planifie les interventions pour minimiser les interruptions de service.",
+        "wrongExplanations": [
+          "La planification n'augmente pas la vitesse.",
+          null,
+          "La réduction des coûts est un avantage secondaire.",
+          "La planification ne peut pas éliminer toutes les erreurs."
+        ],
+        "topic": "3.6 — Planification de maintenance"
+      },
+      {
+        "id": 114,
+        "question": "Quelle est la fonction des tableaux de bord de surveillance ?",
+        "choices": ["Augmenter la vitesse", "Visualiser l'état du réseau", "Réduire les coûts", "Éliminer les erreurs"],
+        "correct": 1,
+        "explanation": "Les tableaux de bord de surveillance visualisent l'état du réseau pour faciliter le monitoring.",
+        "wrongExplanations": [
+          "Les tableaux de bord n'augmentent pas la vitesse.",
+          null,
+          "La réduction des coûts est un avantage secondaire.",
+          "Les tableaux de bord ne peuvent pas éliminer toutes les erreurs."
+        ],
+        "topic": "3.3 — Tableaux de bord"
+      },
+      {
+        "id": 115,
+        "question": "Quel est le but de la gestion des SLA ?",
+        "choices": ["Augmenter la vitesse", "Définir les niveaux de service", "Réduire les coûts", "Éliminer les erreurs"],
+        "correct": 1,
+        "explanation": "La gestion des SLA définit et surveille les niveaux de service attendus.",
+        "wrongExplanations": [
+          "La gestion des SLA n'augmente pas la vitesse.",
+          null,
+          "La réduction des coûts est un avantage secondaire.",
+          "La gestion des SLA ne peut pas éliminer toutes les erreurs."
+        ],
+        "topic": "3.7 — Gestion des SLA"
+      },
+      {
+        "id": 116,
+        "question": "Quelle est la différence entre surveillance proactive et réactive ?",
+        "choices": ["Vitesse différente", "Approche de surveillance", "Taille différente", "Coût uniquement"],
+        "correct": 1,
+        "explanation": "La surveillance proactive prévient les problèmes, tandis que la surveillance réactive répond aux problèmes existants.",
+        "wrongExplanations": [
+          "La vitesse n'est pas la différence principale.",
+          null,
+          "La taille n'est pas la différence principale.",
+          "Le coût n'est pas la seule différence."
+        ],
+        "topic": "3.3 — Approches de surveillance"
+      },
+      {
+        "id": 117,
+        "question": "Quel est le but de la documentation des incidents ?",
+        "choices": ["Augmenter la vitesse", "Enregistrer les problèmes", "Réduire les coûts", "Éliminer les erreurs"],
+        "correct": 1,
+        "explanation": "La documentation des incidents enregistre les problèmes pour faciliter l'analyse et la prévention.",
+        "wrongExplanations": [
+          "La documentation n'augmente pas la vitesse.",
+          null,
+          "La réduction des coûts est un avantage secondaire.",
+          "La documentation ne peut pas éliminer toutes les erreurs."
+        ],
+        "topic": "3.1 — Documentation des incidents"
+      },
+      {
+        "id": 118,
+        "question": "Quelle est la fonction des métriques de disponibilité ?",
+        "choices": ["Augmenter la vitesse", "Mesurer le temps de fonctionnement", "Réduire les coûts", "Éliminer les erreurs"],
+        "correct": 1,
+        "explanation": "Les métriques de disponibilité mesurent le temps de fonctionnement du réseau.",
+        "wrongExplanations": [
+          "Les métriques n'augmentent pas la vitesse.",
+          null,
+          "La réduction des coûts est un avantage secondaire.",
+          "Les métriques ne peuvent pas éliminer toutes les erreurs."
+        ],
+        "topic": "3.7 — Métriques de disponibilité"
+      },
+      {
+        "id": 119,
+        "question": "Quel est le but de la gestion des connaissances ?",
+        "choices": ["Augmenter la vitesse", "Partager l'expertise", "Réduire les coûts", "Éliminer les erreurs"],
+        "correct": 1,
+        "explanation": "La gestion des connaissances partage l'expertise pour améliorer la résolution des problèmes.",
+        "wrongExplanations": [
+          "La gestion des connaissances n'augmente pas la vitesse.",
+          null,
+          "La réduction des coûts est un avantage secondaire.",
+          "La gestion des connaissances ne peut pas éliminer toutes les erreurs."
+        ],
+        "topic": "3.5 — Gestion des connaissances"
+      },
+      {
+        "id": 120,
+        "question": "Quelle est la différence entre surveillance continue et périodique ?",
+        "choices": ["Vitesse différente", "Fréquence de surveillance", "Taille différente", "Coût uniquement"],
+        "correct": 1,
+        "explanation": "La surveillance continue surveille en permanence, tandis que la surveillance périodique surveille à intervalles réguliers.",
+        "wrongExplanations": [
+          "La vitesse n'est pas la différence principale.",
+          null,
+          "La taille n'est pas la différence principale.",
+          "Le coût n'est pas la seule différence."
+        ],
+        "topic": "3.3 — Fréquence de surveillance"
+      },
+      {
+        "id": 121,
+        "question": "Quel est le but de la planification de capacité ?",
+        "choices": ["Augmenter la vitesse", "Prévoir les besoins futurs", "Réduire les coûts", "Éliminer les erreurs"],
+        "correct": 1,
+        "explanation": "La planification de capacité prévoit les besoins futurs en ressources pour éviter les goulots d'étranglement.",
+        "wrongExplanations": [
+          "La planification n'augmente pas la vitesse.",
+          null,
+          "La réduction des coûts est un avantage secondaire.",
+          "La planification ne peut pas éliminer toutes les erreurs."
+        ],
+        "topic": "3.7 — Planification de capacité"
+      },
+      {
+        "id": 122,
+        "question": "Quelle est la fonction des rapports d'incident ?",
+        "choices": ["Augmenter la vitesse", "Documenter les problèmes", "Réduire les coûts", "Éliminer les erreurs"],
+        "correct": 1,
+        "explanation": "Les rapports d'incident documentent les problèmes pour faciliter l'analyse et l'amélioration.",
+        "wrongExplanations": [
+          "Les rapports n'augmentent pas la vitesse.",
+          null,
+          "La réduction des coûts est un avantage secondaire.",
+          "Les rapports ne peuvent pas éliminer toutes les erreurs."
+        ],
+        "topic": "3.1 — Rapports d'incident"
+      },
+      {
+        "id": 123,
+        "question": "Quel est le but de la gestion des configurations ?",
+        "choices": ["Augmenter la vitesse", "Contrôler les changements", "Réduire les coûts", "Éliminer les erreurs"],
+        "correct": 1,
+        "explanation": "La gestion des configurations contrôle les changements pour maintenir la stabilité du réseau.",
+        "wrongExplanations": [
+          "La gestion des configurations n'augmente pas la vitesse.",
+          null,
+          "La réduction des coûts est un avantage secondaire.",
+          "La gestion des configurations ne peut pas éliminer toutes les erreurs."
+        ],
+        "topic": "3.4 — Gestion des configurations"
+      },
+      {
+        "id": 124,
+        "question": "Quelle est la différence entre surveillance interne et externe ?",
+        "choices": ["Vitesse différente", "Emplacement de surveillance", "Taille différente", "Coût uniquement"],
+        "correct": 1,
+        "explanation": "La surveillance interne surveille depuis l'intérieur du réseau, tandis que la surveillance externe surveille depuis l'extérieur.",
+        "wrongExplanations": [
+          "La vitesse n'est pas la différence principale.",
+          null,
+          "La taille n'est pas la différence principale.",
+          "Le coût n'est pas la seule différence."
+        ],
+        "topic": "3.3 — Emplacement de surveillance"
+      },
+      {
+        "id": 125,
+        "question": "Quel est le but de la documentation des procédures de récupération ?",
+        "choices": ["Augmenter la vitesse", "Guider la récupération", "Réduire les coûts", "Éliminer les erreurs"],
+        "correct": 1,
+        "explanation": "La documentation des procédures de récupération guide les étapes de récupération en cas de problème.",
+        "wrongExplanations": [
+          "La documentation n'augmente pas la vitesse.",
+          null,
+          "La réduction des coûts est un avantage secondaire.",
+          "La documentation ne peut pas éliminer toutes les erreurs."
+        ],
+        "topic": "3.6 — Procédures de récupération"
+      },
+      {
+        "id": 126,
+        "question": "Quelle est la fonction des métriques de performance réseau ?",
+        "choices": ["Augmenter la vitesse", "Mesurer les performances", "Réduire les coûts", "Éliminer les erreurs"],
+        "correct": 1,
+        "explanation": "Les métriques de performance réseau mesurent les performances pour identifier les problèmes.",
+        "wrongExplanations": [
+          "Les métriques n'augmentent pas la vitesse.",
+          null,
+          "La réduction des coûts est un avantage secondaire.",
+          "Les métriques ne peuvent pas éliminer toutes les erreurs."
+        ],
+        "topic": "3.7 — Métriques de performance réseau"
+      },
+      {
+        "id": 127,
+        "question": "Quel est le but de la gestion des changements réseau ?",
+        "choices": ["Augmenter la vitesse", "Contrôler les modifications", "Réduire les coûts", "Éliminer les erreurs"],
+        "correct": 1,
+        "explanation": "La gestion des changements réseau contrôle les modifications pour éviter les problèmes.",
+        "wrongExplanations": [
+          "La gestion des changements n'augmente pas la vitesse.",
+          null,
+          "La réduction des coûts est un avantage secondaire.",
+          "La gestion des changements ne peut pas éliminer toutes les erreurs."
+        ],
+        "topic": "3.4 — Gestion des changements réseau"
+      },
+      {
+        "id": 128,
+        "question": "Quelle est la différence entre surveillance active et passive des performances ?",
+        "choices": ["Vitesse différente", "Méthode de mesure", "Taille différente", "Coût uniquement"],
+        "correct": 1,
+        "explanation": "La surveillance active envoie du trafic de test, tandis que la surveillance passive analyse le trafic existant.",
+        "wrongExplanations": [
+          "La vitesse n'est pas la différence principale.",
+          null,
+          "La taille n'est pas la différence principale.",
+          "Le coût n'est pas la seule différence."
+        ],
+        "topic": "3.3 — Méthodes de surveillance"
+      },
+      {
+        "id": 129,
+        "question": "Quel est le but de la documentation des architectures réseau ?",
+        "choices": ["Augmenter la vitesse", "Documenter la structure", "Réduire les coûts", "Éliminer les erreurs"],
+        "correct": 1,
+        "explanation": "La documentation des architectures réseau documente la structure pour faciliter la maintenance.",
+        "wrongExplanations": [
+          "La documentation n'augmente pas la vitesse.",
+          null,
+          "La réduction des coûts est un avantage secondaire.",
+          "La documentation ne peut pas éliminer toutes les erreurs."
+        ],
+        "topic": "3.1 — Documentation des architectures"
+      },
+      {
+        "id": 130,
+        "question": "Quelle est la fonction des rapports de surveillance ?",
+        "choices": ["Augmenter la vitesse", "Résumer les données", "Réduire les coûts", "Éliminer les erreurs"],
+        "correct": 1,
+        "explanation": "Les rapports de surveillance résument les données de surveillance pour faciliter l'analyse.",
+        "wrongExplanations": [
+          "Les rapports n'augmentent pas la vitesse.",
+          null,
+          "La réduction des coûts est un avantage secondaire.",
+          "Les rapports ne peuvent pas éliminer toutes les erreurs."
+        ],
+        "topic": "3.7 — Rapports de surveillance"
       }
     ],
     "4": [
       {
-        "id": 9,
-        "question": "Quelle méthode de chiffrement est utilisée par WPA2 ?",
-        "choices": ["WEP", "TKIP", "AES", "RC4"],
-        "correct": 2,
-        "explanation": "WPA2 utilise AES (Advanced Encryption Standard) pour un chiffrement fort.",
+        "id": 131,
+        "question": "Quelle est la fonction principale d'un pare-feu ?",
+        "choices": ["Assigner des adresses IP", "Filtrer le trafic basé sur des règles", "Fournir un accès sans fil", "Stocker des sauvegardes"],
+        "correct": 1,
+        "explanation": "Les pare-feu filtrent le trafic réseau basé sur des règles de sécurité configurées pour bloquer l'accès non autorisé.",
         "wrongExplanations": [
-          "WEP est une méthode de chiffrement plus ancienne et non sécurisée.",
-          "TKIP est utilisé par WPA, pas WPA2.",
+          "DHCP assigne des adresses IP, pas les pare-feu.",
           null,
-          "RC4 est utilisé par WEP et WPA, pas WPA2."
+          "Les points d'accès fournissent un accès sans fil, pas les pare-feu.",
+          "Les serveurs stockent des sauvegardes, pas les pare-feu."
         ],
-        "topic": "4.1 — Sécurité sans fil"
+        "topic": "4.1 — Concepts de pare-feu"
+      },
+      {
+        "id": 132,
+        "question": "Quelle attaque inonde un système avec du trafic pour le rendre indisponible ?",
+        "choices": ["Hameçonnage", "Homme au milieu", "DDoS", "Injection SQL"],
+        "correct": 2,
+        "explanation": "Les attaques DDoS (Déni de Service Distribué) submergent les systèmes avec du trafic de multiples sources.",
+        "wrongExplanations": [
+          "L'hameçonnage utilise des emails trompeurs pour voler des identifiants.",
+          "L'homme au milieu intercepte la communication.",
+          null,
+          "L'injection SQL exploite les vulnérabilités de base de données."
+        ],
+        "topic": "4.2 — Attaques réseau"
+      },
+      {
+        "id": 133,
+        "question": "Que signifie ACL ?",
+        "choices": ["Liste de Contrôle d'Accès", "Journal de Connexion Active", "Lien de Contrôle Automatisé", "Longueur Avancée de Câble"],
+        "correct": 0,
+        "explanation": "Les ACL sont des ensembles de règles qui permettent ou refusent le trafic basé sur divers critères comme les adresses IP ou ports.",
+        "wrongExplanations": [
+          null,
+          "Ce n'est pas l'expansion correcte d'ACL.",
+          "Ce n'est pas l'expansion correcte d'ACL.",
+          "Ce n'est pas l'expansion correcte d'ACL."
+        ],
+        "topic": "4.1 — Contrôle d'accès"
+      },
+      {
+        "id": 134,
+        "question": "Quel principe de sécurité limite l'accès utilisateur seulement à ce qui est nécessaire ?",
+        "choices": ["Défense en profondeur", "Privilège minimum", "Confiance zéro", "Refus implicite"],
+        "correct": 1,
+        "explanation": "Le privilège minimum accorde aux utilisateurs seulement les droits d'accès minimaux nécessaires pour effectuer leurs fonctions de travail.",
+        "wrongExplanations": [
+          "La défense en profondeur utilise plusieurs couches de sécurité.",
+          null,
+          "La confiance zéro assume qu'il n'y a pas de confiance implicite.",
+          "Le refus implicite bloque tout trafic non autorisé."
+        ],
+        "topic": "4.3 — Principes de sécurité"
+      },
+      {
+        "id": 135,
+        "question": "Que fait un IDS ?",
+        "choices": ["Bloque tout le trafic", "Détecte et alerte sur activité suspecte", "Assigne des adresses IP", "Fournit un accès sans fil"],
+        "correct": 1,
+        "explanation": "IDS (Système de Détection d'Intrusion) surveille le trafic réseau et alerte les administrateurs sur activité suspecte.",
+        "wrongExplanations": [
+          "IDS ne bloque pas le trafic, il ne fait que détecter.",
+          null,
+          "DHCP assigne des adresses IP, pas IDS.",
+          "Les points d'accès fournissent un accès sans fil, pas IDS."
+        ],
+        "topic": "4.1 — Appareils de sécurité"
+      },
+      {
+        "id": 136,
+        "question": "Quel est le but d'une liste de contrôle d'accès (ACL) ?",
+        "choices": ["Augmenter la vitesse", "Contrôler l'accès réseau", "Réduire les coûts", "Éliminer les erreurs"],
+        "correct": 1,
+        "explanation": "Les ACL contrôlent l'accès réseau en définissant quels trafics sont autorisés ou bloqués.",
+        "wrongExplanations": [
+          "Les ACL n'augmentent pas la vitesse.",
+          null,
+          "La réduction des coûts est un avantage secondaire.",
+          "Les ACL ne peuvent pas éliminer toutes les erreurs."
+        ],
+        "topic": "4.2 — Listes de contrôle d'accès"
+      },
+      {
+        "id": 137,
+        "question": "Quelle est la différence entre un pare-feu de couche 3 et de couche 7 ?",
+        "choices": ["Vitesse différente", "Couche de fonctionnement", "Taille différente", "Coût uniquement"],
+        "correct": 1,
+        "explanation": "Un pare-feu de couche 3 fonctionne au niveau IP, tandis qu'un pare-feu de couche 7 fonctionne au niveau application.",
+        "wrongExplanations": [
+          "La vitesse n'est pas la différence principale.",
+          null,
+          "La taille n'est pas la différence principale.",
+          "Le coût n'est pas la seule différence."
+        ],
+        "topic": "4.1 — Types de pare-feu"
+      },
+      {
+        "id": 138,
+        "question": "Quel est le but de la détection d'intrusion ?",
+        "choices": ["Augmenter la vitesse", "Détecter les attaques", "Réduire les coûts", "Éliminer les erreurs"],
+        "correct": 1,
+        "explanation": "La détection d'intrusion détecte les tentatives d'attaque et les activités suspectes.",
+        "wrongExplanations": [
+          "La détection d'intrusion n'augmente pas la vitesse.",
+          null,
+          "La réduction des coûts est un avantage secondaire.",
+          "La détection d'intrusion ne peut pas éliminer toutes les erreurs."
+        ],
+        "topic": "4.3 — Détection d'intrusion"
+      },
+      {
+        "id": 139,
+        "question": "Quelle est la fonction de la prévention d'intrusion ?",
+        "choices": ["Augmenter la vitesse", "Bloquer les attaques", "Réduire les coûts", "Éliminer les erreurs"],
+        "correct": 1,
+        "explanation": "La prévention d'intrusion bloque activement les attaques détectées.",
+        "wrongExplanations": [
+          "La prévention d'intrusion n'augmente pas la vitesse.",
+          null,
+          "La réduction des coûts est un avantage secondaire.",
+          "La prévention d'intrusion ne peut pas éliminer toutes les erreurs."
+        ],
+        "topic": "4.3 — Prévention d'intrusion"
+      },
+      {
+        "id": 140,
+        "question": "Quel est le but de l'authentification multifacteur ?",
+        "choices": ["Augmenter la vitesse", "Renforcer la sécurité", "Réduire les coûts", "Éliminer les erreurs"],
+        "correct": 1,
+        "explanation": "L'authentification multifacteur renforce la sécurité en exigeant plusieurs facteurs d'authentification.",
+        "wrongExplanations": [
+          "L'authentification multifacteur n'augmente pas la vitesse.",
+          null,
+          "L'authentification multifacteur peut augmenter les coûts.",
+          "L'authentification multifacteur ne peut pas éliminer toutes les erreurs."
+        ],
+        "topic": "4.4 — Authentification"
+      },
+      {
+        "id": 141,
+        "question": "Quelle est la différence entre chiffrement symétrique et asymétrique ?",
+        "choices": ["Vitesse différente", "Nombre de clés", "Taille différente", "Coût uniquement"],
+        "correct": 1,
+        "explanation": "Le chiffrement symétrique utilise une seule clé, tandis que le chiffrement asymétrique utilise une paire de clés.",
+        "wrongExplanations": [
+          "La vitesse n'est pas la différence principale.",
+          null,
+          "La taille n'est pas la différence principale.",
+          "Le coût n'est pas la seule différence."
+        ],
+        "topic": "4.5 — Chiffrement"
+      },
+      {
+        "id": 142,
+        "question": "Quel est le but d'un VPN ?",
+        "choices": ["Augmenter la vitesse", "Créer une connexion sécurisée", "Réduire les coûts", "Éliminer les erreurs"],
+        "correct": 1,
+        "explanation": "Un VPN crée une connexion sécurisée à travers un réseau non sécurisé.",
+        "wrongExplanations": [
+          "Un VPN n'augmente pas la vitesse.",
+          null,
+          "La réduction des coûts est un avantage secondaire.",
+          "Un VPN ne peut pas éliminer toutes les erreurs."
+        ],
+        "topic": "4.6 — VPNs"
+      },
+      {
+        "id": 143,
+        "question": "Quelle est la fonction de la segmentation réseau ?",
+        "choices": ["Augmenter la vitesse", "Isoler les segments", "Réduire les coûts", "Éliminer les erreurs"],
+        "correct": 1,
+        "explanation": "La segmentation réseau isole les segments pour limiter la propagation des attaques.",
+        "wrongExplanations": [
+          "La segmentation n'augmente pas la vitesse.",
+          null,
+          "La réduction des coûts est un avantage secondaire.",
+          "La segmentation ne peut pas éliminer toutes les erreurs."
+        ],
+        "topic": "4.7 — Segmentation réseau"
+      },
+      {
+        "id": 144,
+        "question": "Quel est le but de la surveillance de sécurité ?",
+        "choices": ["Augmenter la vitesse", "Surveiller les menaces", "Réduire les coûts", "Éliminer les erreurs"],
+        "correct": 1,
+        "explanation": "La surveillance de sécurité surveille les menaces et les activités suspectes.",
+        "wrongExplanations": [
+          "La surveillance de sécurité n'augmente pas la vitesse.",
+          null,
+          "La réduction des coûts est un avantage secondaire.",
+          "La surveillance de sécurité ne peut pas éliminer toutes les erreurs."
+        ],
+        "topic": "4.8 — Surveillance de sécurité"
+      },
+      {
+        "id": 145,
+        "question": "Quelle est la différence entre authentification et autorisation ?",
+        "choices": ["Vitesse différente", "Fonction de sécurité", "Taille différente", "Coût uniquement"],
+        "correct": 1,
+        "explanation": "L'authentification vérifie l'identité, tandis que l'autorisation détermine les permissions.",
+        "wrongExplanations": [
+          "La vitesse n'est pas la différence principale.",
+          null,
+          "La taille n'est pas la différence principale.",
+          "Le coût n'est pas la seule différence."
+        ],
+        "topic": "4.4 — Authentification et autorisation"
+      },
+      {
+        "id": 146,
+        "question": "Quel est le but de la gestion des identités ?",
+        "choices": ["Augmenter la vitesse", "Gérer les identités utilisateur", "Réduire les coûts", "Éliminer les erreurs"],
+        "correct": 1,
+        "explanation": "La gestion des identités gère les identités utilisateur et leurs accès.",
+        "wrongExplanations": [
+          "La gestion des identités n'augmente pas la vitesse.",
+          null,
+          "La réduction des coûts est un avantage secondaire.",
+          "La gestion des identités ne peut pas éliminer toutes les erreurs."
+        ],
+        "topic": "4.4 — Gestion des identités"
+      },
+      {
+        "id": 147,
+        "question": "Quelle est la fonction de la sécurité sans fil ?",
+        "choices": ["Augmenter la vitesse", "Protéger les réseaux sans fil", "Réduire les coûts", "Éliminer les erreurs"],
+        "correct": 1,
+        "explanation": "La sécurité sans fil protège les réseaux sans fil contre les accès non autorisés.",
+        "wrongExplanations": [
+          "La sécurité sans fil n'augmente pas la vitesse.",
+          null,
+          "La réduction des coûts est un avantage secondaire.",
+          "La sécurité sans fil ne peut pas éliminer toutes les erreurs."
+        ],
+        "topic": "4.9 — Sécurité sans fil"
+      },
+      {
+        "id": 148,
+        "question": "Quel est le but de la gestion des vulnérabilités ?",
+        "choices": ["Augmenter la vitesse", "Identifier et corriger les vulnérabilités", "Réduire les coûts", "Éliminer les erreurs"],
+        "correct": 1,
+        "explanation": "La gestion des vulnérabilités identifie et corrige les vulnérabilités de sécurité.",
+        "wrongExplanations": [
+          "La gestion des vulnérabilités n'augmente pas la vitesse.",
+          null,
+          "La réduction des coûts est un avantage secondaire.",
+          "La gestion des vulnérabilités ne peut pas éliminer toutes les erreurs."
+        ],
+        "topic": "4.10 — Gestion des vulnérabilités"
+      },
+      {
+        "id": 149,
+        "question": "Quelle est la différence entre sécurité physique et logique ?",
+        "choices": ["Vitesse différente", "Type de protection", "Taille différente", "Coût uniquement"],
+        "correct": 1,
+        "explanation": "La sécurité physique protège les équipements, tandis que la sécurité logique protège les données.",
+        "wrongExplanations": [
+          "La vitesse n'est pas la différence principale.",
+          null,
+          "La taille n'est pas la différence principale.",
+          "Le coût n'est pas la seule différence."
+        ],
+        "topic": "4.11 — Types de sécurité"
+      },
+      {
+        "id": 150,
+        "question": "Quel est le but de la gestion des incidents de sécurité ?",
+        "choices": ["Augmenter la vitesse", "Répondre aux incidents", "Réduire les coûts", "Éliminer les erreurs"],
+        "correct": 1,
+        "explanation": "La gestion des incidents de sécurité répond aux incidents de sécurité de manière organisée.",
+        "wrongExplanations": [
+          "La gestion des incidents n'augmente pas la vitesse.",
+          null,
+          "La réduction des coûts est un avantage secondaire.",
+          "La gestion des incidents ne peut pas éliminer toutes les erreurs."
+        ],
+        "topic": "4.12 — Gestion des incidents"
+      },
+      {
+        "id": 151,
+        "question": "Quelle est la fonction de la sécurité des endpoints ?",
+        "choices": ["Augmenter la vitesse", "Protéger les appareils", "Réduire les coûts", "Éliminer les erreurs"],
+        "correct": 1,
+        "explanation": "La sécurité des endpoints protège les appareils contre les menaces.",
+        "wrongExplanations": [
+          "La sécurité des endpoints n'augmente pas la vitesse.",
+          null,
+          "La réduction des coûts est un avantage secondaire.",
+          "La sécurité des endpoints ne peut pas éliminer toutes les erreurs."
+        ],
+        "topic": "4.13 — Sécurité des endpoints"
+      },
+      {
+        "id": 152,
+        "question": "Quel est le but de la sécurité des données ?",
+        "choices": ["Augmenter la vitesse", "Protéger les données", "Réduire les coûts", "Éliminer les erreurs"],
+        "correct": 1,
+        "explanation": "La sécurité des données protège les données contre l'accès non autorisé et la perte.",
+        "wrongExplanations": [
+          "La sécurité des données n'augmente pas la vitesse.",
+          null,
+          "La réduction des coûts est un avantage secondaire.",
+          "La sécurité des données ne peut pas éliminer toutes les erreurs."
+        ],
+        "topic": "4.14 — Sécurité des données"
+      },
+      {
+        "id": 153,
+        "question": "Quelle est la différence entre sécurité proactive et réactive ?",
+        "choices": ["Vitesse différente", "Approche de sécurité", "Taille différente", "Coût uniquement"],
+        "correct": 1,
+        "explanation": "La sécurité proactive prévient les attaques, tandis que la sécurité réactive répond aux attaques.",
+        "wrongExplanations": [
+          "La vitesse n'est pas la différence principale.",
+          null,
+          "La taille n'est pas la différence principale.",
+          "Le coût n'est pas la seule différence."
+        ],
+        "topic": "4.15 — Approches de sécurité"
+      },
+      {
+        "id": 154,
+        "question": "Quel est le but de la gestion des risques ?",
+        "choices": ["Augmenter la vitesse", "Identifier et gérer les risques", "Réduire les coûts", "Éliminer les erreurs"],
+        "correct": 1,
+        "explanation": "La gestion des risques identifie et gère les risques de sécurité.",
+        "wrongExplanations": [
+          "La gestion des risques n'augmente pas la vitesse.",
+          null,
+          "La réduction des coûts est un avantage secondaire.",
+          "La gestion des risques ne peut pas éliminer toutes les erreurs."
+        ],
+        "topic": "4.16 — Gestion des risques"
+      },
+      {
+        "id": 155,
+        "question": "Quelle est la fonction de la sécurité des applications ?",
+        "choices": ["Augmenter la vitesse", "Protéger les applications", "Réduire les coûts", "Éliminer les erreurs"],
+        "correct": 1,
+        "explanation": "La sécurité des applications protège les applications contre les attaques.",
+        "wrongExplanations": [
+          "La sécurité des applications n'augmente pas la vitesse.",
+          null,
+          "La réduction des coûts est un avantage secondaire.",
+          "La sécurité des applications ne peut pas éliminer toutes les erreurs."
+        ],
+        "topic": "4.17 — Sécurité des applications"
+      },
+      {
+        "id": 156,
+        "question": "Quel est le but de la sécurité des communications ?",
+        "choices": ["Augmenter la vitesse", "Protéger les communications", "Réduire les coûts", "Éliminer les erreurs"],
+        "correct": 1,
+        "explanation": "La sécurité des communications protège les communications contre l'interception.",
+        "wrongExplanations": [
+          "La sécurité des communications n'augmente pas la vitesse.",
+          null,
+          "La réduction des coûts est un avantage secondaire.",
+          "La sécurité des communications ne peut pas éliminer toutes les erreurs."
+        ],
+        "topic": "4.18 — Sécurité des communications"
+      },
+      {
+        "id": 157,
+        "question": "Quelle est la différence entre sécurité réseau et sécurité des systèmes ?",
+        "choices": ["Vitesse différente", "Portée de protection", "Taille différente", "Coût uniquement"],
+        "correct": 1,
+        "explanation": "La sécurité réseau protège le réseau, tandis que la sécurité des systèmes protège les systèmes individuels.",
+        "wrongExplanations": [
+          "La vitesse n'est pas la différence principale.",
+          null,
+          "La taille n'est pas la différence principale.",
+          "Le coût n'est pas la seule différence."
+        ],
+        "topic": "4.19 — Types de sécurité"
+      },
+      {
+        "id": 158,
+        "question": "Quel est le but de la sécurité des infrastructures ?",
+        "choices": ["Augmenter la vitesse", "Protéger l'infrastructure", "Réduire les coûts", "Éliminer les erreurs"],
+        "correct": 1,
+        "explanation": "La sécurité des infrastructures protège l'infrastructure réseau contre les attaques.",
+        "wrongExplanations": [
+          "La sécurité des infrastructures n'augmente pas la vitesse.",
+          null,
+          "La réduction des coûts est un avantage secondaire.",
+          "La sécurité des infrastructures ne peut pas éliminer toutes les erreurs."
+        ],
+        "topic": "4.20 — Sécurité des infrastructures"
+      },
+      {
+        "id": 159,
+        "question": "Quelle est la fonction de la sécurité des services ?",
+        "choices": ["Augmenter la vitesse", "Protéger les services", "Réduire les coûts", "Éliminer les erreurs"],
+        "correct": 1,
+        "explanation": "La sécurité des services protège les services réseau contre les attaques.",
+        "wrongExplanations": [
+          "La sécurité des services n'augmente pas la vitesse.",
+          null,
+          "La réduction des coûts est un avantage secondaire.",
+          "La sécurité des services ne peut pas éliminer toutes les erreurs."
+        ],
+        "topic": "4.21 — Sécurité des services"
+      },
+      {
+        "id": 160,
+        "question": "Quel est le but de la sécurité des protocoles ?",
+        "choices": ["Augmenter la vitesse", "Protéger les protocoles", "Réduire les coûts", "Éliminer les erreurs"],
+        "correct": 1,
+        "explanation": "La sécurité des protocoles protège les protocoles réseau contre les attaques.",
+        "wrongExplanations": [
+          "La sécurité des protocoles n'augmente pas la vitesse.",
+          null,
+          "La réduction des coûts est un avantage secondaire.",
+          "La sécurité des protocoles ne peut pas éliminer toutes les erreurs."
+        ],
+        "topic": "4.22 — Sécurité des protocoles"
+      },
+      {
+        "id": 161,
+        "question": "Quelle est la différence entre sécurité des données en transit et au repos ?",
+        "choices": ["Vitesse différente", "État des données", "Taille différente", "Coût uniquement"],
+        "correct": 1,
+        "explanation": "La sécurité des données en transit protège les données en mouvement, tandis que la sécurité des données au repos protège les données stockées.",
+        "wrongExplanations": [
+          "La vitesse n'est pas la différence principale.",
+          null,
+          "La taille n'est pas la différence principale.",
+          "Le coût n'est pas la seule différence."
+        ],
+        "topic": "4.23 — États des données"
+      },
+      {
+        "id": 162,
+        "question": "Quel est le but de la sécurité des identités ?",
+        "choices": ["Augmenter la vitesse", "Protéger les identités", "Réduire les coûts", "Éliminer les erreurs"],
+        "correct": 1,
+        "explanation": "La sécurité des identités protège les identités utilisateur contre le vol et l'usurpation.",
+        "wrongExplanations": [
+          "La sécurité des identités n'augmente pas la vitesse.",
+          null,
+          "La réduction des coûts est un avantage secondaire.",
+          "La sécurité des identités ne peut pas éliminer toutes les erreurs."
+        ],
+        "topic": "4.24 — Sécurité des identités"
+      },
+      {
+        "id": 163,
+        "question": "Quelle est la fonction de la sécurité des accès ?",
+        "choices": ["Augmenter la vitesse", "Contrôler les accès", "Réduire les coûts", "Éliminer les erreurs"],
+        "correct": 1,
+        "explanation": "La sécurité des accès contrôle qui peut accéder à quelles ressources.",
+        "wrongExplanations": [
+          "La sécurité des accès n'augmente pas la vitesse.",
+          null,
+          "La réduction des coûts est un avantage secondaire.",
+          "La sécurité des accès ne peut pas éliminer toutes les erreurs."
+        ],
+        "topic": "4.25 — Sécurité des accès"
+      },
+      {
+        "id": 164,
+        "question": "Quel est le but de la sécurité des sessions ?",
+        "choices": ["Augmenter la vitesse", "Protéger les sessions", "Réduire les coûts", "Éliminer les erreurs"],
+        "correct": 1,
+        "explanation": "La sécurité des sessions protège les sessions utilisateur contre le détournement.",
+        "wrongExplanations": [
+          "La sécurité des sessions n'augmente pas la vitesse.",
+          null,
+          "La réduction des coûts est un avantage secondaire.",
+          "La sécurité des sessions ne peut pas éliminer toutes les erreurs."
+        ],
+        "topic": "4.26 — Sécurité des sessions"
+      },
+      {
+        "id": 165,
+        "question": "Quelle est la différence entre sécurité des données et sécurité des informations ?",
+        "choices": ["Vitesse différente", "Portée de protection", "Taille différente", "Coût uniquement"],
+        "correct": 1,
+        "explanation": "La sécurité des données protège les données brutes, tandis que la sécurité des informations protège les informations dérivées.",
+        "wrongExplanations": [
+          "La vitesse n'est pas la différence principale.",
+          null,
+          "La taille n'est pas la différence principale.",
+          "Le coût n'est pas la seule différence."
+        ],
+        "topic": "4.27 — Types de sécurité"
+      },
+      {
+        "id": 166,
+        "question": "Quel est le but de la sécurité des transactions ?",
+        "choices": ["Augmenter la vitesse", "Protéger les transactions", "Réduire les coûts", "Éliminer les erreurs"],
+        "correct": 1,
+        "explanation": "La sécurité des transactions protège les transactions contre la fraude et l'interception.",
+        "wrongExplanations": [
+          "La sécurité des transactions n'augmente pas la vitesse.",
+          null,
+          "La réduction des coûts est un avantage secondaire.",
+          "La sécurité des transactions ne peut pas éliminer toutes les erreurs."
+        ],
+        "topic": "4.28 — Sécurité des transactions"
+      },
+      {
+        "id": 167,
+        "question": "Quelle est la fonction de la sécurité des API ?",
+        "choices": ["Augmenter la vitesse", "Protéger les API", "Réduire les coûts", "Éliminer les erreurs"],
+        "correct": 1,
+        "explanation": "La sécurité des API protège les API contre les attaques et l'abus.",
+        "wrongExplanations": [
+          "La sécurité des API n'augmente pas la vitesse.",
+          null,
+          "La réduction des coûts est un avantage secondaire.",
+          "La sécurité des API ne peut pas éliminer toutes les erreurs."
+        ],
+        "topic": "4.29 — Sécurité des API"
+      },
+      {
+        "id": 168,
+        "question": "Quel est le but de la sécurité des microservices ?",
+        "choices": ["Augmenter la vitesse", "Protéger les microservices", "Réduire les coûts", "Éliminer les erreurs"],
+        "correct": 1,
+        "explanation": "La sécurité des microservices protège les microservices contre les attaques.",
+        "wrongExplanations": [
+          "La sécurité des microservices n'augmente pas la vitesse.",
+          null,
+          "La réduction des coûts est un avantage secondaire.",
+          "La sécurité des microservices ne peut pas éliminer toutes les erreurs."
+        ],
+        "topic": "4.30 — Sécurité des microservices"
+      },
+      {
+        "id": 169,
+        "question": "Quelle est la différence entre sécurité des données et sécurité des métadonnées ?",
+        "choices": ["Vitesse différente", "Type de données", "Taille différente", "Coût uniquement"],
+        "correct": 1,
+        "explanation": "La sécurité des données protège les données elles-mêmes, tandis que la sécurité des métadonnées protège les informations sur les données.",
+        "wrongExplanations": [
+          "La vitesse n'est pas la différence principale.",
+          null,
+          "La taille n'est pas la différence principale.",
+          "Le coût n'est pas la seule différence."
+        ],
+        "topic": "4.31 — Types de données"
+      },
+      {
+        "id": 170,
+        "question": "Quel est le but de la sécurité des données en mouvement ?",
+        "choices": ["Augmenter la vitesse", "Protéger les données en transit", "Réduire les coûts", "Éliminer les erreurs"],
+        "correct": 1,
+        "explanation": "La sécurité des données en mouvement protège les données pendant leur transmission.",
+        "wrongExplanations": [
+          "La sécurité des données en mouvement n'augmente pas la vitesse.",
+          null,
+          "La réduction des coûts est un avantage secondaire.",
+          "La sécurité des données en mouvement ne peut pas éliminer toutes les erreurs."
+        ],
+        "topic": "4.32 — Données en mouvement"
       }
     ],
     "5": [
       {
-        "id": 10,
-        "question": "Quelle est la première étape dans le dépannage réseau ?",
-        "choices": ["Identifier le problème", "Tester la théorie", "Établir un plan", "Documenter les résultats"],
-        "correct": 0,
-        "explanation": "La première étape est d'identifier et définir le problème avant de prendre toute action.",
+        "id": 171,
+        "question": "Quelle est la PREMIÈRE étape dans la méthodologie de dépannage réseau ?",
+        "choices": ["Tester la théorie", "Identifier le problème", "Implémenter une solution", "Documenter les résultats"],
+        "correct": 1,
+        "explanation": "Identifier le problème en recueillant des informations est la première étape dans la méthodologie de dépannage.",
         "wrongExplanations": [
-          null,
           "Tester la théorie vient après établir un plan.",
-          "Établir un plan vient après identifier le problème.",
+          null,
+          "Implémenter une solution vient après tester.",
           "Documenter les résultats est l'étape finale."
         ],
         "topic": "5.1 — Méthodologie de dépannage"
+      },
+      {
+        "id": 172,
+        "question": "Quelle commande affiche la route que prennent les paquets vers une destination ?",
+        "choices": ["ping", "ipconfig", "tracert", "netstat"],
+        "correct": 2,
+        "explanation": "Tracert (traceroute) montre chaque saut que prennent les paquets pour atteindre leur destination.",
+        "wrongExplanations": [
+          "Ping teste la connectivité mais ne montre pas les routes.",
+          "Ipconfig montre la configuration réseau.",
+          null,
+          "Netstat montre les connexions actives."
+        ],
+        "topic": "5.2 — Outils en ligne de commande"
+      },
+      {
+        "id": 173,
+        "question": "Un utilisateur signale aucune connectivité internet. Que devriez-vous vérifier EN PREMIER ?",
+        "choices": ["Remplacer le routeur", "Vérifier les connexions physiques", "Réinstaller le SO", "Mettre à jour le firmware"],
+        "correct": 1,
+        "explanation": "La connectivité physique devrait être vérifiée en premier car c'est le problème le plus commun et simple.",
+        "wrongExplanations": [
+          "Remplacer le matériel devrait être le dernier recours.",
+          null,
+          "Réinstaller le SO est extrême pour les problèmes de connectivité.",
+          "Mettre à jour le firmware devrait venir après les vérifications de base."
+        ],
+        "topic": "5.1 — Méthodologie de dépannage"
+      },
+      {
+        "id": 174,
+        "question": "Quel outil vérifie la résolution de noms DNS ?",
+        "choices": ["ping", "nslookup", "netstat", "arp"],
+        "correct": 1,
+        "explanation": "Nslookup interroge les serveurs DNS pour vérifier la résolution de noms et dépanner les problèmes DNS.",
+        "wrongExplanations": [
+          "Ping teste la connectivité mais ne vérifie pas DNS.",
+          null,
+          "Netstat montre les connexions actives.",
+          "Arp montre les mappages d'adresses MAC."
+        ],
+        "topic": "5.2 — Dépannage DNS"
+      },
+      {
+        "id": 175,
+        "question": "Un appareil reçoit une adresse 169.254.x.x. Qu'est-ce que cela indique ?",
+        "choices": ["Assignation DHCP normale", "Le serveur DHCP est inaccessible", "IP statique configurée", "Échec DNS"],
+        "correct": 1,
+        "explanation": "Les adresses APIPA (169.254.x.x) indiquent que l'appareil n'a pas pu atteindre un serveur DHCP.",
+        "wrongExplanations": [
+          "169.254.x.x n'est pas une assignation DHCP normale.",
+          null,
+          "Les IP statiques sont configurées manuellement.",
+          "L'échec DNS ne cause pas d'adresses APIPA."
+        ],
+        "topic": "5.3 — Problèmes d'adressage IP"
+      },
+      {
+        "id": 176,
+        "question": "Quel est le but de l'analyse des performances ?",
+        "choices": ["Augmenter la vitesse", "Identifier les goulots d'étranglement", "Réduire les coûts", "Éliminer les erreurs"],
+        "correct": 1,
+        "explanation": "L'analyse des performances identifie les goulots d'étranglement pour optimiser le réseau.",
+        "wrongExplanations": [
+          "L'analyse des performances n'augmente pas directement la vitesse.",
+          null,
+          "La réduction des coûts est un avantage secondaire.",
+          "L'analyse des performances ne peut pas éliminer toutes les erreurs."
+        ],
+        "topic": "5.4 — Analyse des performances"
+      },
+      {
+        "id": 177,
+        "question": "Quelle est la fonction des outils de diagnostic ?",
+        "choices": ["Augmenter la vitesse", "Diagnostiquer les problèmes", "Réduire les coûts", "Éliminer les erreurs"],
+        "correct": 1,
+        "explanation": "Les outils de diagnostic aident à identifier et résoudre les problèmes réseau.",
+        "wrongExplanations": [
+          "Les outils de diagnostic n'augmentent pas la vitesse.",
+          null,
+          "La réduction des coûts est un avantage secondaire.",
+          "Les outils de diagnostic ne peuvent pas éliminer toutes les erreurs."
+        ],
+        "topic": "5.5 — Outils de diagnostic"
+      },
+      {
+        "id": 178,
+        "question": "Quel est le but de la surveillance des performances ?",
+        "choices": ["Augmenter la vitesse", "Surveiller les performances", "Réduire les coûts", "Éliminer les erreurs"],
+        "correct": 1,
+        "explanation": "La surveillance des performances surveille les métriques pour détecter les problèmes.",
+        "wrongExplanations": [
+          "La surveillance des performances n'augmente pas la vitesse.",
+          null,
+          "La réduction des coûts est un avantage secondaire.",
+          "La surveillance des performances ne peut pas éliminer toutes les erreurs."
+        ],
+        "topic": "5.6 — Surveillance des performances"
+      },
+      {
+        "id": 179,
+        "question": "Quelle est la différence entre dépannage proactif et réactif ?",
+        "choices": ["Vitesse différente", "Approche de dépannage", "Taille différente", "Coût uniquement"],
+        "correct": 1,
+        "explanation": "Le dépannage proactif prévient les problèmes, tandis que le dépannage réactif résout les problèmes existants.",
+        "wrongExplanations": [
+          "La vitesse n'est pas la différence principale.",
+          null,
+          "La taille n'est pas la différence principale.",
+          "Le coût n'est pas la seule différence."
+        ],
+        "topic": "5.7 — Approches de dépannage"
+      },
+      {
+        "id": 180,
+        "question": "Quel est le but de la documentation des problèmes ?",
+        "choices": ["Augmenter la vitesse", "Documenter les problèmes", "Réduire les coûts", "Éliminer les erreurs"],
+        "correct": 1,
+        "explanation": "La documentation des problèmes facilite la résolution future et l'analyse des tendances.",
+        "wrongExplanations": [
+          "La documentation n'augmente pas la vitesse.",
+          null,
+          "La réduction des coûts est un avantage secondaire.",
+          "La documentation ne peut pas éliminer toutes les erreurs."
+        ],
+        "topic": "5.8 — Documentation des problèmes"
+      },
+      {
+        "id": 181,
+        "question": "Quelle est la fonction des tests de connectivité ?",
+        "choices": ["Augmenter la vitesse", "Tester la connectivité", "Réduire les coûts", "Éliminer les erreurs"],
+        "correct": 1,
+        "explanation": "Les tests de connectivité vérifient si les appareils peuvent communiquer.",
+        "wrongExplanations": [
+          "Les tests de connectivité n'augmentent pas la vitesse.",
+          null,
+          "La réduction des coûts est un avantage secondaire.",
+          "Les tests de connectivité ne peuvent pas éliminer toutes les erreurs."
+        ],
+        "topic": "5.9 — Tests de connectivité"
+      },
+      {
+        "id": 182,
+        "question": "Quel est le but de l'analyse des logs ?",
+        "choices": ["Augmenter la vitesse", "Analyser les logs", "Réduire les coûts", "Éliminer les erreurs"],
+        "correct": 1,
+        "explanation": "L'analyse des logs aide à identifier les problèmes et les tendances.",
+        "wrongExplanations": [
+          "L'analyse des logs n'augmente pas la vitesse.",
+          null,
+          "La réduction des coûts est un avantage secondaire.",
+          "L'analyse des logs ne peut pas éliminer toutes les erreurs."
+        ],
+        "topic": "5.10 — Analyse des logs"
+      },
+      {
+        "id": 183,
+        "question": "Quelle est la différence entre dépannage local et distant ?",
+        "choices": ["Vitesse différente", "Emplacement de dépannage", "Taille différente", "Coût uniquement"],
+        "correct": 1,
+        "explanation": "Le dépannage local se fait sur site, tandis que le dépannage distant se fait à distance.",
+        "wrongExplanations": [
+          "La vitesse n'est pas la différence principale.",
+          null,
+          "La taille n'est pas la différence principale.",
+          "Le coût n'est pas la seule différence."
+        ],
+        "topic": "5.11 — Emplacement de dépannage"
+      },
+      {
+        "id": 184,
+        "question": "Quel est le but de la surveillance des erreurs ?",
+        "choices": ["Augmenter la vitesse", "Surveiller les erreurs", "Réduire les coûts", "Éliminer les erreurs"],
+        "correct": 1,
+        "explanation": "La surveillance des erreurs détecte et alerte sur les erreurs réseau.",
+        "wrongExplanations": [
+          "La surveillance des erreurs n'augmente pas la vitesse.",
+          null,
+          "La réduction des coûts est un avantage secondaire.",
+          "La surveillance des erreurs ne peut pas éliminer toutes les erreurs."
+        ],
+        "topic": "5.12 — Surveillance des erreurs"
+      },
+      {
+        "id": 185,
+        "question": "Quelle est la fonction des tests de performance ?",
+        "choices": ["Augmenter la vitesse", "Tester les performances", "Réduire les coûts", "Éliminer les erreurs"],
+        "correct": 1,
+        "explanation": "Les tests de performance mesurent les performances du réseau.",
+        "wrongExplanations": [
+          "Les tests de performance n'augmentent pas la vitesse.",
+          null,
+          "La réduction des coûts est un avantage secondaire.",
+          "Les tests de performance ne peuvent pas éliminer toutes les erreurs."
+        ],
+        "topic": "5.13 — Tests de performance"
+      },
+      {
+        "id": 186,
+        "question": "Quel est le but de la surveillance des capacités ?",
+        "choices": ["Augmenter la vitesse", "Surveiller les capacités", "Réduire les coûts", "Éliminer les erreurs"],
+        "correct": 1,
+        "explanation": "La surveillance des capacités surveille l'utilisation des ressources.",
+        "wrongExplanations": [
+          "La surveillance des capacités n'augmente pas la vitesse.",
+          null,
+          "La réduction des coûts est un avantage secondaire.",
+          "La surveillance des capacités ne peut pas éliminer toutes les erreurs."
+        ],
+        "topic": "5.14 — Surveillance des capacités"
+      },
+      {
+        "id": 187,
+        "question": "Quelle est la différence entre dépannage automatique et manuel ?",
+        "choices": ["Vitesse différente", "Méthode de dépannage", "Taille différente", "Coût uniquement"],
+        "correct": 1,
+        "explanation": "Le dépannage automatique utilise des outils, tandis que le dépannage manuel utilise l'intervention humaine.",
+        "wrongExplanations": [
+          "La vitesse n'est pas la différence principale.",
+          null,
+          "La taille n'est pas la différence principale.",
+          "Le coût n'est pas la seule différence."
+        ],
+        "topic": "5.15 — Méthodes de dépannage"
+      },
+      {
+        "id": 188,
+        "question": "Quel est le but de la surveillance des alertes ?",
+        "choices": ["Augmenter la vitesse", "Surveiller les alertes", "Réduire les coûts", "Éliminer les erreurs"],
+        "correct": 1,
+        "explanation": "La surveillance des alertes surveille et gère les alertes système.",
+        "wrongExplanations": [
+          "La surveillance des alertes n'augmente pas la vitesse.",
+          null,
+          "La réduction des coûts est un avantage secondaire.",
+          "La surveillance des alertes ne peut pas éliminer toutes les erreurs."
+        ],
+        "topic": "5.16 — Surveillance des alertes"
+      },
+      {
+        "id": 189,
+        "question": "Quelle est la fonction des tests de charge ?",
+        "choices": ["Augmenter la vitesse", "Tester la charge", "Réduire les coûts", "Éliminer les erreurs"],
+        "correct": 1,
+        "explanation": "Les tests de charge testent les performances sous charge.",
+        "wrongExplanations": [
+          "Les tests de charge n'augmentent pas la vitesse.",
+          null,
+          "La réduction des coûts est un avantage secondaire.",
+          "Les tests de charge ne peuvent pas éliminer toutes les erreurs."
+        ],
+        "topic": "5.17 — Tests de charge"
+      },
+      {
+        "id": 190,
+        "question": "Quel est le but de la surveillance des temps de réponse ?",
+        "choices": ["Augmenter la vitesse", "Surveiller les temps de réponse", "Réduire les coûts", "Éliminer les erreurs"],
+        "correct": 1,
+        "explanation": "La surveillance des temps de réponse surveille les performances de réponse.",
+        "wrongExplanations": [
+          "La surveillance des temps de réponse n'augmente pas la vitesse.",
+          null,
+          "La réduction des coûts est un avantage secondaire.",
+          "La surveillance des temps de réponse ne peut pas éliminer toutes les erreurs."
+        ],
+        "topic": "5.18 — Surveillance des temps de réponse"
+      },
+      {
+        "id": 191,
+        "question": "Quelle est la différence entre dépannage préventif et correctif ?",
+        "choices": ["Vitesse différente", "Type de dépannage", "Taille différente", "Coût uniquement"],
+        "correct": 1,
+        "explanation": "Le dépannage préventif prévient les problèmes, tandis que le dépannage correctif corrige les problèmes existants.",
+        "wrongExplanations": [
+          "La vitesse n'est pas la différence principale.",
+          null,
+          "La taille n'est pas la différence principale.",
+          "Le coût n'est pas la seule différence."
+        ],
+        "topic": "5.19 — Types de dépannage"
+      },
+      {
+        "id": 192,
+        "question": "Quel est le but de la surveillance des disponibilités ?",
+        "choices": ["Augmenter la vitesse", "Surveiller les disponibilités", "Réduire les coûts", "Éliminer les erreurs"],
+        "correct": 1,
+        "explanation": "La surveillance des disponibilités surveille la disponibilité des services.",
+        "wrongExplanations": [
+          "La surveillance des disponibilités n'augmente pas la vitesse.",
+          null,
+          "La réduction des coûts est un avantage secondaire.",
+          "La surveillance des disponibilités ne peut pas éliminer toutes les erreurs."
+        ],
+        "topic": "5.20 — Surveillance des disponibilités"
+      },
+      {
+        "id": 193,
+        "question": "Quelle est la fonction des tests de régression ?",
+        "choices": ["Augmenter la vitesse", "Tester les régressions", "Réduire les coûts", "Éliminer les erreurs"],
+        "correct": 1,
+        "explanation": "Les tests de régression testent si les changements ont causé des régressions.",
+        "wrongExplanations": [
+          "Les tests de régression n'augmentent pas la vitesse.",
+          null,
+          "La réduction des coûts est un avantage secondaire.",
+          "Les tests de régression ne peuvent pas éliminer toutes les erreurs."
+        ],
+        "topic": "5.21 — Tests de régression"
+      },
+      {
+        "id": 194,
+        "question": "Quel est le but de la surveillance des métriques ?",
+        "choices": ["Augmenter la vitesse", "Surveiller les métriques", "Réduire les coûts", "Éliminer les erreurs"],
+        "correct": 1,
+        "explanation": "La surveillance des métriques surveille les métriques de performance.",
+        "wrongExplanations": [
+          "La surveillance des métriques n'augmente pas la vitesse.",
+          null,
+          "La réduction des coûts est un avantage secondaire.",
+          "La surveillance des métriques ne peut pas éliminer toutes les erreurs."
+        ],
+        "topic": "5.22 — Surveillance des métriques"
+      },
+      {
+        "id": 195,
+        "question": "Quelle est la différence entre dépannage en temps réel et différé ?",
+        "choices": ["Vitesse différente", "Timing de dépannage", "Taille différente", "Coût uniquement"],
+        "correct": 1,
+        "explanation": "Le dépannage en temps réel se fait immédiatement, tandis que le dépannage différé se fait plus tard.",
+        "wrongExplanations": [
+          "La vitesse n'est pas la différence principale.",
+          null,
+          "La taille n'est pas la différence principale.",
+          "Le coût n'est pas la seule différence."
+        ],
+        "topic": "5.23 — Timing de dépannage"
+      },
+      {
+        "id": 196,
+        "question": "Quel est le but de la surveillance des seuils ?",
+        "choices": ["Augmenter la vitesse", "Surveiller les seuils", "Réduire les coûts", "Éliminer les erreurs"],
+        "correct": 1,
+        "explanation": "La surveillance des seuils surveille les seuils de performance.",
+        "wrongExplanations": [
+          "La surveillance des seuils n'augmente pas la vitesse.",
+          null,
+          "La réduction des coûts est un avantage secondaire.",
+          "La surveillance des seuils ne peut pas éliminer toutes les erreurs."
+        ],
+        "topic": "5.24 — Surveillance des seuils"
+      },
+      {
+        "id": 197,
+        "question": "Quelle est la fonction des tests de stress ?",
+        "choices": ["Augmenter la vitesse", "Tester le stress", "Réduire les coûts", "Éliminer les erreurs"],
+        "correct": 1,
+        "explanation": "Les tests de stress testent les performances sous stress.",
+        "wrongExplanations": [
+          "Les tests de stress n'augmentent pas la vitesse.",
+          null,
+          "La réduction des coûts est un avantage secondaire.",
+          "Les tests de stress ne peuvent pas éliminer toutes les erreurs."
+        ],
+        "topic": "5.25 — Tests de stress"
+      },
+      {
+        "id": 198,
+        "question": "Quel est le but de la surveillance des tendances ?",
+        "choices": ["Augmenter la vitesse", "Surveiller les tendances", "Réduire les coûts", "Éliminer les erreurs"],
+        "correct": 1,
+        "explanation": "La surveillance des tendances surveille les tendances de performance.",
+        "wrongExplanations": [
+          "La surveillance des tendances n'augmente pas la vitesse.",
+          null,
+          "La réduction des coûts est un avantage secondaire.",
+          "La surveillance des tendances ne peut pas éliminer toutes les erreurs."
+        ],
+        "topic": "5.26 — Surveillance des tendances"
+      },
+      {
+        "id": 199,
+        "question": "Quelle est la différence entre dépannage local et centralisé ?",
+        "choices": ["Vitesse différente", "Centralisation de dépannage", "Taille différente", "Coût uniquement"],
+        "correct": 1,
+        "explanation": "Le dépannage local se fait localement, tandis que le dépannage centralisé se fait depuis un centre.",
+        "wrongExplanations": [
+          "La vitesse n'est pas la différence principale.",
+          null,
+          "La taille n'est pas la différence principale.",
+          "Le coût n'est pas la seule différence."
+        ],
+        "topic": "5.27 — Centralisation de dépannage"
+      },
+      {
+        "id": 200,
+        "question": "Quel est le but de la surveillance des SLA ?",
+        "choices": ["Augmenter la vitesse", "Surveiller les SLA", "Réduire les coûts", "Éliminer les erreurs"],
+        "correct": 1,
+        "explanation": "La surveillance des SLA surveille le respect des accords de niveau de service.",
+        "wrongExplanations": [
+          "La surveillance des SLA n'augmente pas la vitesse.",
+          null,
+          "La réduction des coûts est un avantage secondaire.",
+          "La surveillance des SLA ne peut pas éliminer toutes les erreurs."
+        ],
+        "topic": "5.28 — Surveillance des SLA"
       }
     ]
   }
