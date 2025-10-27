@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { useNavigate } from "react-router";
 import { useMutation } from "@tanstack/react-query";
 import { toast } from "react-toastify";
@@ -11,11 +11,15 @@ import ProfileSetupModal from "../../components/ProfileSetupModal";
 import { useLanguageNavigation } from "../../utils/navigation";
 import supabase from "../../supabase";
 
+// Prevent multiple login toasts
+let loginToastId: number | string | null = null;
+
 const VerifyOTPPage: React.FC = () => {
   const navigate = useNavigate();
   const { setUser, setAuthenticated } = useUserStore();
   const { getLanguagePath } = useLanguageNavigation();
   const [showProfileModal, setShowProfileModal] = useState(false);
+  const hasShownSuccessToast = useRef(false);
 
   const { mutate: verify, isPending } = useMutation({
     mutationFn: verifyOTP,
@@ -27,7 +31,15 @@ const VerifyOTPPage: React.FC = () => {
         if (data.needsProfile) {
           setShowProfileModal(true);
         } else {
-          toast.success(data.message);
+          // Dismiss previous toast if it exists
+          if (loginToastId) {
+            toast.dismiss(loginToastId);
+          }
+          // Only show toast once
+          if (!hasShownSuccessToast.current) {
+            loginToastId = toast.success(data.message, { toastId: 'login-success' });
+            hasShownSuccessToast.current = true;
+          }
           setUser(user);
           setAuthenticated(true);
           navigate(getLanguagePath("home"));
@@ -35,7 +47,11 @@ const VerifyOTPPage: React.FC = () => {
       }
     },
     onError: (error) => {
-      toast.error(error.message);
+      // Dismiss previous toast if it exists
+      if (loginToastId) {
+        toast.dismiss(loginToastId);
+      }
+      loginToastId = toast.error(error.message, { toastId: 'login-error' });
       navigate(getLanguagePath("auth/login"));
     },
   });
@@ -46,7 +62,15 @@ const VerifyOTPPage: React.FC = () => {
   };
 
   const handleProfileComplete = () => {
-    toast.success("Welcome! Your profile is now complete.");
+    // Dismiss previous toast if it exists
+    if (loginToastId) {
+      toast.dismiss(loginToastId);
+    }
+    // Only show toast once
+    if (!hasShownSuccessToast.current) {
+      loginToastId = toast.success("Welcome! Your profile is now complete.", { toastId: 'profile-complete' });
+      hasShownSuccessToast.current = true;
+    }
     // The ProfileSetupModal will handle setting the user and authentication
     // We just need to redirect to home
     navigate(getLanguagePath("home"));
@@ -55,12 +79,33 @@ const VerifyOTPPage: React.FC = () => {
   useEffect(() => {
     const handleAuthCallback = async () => {
       try {
+        // Check if we have URL hash parameters (common with Outlook)
+        const hashParams = new URLSearchParams(window.location.hash.substring(1));
+        const hasHashParams = hashParams.has('access_token') || hashParams.has('refresh_token');
+
+        console.log('Auth callback - Hash params present:', hasHashParams);
+        console.log('Current URL:', window.location.href);
+
         // Handle the auth callback from URL hash parameters
         const { data, error } = await supabase.auth.getSession();
 
         if (error) {
           console.error('Auth callback error:', error);
-          toast.error('Authentication failed. Please try again.');
+
+          // If we have hash params but session failed, try to handle the auth state change
+          if (hasHashParams) {
+            console.log('Hash params detected but session failed, waiting for auth state change...');
+            // Wait a bit for Supabase to process the hash parameters
+            setTimeout(() => {
+              verify();
+            }, 1000);
+            return;
+          }
+
+          if (loginToastId) {
+            toast.dismiss(loginToastId);
+          }
+          loginToastId = toast.error('Authentication failed. Please try again.', { toastId: 'auth-failed' });
           navigate(getLanguagePath("auth/login"));
           return;
         }
@@ -68,6 +113,16 @@ const VerifyOTPPage: React.FC = () => {
         if (!data.session) {
           // No session found, try to get user anyway (fallback)
           console.log('No session found, attempting to verify OTP...');
+
+          // If we have hash params, wait a bit for Supabase to process them
+          if (hasHashParams) {
+            console.log('Hash params detected, waiting for processing...');
+            setTimeout(() => {
+              verify();
+            }, 1500);
+            return;
+          }
+
           verify();
           return;
         }
@@ -77,7 +132,10 @@ const VerifyOTPPage: React.FC = () => {
         verify();
       } catch (error) {
         console.error('Auth callback error:', error);
-        toast.error('Authentication failed. Please try again.');
+        if (loginToastId) {
+          toast.dismiss(loginToastId);
+        }
+        loginToastId = toast.error('Authentication failed. Please try again.', { toastId: 'auth-failed-catch' });
         navigate(getLanguagePath("auth/login"));
       }
     };

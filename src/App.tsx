@@ -55,6 +55,17 @@ const AuthStateListener = () => {
       async (event, session) => {
         console.log('Auth state changed:', event, session);
 
+        // Handle Outlook-specific authentication issues
+        if (event === 'SIGNED_IN' && session) {
+          console.log('User signed in successfully:', session.user?.email);
+
+          // Check if this is from a magic link callback
+          const hashParams = new URLSearchParams(window.location.hash.substring(1));
+          if (hashParams.has('access_token') || hashParams.has('refresh_token')) {
+            console.log('Magic link authentication detected, processing...');
+          }
+        }
+
         if (event === 'SIGNED_OUT' || !session) {
           clearUser();
         }

@@ -45,107 +45,2767 @@
       },
       {
         "id": 4,
-        "question": "What is the IP address class of 172.16.0.1?",
-        "choices": ["Class A", "Class B", "Class C", "Class D"],
+        "question": "What does a switch use to forward frames?",
+        "choices": ["IP addresses", "MAC addresses", "Port numbers", "Domain names"],
         "correct": 1,
-        "explanation": "172.16.0.1 falls in the Class B range (128.0.0.0 to 191.255.255.255).",
+        "explanation": "Switches operate at Layer 2 and use MAC addresses to forward frames.",
         "wrongExplanations": [
-          "Class A ranges from 1.0.0.0 to 126.255.255.255.",
+          "IP addresses are used by routers at Layer 3.",
           null,
-          "Class C ranges from 192.0.0.0 to 223.255.255.255.",
-          "Class D is used for multicast (224.0.0.0 to 239.255.255.255)."
+          "Port numbers are used by transport layer protocols.",
+          "Domain names are resolved by DNS."
         ],
-        "topic": "1.4 — IP addressing"
+        "topic": "1.2 — Network devices"
       },
       {
         "id": 5,
-        "question": "How many host addresses are available in a /26 subnet?",
-        "choices": ["30", "62", "126", "254"],
+        "question": "Which wireless standard supports 6 GHz frequency?",
+        "choices": ["802.11ac", "802.11ax (Wi-Fi 6E)", "802.11n", "802.11g"],
         "correct": 1,
-        "explanation": "A /26 subnet has 6 host bits, providing 2^6 - 2 = 62 usable host addresses.",
+        "explanation": "Wi-Fi 6E (802.11ax) extends into the 6 GHz band for reduced interference.",
         "wrongExplanations": [
-          "30 would be for a /27 subnet (5 host bits).",
+          "802.11ac operates at 5 GHz only.",
           null,
-          "126 would be for a /25 subnet (7 host bits).",
-          "254 would be for a /24 subnet (8 host bits)."
+          "802.11n operates at 2.4 GHz and 5 GHz.",
+          "802.11g operates at 2.4 GHz only."
         ],
-        "topic": "1.4 — IP addressing"
+        "topic": "1.4 — Wireless standards"
+      },
+      {
+        "id": 6,
+        "question": "What is the default subnet mask for a Class C network?",
+        "choices": ["255.0.0.0", "255.255.0.0", "255.255.255.0", "255.255.255.255"],
+        "correct": 2,
+        "explanation": "Class C networks use 255.255.255.0 as the default subnet mask.",
+        "wrongExplanations": [
+          "255.0.0.0 is the default for Class A networks.",
+          "255.255.0.0 is the default for Class B networks.",
+          null,
+          "255.255.255.255 is a host route, not a subnet mask."
+        ],
+        "topic": "1.5 — IPv4 addressing"
+      },
+      {
+        "id": 7,
+        "question": "Which cable type is immune to EMI?",
+        "choices": ["UTP", "STP", "Coaxial", "Fiber optic"],
+        "correct": 3,
+        "explanation": "Fiber optic cables use light instead of electrical signals, making them immune to electromagnetic interference.",
+        "wrongExplanations": [
+          "UTP is susceptible to EMI due to lack of shielding.",
+          "STP has some EMI protection but is not immune.",
+          "Coaxial cables can be affected by EMI.",
+          null
+        ],
+        "topic": "1.3 — Cables & connectors"
+      },
+      {
+        "id": 8,
+        "question": "What port does HTTPS use by default?",
+        "choices": ["80", "443", "8080", "22"],
+        "correct": 1,
+        "explanation": "HTTPS uses port 443 for secure web traffic.",
+        "wrongExplanations": [
+          "Port 80 is used by HTTP (unencrypted).",
+          null,
+          "Port 8080 is an alternative HTTP port.",
+          "Port 22 is used by SSH."
+        ],
+        "topic": "1.7 — Network services"
+      },
+      {
+        "id": 9,
+        "question": "Which topology has a single point of failure?",
+        "choices": ["Mesh", "Star", "Ring", "Bus"],
+        "correct": 1,
+        "explanation": "Star topology relies on a central device; if it fails, the entire network goes down.",
+        "wrongExplanations": [
+          "Mesh topology has multiple paths and no single point of failure.",
+          null,
+          "Ring topology can continue operating if one link fails.",
+          "Bus topology can continue with one device failure."
+        ],
+        "topic": "1.1 — Network topologies"
+      },
+      {
+        "id": 10,
+        "question": "What is the maximum throughput of 802.11ac?",
+        "choices": ["54 Mbps", "600 Mbps", "1.3 Gbps", "9.6 Gbps"],
+        "correct": 2,
+        "explanation": "802.11ac can achieve up to 1.3 Gbps in ideal conditions.",
+        "wrongExplanations": [
+          "54 Mbps is the maximum for 802.11g.",
+          "600 Mbps is the maximum for 802.11n.",
+          null,
+          "9.6 Gbps is theoretical maximum for 802.11ax."
+        ],
+        "topic": "1.4 — Wireless standards"
+      },
+      {
+        "id": 11,
+        "question": "Which device operates at both Layer 2 and Layer 3?",
+        "choices": ["Hub", "Switch", "Multilayer switch", "Repeater"],
+        "correct": 2,
+        "explanation": "Multilayer switches can perform both switching (Layer 2) and routing (Layer 3) functions.",
+        "wrongExplanations": [
+          "Hubs operate only at Layer 1.",
+          "Switches operate only at Layer 2.",
+          null,
+          "Repeaters operate only at Layer 1."
+        ],
+        "topic": "1.2 — Network devices"
+      },
+      {
+        "id": 12,
+        "question": "What does DHCP stand for?",
+        "choices": ["Dynamic Host Configuration Protocol", "Domain Host Control Protocol", "Data Host Communication Protocol", "Digital Host Configuration Process"],
+        "correct": 0,
+        "explanation": "DHCP automatically assigns IP addresses to devices on a network.",
+        "wrongExplanations": [
+          null,
+          "This is not the correct expansion of DHCP.",
+          "This is not the correct expansion of DHCP.",
+          "This is not the correct expansion of DHCP."
+        ],
+        "topic": "1.7 — Network services"
+      },
+      {
+        "id": 13,
+        "question": "Which connector is used for fiber optic cables?",
+        "choices": ["RJ-45", "BNC", "LC", "RJ-11"],
+        "correct": 2,
+        "explanation": "LC (Lucent Connector) is a common connector type for fiber optic cables.",
+        "wrongExplanations": [
+          "RJ-45 is used for twisted pair cables.",
+          "BNC is used for coaxial cables.",
+          null,
+          "RJ-11 is used for telephone cables."
+        ],
+        "topic": "1.3 — Cables & connectors"
+      },
+      {
+        "id": 14,
+        "question": "What is the IPv6 address length?",
+        "choices": ["32 bits", "64 bits", "128 bits", "256 bits"],
+        "correct": 2,
+        "explanation": "IPv6 addresses are 128 bits long, providing a vastly larger address space than IPv4.",
+        "wrongExplanations": [
+          "32 bits is the length of IPv4 addresses.",
+          "64 bits is half the length of IPv6 addresses.",
+          null,
+          "256 bits is not used for IP addresses."
+        ],
+        "topic": "1.6 — IPv6 addressing"
+      },
+      {
+        "id": 15,
+        "question": "Which protocol resolves domain names to IP addresses?",
+        "choices": ["DHCP", "DNS", "ARP", "ICMP"],
+        "correct": 1,
+        "explanation": "DNS (Domain Name System) translates human-readable domain names to IP addresses.",
+        "wrongExplanations": [
+          "DHCP assigns IP addresses to devices.",
+          null,
+          "ARP resolves IP addresses to MAC addresses.",
+          "ICMP is used for error reporting and diagnostics."
+        ],
+        "topic": "1.7 — Network services"
+      },
+      {
+        "id": 16,
+        "question": "What is the range of well-known ports?",
+        "choices": ["0-1023", "1024-49151", "49152-65535", "0-65535"],
+        "correct": 0,
+        "explanation": "Well-known ports range from 0 to 1023 and are reserved for common services.",
+        "wrongExplanations": [
+          null,
+          "1024-49151 is the range for registered ports.",
+          "49152-65535 is the range for dynamic/private ports.",
+          "0-65535 is the total port range, not just well-known ports."
+        ],
+        "topic": "1.8 — Ports and protocols"
+      },
+      {
+        "id": 17,
+        "question": "Which wireless encryption is most secure?",
+        "choices": ["WEP", "WPA", "WPA2", "WPA3"],
+        "correct": 3,
+        "explanation": "WPA3 is the latest and most secure wireless encryption standard.",
+        "wrongExplanations": [
+          "WEP is the oldest and least secure encryption.",
+          "WPA is more secure than WEP but less than WPA2.",
+          "WPA2 is secure but WPA3 is newer and more secure.",
+          null
+        ],
+        "topic": "1.4 — Wireless security"
+      },
+      {
+        "id": 18,
+        "question": "What does a hub do with incoming data?",
+        "choices": ["Routes it to specific devices", "Forwards it to all ports", "Filters it based on MAC address", "Encrypts it"],
+        "correct": 1,
+        "explanation": "Hubs broadcast incoming data to all connected ports, creating collision domains.",
+        "wrongExplanations": [
+          "Hubs don't route data like routers do.",
+          null,
+          "Hubs don't filter data like switches do.",
+          "Hubs don't encrypt data."
+        ],
+        "topic": "1.2 — Network devices"
+      },
+      {
+        "id": 19,
+        "question": "Which cable category supports 10 Gbps?",
+        "choices": ["Cat 5", "Cat 5e", "Cat 6", "Cat 6a"],
+        "correct": 3,
+        "explanation": "Cat 6a supports 10 Gbps up to 100 meters.",
+        "wrongExplanations": [
+          "Cat 5 supports only 100 Mbps.",
+          "Cat 5e supports up to 1 Gbps.",
+          "Cat 6 supports up to 1 Gbps (10 Gbps only up to 55m).",
+          null
+        ],
+        "topic": "1.3 — Cables & connectors"
+      },
+      {
+        "id": 20,
+        "question": "What is the purpose of ARP?",
+        "choices": ["Resolve IP to MAC addresses", "Resolve domain names", "Assign IP addresses", "Route packets"],
+        "correct": 0,
+        "explanation": "ARP (Address Resolution Protocol) maps IP addresses to MAC addresses on a local network.",
+        "wrongExplanations": [
+          null,
+          "DNS resolves domain names to IP addresses.",
+          "DHCP assigns IP addresses to devices.",
+          "Routers route packets between networks."
+        ],
+        "topic": "1.8 — Network protocols"
+      },
+      {
+        "id": 21,
+        "question": "Which OSI layer handles error detection?",
+        "choices": ["Physical", "Data Link", "Network", "Transport"],
+        "correct": 1,
+        "explanation": "The Data Link layer provides error detection and correction for the Physical layer.",
+        "wrongExplanations": [
+          "Physical layer handles electrical signals, not error detection.",
+          null,
+          "Network layer handles routing, not error detection.",
+          "Transport layer handles reliable delivery, not basic error detection."
+        ],
+        "topic": "1.1 — OSI model"
+      },
+      {
+        "id": 22,
+        "question": "What is the maximum distance for single-mode fiber?",
+        "choices": ["2 km", "10 km", "40+ km", "100 m"],
+        "correct": 2,
+        "explanation": "Single-mode fiber can transmit data over 40+ kilometers, making it ideal for long distances.",
+        "wrongExplanations": [
+          "2 km is too short for single-mode fiber capabilities.",
+          "10 km is conservative for single-mode fiber.",
+          null,
+          "100 m is the limit for copper cables, not fiber."
+        ],
+        "topic": "1.3 — Cables & connectors"
+      },
+      {
+        "id": 23,
+        "question": "Which device can prevent broadcast storms?",
+        "choices": ["Hub", "Switch", "Router", "Repeater"],
+        "correct": 2,
+        "explanation": "Routers do not forward broadcast traffic, effectively preventing broadcast storms between networks.",
+        "wrongExplanations": [
+          "Hubs actually propagate broadcast storms.",
+          "Switches forward broadcasts within the same VLAN.",
+          null,
+          "Repeaters amplify all signals including broadcasts."
+        ],
+        "topic": "1.2 — Network devices"
+      },
+      {
+        "id": 24,
+        "question": "What is the loopback address in IPv4?",
+        "choices": ["192.168.1.1", "127.0.0.1", "10.0.0.1", "0.0.0.0"],
+        "correct": 1,
+        "explanation": "127.0.0.1 is the loopback address used for testing network functionality on the local machine.",
+        "wrongExplanations": [
+          "192.168.1.1 is a common router IP address.",
+          null,
+          "10.0.0.1 is a private IP address.",
+          "0.0.0.0 represents all interfaces or default route."
+        ],
+        "topic": "1.5 — IPv4 addressing"
+      },
+      {
+        "id": 25,
+        "question": "Which protocol uses port 22?",
+        "choices": ["Telnet", "SSH", "FTP", "SMTP"],
+        "correct": 1,
+        "explanation": "SSH (Secure Shell) uses port 22 for secure remote access.",
+        "wrongExplanations": [
+          "Telnet uses port 23.",
+          null,
+          "FTP uses ports 20 and 21.",
+          "SMTP uses port 25."
+        ],
+        "topic": "1.8 — Ports and protocols"
+      },
+      {
+        "id": 26,
+        "question": "What does CSMA/CD stand for?",
+        "choices": ["Carrier Sense Multiple Access/Collision Detection", "Central System Multiple Access/Collision Detection", "Carrier Signal Multiple Access/Connection Detection", "Central Sense Multiple Access/Connection Detection"],
+        "correct": 0,
+        "explanation": "CSMA/CD is the media access control method used in traditional Ethernet to detect and handle collisions.",
+        "wrongExplanations": [
+          null,
+          "This is not the correct expansion of CSMA/CD.",
+          "This is not the correct expansion of CSMA/CD.",
+          "This is not the correct expansion of CSMA/CD."
+        ],
+        "topic": "1.1 — Ethernet fundamentals"
+      },
+      {
+        "id": 27,
+        "question": "Which is a private IP address range?",
+        "choices": ["172.16.0.0 - 172.31.255.255", "8.8.8.0 - 8.8.8.255", "200.1.1.0 - 200.1.1.255", "50.0.0.0 - 50.255.255.255"],
+        "correct": 0,
+        "explanation": "172.16.0.0 - 172.31.255.255 is one of the three private IP address ranges defined in RFC 1918.",
+        "wrongExplanations": [
+          null,
+          "8.8.8.0 - 8.8.8.255 is a public IP range (Google DNS).",
+          "200.1.1.0 - 200.1.1.255 is a public IP range.",
+          "50.0.0.0 - 50.255.255.255 is a public IP range."
+        ],
+        "topic": "1.5 — IPv4 addressing"
+      },
+      {
+        "id": 28,
+        "question": "What is the purpose of a default gateway?",
+        "choices": ["Assign IP addresses", "Forward packets to other networks", "Resolve domain names", "Filter MAC addresses"],
+        "correct": 1,
+        "explanation": "The default gateway is the router interface that forwards packets destined for networks outside the local subnet.",
+        "wrongExplanations": [
+          "DHCP assigns IP addresses, not the default gateway.",
+          null,
+          "DNS resolves domain names, not the default gateway.",
+          "Switches filter MAC addresses, not the default gateway."
+        ],
+        "topic": "1.5 — IPv4 configuration"
+      },
+      {
+        "id": 29,
+        "question": "Which wireless frequency has better penetration through walls?",
+        "choices": ["2.4 GHz", "5 GHz", "6 GHz", "All are equal"],
+        "correct": 0,
+        "explanation": "2.4 GHz has better wall penetration due to its longer wavelength, though it's more prone to interference.",
+        "wrongExplanations": [
+          null,
+          "5 GHz has shorter wavelength and less wall penetration.",
+          "6 GHz has even shorter wavelength and less wall penetration.",
+          "Frequencies have different penetration characteristics."
+        ],
+        "topic": "1.4 — Wireless standards"
+      },
+      {
+        "id": 30,
+        "question": "What does MTU stand for?",
+        "choices": ["Maximum Transmission Unit", "Multiple Transfer Unit", "Maximum Transfer Upload", "Multiple Transmission Upload"],
+        "correct": 0,
+        "explanation": "MTU is the largest packet size that can be transmitted in a single network transaction.",
+        "wrongExplanations": [
+          null,
+          "This is not the correct expansion of MTU.",
+          "This is not the correct expansion of MTU.",
+          "This is not the correct expansion of MTU."
+        ],
+        "topic": "1.8 — Network concepts"
+      },
+      {
+        "id": 31,
+        "question": "Which topology requires termination at both ends?",
+        "choices": ["Star", "Ring", "Bus", "Mesh"],
+        "correct": 2,
+        "explanation": "Bus topology requires terminators at both ends to prevent signal reflection.",
+        "wrongExplanations": [
+          "Star topology doesn't require terminators.",
+          "Ring topology doesn't require terminators.",
+          null,
+          "Mesh topology doesn't require terminators."
+        ],
+        "topic": "1.1 — Network topologies"
+      },
+      {
+        "id": 32,
+        "question": "What is the standard Ethernet frame size?",
+        "choices": ["512 bytes", "1024 bytes", "1518 bytes", "2048 bytes"],
+        "correct": 2,
+        "explanation": "Standard Ethernet frames are 1518 bytes (including 18 bytes of overhead).",
+        "wrongExplanations": [
+          "512 bytes is too small for standard Ethernet frames.",
+          "1024 bytes is too small for standard Ethernet frames.",
+          null,
+          "2048 bytes exceeds standard Ethernet frame size."
+        ],
+        "topic": "1.1 — Ethernet fundamentals"
+      },
+      {
+        "id": 33,
+        "question": "Which device can perform NAT?",
+        "choices": ["Hub", "Switch", "Router", "Access Point"],
+        "correct": 2,
+        "explanation": "Routers perform NAT (Network Address Translation) to map private IP addresses to public IP addresses.",
+        "wrongExplanations": [
+          "Hubs operate at Layer 1 and cannot perform NAT.",
+          "Switches operate at Layer 2 and cannot perform NAT.",
+          null,
+          "Access Points operate at Layer 2 and cannot perform NAT."
+        ],
+        "topic": "1.2 — Network devices"
+      },
+      {
+        "id": 34,
+        "question": "What is the purpose of subnetting?",
+        "choices": ["Increase network speed", "Divide networks into smaller segments", "Encrypt data", "Resolve domain names"],
+        "correct": 1,
+        "explanation": "Subnetting divides a network into smaller, more manageable segments to improve performance and security.",
+        "wrongExplanations": [
+          "Subnetting doesn't directly increase network speed.",
+          null,
+          "Subnetting doesn't encrypt data.",
+          "DNS resolves domain names, not subnetting."
+        ],
+        "topic": "1.5 — Subnetting"
+      },
+      {
+        "id": 35,
+        "question": "Which cable uses a BNC connector?",
+        "choices": ["UTP", "Fiber optic", "Coaxial", "STP"],
+        "correct": 2,
+        "explanation": "Coaxial cables use BNC (Bayonet Neill-Concelman) connectors.",
+        "wrongExplanations": [
+          "UTP cables use RJ-45 connectors.",
+          "Fiber optic cables use LC, SC, or other fiber connectors.",
+          null,
+          "STP cables use RJ-45 connectors."
+        ],
+        "topic": "1.3 — Cables & connectors"
+      },
+      {
+        "id": 36,
+        "question": "What does PoE stand for?",
+        "choices": ["Power over Ethernet", "Protocol over Ethernet", "Packet over Ethernet", "Port over Ethernet"],
+        "correct": 0,
+        "explanation": "PoE allows network cables to carry electrical power to devices like IP phones and wireless access points.",
+        "wrongExplanations": [
+          null,
+          "This is not the correct expansion of PoE.",
+          "This is not the correct expansion of PoE.",
+          "This is not the correct expansion of PoE."
+        ],
+        "topic": "1.2 — Network technologies"
+      },
+      {
+        "id": 37,
+        "question": "Which protocol is connectionless?",
+        "choices": ["TCP", "UDP", "FTP", "HTTP"],
+        "correct": 1,
+        "explanation": "UDP is connectionless and does not guarantee delivery, making it faster but less reliable than TCP.",
+        "wrongExplanations": [
+          "TCP is connection-oriented and guarantees delivery.",
+          null,
+          "FTP uses TCP, which is connection-oriented.",
+          "HTTP uses TCP, which is connection-oriented."
+        ],
+        "topic": "1.8 — Transport protocols"
+      },
+      {
+        "id": 38,
+        "question": "What is the IPv6 loopback address?",
+        "choices": ["::1", "::0", "FF00::1", "FE80::1"],
+        "correct": 0,
+        "explanation": "::1 is the IPv6 loopback address, equivalent to 127.0.0.1 in IPv4.",
+        "wrongExplanations": [
+          null,
+          "::0 is not a valid IPv6 loopback address.",
+          "FF00::1 is a multicast address.",
+          "FE80::1 is a link-local address."
+        ],
+        "topic": "1.6 — IPv6 addressing"
+      },
+      {
+        "id": 39,
+        "question": "Which wireless channel has no overlap in 2.4 GHz?",
+        "choices": ["1, 6, 11", "1, 5, 9", "2, 7, 12", "3, 8, 13"],
+        "correct": 0,
+        "explanation": "Channels 1, 6, and 11 are the only non-overlapping channels in the 2.4 GHz band.",
+        "wrongExplanations": [
+          null,
+          "Channels 1, 5, 9 have overlap.",
+          "Channels 2, 7, 12 have overlap.",
+          "Channels 3, 8, 13 have overlap."
+        ],
+        "topic": "1.4 — Wireless standards"
+      },
+      {
+        "id": 40,
+        "question": "What does VLAN stand for?",
+        "choices": ["Virtual Local Area Network", "Very Large Area Network", "Variable Link Access Network", "Virtual Link Area Network"],
+        "correct": 0,
+        "explanation": "VLANs logically segment a network at Layer 2 for improved security and performance.",
+        "wrongExplanations": [
+          null,
+          "This is not the correct expansion of VLAN.",
+          "This is not the correct expansion of VLAN.",
+          "This is not the correct expansion of VLAN."
+        ],
+        "topic": "1.2 — Network segmentation"
+      },
+      {
+        "id": 41,
+        "question": "Which protocol uses port 25?",
+        "choices": ["POP3", "IMAP", "SMTP", "HTTP"],
+        "correct": 2,
+        "explanation": "SMTP (Simple Mail Transfer Protocol) uses port 25 for sending email.",
+        "wrongExplanations": [
+          "POP3 uses port 110.",
+          "IMAP uses port 143.",
+          null,
+          "HTTP uses port 80."
+        ],
+        "topic": "1.8 — Ports and protocols"
+      },
+      {
+        "id": 42,
+        "question": "What is the purpose of a crossover cable?",
+        "choices": ["Connect different device types", "Connect similar devices directly", "Extend cable length", "Provide power"],
+        "correct": 1,
+        "explanation": "Crossover cables connect similar devices (like two computers or two switches) directly without a switch.",
+        "wrongExplanations": [
+          "Straight-through cables connect different device types.",
+          null,
+          "Crossover cables don't extend cable length.",
+          "PoE provides power, not crossover cables."
+        ],
+        "topic": "1.3 — Cables & connectors"
+      },
+      {
+        "id": 43,
+        "question": "Which OSI layer is responsible for routing?",
+        "choices": ["Data Link", "Network", "Transport", "Session"],
+        "correct": 1,
+        "explanation": "The Network layer (Layer 3) handles routing and logical addressing.",
+        "wrongExplanations": [
+          "Data Link layer handles frame transmission, not routing.",
+          null,
+          "Transport layer handles reliable delivery, not routing.",
+          "Session layer manages sessions, not routing."
+        ],
+        "topic": "1.1 — OSI model"
+      },
+      {
+        "id": 44,
+        "question": "What is the maximum number of hosts in a /24 subnet?",
+        "choices": ["254", "256", "510", "512"],
+        "correct": 0,
+        "explanation": "A /24 subnet has 256 addresses, but 2 are reserved (network and broadcast), leaving 254 usable host addresses.",
+        "wrongExplanations": [
+          null,
+          "256 is the total addresses, but 2 are reserved.",
+          "510 would be for a /23 subnet.",
+          "512 would be for a /22 subnet."
+        ],
+        "topic": "1.5 — Subnetting"
+      },
+      {
+        "id": 45,
+        "question": "Which device amplifies signals without reading data?",
+        "choices": ["Router", "Switch", "Hub", "Repeater"],
+        "correct": 3,
+        "explanation": "Repeaters amplify signals to extend network distance but don't process or filter data.",
+        "wrongExplanations": [
+          "Routers read and process data for routing decisions.",
+          "Switches read MAC addresses to make forwarding decisions.",
+          "Hubs don't amplify signals, they repeat them.",
+          null
+        ],
+        "topic": "1.2 — Network devices"
+      },
+      {
+        "id": 46,
+        "question": "What does STP prevent in switched networks?",
+        "choices": ["Broadcast storms", "Switching loops", "IP conflicts", "Cable breaks"],
+        "correct": 1,
+        "explanation": "Spanning Tree Protocol (STP) prevents switching loops that can cause broadcast storms.",
+        "wrongExplanations": [
+          "STP prevents loops, which can lead to broadcast storms.",
+          null,
+          "STP doesn't prevent IP conflicts.",
+          "STP doesn't prevent cable breaks."
+        ],
+        "topic": "1.2 — Network protocols"
+      },
+      {
+        "id": 47,
+        "question": "Which is a link-local IPv6 address?",
+        "choices": ["2001::/32", "FE80::/10", "FF00::/8", "FC00::/7"],
+        "correct": 1,
+        "explanation": "FE80::/10 is the prefix for link-local IPv6 addresses, used for communication on a single link.",
+        "wrongExplanations": [
+          "2001::/32 is a global unicast address.",
+          null,
+          "FF00::/8 is a multicast address.",
+          "FC00::/7 is a unique local address."
+        ],
+        "topic": "1.6 — IPv6 addressing"
+      },
+      {
+        "id": 48,
+        "question": "What is the purpose of QoS?",
+        "choices": ["Encrypt traffic", "Prioritize network traffic", "Assign IP addresses", "Block malicious traffic"],
+        "correct": 1,
+        "explanation": "Quality of Service (QoS) prioritizes certain types of traffic (like voice or video) for better performance.",
+        "wrongExplanations": [
+          "QoS doesn't encrypt traffic.",
+          null,
+          "DHCP assigns IP addresses, not QoS.",
+          "Firewalls block malicious traffic, not QoS."
+        ],
+        "topic": "1.8 — Network services"
+      },
+      {
+        "id": 49,
+        "question": "Which protocol provides secure file transfer?",
+        "choices": ["FTP", "TFTP", "SFTP", "HTTP"],
+        "correct": 2,
+        "explanation": "SFTP (SSH File Transfer Protocol) provides secure, encrypted file transfer.",
+        "wrongExplanations": [
+          "FTP is not secure and transmits data in plain text.",
+          "TFTP is not secure and has no authentication.",
+          null,
+          "HTTP is not designed for file transfer."
+        ],
+        "topic": "1.8 — Ports and protocols"
+      },
+      {
+        "id": 50,
+        "question": "What does duplex mode control?",
+        "choices": ["Speed of transmission", "Direction of data flow", "Cable type used", "Encryption method"],
+        "correct": 1,
+        "explanation": "Duplex mode determines whether data can flow in one direction (half-duplex) or both directions simultaneously (full-duplex).",
+        "wrongExplanations": [
+          "Duplex doesn't control transmission speed.",
+          null,
+          "Duplex doesn't control cable type.",
+          "Duplex doesn't control encryption."
+        ],
+        "topic": "1.1 — Network concepts"
       }
     ],
     "2": [
       {
-        "id": 6,
-        "question": "Which wireless standard operates at 5 GHz?",
-        "choices": ["802.11b", "802.11g", "802.11n", "802.11ac"],
-        "correct": 3,
-        "explanation": "802.11ac operates exclusively at 5 GHz, providing higher bandwidth.",
+        "id": 51,
+        "question": "What is the primary purpose of a DMZ?",
+        "choices": ["Store backups", "Isolate public-facing servers", "Increase bandwidth", "Provide wireless access"],
+        "correct": 1,
+        "explanation": "A DMZ (Demilitarized Zone) isolates public-facing servers from the internal network for security.",
         "wrongExplanations": [
-          "802.11b operates at 2.4 GHz only.",
-          "802.11g operates at 2.4 GHz only.",
-          "802.11n can operate at both 2.4 GHz and 5 GHz.",
-          null
+          "DMZ is not designed for backup storage.",
+          null,
+          "DMZ doesn't increase bandwidth capacity.",
+          "DMZ doesn't provide wireless access."
         ],
-        "topic": "2.1 — Wireless technologies"
+        "topic": "2.1 — Network segmentation"
       },
       {
-        "id": 7,
-        "question": "What is the maximum speed of 802.11n?",
-        "choices": ["54 Mbps", "150 Mbps", "300 Mbps", "600 Mbps"],
-        "correct": 3,
-        "explanation": "802.11n can achieve up to 600 Mbps with 4x4 MIMO configuration.",
+        "id": 52,
+        "question": "Which routing protocol is distance-vector?",
+        "choices": ["OSPF", "RIP", "BGP", "IS-IS"],
+        "correct": 1,
+        "explanation": "RIP (Routing Information Protocol) is a distance-vector routing protocol that uses hop count as its metric.",
         "wrongExplanations": [
-          "54 Mbps is the maximum for 802.11g.",
-          "150 Mbps is for single-stream 802.11n.",
-          "300 Mbps is for dual-stream 802.11n.",
+          "OSPF is a link-state protocol.",
+          null,
+          "BGP is a path-vector protocol.",
+          "IS-IS is a link-state protocol."
+        ],
+        "topic": "2.2 — Routing protocols"
+      },
+      {
+        "id": 53,
+        "question": "What does SSID broadcast do?",
+        "choices": ["Encrypts wireless traffic", "Makes wireless network visible", "Assigns IP addresses", "Filters MAC addresses"],
+        "correct": 1,
+        "explanation": "SSID broadcast makes the wireless network name visible to nearby devices.",
+        "wrongExplanations": [
+          "SSID broadcast doesn't encrypt traffic.",
+          null,
+          "SSID broadcast doesn't assign IP addresses.",
+          "SSID broadcast doesn't filter MAC addresses."
+        ],
+        "topic": "2.3 — Wireless implementation"
+      },
+      {
+        "id": 54,
+        "question": "Which load balancing method uses server response time?",
+        "choices": ["Round-robin", "Least connections", "Weighted", "Dynamic"],
+        "correct": 3,
+        "explanation": "Dynamic load balancing adjusts based on real-time metrics like server response time and load.",
+        "wrongExplanations": [
+          "Round-robin distributes requests sequentially.",
+          "Least connections routes to server with fewest active connections.",
+          "Weighted distributes based on predefined server capacity.",
           null
         ],
-        "topic": "2.1 — Wireless technologies"
+        "topic": "2.4 — Network services"
+      },
+      {
+        "id": 55,
+        "question": "What is the purpose of port mirroring?",
+        "choices": ["Increase bandwidth", "Monitor traffic for analysis", "Create redundancy", "Balance load"],
+        "correct": 1,
+        "explanation": "Port mirroring (SPAN) copies traffic from one port to another for monitoring and analysis.",
+        "wrongExplanations": [
+          "Port mirroring doesn't increase bandwidth.",
+          null,
+          "Port mirroring doesn't create redundancy.",
+          "Port mirroring doesn't balance load."
+        ],
+        "topic": "2.5 — Network monitoring"
+      },
+      {
+        "id": 56,
+        "question": "Which VLAN is the default on most switches?",
+        "choices": ["VLAN 0", "VLAN 1", "VLAN 10", "VLAN 100"],
+        "correct": 1,
+        "explanation": "VLAN 1 is the default VLAN on most switches and cannot be deleted.",
+        "wrongExplanations": [
+          "VLAN 0 doesn't exist as a default VLAN.",
+          null,
+          "VLAN 10 is not the default VLAN.",
+          "VLAN 100 is not the default VLAN."
+        ],
+        "topic": "2.1 — VLANs"
+      },
+      {
+        "id": 57,
+        "question": "What does a proxy server provide?",
+        "choices": ["Direct internet connection", "Caching and filtering", "IP address assignment", "Wireless access"],
+        "correct": 1,
+        "explanation": "Proxy servers cache content and filter requests, improving performance and security.",
+        "wrongExplanations": [
+          "Proxy servers don't provide direct internet connection.",
+          null,
+          "DHCP assigns IP addresses, not proxy servers.",
+          "Proxy servers don't provide wireless access."
+        ],
+        "topic": "2.4 — Network services"
+      },
+      {
+        "id": 58,
+        "question": "Which protocol automatically configures IPv6 addresses?",
+        "choices": ["DHCPv4", "SLAAC", "ARP", "ICMP"],
+        "correct": 1,
+        "explanation": "SLAAC (Stateless Address Autoconfiguration) allows devices to automatically configure their own IPv6 addresses.",
+        "wrongExplanations": [
+          "DHCPv4 is for IPv4 address assignment.",
+          null,
+          "ARP resolves IP addresses to MAC addresses.",
+          "ICMP is used for error reporting and diagnostics."
+        ],
+        "topic": "2.6 — IPv6 implementation"
+      },
+      {
+        "id": 59,
+        "question": "What is the purpose of a jump box?",
+        "choices": ["Increase bandwidth", "Secure access point for administration", "Load balancing", "Backup storage"],
+        "correct": 1,
+        "explanation": "A jump box (bastion host) provides secure, controlled access to systems in different security zones.",
+        "wrongExplanations": [
+          "Jump boxes don't increase bandwidth.",
+          null,
+          "Jump boxes don't perform load balancing.",
+          "Jump boxes don't provide backup storage."
+        ],
+        "topic": "2.1 — Network security"
+      },
+      {
+        "id": 60,
+        "question": "Which routing metric does OSPF use?",
+        "choices": ["Hop count", "Bandwidth (cost)", "Delay", "Reliability"],
+        "correct": 1,
+        "explanation": "OSPF uses cost based on bandwidth as its routing metric.",
+        "wrongExplanations": [
+          "Hop count is used by RIP, not OSPF.",
+          null,
+          "Delay is not the primary OSPF metric.",
+          "Reliability is not the primary OSPF metric."
+        ],
+        "topic": "2.2 — Routing protocols"
+      },
+      {
+        "id": 61,
+        "question": "What is the purpose of DHCP relay?",
+        "choices": ["Assign static IPs", "Forward DHCP requests across subnets", "Encrypt DHCP traffic", "Cache IP addresses"],
+        "correct": 1,
+        "explanation": "DHCP relay forwards DHCP broadcast messages across different subnets to a DHCP server.",
+        "wrongExplanations": [
+          "DHCP relay doesn't assign static IPs.",
+          null,
+          "DHCP relay doesn't encrypt traffic.",
+          "DHCP relay doesn't cache IP addresses."
+        ],
+        "topic": "2.4 — DHCP services"
+      },
+      {
+        "id": 62,
+        "question": "Which wireless authentication uses a RADIUS server?",
+        "choices": ["WPA2-Personal", "WPA2-Enterprise", "Open", "WEP"],
+        "correct": 1,
+        "explanation": "WPA2-Enterprise uses 802.1X authentication with a RADIUS server for centralized user authentication.",
+        "wrongExplanations": [
+          "WPA2-Personal uses pre-shared keys, not RADIUS.",
+          null,
+          "Open authentication doesn't use RADIUS.",
+          "WEP doesn't use RADIUS authentication."
+        ],
+        "topic": "2.3 — Wireless security"
+      },
+      {
+        "id": 63,
+        "question": "What does static routing require?",
+        "choices": ["Automatic updates", "Manual route configuration", "DHCP server", "DNS server"],
+        "correct": 1,
+        "explanation": "Static routes must be manually configured by an administrator and don't adapt to network changes.",
+        "wrongExplanations": [
+          "Static routes don't update automatically.",
+          null,
+          "Static routes don't require DHCP.",
+          "Static routes don't require DNS."
+        ],
+        "topic": "2.2 — Routing"
+      },
+      {
+        "id": 64,
+        "question": "Which protocol is used for time synchronization?",
+        "choices": ["SNMP", "NTP", "SMTP", "FTP"],
+        "correct": 1,
+        "explanation": "NTP (Network Time Protocol) synchronizes clocks across network devices.",
+        "wrongExplanations": [
+          "SNMP is used for network management.",
+          null,
+          "SMTP is used for email.",
+          "FTP is used for file transfer."
+        ],
+        "topic": "2.4 — Network services"
+      },
+      {
+        "id": 65,
+        "question": "What is the purpose of a VLAN trunk?",
+        "choices": ["Carry traffic for a single VLAN", "Carry traffic for multiple VLANs", "Block all traffic", "Assign IP addresses"],
+        "correct": 1,
+        "explanation": "VLAN trunks carry traffic for multiple VLANs between switches using tagging (typically 802.1Q).",
+        "wrongExplanations": [
+          "Access ports carry traffic for a single VLAN.",
+          null,
+          "Trunks don't block all traffic.",
+          "Trunks don't assign IP addresses."
+        ],
+        "topic": "2.1 — VLANs"
+      },
+      {
+        "id": 66,
+        "question": "Which device can prioritize VoIP traffic?",
+        "choices": ["Hub", "Unmanaged switch", "Router with QoS", "Repeater"],
+        "correct": 2,
+        "explanation": "Routers with QoS can prioritize time-sensitive traffic like VoIP over other data.",
+        "wrongExplanations": [
+          "Hubs can't prioritize traffic.",
+          "Unmanaged switches can't prioritize traffic.",
+          null,
+          "Repeaters can't prioritize traffic."
+        ],
+        "topic": "2.4 — QoS implementation"
+      },
+      {
+        "id": 67,
+        "question": "What does link aggregation provide?",
+        "choices": ["Increased bandwidth and redundancy", "Wireless connectivity", "IP assignment", "Name resolution"],
+        "correct": 0,
+        "explanation": "Link aggregation (LAG) combines multiple physical links into one logical link for increased bandwidth and redundancy.",
+        "wrongExplanations": [
+          null,
+          "Link aggregation doesn't provide wireless connectivity.",
+          "Link aggregation doesn't assign IP addresses.",
+          "Link aggregation doesn't resolve names."
+        ],
+        "topic": "2.5 — Network optimization"
+      },
+      {
+        "id": 68,
+        "question": "Which protocol prevents loops in switched networks?",
+        "choices": ["RIP", "OSPF", "STP", "BGP"],
+        "correct": 2,
+        "explanation": "Spanning Tree Protocol (STP) prevents loops by blocking redundant paths in switched networks.",
+        "wrongExplanations": [
+          "RIP is a routing protocol, not for switching.",
+          "OSPF is a routing protocol, not for switching.",
+          null,
+          "BGP is a routing protocol, not for switching."
+        ],
+        "topic": "2.2 — Switching protocols"
+      },
+      {
+        "id": 69,
+        "question": "What is the purpose of a site-to-site VPN?",
+        "choices": ["Connect individual users to network", "Connect entire networks securely", "Provide wireless access", "Assign IP addresses"],
+        "correct": 1,
+        "explanation": "Site-to-site VPNs create secure connections between entire networks, often connecting branch offices.",
+        "wrongExplanations": [
+          "Remote access VPNs connect individual users.",
+          null,
+          "VPNs don't provide wireless access.",
+          "VPNs don't assign IP addresses."
+        ],
+        "topic": "2.7 — VPN implementation"
+      },
+      {
+        "id": 70,
+        "question": "Which DNS record type maps a domain to an IP address?",
+        "choices": ["CNAME", "MX", "A", "PTR"],
+        "correct": 2,
+        "explanation": "An A (Address) record maps a domain name to an IPv4 address.",
+        "wrongExplanations": [
+          "CNAME maps aliases to other domain names.",
+          "MX records specify mail servers.",
+          null,
+          "PTR records map IP addresses to domain names."
+        ],
+        "topic": "2.4 — DNS services"
+      },
+      {
+        "id": 71,
+        "question": "What does port security do on a switch?",
+        "choices": ["Encrypts traffic", "Limits devices by MAC address", "Assigns VLANs", "Provides routing"],
+        "correct": 1,
+        "explanation": "Port security restricts which devices (by MAC address) can connect to specific switch ports.",
+        "wrongExplanations": [
+          "Port security doesn't encrypt traffic.",
+          null,
+          "Port security doesn't assign VLANs.",
+          "Port security doesn't provide routing."
+        ],
+        "topic": "2.1 — Switch security"
+      },
+      {
+        "id": 72,
+        "question": "Which routing protocol is best for large enterprise networks?",
+        "choices": ["RIP", "OSPF", "Static routing", "Default routing"],
+        "correct": 1,
+        "explanation": "OSPF is a link-state protocol that scales well and converges quickly, making it ideal for large enterprises.",
+        "wrongExplanations": [
+          "RIP has limitations for large networks (15 hop limit).",
+          null,
+          "Static routing doesn't scale for large networks.",
+          "Default routing is too simplistic for large networks."
+        ],
+        "topic": "2.2 — Routing protocols"
+      },
+      {
+        "id": 73,
+        "question": "What is the purpose of network segmentation?",
+        "choices": ["Increase speed only", "Improve security and performance", "Reduce costs", "Simplify cabling"],
+        "correct": 1,
+        "explanation": "Network segmentation divides networks into smaller parts to improve security, performance, and manageability.",
+        "wrongExplanations": [
+          "Segmentation improves more than just speed.",
+          null,
+          "Segmentation may increase costs due to additional equipment.",
+          "Segmentation may complicate cabling."
+        ],
+        "topic": "2.1 — Network design"
+      },
+      {
+        "id": 74,
+        "question": "Which protocol does a wireless controller use to manage APs?",
+        "choices": ["SNMP", "LWAPP/CAPWAP", "HTTP", "FTP"],
+        "correct": 1,
+        "explanation": "LWAPP or CAPWAP protocols allow wireless controllers to manage and configure access points centrally.",
+        "wrongExplanations": [
+          "SNMP is for general network management, not AP control.",
+          null,
+          "HTTP is for web services, not AP management.",
+          "FTP is for file transfer, not AP management."
+        ],
+        "topic": "2.3 — Wireless implementation"
+      },
+      {
+        "id": 75,
+        "question": "What does HSRP provide?",
+        "choices": ["Load balancing", "Gateway redundancy", "DNS resolution", "DHCP services"],
+        "correct": 1,
+        "explanation": "HSRP (Hot Standby Router Protocol) provides gateway redundancy by allowing multiple routers to share a virtual IP.",
+        "wrongExplanations": [
+          "HSRP doesn't provide load balancing.",
+          null,
+          "HSRP doesn't provide DNS resolution.",
+          "HSRP doesn't provide DHCP services."
+        ],
+        "topic": "2.2 — High availability"
+      },
+      {
+        "id": 76,
+        "question": "Which VLAN carries management traffic by default?",
+        "choices": ["VLAN 0", "VLAN 1", "VLAN 99", "VLAN 1024"],
+        "correct": 1,
+        "explanation": "VLAN 1 is the default VLAN and typically carries management traffic, though best practice is to change this.",
+        "wrongExplanations": [
+          "VLAN 0 doesn't exist as a default VLAN.",
+          null,
+          "VLAN 99 is not the default management VLAN.",
+          "VLAN 1024 is not the default management VLAN."
+        ],
+        "topic": "2.1 — VLAN security"
+      },
+      {
+        "id": 77,
+        "question": "What is the purpose of a content filter?",
+        "choices": ["Encrypt data", "Block inappropriate websites", "Assign IP addresses", "Route packets"],
+        "correct": 1,
+        "explanation": "Content filters block access to inappropriate or non-business-related websites based on categories or URLs.",
+        "wrongExplanations": [
+          "Content filters don't encrypt data.",
+          null,
+          "DHCP assigns IP addresses, not content filters.",
+          "Routers route packets, not content filters."
+        ],
+        "topic": "2.4 — Network services"
+      },
+      {
+        "id": 78,
+        "question": "Which protocol allows remote device management?",
+        "choices": ["SNMP", "ARP", "DHCP", "DNS"],
+        "correct": 0,
+        "explanation": "SNMP (Simple Network Management Protocol) allows administrators to monitor and manage network devices remotely.",
+        "wrongExplanations": [
+          null,
+          "ARP resolves IP addresses to MAC addresses.",
+          "DHCP assigns IP addresses.",
+          "DNS resolves domain names."
+        ],
+        "topic": "2.5 — Network management"
+      },
+      {
+        "id": 79,
+        "question": "What does EtherChannel provide?",
+        "choices": ["Wireless connectivity", "Link aggregation between switches", "Name resolution", "IP assignment"],
+        "correct": 1,
+        "explanation": "EtherChannel (Cisco's link aggregation) bundles multiple physical links into one logical link.",
+        "wrongExplanations": [
+          "EtherChannel doesn't provide wireless connectivity.",
+          null,
+          "EtherChannel doesn't provide name resolution.",
+          "EtherChannel doesn't assign IP addresses."
+        ],
+        "topic": "2.5 — Network optimization"
+      },
+      {
+        "id": 80,
+        "question": "Which routing protocol uses autonomous system numbers?",
+        "choices": ["RIP", "OSPF", "EIGRP", "BGP"],
+        "correct": 3,
+        "explanation": "BGP (Border Gateway Protocol) uses autonomous system numbers to route between different organizations' networks.",
+        "wrongExplanations": [
+          "RIP doesn't use autonomous system numbers.",
+          "OSPF doesn't use autonomous system numbers.",
+          "EIGRP doesn't use autonomous system numbers.",
+          null
+        ],
+        "topic": "2.2 — Routing protocols"
+      },
+      {
+        "id": 81,
+        "question": "What is the purpose of a wireless site survey?",
+        "choices": ["Assign IP addresses", "Determine optimal AP placement", "Configure VLANs", "Set up routing"],
+        "correct": 1,
+        "explanation": "A wireless site survey identifies coverage areas, interference sources, and optimal AP placement.",
+        "wrongExplanations": [
+          "DHCP assigns IP addresses, not site surveys.",
+          null,
+          "Site surveys don't configure VLANs.",
+          "Site surveys don't set up routing."
+        ],
+        "topic": "2.3 — Wireless implementation"
+      },
+      {
+        "id": 82,
+        "question": "Which load balancer algorithm distributes requests evenly?",
+        "choices": ["Least connections", "Round-robin", "Weighted", "IP hash"],
+        "correct": 1,
+        "explanation": "Round-robin distributes requests sequentially and evenly across all available servers.",
+        "wrongExplanations": [
+          "Least connections routes to server with fewest active connections.",
+          null,
+          "Weighted distributes based on predefined server capacity.",
+          "IP hash distributes based on client IP address."
+        ],
+        "topic": "2.4 — Load balancing"
+      },
+      {
+        "id": 83,
+        "question": "What does a route summarization accomplish?",
+        "choices": ["Increases routing table size", "Reduces routing table size", "Eliminates routing", "Disables routing protocols"],
+        "correct": 1,
+        "explanation": "Route summarization combines multiple routes into a single advertisement, reducing routing table size and overhead.",
+        "wrongExplanations": [
+          "Route summarization reduces, not increases, table size.",
+          null,
+          "Route summarization doesn't eliminate routing.",
+          "Route summarization doesn't disable protocols."
+        ],
+        "topic": "2.2 — Routing optimization"
+      },
+      {
+        "id": 84,
+        "question": "Which wireless standard supports MU-MIMO?",
+        "choices": ["802.11n", "802.11ac", "802.11g", "802.11a"],
+        "correct": 1,
+        "explanation": "802.11ac introduced MU-MIMO (Multi-User Multiple Input Multiple Output) for simultaneous communication with multiple devices.",
+        "wrongExplanations": [
+          "802.11n doesn't support MU-MIMO.",
+          null,
+          "802.11g doesn't support MU-MIMO.",
+          "802.11a doesn't support MU-MIMO."
+        ],
+        "topic": "2.3 — Wireless standards"
+      },
+      {
+        "id": 85,
+        "question": "What is the purpose of a captive portal?",
+        "choices": ["Encrypt traffic", "Require authentication before network access", "Block all traffic", "Provide routing"],
+        "correct": 1,
+        "explanation": "Captive portals redirect users to an authentication page before granting network access.",
+        "wrongExplanations": [
+          "Captive portals don't encrypt traffic.",
+          null,
+          "Captive portals don't block all traffic.",
+          "Captive portals don't provide routing."
+        ],
+        "topic": "2.3 — Wireless security"
+      },
+      {
+        "id": 86,
+        "question": "Which protocol provides automatic failover for gateways?",
+        "choices": ["DHCP", "DNS", "VRRP", "SNMP"],
+        "correct": 2,
+        "explanation": "VRRP (Virtual Router Redundancy Protocol) provides automatic failover for default gateways.",
+        "wrongExplanations": [
+          "DHCP assigns IP addresses, not failover.",
+          "DNS resolves names, not failover.",
+          null,
+          "SNMP manages devices, not failover."
+        ],
+        "topic": "2.2 — High availability"
+      },
+      {
+        "id": 87,
+        "question": "What does a native VLAN do?",
+        "choices": ["Encrypts all traffic", "Carries untagged traffic on a trunk", "Blocks all VLANs", "Assigns IP addresses"],
+        "correct": 1,
+        "explanation": "The native VLAN carries untagged traffic on a trunk port, typically for backward compatibility.",
+        "wrongExplanations": [
+          "Native VLAN doesn't encrypt traffic.",
+          null,
+          "Native VLAN doesn't block all VLANs.",
+          "Native VLAN doesn't assign IP addresses."
+        ],
+        "topic": "2.1 — VLAN implementation"
+      },
+      {
+        "id": 88,
+        "question": "Which metric does RIP use for path selection?",
+        "choices": ["Bandwidth", "Hop count", "Delay", "Cost"],
+        "correct": 1,
+        "explanation": "RIP uses hop count (number of routers) as its metric, with a maximum of 15 hops.",
+        "wrongExplanations": [
+          "RIP doesn't use bandwidth as its metric.",
+          null,
+          "RIP doesn't use delay as its metric.",
+          "RIP doesn't use cost as its metric."
+        ],
+        "topic": "2.2 — Routing protocols"
+      },
+      {
+        "id": 89,
+        "question": "What is the purpose of network access control (NAC)?",
+        "choices": ["Increase bandwidth", "Enforce security policy before network access", "Assign VLANs", "Provide routing"],
+        "correct": 1,
+        "explanation": "NAC verifies that devices meet security requirements before allowing network access.",
+        "wrongExplanations": [
+          "NAC doesn't increase bandwidth.",
+          null,
+          "NAC may assign VLANs but that's not its primary purpose.",
+          "NAC doesn't provide routing."
+        ],
+        "topic": "2.1 — Network security"
+      },
+      {
+        "id": 90,
+        "question": "Which DNS record is used for reverse lookups?",
+        "choices": ["A", "CNAME", "PTR", "MX"],
+        "correct": 2,
+        "explanation": "PTR (Pointer) records map IP addresses back to domain names for reverse DNS lookups.",
+        "wrongExplanations": [
+          "A records map domain names to IP addresses.",
+          "CNAME records map aliases to other domain names.",
+          null,
+          "MX records specify mail servers."
+        ],
+        "topic": "2.4 — DNS services"
       }
     ],
     "3": [
       {
-        "id": 8,
-        "question": "Which protocol is used for email delivery?",
-        "choices": ["HTTP", "SMTP", "FTP", "Telnet"],
+        "id": 91,
+        "question": "What is the purpose of network documentation?",
+        "choices": ["Replace backups", "Track changes and assist troubleshooting", "Increase bandwidth", "Eliminate monitoring"],
         "correct": 1,
-        "explanation": "SMTP (Simple Mail Transfer Protocol) is used for email delivery between mail servers.",
+        "explanation": "Network documentation records configurations, changes, and topologies to aid in management and troubleshooting.",
         "wrongExplanations": [
-          "HTTP is used for web browsing.",
+          "Documentation doesn't replace backups.",
           null,
-          "FTP is used for file transfer.",
-          "Telnet is used for remote terminal access."
+          "Documentation doesn't increase bandwidth.",
+          "Documentation doesn't eliminate monitoring."
         ],
-        "topic": "3.1 — Application protocols"
+        "topic": "3.1 — Network documentation"
+      },
+      {
+        "id": 92,
+        "question": "Which backup type only backs up changed data since the last backup?",
+        "choices": ["Full", "Incremental", "Differential", "Snapshot"],
+        "correct": 1,
+        "explanation": "Incremental backups only copy data that has changed since the last backup of any type.",
+        "wrongExplanations": [
+          "Full backups copy all data.",
+          null,
+          "Differential backups copy data changed since the last full backup.",
+          "Snapshots capture the state at a point in time."
+        ],
+        "topic": "3.2 — Backup strategies"
+      },
+      {
+        "id": 93,
+        "question": "What does a performance baseline provide?",
+        "choices": ["Current security status", "Reference point for normal network behavior", "Backup schedule", "IP address assignments"],
+        "correct": 1,
+        "explanation": "A performance baseline establishes normal network behavior metrics for comparison when troubleshooting.",
+        "wrongExplanations": [
+          "Baselines don't provide security status.",
+          null,
+          "Baselines don't provide backup schedules.",
+          "Baselines don't provide IP assignments."
+        ],
+        "topic": "3.3 — Network monitoring"
+      },
+      {
+        "id": 94,
+        "question": "Which tool monitors network traffic in real-time?",
+        "choices": ["Cable tester", "Protocol analyzer", "Tone generator", "Multimeter"],
+        "correct": 1,
+        "explanation": "Protocol analyzers (like Wireshark) capture and analyze network traffic in real-time.",
+        "wrongExplanations": [
+          "Cable testers test physical cable integrity.",
+          null,
+          "Tone generators trace cables.",
+          "Multimeters measure electrical properties."
+        ],
+        "topic": "3.4 — Monitoring tools"
+      },
+      {
+        "id": 95,
+        "question": "What is the purpose of change management?",
+        "choices": ["Eliminate all changes", "Control and document network changes", "Increase network speed", "Replace firewalls"],
+        "correct": 1,
+        "explanation": "Change management ensures changes are planned, approved, documented, and can be rolled back if needed.",
+        "wrongExplanations": [
+          "Change management doesn't eliminate changes.",
+          null,
+          "Change management doesn't increase speed.",
+          "Change management doesn't replace firewalls."
+        ],
+        "topic": "3.1 — Change management"
+      },
+      {
+        "id": 96,
+        "question": "Which log type records user authentication attempts?",
+        "choices": ["System log", "Security log", "Application log", "Performance log"],
+        "correct": 1,
+        "explanation": "Security logs record authentication attempts, access control events, and security-related activities.",
+        "wrongExplanations": [
+          "System logs record system events, not authentication.",
+          null,
+          "Application logs record application-specific events.",
+          "Performance logs record performance metrics."
+        ],
+        "topic": "3.3 — Log management"
+      },
+      {
+        "id": 97,
+        "question": "What does SNMP trap notification indicate?",
+        "choices": ["Normal operation", "An event or alert from a device", "Successful backup", "IP conflict"],
+        "correct": 1,
+        "explanation": "SNMP traps are unsolicited alerts sent from devices to the management system when specific events occur.",
+        "wrongExplanations": [
+          "SNMP traps indicate events, not normal operation.",
+          null,
+          "SNMP traps don't indicate backup success.",
+          "SNMP traps don't specifically indicate IP conflicts."
+        ],
+        "topic": "3.4 — SNMP monitoring"
+      },
+      {
+        "id": 98,
+        "question": "Which document describes expected network performance?",
+        "choices": ["SLA", "MOU", "NDA", "AUP"],
+        "correct": 0,
+        "explanation": "SLA (Service Level Agreement) defines expected service performance, uptime, and response times.",
+        "wrongExplanations": [
+          null,
+          "MOU (Memorandum of Understanding) outlines agreements.",
+          "NDA (Non-Disclosure Agreement) protects confidential information.",
+          "AUP (Acceptable Use Policy) defines usage rules."
+        ],
+        "topic": "3.1 — Documentation types"
+      },
+      {
+        "id": 99,
+        "question": "What is the purpose of a network diagram?",
+        "choices": ["Show physical and logical network layout", "Store passwords", "Backup data", "Assign IP addresses"],
+        "correct": 0,
+        "explanation": "Network diagrams visually represent the physical and logical structure of the network.",
+        "wrongExplanations": [
+          null,
+          "Network diagrams don't store passwords.",
+          "Network diagrams don't backup data.",
+          "Network diagrams don't assign IP addresses."
+        ],
+        "topic": "3.1 — Network documentation"
+      },
+      {
+        "id": 100,
+        "question": "Which metric indicates network congestion?",
+        "choices": ["Low latency", "High bandwidth utilization", "Fast DNS resolution", "Low error rate"],
+        "correct": 1,
+        "explanation": "High bandwidth utilization (typically over 70-80%) indicates network congestion.",
+        "wrongExplanations": [
+          "Low latency indicates good performance.",
+          null,
+          "Fast DNS resolution indicates good DNS performance.",
+          "Low error rate indicates good network health."
+        ],
+        "topic": "3.3 — Performance metrics"
+      },
+      {
+        "id": 101,
+        "question": "What does disaster recovery planning address?",
+        "choices": ["Daily backups only", "Restoring operations after major outage", "Password policies", "VLAN configuration"],
+        "correct": 1,
+        "explanation": "Disaster recovery plans outline procedures to restore critical systems and data after catastrophic events.",
+        "wrongExplanations": [
+          "Disaster recovery is broader than daily backups.",
+          null,
+          "Disaster recovery doesn't focus on password policies.",
+          "Disaster recovery doesn't focus on VLAN configuration."
+        ],
+        "topic": "3.2 — Business continuity"
+      },
+      {
+        "id": 102,
+        "question": "Which tool tests cable continuity?",
+        "choices": ["Protocol analyzer", "Cable tester", "Spectrum analyzer", "Port scanner"],
+        "correct": 1,
+        "explanation": "Cable testers verify proper wiring, continuity, and cable integrity.",
+        "wrongExplanations": [
+          "Protocol analyzers capture network traffic.",
+          null,
+          "Spectrum analyzers identify RF interference.",
+          "Port scanners identify open ports."
+        ],
+        "topic": "3.4 — Testing tools"
+      },
+      {
+        "id": 103,
+        "question": "What is the purpose of network monitoring?",
+        "choices": ["Replace administrators", "Detect issues proactively", "Eliminate documentation", "Disable security"],
+        "correct": 1,
+        "explanation": "Network monitoring continuously tracks performance and availability to detect and address issues proactively.",
+        "wrongExplanations": [
+          "Monitoring doesn't replace administrators.",
+          null,
+          "Monitoring doesn't eliminate documentation.",
+          "Monitoring doesn't disable security."
+        ],
+        "topic": "3.3 — Network monitoring"
+      },
+      {
+        "id": 104,
+        "question": "Which backup strategy provides fastest recovery?",
+        "choices": ["Incremental", "Differential", "Full", "Cloud-only"],
+        "correct": 2,
+        "explanation": "Full backups provide fastest recovery since all data is in one backup set, though they take longest to create.",
+        "wrongExplanations": [
+          "Incremental backups require multiple restore steps.",
+          "Differential backups require multiple restore steps.",
+          null,
+          "Cloud-only backups depend on internet speed."
+        ],
+        "topic": "3.2 — Backup strategies"
+      },
+      {
+        "id": 105,
+        "question": "What does an asset management system track?",
+        "choices": ["Only IP addresses", "Hardware, software, and licenses", "User passwords", "Backup schedules"],
+        "correct": 1,
+        "explanation": "Asset management systems track all hardware, software, licenses, warranties, and equipment locations.",
+        "wrongExplanations": [
+          "Asset management tracks more than just IP addresses.",
+          null,
+          "Asset management doesn't track user passwords.",
+          "Asset management doesn't track backup schedules."
+        ],
+        "topic": "3.1 — Asset management"
+      },
+      {
+        "id": 106,
+        "question": "Which protocol provides centralized authentication logging?",
+        "choices": ["DHCP", "RADIUS", "DNS", "FTP"],
+        "correct": 1,
+        "explanation": "RADIUS servers centrally authenticate users and log all authentication attempts.",
+        "wrongExplanations": [
+          "DHCP assigns IP addresses.",
+          null,
+          "DNS resolves domain names.",
+          "FTP transfers files."
+        ],
+        "topic": "3.3 — Authentication monitoring"
+      },
+      {
+        "id": 107,
+        "question": "What is the purpose of environmental monitoring?",
+        "choices": ["Track outdoor weather", "Monitor temperature, humidity, and conditions in network rooms", "Test cables", "Configure VLANs"],
+        "correct": 1,
+        "explanation": "Environmental monitoring tracks temperature, humidity, and other conditions that affect network equipment.",
+        "wrongExplanations": [
+          "Environmental monitoring focuses on indoor conditions.",
+          null,
+          "Environmental monitoring doesn't test cables.",
+          "Environmental monitoring doesn't configure VLANs."
+        ],
+        "topic": "3.3 — Facility monitoring"
+      },
+      {
+        "id": 108,
+        "question": "Which document defines acceptable network use?",
+        "choices": ["SLA", "AUP", "NDA", "RFP"],
+        "correct": 1,
+        "explanation": "AUP (Acceptable Use Policy) defines how users are permitted to use network resources.",
+        "wrongExplanations": [
+          "SLA defines service performance expectations.",
+          null,
+          "NDA protects confidential information.",
+          "RFP is a request for proposal."
+        ],
+        "topic": "3.1 — Policy documentation"
+      },
+      {
+        "id": 109,
+        "question": "What does bandwidth monitoring help identify?",
+        "choices": ["Cable breaks", "Traffic patterns and congestion", "IP conflicts", "Password breaches"],
+        "correct": 1,
+        "explanation": "Bandwidth monitoring tracks utilization patterns to identify congestion and capacity planning needs.",
+        "wrongExplanations": [
+          "Bandwidth monitoring doesn't identify cable breaks.",
+          null,
+          "Bandwidth monitoring doesn't identify IP conflicts.",
+          "Bandwidth monitoring doesn't identify password breaches."
+        ],
+        "topic": "3.3 — Performance monitoring"
+      },
+      {
+        "id": 110,
+        "question": "Which backup location is off-site?",
+        "choices": ["Local disk", "Network share", "Cloud storage", "USB drive"],
+        "correct": 2,
+        "explanation": "Cloud storage provides off-site backup protection against local disasters.",
+        "wrongExplanations": [
+          "Local disk is on-site.",
+          "Network share is typically on-site.",
+          null,
+          "USB drive is typically on-site."
+        ],
+        "topic": "3.2 — Backup locations"
+      },
+      {
+        "id": 111,
+        "question": "What is the purpose of patch management?",
+        "choices": ["Create new networks", "Deploy security and software updates", "Replace hardware", "Delete old data"],
+        "correct": 1,
+        "explanation": "Patch management ensures systems receive timely security updates and software patches.",
+        "wrongExplanations": [
+          "Patch management doesn't create networks.",
+          null,
+          "Patch management doesn't replace hardware.",
+          "Patch management doesn't delete old data."
+        ],
+        "topic": "3.1 — System management"
+      },
+      {
+        "id": 112,
+        "question": "Which alert should trigger immediate response?",
+        "choices": ["Routine status update", "Critical system failure", "Scheduled backup completion", "Normal traffic spike"],
+        "correct": 1,
+        "explanation": "Critical system failures require immediate attention to minimize downtime and impact.",
+        "wrongExplanations": [
+          "Routine updates don't require immediate response.",
+          null,
+          "Backup completion is normal, not critical.",
+          "Normal traffic spikes don't require immediate response."
+        ],
+        "topic": "3.3 — Alert management"
+      },
+      {
+        "id": 113,
+        "question": "What does RTO stand for in disaster recovery?",
+        "choices": ["Recovery Time Objective", "Real-Time Operation", "Routine Testing Objective", "Remote Transfer Option"],
+        "correct": 0,
+        "explanation": "RTO defines the maximum acceptable time to restore a system after failure.",
+        "wrongExplanations": [
+          null,
+          "This is not the correct expansion of RTO.",
+          "This is not the correct expansion of RTO.",
+          "This is not the correct expansion of RTO."
+        ],
+        "topic": "3.2 — Business continuity"
+      },
+      {
+        "id": 114,
+        "question": "Which tool measures Wi-Fi signal strength?",
+        "choices": ["Cable tester", "Wi-Fi analyzer", "Multimeter", "Tone generator"],
+        "correct": 1,
+        "explanation": "Wi-Fi analyzers measure signal strength, channel utilization, and identify interference sources.",
+        "wrongExplanations": [
+          "Cable testers test physical cables.",
+          null,
+          "Multimeters measure electrical properties.",
+          "Tone generators trace cables."
+        ],
+        "topic": "3.4 — Wireless tools"
+      },
+      {
+        "id": 115,
+        "question": "What is the purpose of configuration management?",
+        "choices": ["Track and control device configurations", "Replace all documentation", "Eliminate backups", "Disable monitoring"],
+        "correct": 0,
+        "explanation": "Configuration management tracks, controls, and documents network device configurations and changes.",
+        "wrongExplanations": [
+          null,
+          "Configuration management doesn't replace documentation.",
+          "Configuration management doesn't eliminate backups.",
+          "Configuration management doesn't disable monitoring."
+        ],
+        "topic": "3.1 — Configuration management"
+      },
+      {
+        "id": 116,
+        "question": "Which metric measures network responsiveness?",
+        "choices": ["Bandwidth", "Latency", "Throughput", "Jitter"],
+        "correct": 1,
+        "explanation": "Latency measures the time delay in network communication, indicating responsiveness.",
+        "wrongExplanations": [
+          "Bandwidth measures capacity, not responsiveness.",
+          null,
+          "Throughput measures data transfer rate.",
+          "Jitter measures delay variation."
+        ],
+        "topic": "3.3 — Performance metrics"
+      },
+      {
+        "id": 117,
+        "question": "What does RPO stand for in backup planning?",
+        "choices": ["Recovery Point Objective", "Routine Processing Operation", "Real-time Protection Option", "Remote Procedure Operation"],
+        "correct": 0,
+        "explanation": "RPO defines the maximum acceptable amount of data loss measured in time.",
+        "wrongExplanations": [
+          null,
+          "This is not the correct expansion of RPO.",
+          "This is not the correct expansion of RPO.",
+          "This is not the correct expansion of RPO."
+        ],
+        "topic": "3.2 — Business continuity"
+      },
+      {
+        "id": 118,
+        "question": "Which log analysis helps detect security incidents?",
+        "choices": ["Weather logs", "Security event logs", "Lunch schedules", "Building access logs only"],
+        "correct": 1,
+        "explanation": "Security event logs record authentication attempts, access violations, and suspicious activities.",
+        "wrongExplanations": [
+          "Weather logs don't help detect security incidents.",
+          null,
+          "Lunch schedules don't help detect security incidents.",
+          "Building access logs are just one type of security log."
+        ],
+        "topic": "3.3 — Security monitoring"
+      },
+      {
+        "id": 119,
+        "question": "What is the purpose of a maintenance window?",
+        "choices": ["Random changes anytime", "Scheduled time for planned changes", "Emergency repairs only", "Eliminate downtime"],
+        "correct": 1,
+        "explanation": "Maintenance windows are scheduled times for planned changes to minimize business impact.",
+        "wrongExplanations": [
+          "Maintenance windows are planned, not random.",
+          null,
+          "Maintenance windows are for planned changes, not emergencies.",
+          "Maintenance windows don't eliminate downtime."
+        ],
+        "topic": "3.1 — Change management"
+      },
+      {
+        "id": 120,
+        "question": "Which tool helps identify network bottlenecks?",
+        "choices": ["Tone generator", "Network performance monitor", "Cable tester", "Crimping tool"],
+        "correct": 1,
+        "explanation": "Network performance monitors track bandwidth utilization, latency, and identify congestion points.",
+        "wrongExplanations": [
+          "Tone generators trace cables.",
+          null,
+          "Cable testers test physical cables.",
+          "Crimping tools terminate cables."
+        ],
+        "topic": "3.3 — Performance tools"
+      },
+      {
+        "id": 121,
+        "question": "What should be included in incident documentation?",
+        "choices": ["Only the solution", "Symptoms, cause, solution, and prevention", "Just the user's name", "Time only"],
+        "correct": 1,
+        "explanation": "Complete incident documentation includes symptoms, root cause, resolution steps, and preventive measures.",
+        "wrongExplanations": [
+          "Incident documentation should include more than just the solution.",
+          null,
+          "Incident documentation should include more than just the user's name.",
+          "Incident documentation should include more than just the time."
+        ],
+        "topic": "3.1 — Documentation practices"
+      },
+      {
+        "id": 122,
+        "question": "Which monitoring approach is proactive?",
+        "choices": ["Waiting for user complaints", "Continuous monitoring with alerts", "Quarterly manual checks", "Post-incident review only"],
+        "correct": 1,
+        "explanation": "Continuous monitoring with automated alerts detects issues before users report them.",
+        "wrongExplanations": [
+          "Waiting for complaints is reactive, not proactive.",
+          null,
+          "Quarterly checks are too infrequent to be proactive.",
+          "Post-incident review is reactive, not proactive."
+        ],
+        "topic": "3.3 — Monitoring strategies"
+      },
+      {
+        "id": 123,
+        "question": "What is the 3-2-1 backup rule?",
+        "choices": ["3 backups, 2 different media, 1 off-site", "3 servers, 2 switches, 1 router", "3 users, 2 passwords, 1 admin", "3 days, 2 weeks, 1 month"],
+        "correct": 0,
+        "explanation": "The 3-2-1 rule recommends 3 copies of data, on 2 different media types, with 1 copy off-site.",
+        "wrongExplanations": [
+          null,
+          "This is not the correct interpretation of the 3-2-1 rule.",
+          "This is not the correct interpretation of the 3-2-1 rule.",
+          "This is not the correct interpretation of the 3-2-1 rule."
+        ],
+        "topic": "3.2 — Backup best practices"
+      },
+      {
+        "id": 124,
+        "question": "Which tool captures packets for analysis?",
+        "choices": ["Crimper", "Packet sniffer", "Punch-down tool", "Cable stripper"],
+        "correct": 1,
+        "explanation": "Packet sniffers (protocol analyzers) capture network packets for detailed analysis.",
+        "wrongExplanations": [
+          "Crimpers terminate cables.",
+          null,
+          "Punch-down tools terminate cables.",
+          "Cable strippers prepare cables."
+        ],
+        "topic": "3.4 — Analysis tools"
+      },
+      {
+        "id": 125,
+        "question": "What is the purpose of a runbook?",
+        "choices": ["Exercise schedules", "Step-by-step operational procedures", "Building blueprints", "User phone numbers"],
+        "correct": 1,
+        "explanation": "Runbooks provide detailed step-by-step procedures for routine operations and troubleshooting.",
+        "wrongExplanations": [
+          "Runbooks are not exercise schedules.",
+          null,
+          "Runbooks are not building blueprints.",
+          "Runbooks are not user phone numbers."
+        ],
+        "topic": "3.1 — Operational documentation"
+      },
+      {
+        "id": 126,
+        "question": "Which metric indicates packet loss?",
+        "choices": ["High throughput", "Discarded packets percentage", "Fast response time", "Wide bandwidth"],
+        "correct": 1,
+        "explanation": "Discarded packets percentage indicates packet loss, often due to congestion or errors.",
+        "wrongExplanations": [
+          "High throughput indicates good performance.",
+          null,
+          "Fast response time indicates good performance.",
+          "Wide bandwidth indicates good capacity."
+        ],
+        "topic": "3.3 — Performance metrics"
+      },
+      {
+        "id": 127,
+        "question": "What does automated monitoring provide?",
+        "choices": ["24/7 awareness without constant manual checking", "Elimination of all documentation", "Automatic problem resolution", "Removal of all administrators"],
+        "correct": 0,
+        "explanation": "Automated monitoring provides continuous surveillance and alerting without constant manual oversight.",
+        "wrongExplanations": [
+          null,
+          "Automated monitoring doesn't eliminate documentation.",
+          "Automated monitoring doesn't automatically resolve problems.",
+          "Automated monitoring doesn't remove administrators."
+        ],
+        "topic": "3.3 — Monitoring automation"
+      },
+      {
+        "id": 128,
+        "question": "Which document describes vendor responsibilities?",
+        "choices": ["AUP", "SLA", "NDA", "Password policy"],
+        "correct": 1,
+        "explanation": "SLAs define vendor service commitments, performance expectations, and responsibilities.",
+        "wrongExplanations": [
+          "AUP defines acceptable use policies.",
+          null,
+          "NDA protects confidential information.",
+          "Password policies define password requirements."
+        ],
+        "topic": "3.1 — Service agreements"
+      },
+      {
+        "id": 129,
+        "question": "What is the purpose of capacity planning?",
+        "choices": ["Reduce network size", "Forecast future resource needs", "Eliminate monitoring", "Delete old data"],
+        "correct": 1,
+        "explanation": "Capacity planning uses current trends to forecast future network resource requirements.",
+        "wrongExplanations": [
+          "Capacity planning doesn't reduce network size.",
+          null,
+          "Capacity planning doesn't eliminate monitoring.",
+          "Capacity planning doesn't delete old data."
+        ],
+        "topic": "3.3 — Capacity planning"
+      },
+      {
+        "id": 130,
+        "question": "Which tool verifies proper cable termination?",
+        "choices": ["Protocol analyzer", "Cable certifier", "Spectrum analyzer", "Port scanner"],
+        "correct": 1,
+        "explanation": "Cable certifiers test cables against performance standards and verify proper termination.",
+        "wrongExplanations": [
+          "Protocol analyzers capture network traffic.",
+          null,
+          "Spectrum analyzers identify RF interference.",
+          "Port scanners identify open ports."
+        ],
+        "topic": "3.4 — Testing tools"
       }
     ],
     "4": [
       {
-        "id": 9,
-        "question": "Which encryption method is used by WPA2?",
-        "choices": ["WEP", "TKIP", "AES", "RC4"],
-        "correct": 2,
-        "explanation": "WPA2 uses AES (Advanced Encryption Standard) for strong encryption.",
+        "id": 131,
+        "question": "What is the primary function of a firewall?",
+        "choices": ["Assign IP addresses", "Filter traffic based on rules", "Provide wireless access", "Store backups"],
+        "correct": 1,
+        "explanation": "Firewalls filter network traffic based on configured security rules to block unauthorized access.",
         "wrongExplanations": [
-          "WEP is an older, insecure encryption method.",
-          "TKIP is used by WPA, not WPA2.",
+          "DHCP assigns IP addresses, not firewalls.",
           null,
-          "RC4 is used by WEP and WPA, not WPA2."
+          "Access points provide wireless access, not firewalls.",
+          "Servers store backups, not firewalls."
+        ],
+        "topic": "4.1 — Firewall concepts"
+      },
+      {
+        "id": 132,
+        "question": "Which attack floods a system with traffic to make it unavailable?",
+        "choices": ["Phishing", "Man-in-the-middle", "DDoS", "SQL injection"],
+        "correct": 2,
+        "explanation": "DDoS (Distributed Denial of Service) attacks overwhelm systems with traffic from multiple sources.",
+        "wrongExplanations": [
+          "Phishing uses deceptive emails to steal credentials.",
+          "Man-in-the-middle intercepts communication.",
+          null,
+          "SQL injection exploits database vulnerabilities."
+        ],
+        "topic": "4.2 — Network attacks"
+      },
+      {
+        "id": 133,
+        "question": "What does ACL stand for?",
+        "choices": ["Access Control List", "Active Connection Log", "Automated Control Link", "Advanced Cable Length"],
+        "correct": 0,
+        "explanation": "ACLs are sets of rules that permit or deny traffic based on various criteria like IP addresses or ports.",
+        "wrongExplanations": [
+          null,
+          "This is not the correct expansion of ACL.",
+          "This is not the correct expansion of ACL.",
+          "This is not the correct expansion of ACL."
+        ],
+        "topic": "4.1 — Access control"
+      },
+      {
+        "id": 134,
+        "question": "Which security principle limits user access to only what's needed?",
+        "choices": ["Defense in depth", "Least privilege", "Zero trust", "Implicit deny"],
+        "correct": 1,
+        "explanation": "Least privilege grants users only the minimum access rights needed to perform their job functions.",
+        "wrongExplanations": [
+          "Defense in depth uses multiple security layers.",
+          null,
+          "Zero trust assumes no implicit trust.",
+          "Implicit deny blocks all unauthorized traffic."
+        ],
+        "topic": "4.3 — Security principles"
+      },
+      {
+        "id": 135,
+        "question": "What does an IDS do?",
+        "choices": ["Blocks all traffic", "Detects and alerts on suspicious activity", "Assigns IP addresses", "Provides wireless access"],
+        "correct": 1,
+        "explanation": "IDS (Intrusion Detection System) monitors network traffic and alerts administrators to suspicious activity.",
+        "wrongExplanations": [
+          "IDS doesn't block traffic, it only detects.",
+          null,
+          "DHCP assigns IP addresses, not IDS.",
+          "Access points provide wireless access, not IDS."
+        ],
+        "topic": "4.1 — Security devices"
+      },
+      {
+        "id": 136,
+        "question": "Which attack intercepts communication between two parties?",
+        "choices": ["DDoS", "Man-in-the-middle", "Phishing", "Brute force"],
+        "correct": 1,
+        "explanation": "Man-in-the-middle attacks intercept and potentially alter communication between two parties without their knowledge.",
+        "wrongExplanations": [
+          "DDoS floods systems with traffic.",
+          null,
+          "Phishing uses deceptive emails.",
+          "Brute force tries password combinations."
+        ],
+        "topic": "4.2 — Network attacks"
+      },
+      {
+        "id": 137,
+        "question": "What is the purpose of network segmentation for security?",
+        "choices": ["Increase speed", "Limit breach impact and control access", "Reduce costs", "Simplify management"],
+        "correct": 1,
+        "explanation": "Security-focused network segmentation contains breaches and controls traffic flow between network zones.",
+        "wrongExplanations": [
+          "Security segmentation doesn't primarily increase speed.",
+          null,
+          "Security segmentation may increase costs.",
+          "Security segmentation may complicate management."
+        ],
+        "topic": "4.3 — Network security design"
+      },
+      {
+        "id": 138,
+        "question": "Which protocol encrypts web traffic?",
+        "choices": ["HTTP", "FTP", "HTTPS", "Telnet"],
+        "correct": 2,
+        "explanation": "HTTPS uses SSL/TLS to encrypt web traffic, protecting data in transit.",
+        "wrongExplanations": [
+          "HTTP transmits data in plain text.",
+          "FTP transmits data in plain text.",
+          null,
+          "Telnet transmits data in plain text."
+        ],
+        "topic": "4.4 — Secure protocols"
+      },
+      {
+        "id": 139,
+        "question": "What does MAC filtering do?",
+        "choices": ["Filters by IP address", "Allows/blocks devices by physical address", "Encrypts data", "Assigns VLANs"],
+        "correct": 1,
+        "explanation": "MAC filtering controls network access based on device physical (MAC) addresses.",
+        "wrongExplanations": [
+          "MAC filtering uses MAC addresses, not IP addresses.",
+          null,
+          "MAC filtering doesn't encrypt data.",
+          "MAC filtering doesn't assign VLANs."
         ],
         "topic": "4.1 — Wireless security"
+      },
+      {
+        "id": 140,
+        "question": "Which attack uses deceptive emails to steal credentials?",
+        "choices": ["DDoS", "Phishing", "Smurf attack", "ARP poisoning"],
+        "correct": 1,
+        "explanation": "Phishing attacks use fraudulent emails to trick users into revealing sensitive information.",
+        "wrongExplanations": [
+          "DDoS floods systems with traffic.",
+          null,
+          "Smurf attacks amplify ICMP traffic.",
+          "ARP poisoning corrupts ARP tables."
+        ],
+        "topic": "4.2 — Social engineering"
+      },
+      {
+        "id": 141,
+        "question": "What is the difference between IDS and IPS?",
+        "choices": ["No difference", "IPS can actively block threats, IDS only detects", "IDS is faster", "IPS is outdated"],
+        "correct": 1,
+        "explanation": "IPS (Intrusion Prevention System) can automatically block detected threats, while IDS only alerts.",
+        "wrongExplanations": [
+          "There are significant differences between IDS and IPS.",
+          null,
+          "Speed is not the main difference.",
+          "IPS is not outdated."
+        ],
+        "topic": "4.1 — Security devices"
+      },
+      {
+        "id": 142,
+        "question": "Which VPN protocol provides strong security?",
+        "choices": ["PPTP", "L2TP/IPsec", "Telnet", "FTP"],
+        "correct": 1,
+        "explanation": "L2TP/IPsec combines tunneling with strong encryption for secure VPN connections.",
+        "wrongExplanations": [
+          "PPTP has known security vulnerabilities.",
+          null,
+          "Telnet is not secure.",
+          "FTP is not secure."
+        ],
+        "topic": "4.4 — VPN security"
+      },
+      {
+        "id": 143,
+        "question": "What does port scanning identify?",
+        "choices": ["Cable types", "Open ports and services", "IP conflicts", "Wireless channels"],
+        "correct": 1,
+        "explanation": "Port scanning identifies which ports are open on a system, revealing potential entry points.",
+        "wrongExplanations": [
+          "Port scanning doesn't identify cable types.",
+          null,
+          "Port scanning doesn't identify IP conflicts.",
+          "Port scanning doesn't identify wireless channels."
+        ],
+        "topic": "4.2 — Reconnaissance attacks"
+      },
+      {
+        "id": 144,
+        "question": "Which security measure uses multiple authentication factors?",
+        "choices": ["Single sign-on", "Multi-factor authentication", "Password complexity", "Account lockout"],
+        "correct": 1,
+        "explanation": "Multi-factor authentication requires two or more verification methods (something you know, have, or are).",
+        "wrongExplanations": [
+          "Single sign-on uses one authentication method.",
+          null,
+          "Password complexity is just one factor.",
+          "Account lockout is a security control, not authentication."
+        ],
+        "topic": "4.3 — Authentication security"
+      },
+      {
+        "id": 145,
+        "question": "What is a rogue access point?",
+        "choices": ["Authorized AP", "Unauthorized AP on the network", "Broken AP", "AP in another building"],
+        "correct": 1,
+        "explanation": "Rogue access points are unauthorized APs that pose security risks by bypassing network controls.",
+        "wrongExplanations": [
+          "Rogue APs are unauthorized, not authorized.",
+          null,
+          "Rogue APs may be functional.",
+          "Rogue APs are on the same network."
+        ],
+        "topic": "4.2 — Wireless threats"
+      },
+      {
+        "id": 146,
+        "question": "Which attack exploits vulnerabilities in web applications?",
+        "choices": ["Physical theft", "SQL injection", "Social engineering", "War driving"],
+        "correct": 1,
+        "explanation": "SQL injection attacks insert malicious code into web application database queries.",
+        "wrongExplanations": [
+          "Physical theft is not a web application attack.",
+          null,
+          "Social engineering targets people, not applications.",
+          "War driving discovers wireless networks."
+        ],
+        "topic": "4.2 — Application attacks"
+      },
+      {
+        "id": 147,
+        "question": "What does implicit deny mean in firewall rules?",
+        "choices": ["Allow everything", "Deny everything not explicitly allowed", "Allow only admins", "Random blocking"],
+        "correct": 1,
+        "explanation": "Implicit deny blocks all traffic except what is explicitly permitted by firewall rules.",
+        "wrongExplanations": [
+          "Implicit deny doesn't allow everything.",
+          null,
+          "Implicit deny doesn't allow only admins.",
+          "Implicit deny is not random."
+        ],
+        "topic": "4.1 — Firewall principles"
+      },
+      {
+        "id": 148,
+        "question": "Which protocol provides secure remote access?",
+        "choices": ["Telnet", "SSH", "HTTP", "FTP"],
+        "correct": 1,
+        "explanation": "SSH (Secure Shell) provides encrypted remote access and secure command-line management.",
+        "wrongExplanations": [
+          "Telnet transmits data in plain text.",
+          null,
+          "HTTP transmits data in plain text.",
+          "FTP transmits data in plain text."
+        ],
+        "topic": "4.4 — Secure protocols"
+      },
+      {
+        "id": 149,
+        "question": "What is ARP poisoning?",
+        "choices": ["Legitimate ARP use", "Falsifying ARP messages to redirect traffic", "ARP protocol update", "Cable testing method"],
+        "correct": 1,
+        "explanation": "ARP poisoning sends fake ARP messages to associate attacker's MAC with victim's IP, redirecting traffic.",
+        "wrongExplanations": [
+          "ARP poisoning is malicious, not legitimate.",
+          null,
+          "ARP poisoning is not a protocol update.",
+          "ARP poisoning is not a cable testing method."
+        ],
+        "topic": "4.2 — Layer 2 attacks"
+      },
+      {
+        "id": 150,
+        "question": "Which wireless security protocol is weakest?",
+        "choices": ["WPA3", "WPA2", "WPA", "WEP"],
+        "correct": 3,
+        "explanation": "WEP is the oldest and weakest wireless encryption, easily cracked and should never be used.",
+        "wrongExplanations": [
+          "WPA3 is the strongest encryption.",
+          "WPA2 is stronger than WEP.",
+          "WPA is stronger than WEP.",
+          null
+        ],
+        "topic": "4.1 — Wireless security"
+      },
+      {
+        "id": 151,
+        "question": "What does SIEM system do?",
+        "choices": ["Assign IPs", "Aggregate and analyze security logs", "Provide wireless access", "Route packets"],
+        "correct": 1,
+        "explanation": "SIEM (Security Information and Event Management) collects, correlates, and analyzes security data from multiple sources.",
+        "wrongExplanations": [
+          "DHCP assigns IPs, not SIEM.",
+          null,
+          "Access points provide wireless access, not SIEM.",
+          "Routers route packets, not SIEM."
+        ],
+        "topic": "4.5 — Security monitoring"
+      },
+      {
+        "id": 152,
+        "question": "Which attack repeatedly tries password combinations?",
+        "choices": ["Phishing", "Brute force", "DDoS", "Man-in-the-middle"],
+        "correct": 1,
+        "explanation": "Brute force attacks systematically try all possible password combinations until finding the correct one.",
+        "wrongExplanations": [
+          "Phishing uses deceptive emails.",
+          null,
+          "DDoS floods systems with traffic.",
+          "Man-in-the-middle intercepts communication."
+        ],
+        "topic": "4.2 — Password attacks"
+      },
+      {
+        "id": 153,
+        "question": "What is the purpose of encryption?",
+        "choices": ["Speed up networks", "Protect data confidentiality", "Assign VLANs", "Test cables"],
+        "correct": 1,
+        "explanation": "Encryption converts data into unreadable format to protect confidentiality during storage and transmission.",
+        "wrongExplanations": [
+          "Encryption may slow down networks.",
+          null,
+          "Switches assign VLANs, not encryption.",
+          "Cable testers test cables, not encryption."
+        ],
+        "topic": "4.4 — Cryptography"
+      },
+      {
+        "id": 154,
+        "question": "Which security control detects unauthorized physical access?",
+        "choices": ["Firewall", "Motion sensors", "Antivirus", "Encryption"],
+        "correct": 1,
+        "explanation": "Physical security controls like motion sensors detect unauthorized entry to secure facilities.",
+        "wrongExplanations": [
+          "Firewalls filter network traffic.",
+          null,
+          "Antivirus detects malware.",
+          "Encryption protects data."
+        ],
+        "topic": "4.3 — Physical security"
+      },
+      {
+        "id": 155,
+        "question": "What does certificate-based authentication use?",
+        "choices": ["Only passwords", "Digital certificates for identity verification", "Biometrics only", "IP addresses"],
+        "correct": 1,
+        "explanation": "Certificate-based authentication uses digital certificates to verify identity without passwords.",
+        "wrongExplanations": [
+          "Certificate-based authentication doesn't use passwords.",
+          null,
+          "Certificate-based authentication doesn't require biometrics.",
+          "Certificate-based authentication doesn't use IP addresses."
+        ],
+        "topic": "4.3 — Authentication methods"
+      },
+      {
+        "id": 156,
+        "question": "Which attack amplifies traffic using spoofed addresses?",
+        "choices": ["Phishing", "Smurf attack", "SQL injection", "XSS"],
+        "correct": 1,
+        "explanation": "Smurf attacks use ICMP with spoofed source addresses to amplify traffic toward a victim.",
+        "wrongExplanations": [
+          "Phishing uses deceptive emails.",
+          null,
+          "SQL injection exploits databases.",
+          "XSS exploits web applications."
+        ],
+        "topic": "4.2 — DDoS attacks"
+      },
+      {
+        "id": 157,
+        "question": "What is defense in depth?",
+        "choices": ["Single security measure", "Multiple layers of security controls", "No security needed", "Firewall only"],
+        "correct": 1,
+        "explanation": "Defense in depth uses multiple overlapping security layers to protect resources.",
+        "wrongExplanations": [
+          "Defense in depth uses multiple measures, not single.",
+          null,
+          "Defense in depth requires security.",
+          "Defense in depth uses more than just firewalls."
+        ],
+        "topic": "4.3 — Security strategies"
+      },
+      {
+        "id": 158,
+        "question": "Which protocol secures email transmission?",
+        "choices": ["SMTP", "HTTP", "TLS/SSL", "FTP"],
+        "correct": 2,
+        "explanation": "TLS/SSL encrypts email traffic when used with protocols like SMTP, POP3, and IMAP.",
+        "wrongExplanations": [
+          "SMTP alone doesn't secure email.",
+          "HTTP doesn't secure email.",
+          null,
+          "FTP doesn't secure email."
+        ],
+        "topic": "4.4 — Email security"
+      },
+      {
+        "id": 159,
+        "question": "What is VLAN hopping?",
+        "choices": ["Normal VLAN operation", "Attack to access unauthorized VLANs", "VLAN configuration tool", "VLAN monitoring"],
+        "correct": 1,
+        "explanation": "VLAN hopping exploits switch misconfigurations to gain unauthorized access to other VLANs.",
+        "wrongExplanations": [
+          "VLAN hopping is malicious, not normal.",
+          null,
+          "VLAN hopping is not a configuration tool.",
+          "VLAN hopping is not monitoring."
+        ],
+        "topic": "4.2 — VLAN attacks"
+      },
+      {
+        "id": 160,
+        "question": "Which authentication protocol is most secure for wireless?",
+        "choices": ["Open", "WEP", "WPA2-Personal", "WPA3-Enterprise"],
+        "correct": 3,
+        "explanation": "WPA3-Enterprise combines the strongest encryption with centralized authentication.",
+        "wrongExplanations": [
+          "Open authentication has no security.",
+          "WEP is easily cracked.",
+          "WPA2-Personal is less secure than Enterprise.",
+          null
+        ],
+        "topic": "4.1 — Wireless security"
+      },
+      {
+        "id": 161,
+        "question": "What does geofencing control?",
+        "choices": ["Cable routing", "Access based on physical location", "IP addressing", "Backup schedules"],
+        "correct": 1,
+        "explanation": "Geofencing restricts access based on geographic location using GPS or network location data.",
+        "wrongExplanations": [
+          "Geofencing doesn't control cable routing.",
+          null,
+          "Geofencing doesn't control IP addressing.",
+          "Geofencing doesn't control backup schedules."
+        ],
+        "topic": "4.3 — Access control"
+      },
+      {
+        "id": 162,
+        "question": "Which attack exploits trust relationships between systems?",
+        "choices": ["DNS poisoning", "Privilege escalation", "Packet sniffing", "Port scanning"],
+        "correct": 1,
+        "explanation": "Privilege escalation exploits vulnerabilities to gain unauthorized higher-level access.",
+        "wrongExplanations": [
+          "DNS poisoning corrupts DNS cache.",
+          null,
+          "Packet sniffing captures network traffic.",
+          "Port scanning identifies open ports."
+        ],
+        "topic": "4.2 — System attacks"
+      },
+      {
+        "id": 163,
+        "question": "What is the purpose of a honeypot?",
+        "choices": ["Store production data", "Attract and detect attackers", "Backup system", "Load balancer"],
+        "correct": 1,
+        "explanation": "Honeypots are decoy systems designed to attract attackers and study their methods.",
+        "wrongExplanations": [
+          "Honeypots don't store production data.",
+          null,
+          "Honeypots are not backup systems.",
+          "Honeypots are not load balancers."
+        ],
+        "topic": "4.5 — Security tools"
+      },
+      {
+        "id": 164,
+        "question": "Which security policy defines password requirements?",
+        "choices": ["AUP", "Password policy", "SLA", "BCP"],
+        "correct": 1,
+        "explanation": "Password policies define requirements for length, complexity, expiration, and history.",
+        "wrongExplanations": [
+          "AUP defines acceptable use.",
+          null,
+          "SLA defines service levels.",
+          "BCP defines business continuity."
+        ],
+        "topic": "4.3 — Security policies"
+      },
+      {
+        "id": 165,
+        "question": "What does zero trust security assume?",
+        "choices": ["Trust everyone inside network", "Trust no one, verify everything", "Only trust administrators", "No security needed"],
+        "correct": 1,
+        "explanation": "Zero trust assumes no implicit trust and requires verification for every access request.",
+        "wrongExplanations": [
+          "Zero trust doesn't trust everyone inside.",
+          null,
+          "Zero trust doesn't only trust administrators.",
+          "Zero trust requires security."
+        ],
+        "topic": "4.3 — Security models"
+      },
+      {
+        "id": 166,
+        "question": "Which attack redirects DNS queries to malicious sites?",
+        "choices": ["DDoS", "DNS poisoning", "Port scanning", "Phishing"],
+        "correct": 1,
+        "explanation": "DNS poisoning corrupts DNS cache to redirect users to fraudulent websites.",
+        "wrongExplanations": [
+          "DDoS floods systems with traffic.",
+          null,
+          "Port scanning identifies open ports.",
+          "Phishing uses deceptive emails."
+        ],
+        "topic": "4.2 — DNS attacks"
+      },
+      {
+        "id": 167,
+        "question": "What is penetration testing?",
+        "choices": ["Breaking cables", "Authorized simulated attack to find vulnerabilities", "Installing updates", "User training"],
+        "correct": 1,
+        "explanation": "Penetration testing involves authorized ethical hacking to identify security vulnerabilities.",
+        "wrongExplanations": [
+          "Penetration testing doesn't break cables.",
+          null,
+          "Penetration testing doesn't install updates.",
+          "Penetration testing is not user training."
+        ],
+        "topic": "4.5 — Security assessment"
+      },
+      {
+        "id": 168,
+        "question": "Which protocol provides secure file transfer over SSH?",
+        "choices": ["FTP", "TFTP", "SFTP", "HTTP"],
+        "correct": 2,
+        "explanation": "SFTP (SSH File Transfer Protocol) provides encrypted file transfer over SSH connections.",
+        "wrongExplanations": [
+          "FTP is not secure.",
+          "TFTP is not secure.",
+          null,
+          "HTTP is not designed for file transfer."
+        ],
+        "topic": "4.4 — Secure protocols"
+      },
+      {
+        "id": 169,
+        "question": "What is the purpose of security awareness training?",
+        "choices": ["Replace technical controls", "Educate users about security threats", "Eliminate all policies", "Reduce IT staff"],
+        "correct": 1,
+        "explanation": "Security awareness training educates users to recognize and respond appropriately to security threats.",
+        "wrongExplanations": [
+          "Training doesn't replace technical controls.",
+          null,
+          "Training doesn't eliminate policies.",
+          "Training doesn't reduce IT staff."
+        ],
+        "topic": "4.3 — Security training"
+      },
+      {
+        "id": 170,
+        "question": "Which type of firewall inspects packet contents and context?",
+        "choices": ["Packet filtering", "Stateful", "Application-layer", "Circuit-level"],
+        "correct": 2,
+        "explanation": "Application-layer firewalls inspect packet contents and understand application protocols for deeper security.",
+        "wrongExplanations": [
+          "Packet filtering only examines headers.",
+          "Stateful firewalls track connection state.",
+          null,
+          "Circuit-level firewalls work at session layer."
+        ],
+        "topic": "4.1 — Firewall types"
       }
     ],
     "5": [
       {
-        "id": 10,
-        "question": "What is the first step in network troubleshooting?",
-        "choices": ["Identify the problem", "Test the theory", "Establish a plan", "Document findings"],
+        "id": 171,
+        "question": "What is the FIRST step in network troubleshooting methodology?",
+        "choices": ["Test the theory", "Identify the problem", "Implement a solution", "Document findings"],
+        "correct": 1,
+        "explanation": "Identifying the problem by gathering information is the first step in the troubleshooting methodology.",
+        "wrongExplanations": [
+          "Testing the theory comes after establishing a plan.",
+          null,
+          "Implementing a solution comes after testing.",
+          "Documenting findings is the final step."
+        ],
+        "topic": "5.1 — Troubleshooting methodology"
+      },
+      {
+        "id": 172,
+        "question": "Which command displays the route packets take to a destination?",
+        "choices": ["ping", "ipconfig", "tracert", "netstat"],
+        "correct": 2,
+        "explanation": "Tracert (traceroute) shows each hop packets take to reach their destination.",
+        "wrongExplanations": [
+          "Ping tests connectivity but doesn't show routes.",
+          "Ipconfig shows network configuration.",
+          null,
+          "Netstat shows active connections."
+        ],
+        "topic": "5.2 — Command-line tools"
+      },
+      {
+        "id": 173,
+        "question": "A user reports no internet connectivity. What should you check FIRST?",
+        "choices": ["Replace the router", "Check physical connections", "Reinstall the OS", "Update firmware"],
+        "correct": 1,
+        "explanation": "Physical connectivity should be verified first as it's the most common and simplest issue.",
+        "wrongExplanations": [
+          "Replacing hardware should be a last resort.",
+          null,
+          "Reinstalling the OS is extreme for connectivity issues.",
+          "Updating firmware should come after basic checks."
+        ],
+        "topic": "5.1 — Troubleshooting methodology"
+      },
+      {
+        "id": 174,
+        "question": "Which tool verifies DNS name resolution?",
+        "choices": ["ping", "nslookup", "netstat", "arp"],
+        "correct": 1,
+        "explanation": "Nslookup queries DNS servers to verify name resolution and troubleshoot DNS issues.",
+        "wrongExplanations": [
+          "Ping tests connectivity but doesn't verify DNS.",
+          null,
+          "Netstat shows active connections.",
+          "Arp shows MAC address mappings."
+        ],
+        "topic": "5.2 — DNS troubleshooting"
+      },
+      {
+        "id": 175,
+        "question": "A device receives a 169.254.x.x address. What does this indicate?",
+        "choices": ["Normal DHCP assignment", "DHCP server is unreachable", "Static IP configured", "DNS failure"],
+        "correct": 1,
+        "explanation": "APIPA (169.254.x.x) addresses indicate the device couldn't reach a DHCP server.",
+        "wrongExplanations": [
+          "169.254.x.x is not a normal DHCP assignment.",
+          null,
+          "Static IPs are manually configured.",
+          "DNS failure doesn't cause APIPA addresses."
+        ],
+        "topic": "5.3 — IP addressing issues"
+      },
+      {
+        "id": 176,
+        "question": "What does the ping command test?",
+        "choices": ["DNS resolution only", "Basic connectivity using ICMP", "Bandwidth speed", "Cable quality"],
+        "correct": 1,
+        "explanation": "Ping uses ICMP Echo Request/Reply to test basic network connectivity and response time.",
+        "wrongExplanations": [
+          "Ping tests connectivity, not DNS resolution.",
+          null,
+          "Ping doesn't test bandwidth speed.",
+          "Ping doesn't test cable quality."
+        ],
+        "topic": "5.2 — Connectivity testing"
+      },
+      {
+        "id": 177,
+        "question": "Users can ping by IP but not by hostname. What's likely the issue?",
+        "choices": ["Physical connection", "DNS resolution", "Default gateway", "Subnet mask"],
+        "correct": 1,
+        "explanation": "If IP works but names don't, DNS resolution is failing to translate hostnames to IP addresses.",
+        "wrongExplanations": [
+          "Physical connection would affect IP pings too.",
+          null,
+          "Default gateway issues would affect external connectivity.",
+          "Subnet mask issues would affect IP pings too."
+        ],
+        "topic": "5.3 — DNS issues"
+      },
+      {
+        "id": 178,
+        "question": "Which command displays active network connections?",
+        "choices": ["ping", "tracert", "netstat", "nslookup"],
+        "correct": 2,
+        "explanation": "Netstat displays active connections, listening ports, and network statistics.",
+        "wrongExplanations": [
+          "Ping tests connectivity.",
+          "Tracert shows routing paths.",
+          null,
+          "Nslookup queries DNS."
+        ],
+        "topic": "5.2 — Network monitoring"
+      },
+      {
+        "id": 179,
+        "question": "A cable tester shows 'open' on multiple pins. What does this mean?",
+        "choices": ["Cable is perfect", "Broken or missing conductors", "Wrong cable type", "Cable is too long"],
+        "correct": 1,
+        "explanation": "Open readings indicate broken or missing wire connections in the cable.",
+        "wrongExplanations": [
+          "Open readings indicate problems, not perfection.",
+          null,
+          "Wrong cable type would show different errors.",
+          "Cable length issues would show attenuation."
+        ],
+        "topic": "5.4 — Cable testing"
+      },
+      {
+        "id": 180,
+        "question": "What is the purpose of ipconfig /release and /renew?",
+        "choices": ["Change DNS servers", "Release and obtain new DHCP lease", "Test cable quality", "Configure static IP"],
+        "correct": 1,
+        "explanation": "These commands release the current DHCP lease and request a new IP address from the DHCP server.",
+        "wrongExplanations": [
+          "These commands don't change DNS servers.",
+          null,
+          "These commands don't test cable quality.",
+          "These commands don't configure static IPs."
+        ],
+        "topic": "5.2 — DHCP troubleshooting"
+      },
+      {
+        "id": 181,
+        "question": "Intermittent connectivity issues occur on one port. What should you check?",
+        "choices": ["DNS settings", "Cable and port condition", "Firewall rules", "Wireless channels"],
+        "correct": 1,
+        "explanation": "Intermittent issues on a specific port usually indicate damaged cables or faulty port hardware.",
+        "wrongExplanations": [
+          "DNS settings wouldn't cause port-specific issues.",
+          null,
+          "Firewall rules wouldn't cause intermittent issues.",
+          "Wireless channels don't affect wired ports."
+        ],
+        "topic": "5.4 — Physical layer issues"
+      },
+      {
+        "id": 182,
+        "question": "Which tool captures and analyzes network packets?",
+        "choices": ["Cable tester", "Protocol analyzer", "Tone generator", "Multimeter"],
+        "correct": 1,
+        "explanation": "Protocol analyzers like Wireshark capture and analyze network traffic at the packet level.",
+        "wrongExplanations": [
+          "Cable testers test physical cables.",
+          null,
+          "Tone generators trace cables.",
+          "Multimeters measure electrical properties."
+        ],
+        "topic": "5.4 — Network analysis tools"
+      },
+      {
+        "id": 183,
+        "question": "A device cannot reach resources on other subnets. What's likely misconfigured?",
+        "choices": ["SSID", "Default gateway", "DNS server", "DHCP scope"],
+        "correct": 1,
+        "explanation": "The default gateway routes traffic to other subnets; if misconfigured, inter-subnet communication fails.",
+        "wrongExplanations": [
+          "SSID affects wireless connectivity, not routing.",
+          null,
+          "DNS server affects name resolution, not routing.",
+          "DHCP scope affects IP assignment, not routing."
+        ],
+        "topic": "5.3 — Routing issues"
+      },
+      {
+        "id": 184,
+        "question": "What does the arp command display?",
+        "choices": ["DNS cache", "IP-to-MAC address mappings", "Routing table", "Open ports"],
+        "correct": 1,
+        "explanation": "The arp command shows the local ARP cache containing IP-to-MAC address mappings.",
+        "wrongExplanations": [
+          "Arp doesn't display DNS cache.",
+          null,
+          "Arp doesn't display routing table.",
+          "Arp doesn't display open ports."
+        ],
+        "topic": "5.2 — Layer 2 troubleshooting"
+      },
+      {
+        "id": 185,
+        "question": "Slow network performance affects all users. What should you check FIRST?",
+        "choices": ["Individual workstations", "Bandwidth utilization", "User passwords", "Cable color"],
+        "correct": 1,
+        "explanation": "Widespread slowness suggests network-level issues like bandwidth saturation or congestion.",
+        "wrongExplanations": [
+          "Individual workstations wouldn't affect all users.",
+          null,
+          "User passwords don't affect performance.",
+          "Cable color doesn't affect performance."
+        ],
+        "topic": "5.3 — Performance issues"
+      },
+      {
+        "id": 186,
+        "question": "What does a cable tester showing 'split pairs' indicate?",
+        "choices": ["Perfect cable", "Wires crossed within pairs", "Cable too long", "Normal operation"],
+        "correct": 1,
+        "explanation": "Split pairs occur when wires from different pairs are incorrectly crossed, causing interference.",
+        "wrongExplanations": [
+          "Split pairs indicate problems, not perfection.",
+          null,
+          "Split pairs aren't caused by cable length.",
+          "Split pairs are not normal operation."
+        ],
+        "topic": "5.4 — Cable issues"
+      },
+      {
+        "id": 187,
+        "question": "A wireless client shows excellent signal but slow speeds. What should you check?",
+        "choices": ["SSID name", "Channel interference and utilization", "Cable connections", "Switch configuration"],
+        "correct": 1,
+        "explanation": "Good signal with poor performance often indicates channel congestion or interference.",
+        "wrongExplanations": [
+          "SSID name doesn't affect performance.",
+          null,
+          "Cable connections don't affect wireless performance.",
+          "Switch configuration doesn't affect wireless performance."
+        ],
+        "topic": "5.3 — Wireless issues"
+      },
+      {
+        "id": 188,
+        "question": "Which command clears the DNS resolver cache?",
+        "choices": ["ipconfig /flushdns", "nslookup /clear", "netstat /reset", "ping /clear"],
         "correct": 0,
-        "explanation": "The first step is to identify and define the problem before taking any action.",
+        "explanation": "Ipconfig /flushdns clears the local DNS resolver cache to resolve stale DNS entries.",
         "wrongExplanations": [
           null,
-          "Testing the theory comes after establishing a plan.",
-          "Establishing a plan comes after identifying the problem.",
-          "Documenting findings is the final step."
+          "Nslookup doesn't have a /clear option.",
+          "Netstat doesn't have a /reset option.",
+          "Ping doesn't have a /clear option."
+        ],
+        "topic": "5.2 — DNS troubleshooting"
+      },
+      {
+        "id": 189,
+        "question": "High latency and packet loss appear on a link. What's the likely cause?",
+        "choices": ["Wrong VLAN", "Network congestion or cable issues", "Incorrect hostname", "Wrong password"],
+        "correct": 1,
+        "explanation": "Latency and packet loss typically result from congestion, poor cable quality, or distance issues.",
+        "wrongExplanations": [
+          "Wrong VLAN wouldn't cause latency and packet loss.",
+          null,
+          "Incorrect hostname wouldn't cause latency and packet loss.",
+          "Wrong password wouldn't cause latency and packet loss."
+        ],
+        "topic": "5.3 — Connectivity issues"
+      },
+      {
+        "id": 190,
+        "question": "What tool locates a specific cable in a bundle?",
+        "choices": ["Protocol analyzer", "Tone generator and probe", "Cable certifier", "Spectrum analyzer"],
+        "correct": 1,
+        "explanation": "Tone generators send a signal through the cable that can be detected by a probe to trace cables.",
+        "wrongExplanations": [
+          "Protocol analyzers capture network traffic.",
+          null,
+          "Cable certifiers test cable performance.",
+          "Spectrum analyzers identify RF interference."
+        ],
+        "topic": "5.4 — Cable tracing"
+      },
+      {
+        "id": 191,
+        "question": "Duplicate IP address warnings appear. What should you do?",
+        "choices": ["Ignore them", "Identify and reconfigure conflicting devices", "Restart the router", "Change the SSID"],
+        "correct": 1,
+        "explanation": "Duplicate IPs cause connectivity issues and must be resolved by reconfiguring one device.",
+        "wrongExplanations": [
+          "Duplicate IPs should not be ignored.",
+          null,
+          "Restarting the router won't fix duplicate IPs.",
+          "Changing SSID won't fix duplicate IPs."
+        ],
+        "topic": "5.3 — IP conflicts"
+      },
+      {
+        "id": 192,
+        "question": "Which tool measures fiber optic cable signal loss?",
+        "choices": ["Cable tester", "OTDR", "Tone generator", "Multimeter"],
+        "correct": 1,
+        "explanation": "OTDR (Optical Time Domain Reflectometer) measures light loss and locates breaks in fiber cables.",
+        "wrongExplanations": [
+          "Cable testers are for copper cables.",
+          null,
+          "Tone generators trace copper cables.",
+          "Multimeters measure electrical properties."
+        ],
+        "topic": "5.4 — Fiber testing"
+      },
+      {
+        "id": 193,
+        "question": "A device can access local resources but not the internet. What should you verify?",
+        "choices": ["Hostname", "Default gateway and DNS", "MAC address", "VLAN name"],
+        "correct": 1,
+        "explanation": "Internet access requires a properly configured default gateway and DNS server.",
+        "wrongExplanations": [
+          "Hostname doesn't affect internet access.",
+          null,
+          "MAC address doesn't affect internet access.",
+          "VLAN name doesn't affect internet access."
+        ],
+        "topic": "5.3 — Internet connectivity"
+      },
+      {
+        "id": 194,
+        "question": "What does excessive network broadcast traffic indicate?",
+        "choices": ["Normal operation", "Possible broadcast storm or large broadcast domain", "Good performance", "Proper configuration"],
+        "correct": 1,
+        "explanation": "Excessive broadcasts suggest a broadcast storm or an overly large broadcast domain needing segmentation.",
+        "wrongExplanations": [
+          "Excessive broadcasts are not normal.",
+          null,
+          "Excessive broadcasts indicate poor performance.",
+          "Excessive broadcasts indicate misconfiguration."
+        ],
+        "topic": "5.3 — Traffic issues"
+      },
+      {
+        "id": 195,
+        "question": "Which command displays the local routing table?",
+        "choices": ["route print", "netstat -r", "Both A and B", "tracert"],
+        "correct": 2,
+        "explanation": "Both 'route print' and 'netstat -r' display the local routing table on Windows systems.",
+        "wrongExplanations": [
+          "Route print is correct but not the only option.",
+          "Netstat -r is correct but not the only option.",
+          null,
+          "Tracert shows routing paths, not the routing table."
+        ],
+        "topic": "5.2 — Routing troubleshooting"
+      },
+      {
+        "id": 196,
+        "question": "A new cable installation fails certification. What should you check?",
+        "choices": ["User complaints only", "Termination quality and cable integrity", "Wireless settings", "IP addresses"],
+        "correct": 1,
+        "explanation": "Failed certification typically indicates improper termination, wrong category cable, or physical damage.",
+        "wrongExplanations": [
+          "User complaints don't affect cable certification.",
+          null,
+          "Wireless settings don't affect cable certification.",
+          "IP addresses don't affect cable certification."
+        ],
+        "topic": "5.4 — Cable certification"
+      },
+      {
+        "id": 197,
+        "question": "VoIP calls experience choppy audio. Which metrics should you check?",
+        "choices": ["Bandwidth only", "Latency, jitter, and packet loss", "Cable color", "SSID"],
+        "correct": 1,
+        "explanation": "VoIP quality depends on low latency, minimal jitter (delay variation), and minimal packet loss.",
+        "wrongExplanations": [
+          "Bandwidth alone doesn't determine VoIP quality.",
+          null,
+          "Cable color doesn't affect VoIP quality.",
+          "SSID doesn't affect VoIP quality."
+        ],
+        "topic": "5.3 — Voice quality issues"
+      },
+      {
+        "id": 198,
+        "question": "What does a spectrum analyzer identify?",
+        "choices": ["IP conflicts", "Wireless interference sources", "Cable breaks", "Routing loops"],
+        "correct": 1,
+        "explanation": "Spectrum analyzers identify sources of RF interference affecting wireless networks.",
+        "wrongExplanations": [
+          "Spectrum analyzers don't identify IP conflicts.",
+          null,
+          "Spectrum analyzers don't identify cable breaks.",
+          "Spectrum analyzers don't identify routing loops."
+        ],
+        "topic": "5.4 — Wireless troubleshooting tools"
+      },
+      {
+        "id": 199,
+        "question": "After implementing a solution, what is the NEXT step?",
+        "choices": ["Close the ticket", "Verify full system functionality", "Start over", "Blame the user"],
+        "correct": 1,
+        "explanation": "After implementing a solution, you must verify that the entire system works properly, not just the immediate issue.",
+        "wrongExplanations": [
+          "Closing the ticket should come after verification.",
+          null,
+          "Starting over is not the next step.",
+          "Blaming the user is unprofessional."
+        ],
+        "topic": "5.1 — Troubleshooting methodology"
+      },
+      {
+        "id": 200,
+        "question": "What is the LAST step in troubleshooting methodology?",
+        "choices": ["Implement solution", "Test the theory", "Document findings, actions, and outcomes", "Identify the problem"],
+        "correct": 2,
+        "explanation": "Documentation is the final step, recording the problem, solution, and lessons learned for future reference.",
+        "wrongExplanations": [
+          "Implementing solution comes before documentation.",
+          "Testing the theory comes before documentation.",
+          null,
+          "Identifying the problem is the first step."
         ],
         "topic": "5.1 — Troubleshooting methodology"
       }

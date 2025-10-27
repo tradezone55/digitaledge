@@ -45,109 +45,2629 @@
       },
       {
         "id": 4,
-        "question": "Qual é a classe de endereço IP de 172.16.0.1?",
-        "choices": ["Classe A", "Classe B", "Classe C", "Classe D"],
+        "question": "O que um switch usa para encaminhar quadros?",
+        "choices": ["Endereços IP", "Endereços MAC", "Números de porta", "Nomes de domínio"],
         "correct": 1,
-        "explanation": "172.16.0.1 cai no intervalo da Classe B (128.0.0.0 a 191.255.255.255).",
+        "explanation": "Switches operam na Camada 2 e usam endereços MAC para encaminhar quadros.",
         "wrongExplanations": [
-          "A Classe A vai de 1.0.0.0 a 126.255.255.255.",
+          "Endereços IP são usados por roteadores na Camada 3.",
           null,
-          "A Classe C vai de 192.0.0.0 a 223.255.255.255.",
-          "A Classe D é usada para multicast (224.0.0.0 a 239.255.255.255)."
+          "Números de porta são usados por protocolos da camada de transporte.",
+          "Nomes de domínio são resolvidos por DNS."
         ],
-        "topic": "1.4 — Endereçamento IP"
+        "topic": "1.2 — Dispositivos de rede"
       },
       {
         "id": 5,
-        "question": "Quantos endereços de host estão disponíveis em uma sub-rede /26?",
-        "choices": ["30", "62", "126", "254"],
+        "question": "Qual padrão sem fio suporta frequência de 6 GHz?",
+        "choices": ["802.11ac", "802.11ax (Wi-Fi 6E)", "802.11n", "802.11g"],
         "correct": 1,
-        "explanation": "Uma sub-rede /26 tem 6 bits de host, fornecendo 2^6 - 2 = 62 endereços de host utilizáveis.",
+        "explanation": "Wi-Fi 6E (802.11ax) se estende para a banda de 6 GHz para reduzir interferências.",
         "wrongExplanations": [
-          "30 seria para uma sub-rede /27 (5 bits de host).",
+          "802.11ac opera apenas a 5 GHz.",
           null,
-          "126 seria para uma sub-rede /25 (7 bits de host).",
-          "254 seria para uma sub-rede /24 (8 bits de host)."
+          "802.11n opera a 2.4 GHz e 5 GHz.",
+          "802.11g opera apenas a 2.4 GHz."
         ],
-        "topic": "1.4 — Endereçamento IP"
+        "topic": "1.4 — Padrões sem fio"
+      },
+      {
+        "id": 6,
+        "question": "Qual é a máscara de sub-rede padrão para uma rede Classe C?",
+        "choices": ["255.0.0.0", "255.255.0.0", "255.255.255.0", "255.255.255.255"],
+        "correct": 2,
+        "explanation": "Redes Classe C usam 255.255.255.0 como máscara de sub-rede padrão.",
+        "wrongExplanations": [
+          "255.0.0.0 é a máscara padrão para redes Classe A.",
+          "255.255.0.0 é a máscara padrão para redes Classe B.",
+          null,
+          "255.255.255.255 é uma rota de host, não uma máscara de sub-rede."
+        ],
+        "topic": "1.5 — Endereçamento IPv4"
+      },
+      {
+        "id": 7,
+        "question": "Qual tipo de cabo é imune a EMI?",
+        "choices": ["UTP", "STP", "Coaxial", "Fibra óptica"],
+        "correct": 3,
+        "explanation": "Cabos de fibra óptica usam luz em vez de sinais elétricos, tornando-os imunes à interferência eletromagnética.",
+        "wrongExplanations": [
+          "UTP é suscetível a EMI devido à falta de blindagem.",
+          "STP tem alguma proteção contra EMI mas não é imune.",
+          "Cabos coaxiais podem ser afetados por EMI.",
+          null
+        ],
+        "topic": "1.3 — Cabos e conectores"
+      },
+      {
+        "id": 8,
+        "question": "Qual porta HTTPS usa por padrão?",
+        "choices": ["80", "443", "8080", "22"],
+        "correct": 1,
+        "explanation": "HTTPS usa a porta 443 para tráfego web seguro.",
+        "wrongExplanations": [
+          "Porta 80 é usada por HTTP (não criptografado).",
+          null,
+          "Porta 8080 é uma porta HTTP alternativa.",
+          "Porta 22 é usada por SSH."
+        ],
+        "topic": "1.7 — Serviços de rede"
+      },
+      {
+        "id": 9,
+        "question": "Qual topologia tem um ponto único de falha?",
+        "choices": ["Malha", "Estrela", "Anel", "Barra"],
+        "correct": 1,
+        "explanation": "Topologia estrela depende de um dispositivo central; se ele falhar, toda a rede cai.",
+        "wrongExplanations": [
+          "Topologia malha tem múltiplos caminhos e nenhum ponto único de falha.",
+          null,
+          "Topologia anel pode continuar operando se um link falhar.",
+          "Topologia barra pode continuar com uma falha de dispositivo."
+        ],
+        "topic": "1.1 — Topologias de rede"
+      },
+      {
+        "id": 10,
+        "question": "Qual é a taxa máxima de 802.11ac?",
+        "choices": ["54 Mbps", "600 Mbps", "1.3 Gbps", "9.6 Gbps"],
+        "correct": 2,
+        "explanation": "802.11ac pode atingir até 1.3 Gbps em condições ideais.",
+        "wrongExplanations": [
+          "54 Mbps é o máximo para 802.11g.",
+          "600 Mbps é o máximo para 802.11n.",
+          null,
+          "9.6 Gbps é o máximo teórico para 802.11ax."
+        ],
+        "topic": "1.4 — Padrões sem fio"
+      },
+      {
+        "id": 11,
+        "question": "Qual dispositivo funciona tanto na camada 2 quanto na camada 3?",
+        "choices": ["Hub", "Switch", "Switch multicamada", "Repetidor"],
+        "correct": 2,
+        "explanation": "Os switches multicamada podem executar tanto funções de comutação (camada 2) quanto de roteamento (camada 3).",
+        "wrongExplanations": [
+          "Os hubs funcionam apenas na camada 1.",
+          "Os switches funcionam apenas na camada 2.",
+          null,
+          "Os repetidores funcionam apenas na camada 1."
+        ],
+        "topic": "1.2 — Dispositivos de rede"
+      },
+      {
+        "id": 12,
+        "question": "O que significa DHCP?",
+        "choices": ["Protocolo de Configuração Dinâmica de Host", "Protocolo de Controle de Host de Domínio", "Protocolo de Comunicação de Host de Dados", "Processo de Configuração de Host Digital"],
+        "correct": 0,
+        "explanation": "DHCP atribui automaticamente endereços IP aos dispositivos em uma rede.",
+        "wrongExplanations": [
+          null,
+          "DHCP não controla domínios.",
+          "DHCP não comunica dados.",
+          "DHCP não é um processo digital."
+        ],
+        "topic": "1.5 — Serviços de rede"
+      },
+      {
+        "id": 13,
+        "question": "Qual é o comprimento máximo de um cabo Ethernet Cat 6?",
+        "choices": ["50 metros", "90 metros", "100 metros", "150 metros"],
+        "correct": 2,
+        "explanation": "O comprimento máximo recomendado para um cabo Ethernet Cat 6 é de 100 metros.",
+        "wrongExplanations": [
+          "50 metros é muito curto para Cat 6.",
+          "90 metros está próximo mas não é o limite máximo.",
+          null,
+          "150 metros excede o limite recomendado."
+        ],
+        "topic": "1.3 — Cabos e conectores"
+      },
+      {
+        "id": 14,
+        "question": "Qual protocolo funciona na camada de transporte?",
+        "choices": ["IP", "TCP", "Ethernet", "HTTP"],
+        "correct": 1,
+        "explanation": "TCP (Protocolo de Controle de Transmissão) funciona na camada de transporte do modelo OSI.",
+        "wrongExplanations": [
+          "IP funciona na camada de rede.",
+          null,
+          "Ethernet funciona na camada de enlace de dados.",
+          "HTTP funciona na camada de aplicação."
+        ],
+        "topic": "1.1 — Modelo OSI"
+      },
+      {
+        "id": 15,
+        "question": "O que um switch usa para transferir quadros?",
+        "choices": ["Endereços IP", "Endereços MAC", "Endereços de porta", "Endereços de domínio"],
+        "correct": 1,
+        "explanation": "Os switches usam endereços MAC para transferir quadros para as portas apropriadas.",
+        "wrongExplanations": [
+          "Os switches não usam endereços IP para transferência de quadros.",
+          null,
+          "Os switches não usam endereços de porta.",
+          "Os switches não usam endereços de domínio."
+        ],
+        "topic": "1.2 — Funcionamento dos switches"
+      },
+      {
+        "id": 16,
+        "question": "Qual padrão sem fio suporta a frequência de 6 GHz?",
+        "choices": ["802.11n", "802.11ac", "802.11ax", "802.11g"],
+        "correct": 2,
+        "explanation": "802.11ax (Wi-Fi 6E) suporta a banda de 6 GHz para melhor desempenho.",
+        "wrongExplanations": [
+          "802.11n funciona em 2.4 GHz e 5 GHz.",
+          "802.11ac funciona apenas em 5 GHz.",
+          null,
+          "802.11g funciona apenas em 2.4 GHz."
+        ],
+        "topic": "1.4 — Padrões sem fio"
+      },
+      {
+        "id": 17,
+        "question": "Qual é a máscara de sub-rede padrão para uma rede de classe C?",
+        "choices": ["255.0.0.0", "255.255.0.0", "255.255.255.0", "255.255.255.255"],
+        "correct": 2,
+        "explanation": "A máscara de sub-rede padrão para uma rede de classe C é 255.255.255.0 (/24).",
+        "wrongExplanations": [
+          "255.0.0.0 é a máscara padrão para classe A.",
+          "255.255.0.0 é a máscara padrão para classe B.",
+          null,
+          "255.255.255.255 é um endereço de broadcast."
+        ],
+        "topic": "1.6 — Endereçamento IPv4"
+      },
+      {
+        "id": 18,
+        "question": "Qual protocolo resolve nomes de domínio em endereços IP?",
+        "choices": ["DHCP", "DNS", "SNMP", "FTP"],
+        "correct": 1,
+        "explanation": "DNS (Sistema de Nomes de Domínio) resolve nomes de domínio em endereços IP.",
+        "wrongExplanations": [
+          "DHCP atribui endereços IP.",
+          null,
+          "SNMP gerencia dispositivos de rede.",
+          "FTP transfere arquivos."
+        ],
+        "topic": "1.5 — Serviços DNS"
+      },
+      {
+        "id": 19,
+        "question": "Qual é o intervalo de endereços IP privados de classe A?",
+        "choices": ["10.0.0.0 - 10.255.255.255", "172.16.0.0 - 172.31.255.255", "192.168.0.0 - 192.168.255.255", "169.254.0.0 - 169.254.255.255"],
+        "correct": 0,
+        "explanation": "O intervalo de endereços IP privados de classe A é 10.0.0.0 a 10.255.255.255.",
+        "wrongExplanations": [
+          null,
+          "172.16.0.0 - 172.31.255.255 é o intervalo de classe B.",
+          "192.168.0.0 - 192.168.255.255 é o intervalo de classe C.",
+          "169.254.0.0 - 169.254.255.255 é o intervalo APIPA."
+        ],
+        "topic": "1.6 — Endereços IP privados"
+      },
+      {
+        "id": 20,
+        "question": "Qual é o propósito de um hub de rede?",
+        "choices": ["Filtrar tráfego", "Amplificar sinais", "Repetir sinais para todas as portas", "Roteamento inteligente"],
+        "correct": 2,
+        "explanation": "Um hub repete os sinais de entrada para todas as portas, criando um domínio de colisão.",
+        "wrongExplanations": [
+          "Os hubs não filtram tráfego.",
+          "Os hubs não amplificam sinais.",
+          null,
+          "Os hubs não fazem roteamento inteligente."
+        ],
+        "topic": "1.2 — Dispositivos de rede"
+      },
+      {
+        "id": 21,
+        "question": "Qual é a taxa máxima teórica do Ethernet Gigabit?",
+        "choices": ["100 Mbps", "1 Gbps", "10 Gbps", "100 Gbps"],
+        "correct": 1,
+        "explanation": "O Ethernet Gigabit pode atingir uma taxa máxima teórica de 1 Gbps (1000 Mbps).",
+        "wrongExplanations": [
+          "100 Mbps é a taxa do Ethernet Fast.",
+          null,
+          "10 Gbps é a taxa do Ethernet 10 Gigabit.",
+          "100 Gbps é a taxa do Ethernet 100 Gigabit."
+        ],
+        "topic": "1.3 — Padrões Ethernet"
+      },
+      {
+        "id": 22,
+        "question": "Qual camada OSI gerencia o endereçamento lógico?",
+        "choices": ["Camada física", "Camada de enlace de dados", "Camada de rede", "Camada de transporte"],
+        "correct": 2,
+        "explanation": "A camada de rede (camada 3) gerencia o endereçamento lógico e o roteamento de pacotes.",
+        "wrongExplanations": [
+          "A camada física gerencia sinais elétricos.",
+          "A camada de enlace de dados gerencia endereçamento físico (MAC).",
+          null,
+          "A camada de transporte gerencia segmentação e remontagem."
+        ],
+        "topic": "1.1 — Modelo OSI"
+      },
+      {
+        "id": 23,
+        "question": "Que tipo de cabo é usado para conexões de longa distância?",
+        "choices": ["UTP", "STP", "Fibra óptica", "Coaxial"],
+        "correct": 2,
+        "explanation": "A fibra óptica é usada para conexões de longa distância porque tem baixa atenuação.",
+        "wrongExplanations": [
+          "UTP tem limitações de distância.",
+          "STP tem limitações de distância similares ao UTP.",
+          null,
+          "O coaxial tem limitações de distância."
+        ],
+        "topic": "1.3 — Tipos de cabos"
+      },
+      {
+        "id": 24,
+        "question": "O que o NAT faz?",
+        "choices": ["Criptografa tráfego", "Traduz endereços IP privados em públicos", "Filtra pacotes", "Atribui endereços IP"],
+        "correct": 1,
+        "explanation": "NAT (Tradução de Endereço de Rede) traduz endereços IP privados em endereços IP públicos.",
+        "wrongExplanations": [
+          "NAT não criptografa tráfego.",
+          null,
+          "NAT não filtra pacotes.",
+          "DHCP atribui endereços IP, não NAT."
+        ],
+        "topic": "1.6 — Tradução de endereços"
+      },
+      {
+        "id": 25,
+        "question": "Qual protocolo usa portas para identificar aplicações?",
+        "choices": ["IP", "TCP/UDP", "Ethernet", "ARP"],
+        "correct": 1,
+        "explanation": "TCP e UDP usam números de porta para identificar aplicações e serviços.",
+        "wrongExplanations": [
+          "IP usa endereços para identificar hosts.",
+          null,
+          "Ethernet usa endereços MAC.",
+          "ARP resolve endereços IP em MAC."
+        ],
+        "topic": "1.1 — Protocolos de transporte"
+      },
+      {
+        "id": 26,
+        "question": "Qual é a diferença entre um switch e um hub?",
+        "choices": ["Um switch é mais rápido", "Um switch cria domínios de colisão separados", "Um hub é mais seguro", "Nenhuma diferença"],
+        "correct": 1,
+        "explanation": "Um switch cria domínios de colisão separados para cada porta, diferente de um hub.",
+        "wrongExplanations": [
+          "A velocidade não é a diferença principal.",
+          null,
+          "Um hub não é mais seguro que um switch.",
+          "Há diferenças importantes entre os dois."
+        ],
+        "topic": "1.2 — Comparação de dispositivos"
+      },
+      {
+        "id": 27,
+        "question": "Qual é o propósito de um ponto de acesso sem fio?",
+        "choices": ["Roteamento entre redes", "Conectar dispositivos sem fio a uma rede", "Filtrar pacotes", "Atribuir endereços IP"],
+        "correct": 1,
+        "explanation": "Um ponto de acesso sem fio conecta dispositivos sem fio a uma rede com fio.",
+        "wrongExplanations": [
+          "Roteadores fazem roteamento entre redes.",
+          null,
+          "Firewalls filtram pacotes.",
+          "DHCP atribui endereços IP."
+        ],
+        "topic": "1.4 — Dispositivos sem fio"
+      },
+      {
+        "id": 28,
+        "question": "Qual é o intervalo de endereços IPv6 de link local?",
+        "choices": ["2000::/3", "FC00::/7", "FE80::/10", "FF00::/8"],
+        "correct": 2,
+        "explanation": "FE80::/10 é o intervalo de endereços IPv6 de link local.",
+        "wrongExplanations": [
+          "2000::/3 é o intervalo de endereços IPv6 globais unicast.",
+          "FC00::/7 é o intervalo de endereços IPv6 únicos locais.",
+          null,
+          "FF00::/8 é o intervalo de endereços IPv6 multicast."
+        ],
+        "topic": "1.7 — Endereçamento IPv6"
+      },
+      {
+        "id": 29,
+        "question": "Qual protocolo gerencia a resolução de endereços MAC?",
+        "choices": ["DNS", "DHCP", "ARP", "ICMP"],
+        "correct": 2,
+        "explanation": "ARP (Protocolo de Resolução de Endereço) resolve endereços IP em endereços MAC.",
+        "wrongExplanations": [
+          "DNS resolve nomes de domínio em endereços IP.",
+          "DHCP atribui endereços IP.",
+          null,
+          "ICMP é usado para mensagens de controle e erro."
+        ],
+        "topic": "1.5 — Resolução de endereços"
+      },
+      {
+        "id": 30,
+        "question": "Qual é a função principal de um roteador?",
+        "choices": ["Amplificar sinais", "Conectar redes diferentes", "Filtrar tráfego", "Atribuir endereços IP"],
+        "correct": 1,
+        "explanation": "Um roteador conecta redes diferentes e roteia tráfego entre elas.",
+        "wrongExplanations": [
+          "Repetidores amplificam sinais.",
+          null,
+          "Firewalls filtram tráfego.",
+          "DHCP atribui endereços IP."
+        ],
+        "topic": "1.2 — Funcionamento dos roteadores"
+      },
+      {
+        "id": 31,
+        "question": "Qual é a taxa máxima do Ethernet Fast?",
+        "choices": ["10 Mbps", "100 Mbps", "1 Gbps", "10 Gbps"],
+        "correct": 1,
+        "explanation": "O Ethernet Fast pode atingir uma taxa máxima de 100 Mbps.",
+        "wrongExplanations": [
+          "10 Mbps é a taxa do Ethernet padrão.",
+          null,
+          "1 Gbps é a taxa do Ethernet Gigabit.",
+          "10 Gbps é a taxa do Ethernet 10 Gigabit."
+        ],
+        "topic": "1.3 — Padrões Ethernet"
+      },
+      {
+        "id": 32,
+        "question": "Qual camada OSI gerencia a transmissão física de dados?",
+        "choices": ["Camada de aplicação", "Camada de transporte", "Camada de rede", "Camada física"],
+        "correct": 3,
+        "explanation": "A camada física (camada 1) gerencia a transmissão física de dados no meio.",
+        "wrongExplanations": [
+          "A camada de aplicação gerencia interfaces de usuário.",
+          "A camada de transporte gerencia segmentação.",
+          "A camada de rede gerencia roteamento.",
+          null
+        ],
+        "topic": "1.1 — Modelo OSI"
+      },
+      {
+        "id": 33,
+        "question": "Qual protocolo é usado para gerenciamento de dispositivos de rede?",
+        "choices": ["DNS", "DHCP", "SNMP", "FTP"],
+        "correct": 2,
+        "explanation": "SNMP (Protocolo Simples de Gerenciamento de Rede) é usado para gerenciar e monitorar dispositivos de rede.",
+        "wrongExplanations": [
+          "DNS resolve nomes de domínio.",
+          "DHCP atribui endereços IP.",
+          null,
+          "FTP transfere arquivos."
+        ],
+        "topic": "1.5 — Serviços de gerenciamento"
+      },
+      {
+        "id": 34,
+        "question": "Qual é a diferença entre TCP e UDP?",
+        "choices": ["TCP é mais rápido", "TCP fornece entrega confiável", "UDP é mais seguro", "Nenhuma diferença"],
+        "correct": 1,
+        "explanation": "TCP fornece entrega confiável com controle de fluxo e correção de erros, diferente do UDP.",
+        "wrongExplanations": [
+          "UDP é geralmente mais rápido que TCP.",
+          null,
+          "TCP e UDP têm níveis de segurança similares.",
+          "Há diferenças importantes entre os dois."
+        ],
+        "topic": "1.1 — Protocolos de transporte"
+      },
+      {
+        "id": 35,
+        "question": "Qual é o propósito de um servidor DNS?",
+        "choices": ["Atribuir endereços IP", "Resolver nomes de domínio", "Filtrar tráfego", "Criptografar dados"],
+        "correct": 1,
+        "explanation": "Um servidor DNS resolve nomes de domínio em endereços IP.",
+        "wrongExplanations": [
+          "DHCP atribui endereços IP.",
+          null,
+          "Firewalls filtram tráfego.",
+          "Protocolos de criptografia criptografam dados."
+        ],
+        "topic": "1.5 — Serviços DNS"
+      },
+      {
+        "id": 36,
+        "question": "Qual é o intervalo de endereços IP privados de classe B?",
+        "choices": ["10.0.0.0 - 10.255.255.255", "172.16.0.0 - 172.31.255.255", "192.168.0.0 - 192.168.255.255", "169.254.0.0 - 169.254.255.255"],
+        "correct": 1,
+        "explanation": "O intervalo de endereços IP privados de classe B é 172.16.0.0 a 172.31.255.255.",
+        "wrongExplanations": [
+          "10.0.0.0 - 10.255.255.255 é o intervalo de classe A.",
+          null,
+          "192.168.0.0 - 192.168.255.255 é o intervalo de classe C.",
+          "169.254.0.0 - 169.254.255.255 é o intervalo APIPA."
+        ],
+        "topic": "1.6 — Endereços IP privados"
+      },
+      {
+        "id": 37,
+        "question": "Qual protocolo é usado para transferência de arquivos?",
+        "choices": ["HTTP", "FTP", "SMTP", "SNMP"],
+        "correct": 1,
+        "explanation": "FTP (Protocolo de Transferência de Arquivos) é usado para transferir arquivos entre sistemas.",
+        "wrongExplanations": [
+          "HTTP é usado para transferir páginas web.",
+          null,
+          "SMTP é usado para envio de emails.",
+          "SNMP é usado para gerenciamento de rede."
+        ],
+        "topic": "1.5 — Serviços de transferência"
+      },
+      {
+        "id": 38,
+        "question": "Qual é a função de um firewall?",
+        "choices": ["Amplificar sinais", "Filtrar tráfego de rede", "Atribuir endereços IP", "Resolver nomes de domínio"],
+        "correct": 1,
+        "explanation": "Um firewall filtra tráfego de rede baseado em regras de segurança predefinidas.",
+        "wrongExplanations": [
+          "Repetidores amplificam sinais.",
+          null,
+          "DHCP atribui endereços IP.",
+          "DNS resolve nomes de domínio."
+        ],
+        "topic": "1.2 — Dispositivos de segurança"
+      },
+      {
+        "id": 39,
+        "question": "Qual é a taxa máxima do 802.11n?",
+        "choices": ["54 Mbps", "150 Mbps", "600 Mbps", "1.3 Gbps"],
+        "correct": 2,
+        "explanation": "O 802.11n pode atingir uma taxa máxima teórica de 600 Mbps.",
+        "wrongExplanations": [
+          "54 Mbps é o máximo para 802.11g.",
+          "150 Mbps é a taxa por fluxo para 802.11n.",
+          null,
+          "1.3 Gbps é o máximo para 802.11ac."
+        ],
+        "topic": "1.4 — Padrões sem fio"
+      },
+      {
+        "id": 40,
+        "question": "Qual é a diferença entre IPv4 e IPv6?",
+        "choices": ["IPv6 é mais lento", "IPv6 tem espaço de endereçamento maior", "IPv4 é mais seguro", "Nenhuma diferença"],
+        "correct": 1,
+        "explanation": "IPv6 tem um espaço de endereçamento muito maior (128 bits) comparado ao IPv4 (32 bits).",
+        "wrongExplanations": [
+          "IPv6 não é mais lento que IPv4.",
+          null,
+          "IPv6 tem recursos de segurança integrados.",
+          "Há diferenças importantes entre os dois."
+        ],
+        "topic": "1.7 — Comparação IPv4/IPv6"
       }
     ],
     "2": [
       {
-        "id": 6,
-        "question": "Qual padrão sem fio opera a 5 GHz?",
-        "choices": ["802.11b", "802.11g", "802.11n", "802.11ac"],
-        "correct": 3,
-        "explanation": "802.11ac opera exclusivamente a 5 GHz, fornecendo maior largura de banda.",
+        "id": 51,
+        "question": "Qual é o propósito principal de uma DMZ?",
+        "choices": ["Armazenar backups", "Isolar servidores públicos", "Aumentar largura de banda", "Fornecer acesso sem fio"],
+        "correct": 1,
+        "explanation": "Uma DMZ (Zona Desmilitarizada) isola servidores públicos da rede interna por segurança.",
         "wrongExplanations": [
-          "802.11b opera apenas a 2.4 GHz.",
-          "802.11g opera apenas a 2.4 GHz.",
-          "802.11n pode operar tanto a 2.4 GHz quanto a 5 GHz.",
-          null
+          "DMZ não é projetada para armazenar backups.",
+          null,
+          "DMZ não aumenta capacidade de largura de banda.",
+          "DMZ não fornece acesso sem fio."
         ],
-        "topic": "2.1 — Tecnologias sem fio"
+        "topic": "2.1 — Segmentação de rede"
       },
       {
-        "id": 7,
-        "question": "Qual é a velocidade máxima do 802.11n?",
-        "choices": ["54 Mbps", "150 Mbps", "300 Mbps", "600 Mbps"],
-        "correct": 3,
-        "explanation": "802.11n pode atingir até 600 Mbps com configuração MIMO 4x4.",
+        "id": 52,
+        "question": "Qual protocolo de roteamento é vetor-distância?",
+        "choices": ["OSPF", "RIP", "BGP", "IS-IS"],
+        "correct": 1,
+        "explanation": "RIP (Protocolo de Informação de Roteamento) é um protocolo de roteamento vetor-distância que usa contagem de saltos como métrica.",
         "wrongExplanations": [
-          "54 Mbps é o máximo para 802.11g.",
-          "150 Mbps é para 802.11n de fluxo único.",
-          "300 Mbps é para 802.11n de fluxo duplo.",
+          "OSPF é um protocolo de estado de link.",
+          null,
+          "BGP é um protocolo de vetor de caminho.",
+          "IS-IS é um protocolo de estado de link."
+        ],
+        "topic": "2.2 — Protocolos de roteamento"
+      },
+      {
+        "id": 53,
+        "question": "O que a transmissão SSID faz?",
+        "choices": ["Criptografa tráfego sem fio", "Torna rede sem fio visível", "Atribui endereços IP", "Filtra endereços MAC"],
+        "correct": 1,
+        "explanation": "Transmissão SSID torna o nome da rede sem fio visível para dispositivos próximos.",
+        "wrongExplanations": [
+          "Transmissão SSID não criptografa tráfego.",
+          null,
+          "Transmissão SSID não atribui endereços IP.",
+          "Transmissão SSID não filtra endereços MAC."
+        ],
+        "topic": "2.3 — Implementação sem fio"
+      },
+      {
+        "id": 54,
+        "question": "Qual método de balanceamento de carga usa tempo de resposta do servidor?",
+        "choices": ["Round-robin", "Menos conexões", "Ponderado", "Dinâmico"],
+        "correct": 3,
+        "explanation": "Balanceamento de carga dinâmico se ajusta baseado em métricas em tempo real como tempo de resposta do servidor e carga.",
+        "wrongExplanations": [
+          "Round-robin distribui solicitações sequencialmente.",
+          "Menos conexões roteia para servidor com menos conexões ativas.",
+          "Ponderado distribui baseado na capacidade pré-definida do servidor.",
           null
         ],
-        "topic": "2.1 — Tecnologias sem fio"
+        "topic": "2.4 — Serviços de rede"
+      },
+      {
+        "id": 55,
+        "question": "Qual é o propósito do espelhamento de porta?",
+        "choices": ["Aumentar largura de banda", "Monitorar tráfego para análise", "Criar redundância", "Balancear carga"],
+        "correct": 1,
+        "explanation": "Espelhamento de porta (SPAN) copia tráfego de uma porta para outra para monitoramento e análise.",
+        "wrongExplanations": [
+          "Espelhamento de porta não aumenta largura de banda.",
+          null,
+          "Espelhamento de porta não cria redundância.",
+          "Espelhamento de porta não balanceia carga."
+        ],
+        "topic": "2.5 — Monitoramento de rede"
+      },
+      {
+        "id": 56,
+        "question": "Qual é o propósito de uma VLAN?",
+        "choices": ["Aumentar velocidade", "Segmentar redes logicamente", "Reduzir custos", "Eliminar erros"],
+        "correct": 1,
+        "explanation": "As VLANs segmentam redes logicamente para melhorar segurança e gerenciamento.",
+        "wrongExplanations": [
+          "As VLANs não aumentam diretamente a velocidade.",
+          null,
+          "A redução de custos é um benefício secundário.",
+          "As VLANs não podem eliminar todos os erros."
+        ],
+        "topic": "2.2 — Conceitos de VLAN"
+      },
+      {
+        "id": 57,
+        "question": "Qual protocolo de roteamento é melhor para redes grandes?",
+        "choices": ["RIP", "OSPF", "Roteamento estático", "Roteamento padrão"],
+        "correct": 1,
+        "explanation": "OSPF é um protocolo de estado de enlace que escala bem e converge rapidamente, ideal para redes grandes.",
+        "wrongExplanations": [
+          "RIP tem limitações de tamanho e convergência.",
+          null,
+          "O roteamento estático não se adapta a mudanças.",
+          "O roteamento padrão não é adequado para redes grandes."
+        ],
+        "topic": "2.3 — Protocolos de roteamento"
+      },
+      {
+        "id": 58,
+        "question": "Qual é a função de um switch de camada 3?",
+        "choices": ["Apenas comutação", "Comutação e roteamento", "Apenas roteamento", "Apenas repetição"],
+        "correct": 1,
+        "explanation": "Um switch de camada 3 pode executar tanto comutação (camada 2) quanto roteamento (camada 3).",
+        "wrongExplanations": [
+          "Um switch de camada 3 faz mais que apenas comutação.",
+          null,
+          "Um switch de camada 3 faz mais que apenas roteamento.",
+          "Um switch de camada 3 não apenas repete sinais."
+        ],
+        "topic": "2.4 — Switches multicamada"
+      },
+      {
+        "id": 59,
+        "question": "Qual é o propósito da segurança de porta em um switch?",
+        "choices": ["Criptografar tráfego", "Limitar dispositivos por endereço MAC", "Atribuir VLANs", "Fornecer roteamento"],
+        "correct": 1,
+        "explanation": "A segurança de porta restringe quais dispositivos (por endereço MAC) podem se conectar a portas específicas do switch.",
+        "wrongExplanations": [
+          "A segurança de porta não criptografa tráfego.",
+          null,
+          "A segurança de porta não atribui VLANs.",
+          "A segurança de porta não fornece roteamento."
+        ],
+        "topic": "2.1 — Segurança de switch"
+      },
+      {
+        "id": 60,
+        "question": "Qual protocolo de roteamento usa métricas de salto?",
+        "choices": ["OSPF", "BGP", "RIP", "EIGRP"],
+        "correct": 2,
+        "explanation": "RIP (Protocolo de Informação de Roteamento) usa o número de saltos como métrica.",
+        "wrongExplanations": [
+          "OSPF usa custo como métrica.",
+          "BGP usa atributos de caminho como métrica.",
+          null,
+          "EIGRP usa largura de banda e delay como métrica."
+        ],
+        "topic": "2.3 — Métricas de roteamento"
+      },
+      {
+        "id": 61,
+        "question": "Qual é a diferença entre trunk e access port?",
+        "choices": ["Velocidade diferente", "Tipo de porta", "Tamanho diferente", "Custo apenas"],
+        "correct": 1,
+        "explanation": "Uma porta trunk transporta múltiplas VLANs, enquanto uma porta access transporta apenas uma VLAN.",
+        "wrongExplanations": [
+          "A velocidade não é a diferença principal.",
+          null,
+          "O tamanho não é a diferença principal.",
+          "O custo não é a única diferença."
+        ],
+        "topic": "2.2 — Tipos de porta"
+      },
+      {
+        "id": 62,
+        "question": "Qual é o propósito de um gateway padrão?",
+        "choices": ["Aumentar velocidade", "Roteamento para redes externas", "Reduzir custos", "Eliminar erros"],
+        "correct": 1,
+        "explanation": "Um gateway padrão roteia tráfego para redes externas quando o destino não está na rede local.",
+        "wrongExplanations": [
+          "Um gateway padrão não aumenta a velocidade.",
+          null,
+          "A redução de custos é um benefício secundário.",
+          "Um gateway padrão não pode eliminar todos os erros."
+        ],
+        "topic": "2.5 — Gateways"
+      },
+      {
+        "id": 63,
+        "question": "Qual protocolo é usado para descoberta de vizinhos?",
+        "choices": ["RIP", "OSPF", "CDP", "BGP"],
+        "correct": 2,
+        "explanation": "CDP (Protocolo de Descoberta de Cisco) é usado para descobrir dispositivos vizinhos.",
+        "wrongExplanations": [
+          "RIP é um protocolo de roteamento.",
+          "OSPF é um protocolo de roteamento.",
+          null,
+          "BGP é um protocolo de roteamento."
+        ],
+        "topic": "2.6 — Protocolos de descoberta"
+      },
+      {
+        "id": 64,
+        "question": "Qual é a função de um servidor de autenticação?",
+        "choices": ["Aumentar velocidade", "Autenticar usuários", "Reduzir custos", "Eliminar erros"],
+        "correct": 1,
+        "explanation": "Um servidor de autenticação verifica credenciais de usuários e dispositivos.",
+        "wrongExplanations": [
+          "Um servidor de autenticação não aumenta a velocidade.",
+          null,
+          "A redução de custos é um benefício secundário.",
+          "Um servidor de autenticação não pode eliminar todos os erros."
+        ],
+        "topic": "2.7 — Serviços de autenticação"
+      },
+      {
+        "id": 65,
+        "question": "Qual é o propósito de um servidor de arquivos?",
+        "choices": ["Aumentar velocidade", "Armazenar e compartilhar arquivos", "Reduzir custos", "Eliminar erros"],
+        "correct": 1,
+        "explanation": "Um servidor de arquivos armazena e compartilha arquivos com usuários da rede.",
+        "wrongExplanations": [
+          "Um servidor de arquivos não aumenta a velocidade.",
+          null,
+          "A redução de custos é um benefício secundário.",
+          "Um servidor de arquivos não pode eliminar todos os erros."
+        ],
+        "topic": "2.8 — Serviços de arquivo"
+      },
+      {
+        "id": 66,
+        "question": "Qual é a diferença entre roteamento estático e dinâmico?",
+        "choices": ["Velocidade diferente", "Método de atualização", "Tamanho diferente", "Custo apenas"],
+        "correct": 1,
+        "explanation": "O roteamento estático é configurado manualmente, enquanto o roteamento dinâmico atualiza automaticamente.",
+        "wrongExplanations": [
+          "A velocidade não é a diferença principal.",
+          null,
+          "O tamanho não é a diferença principal.",
+          "O custo não é a única diferença."
+        ],
+        "topic": "2.3 — Tipos de roteamento"
+      },
+      {
+        "id": 67,
+        "question": "Qual é o propósito de um servidor de impressão?",
+        "choices": ["Aumentar velocidade", "Gerenciar impressoras", "Reduzir custos", "Eliminar erros"],
+        "correct": 1,
+        "explanation": "Um servidor de impressão gerencia e compartilha impressoras na rede.",
+        "wrongExplanations": [
+          "Um servidor de impressão não aumenta a velocidade.",
+          null,
+          "A redução de custos é um benefício secundário.",
+          "Um servidor de impressão não pode eliminar todos os erros."
+        ],
+        "topic": "2.9 — Serviços de impressão"
+      },
+      {
+        "id": 68,
+        "question": "Qual protocolo é usado para gerenciamento de switches?",
+        "choices": ["HTTP", "SNMP", "FTP", "SMTP"],
+        "correct": 1,
+        "explanation": "SNMP é usado para gerenciar e monitorar switches e outros dispositivos de rede.",
+        "wrongExplanations": [
+          "HTTP é usado para páginas web.",
+          null,
+          "FTP é usado para transferência de arquivos.",
+          "SMTP é usado para envio de emails."
+        ],
+        "topic": "2.10 — Gerenciamento de dispositivos"
+      },
+      {
+        "id": 69,
+        "question": "Qual é a função de um servidor de email?",
+        "choices": ["Aumentar velocidade", "Gerenciar emails", "Reduzir custos", "Eliminar erros"],
+        "correct": 1,
+        "explanation": "Um servidor de email gerencia envio, recebimento e armazenamento de emails.",
+        "wrongExplanations": [
+          "Um servidor de email não aumenta a velocidade.",
+          null,
+          "A redução de custos é um benefício secundário.",
+          "Um servidor de email não pode eliminar todos os erros."
+        ],
+        "topic": "2.11 — Serviços de email"
+      },
+      {
+        "id": 70,
+        "question": "Qual tipo de registro DNS mapeia um domínio para um endereço IP?",
+        "choices": ["CNAME", "MX", "A", "PTR"],
+        "correct": 2,
+        "explanation": "Um registro A (Address) mapeia um nome de domínio para um endereço IPv4.",
+        "wrongExplanations": [
+          "CNAME mapeia alias para outros nomes de domínio.",
+          "Os registros MX especificam servidores de email.",
+          null,
+          "Os registros PTR mapeiam endereços IP para nomes de domínio."
+        ],
+        "topic": "2.4 — Serviços DNS"
+      },
+      {
+        "id": 71,
+        "question": "Qual é o propósito da segurança de porta em um switch?",
+        "choices": ["Criptografar tráfego", "Limitar dispositivos por endereço MAC", "Atribuir VLANs", "Fornecer roteamento"],
+        "correct": 1,
+        "explanation": "A segurança de porta restringe quais dispositivos (por endereço MAC) podem se conectar a portas específicas do switch.",
+        "wrongExplanations": [
+          "A segurança de porta não criptografa tráfego.",
+          null,
+          "A segurança de porta não atribui VLANs.",
+          "A segurança de porta não fornece roteamento."
+        ],
+        "topic": "2.1 — Segurança de switch"
+      },
+      {
+        "id": 72,
+        "question": "Qual protocolo de roteamento é melhor para redes empresariais grandes?",
+        "choices": ["RIP", "OSPF", "Roteamento estático", "Roteamento padrão"],
+        "correct": 1,
+        "explanation": "OSPF é um protocolo de estado de enlace que escala bem e converge rapidamente, ideal para empresas grandes.",
+        "wrongExplanations": [
+          "RIP tem limitações de tamanho e convergência.",
+          null,
+          "O roteamento estático não se adapta a mudanças.",
+          "O roteamento padrão não é adequado para redes grandes."
+        ],
+        "topic": "2.3 — Protocolos de roteamento"
+      },
+      {
+        "id": 73,
+        "question": "Qual é a função de um servidor web?",
+        "choices": ["Aumentar velocidade", "Servir páginas web", "Reduzir custos", "Eliminar erros"],
+        "correct": 1,
+        "explanation": "Um servidor web serve páginas web e conteúdo para clientes.",
+        "wrongExplanations": [
+          "Um servidor web não aumenta a velocidade.",
+          null,
+          "A redução de custos é um benefício secundário.",
+          "Um servidor web não pode eliminar todos os erros."
+        ],
+        "topic": "2.12 — Serviços web"
+      },
+      {
+        "id": 74,
+        "question": "Qual é a diferença entre switch gerenciável e não gerenciável?",
+        "choices": ["Velocidade diferente", "Capacidade de configuração", "Tamanho diferente", "Custo apenas"],
+        "correct": 1,
+        "explanation": "Um switch gerenciável pode ser configurado, enquanto um switch não gerenciável funciona com configurações padrão.",
+        "wrongExplanations": [
+          "A velocidade não é a diferença principal.",
+          null,
+          "O tamanho não é a diferença principal.",
+          "O custo não é a única diferença."
+        ],
+        "topic": "2.13 — Tipos de switch"
+      },
+      {
+        "id": 75,
+        "question": "Qual é o propósito de um servidor de banco de dados?",
+        "choices": ["Aumentar velocidade", "Armazenar e gerenciar dados", "Reduzir custos", "Eliminar erros"],
+        "correct": 1,
+        "explanation": "Um servidor de banco de dados armazena e gerencia dados para aplicações.",
+        "wrongExplanations": [
+          "Um servidor de banco de dados não aumenta a velocidade.",
+          null,
+          "A redução de custos é um benefício secundário.",
+          "Um servidor de banco de dados não pode eliminar todos os erros."
+        ],
+        "topic": "2.14 — Serviços de banco de dados"
+      },
+      {
+        "id": 76,
+        "question": "Qual protocolo é usado para sincronização de tempo?",
+        "choices": ["HTTP", "NTP", "FTP", "SMTP"],
+        "correct": 1,
+        "explanation": "NTP (Protocolo de Tempo de Rede) é usado para sincronizar relógios em dispositivos de rede.",
+        "wrongExplanations": [
+          "HTTP é usado para páginas web.",
+          null,
+          "FTP é usado para transferência de arquivos.",
+          "SMTP é usado para envio de emails."
+        ],
+        "topic": "2.15 — Serviços de tempo"
+      },
+      {
+        "id": 77,
+        "question": "Qual é a função de um servidor de aplicação?",
+        "choices": ["Aumentar velocidade", "Executar aplicações", "Reduzir custos", "Eliminar erros"],
+        "correct": 1,
+        "explanation": "Um servidor de aplicação executa aplicações e fornece serviços para clientes.",
+        "wrongExplanations": [
+          "Um servidor de aplicação não aumenta a velocidade.",
+          null,
+          "A redução de custos é um benefício secundário.",
+          "Um servidor de aplicação não pode eliminar todos os erros."
+        ],
+        "topic": "2.16 — Serviços de aplicação"
+      },
+      {
+        "id": 78,
+        "question": "Qual é a diferença entre switch de camada 2 e camada 3?",
+        "choices": ["Velocidade diferente", "Camada de funcionamento", "Tamanho diferente", "Custo apenas"],
+        "correct": 1,
+        "explanation": "Um switch de camada 2 funciona na camada de enlace de dados, enquanto um switch de camada 3 também pode funcionar na camada de rede.",
+        "wrongExplanations": [
+          "A velocidade não é a diferença principal.",
+          null,
+          "O tamanho não é a diferença principal.",
+          "O custo não é a única diferença."
+        ],
+        "topic": "2.17 — Camadas de switch"
+      },
+      {
+        "id": 79,
+        "question": "Qual é o propósito de um servidor de proxy?",
+        "choices": ["Aumentar velocidade", "Intermediar requisições", "Reduzir custos", "Eliminar erros"],
+        "correct": 1,
+        "explanation": "Um servidor de proxy intermediar requisições entre clientes e servidores.",
+        "wrongExplanations": [
+          "Um servidor de proxy não aumenta a velocidade.",
+          null,
+          "A redução de custos é um benefício secundário.",
+          "Um servidor de proxy não pode eliminar todos os erros."
+        ],
+        "topic": "2.18 — Serviços de proxy"
+      },
+      {
+        "id": 80,
+        "question": "Qual protocolo é usado para descoberta de serviços?",
+        "choices": ["HTTP", "DNS", "mDNS", "FTP"],
+        "correct": 2,
+        "explanation": "mDNS (Multicast DNS) é usado para descoberta de serviços em redes locais.",
+        "wrongExplanations": [
+          "HTTP é usado para páginas web.",
+          "DNS é usado para resolução de nomes.",
+          null,
+          "FTP é usado para transferência de arquivos."
+        ],
+        "topic": "2.19 — Descoberta de serviços"
+      },
+      {
+        "id": 81,
+        "question": "Qual é a função de um servidor de backup?",
+        "choices": ["Aumentar velocidade", "Fazer backup de dados", "Reduzir custos", "Eliminar erros"],
+        "correct": 1,
+        "explanation": "Um servidor de backup faz backup de dados para proteção contra perda.",
+        "wrongExplanations": [
+          "Um servidor de backup não aumenta a velocidade.",
+          null,
+          "A redução de custos é um benefício secundário.",
+          "Um servidor de backup não pode eliminar todos os erros."
+        ],
+        "topic": "2.20 — Serviços de backup"
+      },
+      {
+        "id": 82,
+        "question": "Qual é a diferença entre switch stackável e não stackável?",
+        "choices": ["Velocidade diferente", "Capacidade de empilhamento", "Tamanho diferente", "Custo apenas"],
+        "correct": 1,
+        "explanation": "Um switch stackável pode ser empilhado com outros switches, enquanto um switch não stackável não pode.",
+        "wrongExplanations": [
+          "A velocidade não é a diferença principal.",
+          null,
+          "O tamanho não é a diferença principal.",
+          "O custo não é a única diferença."
+        ],
+        "topic": "2.21 — Empilhamento de switches"
+      },
+      {
+        "id": 83,
+        "question": "Qual é o propósito de um servidor de monitoramento?",
+        "choices": ["Aumentar velocidade", "Monitorar dispositivos", "Reduzir custos", "Eliminar erros"],
+        "correct": 1,
+        "explanation": "Um servidor de monitoramento monitora dispositivos e serviços de rede.",
+        "wrongExplanations": [
+          "Um servidor de monitoramento não aumenta a velocidade.",
+          null,
+          "A redução de custos é um benefício secundário.",
+          "Um servidor de monitoramento não pode eliminar todos os erros."
+        ],
+        "topic": "2.22 — Serviços de monitoramento"
+      },
+      {
+        "id": 84,
+        "question": "Qual protocolo é usado para gerenciamento de configuração?",
+        "choices": ["HTTP", "SNMP", "SSH", "FTP"],
+        "correct": 2,
+        "explanation": "SSH é usado para gerenciamento seguro de configuração de dispositivos.",
+        "wrongExplanations": [
+          "HTTP é usado para páginas web.",
+          "SNMP é usado para monitoramento.",
+          null,
+          "FTP é usado para transferência de arquivos."
+        ],
+        "topic": "2.23 — Gerenciamento de configuração"
+      },
+      {
+        "id": 85,
+        "question": "Qual é a função de um servidor de virtualização?",
+        "choices": ["Aumentar velocidade", "Executar máquinas virtuais", "Reduzir custos", "Eliminar erros"],
+        "correct": 1,
+        "explanation": "Um servidor de virtualização executa máquinas virtuais e gerencia recursos.",
+        "wrongExplanations": [
+          "Um servidor de virtualização não aumenta a velocidade.",
+          null,
+          "A redução de custos é um benefício secundário.",
+          "Um servidor de virtualização não pode eliminar todos os erros."
+        ],
+        "topic": "2.24 — Serviços de virtualização"
+      },
+      {
+        "id": 86,
+        "question": "Qual é a diferença entre switch de borda e switch de núcleo?",
+        "choices": ["Velocidade diferente", "Posição na rede", "Tamanho diferente", "Custo apenas"],
+        "correct": 1,
+        "explanation": "Um switch de borda conecta dispositivos finais, enquanto um switch de núcleo conecta switches de borda.",
+        "wrongExplanations": [
+          "A velocidade não é a diferença principal.",
+          null,
+          "O tamanho não é a diferença principal.",
+          "O custo não é a única diferença."
+        ],
+        "topic": "2.25 — Arquitetura de switches"
+      },
+      {
+        "id": 87,
+        "question": "Qual é o propósito de um servidor de cache?",
+        "choices": ["Aumentar velocidade", "Armazenar dados em cache", "Reduzir custos", "Eliminar erros"],
+        "correct": 1,
+        "explanation": "Um servidor de cache armazena dados frequentemente acessados para melhorar performance.",
+        "wrongExplanations": [
+          "Um servidor de cache não aumenta diretamente a velocidade.",
+          null,
+          "A redução de custos é um benefício secundário.",
+          "Um servidor de cache não pode eliminar todos os erros."
+        ],
+        "topic": "2.26 — Serviços de cache"
+      },
+      {
+        "id": 88,
+        "question": "Qual protocolo é usado para descoberta de topologia?",
+        "choices": ["HTTP", "SNMP", "LLDP", "FTP"],
+        "correct": 2,
+        "explanation": "LLDP (Protocolo de Descoberta de Camada de Enlace) é usado para descobrir topologia de rede.",
+        "wrongExplanations": [
+          "HTTP é usado para páginas web.",
+          "SNMP é usado para gerenciamento.",
+          null,
+          "FTP é usado para transferência de arquivos."
+        ],
+        "topic": "2.27 — Descoberta de topologia"
+      },
+      {
+        "id": 89,
+        "question": "Qual é a função de um servidor de streaming?",
+        "choices": ["Aumentar velocidade", "Transmitir conteúdo de mídia", "Reduzir custos", "Eliminar erros"],
+        "correct": 1,
+        "explanation": "Um servidor de streaming transmite conteúdo de mídia para clientes.",
+        "wrongExplanations": [
+          "Um servidor de streaming não aumenta a velocidade.",
+          null,
+          "A redução de custos é um benefício secundário.",
+          "Um servidor de streaming não pode eliminar todos os erros."
+        ],
+        "topic": "2.28 — Serviços de streaming"
+      },
+      {
+        "id": 90,
+        "question": "Qual registro DNS é usado para pesquisas reversas?",
+        "choices": ["A", "CNAME", "PTR", "MX"],
+        "correct": 2,
+        "explanation": "Os registros PTR (Pointer) mapeiam endereços IP para nomes de domínio para pesquisas DNS reversas.",
+        "wrongExplanations": [
+          "Os registros A mapeiam nomes de domínio para endereços IP.",
+          "Os registros CNAME mapeiam alias para outros nomes de domínio.",
+          null,
+          "Os registros MX especificam servidores de email."
+        ],
+        "topic": "2.4 — Serviços DNS"
       }
     ],
     "3": [
       {
-        "id": 8,
-        "question": "Qual protocolo é usado para entrega de email?",
-        "choices": ["HTTP", "SMTP", "FTP", "Telnet"],
+        "id": 91,
+        "question": "Qual é o propósito da documentação de rede?",
+        "choices": ["Substituir backups", "Rastrear mudanças e auxiliar na solução de problemas", "Aumentar largura de banda", "Eliminar monitoramento"],
         "correct": 1,
-        "explanation": "SMTP (Simple Mail Transfer Protocol) é usado para entrega de email entre servidores de email.",
+        "explanation": "Documentação de rede registra configurações, mudanças e topologias para auxiliar na gestão e solução de problemas.",
         "wrongExplanations": [
-          "HTTP é usado para navegação web.",
+          "Documentação não substitui backups.",
           null,
-          "FTP é usado para transferência de arquivos.",
-          "Telnet é usado para acesso remoto a terminal."
+          "Documentação não aumenta largura de banda.",
+          "Documentação não elimina monitoramento."
         ],
-        "topic": "3.1 — Protocolos de aplicação"
+        "topic": "3.1 — Documentação de rede"
+      },
+      {
+        "id": 92,
+        "question": "Qual tipo de backup só faz backup de dados alterados desde o último backup?",
+        "choices": ["Completo", "Incremental", "Diferencial", "Snapshot"],
+        "correct": 1,
+        "explanation": "Backups incrementais só copiam dados que mudaram desde o último backup de qualquer tipo.",
+        "wrongExplanations": [
+          "Backups completos copiam todos os dados.",
+          null,
+          "Backups diferenciais copiam dados alterados desde o último backup completo.",
+          "Snapshots capturam o estado em um ponto no tempo."
+        ],
+        "topic": "3.2 — Estratégias de backup"
+      },
+      {
+        "id": 93,
+        "question": "O que uma linha de base de desempenho fornece?",
+        "choices": ["Status de segurança atual", "Ponto de referência para comportamento normal de rede", "Cronograma de backup", "Atribuições de endereços IP"],
+        "correct": 1,
+        "explanation": "Uma linha de base de desempenho estabelece métricas de comportamento normal de rede para comparação ao resolver problemas.",
+        "wrongExplanations": [
+          "Linhas de base não fornecem status de segurança.",
+          null,
+          "Linhas de base não fornecem cronogramas de backup.",
+          "Linhas de base não fornecem atribuições de IP."
+        ],
+        "topic": "3.3 — Monitoramento de rede"
+      },
+      {
+        "id": 94,
+        "question": "Qual ferramenta monitora tráfego de rede em tempo real?",
+        "choices": ["Testador de cabo", "Analisador de protocolo", "Gerador de tom", "Multímetro"],
+        "correct": 1,
+        "explanation": "Analisadores de protocolo (como Wireshark) capturam e analisam tráfego de rede em tempo real.",
+        "wrongExplanations": [
+          "Testadores de cabo testam integridade física do cabo.",
+          null,
+          "Geradores de tom rastreiam cabos.",
+          "Multímetros medem propriedades elétricas."
+        ],
+        "topic": "3.4 — Ferramentas de monitoramento"
+      },
+      {
+        "id": 95,
+        "question": "Qual é o propósito do gerenciamento de mudanças?",
+        "choices": ["Eliminar todas as mudanças", "Controlar e documentar mudanças de rede", "Aumentar velocidade de rede", "Substituir firewalls"],
+        "correct": 1,
+        "explanation": "Gerenciamento de mudanças garante que mudanças sejam planejadas, aprovadas, documentadas e possam ser revertidas se necessário.",
+        "wrongExplanations": [
+          "Gerenciamento de mudanças não elimina mudanças.",
+          null,
+          "Gerenciamento de mudanças não aumenta velocidade.",
+          "Gerenciamento de mudanças não substitui firewalls."
+        ],
+        "topic": "3.1 — Gerenciamento de mudanças"
+      },
+      {
+        "id": 96,
+        "question": "Qual é o propósito das estratégias de backup?",
+        "choices": ["Aumentar velocidade", "Proteger contra perda de dados", "Reduzir custos", "Eliminar erros"],
+        "correct": 1,
+        "explanation": "As estratégias de backup protegem contra perda de dados criando cópias de segurança.",
+        "wrongExplanations": [
+          "Os backups não aumentam a velocidade.",
+          null,
+          "Os backups podem aumentar os custos.",
+          "Os backups não podem eliminar todos os erros."
+        ],
+        "topic": "3.2 — Estratégias de backup"
+      },
+      {
+        "id": 97,
+        "question": "Qual é a diferença entre backup completo e incremental?",
+        "choices": ["Velocidade diferente", "Quantidade de dados salvos", "Tamanho diferente", "Custo apenas"],
+        "correct": 1,
+        "explanation": "Um backup completo salva todos os dados, enquanto um backup incremental salva apenas as mudanças.",
+        "wrongExplanations": [
+          "A velocidade não é a diferença principal.",
+          null,
+          "O tamanho não é a diferença principal.",
+          "O custo não é a única diferença."
+        ],
+        "topic": "3.2 — Tipos de backup"
+      },
+      {
+        "id": 98,
+        "question": "Qual é o propósito do monitoramento de rede?",
+        "choices": ["Aumentar velocidade", "Monitorar performance e detectar problemas", "Reduzir custos", "Eliminar erros"],
+        "correct": 1,
+        "explanation": "O monitoramento de rede monitora performance, disponibilidade e detecta problemas potenciais.",
+        "wrongExplanations": [
+          "O monitoramento não aumenta diretamente a velocidade.",
+          null,
+          "A redução de custos é um benefício secundário.",
+          "O monitoramento não pode eliminar todos os erros."
+        ],
+        "topic": "3.3 — Monitoramento de rede"
+      },
+      {
+        "id": 99,
+        "question": "Qual é a função do gerenciamento de mudanças?",
+        "choices": ["Aumentar velocidade", "Controlar e documentar modificações", "Reduzir custos", "Eliminar erros"],
+        "correct": 1,
+        "explanation": "O gerenciamento de mudanças controla e documenta modificações na rede para evitar problemas.",
+        "wrongExplanations": [
+          "O gerenciamento de mudanças não aumenta a velocidade.",
+          null,
+          "A redução de custos é um benefício secundário.",
+          "O gerenciamento de mudanças não pode eliminar todos os erros."
+        ],
+        "topic": "3.4 — Gerenciamento de mudanças"
+      },
+      {
+        "id": 100,
+        "question": "Qual é o propósito do gerenciamento de ativos?",
+        "choices": ["Aumentar velocidade", "Rastrear e gerenciar recursos de rede", "Reduzir custos", "Eliminar erros"],
+        "correct": 1,
+        "explanation": "O gerenciamento de ativos rastreia e gerencia recursos de rede para otimizar uso e manutenção.",
+        "wrongExplanations": [
+          "O gerenciamento de ativos não aumenta a velocidade.",
+          null,
+          "A redução de custos é um benefício secundário.",
+          "O gerenciamento de ativos não pode eliminar todos os erros."
+        ],
+        "topic": "3.5 — Gerenciamento de ativos"
+      },
+      {
+        "id": 101,
+        "question": "Qual é o propósito do planejamento de recuperação de desastres?",
+        "choices": ["Aumentar velocidade", "Garantir continuidade das operações", "Reduzir custos", "Eliminar erros"],
+        "correct": 1,
+        "explanation": "O planejamento de recuperação de desastres garante continuidade das operações em caso de catástrofe.",
+        "wrongExplanations": [
+          "O planejamento não aumenta a velocidade.",
+          null,
+          "A redução de custos é um benefício secundário.",
+          "O planejamento não pode eliminar todos os erros."
+        ],
+        "topic": "3.6 — Planejamento de recuperação"
+      },
+      {
+        "id": 102,
+        "question": "Qual é a função das métricas de performance?",
+        "choices": ["Aumentar velocidade", "Medir e analisar performance", "Reduzir custos", "Eliminar erros"],
+        "correct": 1,
+        "explanation": "As métricas de performance medem e analisam performance da rede para identificar problemas.",
+        "wrongExplanations": [
+          "As métricas não aumentam a velocidade.",
+          null,
+          "A redução de custos é um benefício secundário.",
+          "As métricas não podem eliminar todos os erros."
+        ],
+        "topic": "3.7 — Métricas de performance"
+      },
+      {
+        "id": 103,
+        "question": "Qual é o propósito da documentação de procedimentos?",
+        "choices": ["Aumentar velocidade", "Padronizar processos", "Reduzir custos", "Eliminar erros"],
+        "correct": 1,
+        "explanation": "A documentação de procedimentos padroniza processos para garantir consistência e qualidade.",
+        "wrongExplanations": [
+          "A documentação não aumenta a velocidade.",
+          null,
+          "A redução de custos é um benefício secundário.",
+          "A documentação não pode eliminar todos os erros."
+        ],
+        "topic": "3.1 — Documentação de procedimentos"
+      },
+      {
+        "id": 104,
+        "question": "Qual é a diferença entre monitoramento ativo e passivo?",
+        "choices": ["Velocidade diferente", "Método de coleta de dados", "Tamanho diferente", "Custo apenas"],
+        "correct": 1,
+        "explanation": "O monitoramento ativo envia sondas, enquanto o monitoramento passivo escuta tráfego existente.",
+        "wrongExplanations": [
+          "A velocidade não é a diferença principal.",
+          null,
+          "O tamanho não é a diferença principal.",
+          "O custo não é a única diferença."
+        ],
+        "topic": "3.3 — Tipos de monitoramento"
+      },
+      {
+        "id": 105,
+        "question": "Qual é o propósito das ferramentas de monitoramento SNMP?",
+        "choices": ["Aumentar velocidade", "Monitorar dispositivos de rede", "Reduzir custos", "Eliminar erros"],
+        "correct": 1,
+        "explanation": "SNMP permite monitorar e gerenciar dispositivos de rede coletando informações sobre seu estado.",
+        "wrongExplanations": [
+          "SNMP não aumenta a velocidade.",
+          null,
+          "A redução de custos é um benefício secundário.",
+          "SNMP não pode eliminar todos os erros."
+        ],
+        "topic": "3.4 — Ferramentas SNMP"
+      },
+      {
+        "id": 106,
+        "question": "Qual é a função dos alertas de rede?",
+        "choices": ["Aumentar velocidade", "Notificar sobre problemas", "Reduzir custos", "Eliminar erros"],
+        "correct": 1,
+        "explanation": "Os alertas de rede notificam administradores sobre problemas detectados para resposta rápida.",
+        "wrongExplanations": [
+          "Os alertas não aumentam a velocidade.",
+          null,
+          "A redução de custos é um benefício secundário.",
+          "Os alertas não podem eliminar todos os erros."
+        ],
+        "topic": "3.3 — Sistema de alertas"
+      },
+      {
+        "id": 107,
+        "question": "Qual é o propósito do gerenciamento de capacidade?",
+        "choices": ["Aumentar velocidade", "Planejar necessidades futuras", "Reduzir custos", "Eliminar erros"],
+        "correct": 1,
+        "explanation": "O gerenciamento de capacidade planeja necessidades futuras de recursos para evitar gargalos.",
+        "wrongExplanations": [
+          "O gerenciamento de capacidade não aumenta a velocidade.",
+          null,
+          "A redução de custos é um benefício secundário.",
+          "O gerenciamento de capacidade não pode eliminar todos os erros."
+        ],
+        "topic": "3.7 — Gerenciamento de capacidade"
+      },
+      {
+        "id": 108,
+        "question": "Qual é a diferença entre backup local e remoto?",
+        "choices": ["Velocidade diferente", "Local de armazenamento", "Tamanho diferente", "Custo apenas"],
+        "correct": 1,
+        "explanation": "Os backups locais são armazenados no local, enquanto os backups remotos são armazenados fora do local.",
+        "wrongExplanations": [
+          "A velocidade não é a diferença principal.",
+          null,
+          "O tamanho não é a diferença principal.",
+          "O custo não é a única diferença."
+        ],
+        "topic": "3.2 — Local de backups"
+      },
+      {
+        "id": 109,
+        "question": "Qual é o propósito da documentação de configurações?",
+        "choices": ["Aumentar velocidade", "Registrar parâmetros", "Reduzir custos", "Eliminar erros"],
+        "correct": 1,
+        "explanation": "A documentação de configurações registra parâmetros para facilitar manutenção e solução de problemas.",
+        "wrongExplanations": [
+          "A documentação não aumenta a velocidade.",
+          null,
+          "A redução de custos é um benefício secundário.",
+          "A documentação não pode eliminar todos os erros."
+        ],
+        "topic": "3.1 — Documentação de configurações"
+      },
+      {
+        "id": 110,
+        "question": "Qual é a função dos relatórios de performance?",
+        "choices": ["Aumentar velocidade", "Analisar tendências", "Reduzir custos", "Eliminar erros"],
+        "correct": 1,
+        "explanation": "Os relatórios de performance analisam tendências para identificar problemas e otimizar performance.",
+        "wrongExplanations": [
+          "Os relatórios não aumentam a velocidade.",
+          null,
+          "A redução de custos é um benefício secundário.",
+          "Os relatórios não podem eliminar todos os erros."
+        ],
+        "topic": "3.7 — Relatórios de performance"
+      },
+      {
+        "id": 111,
+        "question": "Qual é o propósito do gerenciamento de versões?",
+        "choices": ["Aumentar velocidade", "Rastrear mudanças de configuração", "Reduzir custos", "Eliminar erros"],
+        "correct": 1,
+        "explanation": "O gerenciamento de versões rastreia mudanças de configuração para facilitar restauração e solução de problemas.",
+        "wrongExplanations": [
+          "O gerenciamento de versões não aumenta a velocidade.",
+          null,
+          "A redução de custos é um benefício secundário.",
+          "O gerenciamento de versões não pode eliminar todos os erros."
+        ],
+        "topic": "3.4 — Gerenciamento de versões"
+      },
+      {
+        "id": 112,
+        "question": "Qual é a diferença entre monitoramento em tempo real e histórico?",
+        "choices": ["Velocidade diferente", "Momento de coleta", "Tamanho diferente", "Custo apenas"],
+        "correct": 1,
+        "explanation": "O monitoramento em tempo real coleta dados imediatamente, enquanto o monitoramento histórico analisa dados passados.",
+        "wrongExplanations": [
+          "A velocidade não é a diferença principal.",
+          null,
+          "O tamanho não é a diferença principal.",
+          "O custo não é a única diferença."
+        ],
+        "topic": "3.3 — Tipos de monitoramento"
+      },
+      {
+        "id": 113,
+        "question": "Qual é o propósito do planejamento de manutenção?",
+        "choices": ["Aumentar velocidade", "Planejar intervenções", "Reduzir custos", "Eliminar erros"],
+        "correct": 1,
+        "explanation": "O planejamento de manutenção planeja intervenções para minimizar interrupções de serviço.",
+        "wrongExplanations": [
+          "O planejamento não aumenta a velocidade.",
+          null,
+          "A redução de custos é um benefício secundário.",
+          "O planejamento não pode eliminar todos os erros."
+        ],
+        "topic": "3.6 — Planejamento de manutenção"
+      },
+      {
+        "id": 114,
+        "question": "Qual é a função dos painéis de monitoramento?",
+        "choices": ["Aumentar velocidade", "Visualizar estado da rede", "Reduzir custos", "Eliminar erros"],
+        "correct": 1,
+        "explanation": "Os painéis de monitoramento visualizam estado da rede para facilitar monitoramento.",
+        "wrongExplanations": [
+          "Os painéis não aumentam a velocidade.",
+          null,
+          "A redução de custos é um benefício secundário.",
+          "Os painéis não podem eliminar todos os erros."
+        ],
+        "topic": "3.3 — Painéis de monitoramento"
+      },
+      {
+        "id": 115,
+        "question": "Qual é o propósito do gerenciamento de SLA?",
+        "choices": ["Aumentar velocidade", "Definir níveis de serviço", "Reduzir custos", "Eliminar erros"],
+        "correct": 1,
+        "explanation": "O gerenciamento de SLA define e monitora níveis de serviço esperados.",
+        "wrongExplanations": [
+          "O gerenciamento de SLA não aumenta a velocidade.",
+          null,
+          "A redução de custos é um benefício secundário.",
+          "O gerenciamento de SLA não pode eliminar todos os erros."
+        ],
+        "topic": "3.7 — Gerenciamento de SLA"
+      },
+      {
+        "id": 116,
+        "question": "Qual é a diferença entre monitoramento proativo e reativo?",
+        "choices": ["Velocidade diferente", "Abordagem de monitoramento", "Tamanho diferente", "Custo apenas"],
+        "correct": 1,
+        "explanation": "O monitoramento proativo previne problemas, enquanto o monitoramento reativo responde a problemas existentes.",
+        "wrongExplanations": [
+          "A velocidade não é a diferença principal.",
+          null,
+          "O tamanho não é a diferença principal.",
+          "O custo não é a única diferença."
+        ],
+        "topic": "3.3 — Abordagens de monitoramento"
+      },
+      {
+        "id": 117,
+        "question": "Qual é o propósito da documentação de incidentes?",
+        "choices": ["Aumentar velocidade", "Registrar problemas", "Reduzir custos", "Eliminar erros"],
+        "correct": 1,
+        "explanation": "A documentação de incidentes registra problemas para facilitar análise e prevenção.",
+        "wrongExplanations": [
+          "A documentação não aumenta a velocidade.",
+          null,
+          "A redução de custos é um benefício secundário.",
+          "A documentação não pode eliminar todos os erros."
+        ],
+        "topic": "3.1 — Documentação de incidentes"
+      },
+      {
+        "id": 118,
+        "question": "Qual é a função das métricas de disponibilidade?",
+        "choices": ["Aumentar velocidade", "Medir tempo de funcionamento", "Reduzir custos", "Eliminar erros"],
+        "correct": 1,
+        "explanation": "As métricas de disponibilidade medem tempo de funcionamento da rede.",
+        "wrongExplanations": [
+          "As métricas não aumentam a velocidade.",
+          null,
+          "A redução de custos é um benefício secundário.",
+          "As métricas não podem eliminar todos os erros."
+        ],
+        "topic": "3.7 — Métricas de disponibilidade"
+      },
+      {
+        "id": 119,
+        "question": "Qual é o propósito do gerenciamento de conhecimento?",
+        "choices": ["Aumentar velocidade", "Compartilhar expertise", "Reduzir custos", "Eliminar erros"],
+        "correct": 1,
+        "explanation": "O gerenciamento de conhecimento compartilha expertise para melhorar resolução de problemas.",
+        "wrongExplanations": [
+          "O gerenciamento de conhecimento não aumenta a velocidade.",
+          null,
+          "A redução de custos é um benefício secundário.",
+          "O gerenciamento de conhecimento não pode eliminar todos os erros."
+        ],
+        "topic": "3.5 — Gerenciamento de conhecimento"
+      },
+      {
+        "id": 120,
+        "question": "Qual é a diferença entre monitoramento contínuo e periódico?",
+        "choices": ["Velocidade diferente", "Frequência de monitoramento", "Tamanho diferente", "Custo apenas"],
+        "correct": 1,
+        "explanation": "O monitoramento contínuo monitora permanentemente, enquanto o monitoramento periódico monitora em intervalos regulares.",
+        "wrongExplanations": [
+          "A velocidade não é a diferença principal.",
+          null,
+          "O tamanho não é a diferença principal.",
+          "O custo não é a única diferença."
+        ],
+        "topic": "3.3 — Frequência de monitoramento"
+      },
+      {
+        "id": 121,
+        "question": "Qual é o propósito do planejamento de capacidade?",
+        "choices": ["Aumentar velocidade", "Prever necessidades futuras", "Reduzir custos", "Eliminar erros"],
+        "correct": 1,
+        "explanation": "O planejamento de capacidade prevê necessidades futuras de recursos para evitar gargalos.",
+        "wrongExplanations": [
+          "O planejamento não aumenta a velocidade.",
+          null,
+          "A redução de custos é um benefício secundário.",
+          "O planejamento não pode eliminar todos os erros."
+        ],
+        "topic": "3.7 — Planejamento de capacidade"
+      },
+      {
+        "id": 122,
+        "question": "Qual é a função dos relatórios de incidente?",
+        "choices": ["Aumentar velocidade", "Documentar problemas", "Reduzir custos", "Eliminar erros"],
+        "correct": 1,
+        "explanation": "Os relatórios de incidente documentam problemas para facilitar análise e melhoria.",
+        "wrongExplanations": [
+          "Os relatórios não aumentam a velocidade.",
+          null,
+          "A redução de custos é um benefício secundário.",
+          "Os relatórios não podem eliminar todos os erros."
+        ],
+        "topic": "3.1 — Relatórios de incidente"
+      },
+      {
+        "id": 123,
+        "question": "Qual é o propósito do gerenciamento de configurações?",
+        "choices": ["Aumentar velocidade", "Controlar mudanças", "Reduzir custos", "Eliminar erros"],
+        "correct": 1,
+        "explanation": "O gerenciamento de configurações controla mudanças para manter estabilidade da rede.",
+        "wrongExplanations": [
+          "O gerenciamento de configurações não aumenta a velocidade.",
+          null,
+          "A redução de custos é um benefício secundário.",
+          "O gerenciamento de configurações não pode eliminar todos os erros."
+        ],
+        "topic": "3.4 — Gerenciamento de configurações"
+      },
+      {
+        "id": 124,
+        "question": "Qual é a diferença entre monitoramento interno e externo?",
+        "choices": ["Velocidade diferente", "Local de monitoramento", "Tamanho diferente", "Custo apenas"],
+        "correct": 1,
+        "explanation": "O monitoramento interno monitora de dentro da rede, enquanto o monitoramento externo monitora de fora.",
+        "wrongExplanations": [
+          "A velocidade não é a diferença principal.",
+          null,
+          "O tamanho não é a diferença principal.",
+          "O custo não é a única diferença."
+        ],
+        "topic": "3.3 — Local de monitoramento"
+      },
+      {
+        "id": 125,
+        "question": "Qual é o propósito da documentação de procedimentos de recuperação?",
+        "choices": ["Aumentar velocidade", "Guiar recuperação", "Reduzir custos", "Eliminar erros"],
+        "correct": 1,
+        "explanation": "A documentação de procedimentos de recuperação guia etapas de recuperação em caso de problema.",
+        "wrongExplanations": [
+          "A documentação não aumenta a velocidade.",
+          null,
+          "A redução de custos é um benefício secundário.",
+          "A documentação não pode eliminar todos os erros."
+        ],
+        "topic": "3.6 — Procedimentos de recuperação"
+      },
+      {
+        "id": 126,
+        "question": "Qual é a função das métricas de performance de rede?",
+        "choices": ["Aumentar velocidade", "Medir performance", "Reduzir custos", "Eliminar erros"],
+        "correct": 1,
+        "explanation": "As métricas de performance de rede medem performance para identificar problemas.",
+        "wrongExplanations": [
+          "As métricas não aumentam a velocidade.",
+          null,
+          "A redução de custos é um benefício secundário.",
+          "As métricas não podem eliminar todos os erros."
+        ],
+        "topic": "3.7 — Métricas de performance de rede"
+      },
+      {
+        "id": 127,
+        "question": "Qual é o propósito do gerenciamento de mudanças de rede?",
+        "choices": ["Aumentar velocidade", "Controlar modificações", "Reduzir custos", "Eliminar erros"],
+        "correct": 1,
+        "explanation": "O gerenciamento de mudanças de rede controla modificações para evitar problemas.",
+        "wrongExplanations": [
+          "O gerenciamento de mudanças não aumenta a velocidade.",
+          null,
+          "A redução de custos é um benefício secundário.",
+          "O gerenciamento de mudanças não pode eliminar todos os erros."
+        ],
+        "topic": "3.4 — Gerenciamento de mudanças de rede"
+      },
+      {
+        "id": 128,
+        "question": "Qual é a diferença entre monitoramento ativo e passivo de performance?",
+        "choices": ["Velocidade diferente", "Método de medição", "Tamanho diferente", "Custo apenas"],
+        "correct": 1,
+        "explanation": "O monitoramento ativo envia tráfego de teste, enquanto o monitoramento passivo analisa tráfego existente.",
+        "wrongExplanations": [
+          "A velocidade não é a diferença principal.",
+          null,
+          "O tamanho não é a diferença principal.",
+          "O custo não é a única diferença."
+        ],
+        "topic": "3.3 — Métodos de monitoramento"
+      },
+      {
+        "id": 129,
+        "question": "Qual é o propósito da documentação de arquiteturas de rede?",
+        "choices": ["Aumentar velocidade", "Documentar estrutura", "Reduzir custos", "Eliminar erros"],
+        "correct": 1,
+        "explanation": "A documentação de arquiteturas de rede documenta estrutura para facilitar manutenção.",
+        "wrongExplanations": [
+          "A documentação não aumenta a velocidade.",
+          null,
+          "A redução de custos é um benefício secundário.",
+          "A documentação não pode eliminar todos os erros."
+        ],
+        "topic": "3.1 — Documentação de arquiteturas"
+      },
+      {
+        "id": 130,
+        "question": "Qual é a função dos relatórios de monitoramento?",
+        "choices": ["Aumentar velocidade", "Resumir dados", "Reduzir custos", "Eliminar erros"],
+        "correct": 1,
+        "explanation": "Os relatórios de monitoramento resumem dados de monitoramento para facilitar análise.",
+        "wrongExplanations": [
+          "Os relatórios não aumentam a velocidade.",
+          null,
+          "A redução de custos é um benefício secundário.",
+          "Os relatórios não podem eliminar todos os erros."
+        ],
+        "topic": "3.7 — Relatórios de monitoramento"
       }
     ],
     "4": [
       {
-        "id": 9,
-        "question": "Qual método de criptografia é usado pelo WPA2?",
-        "choices": ["WEP", "TKIP", "AES", "RC4"],
-        "correct": 2,
-        "explanation": "WPA2 usa AES (Advanced Encryption Standard) para criptografia forte.",
+        "id": 131,
+        "question": "Qual é a função principal de um firewall?",
+        "choices": ["Atribuir endereços IP", "Filtrar tráfego baseado em regras", "Fornecer acesso sem fio", "Armazenar backups"],
+        "correct": 1,
+        "explanation": "Firewalls filtram tráfego de rede baseado em regras de segurança configuradas para bloquear acesso não autorizado.",
         "wrongExplanations": [
-          "WEP é um método de criptografia mais antigo e inseguro.",
-          "TKIP é usado pelo WPA, não pelo WPA2.",
+          "DHCP atribui endereços IP, não firewalls.",
           null,
-          "RC4 é usado pelo WEP e WPA, não pelo WPA2."
+          "Pontos de acesso fornecem acesso sem fio, não firewalls.",
+          "Servidores armazenam backups, não firewalls."
         ],
-        "topic": "4.1 — Segurança sem fio"
+        "topic": "4.1 — Conceitos de firewall"
+      },
+      {
+        "id": 132,
+        "question": "Qual ataque inunda um sistema com tráfego para torná-lo indisponível?",
+        "choices": ["Phishing", "Homem no meio", "DDoS", "Injeção SQL"],
+        "correct": 2,
+        "explanation": "Ataques DDoS (Negação de Serviço Distribuída) sobrecarregam sistemas com tráfego de múltiplas fontes.",
+        "wrongExplanations": [
+          "Phishing usa emails enganosos para roubar credenciais.",
+          "Homem no meio intercepta comunicação.",
+          null,
+          "Injeção SQL explora vulnerabilidades de banco de dados."
+        ],
+        "topic": "4.2 — Ataques de rede"
+      },
+      {
+        "id": 133,
+        "question": "O que significa ACL?",
+        "choices": ["Lista de Controle de Acesso", "Log de Conexão Ativa", "Link de Controle Automatizado", "Comprimento Avançado de Cabo"],
+        "correct": 0,
+        "explanation": "ACLs são conjuntos de regras que permitem ou negam tráfego baseado em vários critérios como endereços IP ou portas.",
+        "wrongExplanations": [
+          null,
+          "Esta não é a expansão correta de ACL.",
+          "Esta não é a expansão correta de ACL.",
+          "Esta não é a expansão correta de ACL."
+        ],
+        "topic": "4.1 — Controle de acesso"
+      },
+      {
+        "id": 134,
+        "question": "Qual princípio de segurança limita acesso do usuário apenas ao necessário?",
+        "choices": ["Defesa em profundidade", "Privilégio mínimo", "Confiança zero", "Negação implícita"],
+        "correct": 1,
+        "explanation": "Privilégio mínimo concede aos usuários apenas os direitos de acesso mínimos necessários para realizar suas funções de trabalho.",
+        "wrongExplanations": [
+          "Defesa em profundidade usa múltiplas camadas de segurança.",
+          null,
+          "Confiança zero assume que não há confiança implícita.",
+          "Negação implícita bloqueia todo tráfego não autorizado."
+        ],
+        "topic": "4.3 — Princípios de segurança"
+      },
+      {
+        "id": 135,
+        "question": "O que um IDS faz?",
+        "choices": ["Bloqueia todo tráfego", "Detecta e alerta sobre atividade suspeita", "Atribui endereços IP", "Fornece acesso sem fio"],
+        "correct": 1,
+        "explanation": "IDS (Sistema de Detecção de Intrusão) monitora tráfego de rede e alerta administradores sobre atividade suspeita.",
+        "wrongExplanations": [
+          "IDS não bloqueia tráfego, apenas detecta.",
+          null,
+          "DHCP atribui endereços IP, não IDS.",
+          "Pontos de acesso fornecem acesso sem fio, não IDS."
+        ],
+        "topic": "4.1 — Dispositivos de segurança"
+      },
+      {
+        "id": 136,
+        "question": "Qual é o propósito de uma lista de controle de acesso (ACL)?",
+        "choices": ["Aumentar velocidade", "Controlar acesso de rede", "Reduzir custos", "Eliminar erros"],
+        "correct": 1,
+        "explanation": "As ACLs controlam acesso de rede definindo quais tráfegos são permitidos ou bloqueados.",
+        "wrongExplanations": [
+          "As ACLs não aumentam a velocidade.",
+          null,
+          "A redução de custos é um benefício secundário.",
+          "As ACLs não podem eliminar todos os erros."
+        ],
+        "topic": "4.2 — Listas de controle de acesso"
+      },
+      {
+        "id": 137,
+        "question": "Qual é a diferença entre firewall de camada 3 e camada 7?",
+        "choices": ["Velocidade diferente", "Camada de funcionamento", "Tamanho diferente", "Custo apenas"],
+        "correct": 1,
+        "explanation": "Um firewall de camada 3 funciona no nível IP, enquanto um firewall de camada 7 funciona no nível de aplicação.",
+        "wrongExplanations": [
+          "A velocidade não é a diferença principal.",
+          null,
+          "O tamanho não é a diferença principal.",
+          "O custo não é a única diferença."
+        ],
+        "topic": "4.1 — Tipos de firewall"
+      },
+      {
+        "id": 138,
+        "question": "Qual é o propósito da detecção de intrusão?",
+        "choices": ["Aumentar velocidade", "Detectar ataques", "Reduzir custos", "Eliminar erros"],
+        "correct": 1,
+        "explanation": "A detecção de intrusão detecta tentativas de ataque e atividades suspeitas.",
+        "wrongExplanations": [
+          "A detecção de intrusão não aumenta a velocidade.",
+          null,
+          "A redução de custos é um benefício secundário.",
+          "A detecção de intrusão não pode eliminar todos os erros."
+        ],
+        "topic": "4.3 — Detecção de intrusão"
+      },
+      {
+        "id": 139,
+        "question": "Qual é a função da prevenção de intrusão?",
+        "choices": ["Aumentar velocidade", "Bloquear ataques", "Reduzir custos", "Eliminar erros"],
+        "correct": 1,
+        "explanation": "A prevenção de intrusão bloqueia ativamente ataques detectados.",
+        "wrongExplanations": [
+          "A prevenção de intrusão não aumenta a velocidade.",
+          null,
+          "A redução de custos é um benefício secundário.",
+          "A prevenção de intrusão não pode eliminar todos os erros."
+        ],
+        "topic": "4.3 — Prevenção de intrusão"
+      },
+      {
+        "id": 140,
+        "question": "Qual é o propósito da autenticação multifator?",
+        "choices": ["Aumentar velocidade", "Reforçar segurança", "Reduzir custos", "Eliminar erros"],
+        "correct": 1,
+        "explanation": "A autenticação multifator reforça segurança exigindo múltiplos fatores de autenticação.",
+        "wrongExplanations": [
+          "A autenticação multifator não aumenta a velocidade.",
+          null,
+          "A autenticação multifator pode aumentar custos.",
+          "A autenticação multifator não pode eliminar todos os erros."
+        ],
+        "topic": "4.4 — Autenticação"
+      },
+      {
+        "id": 141,
+        "question": "Qual é a diferença entre criptografia simétrica e assimétrica?",
+        "choices": ["Velocidade diferente", "Número de chaves", "Tamanho diferente", "Custo apenas"],
+        "correct": 1,
+        "explanation": "A criptografia simétrica usa uma única chave, enquanto a criptografia assimétrica usa um par de chaves.",
+        "wrongExplanations": [
+          "A velocidade não é a diferença principal.",
+          null,
+          "O tamanho não é a diferença principal.",
+          "O custo não é a única diferença."
+        ],
+        "topic": "4.5 — Criptografia"
+      },
+      {
+        "id": 142,
+        "question": "Qual é o propósito de um VPN?",
+        "choices": ["Aumentar velocidade", "Criar conexão segura", "Reduzir custos", "Eliminar erros"],
+        "correct": 1,
+        "explanation": "Um VPN cria uma conexão segura através de uma rede não segura.",
+        "wrongExplanations": [
+          "Um VPN não aumenta a velocidade.",
+          null,
+          "A redução de custos é um benefício secundário.",
+          "Um VPN não pode eliminar todos os erros."
+        ],
+        "topic": "4.6 — VPNs"
+      },
+      {
+        "id": 143,
+        "question": "Qual é a função da segmentação de rede?",
+        "choices": ["Aumentar velocidade", "Isolar segmentos", "Reduzir custos", "Eliminar erros"],
+        "correct": 1,
+        "explanation": "A segmentação de rede isola segmentos para limitar propagação de ataques.",
+        "wrongExplanations": [
+          "A segmentação não aumenta a velocidade.",
+          null,
+          "A redução de custos é um benefício secundário.",
+          "A segmentação não pode eliminar todos os erros."
+        ],
+        "topic": "4.7 — Segmentação de rede"
+      },
+      {
+        "id": 144,
+        "question": "Qual é o propósito do monitoramento de segurança?",
+        "choices": ["Aumentar velocidade", "Monitorar ameaças", "Reduzir custos", "Eliminar erros"],
+        "correct": 1,
+        "explanation": "O monitoramento de segurança monitora ameaças e atividades suspeitas.",
+        "wrongExplanations": [
+          "O monitoramento de segurança não aumenta a velocidade.",
+          null,
+          "A redução de custos é um benefício secundário.",
+          "O monitoramento de segurança não pode eliminar todos os erros."
+        ],
+        "topic": "4.8 — Monitoramento de segurança"
+      },
+      {
+        "id": 145,
+        "question": "Qual é a diferença entre autenticação e autorização?",
+        "choices": ["Velocidade diferente", "Função de segurança", "Tamanho diferente", "Custo apenas"],
+        "correct": 1,
+        "explanation": "A autenticação verifica identidade, enquanto a autorização determina permissões.",
+        "wrongExplanations": [
+          "A velocidade não é a diferença principal.",
+          null,
+          "O tamanho não é a diferença principal.",
+          "O custo não é a única diferença."
+        ],
+        "topic": "4.4 — Autenticação e autorização"
+      },
+      {
+        "id": 146,
+        "question": "Qual é o propósito do gerenciamento de identidades?",
+        "choices": ["Aumentar velocidade", "Gerenciar identidades de usuário", "Reduzir custos", "Eliminar erros"],
+        "correct": 1,
+        "explanation": "O gerenciamento de identidades gerencia identidades de usuário e seus acessos.",
+        "wrongExplanations": [
+          "O gerenciamento de identidades não aumenta a velocidade.",
+          null,
+          "A redução de custos é um benefício secundário.",
+          "O gerenciamento de identidades não pode eliminar todos os erros."
+        ],
+        "topic": "4.4 — Gerenciamento de identidades"
+      },
+      {
+        "id": 147,
+        "question": "Qual é a função da segurança sem fio?",
+        "choices": ["Aumentar velocidade", "Proteger redes sem fio", "Reduzir custos", "Eliminar erros"],
+        "correct": 1,
+        "explanation": "A segurança sem fio protege redes sem fio contra acessos não autorizados.",
+        "wrongExplanations": [
+          "A segurança sem fio não aumenta a velocidade.",
+          null,
+          "A redução de custos é um benefício secundário.",
+          "A segurança sem fio não pode eliminar todos os erros."
+        ],
+        "topic": "4.9 — Segurança sem fio"
+      },
+      {
+        "id": 148,
+        "question": "Qual é o propósito do gerenciamento de vulnerabilidades?",
+        "choices": ["Aumentar velocidade", "Identificar e corrigir vulnerabilidades", "Reduzir custos", "Eliminar erros"],
+        "correct": 1,
+        "explanation": "O gerenciamento de vulnerabilidades identifica e corrige vulnerabilidades de segurança.",
+        "wrongExplanations": [
+          "O gerenciamento de vulnerabilidades não aumenta a velocidade.",
+          null,
+          "A redução de custos é um benefício secundário.",
+          "O gerenciamento de vulnerabilidades não pode eliminar todos os erros."
+        ],
+        "topic": "4.10 — Gerenciamento de vulnerabilidades"
+      },
+      {
+        "id": 149,
+        "question": "Qual é a diferença entre segurança física e lógica?",
+        "choices": ["Velocidade diferente", "Tipo de proteção", "Tamanho diferente", "Custo apenas"],
+        "correct": 1,
+        "explanation": "A segurança física protege equipamentos, enquanto a segurança lógica protege dados.",
+        "wrongExplanations": [
+          "A velocidade não é a diferença principal.",
+          null,
+          "O tamanho não é a diferença principal.",
+          "O custo não é a única diferença."
+        ],
+        "topic": "4.11 — Tipos de segurança"
+      },
+      {
+        "id": 150,
+        "question": "Qual é o propósito do gerenciamento de incidentes de segurança?",
+        "choices": ["Aumentar velocidade", "Responder a incidentes", "Reduzir custos", "Eliminar erros"],
+        "correct": 1,
+        "explanation": "O gerenciamento de incidentes de segurança responde a incidentes de segurança de forma organizada.",
+        "wrongExplanations": [
+          "O gerenciamento de incidentes não aumenta a velocidade.",
+          null,
+          "A redução de custos é um benefício secundário.",
+          "O gerenciamento de incidentes não pode eliminar todos os erros."
+        ],
+        "topic": "4.12 — Gerenciamento de incidentes"
+      },
+      {
+        "id": 151,
+        "question": "Qual é a função da segurança de endpoints?",
+        "choices": ["Aumentar velocidade", "Proteger dispositivos", "Reduzir custos", "Eliminar erros"],
+        "correct": 1,
+        "explanation": "A segurança de endpoints protege dispositivos contra ameaças.",
+        "wrongExplanations": [
+          "A segurança de endpoints não aumenta a velocidade.",
+          null,
+          "A redução de custos é um benefício secundário.",
+          "A segurança de endpoints não pode eliminar todos os erros."
+        ],
+        "topic": "4.13 — Segurança de endpoints"
+      },
+      {
+        "id": 152,
+        "question": "Qual é o propósito da segurança de dados?",
+        "choices": ["Aumentar velocidade", "Proteger dados", "Reduzir custos", "Eliminar erros"],
+        "correct": 1,
+        "explanation": "A segurança de dados protege dados contra acesso não autorizado e perda.",
+        "wrongExplanations": [
+          "A segurança de dados não aumenta a velocidade.",
+          null,
+          "A redução de custos é um benefício secundário.",
+          "A segurança de dados não pode eliminar todos os erros."
+        ],
+        "topic": "4.14 — Segurança de dados"
+      },
+      {
+        "id": 153,
+        "question": "Qual é a diferença entre segurança proativa e reativa?",
+        "choices": ["Velocidade diferente", "Abordagem de segurança", "Tamanho diferente", "Custo apenas"],
+        "correct": 1,
+        "explanation": "A segurança proativa previne ataques, enquanto a segurança reativa responde a ataques.",
+        "wrongExplanations": [
+          "A velocidade não é a diferença principal.",
+          null,
+          "O tamanho não é a diferença principal.",
+          "O custo não é a única diferença."
+        ],
+        "topic": "4.15 — Abordagens de segurança"
+      },
+      {
+        "id": 154,
+        "question": "Qual é o propósito do gerenciamento de riscos?",
+        "choices": ["Aumentar velocidade", "Identificar e gerenciar riscos", "Reduzir custos", "Eliminar erros"],
+        "correct": 1,
+        "explanation": "O gerenciamento de riscos identifica e gerencia riscos de segurança.",
+        "wrongExplanations": [
+          "O gerenciamento de riscos não aumenta a velocidade.",
+          null,
+          "A redução de custos é um benefício secundário.",
+          "O gerenciamento de riscos não pode eliminar todos os erros."
+        ],
+        "topic": "4.16 — Gerenciamento de riscos"
+      },
+      {
+        "id": 155,
+        "question": "Qual é a função da segurança de aplicações?",
+        "choices": ["Aumentar velocidade", "Proteger aplicações", "Reduzir custos", "Eliminar erros"],
+        "correct": 1,
+        "explanation": "A segurança de aplicações protege aplicações contra ataques.",
+        "wrongExplanations": [
+          "A segurança de aplicações não aumenta a velocidade.",
+          null,
+          "A redução de custos é um benefício secundário.",
+          "A segurança de aplicações não pode eliminar todos os erros."
+        ],
+        "topic": "4.17 — Segurança de aplicações"
+      },
+      {
+        "id": 156,
+        "question": "Qual é o propósito da segurança de comunicações?",
+        "choices": ["Aumentar velocidade", "Proteger comunicações", "Reduzir custos", "Eliminar erros"],
+        "correct": 1,
+        "explanation": "A segurança de comunicações protege comunicações contra interceptação.",
+        "wrongExplanations": [
+          "A segurança de comunicações não aumenta a velocidade.",
+          null,
+          "A redução de custos é um benefício secundário.",
+          "A segurança de comunicações não pode eliminar todos os erros."
+        ],
+        "topic": "4.18 — Segurança de comunicações"
+      },
+      {
+        "id": 157,
+        "question": "Qual é a diferença entre segurança de rede e segurança de sistemas?",
+        "choices": ["Velocidade diferente", "Escopo de proteção", "Tamanho diferente", "Custo apenas"],
+        "correct": 1,
+        "explanation": "A segurança de rede protege a rede, enquanto a segurança de sistemas protege sistemas individuais.",
+        "wrongExplanations": [
+          "A velocidade não é a diferença principal.",
+          null,
+          "O tamanho não é a diferença principal.",
+          "O custo não é a única diferença."
+        ],
+        "topic": "4.19 — Tipos de segurança"
+      },
+      {
+        "id": 158,
+        "question": "Qual é o propósito da segurança de infraestrutura?",
+        "choices": ["Aumentar velocidade", "Proteger infraestrutura", "Reduzir custos", "Eliminar erros"],
+        "correct": 1,
+        "explanation": "A segurança de infraestrutura protege infraestrutura de rede contra ataques.",
+        "wrongExplanations": [
+          "A segurança de infraestrutura não aumenta a velocidade.",
+          null,
+          "A redução de custos é um benefício secundário.",
+          "A segurança de infraestrutura não pode eliminar todos os erros."
+        ],
+        "topic": "4.20 — Segurança de infraestrutura"
+      },
+      {
+        "id": 159,
+        "question": "Qual é a função da segurança de serviços?",
+        "choices": ["Aumentar velocidade", "Proteger serviços", "Reduzir custos", "Eliminar erros"],
+        "correct": 1,
+        "explanation": "A segurança de serviços protege serviços de rede contra ataques.",
+        "wrongExplanations": [
+          "A segurança de serviços não aumenta a velocidade.",
+          null,
+          "A redução de custos é um benefício secundário.",
+          "A segurança de serviços não pode eliminar todos os erros."
+        ],
+        "topic": "4.21 — Segurança de serviços"
+      },
+      {
+        "id": 160,
+        "question": "Qual é o propósito da segurança de protocolos?",
+        "choices": ["Aumentar velocidade", "Proteger protocolos", "Reduzir custos", "Eliminar erros"],
+        "correct": 1,
+        "explanation": "A segurança de protocolos protege protocolos de rede contra ataques.",
+        "wrongExplanations": [
+          "A segurança de protocolos não aumenta a velocidade.",
+          null,
+          "A redução de custos é um benefício secundário.",
+          "A segurança de protocolos não pode eliminar todos os erros."
+        ],
+        "topic": "4.22 — Segurança de protocolos"
+      },
+      {
+        "id": 161,
+        "question": "Qual é a diferença entre segurança de dados em trânsito e em repouso?",
+        "choices": ["Velocidade diferente", "Estado dos dados", "Tamanho diferente", "Custo apenas"],
+        "correct": 1,
+        "explanation": "A segurança de dados em trânsito protege dados em movimento, enquanto a segurança de dados em repouso protege dados armazenados.",
+        "wrongExplanations": [
+          "A velocidade não é a diferença principal.",
+          null,
+          "O tamanho não é a diferença principal.",
+          "O custo não é a única diferença."
+        ],
+        "topic": "4.23 — Estados dos dados"
+      },
+      {
+        "id": 162,
+        "question": "Qual é o propósito da segurança de identidades?",
+        "choices": ["Aumentar velocidade", "Proteger identidades", "Reduzir custos", "Eliminar erros"],
+        "correct": 1,
+        "explanation": "A segurança de identidades protege identidades de usuário contra roubo e falsificação.",
+        "wrongExplanations": [
+          "A segurança de identidades não aumenta a velocidade.",
+          null,
+          "A redução de custos é um benefício secundário.",
+          "A segurança de identidades não pode eliminar todos os erros."
+        ],
+        "topic": "4.24 — Segurança de identidades"
+      },
+      {
+        "id": 163,
+        "question": "Qual é a função da segurança de acessos?",
+        "choices": ["Aumentar velocidade", "Controlar acessos", "Reduzir custos", "Eliminar erros"],
+        "correct": 1,
+        "explanation": "A segurança de acessos controla quem pode acessar quais recursos.",
+        "wrongExplanations": [
+          "A segurança de acessos não aumenta a velocidade.",
+          null,
+          "A redução de custos é um benefício secundário.",
+          "A segurança de acessos não pode eliminar todos os erros."
+        ],
+        "topic": "4.25 — Segurança de acessos"
+      },
+      {
+        "id": 164,
+        "question": "Qual é o propósito da segurança de sessões?",
+        "choices": ["Aumentar velocidade", "Proteger sessões", "Reduzir custos", "Eliminar erros"],
+        "correct": 1,
+        "explanation": "A segurança de sessões protege sessões de usuário contra sequestro.",
+        "wrongExplanations": [
+          "A segurança de sessões não aumenta a velocidade.",
+          null,
+          "A redução de custos é um benefício secundário.",
+          "A segurança de sessões não pode eliminar todos os erros."
+        ],
+        "topic": "4.26 — Segurança de sessões"
+      },
+      {
+        "id": 165,
+        "question": "Qual é a diferença entre segurança de dados e segurança de informações?",
+        "choices": ["Velocidade diferente", "Escopo de proteção", "Tamanho diferente", "Custo apenas"],
+        "correct": 1,
+        "explanation": "A segurança de dados protege dados brutos, enquanto a segurança de informações protege informações derivadas.",
+        "wrongExplanations": [
+          "A velocidade não é a diferença principal.",
+          null,
+          "O tamanho não é a diferença principal.",
+          "O custo não é a única diferença."
+        ],
+        "topic": "4.27 — Tipos de segurança"
+      },
+      {
+        "id": 166,
+        "question": "Qual é o propósito da segurança de transações?",
+        "choices": ["Aumentar velocidade", "Proteger transações", "Reduzir custos", "Eliminar erros"],
+        "correct": 1,
+        "explanation": "A segurança de transações protege transações contra fraude e interceptação.",
+        "wrongExplanations": [
+          "A segurança de transações não aumenta a velocidade.",
+          null,
+          "A redução de custos é um benefício secundário.",
+          "A segurança de transações não pode eliminar todos os erros."
+        ],
+        "topic": "4.28 — Segurança de transações"
+      },
+      {
+        "id": 167,
+        "question": "Qual é a função da segurança de APIs?",
+        "choices": ["Aumentar velocidade", "Proteger APIs", "Reduzir custos", "Eliminar erros"],
+        "correct": 1,
+        "explanation": "A segurança de APIs protege APIs contra ataques e abuso.",
+        "wrongExplanations": [
+          "A segurança de APIs não aumenta a velocidade.",
+          null,
+          "A redução de custos é um benefício secundário.",
+          "A segurança de APIs não pode eliminar todos os erros."
+        ],
+        "topic": "4.29 — Segurança de APIs"
+      },
+      {
+        "id": 168,
+        "question": "Qual é o propósito da segurança de microsserviços?",
+        "choices": ["Aumentar velocidade", "Proteger microsserviços", "Reduzir custos", "Eliminar erros"],
+        "correct": 1,
+        "explanation": "A segurança de microsserviços protege microsserviços contra ataques.",
+        "wrongExplanations": [
+          "A segurança de microsserviços não aumenta a velocidade.",
+          null,
+          "A redução de custos é um benefício secundário.",
+          "A segurança de microsserviços não pode eliminar todos os erros."
+        ],
+        "topic": "4.30 — Segurança de microsserviços"
+      },
+      {
+        "id": 169,
+        "question": "Qual é a diferença entre segurança de dados e segurança de metadados?",
+        "choices": ["Velocidade diferente", "Tipo de dados", "Tamanho diferente", "Custo apenas"],
+        "correct": 1,
+        "explanation": "A segurança de dados protege os dados em si, enquanto a segurança de metadados protege informações sobre os dados.",
+        "wrongExplanations": [
+          "A velocidade não é a diferença principal.",
+          null,
+          "O tamanho não é a diferença principal.",
+          "O custo não é a única diferença."
+        ],
+        "topic": "4.31 — Tipos de dados"
+      },
+      {
+        "id": 170,
+        "question": "Qual é o propósito da segurança de dados em movimento?",
+        "choices": ["Aumentar velocidade", "Proteger dados em trânsito", "Reduzir custos", "Eliminar erros"],
+        "correct": 1,
+        "explanation": "A segurança de dados em movimento protege dados durante sua transmissão.",
+        "wrongExplanations": [
+          "A segurança de dados em movimento não aumenta a velocidade.",
+          null,
+          "A redução de custos é um benefício secundário.",
+          "A segurança de dados em movimento não pode eliminar todos os erros."
+        ],
+        "topic": "4.32 — Dados em movimento"
       }
     ],
     "5": [
       {
-        "id": 10,
-        "question": "Qual é o primeiro passo na solução de problemas de rede?",
-        "choices": ["Identificar o problema", "Testar a teoria", "Estabelecer um plano", "Documentar descobertas"],
-        "correct": 0,
-        "explanation": "O primeiro passo é identificar e definir o problema antes de tomar qualquer ação.",
+        "id": 171,
+        "question": "Qual é o PRIMEIRO passo na metodologia de solução de problemas de rede?",
+        "choices": ["Testar a teoria", "Identificar o problema", "Implementar uma solução", "Documentar descobertas"],
+        "correct": 1,
+        "explanation": "Identificar o problema coletando informações é o primeiro passo na metodologia de solução de problemas.",
         "wrongExplanations": [
-          null,
           "Testar a teoria vem depois de estabelecer um plano.",
-          "Estabelecer um plano vem depois de identificar o problema.",
+          null,
+          "Implementar uma solução vem depois de testar.",
           "Documentar descobertas é o passo final."
         ],
         "topic": "5.1 — Metodologia de solução de problemas"
+      },
+      {
+        "id": 172,
+        "question": "Qual comando exibe a rota que pacotes tomam para um destino?",
+        "choices": ["ping", "ipconfig", "tracert", "netstat"],
+        "correct": 2,
+        "explanation": "Tracert (traceroute) mostra cada salto que pacotes tomam para chegar ao seu destino.",
+        "wrongExplanations": [
+          "Ping testa conectividade mas não mostra rotas.",
+          "Ipconfig mostra configuração de rede.",
+          null,
+          "Netstat mostra conexões ativas."
+        ],
+        "topic": "5.2 — Ferramentas de linha de comando"
+      },
+      {
+        "id": 173,
+        "question": "Um usuário reporta sem conectividade à internet. O que você deveria verificar PRIMEIRO?",
+        "choices": ["Substituir o roteador", "Verificar conexões físicas", "Reinstalar o SO", "Atualizar firmware"],
+        "correct": 1,
+        "explanation": "Conectividade física deve ser verificada primeiro pois é o problema mais comum e simples.",
+        "wrongExplanations": [
+          "Substituir hardware deveria ser último recurso.",
+          null,
+          "Reinstalar o SO é extremo para problemas de conectividade.",
+          "Atualizar firmware deveria vir depois de verificações básicas."
+        ],
+        "topic": "5.1 — Metodologia de solução de problemas"
+      },
+      {
+        "id": 174,
+        "question": "Qual ferramenta verifica resolução de nomes DNS?",
+        "choices": ["ping", "nslookup", "netstat", "arp"],
+        "correct": 1,
+        "explanation": "Nslookup consulta servidores DNS para verificar resolução de nomes e resolver problemas DNS.",
+        "wrongExplanations": [
+          "Ping testa conectividade mas não verifica DNS.",
+          null,
+          "Netstat mostra conexões ativas.",
+          "Arp mostra mapeamentos de endereços MAC."
+        ],
+        "topic": "5.2 — Solução de problemas DNS"
+      },
+      {
+        "id": 175,
+        "question": "Um dispositivo recebe um endereço 169.254.x.x. O que isso indica?",
+        "choices": ["Atribuição DHCP normal", "Servidor DHCP é inalcançável", "IP estática configurada", "Falha DNS"],
+        "correct": 1,
+        "explanation": "Endereços APIPA (169.254.x.x) indicam que o dispositivo não conseguiu alcançar um servidor DHCP.",
+        "wrongExplanations": [
+          "169.254.x.x não é uma atribuição DHCP normal.",
+          null,
+          "IPs estáticas são configuradas manualmente.",
+          "Falha DNS não causa endereços APIPA."
+        ],
+        "topic": "5.3 — Problemas de endereçamento IP"
+      },
+      {
+        "id": 176,
+        "question": "Qual é o propósito do comando netstat?",
+        "choices": ["Testar conectividade", "Exibir conexões de rede", "Resolver nomes", "Configurar IP"],
+        "correct": 1,
+        "explanation": "O comando netstat exibe conexões de rede ativas e estatísticas.",
+        "wrongExplanations": [
+          "O netstat não testa conectividade.",
+          null,
+          "O netstat não resolve nomes.",
+          "O netstat não configura IP."
+        ],
+        "topic": "5.4 — Ferramentas de diagnóstico"
+      },
+      {
+        "id": 177,
+        "question": "Qual é a diferença entre ping e traceroute?",
+        "choices": ["Velocidade diferente", "Função de teste", "Tamanho diferente", "Custo apenas"],
+        "correct": 1,
+        "explanation": "O ping testa conectividade, enquanto o traceroute mostra o caminho dos pacotes.",
+        "wrongExplanations": [
+          "A velocidade não é a diferença principal.",
+          null,
+          "O tamanho não é a diferença principal.",
+          "O custo não é a única diferença."
+        ],
+        "topic": "5.5 — Ferramentas de teste"
+      },
+      {
+        "id": 178,
+        "question": "Qual é o propósito do comando arp?",
+        "choices": ["Testar conectividade", "Gerenciar cache ARP", "Resolver nomes", "Configurar IP"],
+        "correct": 1,
+        "explanation": "O comando arp gerencia o cache de resolução de endereços ARP.",
+        "wrongExplanations": [
+          "O arp não testa conectividade.",
+          null,
+          "O arp não resolve nomes.",
+          "O arp não configura IP."
+        ],
+        "topic": "5.6 — Protocolo ARP"
+      },
+      {
+        "id": 179,
+        "question": "Qual é a função do comando ipconfig?",
+        "choices": ["Testar conectividade", "Exibir configuração IP", "Resolver nomes", "Configurar roteamento"],
+        "correct": 1,
+        "explanation": "O comando ipconfig exibe a configuração IP do sistema.",
+        "wrongExplanations": [
+          "O ipconfig não testa conectividade.",
+          null,
+          "O ipconfig não resolve nomes.",
+          "O ipconfig não configura roteamento."
+        ],
+        "topic": "5.7 — Configuração IP"
+      },
+      {
+        "id": 180,
+        "question": "Qual é o propósito do comando route?",
+        "choices": ["Testar conectividade", "Gerenciar tabela de roteamento", "Resolver nomes", "Configurar IP"],
+        "correct": 1,
+        "explanation": "O comando route gerencia a tabela de roteamento do sistema.",
+        "wrongExplanations": [
+          "O route não testa conectividade.",
+          null,
+          "O route não resolve nomes.",
+          "O route não configura IP."
+        ],
+        "topic": "5.8 — Roteamento"
+      },
+      {
+        "id": 181,
+        "question": "Qual é a diferença entre latência e throughput?",
+        "choices": ["Velocidade diferente", "Tipo de medição", "Tamanho diferente", "Custo apenas"],
+        "correct": 1,
+        "explanation": "A latência mede tempo de resposta, enquanto o throughput mede taxa de transferência.",
+        "wrongExplanations": [
+          "A velocidade não é a diferença principal.",
+          null,
+          "O tamanho não é a diferença principal.",
+          "O custo não é a única diferença."
+        ],
+        "topic": "5.9 — Métricas de rede"
+      },
+      {
+        "id": 182,
+        "question": "Qual é o propósito do comando nslookup?",
+        "choices": ["Testar conectividade", "Resolver nomes DNS", "Configurar IP", "Gerenciar roteamento"],
+        "correct": 1,
+        "explanation": "O comando nslookup resolve nomes de domínio para endereços IP.",
+        "wrongExplanations": [
+          "O nslookup não testa conectividade.",
+          null,
+          "O nslookup não configura IP.",
+          "O nslookup não gerencia roteamento."
+        ],
+        "topic": "5.10 — Resolução DNS"
+      },
+      {
+        "id": 183,
+        "question": "Qual é a função do comando dig?",
+        "choices": ["Testar conectividade", "Consultar DNS", "Configurar IP", "Gerenciar roteamento"],
+        "correct": 1,
+        "explanation": "O comando dig consulta servidores DNS para informações de domínio.",
+        "wrongExplanations": [
+          "O dig não testa conectividade.",
+          null,
+          "O dig não configura IP.",
+          "O dig não gerencia roteamento."
+        ],
+        "topic": "5.11 — Consultas DNS"
+      },
+      {
+        "id": 184,
+        "question": "Qual é o propósito do comando telnet?",
+        "choices": ["Testar conectividade", "Conectar a serviços", "Resolver nomes", "Configurar IP"],
+        "correct": 1,
+        "explanation": "O comando telnet conecta a serviços de rede em portas específicas.",
+        "wrongExplanations": [
+          "O telnet não testa conectividade.",
+          null,
+          "O telnet não resolve nomes.",
+          "O telnet não configura IP."
+        ],
+        "topic": "5.12 — Conectividade de serviços"
+      },
+      {
+        "id": 185,
+        "question": "Qual é a diferença entre TCP e UDP?",
+        "choices": ["Velocidade diferente", "Confiabilidade", "Tamanho diferente", "Custo apenas"],
+        "correct": 1,
+        "explanation": "O TCP é confiável com controle de fluxo, enquanto o UDP é não confiável mas mais rápido.",
+        "wrongExplanations": [
+          "A velocidade não é a diferença principal.",
+          null,
+          "O tamanho não é a diferença principal.",
+          "O custo não é a única diferença."
+        ],
+        "topic": "5.13 — Protocolos de transporte"
+      },
+      {
+        "id": 186,
+        "question": "Qual é o propósito do comando nmap?",
+        "choices": ["Testar conectividade", "Escanear portas", "Resolver nomes", "Configurar IP"],
+        "correct": 1,
+        "explanation": "O comando nmap escaneia portas e serviços em hosts de rede.",
+        "wrongExplanations": [
+          "O nmap não testa conectividade.",
+          null,
+          "O nmap não resolve nomes.",
+          "O nmap não configura IP."
+        ],
+        "topic": "5.14 — Escaneamento de rede"
+      },
+      {
+        "id": 187,
+        "question": "Qual é a função do comando tcpdump?",
+        "choices": ["Testar conectividade", "Capturar tráfego", "Resolver nomes", "Configurar IP"],
+        "correct": 1,
+        "explanation": "O comando tcpdump captura e analisa tráfego de rede.",
+        "wrongExplanations": [
+          "O tcpdump não testa conectividade.",
+          null,
+          "O tcpdump não resolve nomes.",
+          "O tcpdump não configura IP."
+        ],
+        "topic": "5.15 — Análise de tráfego"
+      },
+      {
+        "id": 188,
+        "question": "Qual é o propósito do comando wireshark?",
+        "choices": ["Testar conectividade", "Analisar pacotes", "Resolver nomes", "Configurar IP"],
+        "correct": 1,
+        "explanation": "O Wireshark analisa pacotes de rede em tempo real.",
+        "wrongExplanations": [
+          "O Wireshark não testa conectividade.",
+          null,
+          "O Wireshark não resolve nomes.",
+          "O Wireshark não configura IP."
+        ],
+        "topic": "5.16 — Análise de pacotes"
+      },
+      {
+        "id": 189,
+        "question": "Qual é a diferença entre hub e switch?",
+        "choices": ["Velocidade diferente", "Inteligência de rede", "Tamanho diferente", "Custo apenas"],
+        "correct": 1,
+        "explanation": "Um hub repete sinais para todos os portos, enquanto um switch encaminha seletivamente.",
+        "wrongExplanations": [
+          "A velocidade não é a diferença principal.",
+          null,
+          "O tamanho não é a diferença principal.",
+          "O custo não é a única diferença."
+        ],
+        "topic": "5.17 — Dispositivos de rede"
+      },
+      {
+        "id": 190,
+        "question": "Qual é o propósito do comando ifconfig?",
+        "choices": ["Testar conectividade", "Configurar interfaces", "Resolver nomes", "Gerenciar roteamento"],
+        "correct": 1,
+        "explanation": "O comando ifconfig configura interfaces de rede.",
+        "wrongExplanations": [
+          "O ifconfig não testa conectividade.",
+          null,
+          "O ifconfig não resolve nomes.",
+          "O ifconfig não gerencia roteamento."
+        ],
+        "topic": "5.18 — Configuração de interfaces"
+      },
+      {
+        "id": 191,
+        "question": "Qual é a função do comando iptables?",
+        "choices": ["Testar conectividade", "Configurar firewall", "Resolver nomes", "Configurar IP"],
+        "correct": 1,
+        "explanation": "O comando iptables configura regras de firewall no Linux.",
+        "wrongExplanations": [
+          "O iptables não testa conectividade.",
+          null,
+          "O iptables não resolve nomes.",
+          "O iptables não configura IP."
+        ],
+        "topic": "5.19 — Configuração de firewall"
+      },
+      {
+        "id": 192,
+        "question": "Qual é o propósito do comando ss?",
+        "choices": ["Testar conectividade", "Exibir sockets", "Resolver nomes", "Configurar IP"],
+        "correct": 1,
+        "explanation": "O comando ss exibe informações sobre sockets de rede.",
+        "wrongExplanations": [
+          "O ss não testa conectividade.",
+          null,
+          "O ss não resolve nomes.",
+          "O ss não configura IP."
+        ],
+        "topic": "5.20 — Sockets de rede"
+      },
+      {
+        "id": 193,
+        "question": "Qual é a diferença entre IPv4 e IPv6?",
+        "choices": ["Velocidade diferente", "Tamanho do endereço", "Tamanho diferente", "Custo apenas"],
+        "correct": 1,
+        "explanation": "O IPv4 usa endereços de 32 bits, enquanto o IPv6 usa endereços de 128 bits.",
+        "wrongExplanations": [
+          "A velocidade não é a diferença principal.",
+          null,
+          "O tamanho não é a diferença principal.",
+          "O custo não é a única diferença."
+        ],
+        "topic": "5.21 — Versões IP"
+      },
+      {
+        "id": 194,
+        "question": "Qual é o propósito do comando curl?",
+        "choices": ["Testar conectividade", "Transferir dados", "Resolver nomes", "Configurar IP"],
+        "correct": 1,
+        "explanation": "O comando curl transfere dados de/para servidores usando vários protocolos.",
+        "wrongExplanations": [
+          "O curl não testa conectividade.",
+          null,
+          "O curl não resolve nomes.",
+          "O curl não configura IP."
+        ],
+        "topic": "5.22 — Transferência de dados"
+      },
+      {
+        "id": 195,
+        "question": "Qual é a função do comando wget?",
+        "choices": ["Testar conectividade", "Baixar arquivos", "Resolver nomes", "Configurar IP"],
+        "correct": 1,
+        "explanation": "O comando wget baixa arquivos da web.",
+        "wrongExplanations": [
+          "O wget não testa conectividade.",
+          null,
+          "O wget não resolve nomes.",
+          "O wget não configura IP."
+        ],
+        "topic": "5.23 — Download de arquivos"
+      },
+      {
+        "id": 196,
+        "question": "Qual é o propósito do comando ssh?",
+        "choices": ["Testar conectividade", "Conectar remotamente", "Resolver nomes", "Configurar IP"],
+        "correct": 1,
+        "explanation": "O comando ssh conecta remotamente a sistemas de forma segura.",
+        "wrongExplanations": [
+          "O ssh não testa conectividade.",
+          null,
+          "O ssh não resolve nomes.",
+          "O ssh não configura IP."
+        ],
+        "topic": "5.24 — Conexão remota"
+      },
+      {
+        "id": 197,
+        "question": "Qual é a diferença entre NAT e PAT?",
+        "choices": ["Velocidade diferente", "Tipo de tradução", "Tamanho diferente", "Custo apenas"],
+        "correct": 1,
+        "explanation": "O NAT traduz endereços IP, enquanto o PAT traduz endereços e portas.",
+        "wrongExplanations": [
+          "A velocidade não é a diferença principal.",
+          null,
+          "O tamanho não é a diferença principal.",
+          "O custo não é a única diferença."
+        ],
+        "topic": "5.25 — Tradução de endereços"
+      },
+      {
+        "id": 198,
+        "question": "Qual é o propósito do comando scp?",
+        "choices": ["Testar conectividade", "Copiar arquivos", "Resolver nomes", "Configurar IP"],
+        "correct": 1,
+        "explanation": "O comando scp copia arquivos entre sistemas de forma segura.",
+        "wrongExplanations": [
+          "O scp não testa conectividade.",
+          null,
+          "O scp não resolve nomes.",
+          "O scp não configura IP."
+        ],
+        "topic": "5.26 — Cópia segura de arquivos"
+      },
+      {
+        "id": 199,
+        "question": "Qual é a função do comando rsync?",
+        "choices": ["Testar conectividade", "Sincronizar arquivos", "Resolver nomes", "Configurar IP"],
+        "correct": 1,
+        "explanation": "O comando rsync sincroniza arquivos entre sistemas.",
+        "wrongExplanations": [
+          "O rsync não testa conectividade.",
+          null,
+          "O rsync não resolve nomes.",
+          "O rsync não configura IP."
+        ],
+        "topic": "5.27 — Sincronização de arquivos"
+      },
+      {
+        "id": 200,
+        "question": "Qual é o propósito do monitoramento de SLA?",
+        "choices": ["Aumentar velocidade", "Monitorar SLA", "Reduzir custos", "Eliminar erros"],
+        "correct": 1,
+        "explanation": "O monitoramento de SLA monitora o cumprimento dos acordos de nível de serviço.",
+        "wrongExplanations": [
+          "O monitoramento de SLA não aumenta a velocidade.",
+          null,
+          "A redução de custos é um benefício secundário.",
+          "O monitoramento de SLA não pode eliminar todos os erros."
+        ],
+        "topic": "5.28 — Monitoramento de SLA"
       }
     ]
   }

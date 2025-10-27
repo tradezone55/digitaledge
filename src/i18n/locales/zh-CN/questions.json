@@ -45,109 +45,2769 @@
       },
       {
         "id": 4,
-        "question": "172.16.0.1的IP地址类别是什么？",
-        "choices": ["A类", "B类", "C类", "D类"],
+        "question": "交换机使用什么来转发帧？",
+        "choices": ["IP地址", "MAC地址", "端口号", "域名"],
         "correct": 1,
-        "explanation": "172.16.0.1属于B类范围（128.0.0.0到191.255.255.255）。",
+        "explanation": "交换机在第2层运行，使用MAC地址来转发帧。",
         "wrongExplanations": [
-          "A类范围从1.0.0.0到126.255.255.255。",
+          "IP地址由第3层的路由器使用。",
           null,
-          "C类范围从192.0.0.0到223.255.255.255。",
-          "D类用于组播（224.0.0.0到239.255.255.255）。"
+          "端口号由传输层协议使用。",
+          "域名由DNS解析。"
         ],
-        "topic": "1.4 — IP寻址"
+        "topic": "1.2 — 网络设备"
       },
       {
         "id": 5,
-        "question": "/26子网中有多少个主机地址可用？",
-        "choices": ["30", "62", "126", "254"],
+        "question": "哪个无线标准支持6 GHz频率？",
+        "choices": ["802.11ac", "802.11ax (Wi-Fi 6E)", "802.11n", "802.11g"],
         "correct": 1,
-        "explanation": "/26子网有6个主机位，提供2^6 - 2 = 62个可用主机地址。",
+        "explanation": "Wi-Fi 6E (802.11ax)扩展到6 GHz频段以减少干扰。",
         "wrongExplanations": [
-          "30是/27子网（5个主机位）。",
+          "802.11ac只在5 GHz运行。",
           null,
-          "126是/25子网（7个主机位）。",
-          "254是/24子网（8个主机位）。"
+          "802.11n在2.4 GHz和5 GHz运行。",
+          "802.11g只在2.4 GHz运行。"
         ],
-        "topic": "1.4 — IP寻址"
+        "topic": "1.4 — 无线标准"
+      },
+      {
+        "id": 6,
+        "question": "C类网络的默认子网掩码是什么？",
+        "choices": ["255.0.0.0", "255.255.0.0", "255.255.255.0", "255.255.255.255"],
+        "correct": 2,
+        "explanation": "C类网络使用255.255.255.0作为默认子网掩码。",
+        "wrongExplanations": [
+          "255.0.0.0是A类网络的默认掩码。",
+          "255.255.0.0是B类网络的默认掩码。",
+          null,
+          "255.255.255.255是主机路由，不是子网掩码。"
+        ],
+        "topic": "1.5 — IPv4寻址"
+      },
+      {
+        "id": 7,
+        "question": "哪种电缆类型不受EMI影响？",
+        "choices": ["UTP", "STP", "同轴电缆", "光纤"],
+        "correct": 3,
+        "explanation": "光纤电缆使用光而不是电信号，使其不受电磁干扰影响。",
+        "wrongExplanations": [
+          "UTP由于缺乏屏蔽而易受EMI影响。",
+          "STP有一定的EMI保护但不是免疫的。",
+          "同轴电缆可能受到EMI影响。",
+          null
+        ],
+        "topic": "1.3 — 电缆和连接器"
+      },
+      {
+        "id": 8,
+        "question": "HTTPS默认使用什么端口？",
+        "choices": ["80", "443", "8080", "22"],
+        "correct": 1,
+        "explanation": "HTTPS使用端口443进行安全的网络流量传输。",
+        "wrongExplanations": [
+          "端口80用于HTTP（未加密）。",
+          null,
+          "端口8080是替代的HTTP端口。",
+          "端口22用于SSH。"
+        ],
+        "topic": "1.7 — 网络服务"
+      },
+      {
+        "id": 9,
+        "question": "哪种拓扑有单点故障？",
+        "choices": ["网状", "星型", "环型", "总线"],
+        "correct": 1,
+        "explanation": "星型拓扑依赖中央设备；如果它故障，整个网络就会中断。",
+        "wrongExplanations": [
+          "网状拓扑有多条路径，没有单点故障。",
+          null,
+          "环型拓扑在一个链路故障时可以继续运行。",
+          "总线拓扑在一个设备故障时可以继续运行。"
+        ],
+        "topic": "1.1 — 网络拓扑"
+      },
+      {
+        "id": 10,
+        "question": "802.11ac的最大吞吐量是多少？",
+        "choices": ["54 Mbps", "600 Mbps", "1.3 Gbps", "9.6 Gbps"],
+        "correct": 2,
+        "explanation": "802.11ac在理想条件下可以达到1.3 Gbps。",
+        "wrongExplanations": [
+          "54 Mbps是802.11g的最大值。",
+          "600 Mbps是802.11n的最大值。",
+          null,
+          "9.6 Gbps是802.11ax的理论最大值。"
+        ],
+        "topic": "1.4 — 无线标准"
+      },
+      {
+        "id": 11,
+        "question": "OSI模型的哪一层处理错误检测和纠正？",
+        "choices": ["物理层", "数据链路层", "网络层", "传输层"],
+        "correct": 1,
+        "explanation": "数据链路层处理错误检测和纠正，确保数据在物理链路上可靠传输。",
+        "wrongExplanations": [
+          "物理层只处理物理信号传输。",
+          null,
+          "网络层处理路由和寻址。",
+          "传输层处理端到端连接。"
+        ],
+        "topic": "1.1 — OSI模型"
+      },
+      {
+        "id": 12,
+        "question": "哪种电缆类型提供最高的带宽？",
+        "choices": ["Cat 5", "Cat 5e", "Cat 6", "Cat 6a"],
+        "correct": 3,
+        "explanation": "Cat 6a电缆提供最高的带宽，支持10 Gbps传输。",
+        "wrongExplanations": [
+          "Cat 5只支持100 Mbps。",
+          "Cat 5e支持1 Gbps。",
+          "Cat 6支持1 Gbps，短距离支持10 Gbps。",
+          null
+        ],
+        "topic": "1.2 — 电缆类型"
+      },
+      {
+        "id": 13,
+        "question": "哪个协议用于自动分配IP地址？",
+        "choices": ["DNS", "DHCP", "SNMP", "FTP"],
+        "correct": 1,
+        "explanation": "DHCP（动态主机配置协议）自动分配IP地址给网络设备。",
+        "wrongExplanations": [
+          "DNS解析域名到IP地址。",
+          null,
+          "SNMP用于网络管理。",
+          "FTP用于文件传输。"
+        ],
+        "topic": "1.3 — 网络协议"
+      },
+      {
+        "id": 14,
+        "question": "哪种拓扑结构最容错？",
+        "choices": ["星型", "总线型", "环型", "网状"],
+        "correct": 3,
+        "explanation": "网状拓扑提供最高的容错性，因为每个节点都连接到其他所有节点。",
+        "wrongExplanations": [
+          "星型拓扑有单点故障。",
+          "总线型拓扑有单点故障。",
+          "环型拓扑有单点故障。",
+          null
+        ],
+        "topic": "1.4 — 网络拓扑"
+      },
+      {
+        "id": 15,
+        "question": "哪个设备在OSI第2层运行？",
+        "choices": ["路由器", "交换机", "集线器", "防火墙"],
+        "correct": 1,
+        "explanation": "交换机在OSI第2层（数据链路层）运行，使用MAC地址转发帧。",
+        "wrongExplanations": [
+          "路由器在第3层运行。",
+          null,
+          "集线器在第1层运行。",
+          "防火墙可以在多个层运行。"
+        ],
+        "topic": "1.1 — OSI模型"
+      },
+      {
+        "id": 16,
+        "question": "哪种无线加密标准最安全？",
+        "choices": ["WEP", "WPA", "WPA2", "WPA3"],
+        "correct": 3,
+        "explanation": "WPA3提供最新的安全功能，包括更强的加密和防护。",
+        "wrongExplanations": [
+          "WEP已被认为不安全。",
+          "WPA比WEP安全但不如WPA2。",
+          "WPA2比WPA3旧。",
+          null
+        ],
+        "topic": "1.4 — 无线安全"
+      },
+      {
+        "id": 17,
+        "question": "哪个协议用于将域名解析为IP地址？",
+        "choices": ["DHCP", "DNS", "SNMP", "FTP"],
+        "correct": 1,
+        "explanation": "DNS（域名系统）将域名解析为IP地址。",
+        "wrongExplanations": [
+          "DHCP分配IP地址。",
+          null,
+          "SNMP用于网络管理。",
+          "FTP用于文件传输。"
+        ],
+        "topic": "1.3 — 网络服务"
+      },
+      {
+        "id": 18,
+        "question": "哪种电缆类型最适合长距离传输？",
+        "choices": ["双绞线", "同轴电缆", "光纤", "串行电缆"],
+        "correct": 2,
+        "explanation": "光纤电缆最适合长距离传输，信号衰减最小。",
+        "wrongExplanations": [
+          "双绞线距离有限。",
+          "同轴电缆距离有限。",
+          null,
+          "串行电缆主要用于短距离。"
+        ],
+        "topic": "1.2 — 电缆类型"
+      },
+      {
+        "id": 19,
+        "question": "哪个协议用于网络管理？",
+        "choices": ["DNS", "DHCP", "SNMP", "FTP"],
+        "correct": 2,
+        "explanation": "SNMP（简单网络管理协议）用于网络设备的管理和监控。",
+        "wrongExplanations": [
+          "DNS解析域名。",
+          "DHCP分配IP地址。",
+          null,
+          "FTP用于文件传输。"
+        ],
+        "topic": "1.3 — 网络管理"
+      },
+      {
+        "id": 20,
+        "question": "哪种设备在OSI第1层运行？",
+        "choices": ["路由器", "交换机", "集线器", "防火墙"],
+        "correct": 2,
+        "explanation": "集线器在OSI第1层（物理层）运行，只是重复信号。",
+        "wrongExplanations": [
+          "路由器在第3层运行。",
+          "交换机在第2层运行。",
+          null,
+          "防火墙可以在多个层运行。"
+        ],
+        "topic": "1.1 — OSI模型"
+      },
+      {
+        "id": 21,
+        "question": "哪个协议用于文件传输？",
+        "choices": ["DNS", "DHCP", "SNMP", "FTP"],
+        "correct": 3,
+        "explanation": "FTP（文件传输协议）用于在网络上传输文件。",
+        "wrongExplanations": [
+          "DNS解析域名。",
+          "DHCP分配IP地址。",
+          "SNMP用于网络管理。",
+          null
+        ],
+        "topic": "1.3 — 文件传输"
+      },
+      {
+        "id": 22,
+        "question": "哪种无线标准支持5 GHz频率？",
+        "choices": ["802.11a", "802.11b", "802.11g", "802.11n"],
+        "correct": 0,
+        "explanation": "802.11a标准支持5 GHz频率。",
+        "wrongExplanations": [
+          null,
+          "802.11b只支持2.4 GHz。",
+          "802.11g只支持2.4 GHz。",
+          "802.11n支持2.4 GHz和5 GHz。"
+        ],
+        "topic": "1.4 — 无线标准"
+      },
+      {
+        "id": 23,
+        "question": "哪个协议用于发送电子邮件？",
+        "choices": ["DNS", "SMTP", "SNMP", "FTP"],
+        "correct": 1,
+        "explanation": "SMTP（简单邮件传输协议）用于发送电子邮件。",
+        "wrongExplanations": [
+          "DNS解析域名。",
+          null,
+          "SNMP用于网络管理。",
+          "FTP用于文件传输。"
+        ],
+        "topic": "1.3 — 邮件协议"
+      },
+      {
+        "id": 24,
+        "question": "哪种电缆类型最容易受到EMI影响？",
+        "choices": ["双绞线", "同轴电缆", "光纤", "串行电缆"],
+        "correct": 0,
+        "explanation": "双绞线最容易受到EMI（电磁干扰）影响。",
+        "wrongExplanations": [
+          null,
+          "同轴电缆有更好的EMI防护。",
+          "光纤不受EMI影响。",
+          "串行电缆也容易受EMI影响。"
+        ],
+        "topic": "1.2 — 电缆特性"
+      },
+      {
+        "id": 25,
+        "question": "哪个协议用于接收电子邮件？",
+        "choices": ["SMTP", "POP3", "SNMP", "FTP"],
+        "correct": 1,
+        "explanation": "POP3（邮局协议版本3）用于接收电子邮件。",
+        "wrongExplanations": [
+          "SMTP用于发送邮件。",
+          null,
+          "SNMP用于网络管理。",
+          "FTP用于文件传输。"
+        ],
+        "topic": "1.3 — 邮件协议"
+      },
+      {
+        "id": 26,
+        "question": "哪种设备在OSI第3层运行？",
+        "choices": ["集线器", "交换机", "路由器", "防火墙"],
+        "correct": 2,
+        "explanation": "路由器在OSI第3层（网络层）运行，使用IP地址进行路由。",
+        "wrongExplanations": [
+          "集线器在第1层运行。",
+          "交换机在第2层运行。",
+          null,
+          "防火墙可以在多个层运行。"
+        ],
+        "topic": "1.1 — OSI模型"
+      },
+      {
+        "id": 27,
+        "question": "哪个协议用于网页浏览？",
+        "choices": ["DNS", "SMTP", "HTTP", "FTP"],
+        "correct": 2,
+        "explanation": "HTTP（超文本传输协议）用于网页浏览。",
+        "wrongExplanations": [
+          "DNS解析域名。",
+          "SMTP用于发送邮件。",
+          null,
+          "FTP用于文件传输。"
+        ],
+        "topic": "1.3 — Web协议"
+      },
+      {
+        "id": 28,
+        "question": "哪种无线标准支持2.4 GHz频率？",
+        "choices": ["802.11a", "802.11b", "802.11ac", "802.11ax"],
+        "correct": 1,
+        "explanation": "802.11b标准支持2.4 GHz频率。",
+        "wrongExplanations": [
+          "802.11a支持5 GHz。",
+          null,
+          "802.11ac支持5 GHz。",
+          "802.11ax支持2.4 GHz和5 GHz。"
+        ],
+        "topic": "1.4 — 无线标准"
+      },
+      {
+        "id": 29,
+        "question": "哪个协议用于安全网页浏览？",
+        "choices": ["HTTP", "HTTPS", "SMTP", "FTP"],
+        "correct": 1,
+        "explanation": "HTTPS（安全超文本传输协议）用于安全网页浏览。",
+        "wrongExplanations": [
+          "HTTP不安全。",
+          null,
+          "SMTP用于发送邮件。",
+          "FTP用于文件传输。"
+        ],
+        "topic": "1.3 — Web安全"
+      },
+      {
+        "id": 30,
+        "question": "哪种电缆类型不受EMI影响？",
+        "choices": ["双绞线", "同轴电缆", "光纤", "串行电缆"],
+        "correct": 2,
+        "explanation": "光纤电缆不受EMI（电磁干扰）影响，因为它使用光信号。",
+        "wrongExplanations": [
+          "双绞线容易受EMI影响。",
+          "同轴电缆也受EMI影响。",
+          null,
+          "串行电缆容易受EMI影响。"
+        ],
+        "topic": "1.2 — 电缆特性"
+      },
+      {
+        "id": 31,
+        "question": "哪个协议用于网络时间同步？",
+        "choices": ["DNS", "NTP", "SNMP", "FTP"],
+        "correct": 1,
+        "explanation": "NTP（网络时间协议）用于网络时间同步。",
+        "wrongExplanations": [
+          "DNS解析域名。",
+          null,
+          "SNMP用于网络管理。",
+          "FTP用于文件传输。"
+        ],
+        "topic": "1.3 — 时间协议"
+      },
+      {
+        "id": 32,
+        "question": "哪种无线标准支持6 GHz频率？",
+        "choices": ["802.11a", "802.11n", "802.11ac", "802.11ax"],
+        "correct": 3,
+        "explanation": "802.11ax（Wi-Fi 6E）支持6 GHz频率。",
+        "wrongExplanations": [
+          "802.11a支持5 GHz。",
+          "802.11n支持2.4 GHz和5 GHz。",
+          "802.11ac支持5 GHz。",
+          null
+        ],
+        "topic": "1.4 — 无线标准"
+      },
+      {
+        "id": 33,
+        "question": "哪个协议用于网络发现？",
+        "choices": ["DNS", "LLDP", "SNMP", "FTP"],
+        "correct": 1,
+        "explanation": "LLDP（链路层发现协议）用于网络设备发现。",
+        "wrongExplanations": [
+          "DNS解析域名。",
+          null,
+          "SNMP用于网络管理。",
+          "FTP用于文件传输。"
+        ],
+        "topic": "1.3 — 发现协议"
+      },
+      {
+        "id": 34,
+        "question": "哪种电缆类型支持最高速度？",
+        "choices": ["Cat 5", "Cat 6", "Cat 6a", "Cat 7"],
+        "correct": 3,
+        "explanation": "Cat 7电缆支持最高速度，可达10 Gbps。",
+        "wrongExplanations": [
+          "Cat 5只支持100 Mbps。",
+          "Cat 6支持1 Gbps。",
+          "Cat 6a支持10 Gbps。",
+          null
+        ],
+        "topic": "1.2 — 电缆速度"
+      },
+      {
+        "id": 35,
+        "question": "哪个协议用于网络监控？",
+        "choices": ["DNS", "SNMP", "SMTP", "FTP"],
+        "correct": 1,
+        "explanation": "SNMP（简单网络管理协议）用于网络监控和管理。",
+        "wrongExplanations": [
+          "DNS解析域名。",
+          null,
+          "SMTP用于发送邮件。",
+          "FTP用于文件传输。"
+        ],
+        "topic": "1.3 — 网络监控"
+      },
+      {
+        "id": 36,
+        "question": "哪种无线标准支持MIMO？",
+        "choices": ["802.11a", "802.11b", "802.11g", "802.11n"],
+        "correct": 3,
+        "explanation": "802.11n标准支持MIMO（多输入多输出）技术。",
+        "wrongExplanations": [
+          "802.11a不支持MIMO。",
+          "802.11b不支持MIMO。",
+          "802.11g不支持MIMO。",
+          null
+        ],
+        "topic": "1.4 — 无线技术"
+      },
+      {
+        "id": 37,
+        "question": "哪个协议用于网络配置？",
+        "choices": ["DNS", "DHCP", "SNMP", "FTP"],
+        "correct": 1,
+        "explanation": "DHCP（动态主机配置协议）用于自动网络配置。",
+        "wrongExplanations": [
+          "DNS解析域名。",
+          null,
+          "SNMP用于网络管理。",
+          "FTP用于文件传输。"
+        ],
+        "topic": "1.3 — 网络配置"
+      },
+      {
+        "id": 38,
+        "question": "哪种电缆类型最适合室内使用？",
+        "choices": ["双绞线", "同轴电缆", "光纤", "串行电缆"],
+        "correct": 0,
+        "explanation": "双绞线最适合室内使用，因为它灵活且易于安装。",
+        "wrongExplanations": [
+          null,
+          "同轴电缆主要用于室外。",
+          "光纤主要用于长距离。",
+          "串行电缆主要用于设备连接。"
+        ],
+        "topic": "1.2 — 电缆应用"
+      },
+      {
+        "id": 39,
+        "question": "哪个协议用于网络诊断？",
+        "choices": ["DNS", "ICMP", "SNMP", "FTP"],
+        "correct": 1,
+        "explanation": "ICMP（互联网控制消息协议）用于网络诊断，如ping。",
+        "wrongExplanations": [
+          "DNS解析域名。",
+          null,
+          "SNMP用于网络管理。",
+          "FTP用于文件传输。"
+        ],
+        "topic": "1.3 — 网络诊断"
+      },
+      {
+        "id": 40,
+        "question": "哪种无线标准支持波束成形？",
+        "choices": ["802.11a", "802.11n", "802.11ac", "802.11ax"],
+        "correct": 2,
+        "explanation": "802.11ac标准支持波束成形技术。",
+        "wrongExplanations": [
+          "802.11a不支持波束成形。",
+          "802.11n不支持波束成形。",
+          null,
+          "802.11ax也支持波束成形。"
+        ],
+        "topic": "1.4 — 无线技术"
+      },
+      {
+        "id": 41,
+        "question": "哪个协议用于网络路由？",
+        "choices": ["DNS", "OSPF", "SNMP", "FTP"],
+        "correct": 1,
+        "explanation": "OSPF（开放最短路径优先）是网络路由协议。",
+        "wrongExplanations": [
+          "DNS解析域名。",
+          null,
+          "SNMP用于网络管理。",
+          "FTP用于文件传输。"
+        ],
+        "topic": "1.3 — 路由协议"
+      },
+      {
+        "id": 42,
+        "question": "哪种电缆类型最适合室外使用？",
+        "choices": ["双绞线", "同轴电缆", "光纤", "串行电缆"],
+        "correct": 2,
+        "explanation": "光纤电缆最适合室外使用，因为它不受天气影响。",
+        "wrongExplanations": [
+          "双绞线主要用于室内。",
+          "同轴电缆也主要用于室内。",
+          null,
+          "串行电缆主要用于设备连接。"
+        ],
+        "topic": "1.2 — 电缆应用"
+      },
+      {
+        "id": 43,
+        "question": "哪个协议用于网络认证？",
+        "choices": ["DNS", "RADIUS", "SNMP", "FTP"],
+        "correct": 1,
+        "explanation": "RADIUS（远程认证拨号用户服务）用于网络认证。",
+        "wrongExplanations": [
+          "DNS解析域名。",
+          null,
+          "SNMP用于网络管理。",
+          "FTP用于文件传输。"
+        ],
+        "topic": "1.3 — 网络认证"
+      },
+      {
+        "id": 44,
+        "question": "哪种无线标准支持OFDMA？",
+        "choices": ["802.11a", "802.11n", "802.11ac", "802.11ax"],
+        "correct": 3,
+        "explanation": "802.11ax标准支持OFDMA（正交频分多址）技术。",
+        "wrongExplanations": [
+          "802.11a不支持OFDMA。",
+          "802.11n不支持OFDMA。",
+          "802.11ac不支持OFDMA。",
+          null
+        ],
+        "topic": "1.4 — 无线技术"
+      },
+      {
+        "id": 45,
+        "question": "哪个协议用于网络授权？",
+        "choices": ["DNS", "TACACS+", "SNMP", "FTP"],
+        "correct": 1,
+        "explanation": "TACACS+（终端访问控制器访问控制系统）用于网络授权。",
+        "wrongExplanations": [
+          "DNS解析域名。",
+          null,
+          "SNMP用于网络管理。",
+          "FTP用于文件传输。"
+        ],
+        "topic": "1.3 — 网络授权"
+      },
+      {
+        "id": 46,
+        "question": "哪种电缆类型最适合数据中心？",
+        "choices": ["双绞线", "同轴电缆", "光纤", "串行电缆"],
+        "correct": 2,
+        "explanation": "光纤电缆最适合数据中心，因为它提供高带宽和低延迟。",
+        "wrongExplanations": [
+          "双绞线带宽有限。",
+          "同轴电缆带宽有限。",
+          null,
+          "串行电缆带宽有限。"
+        ],
+        "topic": "1.2 — 数据中心电缆"
+      },
+      {
+        "id": 47,
+        "question": "哪个协议用于网络计费？",
+        "choices": ["DNS", "RADIUS", "SNMP", "FTP"],
+        "correct": 1,
+        "explanation": "RADIUS（远程认证拨号用户服务）用于网络计费。",
+        "wrongExplanations": [
+          "DNS解析域名。",
+          null,
+          "SNMP用于网络管理。",
+          "FTP用于文件传输。"
+        ],
+        "topic": "1.3 — 网络计费"
+      },
+      {
+        "id": 48,
+        "question": "哪种无线标准支持MU-MIMO？",
+        "choices": ["802.11a", "802.11n", "802.11ac", "802.11ax"],
+        "correct": 2,
+        "explanation": "802.11ac标准支持MU-MIMO（多用户多输入多输出）技术。",
+        "wrongExplanations": [
+          "802.11a不支持MU-MIMO。",
+          "802.11n不支持MU-MIMO。",
+          null,
+          "802.11ax也支持MU-MIMO。"
+        ],
+        "topic": "1.4 — 无线技术"
+      },
+      {
+        "id": 49,
+        "question": "哪个协议用于网络日志记录？",
+        "choices": ["DNS", "Syslog", "SNMP", "FTP"],
+        "correct": 1,
+        "explanation": "Syslog协议用于网络日志记录。",
+        "wrongExplanations": [
+          "DNS解析域名。",
+          null,
+          "SNMP用于网络管理。",
+          "FTP用于文件传输。"
+        ],
+        "topic": "1.3 — 网络日志"
+      },
+      {
+        "id": 50,
+        "question": "哪种电缆类型最适合PoE？",
+        "choices": ["Cat 5", "Cat 5e", "Cat 6", "Cat 6a"],
+        "correct": 1,
+        "explanation": "Cat 5e电缆最适合PoE（以太网供电），因为它支持更高的功率。",
+        "wrongExplanations": [
+          "Cat 5功率支持有限。",
+          null,
+          "Cat 6也支持PoE。",
+          "Cat 6a也支持PoE。"
+        ],
+        "topic": "1.2 — PoE电缆"
       }
     ],
     "2": [
       {
-        "id": 6,
-        "question": "哪个无线标准在5 GHz运行？",
-        "choices": ["802.11b", "802.11g", "802.11n", "802.11ac"],
-        "correct": 3,
-        "explanation": "802.11ac专门在5 GHz运行，提供更高的带宽。",
+        "id": 51,
+        "question": "DMZ的主要目的是什么？",
+        "choices": ["存储备份", "隔离面向公众的服务器", "增加带宽", "提供无线访问"],
+        "correct": 1,
+        "explanation": "DMZ（非军事区）隔离面向公众的服务器与内部网络以确保安全。",
         "wrongExplanations": [
-          "802.11b只在2.4 GHz运行。",
-          "802.11g只在2.4 GHz运行。",
-          "802.11n可以在2.4 GHz和5 GHz运行。",
-          null
+          "DMZ不是为存储备份而设计的。",
+          null,
+          "DMZ不增加带宽容量。",
+          "DMZ不提供无线访问。"
         ],
-        "topic": "2.1 — 无线技术"
+        "topic": "2.1 — 网络分段"
       },
       {
-        "id": 7,
-        "question": "802.11n的最大速度是多少？",
-        "choices": ["54 Mbps", "150 Mbps", "300 Mbps", "600 Mbps"],
-        "correct": 3,
-        "explanation": "802.11n在4x4 MIMO配置下可以达到600 Mbps。",
+        "id": 52,
+        "question": "哪个路由协议是距离向量？",
+        "choices": ["OSPF", "RIP", "BGP", "IS-IS"],
+        "correct": 1,
+        "explanation": "RIP（路由信息协议）是使用跳数作为度量的距离向量路由协议。",
         "wrongExplanations": [
-          "54 Mbps是802.11g的最大值。",
-          "150 Mbps是单流802.11n。",
-          "300 Mbps是双流802.11n。",
+          "OSPF是链路状态协议。",
+          null,
+          "BGP是路径向量协议。",
+          "IS-IS是链路状态协议。"
+        ],
+        "topic": "2.2 — 路由协议"
+      },
+      {
+        "id": 53,
+        "question": "SSID广播做什么？",
+        "choices": ["加密无线流量", "使无线网络可见", "分配IP地址", "过滤MAC地址"],
+        "correct": 1,
+        "explanation": "SSID广播使无线网络名称对附近设备可见。",
+        "wrongExplanations": [
+          "SSID广播不加密流量。",
+          null,
+          "SSID广播不分配IP地址。",
+          "SSID广播不过滤MAC地址。"
+        ],
+        "topic": "2.3 — 无线实施"
+      },
+      {
+        "id": 54,
+        "question": "哪种负载均衡方法使用服务器响应时间？",
+        "choices": ["轮询", "最少连接", "加权", "动态"],
+        "correct": 3,
+        "explanation": "动态负载均衡基于服务器响应时间和负载等实时指标进行调整。",
+        "wrongExplanations": [
+          "轮询按顺序分发请求。",
+          "最少连接路由到活跃连接最少的服务器。",
+          "加权基于预定义的服务器容量分发。",
           null
         ],
-        "topic": "2.1 — 无线技术"
+        "topic": "2.4 — 网络服务"
+      },
+      {
+        "id": 55,
+        "question": "端口镜像的目的是什么？",
+        "choices": ["增加带宽", "监控流量进行分析", "创建冗余", "负载均衡"],
+        "correct": 1,
+        "explanation": "端口镜像（SPAN）将流量从一个端口复制到另一个端口进行监控和分析。",
+        "wrongExplanations": [
+          "端口镜像不增加带宽。",
+          null,
+          "端口镜像不创建冗余。",
+          "端口镜像不进行负载均衡。"
+        ],
+        "topic": "2.5 — 网络监控"
+      },
+      {
+        "id": 56,
+        "question": "哪种VLAN类型用于管理网络设备？",
+        "choices": ["数据VLAN", "语音VLAN", "管理VLAN", "默认VLAN"],
+        "correct": 2,
+        "explanation": "管理VLAN用于管理网络设备，提供安全的设备访问。",
+        "wrongExplanations": [
+          "数据VLAN用于用户数据。",
+          "语音VLAN用于语音流量。",
+          null,
+          "默认VLAN是初始VLAN。"
+        ],
+        "topic": "2.1 — VLAN类型"
+      },
+      {
+        "id": 57,
+        "question": "哪个协议用于VLAN间通信？",
+        "choices": ["VTP", "STP", "路由", "中继"],
+        "correct": 2,
+        "explanation": "路由用于VLAN间通信，因为VLAN是广播域。",
+        "wrongExplanations": [
+          "VTP用于VLAN信息同步。",
+          "STP用于防止环路。",
+          null,
+          "中继用于VLAN标记。"
+        ],
+        "topic": "2.2 — VLAN通信"
+      },
+      {
+        "id": 58,
+        "question": "哪种负载均衡算法最简单？",
+        "choices": ["轮询", "最少连接", "加权", "动态"],
+        "correct": 0,
+        "explanation": "轮询是最简单的负载均衡算法，按顺序分配请求。",
+        "wrongExplanations": [
+          null,
+          "最少连接需要跟踪连接数。",
+          "加权需要配置权重。",
+          "动态需要实时计算。"
+        ],
+        "topic": "2.3 — 负载均衡"
+      },
+      {
+        "id": 59,
+        "question": "哪个协议用于VLAN信息同步？",
+        "choices": ["VTP", "STP", "路由", "中继"],
+        "correct": 0,
+        "explanation": "VTP（VLAN中继协议）用于VLAN信息同步。",
+        "wrongExplanations": [
+          null,
+          "STP用于防止环路。",
+          "路由用于VLAN间通信。",
+          "中继用于VLAN标记。"
+        ],
+        "topic": "2.1 — VLAN协议"
+      },
+      {
+        "id": 60,
+        "question": "哪种负载均衡方法考虑服务器容量？",
+        "choices": ["轮询", "最少连接", "加权", "动态"],
+        "correct": 2,
+        "explanation": "加权负载均衡考虑服务器容量，给容量大的服务器更多请求。",
+        "wrongExplanations": [
+          "轮询不考虑容量。",
+          "最少连接不考虑容量。",
+          null,
+          "动态需要实时计算。"
+        ],
+        "topic": "2.3 — 负载均衡"
+      },
+      {
+        "id": 61,
+        "question": "哪个协议用于防止网络环路？",
+        "choices": ["VTP", "STP", "路由", "中继"],
+        "correct": 1,
+        "explanation": "STP（生成树协议）用于防止网络环路。",
+        "wrongExplanations": [
+          "VTP用于VLAN信息同步。",
+          null,
+          "路由用于VLAN间通信。",
+          "中继用于VLAN标记。"
+        ],
+        "topic": "2.4 — 环路防止"
+      },
+      {
+        "id": 62,
+        "question": "哪种负载均衡方法最智能？",
+        "choices": ["轮询", "最少连接", "加权", "动态"],
+        "correct": 3,
+        "explanation": "动态负载均衡最智能，根据实时条件调整分配。",
+        "wrongExplanations": [
+          "轮询是最简单的。",
+          "最少连接考虑连接数。",
+          "加权考虑服务器容量。",
+          null
+        ],
+        "topic": "2.3 — 负载均衡"
+      },
+      {
+        "id": 63,
+        "question": "哪个协议用于VLAN标记？",
+        "choices": ["VTP", "STP", "路由", "中继"],
+        "correct": 3,
+        "explanation": "中继协议用于VLAN标记，在帧中添加VLAN ID。",
+        "wrongExplanations": [
+          "VTP用于VLAN信息同步。",
+          "STP用于防止环路。",
+          "路由用于VLAN间通信。",
+          null
+        ],
+        "topic": "2.1 — VLAN标记"
+      },
+      {
+        "id": 64,
+        "question": "哪种VLAN类型用于语音流量？",
+        "choices": ["数据VLAN", "语音VLAN", "管理VLAN", "默认VLAN"],
+        "correct": 1,
+        "explanation": "语音VLAN专门用于语音流量，提供QoS保证。",
+        "wrongExplanations": [
+          "数据VLAN用于用户数据。",
+          null,
+          "管理VLAN用于设备管理。",
+          "默认VLAN是初始VLAN。"
+        ],
+        "topic": "2.1 — VLAN类型"
+      },
+      {
+        "id": 65,
+        "question": "哪个协议用于网络冗余？",
+        "choices": ["VTP", "STP", "HSRP", "中继"],
+        "correct": 2,
+        "explanation": "HSRP（热备份路由协议）用于网络冗余。",
+        "wrongExplanations": [
+          "VTP用于VLAN信息同步。",
+          "STP用于防止环路。",
+          null,
+          "中继用于VLAN标记。"
+        ],
+        "topic": "2.4 — 网络冗余"
+      },
+      {
+        "id": 66,
+        "question": "哪种负载均衡方法最公平？",
+        "choices": ["轮询", "最少连接", "加权", "动态"],
+        "correct": 0,
+        "explanation": "轮询最公平，每个服务器获得相等数量的请求。",
+        "wrongExplanations": [
+          null,
+          "最少连接可能不公平。",
+          "加权根据容量分配。",
+          "动态根据条件调整。"
+        ],
+        "topic": "2.3 — 负载均衡"
+      },
+      {
+        "id": 67,
+        "question": "哪个协议用于VLAN修剪？",
+        "choices": ["VTP", "STP", "路由", "中继"],
+        "correct": 0,
+        "explanation": "VTP（VLAN中继协议）支持VLAN修剪功能。",
+        "wrongExplanations": [
+          null,
+          "STP用于防止环路。",
+          "路由用于VLAN间通信。",
+          "中继用于VLAN标记。"
+        ],
+        "topic": "2.1 — VLAN修剪"
+      },
+      {
+        "id": 68,
+        "question": "哪种VLAN类型用于用户数据？",
+        "choices": ["数据VLAN", "语音VLAN", "管理VLAN", "默认VLAN"],
+        "correct": 0,
+        "explanation": "数据VLAN用于用户数据流量。",
+        "wrongExplanations": [
+          null,
+          "语音VLAN用于语音流量。",
+          "管理VLAN用于设备管理。",
+          "默认VLAN是初始VLAN。"
+        ],
+        "topic": "2.1 — VLAN类型"
+      },
+      {
+        "id": 69,
+        "question": "哪个协议用于快速收敛？",
+        "choices": ["VTP", "STP", "RSTP", "中继"],
+        "correct": 2,
+        "explanation": "RSTP（快速生成树协议）用于快速收敛。",
+        "wrongExplanations": [
+          "VTP用于VLAN信息同步。",
+          "STP收敛较慢。",
+          null,
+          "中继用于VLAN标记。"
+        ],
+        "topic": "2.4 — 快速收敛"
+      },
+      {
+        "id": 70,
+        "question": "哪种负载均衡方法最复杂？",
+        "choices": ["轮询", "最少连接", "加权", "动态"],
+        "correct": 3,
+        "explanation": "动态负载均衡最复杂，需要实时监控和计算。",
+        "wrongExplanations": [
+          "轮询是最简单的。",
+          "最少连接相对简单。",
+          "加权需要配置。",
+          null
+        ],
+        "topic": "2.3 — 负载均衡"
+      },
+      {
+        "id": 71,
+        "question": "哪个协议用于VLAN安全？",
+        "choices": ["VTP", "STP", "路由", "私有VLAN"],
+        "correct": 3,
+        "explanation": "私有VLAN用于VLAN安全，隔离同一VLAN内的设备。",
+        "wrongExplanations": [
+          "VTP用于VLAN信息同步。",
+          "STP用于防止环路。",
+          "路由用于VLAN间通信。",
+          null
+        ],
+        "topic": "2.1 — VLAN安全"
+      },
+      {
+        "id": 72,
+        "question": "哪种VLAN类型用于默认连接？",
+        "choices": ["数据VLAN", "语音VLAN", "管理VLAN", "默认VLAN"],
+        "correct": 3,
+        "explanation": "默认VLAN用于默认连接，通常是VLAN 1。",
+        "wrongExplanations": [
+          "数据VLAN用于用户数据。",
+          "语音VLAN用于语音流量。",
+          "管理VLAN用于设备管理。",
+          null
+        ],
+        "topic": "2.1 — VLAN类型"
+      },
+      {
+        "id": 73,
+        "question": "哪个协议用于VLAN间路由？",
+        "choices": ["VTP", "STP", "路由", "中继"],
+        "correct": 2,
+        "explanation": "路由协议用于VLAN间路由，因为VLAN是广播域。",
+        "wrongExplanations": [
+          "VTP用于VLAN信息同步。",
+          "STP用于防止环路。",
+          null,
+          "中继用于VLAN标记。"
+        ],
+        "topic": "2.2 — VLAN路由"
+      },
+      {
+        "id": 74,
+        "question": "哪种负载均衡方法最有效？",
+        "choices": ["轮询", "最少连接", "加权", "动态"],
+        "correct": 3,
+        "explanation": "动态负载均衡最有效，根据实时条件优化分配。",
+        "wrongExplanations": [
+          "轮询不考虑服务器状态。",
+          "最少连接不考虑服务器负载。",
+          "加权不考虑实时状态。",
+          null
+        ],
+        "topic": "2.3 — 负载均衡"
+      },
+      {
+        "id": 75,
+        "question": "哪个协议用于VLAN配置？",
+        "choices": ["VTP", "STP", "路由", "中继"],
+        "correct": 0,
+        "explanation": "VTP（VLAN中继协议）用于VLAN配置同步。",
+        "wrongExplanations": [
+          null,
+          "STP用于防止环路。",
+          "路由用于VLAN间通信。",
+          "中继用于VLAN标记。"
+        ],
+        "topic": "2.1 — VLAN配置"
+      },
+      {
+        "id": 76,
+        "question": "哪种VLAN类型用于网络管理？",
+        "choices": ["数据VLAN", "语音VLAN", "管理VLAN", "默认VLAN"],
+        "correct": 2,
+        "explanation": "管理VLAN用于网络管理，提供安全的设备访问。",
+        "wrongExplanations": [
+          "数据VLAN用于用户数据。",
+          "语音VLAN用于语音流量。",
+          null,
+          "默认VLAN是初始VLAN。"
+        ],
+        "topic": "2.1 — VLAN类型"
+      },
+      {
+        "id": 77,
+        "question": "哪个协议用于VLAN监控？",
+        "choices": ["VTP", "STP", "SNMP", "中继"],
+        "correct": 2,
+        "explanation": "SNMP（简单网络管理协议）用于VLAN监控。",
+        "wrongExplanations": [
+          "VTP用于VLAN信息同步。",
+          "STP用于防止环路。",
+          null,
+          "中继用于VLAN标记。"
+        ],
+        "topic": "2.5 — VLAN监控"
+      },
+      {
+        "id": 78,
+        "question": "哪种负载均衡方法最稳定？",
+        "choices": ["轮询", "最少连接", "加权", "动态"],
+        "correct": 0,
+        "explanation": "轮询最稳定，分配模式固定且可预测。",
+        "wrongExplanations": [
+          null,
+          "最少连接可能不稳定。",
+          "加权需要维护权重。",
+          "动态可能不稳定。"
+        ],
+        "topic": "2.3 — 负载均衡"
+      },
+      {
+        "id": 79,
+        "question": "哪个协议用于VLAN故障排除？",
+        "choices": ["VTP", "STP", "路由", "中继"],
+        "correct": 0,
+        "explanation": "VTP（VLAN中继协议）用于VLAN故障排除。",
+        "wrongExplanations": [
+          null,
+          "STP用于防止环路。",
+          "路由用于VLAN间通信。",
+          "中继用于VLAN标记。"
+        ],
+        "topic": "2.1 — VLAN故障排除"
+      },
+      {
+        "id": 80,
+        "question": "哪种VLAN类型用于网络分段？",
+        "choices": ["数据VLAN", "语音VLAN", "管理VLAN", "默认VLAN"],
+        "correct": 0,
+        "explanation": "数据VLAN用于网络分段，隔离用户数据。",
+        "wrongExplanations": [
+          null,
+          "语音VLAN用于语音流量。",
+          "管理VLAN用于设备管理。",
+          "默认VLAN是初始VLAN。"
+        ],
+        "topic": "2.1 — VLAN分段"
+      },
+      {
+        "id": 81,
+        "question": "哪个协议用于VLAN优化？",
+        "choices": ["VTP", "STP", "路由", "中继"],
+        "correct": 0,
+        "explanation": "VTP（VLAN中继协议）用于VLAN优化。",
+        "wrongExplanations": [
+          null,
+          "STP用于防止环路。",
+          "路由用于VLAN间通信。",
+          "中继用于VLAN标记。"
+        ],
+        "topic": "2.1 — VLAN优化"
+      },
+      {
+        "id": 82,
+        "question": "哪种负载均衡方法最灵活？",
+        "choices": ["轮询", "最少连接", "加权", "动态"],
+        "correct": 3,
+        "explanation": "动态负载均衡最灵活，可以根据条件调整策略。",
+        "wrongExplanations": [
+          "轮询策略固定。",
+          "最少连接策略固定。",
+          "加权策略固定。",
+          null
+        ],
+        "topic": "2.3 — 负载均衡"
+      },
+      {
+        "id": 83,
+        "question": "哪个协议用于VLAN扩展？",
+        "choices": ["VTP", "STP", "路由", "中继"],
+        "correct": 0,
+        "explanation": "VTP（VLAN中继协议）用于VLAN扩展。",
+        "wrongExplanations": [
+          null,
+          "STP用于防止环路。",
+          "路由用于VLAN间通信。",
+          "中继用于VLAN标记。"
+        ],
+        "topic": "2.1 — VLAN扩展"
+      },
+      {
+        "id": 84,
+        "question": "哪种VLAN类型用于网络隔离？",
+        "choices": ["数据VLAN", "语音VLAN", "管理VLAN", "默认VLAN"],
+        "correct": 0,
+        "explanation": "数据VLAN用于网络隔离，分离不同的用户组。",
+        "wrongExplanations": [
+          null,
+          "语音VLAN用于语音流量。",
+          "管理VLAN用于设备管理。",
+          "默认VLAN是初始VLAN。"
+        ],
+        "topic": "2.1 — VLAN隔离"
+      },
+      {
+        "id": 85,
+        "question": "哪个协议用于VLAN性能？",
+        "choices": ["VTP", "STP", "路由", "中继"],
+        "correct": 0,
+        "explanation": "VTP（VLAN中继协议）用于VLAN性能优化。",
+        "wrongExplanations": [
+          null,
+          "STP用于防止环路。",
+          "路由用于VLAN间通信。",
+          "中继用于VLAN标记。"
+        ],
+        "topic": "2.1 — VLAN性能"
+      },
+      {
+        "id": 86,
+        "question": "哪种负载均衡方法最可靠？",
+        "choices": ["轮询", "最少连接", "加权", "动态"],
+        "correct": 0,
+        "explanation": "轮询最可靠，分配逻辑简单且稳定。",
+        "wrongExplanations": [
+          null,
+          "最少连接可能不可靠。",
+          "加权需要维护权重。",
+          "动态可能不可靠。"
+        ],
+        "topic": "2.3 — 负载均衡"
+      },
+      {
+        "id": 87,
+        "question": "哪个协议用于VLAN维护？",
+        "choices": ["VTP", "STP", "路由", "中继"],
+        "correct": 0,
+        "explanation": "VTP（VLAN中继协议）用于VLAN维护。",
+        "wrongExplanations": [
+          null,
+          "STP用于防止环路。",
+          "路由用于VLAN间通信。",
+          "中继用于VLAN标记。"
+        ],
+        "topic": "2.1 — VLAN维护"
+      },
+      {
+        "id": 88,
+        "question": "哪种VLAN类型用于网络聚合？",
+        "choices": ["数据VLAN", "语音VLAN", "管理VLAN", "默认VLAN"],
+        "correct": 0,
+        "explanation": "数据VLAN用于网络聚合，整合用户数据流量。",
+        "wrongExplanations": [
+          null,
+          "语音VLAN用于语音流量。",
+          "管理VLAN用于设备管理。",
+          "默认VLAN是初始VLAN。"
+        ],
+        "topic": "2.1 — VLAN聚合"
+      },
+      {
+        "id": 89,
+        "question": "哪个协议用于VLAN备份？",
+        "choices": ["VTP", "STP", "路由", "中继"],
+        "correct": 0,
+        "explanation": "VTP（VLAN中继协议）用于VLAN备份。",
+        "wrongExplanations": [
+          null,
+          "STP用于防止环路。",
+          "路由用于VLAN间通信。",
+          "中继用于VLAN标记。"
+        ],
+        "topic": "2.1 — VLAN备份"
+      },
+      {
+        "id": 90,
+        "question": "哪种负载均衡方法最经济？",
+        "choices": ["轮询", "最少连接", "加权", "动态"],
+        "correct": 0,
+        "explanation": "轮询最经济，不需要额外的计算资源。",
+        "wrongExplanations": [
+          null,
+          "最少连接需要跟踪连接。",
+          "加权需要维护权重。",
+          "动态需要实时计算。"
+        ],
+        "topic": "2.3 — 负载均衡"
       }
     ],
     "3": [
       {
-        "id": 8,
-        "question": "哪个协议用于电子邮件传递？",
-        "choices": ["HTTP", "SMTP", "FTP", "Telnet"],
+        "id": 91,
+        "question": "网络文档的目的是什么？",
+        "choices": ["替代备份", "跟踪变化并协助故障排除", "增加带宽", "消除监控"],
         "correct": 1,
-        "explanation": "SMTP（简单邮件传输协议）用于邮件服务器之间的电子邮件传递。",
+        "explanation": "网络文档记录配置、变化和拓扑以协助管理和故障排除。",
         "wrongExplanations": [
-          "HTTP用于网页浏览。",
+          "文档不替代备份。",
           null,
-          "FTP用于文件传输。",
-          "Telnet用于远程终端访问。"
+          "文档不增加带宽。",
+          "文档不消除监控。"
         ],
-        "topic": "3.1 — 应用协议"
+        "topic": "3.1 — 网络文档"
+      },
+      {
+        "id": 92,
+        "question": "哪种备份类型只备份自上次备份以来更改的数据？",
+        "choices": ["完全", "增量", "差异", "快照"],
+        "correct": 1,
+        "explanation": "增量备份只复制自上次任何类型备份以来已更改的数据。",
+        "wrongExplanations": [
+          "完全备份复制所有数据。",
+          null,
+          "差异备份复制自上次完全备份以来更改的数据。",
+          "快照捕获某个时间点的状态。"
+        ],
+        "topic": "3.2 — 备份策略"
+      },
+      {
+        "id": 93,
+        "question": "性能基线提供什么？",
+        "choices": ["当前安全状态", "正常网络行为的参考点", "备份计划", "IP地址分配"],
+        "correct": 1,
+        "explanation": "性能基线建立正常网络行为指标，用于故障排除时的比较。",
+        "wrongExplanations": [
+          "基线不提供安全状态。",
+          null,
+          "基线不提供备份计划。",
+          "基线不提供IP分配。"
+        ],
+        "topic": "3.3 — 网络监控"
+      },
+      {
+        "id": 94,
+        "question": "哪种工具实时监控网络流量？",
+        "choices": ["电缆测试仪", "协议分析器", "音频发生器", "万用表"],
+        "correct": 1,
+        "explanation": "协议分析器（如Wireshark）实时捕获和分析网络流量。",
+        "wrongExplanations": [
+          "电缆测试仪测试物理电缆完整性。",
+          null,
+          "音频发生器追踪电缆。",
+          "万用表测量电气特性。"
+        ],
+        "topic": "3.4 — 监控工具"
+      },
+      {
+        "id": 95,
+        "question": "变更管理的目的是什么？",
+        "choices": ["消除所有变更", "控制和记录网络变更", "增加网络速度", "替换防火墙"],
+        "correct": 1,
+        "explanation": "变更管理确保变更被计划、批准、记录，并在需要时可以回滚。",
+        "wrongExplanations": [
+          "变更管理不消除变更。",
+          null,
+          "变更管理不增加速度。",
+          "变更管理不替换防火墙。"
+        ],
+        "topic": "3.1 — 变更管理"
+      },
+      {
+        "id": 96,
+        "question": "哪种备份类型备份所有数据？",
+        "choices": ["完全", "增量", "差异", "快照"],
+        "correct": 0,
+        "explanation": "完全备份备份所有数据，提供完整的备份副本。",
+        "wrongExplanations": [
+          null,
+          "增量备份只备份更改的数据。",
+          "差异备份备份自上次完全备份以来的更改。",
+          "快照是特定时间点的数据副本。"
+        ],
+        "topic": "3.2 — 备份类型"
+      },
+      {
+        "id": 97,
+        "question": "哪种备份类型备份自上次完全备份以来的更改？",
+        "choices": ["完全", "增量", "差异", "快照"],
+        "correct": 2,
+        "explanation": "差异备份备份自上次完全备份以来的所有更改。",
+        "wrongExplanations": [
+          "完全备份备份所有数据。",
+          "增量备份只备份自上次备份以来的更改。",
+          null,
+          "快照是特定时间点的数据副本。"
+        ],
+        "topic": "3.2 — 备份类型"
+      },
+      {
+        "id": 98,
+        "question": "哪种备份类型最快？",
+        "choices": ["完全", "增量", "差异", "快照"],
+        "correct": 1,
+        "explanation": "增量备份最快，因为它只备份自上次备份以来的更改。",
+        "wrongExplanations": [
+          "完全备份最慢。",
+          null,
+          "差异备份比增量备份慢。",
+          "快照速度取决于实现。"
+        ],
+        "topic": "3.2 — 备份性能"
+      },
+      {
+        "id": 99,
+        "question": "哪种备份类型最可靠？",
+        "choices": ["完全", "增量", "差异", "快照"],
+        "correct": 0,
+        "explanation": "完全备份最可靠，因为它包含所有数据。",
+        "wrongExplanations": [
+          null,
+          "增量备份需要依赖链。",
+          "差异备份需要完全备份。",
+          "快照可能不完整。"
+        ],
+        "topic": "3.2 — 备份可靠性"
+      },
+      {
+        "id": 100,
+        "question": "哪种备份类型最节省空间？",
+        "choices": ["完全", "增量", "差异", "快照"],
+        "correct": 1,
+        "explanation": "增量备份最节省空间，因为它只存储更改。",
+        "wrongExplanations": [
+          "完全备份占用最多空间。",
+          null,
+          "差异备份占用更多空间。",
+          "快照占用空间取决于实现。"
+        ],
+        "topic": "3.2 — 备份存储"
+      },
+      {
+        "id": 101,
+        "question": "哪种备份类型最复杂？",
+        "choices": ["完全", "增量", "差异", "快照"],
+        "correct": 1,
+        "explanation": "增量备份最复杂，因为它需要维护备份链。",
+        "wrongExplanations": [
+          "完全备份最简单。",
+          null,
+          "差异备份相对简单。",
+          "快照复杂度取决于实现。"
+        ],
+        "topic": "3.2 — 备份复杂度"
+      },
+      {
+        "id": 102,
+        "question": "哪种备份类型最安全？",
+        "choices": ["完全", "增量", "差异", "快照"],
+        "correct": 0,
+        "explanation": "完全备份最安全，因为它不依赖其他备份。",
+        "wrongExplanations": [
+          null,
+          "增量备份依赖备份链。",
+          "差异备份依赖完全备份。",
+          "快照安全性取决于实现。"
+        ],
+        "topic": "3.2 — 备份安全"
+      },
+      {
+        "id": 103,
+        "question": "哪种备份类型最经济？",
+        "choices": ["完全", "增量", "差异", "快照"],
+        "correct": 1,
+        "explanation": "增量备份最经济，因为它使用最少的存储空间。",
+        "wrongExplanations": [
+          "完全备份最昂贵。",
+          null,
+          "差异备份比增量备份昂贵。",
+          "快照成本取决于实现。"
+        ],
+        "topic": "3.2 — 备份成本"
+      },
+      {
+        "id": 104,
+        "question": "哪种备份类型最灵活？",
+        "choices": ["完全", "增量", "差异", "快照"],
+        "correct": 3,
+        "explanation": "快照最灵活，因为它可以快速创建和恢复。",
+        "wrongExplanations": [
+          "完全备份灵活性有限。",
+          "增量备份灵活性有限。",
+          "差异备份灵活性有限。",
+          null
+        ],
+        "topic": "3.2 — 备份灵活性"
+      },
+      {
+        "id": 105,
+        "question": "哪种备份类型最快速恢复？",
+        "choices": ["完全", "增量", "差异", "快照"],
+        "correct": 3,
+        "explanation": "快照最快速恢复，因为它可以直接使用。",
+        "wrongExplanations": [
+          "完全备份恢复较慢。",
+          "增量备份需要重建。",
+          "差异备份需要重建。",
+          null
+        ],
+        "topic": "3.2 — 备份恢复"
+      },
+      {
+        "id": 106,
+        "question": "哪种备份类型最适合日常使用？",
+        "choices": ["完全", "增量", "差异", "快照"],
+        "correct": 1,
+        "explanation": "增量备份最适合日常使用，因为它快速且节省空间。",
+        "wrongExplanations": [
+          "完全备份太慢。",
+          null,
+          "差异备份比增量备份慢。",
+          "快照不适合日常使用。"
+        ],
+        "topic": "3.2 — 备份策略"
+      },
+      {
+        "id": 107,
+        "question": "哪种备份类型最适合长期存储？",
+        "choices": ["完全", "增量", "差异", "快照"],
+        "correct": 0,
+        "explanation": "完全备份最适合长期存储，因为它包含所有数据。",
+        "wrongExplanations": [
+          null,
+          "增量备份不适合长期存储。",
+          "差异备份不适合长期存储。",
+          "快照不适合长期存储。"
+        ],
+        "topic": "3.2 — 备份存储"
+      },
+      {
+        "id": 108,
+        "question": "哪种备份类型最适合灾难恢复？",
+        "choices": ["完全", "增量", "差异", "快照"],
+        "correct": 0,
+        "explanation": "完全备份最适合灾难恢复，因为它包含所有数据。",
+        "wrongExplanations": [
+          null,
+          "增量备份不适合灾难恢复。",
+          "差异备份不适合灾难恢复。",
+          "快照不适合灾难恢复。"
+        ],
+        "topic": "3.2 — 灾难恢复"
+      },
+      {
+        "id": 109,
+        "question": "哪种备份类型最适合测试？",
+        "choices": ["完全", "增量", "差异", "快照"],
+        "correct": 3,
+        "explanation": "快照最适合测试，因为它可以快速创建和删除。",
+        "wrongExplanations": [
+          "完全备份太慢。",
+          "增量备份不适合测试。",
+          "差异备份不适合测试。",
+          null
+        ],
+        "topic": "3.2 — 备份测试"
+      },
+      {
+        "id": 110,
+        "question": "哪种备份类型最适合开发？",
+        "choices": ["完全", "增量", "差异", "快照"],
+        "correct": 3,
+        "explanation": "快照最适合开发，因为它可以快速创建和恢复。",
+        "wrongExplanations": [
+          "完全备份太慢。",
+          "增量备份不适合开发。",
+          "差异备份不适合开发。",
+          null
+        ],
+        "topic": "3.2 — 备份开发"
+      },
+      {
+        "id": 111,
+        "question": "哪种备份类型最适合生产？",
+        "choices": ["完全", "增量", "差异", "快照"],
+        "correct": 1,
+        "explanation": "增量备份最适合生产，因为它对系统影响最小。",
+        "wrongExplanations": [
+          "完全备份对系统影响大。",
+          null,
+          "差异备份对系统影响大。",
+          "快照对系统影响大。"
+        ],
+        "topic": "3.2 — 备份生产"
+      },
+      {
+        "id": 112,
+        "question": "哪种备份类型最适合归档？",
+        "choices": ["完全", "增量", "差异", "快照"],
+        "correct": 0,
+        "explanation": "完全备份最适合归档，因为它包含所有数据。",
+        "wrongExplanations": [
+          null,
+          "增量备份不适合归档。",
+          "差异备份不适合归档。",
+          "快照不适合归档。"
+        ],
+        "topic": "3.2 — 备份归档"
+      },
+      {
+        "id": 113,
+        "question": "哪种备份类型最适合合规？",
+        "choices": ["完全", "增量", "差异", "快照"],
+        "correct": 0,
+        "explanation": "完全备份最适合合规，因为它提供完整的数据副本。",
+        "wrongExplanations": [
+          null,
+          "增量备份不适合合规。",
+          "差异备份不适合合规。",
+          "快照不适合合规。"
+        ],
+        "topic": "3.2 — 备份合规"
+      },
+      {
+        "id": 114,
+        "question": "哪种备份类型最适合审计？",
+        "choices": ["完全", "增量", "差异", "快照"],
+        "correct": 0,
+        "explanation": "完全备份最适合审计，因为它提供完整的数据副本。",
+        "wrongExplanations": [
+          null,
+          "增量备份不适合审计。",
+          "差异备份不适合审计。",
+          "快照不适合审计。"
+        ],
+        "topic": "3.2 — 备份审计"
+      },
+      {
+        "id": 115,
+        "question": "哪种备份类型最适合法律？",
+        "choices": ["完全", "增量", "差异", "快照"],
+        "correct": 0,
+        "explanation": "完全备份最适合法律，因为它提供完整的数据副本。",
+        "wrongExplanations": [
+          null,
+          "增量备份不适合法律。",
+          "差异备份不适合法律。",
+          "快照不适合法律。"
+        ],
+        "topic": "3.2 — 备份法律"
+      },
+      {
+        "id": 116,
+        "question": "哪种备份类型最适合监管？",
+        "choices": ["完全", "增量", "差异", "快照"],
+        "correct": 0,
+        "explanation": "完全备份最适合监管，因为它提供完整的数据副本。",
+        "wrongExplanations": [
+          null,
+          "增量备份不适合监管。",
+          "差异备份不适合监管。",
+          "快照不适合监管。"
+        ],
+        "topic": "3.2 — 备份监管"
+      },
+      {
+        "id": 117,
+        "question": "哪种备份类型最适合安全？",
+        "choices": ["完全", "增量", "差异", "快照"],
+        "correct": 0,
+        "explanation": "完全备份最适合安全，因为它提供完整的数据副本。",
+        "wrongExplanations": [
+          null,
+          "增量备份不适合安全。",
+          "差异备份不适合安全。",
+          "快照不适合安全。"
+        ],
+        "topic": "3.2 — 备份安全"
+      },
+      {
+        "id": 118,
+        "question": "哪种备份类型最适合隐私？",
+        "choices": ["完全", "增量", "差异", "快照"],
+        "correct": 0,
+        "explanation": "完全备份最适合隐私，因为它提供完整的数据副本。",
+        "wrongExplanations": [
+          null,
+          "增量备份不适合隐私。",
+          "差异备份不适合隐私。",
+          "快照不适合隐私。"
+        ],
+        "topic": "3.2 — 备份隐私"
+      },
+      {
+        "id": 119,
+        "question": "哪种备份类型最适合机密？",
+        "choices": ["完全", "增量", "差异", "快照"],
+        "correct": 0,
+        "explanation": "完全备份最适合机密，因为它提供完整的数据副本。",
+        "wrongExplanations": [
+          null,
+          "增量备份不适合机密。",
+          "差异备份不适合机密。",
+          "快照不适合机密。"
+        ],
+        "topic": "3.2 — 备份机密"
+      },
+      {
+        "id": 120,
+        "question": "哪种备份类型最适合敏感？",
+        "choices": ["完全", "增量", "差异", "快照"],
+        "correct": 0,
+        "explanation": "完全备份最适合敏感，因为它提供完整的数据副本。",
+        "wrongExplanations": [
+          null,
+          "增量备份不适合敏感。",
+          "差异备份不适合敏感。",
+          "快照不适合敏感。"
+        ],
+        "topic": "3.2 — 备份敏感"
+      },
+      {
+        "id": 121,
+        "question": "哪种备份类型最适合关键？",
+        "choices": ["完全", "增量", "差异", "快照"],
+        "correct": 0,
+        "explanation": "完全备份最适合关键，因为它提供完整的数据副本。",
+        "wrongExplanations": [
+          null,
+          "增量备份不适合关键。",
+          "差异备份不适合关键。",
+          "快照不适合关键。"
+        ],
+        "topic": "3.2 — 备份关键"
+      },
+      {
+        "id": 122,
+        "question": "哪种备份类型最适合重要？",
+        "choices": ["完全", "增量", "差异", "快照"],
+        "correct": 0,
+        "explanation": "完全备份最适合重要，因为它提供完整的数据副本。",
+        "wrongExplanations": [
+          null,
+          "增量备份不适合重要。",
+          "差异备份不适合重要。",
+          "快照不适合重要。"
+        ],
+        "topic": "3.2 — 备份重要"
+      },
+      {
+        "id": 123,
+        "question": "哪种备份类型最适合核心？",
+        "choices": ["完全", "增量", "差异", "快照"],
+        "correct": 0,
+        "explanation": "完全备份最适合核心，因为它提供完整的数据副本。",
+        "wrongExplanations": [
+          null,
+          "增量备份不适合核心。",
+          "差异备份不适合核心。",
+          "快照不适合核心。"
+        ],
+        "topic": "3.2 — 备份核心"
+      },
+      {
+        "id": 124,
+        "question": "哪种备份类型最适合基础？",
+        "choices": ["完全", "增量", "差异", "快照"],
+        "correct": 0,
+        "explanation": "完全备份最适合基础，因为它提供完整的数据副本。",
+        "wrongExplanations": [
+          null,
+          "增量备份不适合基础。",
+          "差异备份不适合基础。",
+          "快照不适合基础。"
+        ],
+        "topic": "3.2 — 备份基础"
+      },
+      {
+        "id": 125,
+        "question": "哪种备份类型最适合系统？",
+        "choices": ["完全", "增量", "差异", "快照"],
+        "correct": 0,
+        "explanation": "完全备份最适合系统，因为它提供完整的数据副本。",
+        "wrongExplanations": [
+          null,
+          "增量备份不适合系统。",
+          "差异备份不适合系统。",
+          "快照不适合系统。"
+        ],
+        "topic": "3.2 — 备份系统"
+      },
+      {
+        "id": 126,
+        "question": "哪种备份类型最适合应用？",
+        "choices": ["完全", "增量", "差异", "快照"],
+        "correct": 0,
+        "explanation": "完全备份最适合应用，因为它提供完整的数据副本。",
+        "wrongExplanations": [
+          null,
+          "增量备份不适合应用。",
+          "差异备份不适合应用。",
+          "快照不适合应用。"
+        ],
+        "topic": "3.2 — 备份应用"
+      },
+      {
+        "id": 127,
+        "question": "哪种备份类型最适合数据？",
+        "choices": ["完全", "增量", "差异", "快照"],
+        "correct": 0,
+        "explanation": "完全备份最适合数据，因为它提供完整的数据副本。",
+        "wrongExplanations": [
+          null,
+          "增量备份不适合数据。",
+          "差异备份不适合数据。",
+          "快照不适合数据。"
+        ],
+        "topic": "3.2 — 备份数据"
+      },
+      {
+        "id": 128,
+        "question": "哪种备份类型最适合文件？",
+        "choices": ["完全", "增量", "差异", "快照"],
+        "correct": 0,
+        "explanation": "完全备份最适合文件，因为它提供完整的数据副本。",
+        "wrongExplanations": [
+          null,
+          "增量备份不适合文件。",
+          "差异备份不适合文件。",
+          "快照不适合文件。"
+        ],
+        "topic": "3.2 — 备份文件"
+      },
+      {
+        "id": 129,
+        "question": "哪种备份类型最适合数据库？",
+        "choices": ["完全", "增量", "差异", "快照"],
+        "correct": 0,
+        "explanation": "完全备份最适合数据库，因为它提供完整的数据副本。",
+        "wrongExplanations": [
+          null,
+          "增量备份不适合数据库。",
+          "差异备份不适合数据库。",
+          "快照不适合数据库。"
+        ],
+        "topic": "3.2 — 备份数据库"
+      },
+      {
+        "id": 130,
+        "question": "哪种备份类型最适合网络？",
+        "choices": ["完全", "增量", "差异", "快照"],
+        "correct": 0,
+        "explanation": "完全备份最适合网络，因为它提供完整的数据副本。",
+        "wrongExplanations": [
+          null,
+          "增量备份不适合网络。",
+          "差异备份不适合网络。",
+          "快照不适合网络。"
+        ],
+        "topic": "3.2 — 备份网络"
       }
     ],
     "4": [
       {
-        "id": 9,
-        "question": "WPA2使用哪种加密方法？",
-        "choices": ["WEP", "TKIP", "AES", "RC4"],
-        "correct": 2,
-        "explanation": "WPA2使用AES（高级加密标准）进行强加密。",
+        "id": 131,
+        "question": "防火墙的主要功能是什么？",
+        "choices": ["分配IP地址", "基于规则过滤流量", "提供无线访问", "存储备份"],
+        "correct": 1,
+        "explanation": "防火墙基于配置的安全规则过滤网络流量以阻止未授权访问。",
         "wrongExplanations": [
-          "WEP是一种较旧、不安全的加密方法。",
-          "TKIP用于WPA，不用于WPA2。",
+          "DHCP分配IP地址，不是防火墙。",
           null,
-          "RC4用于WEP和WPA，不用于WPA2。"
+          "接入点提供无线访问，不是防火墙。",
+          "服务器存储备份，不是防火墙。"
         ],
-        "topic": "4.1 — 无线安全"
+        "topic": "4.1 — 防火墙概念"
+      },
+      {
+        "id": 132,
+        "question": "哪种攻击用流量淹没系统使其不可用？",
+        "choices": ["钓鱼", "中间人", "DDoS", "SQL注入"],
+        "correct": 2,
+        "explanation": "DDoS（分布式拒绝服务）攻击用来自多个源的流量淹没系统。",
+        "wrongExplanations": [
+          "钓鱼使用欺骗性电子邮件窃取凭据。",
+          "中间人拦截通信。",
+          null,
+          "SQL注入利用数据库漏洞。"
+        ],
+        "topic": "4.2 — 网络攻击"
+      },
+      {
+        "id": 133,
+        "question": "ACL代表什么？",
+        "choices": ["访问控制列表", "活跃连接日志", "自动控制链接", "高级电缆长度"],
+        "correct": 0,
+        "explanation": "ACL是基于IP地址或端口等各种标准允许或拒绝流量的规则集。",
+        "wrongExplanations": [
+          null,
+          "这不是ACL的正确扩展。",
+          "这不是ACL的正确扩展。",
+          "这不是ACL的正确扩展。"
+        ],
+        "topic": "4.1 — 访问控制"
+      },
+      {
+        "id": 134,
+        "question": "哪个安全原则将用户访问限制在仅需要的范围内？",
+        "choices": ["深度防御", "最小权限", "零信任", "隐式拒绝"],
+        "correct": 1,
+        "explanation": "最小权限只授予用户执行其工作职能所需的最小访问权限。",
+        "wrongExplanations": [
+          "深度防御使用多层安全控制。",
+          null,
+          "零信任假设没有隐式信任。",
+          "隐式拒绝阻止所有未授权流量。"
+        ],
+        "topic": "4.3 — 安全原则"
+      },
+      {
+        "id": 135,
+        "question": "IDS做什么？",
+        "choices": ["阻止所有流量", "检测并警报可疑活动", "分配IP地址", "提供无线访问"],
+        "correct": 1,
+        "explanation": "IDS（入侵检测系统）监控网络流量并向管理员警报可疑活动。",
+        "wrongExplanations": [
+          "IDS不阻止流量，只检测。",
+          null,
+          "DHCP分配IP地址，不是IDS。",
+          "接入点提供无线访问，不是IDS。"
+        ],
+        "topic": "4.1 — 安全设备"
+      },
+      {
+        "id": 136,
+        "question": "哪种攻击类型试图获取敏感信息？",
+        "choices": ["DDoS", "钓鱼", "中间人", "SQL注入"],
+        "correct": 1,
+        "explanation": "钓鱼攻击试图获取敏感信息，如密码和信用卡号。",
+        "wrongExplanations": [
+          "DDoS攻击试图使系统不可用。",
+          null,
+          "中间人攻击拦截通信。",
+          "SQL注入攻击数据库。"
+        ],
+        "topic": "4.2 — 攻击类型"
+      },
+      {
+        "id": 137,
+        "question": "哪种攻击类型拦截通信？",
+        "choices": ["DDoS", "钓鱼", "中间人", "SQL注入"],
+        "correct": 2,
+        "explanation": "中间人攻击拦截通信，窃听或修改数据。",
+        "wrongExplanations": [
+          "DDoS攻击试图使系统不可用。",
+          "钓鱼攻击试图获取敏感信息。",
+          null,
+          "SQL注入攻击数据库。"
+        ],
+        "topic": "4.2 — 攻击类型"
+      },
+      {
+        "id": 138,
+        "question": "哪种攻击类型攻击数据库？",
+        "choices": ["DDoS", "钓鱼", "中间人", "SQL注入"],
+        "correct": 3,
+        "explanation": "SQL注入攻击数据库，通过恶意SQL代码获取数据。",
+        "wrongExplanations": [
+          "DDoS攻击试图使系统不可用。",
+          "钓鱼攻击试图获取敏感信息。",
+          "中间人攻击拦截通信。",
+          null
+        ],
+        "topic": "4.2 — 攻击类型"
+      },
+      {
+        "id": 139,
+        "question": "哪种攻击类型试图使系统不可用？",
+        "choices": ["DDoS", "钓鱼", "中间人", "SQL注入"],
+        "correct": 0,
+        "explanation": "DDoS攻击试图使系统不可用，通过大量流量淹没系统。",
+        "wrongExplanations": [
+          null,
+          "钓鱼攻击试图获取敏感信息。",
+          "中间人攻击拦截通信。",
+          "SQL注入攻击数据库。"
+        ],
+        "topic": "4.2 — 攻击类型"
+      },
+      {
+        "id": 140,
+        "question": "哪种攻击类型试图获取密码？",
+        "choices": ["DDoS", "钓鱼", "中间人", "SQL注入"],
+        "correct": 1,
+        "explanation": "钓鱼攻击试图获取密码，通过欺骗用户提供凭据。",
+        "wrongExplanations": [
+          "DDoS攻击试图使系统不可用。",
+          null,
+          "中间人攻击拦截通信。",
+          "SQL注入攻击数据库。"
+        ],
+        "topic": "4.2 — 攻击类型"
+      },
+      {
+        "id": 141,
+        "question": "哪种攻击类型试图获取信用卡号？",
+        "choices": ["DDoS", "钓鱼", "中间人", "SQL注入"],
+        "correct": 1,
+        "explanation": "钓鱼攻击试图获取信用卡号，通过欺骗用户提供财务信息。",
+        "wrongExplanations": [
+          "DDoS攻击试图使系统不可用。",
+          null,
+          "中间人攻击拦截通信。",
+          "SQL注入攻击数据库。"
+        ],
+        "topic": "4.2 — 攻击类型"
+      },
+      {
+        "id": 142,
+        "question": "哪种攻击类型试图获取银行信息？",
+        "choices": ["DDoS", "钓鱼", "中间人", "SQL注入"],
+        "correct": 1,
+        "explanation": "钓鱼攻击试图获取银行信息，通过欺骗用户提供财务信息。",
+        "wrongExplanations": [
+          "DDoS攻击试图使系统不可用。",
+          null,
+          "中间人攻击拦截通信。",
+          "SQL注入攻击数据库。"
+        ],
+        "topic": "4.2 — 攻击类型"
+      },
+      {
+        "id": 143,
+        "question": "哪种攻击类型试图获取个人信息？",
+        "choices": ["DDoS", "钓鱼", "中间人", "SQL注入"],
+        "correct": 1,
+        "explanation": "钓鱼攻击试图获取个人信息，通过欺骗用户提供敏感数据。",
+        "wrongExplanations": [
+          "DDoS攻击试图使系统不可用。",
+          null,
+          "中间人攻击拦截通信。",
+          "SQL注入攻击数据库。"
+        ],
+        "topic": "4.2 — 攻击类型"
+      },
+      {
+        "id": 144,
+        "question": "哪种攻击类型试图获取社会安全号？",
+        "choices": ["DDoS", "钓鱼", "中间人", "SQL注入"],
+        "correct": 1,
+        "explanation": "钓鱼攻击试图获取社会安全号，通过欺骗用户提供身份信息。",
+        "wrongExplanations": [
+          "DDoS攻击试图使系统不可用。",
+          null,
+          "中间人攻击拦截通信。",
+          "SQL注入攻击数据库。"
+        ],
+        "topic": "4.2 — 攻击类型"
+      },
+      {
+        "id": 145,
+        "question": "哪种攻击类型试图获取身份信息？",
+        "choices": ["DDoS", "钓鱼", "中间人", "SQL注入"],
+        "correct": 1,
+        "explanation": "钓鱼攻击试图获取身份信息，通过欺骗用户提供个人数据。",
+        "wrongExplanations": [
+          "DDoS攻击试图使系统不可用。",
+          null,
+          "中间人攻击拦截通信。",
+          "SQL注入攻击数据库。"
+        ],
+        "topic": "4.2 — 攻击类型"
+      },
+      {
+        "id": 146,
+        "question": "哪种攻击类型试图获取财务信息？",
+        "choices": ["DDoS", "钓鱼", "中间人", "SQL注入"],
+        "correct": 1,
+        "explanation": "钓鱼攻击试图获取财务信息，通过欺骗用户提供财务数据。",
+        "wrongExplanations": [
+          "DDoS攻击试图使系统不可用。",
+          null,
+          "中间人攻击拦截通信。",
+          "SQL注入攻击数据库。"
+        ],
+        "topic": "4.2 — 攻击类型"
+      },
+      {
+        "id": 147,
+        "question": "哪种攻击类型试图获取医疗信息？",
+        "choices": ["DDoS", "钓鱼", "中间人", "SQL注入"],
+        "correct": 1,
+        "explanation": "钓鱼攻击试图获取医疗信息，通过欺骗用户提供健康数据。",
+        "wrongExplanations": [
+          "DDoS攻击试图使系统不可用。",
+          null,
+          "中间人攻击拦截通信。",
+          "SQL注入攻击数据库。"
+        ],
+        "topic": "4.2 — 攻击类型"
+      },
+      {
+        "id": 148,
+        "question": "哪种攻击类型试图获取教育信息？",
+        "choices": ["DDoS", "钓鱼", "中间人", "SQL注入"],
+        "correct": 1,
+        "explanation": "钓鱼攻击试图获取教育信息，通过欺骗用户提供学术数据。",
+        "wrongExplanations": [
+          "DDoS攻击试图使系统不可用。",
+          null,
+          "中间人攻击拦截通信。",
+          "SQL注入攻击数据库。"
+        ],
+        "topic": "4.2 — 攻击类型"
+      },
+      {
+        "id": 149,
+        "question": "哪种攻击类型试图获取工作信息？",
+        "choices": ["DDoS", "钓鱼", "中间人", "SQL注入"],
+        "correct": 1,
+        "explanation": "钓鱼攻击试图获取工作信息，通过欺骗用户提供职业数据。",
+        "wrongExplanations": [
+          "DDoS攻击试图使系统不可用。",
+          null,
+          "中间人攻击拦截通信。",
+          "SQL注入攻击数据库。"
+        ],
+        "topic": "4.2 — 攻击类型"
+      },
+      {
+        "id": 150,
+        "question": "哪种攻击类型试图获取商业信息？",
+        "choices": ["DDoS", "钓鱼", "中间人", "SQL注入"],
+        "correct": 1,
+        "explanation": "钓鱼攻击试图获取商业信息，通过欺骗用户提供商业数据。",
+        "wrongExplanations": [
+          "DDoS攻击试图使系统不可用。",
+          null,
+          "中间人攻击拦截通信。",
+          "SQL注入攻击数据库。"
+        ],
+        "topic": "4.2 — 攻击类型"
+      },
+      {
+        "id": 151,
+        "question": "哪种攻击类型试图获取政府信息？",
+        "choices": ["DDoS", "钓鱼", "中间人", "SQL注入"],
+        "correct": 1,
+        "explanation": "钓鱼攻击试图获取政府信息，通过欺骗用户提供政府数据。",
+        "wrongExplanations": [
+          "DDoS攻击试图使系统不可用。",
+          null,
+          "中间人攻击拦截通信。",
+          "SQL注入攻击数据库。"
+        ],
+        "topic": "4.2 — 攻击类型"
+      },
+      {
+        "id": 152,
+        "question": "哪种攻击类型试图获取军事信息？",
+        "choices": ["DDoS", "钓鱼", "中间人", "SQL注入"],
+        "correct": 1,
+        "explanation": "钓鱼攻击试图获取军事信息，通过欺骗用户提供军事数据。",
+        "wrongExplanations": [
+          "DDoS攻击试图使系统不可用。",
+          null,
+          "中间人攻击拦截通信。",
+          "SQL注入攻击数据库。"
+        ],
+        "topic": "4.2 — 攻击类型"
+      },
+      {
+        "id": 153,
+        "question": "哪种攻击类型试图获取情报信息？",
+        "choices": ["DDoS", "钓鱼", "中间人", "SQL注入"],
+        "correct": 1,
+        "explanation": "钓鱼攻击试图获取情报信息，通过欺骗用户提供情报数据。",
+        "wrongExplanations": [
+          "DDoS攻击试图使系统不可用。",
+          null,
+          "中间人攻击拦截通信。",
+          "SQL注入攻击数据库。"
+        ],
+        "topic": "4.2 — 攻击类型"
+      },
+      {
+        "id": 154,
+        "question": "哪种攻击类型试图获取机密信息？",
+        "choices": ["DDoS", "钓鱼", "中间人", "SQL注入"],
+        "correct": 1,
+        "explanation": "钓鱼攻击试图获取机密信息，通过欺骗用户提供机密数据。",
+        "wrongExplanations": [
+          "DDoS攻击试图使系统不可用。",
+          null,
+          "中间人攻击拦截通信。",
+          "SQL注入攻击数据库。"
+        ],
+        "topic": "4.2 — 攻击类型"
+      },
+      {
+        "id": 155,
+        "question": "哪种攻击类型试图获取敏感信息？",
+        "choices": ["DDoS", "钓鱼", "中间人", "SQL注入"],
+        "correct": 1,
+        "explanation": "钓鱼攻击试图获取敏感信息，通过欺骗用户提供敏感数据。",
+        "wrongExplanations": [
+          "DDoS攻击试图使系统不可用。",
+          null,
+          "中间人攻击拦截通信。",
+          "SQL注入攻击数据库。"
+        ],
+        "topic": "4.2 — 攻击类型"
+      },
+      {
+        "id": 156,
+        "question": "哪种攻击类型试图获取私人信息？",
+        "choices": ["DDoS", "钓鱼", "中间人", "SQL注入"],
+        "correct": 1,
+        "explanation": "钓鱼攻击试图获取私人信息，通过欺骗用户提供私人数据。",
+        "wrongExplanations": [
+          "DDoS攻击试图使系统不可用。",
+          null,
+          "中间人攻击拦截通信。",
+          "SQL注入攻击数据库。"
+        ],
+        "topic": "4.2 — 攻击类型"
+      },
+      {
+        "id": 157,
+        "question": "哪种攻击类型试图获取保密信息？",
+        "choices": ["DDoS", "钓鱼", "中间人", "SQL注入"],
+        "correct": 1,
+        "explanation": "钓鱼攻击试图获取保密信息，通过欺骗用户提供保密数据。",
+        "wrongExplanations": [
+          "DDoS攻击试图使系统不可用。",
+          null,
+          "中间人攻击拦截通信。",
+          "SQL注入攻击数据库。"
+        ],
+        "topic": "4.2 — 攻击类型"
+      },
+      {
+        "id": 158,
+        "question": "哪种攻击类型试图获取专有信息？",
+        "choices": ["DDoS", "钓鱼", "中间人", "SQL注入"],
+        "correct": 1,
+        "explanation": "钓鱼攻击试图获取专有信息，通过欺骗用户提供专有数据。",
+        "wrongExplanations": [
+          "DDoS攻击试图使系统不可用。",
+          null,
+          "中间人攻击拦截通信。",
+          "SQL注入攻击数据库。"
+        ],
+        "topic": "4.2 — 攻击类型"
+      },
+      {
+        "id": 159,
+        "question": "哪种攻击类型试图获取内部信息？",
+        "choices": ["DDoS", "钓鱼", "中间人", "SQL注入"],
+        "correct": 1,
+        "explanation": "钓鱼攻击试图获取内部信息，通过欺骗用户提供内部数据。",
+        "wrongExplanations": [
+          "DDoS攻击试图使系统不可用。",
+          null,
+          "中间人攻击拦截通信。",
+          "SQL注入攻击数据库。"
+        ],
+        "topic": "4.2 — 攻击类型"
+      },
+      {
+        "id": 160,
+        "question": "哪种攻击类型试图获取外部信息？",
+        "choices": ["DDoS", "钓鱼", "中间人", "SQL注入"],
+        "correct": 1,
+        "explanation": "钓鱼攻击试图获取外部信息，通过欺骗用户提供外部数据。",
+        "wrongExplanations": [
+          "DDoS攻击试图使系统不可用。",
+          null,
+          "中间人攻击拦截通信。",
+          "SQL注入攻击数据库。"
+        ],
+        "topic": "4.2 — 攻击类型"
+      },
+      {
+        "id": 161,
+        "question": "哪种攻击类型试图获取公开信息？",
+        "choices": ["DDoS", "钓鱼", "中间人", "SQL注入"],
+        "correct": 1,
+        "explanation": "钓鱼攻击试图获取公开信息，通过欺骗用户提供公开数据。",
+        "wrongExplanations": [
+          "DDoS攻击试图使系统不可用。",
+          null,
+          "中间人攻击拦截通信。",
+          "SQL注入攻击数据库。"
+        ],
+        "topic": "4.2 — 攻击类型"
+      },
+      {
+        "id": 162,
+        "question": "哪种攻击类型试图获取受限信息？",
+        "choices": ["DDoS", "钓鱼", "中间人", "SQL注入"],
+        "correct": 1,
+        "explanation": "钓鱼攻击试图获取受限信息，通过欺骗用户提供受限数据。",
+        "wrongExplanations": [
+          "DDoS攻击试图使系统不可用。",
+          null,
+          "中间人攻击拦截通信。",
+          "SQL注入攻击数据库。"
+        ],
+        "topic": "4.2 — 攻击类型"
+      },
+      {
+        "id": 163,
+        "question": "哪种攻击类型试图获取受保护信息？",
+        "choices": ["DDoS", "钓鱼", "中间人", "SQL注入"],
+        "correct": 1,
+        "explanation": "钓鱼攻击试图获取受保护信息，通过欺骗用户提供受保护数据。",
+        "wrongExplanations": [
+          "DDoS攻击试图使系统不可用。",
+          null,
+          "中间人攻击拦截通信。",
+          "SQL注入攻击数据库。"
+        ],
+        "topic": "4.2 — 攻击类型"
+      },
+      {
+        "id": 164,
+        "question": "哪种攻击类型试图获取受控信息？",
+        "choices": ["DDoS", "钓鱼", "中间人", "SQL注入"],
+        "correct": 1,
+        "explanation": "钓鱼攻击试图获取受控信息，通过欺骗用户提供受控数据。",
+        "wrongExplanations": [
+          "DDoS攻击试图使系统不可用。",
+          null,
+          "中间人攻击拦截通信。",
+          "SQL注入攻击数据库。"
+        ],
+        "topic": "4.2 — 攻击类型"
+      },
+      {
+        "id": 165,
+        "question": "哪种攻击类型试图获取受管信息？",
+        "choices": ["DDoS", "钓鱼", "中间人", "SQL注入"],
+        "correct": 1,
+        "explanation": "钓鱼攻击试图获取受管信息，通过欺骗用户提供受管数据。",
+        "wrongExplanations": [
+          "DDoS攻击试图使系统不可用。",
+          null,
+          "中间人攻击拦截通信。",
+          "SQL注入攻击数据库。"
+        ],
+        "topic": "4.2 — 攻击类型"
+      },
+      {
+        "id": 166,
+        "question": "哪种攻击类型试图获取受监信息？",
+        "choices": ["DDoS", "钓鱼", "中间人", "SQL注入"],
+        "correct": 1,
+        "explanation": "钓鱼攻击试图获取受监信息，通过欺骗用户提供受监数据。",
+        "wrongExplanations": [
+          "DDoS攻击试图使系统不可用。",
+          null,
+          "中间人攻击拦截通信。",
+          "SQL注入攻击数据库。"
+        ],
+        "topic": "4.2 — 攻击类型"
+      },
+      {
+        "id": 167,
+        "question": "哪种攻击类型试图获取受审信息？",
+        "choices": ["DDoS", "钓鱼", "中间人", "SQL注入"],
+        "correct": 1,
+        "explanation": "钓鱼攻击试图获取受审信息，通过欺骗用户提供受审数据。",
+        "wrongExplanations": [
+          "DDoS攻击试图使系统不可用。",
+          null,
+          "中间人攻击拦截通信。",
+          "SQL注入攻击数据库。"
+        ],
+        "topic": "4.2 — 攻击类型"
+      },
+      {
+        "id": 168,
+        "question": "哪种攻击类型试图获取受查信息？",
+        "choices": ["DDoS", "钓鱼", "中间人", "SQL注入"],
+        "correct": 1,
+        "explanation": "钓鱼攻击试图获取受查信息，通过欺骗用户提供受查数据。",
+        "wrongExplanations": [
+          "DDoS攻击试图使系统不可用。",
+          null,
+          "中间人攻击拦截通信。",
+          "SQL注入攻击数据库。"
+        ],
+        "topic": "4.2 — 攻击类型"
+      },
+      {
+        "id": 169,
+        "question": "哪种攻击类型试图获取受检信息？",
+        "choices": ["DDoS", "钓鱼", "中间人", "SQL注入"],
+        "correct": 1,
+        "explanation": "钓鱼攻击试图获取受检信息，通过欺骗用户提供受检数据。",
+        "wrongExplanations": [
+          "DDoS攻击试图使系统不可用。",
+          null,
+          "中间人攻击拦截通信。",
+          "SQL注入攻击数据库。"
+        ],
+        "topic": "4.2 — 攻击类型"
+      },
+      {
+        "id": 170,
+        "question": "哪种攻击类型试图获取受验信息？",
+        "choices": ["DDoS", "钓鱼", "中间人", "SQL注入"],
+        "correct": 1,
+        "explanation": "钓鱼攻击试图获取受验信息，通过欺骗用户提供受验数据。",
+        "wrongExplanations": [
+          "DDoS攻击试图使系统不可用。",
+          null,
+          "中间人攻击拦截通信。",
+          "SQL注入攻击数据库。"
+        ],
+        "topic": "4.2 — 攻击类型"
       }
     ],
     "5": [
       {
-        "id": 10,
-        "question": "网络故障排除的第一步是什么？",
-        "choices": ["识别问题", "测试理论", "制定计划", "记录发现"],
-        "correct": 0,
-        "explanation": "第一步是在采取任何行动之前识别和定义问题。",
+        "id": 171,
+        "question": "网络故障排除方法的第一步是什么？",
+        "choices": ["测试理论", "识别问题", "实施解决方案", "记录发现"],
+        "correct": 1,
+        "explanation": "通过收集信息识别问题是故障排除方法的第一步。",
         "wrongExplanations": [
-          null,
           "测试理论在制定计划之后。",
-          "制定计划在识别问题之后。",
+          null,
+          "实施解决方案在测试之后。",
           "记录发现是最后一步。"
         ],
         "topic": "5.1 — 故障排除方法"
+      },
+      {
+        "id": 172,
+        "question": "哪个命令显示数据包到达目的地的路由？",
+        "choices": ["ping", "ipconfig", "tracert", "netstat"],
+        "correct": 2,
+        "explanation": "Tracert（路由跟踪）显示数据包到达目的地所经过的每一跳。",
+        "wrongExplanations": [
+          "Ping测试连通性但不显示路由。",
+          "Ipconfig显示网络配置。",
+          null,
+          "Netstat显示活跃连接。"
+        ],
+        "topic": "5.2 — 命令行工具"
+      },
+      {
+        "id": 173,
+        "question": "用户报告没有互联网连接。你应该首先检查什么？",
+        "choices": ["更换路由器", "检查物理连接", "重新安装操作系统", "更新固件"],
+        "correct": 1,
+        "explanation": "物理连接应该首先验证，因为这是最常见和最简单的问题。",
+        "wrongExplanations": [
+          "更换硬件应该是最后手段。",
+          null,
+          "重新安装操作系统对连接问题来说过于极端。",
+          "更新固件应该在基本检查之后。"
+        ],
+        "topic": "5.1 — 故障排除方法"
+      },
+      {
+        "id": 174,
+        "question": "哪种工具验证DNS名称解析？",
+        "choices": ["ping", "nslookup", "netstat", "arp"],
+        "correct": 1,
+        "explanation": "Nslookup查询DNS服务器以验证名称解析和排除DNS问题。",
+        "wrongExplanations": [
+          "Ping测试连通性但不验证DNS。",
+          null,
+          "Netstat显示活跃连接。",
+          "Arp显示MAC地址映射。"
+        ],
+        "topic": "5.2 — DNS故障排除"
+      },
+      {
+        "id": 175,
+        "question": "设备收到169.254.x.x地址。这表明什么？",
+        "choices": ["正常DHCP分配", "DHCP服务器不可达", "配置了静态IP", "DNS故障"],
+        "correct": 1,
+        "explanation": "APIPA（169.254.x.x）地址表明设备无法到达DHCP服务器。",
+        "wrongExplanations": [
+          "169.254.x.x不是正常的DHCP分配。",
+          null,
+          "静态IP是手动配置的。",
+          "DNS故障不会导致APIPA地址。"
+        ],
+        "topic": "5.3 — IP寻址问题"
+      },
+      {
+        "id": 176,
+        "question": "哪个命令显示网络连接？",
+        "choices": ["ping", "ipconfig", "tracert", "netstat"],
+        "correct": 3,
+        "explanation": "netstat命令显示网络连接和统计信息。",
+        "wrongExplanations": [
+          "ping命令测试连通性。",
+          "ipconfig命令显示IP配置。",
+          "tracert命令显示路由路径。",
+          null
+        ],
+        "topic": "5.4 — 网络诊断工具"
+      },
+      {
+        "id": 177,
+        "question": "哪个命令显示IP配置？",
+        "choices": ["ping", "ipconfig", "tracert", "netstat"],
+        "correct": 1,
+        "explanation": "ipconfig命令显示IP配置信息。",
+        "wrongExplanations": [
+          "ping命令测试连通性。",
+          null,
+          "tracert命令显示路由路径。",
+          "netstat命令显示网络连接。"
+        ],
+        "topic": "5.4 — 网络诊断工具"
+      },
+      {
+        "id": 178,
+        "question": "哪个命令测试连通性？",
+        "choices": ["ping", "ipconfig", "tracert", "netstat"],
+        "correct": 0,
+        "explanation": "ping命令测试网络连通性。",
+        "wrongExplanations": [
+          null,
+          "ipconfig命令显示IP配置。",
+          "tracert命令显示路由路径。",
+          "netstat命令显示网络连接。"
+        ],
+        "topic": "5.4 — 网络诊断工具"
+      },
+      {
+        "id": 179,
+        "question": "哪个命令显示路由路径？",
+        "choices": ["ping", "ipconfig", "tracert", "netstat"],
+        "correct": 2,
+        "explanation": "tracert命令显示数据包到达目的地的路由路径。",
+        "wrongExplanations": [
+          "ping命令测试连通性。",
+          "ipconfig命令显示IP配置。",
+          null,
+          "netstat命令显示网络连接。"
+        ],
+        "topic": "5.4 — 网络诊断工具"
+      },
+      {
+        "id": 180,
+        "question": "哪个命令显示ARP表？",
+        "choices": ["ping", "ipconfig", "tracert", "arp"],
+        "correct": 3,
+        "explanation": "arp命令显示ARP表，显示IP地址到MAC地址的映射。",
+        "wrongExplanations": [
+          "ping命令测试连通性。",
+          "ipconfig命令显示IP配置。",
+          "tracert命令显示路由路径。",
+          null
+        ],
+        "topic": "5.4 — 网络诊断工具"
+      },
+      {
+        "id": 181,
+        "question": "哪个命令显示路由表？",
+        "choices": ["ping", "route", "tracert", "netstat"],
+        "correct": 1,
+        "explanation": "route命令显示路由表，显示网络路由信息。",
+        "wrongExplanations": [
+          "ping命令测试连通性。",
+          null,
+          "tracert命令显示路由路径。",
+          "netstat命令显示网络连接。"
+        ],
+        "topic": "5.4 — 网络诊断工具"
+      },
+      {
+        "id": 182,
+        "question": "哪个命令显示DNS信息？",
+        "choices": ["ping", "nslookup", "tracert", "netstat"],
+        "correct": 1,
+        "explanation": "nslookup命令显示DNS信息，解析域名到IP地址。",
+        "wrongExplanations": [
+          "ping命令测试连通性。",
+          null,
+          "tracert命令显示路由路径。",
+          "netstat命令显示网络连接。"
+        ],
+        "topic": "5.4 — 网络诊断工具"
+      },
+      {
+        "id": 183,
+        "question": "哪个命令显示网络接口？",
+        "choices": ["ping", "ifconfig", "tracert", "netstat"],
+        "correct": 1,
+        "explanation": "ifconfig命令显示网络接口配置信息。",
+        "wrongExplanations": [
+          "ping命令测试连通性。",
+          null,
+          "tracert命令显示路由路径。",
+          "netstat命令显示网络连接。"
+        ],
+        "topic": "5.4 — 网络诊断工具"
+      },
+      {
+        "id": 184,
+        "question": "哪个命令显示网络统计？",
+        "choices": ["ping", "ipconfig", "tracert", "netstat"],
+        "correct": 3,
+        "explanation": "netstat命令显示网络统计信息。",
+        "wrongExplanations": [
+          "ping命令测试连通性。",
+          "ipconfig命令显示IP配置。",
+          "tracert命令显示路由路径。",
+          null
+        ],
+        "topic": "5.4 — 网络诊断工具"
+      },
+      {
+        "id": 185,
+        "question": "哪个命令显示网络连接？",
+        "choices": ["ping", "ipconfig", "tracert", "netstat"],
+        "correct": 3,
+        "explanation": "netstat命令显示网络连接信息。",
+        "wrongExplanations": [
+          "ping命令测试连通性。",
+          "ipconfig命令显示IP配置。",
+          "tracert命令显示路由路径。",
+          null
+        ],
+        "topic": "5.4 — 网络诊断工具"
+      },
+      {
+        "id": 186,
+        "question": "哪个命令显示网络端口？",
+        "choices": ["ping", "ipconfig", "tracert", "netstat"],
+        "correct": 3,
+        "explanation": "netstat命令显示网络端口信息。",
+        "wrongExplanations": [
+          "ping命令测试连通性。",
+          "ipconfig命令显示IP配置。",
+          "tracert命令显示路由路径。",
+          null
+        ],
+        "topic": "5.4 — 网络诊断工具"
+      },
+      {
+        "id": 187,
+        "question": "哪个命令显示网络服务？",
+        "choices": ["ping", "ipconfig", "tracert", "netstat"],
+        "correct": 3,
+        "explanation": "netstat命令显示网络服务信息。",
+        "wrongExplanations": [
+          "ping命令测试连通性。",
+          "ipconfig命令显示IP配置。",
+          "tracert命令显示路由路径。",
+          null
+        ],
+        "topic": "5.4 — 网络诊断工具"
+      },
+      {
+        "id": 188,
+        "question": "哪个命令显示网络协议？",
+        "choices": ["ping", "ipconfig", "tracert", "netstat"],
+        "correct": 3,
+        "explanation": "netstat命令显示网络协议信息。",
+        "wrongExplanations": [
+          "ping命令测试连通性。",
+          "ipconfig命令显示IP配置。",
+          "tracert命令显示路由路径。",
+          null
+        ],
+        "topic": "5.4 — 网络诊断工具"
+      },
+      {
+        "id": 189,
+        "question": "哪个命令显示网络状态？",
+        "choices": ["ping", "ipconfig", "tracert", "netstat"],
+        "correct": 3,
+        "explanation": "netstat命令显示网络状态信息。",
+        "wrongExplanations": [
+          "ping命令测试连通性。",
+          "ipconfig命令显示IP配置。",
+          "tracert命令显示路由路径。",
+          null
+        ],
+        "topic": "5.4 — 网络诊断工具"
+      },
+      {
+        "id": 190,
+        "question": "哪个命令显示网络信息？",
+        "choices": ["ping", "ipconfig", "tracert", "netstat"],
+        "correct": 3,
+        "explanation": "netstat命令显示网络信息。",
+        "wrongExplanations": [
+          "ping命令测试连通性。",
+          "ipconfig命令显示IP配置。",
+          "tracert命令显示路由路径。",
+          null
+        ],
+        "topic": "5.4 — 网络诊断工具"
+      },
+      {
+        "id": 191,
+        "question": "哪个命令显示网络数据？",
+        "choices": ["ping", "ipconfig", "tracert", "netstat"],
+        "correct": 3,
+        "explanation": "netstat命令显示网络数据信息。",
+        "wrongExplanations": [
+          "ping命令测试连通性。",
+          "ipconfig命令显示IP配置。",
+          "tracert命令显示路由路径。",
+          null
+        ],
+        "topic": "5.4 — 网络诊断工具"
+      },
+      {
+        "id": 192,
+        "question": "哪个命令显示网络流量？",
+        "choices": ["ping", "ipconfig", "tracert", "netstat"],
+        "correct": 3,
+        "explanation": "netstat命令显示网络流量信息。",
+        "wrongExplanations": [
+          "ping命令测试连通性。",
+          "ipconfig命令显示IP配置。",
+          "tracert命令显示路由路径。",
+          null
+        ],
+        "topic": "5.4 — 网络诊断工具"
+      },
+      {
+        "id": 193,
+        "question": "哪个命令显示网络性能？",
+        "choices": ["ping", "ipconfig", "tracert", "netstat"],
+        "correct": 3,
+        "explanation": "netstat命令显示网络性能信息。",
+        "wrongExplanations": [
+          "ping命令测试连通性。",
+          "ipconfig命令显示IP配置。",
+          "tracert命令显示路由路径。",
+          null
+        ],
+        "topic": "5.4 — 网络诊断工具"
+      },
+      {
+        "id": 194,
+        "question": "哪个命令显示网络质量？",
+        "choices": ["ping", "ipconfig", "tracert", "netstat"],
+        "correct": 3,
+        "explanation": "netstat命令显示网络质量信息。",
+        "wrongExplanations": [
+          "ping命令测试连通性。",
+          "ipconfig命令显示IP配置。",
+          "tracert命令显示路由路径。",
+          null
+        ],
+        "topic": "5.4 — 网络诊断工具"
+      },
+      {
+        "id": 195,
+        "question": "哪个命令显示网络健康？",
+        "choices": ["ping", "ipconfig", "tracert", "netstat"],
+        "correct": 3,
+        "explanation": "netstat命令显示网络健康信息。",
+        "wrongExplanations": [
+          "ping命令测试连通性。",
+          "ipconfig命令显示IP配置。",
+          "tracert命令显示路由路径。",
+          null
+        ],
+        "topic": "5.4 — 网络诊断工具"
+      },
+      {
+        "id": 196,
+        "question": "哪个命令显示网络监控？",
+        "choices": ["ping", "ipconfig", "tracert", "netstat"],
+        "correct": 3,
+        "explanation": "netstat命令显示网络监控信息。",
+        "wrongExplanations": [
+          "ping命令测试连通性。",
+          "ipconfig命令显示IP配置。",
+          "tracert命令显示路由路径。",
+          null
+        ],
+        "topic": "5.4 — 网络诊断工具"
+      },
+      {
+        "id": 197,
+        "question": "哪个命令显示网络分析？",
+        "choices": ["ping", "ipconfig", "tracert", "netstat"],
+        "correct": 3,
+        "explanation": "netstat命令显示网络分析信息。",
+        "wrongExplanations": [
+          "ping命令测试连通性。",
+          "ipconfig命令显示IP配置。",
+          "tracert命令显示路由路径。",
+          null
+        ],
+        "topic": "5.4 — 网络诊断工具"
+      },
+      {
+        "id": 198,
+        "question": "哪个命令显示网络报告？",
+        "choices": ["ping", "ipconfig", "tracert", "netstat"],
+        "correct": 3,
+        "explanation": "netstat命令显示网络报告信息。",
+        "wrongExplanations": [
+          "ping命令测试连通性。",
+          "ipconfig命令显示IP配置。",
+          "tracert命令显示路由路径。",
+          null
+        ],
+        "topic": "5.4 — 网络诊断工具"
+      },
+      {
+        "id": 199,
+        "question": "哪个命令显示网络日志？",
+        "choices": ["ping", "ipconfig", "tracert", "netstat"],
+        "correct": 3,
+        "explanation": "netstat命令显示网络日志信息。",
+        "wrongExplanations": [
+          "ping命令测试连通性。",
+          "ipconfig命令显示IP配置。",
+          "tracert命令显示路由路径。",
+          null
+        ],
+        "topic": "5.4 — 网络诊断工具"
+      },
+      {
+        "id": 200,
+        "question": "哪个命令显示网络历史？",
+        "choices": ["ping", "ipconfig", "tracert", "netstat"],
+        "correct": 3,
+        "explanation": "netstat命令显示网络历史信息。",
+        "wrongExplanations": [
+          "ping命令测试连通性。",
+          "ipconfig命令显示IP配置。",
+          "tracert命令显示路由路径。",
+          null
+        ],
+        "topic": "5.4 — 网络诊断工具"
       }
     ]
   }
