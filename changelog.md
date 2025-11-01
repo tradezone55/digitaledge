@@ -1,5 +1,78 @@
 # Changelog
 
+## [2025-11-01] - Internationalization Updates
+
+### Changed
+- **AccessScreen.tsx**: Replaced hardcoded strings with translation keys
+  - Changed "Time" label to use `t('quiz:demo.timeLabel')` translation key
+  - Changed "Score" label to use `t('quiz:demo.scoreLabel')` translation key
+  - Changed "Next" button text to use `t('quiz:demo.next')` translation key
+  - Changed "Finish" button text to use `t('quiz:demo.finish')` translation key
+  - Changed "questions" label to use `t('quiz:session.questions')` translation key
+  - All labels now properly display in English, Spanish, French, Portuguese, and Chinese based on user's selected language
+
+## [2025-11-01] - Remove Authentication and Subscription Flows
+
+### Removed
+- **Authentication System**: Completely removed all authentication flows
+  - Deleted user authentication pages (`auth/login`, `auth/callback`)
+  - Deleted admin authentication pages and dashboard (`admin/auth/*`, `admin/dashboard`)
+  - Removed `ProtectedRoute` and `AdminProtectedRoute` components
+  - Removed `AuthStateListener` component from App.tsx
+  - Deleted `LogoutUser` component
+  
+- **Subscription System**: Removed all subscription-related functionality
+  - Deleted checkout page and payment integration
+  - Removed subscription status checking (`useSubscriptionStatus` hook)
+  - Removed grace period and trial period logic
+  - Deleted `ProfileSetupModal` component
+  - Deleted `UnAccessScreen` component
+  - Removed subscription services and hooks:
+    - `services/subscription.tsx`
+    - `hooks/useAddSubscription.tsx`
+    - `hooks/useProfileCompleteness.ts`
+    - `hooks/useUserStatusCheck.tsx`
+
+- **Admin Features**: Removed entire admin system
+  - Deleted admin dashboard and all admin components
+  - Removed admin store (`stores/admin.ts`)
+  - Removed admin services (`services/admin.ts`)
+  - Removed admin schemas (`schemas/admin.ts`)
+  - Deleted all admin UI components (ErrorUI, OverviewTab, SubscriptionsTab, UsersTab, etc.)
+
+### Modified
+- **App.tsx**: Simplified routing structure
+  - Removed all authentication and admin routes
+  - Made `/home` and `/home/demo` publicly accessible
+  - Kept landing page at `/` as main entry point
+  
+- **Home.tsx**: Simplified to directly render app content
+  - Removed subscription status checks
+  - Removed profile completeness checks
+  - Direct access to `AccessScreen` component without authentication
+
+- **AccessScreen.tsx**: Cleaned up UI
+  - Removed logout functionality
+  - Removed subscription status display (grace period, days left, trial indicators)
+  - Removed user name/profile display
+  - Kept core quiz functionality intact
+
+- **Landing Page (pages/index.tsx)**: Updated CTAs
+  - Changed all "Get Early Access" and "Join Now" buttons to link to `/home` instead of auth/login
+  - Updated demo quiz redirect to point to `/home`
+
+### Impact
+- **Public Access**: Application is now fully accessible without requiring login
+- **No Payments**: No subscription or payment system required
+- **Simplified UX**: Users can immediately access all quiz features from landing page
+- **Admin Access**: Admin dashboard and management features removed completely
+
+### Technical Details
+- Database schema remains unchanged (backward compatibility maintained)
+- All quiz functionality and progress tracking preserved
+- Language switching and internationalization features retained
+- LocalStorage-based quiz state management continues to work
+
 ## [2025-10-27] - Complete Internationalization Implementation
 
 ### Added
