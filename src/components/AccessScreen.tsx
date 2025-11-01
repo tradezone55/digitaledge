@@ -7,12 +7,8 @@ import {
   XCircle,
   Award,
   ChevronRight,
-  AlertTriangle,
 } from "lucide-react";
 import Logo from "../components/ui/Logo";
-import LogoutUser from "../components/LogoutUser";
-import { useUserStore } from "../stores";
-import { useSaveLocalTestResult } from "../hooks/useLocalTestResults";
 import SupportBanner from "../components/SupportBanner";
 import { useTranslation } from "react-i18next";
 import LanguageSwitch from "./LanguageSwitch";
@@ -65,21 +61,14 @@ interface Domain {
 interface AccessScreenProps {
   inGracePeriod?: boolean;
   graceDaysLeft?: number;
-  daysLeft: number;
+  daysLeft?: number;
   isTrial?: boolean;
 }
 
 type DomainId = 1 | 2 | 3 | 4 | 5;
 
-const AccessScreen = ({
-  inGracePeriod = false,
-  graceDaysLeft = 0,
-  daysLeft,
-  isTrial = false,
-}: AccessScreenProps) => {
+const AccessScreen = ({ }: AccessScreenProps) => {
   const { t } = useTranslation(['quiz', 'common', 'dashboard']);
-  const user = useUserStore((state) => state.user);
-  const { saveTestResult } = useSaveLocalTestResult();
   const { getQuizState, setQuizState } = useQuizStateManager();
 
   // Initialize state from URL parameters or localStorage fallback
@@ -1441,23 +1430,7 @@ const AccessScreen = ({
         showResults: true,
       }, true); // Replace history for completed session
 
-      // Save test result to localStorage
-      if (user?.user_id) {
-        try {
-          await saveTestResult({
-            user_id: user.user_id,
-            domain_id: currentDomain,
-            score: finalScore,
-            total_questions: currentQuestions.length,
-            duration: timeElapsed,
-            passed: passed,
-            completed_at: new Date().toISOString(),
-          });
-        } catch (error) {
-          console.error("Failed to save test result to localStorage:", error);
-          // Test result is still saved locally in attempts, so this doesn't break the user experience
-        }
-      }
+      // Test results are saved locally in attempts array (see above)
     }
   };
 
@@ -1655,32 +1628,6 @@ const AccessScreen = ({
     <div className="min-h-screen bg-gray-900 text-white">
       {/* Header */}
       <div className="bg-gray-800 lg:p-6 p-4 space-y-10">
-        {/* Grace Period Warning */}
-        {inGracePeriod && (
-          <div className="bg-orange-500/20 border border-orange-500 rounded-lg p-4 mb-4">
-            <div className="flex items-center gap-3">
-              <AlertTriangle className="w-5 h-5 text-orange-500" />
-              <div>
-                <h3 className="text-orange-400 font-semibold">
-                  {t('common:status.gracePeriodActive')}
-                </h3>
-                <p className="text-orange-300 text-sm">
-                  {t('common:messages.gracePeriodDesc', { days: graceDaysLeft })}
-                  <span className="ml-1">
-                    <button
-                      onClick={() => (window.location.href = "/home/checkout")}
-                      className="text-orange-200 underline hover:text-white"
-                    >
-                      {t('common:messages.renewNow')}
-                    </button>
-                  </span>{" "}
-                  {t('common:messages.toContinueAccess')}
-                </p>
-              </div>
-            </div>
-          </div>
-        )}
-
         {/* Session Restored Notification */}
         {sessionRestored && (
           <div className="bg-green-500/20 border border-green-500 rounded-lg p-4 mb-4">
@@ -1723,7 +1670,6 @@ const AccessScreen = ({
             </div>
             <div className="flex items-center gap-2">
               <LanguageSwitch />
-              <LogoutUser className="lg:hidden flex" />
             </div>
           </div>
         </div>
@@ -1751,29 +1697,6 @@ const AccessScreen = ({
           </div>
         </div>
 
-        {/* Display user name */}
-        <div className="flex items-center gap-2 lmt-4 justify-between">
-          <div>
-            <p className="text-white font-bold text-lg">
-              {t('dashboard:welcome')}, <span className="text-blue-400 ">{user?.name}</span>{" "}
-            </p>
-            <p className="text-gray-200 font-semibold">
-              {isTrial ? (
-                <>
-                  {t('dashboard:subscription.trialEndsIn', { days: daysLeft })}
-                </>
-              ) : (
-                <>
-                  {t('dashboard:subscription.subscriptionEndsIn', { days: daysLeft })}
-                </>
-              )}
-            </p>
-          </div>
-
-          <div className="flex items-center gap-2">
-            <LogoutUser className="lg:flex hidden" />
-          </div>
-        </div>
       </div>
 
       <div className="p-6">
@@ -1789,10 +1712,10 @@ const AccessScreen = ({
                   <div className="flex items-center gap-4">
                     <div className="flex items-center gap-1">
                       <Clock className="w-4 h-4" />
-                      <span>Time {formatTime(timeElapsed)}</span>
+                      <span>{t('quiz:demo.timeLabel')} {formatTime(timeElapsed)}</span>
                     </div>
                     <div className="flex items-center gap-1">
-                      <span>Score {score}</span>
+                      <span>{t('quiz:demo.scoreLabel')} {score}</span>
                     </div>
                   </div>
                 </div>
@@ -1828,8 +1751,8 @@ const AccessScreen = ({
                     className="bg-blue-600 hover:bg-blue-700 disabled:bg-gray-600 disabled:cursor-not-allowed px-6 py-2 rounded font-semibold"
                   >
                     {currentQuestion + 1 === currentQuestions.length
-                      ? "Finish"
-                      : "Next"}
+                      ? t('quiz:demo.finish')
+                      : t('quiz:demo.next')}
                   </button>
                 </div>
               </div>
@@ -1909,7 +1832,7 @@ const AccessScreen = ({
                 <div className="flex justify-between">
                   <span className="text-gray-400">{t('quiz:questionPool.poolSize')}:</span>
                   <span className="text-blue-400">
-                    {questionPools[currentDomain].length} questions
+                    {questionPools[currentDomain].length} {t('quiz:session.questions')}
                   </span>
                 </div>
                 <div className="flex justify-between">
