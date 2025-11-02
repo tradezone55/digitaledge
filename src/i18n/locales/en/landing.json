@@ -49,7 +49,7 @@
       "badge": "Limited-Time Beta",
       "title": "Early Access (Beta)",
       "desc": "Intro pricing during beta. Features and content may change based on feedback.",
-      "price": "Free 60 day trial",
+      "price": "Free",
       "priceSubtext": "intro price during beta",
       "features": [
         "Full access to all domains",
