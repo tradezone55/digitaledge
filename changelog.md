@@ -1,5 +1,16 @@
 # Changelog
 
+## [2025-11-02] - Simplified Pricing Display
+
+### Changed
+- **Landing Page Pricing**: Updated beta pricing text to display "Free" instead of "Free 60 day trial"
+  - English: "Free"
+  - Spanish: "Gratis"
+  - French: "Gratuit"
+  - Portuguese: "Grátis"
+  - Chinese: "免费"
+  - Simplified messaging for better clarity and impact
+
 ## [2025-11-02] - Domain Translation in Dropdown
 
 ### Added
