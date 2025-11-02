@@ -7,6 +7,7 @@ import {
   XCircle,
   Award,
   ChevronRight,
+  ChevronDown,
 } from "lucide-react";
 import Logo from "../components/ui/Logo";
 import SupportBanner from "../components/SupportBanner";
@@ -151,8 +152,26 @@ const AccessScreen = ({ }: AccessScreenProps) => {
     }
   );
 
-  const [_showDomainSelect, setShowDomainSelect] = useState(false);
+  const [showDomainSelect, setShowDomainSelect] = useState(false);
   const [sessionRestored, setSessionRestored] = useState(false);
+
+  // Close domain selector when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as HTMLElement;
+      if (showDomainSelect && !target.closest('.domain-selector')) {
+        setShowDomainSelect(false);
+      }
+    };
+
+    if (showDomainSelect) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [showDomainSelect]);
 
   // Wrapper functions that update both local state and URL parameters
   const setCurrentDomain = (domain: DomainId) => {
@@ -1436,24 +1455,32 @@ const AccessScreen = ({ }: AccessScreenProps) => {
 
   // Change domain
   const changeDomain = (domain: DomainId) => {
-    if (
-      domain === 1 ||
-      (domain > 1 && domainsPassed[(domain - 1) as DomainId])
-    ) {
-      setCurrentDomain(domain);
-      setSessionActive(false);
-      setSessionComplete(false);
-      setShowResults(false);
-      setShowDomainSelect(false);
-
-      // Update URL parameters for domain change
-      setQuizState({
-        domain,
-        sessionActive: false,
-        sessionComplete: false,
-        showResults: false,
-      }, true); // Replace history for domain change
+    // If session is active, confirm before switching
+    if (sessionActive) {
+      const confirmSwitch = window.confirm(
+        t('quiz:session.confirmDomainSwitch', {
+          defaultValue: 'You have an active session. Switching domains will end your current session. Continue?'
+        })
+      );
+      if (!confirmSwitch) {
+        setShowDomainSelect(false);
+        return;
+      }
     }
+
+    setCurrentDomain(domain);
+    setSessionActive(false);
+    setSessionComplete(false);
+    setShowResults(false);
+    setShowDomainSelect(false);
+
+    // Update URL parameters for domain change
+    setQuizState({
+      domain,
+      sessionActive: false,
+      sessionComplete: false,
+      showResults: false,
+    }, true); // Replace history for domain change
   };
 
   // Get domain color classes
@@ -1628,28 +1655,14 @@ const AccessScreen = ({ }: AccessScreenProps) => {
     <div className="min-h-screen bg-gray-900 text-white">
       {/* Header */}
       <div className="bg-gray-800 lg:p-6 p-4 space-y-10">
-        {/* Session Restored Notification */}
-        {sessionRestored && (
-          <div className="bg-green-500/20 border border-green-500 rounded-lg p-4 mb-4">
-            <div className="flex items-center gap-3">
-              <CheckCircle className="w-5 h-5 text-green-500" />
-              <div>
-                <h3 className="text-green-400 font-semibold">
-                  {t('common:status.sessionRestored')}
-                </h3>
-                <p className="text-green-300 text-sm">
-                  {t('common:messages.sessionRestoredDesc', { question: currentQuestion + 1 })}
-                </p>
-              </div>
-            </div>
-          </div>
-        )}
+
+
 
         <div className="flex justify-between items-start mb-4 lg:flex-row flex-col-reverse gap-10">
           <div className="flex-1">
             <div className="flex items-center gap-4 mb-2">
               <h1 className="text-2xl font-bold">
-                Domain {currentDomain} — {domains[currentDomain].name}
+                {t('quiz:domain')} {currentDomain} — {domains[currentDomain].name}
               </h1>
             </div>
             <p className="text-gray-300">
@@ -1676,13 +1689,39 @@ const AccessScreen = ({ }: AccessScreenProps) => {
 
         <div className="flex items-center justify-between ">
           <div className="flex items-center gap-4 lg:flex-row flex-col w-full">
-            <p
-              className={`px-3 py-1 rounded border lg:w-[200px] w-full text-center ${getDomainColor(
-                currentDomain
-              )}`}
-            >
-              {t('common:labels.currentDomain')}: {currentDomain}
-            </p>
+            <div className="relative lg:w-[200px] w-full domain-selector">
+              <button
+                onClick={() => setShowDomainSelect(!showDomainSelect)}
+                className={`px-3 py-1 rounded border w-full flex items-center justify-center gap-2 ${getDomainColor(
+                  currentDomain
+                )} hover:bg-gray-700 cursor-pointer`}
+              >
+                <span>{t('common:labels.currentDomain')}: {currentDomain}</span>
+                <ChevronDown className={`w-4 h-4 transition-transform ${showDomainSelect ? 'rotate-180' : ''}`} />
+              </button>
+              {showDomainSelect && (
+                <div className="absolute top-full left-0 mt-2 w-full min-w-[250px] bg-gray-700 rounded-lg shadow-2xl border border-gray-600 z-50">
+                  {([1, 2, 3, 4, 5] as DomainId[]).map((domainId) => (
+                    <button
+                      key={domainId}
+                      onClick={() => changeDomain(domainId)}
+                      className={`w-full text-left px-4 py-3 hover:bg-gray-600 transition-colors first:rounded-t-lg last:rounded-b-lg border-b border-gray-600 last:border-b-0 ${currentDomain === domainId ? 'bg-gray-600' : ''
+                        }`}
+                    >
+                      <div className="flex items-center justify-between">
+                        <div>
+                          <div className="font-semibold">{t('quiz:domain')} {domainId}</div>
+                          <div className="text-xs text-gray-400">{domains[domainId].name}</div>
+                        </div>
+                        {domainsPassed[domainId] && (
+                          <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
+                        )}
+                      </div>
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
             {!sessionActive && (
               <button
                 onClick={() => startSession()}

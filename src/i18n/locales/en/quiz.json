@@ -1,4 +1,5 @@
 {
+  "domain": "Domain",
   "domains": {
     "1": "Networking Fundamentals",
     "2": "Network Implementations", 
@@ -8,21 +9,22 @@
   },
   "session": {
     "readyToTest": "Ready to Test Domain {{domain}}?",
-    "sessionDescription": "You will answer 50 randomly selected questions from {{domainName}}. You need 70% to advance to the next domain.",
+    "sessionDescription": "You will answer 50 randomly selected questions from {{domainName}}. Score 70% or higher to pass this domain.",
     "beginTest": "Begin Domain {{domain}} Test",
-    "sequentialMastery": "Sequential mastery system: pass ≥70%, automatic retry, comprehensive question pools with explanations.",
+    "sequentialMastery": "Flexible domain selection: choose any domain, score ≥70% to pass, comprehensive question pools with explanations.",
     "questionPoolInfo": "Comprehensive questions covering exam objectives.",
     "poolSize": "Pool Size",
     "perSession": "Per Session", 
     "passThreshold": "Pass Threshold",
     "questions": "questions",
-    "passThresholdValue": "70% (35/50)"
+    "passThresholdValue": "70% (35/50)",
+    "confirmDomainSwitch": "You have an active session. Switching domains will end your current session. Continue?"
   },
   "results": {
     "congratulations": "Congratulations!",
     "keepStudying": "Keep Studying!",
     "passedDomain": "You passed Domain {{domain}}!",
-    "need70Percent": "You need 70% to advance to Domain {{nextDomain}}",
+    "need70Percent": "Score 70% or higher to pass this domain. You can practice any domain at any time.",
     "questionsCorrect": "Questions Correct",
     "finalScore": "Final Score",
     "timeTaken": "Time Taken",
