@@ -1652,12 +1652,9 @@ const AccessScreen = ({ }: AccessScreenProps) => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white">
+    <div className="min-h-screen bg-gray-900 text-white ">
       {/* Header */}
       <div className="bg-gray-800 lg:p-6 p-4 space-y-10">
-
-
-
         <div className="flex justify-between items-start mb-4 lg:flex-row flex-col-reverse gap-10">
           <div className="flex-1">
             <div className="flex items-center gap-4 mb-2">
