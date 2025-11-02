@@ -1,4 +1,5 @@
 {
+  "domain": "Dominio",
   "domains": {
     "1": "Fundamentos de Redes",
     "2": "Implementaciones de Red",
@@ -8,21 +9,22 @@
   },
   "session": {
     "readyToTest": "¿Listo para Probar el Dominio {{domain}}?",
-    "sessionDescription": "Responderás 50 preguntas seleccionadas aleatoriamente de {{domainName}}. Necesitas 70% para avanzar al siguiente dominio.",
+    "sessionDescription": "Responderás 50 preguntas seleccionadas aleatoriamente de {{domainName}}. Obtén 70% o más para aprobar este dominio.",
     "beginTest": "Comenzar Prueba del Dominio {{domain}}",
-    "sequentialMastery": "Sistema de dominio secuencial: aprobar ≥70%, reintento automático, grupos de preguntas completos con explicaciones.",
+    "sequentialMastery": "Selección flexible de dominio: elige cualquier dominio, obtén ≥70% para aprobar, grupos de preguntas completos con explicaciones.",
     "questionPoolInfo": "Preguntas completas que cubren objetivos del examen.",
     "poolSize": "Tamaño del Grupo",
     "perSession": "Por Sesión",
     "passThreshold": "Umbral de Aprobación",
     "questions": "preguntas",
-    "passThresholdValue": "70% (35/50)"
+    "passThresholdValue": "70% (35/50)",
+    "confirmDomainSwitch": "Tienes una sesión activa. Cambiar de dominio finalizará tu sesión actual. ¿Continuar?"
   },
   "results": {
     "congratulations": "¡Felicitaciones!",
     "keepStudying": "¡Sigue Estudiando!",
     "passedDomain": "¡Aprobaste el Dominio {{domain}}!",
-    "need70Percent": "Necesitas 70% para avanzar al Dominio {{nextDomain}}",
+    "need70Percent": "Obtén 70% o más para aprobar este dominio. Puedes practicar cualquier dominio en cualquier momento.",
     "questionsCorrect": "Preguntas Correctas",
     "finalScore": "Puntuación Final",
     "timeTaken": "Tiempo Tomado",

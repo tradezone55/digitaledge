@@ -1,4 +1,5 @@
 {
+  "domain": "域",
   "domains": {
     "1": "网络基础",
     "2": "网络实施",
@@ -8,21 +9,22 @@
   },
   "session": {
     "readyToTest": "准备好测试域 {{domain}} 了吗？",
-    "sessionDescription": "您将回答从 {{domainName}} 中随机选择的50个问题。您需要70%才能进入下一个域。",
+    "sessionDescription": "您将回答从 {{domainName}} 中随机选择的50个问题。获得70%或更高分数即可通过此域。",
     "beginTest": "开始域 {{domain}} 测试",
-    "sequentialMastery": "顺序掌握系统：通过≥70%，自动重试，带有解释的综合问题池。",
+    "sequentialMastery": "灵活的域选择：选择任何域，获得≥70%即可通过，带有解释的综合问题库。",
     "questionPoolInfo": "涵盖考试目标的综合问题。",
     "poolSize": "池大小",
     "perSession": "每次会话",
     "passThreshold": "通过阈值",
     "questions": "问题",
-    "passThresholdValue": "70% (35/50)"
+    "passThresholdValue": "70% (35/50)",
+    "confirmDomainSwitch": "您有一个活动会话。切换域将结束您的当前会话。继续吗？"
   },
   "results": {
     "congratulations": "恭喜！",
     "keepStudying": "继续学习！",
     "passedDomain": "您通过了域 {{domain}}！",
-    "need70Percent": "您需要70%才能进入域 {{nextDomain}}",
+    "need70Percent": "获得70%或更高分数即可通过此域。您可以随时练习任何域。",
     "questionsCorrect": "正确问题",
     "finalScore": "最终分数",
     "timeTaken": "所用时间",

@@ -1,4 +1,5 @@
 {
+  "domain": "Domaine",
   "domains": {
     "1": "Fondamentaux du Réseau",
     "2": "Implémentations Réseau",
@@ -8,21 +9,22 @@
   },
   "session": {
     "readyToTest": "Prêt à Tester le Domaine {{domain}} ?",
-    "sessionDescription": "Vous répondrez à 50 questions sélectionnées au hasard de {{domainName}}. Vous avez besoin de 70% pour passer au domaine suivant.",
+    "sessionDescription": "Vous répondrez à 50 questions sélectionnées au hasard de {{domainName}}. Obtenez 70% ou plus pour réussir ce domaine.",
     "beginTest": "Commencer le Test du Domaine {{domain}}",
-    "sequentialMastery": "Système de maîtrise séquentielle : réussir ≥70%, nouvelle tentative automatique, pools de questions complets avec explications.",
+    "sequentialMastery": "Sélection flexible de domaine : choisissez n'importe quel domaine, obtenez ≥70% pour réussir, pools de questions complets avec explications.",
     "questionPoolInfo": "Questions complètes couvrant les objectifs d'examen.",
     "poolSize": "Taille du Pool",
     "perSession": "Par Session",
     "passThreshold": "Seuil de Réussite",
     "questions": "questions",
-    "passThresholdValue": "70% (35/50)"
+    "passThresholdValue": "70% (35/50)",
+    "confirmDomainSwitch": "Vous avez une session active. Changer de domaine mettra fin à votre session actuelle. Continuer?"
   },
   "results": {
     "congratulations": "Félicitations !",
     "keepStudying": "Continuez à Étudier !",
     "passedDomain": "Vous avez réussi le Domaine {{domain}} !",
-    "need70Percent": "Vous avez besoin de 70% pour passer au Domaine {{nextDomain}}",
+    "need70Percent": "Obtenez 70% ou plus pour réussir ce domaine. Vous pouvez pratiquer n'importe quel domaine à tout moment.",
     "questionsCorrect": "Questions Correctes",
     "finalScore": "Score Final",
     "timeTaken": "Temps Pris",

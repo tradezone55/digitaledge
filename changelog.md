@@ -1,5 +1,100 @@
 # Changelog
 
+## [2025-11-02] - Domain Translation in Dropdown
+
+### Added
+- **Translated "Domain" Label**: The word "Domain" in the dropdown and header is now fully translated
+  - Added `domain` translation key to all language files
+  - English: "Domain"
+  - Spanish: "Dominio"
+  - French: "Domaine"
+  - Portuguese: "Domínio"
+  - Chinese: "域"
+
+### Changed
+- **AccessScreen.tsx**: Updated to use translated domain label
+  - Header now shows translated "Domain {number}" format
+  - Dropdown items now show translated "Domain {number}" format
+  - Consistent translation across all UI elements
+
+## [2025-11-02] - Unrestricted Domain Selection
+
+### Added
+- **Always-Available Domain Selector**: Domain dropdown is now available at all times, even during active sessions
+  - Users can switch domains at any point, regardless of their score or progress
+  - Added confirmation dialog when switching domains during an active session
+  - Removed disabled state from domain selector button
+  - All 5 domains (1, 2, 3, 4, 5) are always accessible without any restrictions
+
+### Changed
+- **Domain Selection Logic**: Enhanced flexibility for domain switching
+  - Removed session status check that disabled domain selector during active sessions
+  - Added confirmation prompt before switching domains during active quiz sessions
+  - Updated domain selector button to be always clickable (no longer disabled)
+  - Improved user experience by allowing unrestricted domain navigation
+
+### Translation Updates
+- Added `session.confirmDomainSwitch` translation key to all languages:
+  - English: "You have an active session. Switching domains will end your current session. Continue?"
+  - Spanish: "Tienes una sesión activa. Cambiar de dominio finalizará tu sesión actual. ¿Continuar?"
+  - French: "Vous avez une session active. Changer de domaine mettra fin à votre session actuelle. Continuer?"
+  - Portuguese: "Você tem uma sessão ativa. Mudar de domínio encerrará sua sessão atual. Continuar?"
+  - Chinese: "您有一个活动会话。切换域将结束您的当前会话。继续吗？"
+
+### Improved
+- **User Experience**: Complete freedom in domain selection
+  - Users can now select any domain (1-5) at any time without score requirements
+  - No sequential progression required - users can jump to any domain they want
+  - Session confirmation prevents accidental loss of progress
+  - Clearer visual indicators with always-visible chevron icon
+
+## [2025-11-02] - Domain Selection Messaging Clarification
+
+### Changed
+- **Translation Updates**: Clarified messaging across all languages (English, Spanish, Portuguese, French, Chinese)
+  - Updated `session.sessionDescription` to clarify users score 70% to "pass" a domain, not to "advance" to the next
+  - Changed `session.sequentialMastery` from "Sequential mastery system" to "Flexible domain selection" to emphasize users can choose any domain
+  - Updated `results.need70Percent` to explicitly state "You can practice any domain at any time"
+  - Removed language implying users must pass one domain to access the next
+  
+### Improved
+- **User Experience**: Clearer messaging that 70% passing score is for progress tracking only
+  - Users understand they can freely switch between domains 1, 2, 3, 4, and 5 at any time
+  - Passing score (70%) is now clearly presented as an achievement marker, not a requirement to unlock other domains
+  - Consistent messaging across all language translations
+
+## [2025-11-01] - Domain Selection Enhancement
+
+### Added
+- **Domain Selector Dropdown**: Users can now freely change between any domain without restrictions
+  - Added clickable dropdown menu for domain selection in the header
+  - Domain selector shows all 5 domains with their names
+  - Visual indicator (checkmark) shows which domains have been passed
+  - Dropdown automatically closes when clicking outside
+  - Domain selector is disabled during active quiz sessions
+  - Added ChevronDown icon that animates (rotates 180°) when dropdown is open
+  - Improved dropdown visibility with shadow-2xl and z-50 for proper layering
+
+### Changed
+- **AccessScreen.tsx**: Enhanced domain navigation functionality
+  - Removed sequential progression requirement (previously users had to pass Domain 1 before accessing Domain 2, etc.)
+  - Users can now select any domain at any time when not in an active session
+  - Changed domain indicator from static label to interactive button with dropdown
+  - Added `domain-selector` CSS class for click-outside detection
+  - Added useEffect hook to handle closing dropdown when clicking outside
+  - Fixed domain ID mapping to use numeric array [1, 2, 3, 4, 5] instead of Object.keys
+  - Improved dropdown layout with domain name as subtitle and better spacing
+
+### Improved
+- **User Experience**: More flexible domain navigation
+  - Users can revisit any domain to practice or review content
+  - Domain selection is intuitive with hover states and visual feedback
+  - Current domain is highlighted in the dropdown menu
+  - Completed domains show a larger green checkmark (20px) for easy progress tracking
+  - Dropdown has minimum width of 250px for better readability
+  - Smooth transitions on hover and icon rotation
+  - Better visual hierarchy with domain number and name displayed separately
+
 ## [2025-11-01] - Internationalization Updates
 
 ### Changed
