@@ -1387,6 +1387,43 @@ const AccessScreen = ({ }: AccessScreenProps) => {
   };
 
   // Move to next question
+  // Save & Exit function - allows students to exit and review their progress
+  const saveAndExit = async () => {
+    // Save current answer if one is selected
+    if (selectedAnswer !== -1) {
+      const isCorrect =
+        selectedAnswer === currentQuestions[currentQuestion].correct;
+      const newAnswers: UserAnswer[] = [
+        ...userAnswers,
+        {
+          questionIndex: currentQuestion,
+          selected: selectedAnswer,
+          correct: isCorrect,
+        },
+      ];
+      setUserAnswers(newAnswers);
+      
+      const newScore = isCorrect ? score + 1 : score;
+      setScore(newScore);
+      
+      // Update state with current progress
+      setQuizState({
+        score: newScore,
+        question: currentQuestion + 1,
+      });
+    }
+
+    // Show results/review screen without marking session as complete
+    setSessionActive(false);
+    setShowResults(true);
+    
+    // Update URL to show results
+    setQuizState({
+      showResults: true,
+      sessionActive: false,
+    });
+  };
+
   const nextQuestion = async () => {
     const isCorrect =
       selectedAnswer === currentQuestions[currentQuestion].correct;
@@ -1781,15 +1818,24 @@ const AccessScreen = ({ }: AccessScreenProps) => {
                   <span className="text-gray-400">
                     {currentQuestions[currentQuestion]?.topic}
                   </span>
-                  <button
-                    onClick={nextQuestion}
-                    disabled={selectedAnswer === -1}
-                    className="bg-blue-600 hover:bg-blue-700 disabled:bg-gray-600 disabled:cursor-not-allowed px-6 py-2 rounded font-semibold"
-                  >
-                    {currentQuestion + 1 === currentQuestions.length
-                      ? t('quiz:demo.finish')
-                      : t('quiz:demo.next')}
-                  </button>
+                  <div className="flex gap-3">
+                    <button
+                      onClick={saveAndExit}
+                      className="bg-gray-600 hover:bg-gray-700 px-6 py-2 rounded font-semibold transition-colors"
+                      title="Save your progress and exit to review"
+                    >
+                      Save & Exit
+                    </button>
+                    <button
+                      onClick={nextQuestion}
+                      disabled={selectedAnswer === -1}
+                      className="bg-blue-600 hover:bg-blue-700 disabled:bg-gray-600 disabled:cursor-not-allowed px-6 py-2 rounded font-semibold"
+                    >
+                      {currentQuestion + 1 === currentQuestions.length
+                        ? t('quiz:demo.finish')
+                        : t('quiz:demo.next')}
+                    </button>
+                  </div>
                 </div>
               </div>
             ) : (
