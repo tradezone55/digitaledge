@@ -165,6 +165,13 @@ export default function EnhancedLandingPage() {
           <Logo />
           <nav className="hidden md:flex items-center gap-6 ">
             <a
+              href="https://hub.digitaledgeprep.com"
+              className="text-gray-300 hover:text-white transition-colors duration-200 font-medium"
+            >
+              Back to Hub
+            </a>
+            
+            <a
               href="#features"
               className={`hover:text-white transition-colors duration-200 ${activeSection === 'features' ? 'text-orange-400 font-medium' : ''}`}
             >
