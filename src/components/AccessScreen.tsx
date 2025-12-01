@@ -7,13 +7,20 @@ import {
   XCircle,
   Award,
   ChevronRight,
-  AlertTriangle,
+  ChevronDown,
 } from "lucide-react";
 import Logo from "../components/ui/Logo";
-import LogoutUser from "../components/LogoutUser";
-import { useUserStore } from "../stores";
-import { useSaveLocalTestResult } from "../hooks/useLocalTestResults";
 import SupportBanner from "../components/SupportBanner";
+import { useTranslation } from "react-i18next";
+import LanguageSwitch from "./LanguageSwitch";
+import {
+  useQuizStateManager,
+  restoreStateFromURL,
+  syncStateWithURL,
+  hasQuizParams,
+  getCurrentDomain,
+  getCurrentQuestion
+} from "../utils/urlParams";
 
 // Type definitions
 interface Question {
@@ -55,29 +62,44 @@ interface Domain {
 interface AccessScreenProps {
   inGracePeriod?: boolean;
   graceDaysLeft?: number;
-  daysLeft: number;
+  daysLeft?: number;
   isTrial?: boolean;
 }
 
 type DomainId = 1 | 2 | 3 | 4 | 5;
 
-const AccessScreen = ({
-  inGracePeriod = false,
-  graceDaysLeft = 0,
-  daysLeft,
-  isTrial = false,
-}: AccessScreenProps) => {
-  const user = useUserStore((state) => state.user);
-  const { saveTestResult } = useSaveLocalTestResult();
+const AccessScreen = ({ }: AccessScreenProps) => {
+  const { t } = useTranslation(['quiz', 'common', 'dashboard']);
+  const { getQuizState, setQuizState } = useQuizStateManager();
 
-  const [currentDomain, setCurrentDomain] = useState<DomainId>(1);
-  const [currentQuestion, setCurrentQuestion] = useState(0);
+  // Initialize state from URL parameters or localStorage fallback
+  const [currentDomain, setCurrentDomainState] = useState<DomainId>(() => {
+    return getCurrentDomain() as DomainId;
+  });
+  const [currentQuestion, setCurrentQuestionState] = useState(() => {
+    return getCurrentQuestion();
+  });
   const [selectedAnswer, setSelectedAnswer] = useState<number>(-1);
-  const [score, setScore] = useState(0);
-  const [timeElapsed, setTimeElapsed] = useState(0);
-  const [sessionActive, setSessionActive] = useState(false);
-  const [sessionComplete, setSessionComplete] = useState(false);
-  const [showResults, setShowResults] = useState(false);
+  const [score, setScoreState] = useState(() => {
+    const quizState = getQuizState();
+    return quizState.score || 0;
+  });
+  const [timeElapsed, setTimeElapsedState] = useState(() => {
+    const quizState = getQuizState();
+    return quizState.timeElapsed || 0;
+  });
+  const [sessionActive, setSessionActiveState] = useState(() => {
+    const quizState = getQuizState();
+    return quizState.sessionActive || false;
+  });
+  const [sessionComplete, setSessionCompleteState] = useState(() => {
+    const quizState = getQuizState();
+    return quizState.sessionComplete || false;
+  });
+  const [showResults, setShowResultsState] = useState(() => {
+    const quizState = getQuizState();
+    return quizState.showResults || false;
+  });
 
   // Load attempts from localStorage or use default
   const [attempts, setAttempts] = useState<Record<DomainId, Attempt[]>>(() => {
@@ -130,20 +152,83 @@ const AccessScreen = ({
     }
   );
 
-  const [_showDomainSelect, setShowDomainSelect] = useState(false);
+  const [showDomainSelect, setShowDomainSelect] = useState(false);
   const [sessionRestored, setSessionRestored] = useState(false);
+
+  // Close domain selector when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as HTMLElement;
+      if (showDomainSelect && !target.closest('.domain-selector')) {
+        setShowDomainSelect(false);
+      }
+    };
+
+    if (showDomainSelect) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [showDomainSelect]);
+
+  // Wrapper functions that update both local state and URL parameters
+  const setCurrentDomain = (domain: DomainId) => {
+    setCurrentDomainState(domain);
+    setQuizState({ domain }, true); // Replace history to avoid cluttering
+  };
+
+  const setCurrentQuestion = (question: number) => {
+    setCurrentQuestionState(question);
+    setQuizState({ question });
+  };
+
+  const setScore = (score: number) => {
+    setScoreState(score);
+    setQuizState({ score });
+  };
+
+  const setTimeElapsed = (time: number) => {
+    setTimeElapsedState(time);
+    setQuizState({ timeElapsed: time });
+  };
+
+  const setSessionActive = (active: boolean) => {
+    setSessionActiveState(active);
+    setQuizState({ sessionActive: active });
+  };
+
+  const setSessionComplete = (complete: boolean) => {
+    setSessionCompleteState(complete);
+    setQuizState({ sessionComplete: complete });
+  };
+
+  const setShowResults = (show: boolean) => {
+    setShowResultsState(show);
+    setQuizState({ showResults: show });
+  };
 
   // Domain Information
   const domains: Record<DomainId, Domain> = {
-    1: { name: "Networking Fundamentals", percentage: 24, color: "blue" },
-    2: { name: "Network Implementations", percentage: 19, color: "green" },
-    3: { name: "Network Operations", percentage: 16, color: "yellow" },
-    4: { name: "Network Security", percentage: 19, color: "red" },
-    5: { name: "Network Troubleshooting", percentage: 22, color: "purple" },
+    1: { name: t('quiz:domains.1'), percentage: 24, color: "blue" },
+    2: { name: t('quiz:domains.2'), percentage: 19, color: "green" },
+    3: { name: t('quiz:domains.3'), percentage: 16, color: "yellow" },
+    4: { name: t('quiz:domains.4'), percentage: 19, color: "red" },
+    5: { name: t('quiz:domains.5'), percentage: 22, color: "purple" },
+  };
+
+  // Get translated questions
+  const getTranslatedQuestions = (domainId: DomainId): Question[] => {
+    const questions = t(`questions:domains.${domainId}`, { returnObjects: true }) as Question[];
+    return questions || [];
   };
 
   // Create comprehensive question pools
   const createQuestionPool = (domainId: DomainId): Question[] => {
+    const translatedQuestions = getTranslatedQuestions(domainId);
+
+    // Fallback to hardcoded questions if translations are not available
     const baseQuestions: Record<DomainId, Question[]> = {
       1: [
         {
@@ -1076,6 +1161,11 @@ const AccessScreen = ({
       }
     });
 
+    // Use translated questions if available, otherwise fall back to hardcoded
+    if (translatedQuestions.length > 0) {
+      return translatedQuestions;
+    }
+
     return [...base, ...additional];
   };
 
@@ -1093,7 +1183,12 @@ const AccessScreen = ({
     let interval: NodeJS.Timeout | undefined;
     if (sessionActive && !sessionComplete) {
       interval = setInterval(() => {
-        setTimeElapsed((prev) => prev + 1);
+        setTimeElapsedState((prev: number) => {
+          const newTime = prev + 1;
+          // Update URL parameters with new time
+          setQuizState({ timeElapsed: newTime });
+          return newTime;
+        });
       }, 1000);
     }
     return () => {
@@ -1122,7 +1217,7 @@ const AccessScreen = ({
     }
   }, [domainsPassed]);
 
-  // Persist current session progress to localStorage
+  // Persist current session progress to localStorage and URL parameters
   useEffect(() => {
     if (sessionActive && !sessionComplete) {
       try {
@@ -1136,13 +1231,35 @@ const AccessScreen = ({
           selectedAnswer,
           sessionStartTime: Date.now(),
         };
+
+        // Save to localStorage for fallback
         localStorage.setItem("comptia-session", JSON.stringify(sessionData));
+
+        // Update URL parameters with current state
+        setQuizState({
+          domain: currentDomain,
+          question: currentQuestion,
+          score,
+          timeElapsed,
+          sessionActive,
+          sessionComplete,
+          showResults,
+        });
       } catch (error) {
-        console.error("Error saving session to localStorage:", error);
+        console.error("Error saving session:", error);
       }
     } else {
       // Clear session data when session is not active
       localStorage.removeItem("comptia-session");
+
+      // Clear URL parameters when session ends
+      if (sessionComplete) {
+        setQuizState({
+          sessionActive: false,
+          sessionComplete: true,
+          showResults: true,
+        }, true); // Replace history
+      }
     }
   }, [
     sessionActive,
@@ -1154,45 +1271,69 @@ const AccessScreen = ({
     userAnswers,
     currentQuestions,
     selectedAnswer,
+    showResults,
   ]);
 
-  // Load session data on component mount
+  // Load session data on component mount - prioritize URL parameters over localStorage
   useEffect(() => {
     try {
-      const savedSession = localStorage.getItem("comptia-session");
-      if (savedSession) {
-        const sessionData = JSON.parse(savedSession);
-        const sessionAge = Date.now() - (sessionData.sessionStartTime || 0);
+      // First check if URL parameters exist
+      if (hasQuizParams()) {
+        const urlState = restoreStateFromURL();
 
-        // Only restore session if it's less than 24 hours old
-        if (sessionAge < 24 * 60 * 60 * 1000) {
-          setCurrentDomain(sessionData.currentDomain || 1);
-          setCurrentQuestion(sessionData.currentQuestion || 0);
-          setScore(sessionData.score || 0);
-          setTimeElapsed(sessionData.timeElapsed || 0);
-          setUserAnswers(sessionData.userAnswers || []);
-          setCurrentQuestions(sessionData.currentQuestions || []);
-          setSelectedAnswer(sessionData.selectedAnswer || -1);
+        if (urlState.domain) setCurrentDomainState(urlState.domain as DomainId);
+        if (urlState.question) setCurrentQuestionState(urlState.question);
+        if (urlState.score !== undefined) setScoreState(urlState.score);
+        if (urlState.timeElapsed !== undefined) setTimeElapsedState(urlState.timeElapsed);
+        if (urlState.sessionActive !== undefined) setSessionActiveState(urlState.sessionActive);
+        if (urlState.sessionComplete !== undefined) setSessionCompleteState(urlState.sessionComplete);
+        if (urlState.showResults !== undefined) setShowResultsState(urlState.showResults);
 
-          // Only restore session if there are questions and we're not at the end
-          if (
-            sessionData.currentQuestions &&
-            sessionData.currentQuestions.length > 0 &&
-            sessionData.currentQuestion < sessionData.currentQuestions.length
-          ) {
-            setSessionActive(true);
-            setSessionRestored(true);
+        // Sync URL state to localStorage for fallback
+        syncStateWithURL();
 
-            // Show notification for 5 seconds
-            setTimeout(() => setSessionRestored(false), 5000);
+        // Show restoration notification if session is active
+        if (urlState.sessionActive && urlState.question !== undefined) {
+          setSessionRestored(true);
+          setTimeout(() => setSessionRestored(false), 5000);
+        }
+      } else {
+        // Fallback to localStorage if no URL parameters
+        const savedSession = localStorage.getItem("comptia-session");
+        if (savedSession) {
+          const sessionData = JSON.parse(savedSession);
+          const sessionAge = Date.now() - (sessionData.sessionStartTime || 0);
+
+          // Only restore session if it's less than 24 hours old
+          if (sessionAge < 24 * 60 * 60 * 1000) {
+            setCurrentDomain(sessionData.currentDomain || 1);
+            setCurrentQuestion(sessionData.currentQuestion || 0);
+            setScore(sessionData.score || 0);
+            setTimeElapsed(sessionData.timeElapsed || 0);
+            setUserAnswers(sessionData.userAnswers || []);
+            setCurrentQuestions(sessionData.currentQuestions || []);
+            setSelectedAnswer(sessionData.selectedAnswer || -1);
+
+            // Only restore session if there are questions and we're not at the end
+            if (
+              sessionData.currentQuestions &&
+              sessionData.currentQuestions.length > 0 &&
+              sessionData.currentQuestion < sessionData.currentQuestions.length
+            ) {
+              setSessionActive(true);
+              setSessionRestored(true);
+
+              // Show notification for 5 seconds
+              setTimeout(() => setSessionRestored(false), 5000);
+            }
+          } else {
+            // Clear old session data
+            localStorage.removeItem("comptia-session");
           }
-        } else {
-          // Clear old session data
-          localStorage.removeItem("comptia-session");
         }
       }
     } catch (error) {
-      console.error("Error loading session from localStorage:", error);
+      console.error("Error loading session:", error);
       localStorage.removeItem("comptia-session");
     }
   }, []); // Only run on mount
@@ -1227,6 +1368,17 @@ const AccessScreen = ({
     setSessionComplete(false);
     setShowResults(false);
     setShowDomainSelect(false);
+
+    // Update URL parameters to reflect new session state
+    setQuizState({
+      domain,
+      question: 0,
+      score: 0,
+      timeElapsed: 0,
+      sessionActive: true,
+      sessionComplete: false,
+      showResults: false,
+    }, true); // Replace history for new session
   };
 
   // Handle answer selection
@@ -1235,6 +1387,43 @@ const AccessScreen = ({
   };
 
   // Move to next question
+  // Save & Exit function - allows students to exit and review their progress
+  const saveAndExit = async () => {
+    // Save current answer if one is selected
+    if (selectedAnswer !== -1) {
+      const isCorrect =
+        selectedAnswer === currentQuestions[currentQuestion].correct;
+      const newAnswers: UserAnswer[] = [
+        ...userAnswers,
+        {
+          questionIndex: currentQuestion,
+          selected: selectedAnswer,
+          correct: isCorrect,
+        },
+      ];
+      setUserAnswers(newAnswers);
+      
+      const newScore = isCorrect ? score + 1 : score;
+      setScore(newScore);
+      
+      // Update state with current progress
+      setQuizState({
+        score: newScore,
+        question: currentQuestion + 1,
+      });
+    }
+
+    // Show results/review screen without marking session as complete
+    setSessionActive(false);
+    setShowResults(true);
+    
+    // Update URL to show results
+    setQuizState({
+      showResults: true,
+      sessionActive: false,
+    });
+  };
+
   const nextQuestion = async () => {
     const isCorrect =
       selectedAnswer === currentQuestions[currentQuestion].correct;
@@ -1248,22 +1437,27 @@ const AccessScreen = ({
     ];
     setUserAnswers(newAnswers);
 
-    if (isCorrect) {
-      setScore(score + 1);
-    }
+    const newScore = isCorrect ? score + 1 : score;
+    setScore(newScore);
 
     if (currentQuestion + 1 < currentQuestions.length) {
-      setCurrentQuestion(currentQuestion + 1);
+      const nextQuestionIndex = currentQuestion + 1;
+      setCurrentQuestion(nextQuestionIndex);
       setSelectedAnswer(-1);
+
+      // Update URL parameters for next question
+      setQuizState({
+        question: nextQuestionIndex,
+        score: newScore,
+      });
     } else {
       // Session complete
       setSessionActive(false);
       setSessionComplete(true);
       setShowResults(true);
 
-      const finalScore = score + (isCorrect ? 1 : 0);
+      const finalScore = newScore;
       const passed = finalScore / currentQuestions.length >= 0.7;
-      const finalUserAnswers = [...newAnswers];
 
       // Save attempt locally
       const newAttempt: Attempt = {
@@ -1284,38 +1478,46 @@ const AccessScreen = ({
         setDomainsPassed((prev) => ({ ...prev, [currentDomain]: true }));
       }
 
-      // Save test result to localStorage
-      if (user?.user_id) {
-        try {
-          await saveTestResult({
-            user_id: user.user_id,
-            domain_id: currentDomain,
-            score: finalScore,
-            total_questions: currentQuestions.length,
-            duration: timeElapsed,
-            passed: passed,
-            completed_at: new Date().toISOString(),
-          });
-        } catch (error) {
-          console.error("Failed to save test result to localStorage:", error);
-          // Test result is still saved locally in attempts, so this doesn't break the user experience
-        }
-      }
+      // Update URL parameters for completed session
+      setQuizState({
+        score: finalScore,
+        sessionActive: false,
+        sessionComplete: true,
+        showResults: true,
+      }, true); // Replace history for completed session
+
+      // Test results are saved locally in attempts array (see above)
     }
   };
 
   // Change domain
   const changeDomain = (domain: DomainId) => {
-    if (
-      domain === 1 ||
-      (domain > 1 && domainsPassed[(domain - 1) as DomainId])
-    ) {
-      setCurrentDomain(domain);
-      setSessionActive(false);
-      setSessionComplete(false);
-      setShowResults(false);
-      setShowDomainSelect(false);
+    // If session is active, confirm before switching
+    if (sessionActive) {
+      const confirmSwitch = window.confirm(
+        t('quiz:session.confirmDomainSwitch', {
+          defaultValue: 'You have an active session. Switching domains will end your current session. Continue?'
+        })
+      );
+      if (!confirmSwitch) {
+        setShowDomainSelect(false);
+        return;
+      }
     }
+
+    setCurrentDomain(domain);
+    setSessionActive(false);
+    setSessionComplete(false);
+    setShowResults(false);
+    setShowDomainSelect(false);
+
+    // Update URL parameters for domain change
+    setQuizState({
+      domain,
+      sessionActive: false,
+      sessionComplete: false,
+      showResults: false,
+    }, true); // Replace history for domain change
   };
 
   // Get domain color classes
@@ -1348,12 +1550,12 @@ const AccessScreen = ({
                 <XCircle className="w-16 h-16 text-red-500 mx-auto mb-4" />
               )}
               <h2 className="text-3xl font-bold mb-2">
-                {passed ? "Congratulations!" : "Keep Studying!"}
+                {passed ? t('quiz:results.congratulations') : t('quiz:results.keepStudying')}
               </h2>
               <p className="text-gray-300">
                 {passed
-                  ? `You passed Domain ${currentDomain}!`
-                  : `You need 70% to advance to Domain ${currentDomain + 1}`}
+                  ? t('quiz:results.passedDomain', { domain: currentDomain })
+                  : t('quiz:results.need70Percent', { nextDomain: currentDomain + 1 })}
               </p>
             </div>
 
@@ -1362,7 +1564,7 @@ const AccessScreen = ({
                 <div className="text-2xl font-bold text-blue-400">
                   {finalScore}/{totalQuestions}
                 </div>
-                <div className="text-gray-300">Questions Correct</div>
+                <div className="text-gray-300">{t('quiz:results.questionsCorrect')}</div>
               </div>
               <div className="bg-gray-700 rounded-lg p-4 text-center">
                 <div
@@ -1371,13 +1573,13 @@ const AccessScreen = ({
                 >
                   {percentage}%
                 </div>
-                <div className="text-gray-300">Final Score</div>
+                <div className="text-gray-300">{t('quiz:results.finalScore')}</div>
               </div>
               <div className="bg-gray-700 rounded-lg p-4 text-center">
                 <div className="text-2xl font-bold text-purple-400">
                   {formatTime(timeElapsed)}
                 </div>
-                <div className="text-gray-300">Time Taken</div>
+                <div className="text-gray-300">{t('quiz:results.timeTaken')}</div>
               </div>
             </div>
 
@@ -1390,17 +1592,17 @@ const AccessScreen = ({
                     }
                     className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-semibold flex items-center gap-2"
                   >
-                    Advance to Domain {currentDomain + 1}
+                    {t('quiz:results.advanceToNext', { domain: currentDomain + 1 })}
                     <ChevronRight className="w-4 h-4" />
                   </button>
                 ) : (
                   <div className="text-center">
                     <Award className="w-12 h-12 text-yellow-400 mx-auto mb-4" />
                     <h3 className="text-2xl font-bold text-yellow-400 mb-2">
-                      Certification Ready!
+                      {t('quiz:results.certificationReady')}
                     </h3>
                     <p className="text-gray-300">
-                      You have mastered all 5 domains!
+                      {t('quiz:results.masteredAllDomains')}
                     </p>
                   </div>
                 )
@@ -1409,14 +1611,14 @@ const AccessScreen = ({
                   onClick={() => startSession(currentDomain)}
                   className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold"
                 >
-                  Retry Domain {currentDomain}
+                  {t('quiz:results.retryDomain', { domain: currentDomain })}
                 </button>
               )}
               <button
                 onClick={() => setShowResults(false)}
                 className="bg-gray-600 hover:bg-gray-700 text-white px-6 py-3 rounded-lg font-semibold"
               >
-                Back to Dashboard
+                {t('common:buttons.backToDashboard')}
               </button>
             </div>
           </div>
@@ -1424,14 +1626,14 @@ const AccessScreen = ({
           {/* Wrong Answer Explanations */}
           <div className="bg-gray-800 rounded-lg p-6">
             <h3 className="text-2xl font-bold mb-6 text-red-400">
-              Review Your Incorrect Answers
+              {t('quiz:results.reviewIncorrect')}
             </h3>
 
             {userAnswers.filter((answer) => !answer.correct).length === 0 ? (
               <div className="text-center py-8">
                 <CheckCircle className="w-12 h-12 text-green-500 mx-auto mb-4" />
                 <p className="text-green-400 text-lg font-semibold">
-                  Perfect! You got all questions correct!
+                  {t('quiz:results.perfectScore')}
                 </p>
               </div>
             ) : (
@@ -1460,14 +1662,14 @@ const AccessScreen = ({
 
                         <div className="mb-4">
                           <p className="text-red-400 mb-2">
-                            <strong>Your Answer:</strong>{" "}
+                            <strong>{t('quiz:results.yourAnswer')}:</strong>{" "}
                             {question.choices[answer.selected]}
                           </p>
                         </div>
 
                         <div className="bg-gray-700 rounded-lg p-4">
                           <p className="text-yellow-300 font-semibold mb-2">
-                            Why this answer is incorrect:
+                            {t('quiz:results.whyIncorrect')}
                           </p>
                           <p className="text-gray-300">{wrongExplanation}</p>
                         </div>
@@ -1487,65 +1689,18 @@ const AccessScreen = ({
   }
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white">
+    <div className="min-h-screen bg-gray-900 text-white ">
       {/* Header */}
       <div className="bg-gray-800 lg:p-6 p-4 space-y-10">
-        {/* Grace Period Warning */}
-        {inGracePeriod && (
-          <div className="bg-orange-500/20 border border-orange-500 rounded-lg p-4 mb-4">
-            <div className="flex items-center gap-3">
-              <AlertTriangle className="w-5 h-5 text-orange-500" />
-              <div>
-                <h3 className="text-orange-400 font-semibold">
-                  Grace Period Active
-                </h3>
-                <p className="text-orange-300 text-sm">
-                  Your subscription has expired, but you have {graceDaysLeft}{" "}
-                  day{graceDaysLeft !== 1 ? "s" : ""} remaining in your grace
-                  period.
-                  <span className="ml-1">
-                    <button
-                      onClick={() => (window.location.href = "/home/checkout")}
-                      className="text-orange-200 underline hover:text-white"
-                    >
-                      Renew now
-                    </button>
-                  </span>{" "}
-                  to continue uninterrupted access.
-                </p>
-              </div>
-            </div>
-          </div>
-        )}
-
-        {/* Session Restored Notification */}
-        {sessionRestored && (
-          <div className="bg-green-500/20 border border-green-500 rounded-lg p-4 mb-4">
-            <div className="flex items-center gap-3">
-              <CheckCircle className="w-5 h-5 text-green-500" />
-              <div>
-                <h3 className="text-green-400 font-semibold">
-                  Session Restored
-                </h3>
-                <p className="text-green-300 text-sm">
-                  Your previous testing session has been restored. You can
-                  continue from question {currentQuestion + 1}.
-                </p>
-              </div>
-            </div>
-          </div>
-        )}
-
         <div className="flex justify-between items-start mb-4 lg:flex-row flex-col-reverse gap-10">
           <div className="flex-1">
             <div className="flex items-center gap-4 mb-2">
               <h1 className="text-2xl font-bold">
-                Domain {currentDomain} — {domains[currentDomain].name}
+                {t('quiz:domain')} {currentDomain} — {domains[currentDomain].name}
               </h1>
             </div>
             <p className="text-gray-300">
-              Sequential mastery system: pass ≥70%, automatic retry,
-              comprehensive question pools with explanations.
+              {t('quiz:session.sequentialMastery')}
             </p>
           </div>
 
@@ -1560,58 +1715,61 @@ const AccessScreen = ({
               </div>
               <SupportBanner compact />
             </div>
-            <LogoutUser className="lg:hidden flex" />
+            <div className="flex items-center gap-2">
+              <LanguageSwitch />
+            </div>
           </div>
         </div>
 
         <div className="flex items-center justify-between ">
           <div className="flex items-center gap-4 lg:flex-row flex-col w-full">
-            <p
-              className={`px-3 py-1 rounded border lg:w-[200px] w-full text-center ${getDomainColor(
-                currentDomain
-              )}`}
-            >
-              Current Domain: {currentDomain}
-            </p>
+            <div className="relative lg:w-[200px] w-full domain-selector">
+              <button
+                onClick={() => setShowDomainSelect(!showDomainSelect)}
+                className={`px-3 py-1 rounded border w-full flex items-center justify-center gap-2 ${getDomainColor(
+                  currentDomain
+                )} hover:bg-gray-700 cursor-pointer`}
+              >
+                <span>{t('common:labels.currentDomain')}: {currentDomain}</span>
+                <ChevronDown className={`w-4 h-4 transition-transform ${showDomainSelect ? 'rotate-180' : ''}`} />
+              </button>
+              {showDomainSelect && (
+                <div className="absolute top-full left-0 mt-2 w-full min-w-[250px] bg-gray-700 rounded-lg shadow-2xl border border-gray-600 z-50">
+                  {([1, 2, 3, 4, 5] as DomainId[]).map((domainId) => (
+                    <button
+                      key={domainId}
+                      onClick={() => changeDomain(domainId)}
+                      className={`w-full text-left px-4 py-3 hover:bg-gray-600 transition-colors first:rounded-t-lg last:rounded-b-lg border-b border-gray-600 last:border-b-0 ${currentDomain === domainId ? 'bg-gray-600' : ''
+                        }`}
+                    >
+                      <div className="flex items-center justify-between">
+                        <div>
+                          <div className="font-semibold">{t('quiz:domain')} {domainId}</div>
+                          <div className="text-xs text-gray-400">{domains[domainId].name}</div>
+                        </div>
+                        {domainsPassed[domainId] && (
+                          <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
+                        )}
+                      </div>
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
             {!sessionActive && (
               <button
                 onClick={() => startSession()}
                 className="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded font-semibold lg:w-[200px] w-full"
               >
-                Start Session
+                {t('common:buttons.startSession')}
               </button>
             )}
             <p className="text-gray-300 lg:w-[200px] w-full text-center">
-              50 Q per session
+              {t('common:labels.questionsPerSession')}
             </p>
           </div>
         </div>
 
-        {/* Display user name */}
-        <div className="flex items-center gap-2 lmt-4 justify-between">
-          <div>
-            <p className="text-white font-bold text-lg">
-              Welcome Back, <span className="text-blue-400 ">{user?.name}</span>{" "}
-            </p>
-            <p className="text-gray-200 font-semibold">
-              {isTrial ? (
-                <>
-                  Free trial ends in{" "}
-                  <span className="text-green-500 mx-1">{daysLeft} Days</span>
-                </>
-              ) : (
-                <>
-                  Subscription ends in{" "}
-                  <span className="text-orange-500 mx-1">{daysLeft} Days</span>
-                </>
-              )}
-            </p>
-          </div>
-
-          <div className="flex items-center gap-2">
-            <LogoutUser className="lg:flex hidden" />
-          </div>
-        </div>
       </div>
 
       <div className="p-6">
@@ -1627,10 +1785,10 @@ const AccessScreen = ({
                   <div className="flex items-center gap-4">
                     <div className="flex items-center gap-1">
                       <Clock className="w-4 h-4" />
-                      <span>Time {formatTime(timeElapsed)}</span>
+                      <span>{t('quiz:demo.timeLabel')} {formatTime(timeElapsed)}</span>
                     </div>
                     <div className="flex items-center gap-1">
-                      <span>Score {score}</span>
+                      <span>{t('quiz:demo.scoreLabel')} {score}</span>
                     </div>
                   </div>
                 </div>
@@ -1660,33 +1818,40 @@ const AccessScreen = ({
                   <span className="text-gray-400">
                     {currentQuestions[currentQuestion]?.topic}
                   </span>
-                  <button
-                    onClick={nextQuestion}
-                    disabled={selectedAnswer === -1}
-                    className="bg-blue-600 hover:bg-blue-700 disabled:bg-gray-600 disabled:cursor-not-allowed px-6 py-2 rounded font-semibold"
-                  >
-                    {currentQuestion + 1 === currentQuestions.length
-                      ? "Finish"
-                      : "Next"}
-                  </button>
+                  <div className="flex gap-3">
+                    <button
+                      onClick={saveAndExit}
+                      className="bg-gray-600 hover:bg-gray-700 px-6 py-2 rounded font-semibold transition-colors"
+                      title="Save your progress and exit to review"
+                    >
+                      Save & Exit
+                    </button>
+                    <button
+                      onClick={nextQuestion}
+                      disabled={selectedAnswer === -1}
+                      className="bg-blue-600 hover:bg-blue-700 disabled:bg-gray-600 disabled:cursor-not-allowed px-6 py-2 rounded font-semibold"
+                    >
+                      {currentQuestion + 1 === currentQuestions.length
+                        ? t('quiz:demo.finish')
+                        : t('quiz:demo.next')}
+                    </button>
+                  </div>
                 </div>
               </div>
             ) : (
               <div className="bg-gray-800 rounded-lg p-8 text-center">
                 <BookOpen className="w-16 h-16 text-blue-500 mx-auto mb-4" />
                 <h2 className="text-2xl font-bold mb-4">
-                  Ready to Test Domain {currentDomain}?
+                  {t('quiz:session.readyToTest', { domain: currentDomain })}
                 </h2>
                 <p className="text-gray-300 mb-6">
-                  You will answer 50 randomly selected questions from{" "}
-                  {domains[currentDomain].name}. You need 70% to advance to the
-                  next domain.
+                  {t('quiz:session.sessionDescription', { domainName: domains[currentDomain].name })}
                 </p>
                 <button
                   onClick={() => startSession()}
                   className="bg-blue-600 hover:bg-blue-700 px-8 py-3 rounded-lg font-semibold text-lg"
                 >
-                  Begin Domain {currentDomain} Test
+                  {t('quiz:session.beginTest', { domain: currentDomain })}
                 </button>
               </div>
             )}
@@ -1698,23 +1863,23 @@ const AccessScreen = ({
             <div className="bg-gray-800 rounded-lg p-6">
               <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
                 <BarChart3 className="w-5 h-5" />
-                Attempts — Domain {currentDomain}
+                {t('quiz:attempts.title', { domain: currentDomain })}
               </h3>
               <p className="text-gray-400 text-sm mb-4">
-                Saved locally in your browser.
+                {t('quiz:attempts.savedLocally')}
               </p>
 
               <div className="space-y-2">
                 <div className="grid grid-cols-4 gap-2 text-sm font-semibold text-gray-300 border-b border-gray-600 pb-2">
                   <span>#</span>
-                  <span>Date</span>
-                  <span>Score</span>
-                  <span>Dur</span>
+                  <span>{t('quiz:attempts.headers.date')}</span>
+                  <span>{t('quiz:attempts.headers.score')}</span>
+                  <span>{t('quiz:attempts.headers.duration')}</span>
                 </div>
 
                 {attempts[currentDomain].length === 0 ? (
                   <div className="text-gray-500 text-center py-4">
-                    No attempts yet
+                    {t('quiz:attempts.noAttempts')}
                   </div>
                 ) : (
                   attempts[currentDomain].map((attempt, index) => (
@@ -1740,25 +1905,25 @@ const AccessScreen = ({
 
             {/* Question Pool Info */}
             <div className="bg-gray-800 rounded-lg p-6">
-              <h3 className="text-xl font-bold mb-4">Question Pool</h3>
+              <h3 className="text-xl font-bold mb-4">{t('quiz:questionPool.title')}</h3>
               <p className="text-gray-400 text-sm mb-4">
-                Comprehensive questions covering exam objectives.
+                {t('quiz:questionPool.description')}
               </p>
 
               <div className="space-y-2">
                 <div className="flex justify-between">
-                  <span className="text-gray-400">Pool Size:</span>
+                  <span className="text-gray-400">{t('quiz:questionPool.poolSize')}:</span>
                   <span className="text-blue-400">
-                    {questionPools[currentDomain].length} questions
+                    {questionPools[currentDomain].length} {t('quiz:session.questions')}
                   </span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-gray-400">Per Session:</span>
-                  <span className="text-blue-400">50 questions</span>
+                  <span className="text-gray-400">{t('quiz:questionPool.perSession')}:</span>
+                  <span className="text-blue-400">{t('quiz:questionPool.perSessionValue')}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-gray-400">Pass Threshold:</span>
-                  <span className="text-green-400">70% (35/50)</span>
+                  <span className="text-gray-400">{t('quiz:questionPool.passThreshold')}:</span>
+                  <span className="text-green-400">{t('quiz:questionPool.passThresholdValue')}</span>
                 </div>
               </div>
             </div>
@@ -1770,7 +1935,7 @@ const AccessScreen = ({
       <div className="bg-gray-800 border-t border-gray-700 p-4">
         <div className="max-w-6xl mx-auto flex justify-between items-center lg:flex-row flex-col gap-4">
           <div className="text-sm text-gray-400">
-            CompTIA Network+ Domain Testing System
+            {t('dashboard:system.title')}
           </div>
           <div className="flex items-center gap-4 lg:flex-row flex-col-reverse">
             <SupportBanner compact />

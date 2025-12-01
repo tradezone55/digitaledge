@@ -1,0 +1,88 @@
+{
+  "domain": "域",
+  "domains": {
+    "1": "网络基础",
+    "2": "网络实施",
+    "3": "网络运营",
+    "4": "网络安全",
+    "5": "网络故障排除"
+  },
+  "session": {
+    "readyToTest": "准备好测试域 {{domain}} 了吗？",
+    "sessionDescription": "您将回答从 {{domainName}} 中随机选择的50个问题。获得70%或更高分数即可通过此域。",
+    "beginTest": "开始域 {{domain}} 测试",
+    "sequentialMastery": "灵活的域选择：选择任何域，获得≥70%即可通过，带有解释的综合问题库。",
+    "questionPoolInfo": "涵盖考试目标的综合问题。",
+    "poolSize": "池大小",
+    "perSession": "每次会话",
+    "passThreshold": "通过阈值",
+    "questions": "问题",
+    "passThresholdValue": "70% (35/50)",
+    "confirmDomainSwitch": "您有一个活动会话。切换域将结束您的当前会话。继续吗？"
+  },
+  "results": {
+    "congratulations": "恭喜！",
+    "keepStudying": "继续学习！",
+    "passedDomain": "您通过了域 {{domain}}！",
+    "need70Percent": "获得70%或更高分数即可通过此域。您可以随时练习任何域。",
+    "questionsCorrect": "正确问题",
+    "finalScore": "最终分数",
+    "timeTaken": "所用时间",
+    "reviewIncorrect": "回顾您的错误答案",
+    "perfectScore": "完美！您答对了所有问题！",
+    "yourAnswer": "您的答案",
+    "whyIncorrect": "为什么这个答案是错误的：",
+    "advanceToNext": "进入域 {{domain}}",
+    "retryDomain": "重试域 {{domain}}",
+    "certificationReady": "认证准备就绪！",
+    "masteredAllDomains": "您已掌握所有5个域！"
+  },
+  "attempts": {
+    "title": "尝试 — 域 {{domain}}",
+    "savedLocally": "保存在您的浏览器中。",
+    "noAttempts": "暂无尝试",
+    "headers": {
+      "number": "#",
+      "date": "日期",
+      "score": "分数",
+      "duration": "持续时间"
+    }
+  },
+  "questionPool": {
+    "title": "问题库",
+    "description": "涵盖考试目标的综合问题。",
+    "poolSize": "题库大小",
+    "perSession": "每次会话",
+    "perSessionValue": "50个问题",
+    "passThreshold": "通过阈值",
+    "passThresholdValue": "70% (35/50)"
+  },
+  "subscription": {
+    "trialEndsIn": "免费试用在 {{days}} 天后结束",
+    "subscriptionEndsIn": "订阅在 {{days}} 天后结束"
+  },
+  "demo": {
+    "title": "试试我们的演示测验",
+    "description": "体验我们全面的问题格式，包含来自域1的5个示例问题。为每个答案获得即时反馈和解释。",
+    "startDemo": "开始演示",
+    "skipDemo": "跳过演示",
+    "demoComplete": "演示完成！",
+    "scoreDescription": "您正确回答了 {{total}} 个问题中的 {{correct}} 个 ({{percentage}}%)",
+    "questionsCorrect": "正确问题",
+    "finalScore": "最终分数",
+    "timeTaken": "所用时间",
+    "getFullAccess": "获取完整访问权限",
+    "reviewIncorrect": "回顾您的错误答案",
+    "questionNumber": "问题 {{number}}：{{question}}",
+    "yourAnswer": "您的答案",
+    "correctAnswer": "正确答案",
+    "explanation": "解释",
+    "demoProgress": "演示 {{current}}/{{total}}",
+    "timeLabel": "时间",
+    "time": "{{time}}",
+    "scoreLabel": "分数",
+    "score": "{{score}}",
+    "next": "下一个",
+    "finish": "完成"
+  }
+}

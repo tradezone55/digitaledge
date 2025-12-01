@@ -1,0 +1,103 @@
+{
+  "hero": {
+    "badge": "Go-Live in 24 Hours",
+    "title": "Master Network+ with Real Exam Practice",
+    "subtitle": "A high-impact testing system engineered by a Cisco Academy & AWS instructor. Train like it's game day—timed, scored, and explained.",
+    "examDomainsCovered": "Exam Domains Covered",
+    "cloudOnPremScenarios": "Cloud & On-Prem Scenarios"
+  },
+  "features": {
+    "title": "Features",
+    "subtitle": "Everything you need to train with purpose and pass with confidence.",
+    "examStyleQuestions": {
+      "title": "Exam-Style Questions",
+      "desc": "Practice mapped to CompTIA Network+ objectives."
+    },
+    "instantFeedback": {
+      "title": "Instant Feedback",
+      "desc": "Explanations that teach the why behind each answer."
+    },
+    "mobileFriendly": {
+      "title": "Mobile-Friendly",
+      "desc": "Train anywhere — desktop, tablet, or phone."
+    },
+    "instructorBuilt": {
+      "title": "Instructor-Built",
+      "desc": "Designed by a Cisco & AWS Academy instructor."
+    }
+  },
+  "howItWorks": {
+    "joinBeta": {
+      "title": "Join the Beta",
+      "desc": "Reserve your spot and receive an access link."
+    },
+    "startPracticing": {
+      "title": "Start Practicing",
+      "desc": "Timed quizzes with real-time scoring."
+    },
+    "trackProgress": {
+      "title": "Track Progress",
+      "desc": "See strengths, gaps, and trends over time."
+    },
+    "passWithConfidence": {
+      "title": "Pass with Confidence",
+      "desc": "Hit exam day with swagger — not stress."
+    }
+  },
+  "pricing": {
+    "betaOffer": {
+      "badge": "Limited-Time Beta",
+      "title": "Early Access (Beta)",
+      "desc": "Intro pricing during beta. Features and content may change based on feedback.",
+      "price": "Free",
+      "priceSubtext": "intro price during beta",
+      "features": [
+        "Full access to all domains",
+        "Timed quizzes & instant explanations",
+        "Progress tracking dashboard",
+        "Beta updates & new question packs"
+      ],
+      "guarantee": "Access Guarantee: If you can't access after purchase, we'll grant free access until it's fixed."
+    },
+    "classroomLicense": {
+      "badge": "Educators",
+      "title": "Classroom License",
+      "desc": "Seat packs with invite codes and instructor analytics.",
+      "price": "Custom"
+    }
+  },
+  "testimonials": {
+    "title": "Results that Speak",
+    "quotes": [
+      {
+        "text": "This training opened my eyes and accelerated my mastery of networking concepts.",
+        "author": "A. Sahu, PhD",
+        "title": "Professor & IEEE Senior Member"
+      },
+      {
+        "text": "Sharp, practical, and engaging. I felt ready for the real exam after week one!",
+        "author": "Network Admin Candidate",
+        "title": "Boot Camp Graduate"
+      },
+      {
+        "text": "Instant feedback made the difference. I finally understood my weak spots.",
+        "author": "IT Student",
+        "title": "Beta User"
+      }
+    ]
+  },
+  "sampleQuiz": {
+    "title": "Sample Question",
+    "question": "Which layer of the OSI model is responsible for path determination and logical addressing?",
+    "options": ["Physical", "Data Link", "Network", "Transport"],
+    "correctAnswer": "Correct: C — The Network layer (Layer 3) handles routing and logical addressing (IP)."
+  },
+  "livePractice": "Live Practice",
+  "timedQuiz": "Timed Quiz",
+  "close": "Close",
+  "ariaLabels": {
+    "previousTestimonials": "Previous testimonials",
+    "nextTestimonials": "Next testimonials",
+    "goToTestimonial": "Go to testimonial {{index}}"
+  }
+}

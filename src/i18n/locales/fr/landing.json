@@ -1,0 +1,103 @@
+{
+  "hero": {
+    "badge": "Mise en Ligne dans 24 Heures",
+    "title": "Maîtrisez Network+ avec la Pratique d'Examen Réel",
+    "subtitle": "Un système de test à fort impact conçu par un instructeur Cisco Academy et AWS. Entraînez-vous comme le jour J—chronométré, noté et expliqué.",
+    "examDomainsCovered": "Domaines d'Examen Couverts",
+    "cloudOnPremScenarios": "Scénarios Cloud et On-Premise"
+  },
+  "features": {
+    "title": "Fonctionnalités",
+    "subtitle": "Tout ce dont vous avez besoin pour vous entraîner avec un objectif et réussir avec confiance.",
+    "examStyleQuestions": {
+      "title": "Questions de Style d'Examen",
+      "desc": "Pratique mappée aux objectifs CompTIA Network+."
+    },
+    "instantFeedback": {
+      "title": "Retour Instantané",
+      "desc": "Explications qui enseignent le pourquoi derrière chaque réponse."
+    },
+    "mobileFriendly": {
+      "title": "Compatible Mobile",
+      "desc": "Entraînez-vous partout—bureau, tablette ou téléphone."
+    },
+    "instructorBuilt": {
+      "title": "Construit par un Instructeur",
+      "desc": "Conçu par un instructeur Cisco Academy et AWS."
+    }
+  },
+  "howItWorks": {
+    "joinBeta": {
+      "title": "Rejoindre la Bêta",
+      "desc": "Réservez votre place et recevez un lien d'accès."
+    },
+    "startPracticing": {
+      "title": "Commencer à Pratiquer",
+      "desc": "Quiz chronométrés avec notation en temps réel."
+    },
+    "trackProgress": {
+      "title": "Suivre les Progrès",
+      "desc": "Voyez les forces, les lacunes et les tendances dans le temps."
+    },
+    "passWithConfidence": {
+      "title": "Réussir avec Confiance",
+      "desc": "Affrontez le jour de l'examen avec style—pas de stress."
+    }
+  },
+  "pricing": {
+    "betaOffer": {
+      "badge": "Bêta à Temps Limité",
+      "title": "Accès Anticipé (Bêta)",
+      "desc": "Prix d'introduction pendant la bêta. Les fonctionnalités et le contenu peuvent changer selon les commentaires.",
+      "price": "Gratuit",
+      "priceSubtext": "prix d'introduction pendant la bêta",
+      "features": [
+        "Accès complet à tous les domaines",
+        "Quiz chronométrés et explications instantanées",
+        "Tableau de bord de suivi des progrès",
+        "Mises à jour bêta et nouveaux packs de questions"
+      ],
+      "guarantee": "Garantie d'Accès : Si vous ne pouvez pas accéder après l'achat, nous vous accorderons un accès gratuit jusqu'à ce que ce soit réparé."
+    },
+    "classroomLicense": {
+      "badge": "Éducateurs",
+      "title": "Licence de Classe",
+      "desc": "Packs de sièges avec codes d'invitation et analyses d'instructeur.",
+      "price": "Personnalisé"
+    }
+  },
+  "testimonials": {
+    "title": "Des Résultats qui Parlent",
+    "quotes": [
+      {
+        "text": "Cette formation a ouvert mes yeux et accéléré ma maîtrise des concepts de mise en réseau.",
+        "author": "A. Sahu, PhD",
+        "title": "Professeur et Membre Senior IEEE"
+      },
+      {
+        "text": "Vif, pratique et engageant. Je me sentais prêt pour le vrai examen après la première semaine !",
+        "author": "Candidat Administrateur Réseau",
+        "title": "Diplômé de Boot Camp"
+      },
+      {
+        "text": "Le retour instantané a fait la différence. J'ai enfin compris mes points faibles.",
+        "author": "Étudiant IT",
+        "title": "Utilisateur Bêta"
+      }
+    ]
+  },
+  "sampleQuiz": {
+    "title": "Question d'Exemple",
+    "question": "Quelle couche du modèle OSI est responsable de la détermination de chemin et de l'adressage logique ?",
+    "options": ["Physique", "Liaison de Données", "Réseau", "Transport"],
+    "correctAnswer": "Correct : C — La couche Réseau (Couche 3) gère le routage et l'adressage logique (IP)."
+  },
+  "livePractice": "Pratique en Direct",
+  "timedQuiz": "Quiz Chronométré",
+  "close": "Fermer",
+  "ariaLabels": {
+    "previousTestimonials": "Témoignages précédents",
+    "nextTestimonials": "Témoignages suivants",
+    "goToTestimonial": "Aller au témoignage {{index}}"
+  }
+}

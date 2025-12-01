@@ -1,0 +1,88 @@
+{
+  "domain": "Domain",
+  "domains": {
+    "1": "Networking Fundamentals",
+    "2": "Network Implementations", 
+    "3": "Network Operations",
+    "4": "Network Security",
+    "5": "Network Troubleshooting"
+  },
+  "session": {
+    "readyToTest": "Ready to Test Domain {{domain}}?",
+    "sessionDescription": "You will answer 50 randomly selected questions from {{domainName}}. Score 70% or higher to pass this domain.",
+    "beginTest": "Begin Domain {{domain}} Test",
+    "sequentialMastery": "Flexible domain selection: choose any domain, score ≥70% to pass, comprehensive question pools with explanations.",
+    "questionPoolInfo": "Comprehensive questions covering exam objectives.",
+    "poolSize": "Pool Size",
+    "perSession": "Per Session", 
+    "passThreshold": "Pass Threshold",
+    "questions": "questions",
+    "passThresholdValue": "70% (35/50)",
+    "confirmDomainSwitch": "You have an active session. Switching domains will end your current session. Continue?"
+  },
+  "results": {
+    "congratulations": "Congratulations!",
+    "keepStudying": "Keep Studying!",
+    "passedDomain": "You passed Domain {{domain}}!",
+    "need70Percent": "Score 70% or higher to pass this domain. You can practice any domain at any time.",
+    "questionsCorrect": "Questions Correct",
+    "finalScore": "Final Score",
+    "timeTaken": "Time Taken",
+    "reviewIncorrect": "Review Your Incorrect Answers",
+    "perfectScore": "Perfect! You got all questions correct!",
+    "yourAnswer": "Your Answer",
+    "whyIncorrect": "Why this answer is incorrect:",
+    "advanceToNext": "Advance to Domain {{domain}}",
+    "retryDomain": "Retry Domain {{domain}}",
+    "certificationReady": "Certification Ready!",
+    "masteredAllDomains": "You have mastered all 5 domains!"
+  },
+  "attempts": {
+    "title": "Attempts — Domain {{domain}}",
+    "savedLocally": "Saved locally in your browser.",
+    "noAttempts": "No attempts yet",
+    "headers": {
+      "number": "#",
+      "date": "Date", 
+      "score": "Score",
+      "duration": "Dur"
+    }
+  },
+  "questionPool": {
+    "title": "Question Pool",
+    "description": "Comprehensive questions covering exam objectives.",
+    "poolSize": "Pool Size",
+    "perSession": "Per Session",
+    "perSessionValue": "50 questions",
+    "passThreshold": "Pass Threshold",
+    "passThresholdValue": "70% (35/50)"
+  },
+  "subscription": {
+    "trialEndsIn": "Free trial ends in {{days}} Days",
+    "subscriptionEndsIn": "Subscription ends in {{days}} Days"
+  },
+  "demo": {
+    "title": "Try Our Demo Quiz",
+    "description": "Experience our comprehensive question format with 5 sample questions from Domain 1. Get instant feedback and explanations for each answer.",
+    "startDemo": "Start Demo",
+    "skipDemo": "Skip Demo",
+    "demoComplete": "Demo Complete!",
+    "scoreDescription": "You answered {{correct}} out of {{total}} questions correctly ({{percentage}}%)",
+    "questionsCorrect": "Questions Correct",
+    "finalScore": "Final Score",
+    "timeTaken": "Time Taken",
+    "getFullAccess": "Get Full Access",
+    "reviewIncorrect": "Review Your Incorrect Answers",
+    "questionNumber": "Question {{number}}: {{question}}",
+    "yourAnswer": "Your Answer",
+    "correctAnswer": "Correct Answer",
+    "explanation": "Explanation",
+    "demoProgress": "Demo Q {{current}}/{{total}}",
+    "timeLabel": "Time",
+    "time": "{{time}}",
+    "scoreLabel": "Score",
+    "score": "{{score}}",
+    "next": "Next",
+    "finish": "Finish"
+  }
+}

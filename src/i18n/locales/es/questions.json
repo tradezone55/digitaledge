@@ -1,0 +1,2814 @@
+{
+  "domains": {
+    "1": [
+      {
+        "id": 1,
+        "question": "¿Qué dispositivo opera en la Capa 3 del OSI?",
+        "choices": ["Router", "WAP", "Switch", "Hub"],
+        "correct": 0,
+        "explanation": "Los routers operan en la Capa 3 (Capa de Red), tomando decisiones de enrutamiento basadas en direcciones IP.",
+        "wrongExplanations": [
+          null,
+          "WAP opera en la Capa 2, manejando la transmisión de tramas inalámbricas.",
+          "Los switches operan en la Capa 2, tomando decisiones basadas en direcciones MAC.",
+          "Los hubs operan en la Capa 1, simplemente repitiendo señales."
+        ],
+        "topic": "1.2 — Dispositivos de red"
+      },
+      {
+        "id": 2,
+        "question": "¿Cuál es la longitud máxima de cable para Ethernet Cat 6?",
+        "choices": ["50 metros", "100 metros", "200 metros", "500 metros"],
+        "correct": 1,
+        "explanation": "Cat 6 tiene una longitud máxima de 100 metros para un rendimiento óptimo.",
+        "wrongExplanations": [
+          "50 metros es innecesariamente corto para Cat 6.",
+          null,
+          "200 metros excede las especificaciones de Cat 6.",
+          "500 metros causaría una degradación severa de la señal."
+        ],
+        "topic": "1.3 — Cables y conectores"
+      },
+      {
+        "id": 3,
+        "question": "¿Qué protocolo opera en la Capa de Transporte?",
+        "choices": ["IP", "TCP", "Ethernet", "ARP"],
+        "correct": 1,
+        "explanation": "TCP opera en la Capa 4, proporcionando entrega confiable de datos.",
+        "wrongExplanations": [
+          "IP opera en la Capa 3 para enrutamiento.",
+          null,
+          "Ethernet opera en la Capa 2 para transmisión de tramas.",
+          "ARP opera entre las Capas 2-3 para resolución de direcciones."
+        ],
+        "topic": "1.1 — Modelo OSI"
+      },
+      {
+        "id": 4,
+        "question": "¿Qué usa un switch para reenviar tramas?",
+        "choices": ["Direcciones IP", "Direcciones MAC", "Números de puerto", "Nombres de dominio"],
+        "correct": 1,
+        "explanation": "Los switches operan en la Capa 2 y usan direcciones MAC para reenviar tramas.",
+        "wrongExplanations": [
+          "Las direcciones IP son usadas por routers en la Capa 3.",
+          null,
+          "Los números de puerto son usados por protocolos de la capa de transporte.",
+          "Los nombres de dominio son resueltos por DNS."
+        ],
+        "topic": "1.2 — Dispositivos de red"
+      },
+      {
+        "id": 5,
+        "question": "¿Qué estándar inalámbrico soporta la frecuencia de 6 GHz?",
+        "choices": ["802.11ac", "802.11ax (Wi-Fi 6E)", "802.11n", "802.11g"],
+        "correct": 1,
+        "explanation": "Wi-Fi 6E (802.11ax) se extiende a la banda de 6 GHz para reducir interferencias.",
+        "wrongExplanations": [
+          "802.11ac opera solo a 5 GHz.",
+          null,
+          "802.11n opera a 2.4 GHz y 5 GHz.",
+          "802.11g opera solo a 2.4 GHz."
+        ],
+        "topic": "1.4 — Estándares inalámbricos"
+      },
+      {
+        "id": 6,
+        "question": "¿Cuál es la máscara de subred por defecto para una red Clase C?",
+        "choices": ["255.0.0.0", "255.255.0.0", "255.255.255.0", "255.255.255.255"],
+        "correct": 2,
+        "explanation": "Las redes Clase C usan 255.255.255.0 como máscara de subred por defecto.",
+        "wrongExplanations": [
+          "255.0.0.0 es la máscara por defecto para redes Clase A.",
+          "255.255.0.0 es la máscara por defecto para redes Clase B.",
+          null,
+          "255.255.255.255 es una ruta de host, no una máscara de subred."
+        ],
+        "topic": "1.5 — Direccionamiento IPv4"
+      },
+      {
+        "id": 7,
+        "question": "¿Qué tipo de cable es inmune a EMI?",
+        "choices": ["UTP", "STP", "Coaxial", "Fibra óptica"],
+        "correct": 3,
+        "explanation": "Los cables de fibra óptica usan luz en lugar de señales eléctricas, haciéndolos inmunes a la interferencia electromagnética.",
+        "wrongExplanations": [
+          "UTP es susceptible a EMI debido a la falta de blindaje.",
+          "STP tiene cierta protección contra EMI pero no es inmune.",
+          "Los cables coaxiales pueden verse afectados por EMI.",
+          null
+        ],
+        "topic": "1.3 — Cables y conectores"
+      },
+      {
+        "id": 8,
+        "question": "¿Qué puerto usa HTTPS por defecto?",
+        "choices": ["80", "443", "8080", "22"],
+        "correct": 1,
+        "explanation": "HTTPS usa el puerto 443 para tráfico web seguro.",
+        "wrongExplanations": [
+          "El puerto 80 es usado por HTTP (sin cifrar).",
+          null,
+          "El puerto 8080 es un puerto HTTP alternativo.",
+          "El puerto 22 es usado por SSH."
+        ],
+        "topic": "1.7 — Servicios de red"
+      },
+      {
+        "id": 9,
+        "question": "¿Qué topología tiene un punto único de falla?",
+        "choices": ["Malla", "Estrella", "Anillo", "Bus"],
+        "correct": 1,
+        "explanation": "La topología estrella depende de un dispositivo central; si falla, toda la red se cae.",
+        "wrongExplanations": [
+          "La topología malla tiene múltiples rutas y ningún punto único de falla.",
+          null,
+          "La topología anillo puede continuar operando si un enlace falla.",
+          "La topología bus puede continuar con una falla de dispositivo."
+        ],
+        "topic": "1.1 — Topologías de red"
+      },
+      {
+        "id": 10,
+        "question": "¿Cuál es el rendimiento máximo de 802.11ac?",
+        "choices": ["54 Mbps", "600 Mbps", "1.3 Gbps", "9.6 Gbps"],
+        "correct": 2,
+        "explanation": "802.11ac puede alcanzar hasta 1.3 Gbps en condiciones ideales.",
+        "wrongExplanations": [
+          "54 Mbps es el máximo para 802.11g.",
+          "600 Mbps es el máximo para 802.11n.",
+          null,
+          "9.6 Gbps es el máximo teórico para 802.11ax."
+        ],
+        "topic": "1.4 — Estándares inalámbricos"
+      },
+      {
+        "id": 11,
+        "question": "¿Qué dispositivo opera tanto en la Capa 2 como en la Capa 3?",
+        "choices": ["Hub", "Switch", "Switch multicapa", "Repetidor"],
+        "correct": 2,
+        "explanation": "Los switches multicapa pueden realizar funciones tanto de conmutación (Capa 2) como de enrutamiento (Capa 3).",
+        "wrongExplanations": [
+          "Los hubs operan solo en la Capa 1.",
+          "Los switches operan solo en la Capa 2.",
+          null,
+          "Los repetidores operan solo en la Capa 1."
+        ],
+        "topic": "1.2 — Dispositivos de red"
+      },
+      {
+        "id": 12,
+        "question": "¿Qué significa DHCP?",
+        "choices": ["Dynamic Host Configuration Protocol", "Domain Host Control Protocol", "Data Host Communication Protocol", "Digital Host Configuration Process"],
+        "correct": 0,
+        "explanation": "DHCP asigna automáticamente direcciones IP a dispositivos en una red.",
+        "wrongExplanations": [
+          null,
+          "Esta no es la expansión correcta de DHCP.",
+          "Esta no es la expansión correcta de DHCP.",
+          "Esta no es la expansión correcta de DHCP."
+        ],
+        "topic": "1.7 — Servicios de red"
+      },
+      {
+        "id": 13,
+        "question": "¿Qué conector se usa para cables de fibra óptica?",
+        "choices": ["RJ-45", "BNC", "LC", "RJ-11"],
+        "correct": 2,
+        "explanation": "LC (Lucent Connector) es un tipo común de conector para cables de fibra óptica.",
+        "wrongExplanations": [
+          "RJ-45 se usa para cables de par trenzado.",
+          "BNC se usa para cables coaxiales.",
+          null,
+          "RJ-11 se usa para cables telefónicos."
+        ],
+        "topic": "1.3 — Cables y conectores"
+      },
+      {
+        "id": 14,
+        "question": "¿Cuál es la longitud de dirección IPv6?",
+        "choices": ["32 bits", "64 bits", "128 bits", "256 bits"],
+        "correct": 2,
+        "explanation": "Las direcciones IPv6 tienen 128 bits de longitud, proporcionando un espacio de direcciones mucho más grande que IPv4.",
+        "wrongExplanations": [
+          "32 bits es la longitud de las direcciones IPv4.",
+          "64 bits es la mitad de la longitud de las direcciones IPv6.",
+          null,
+          "256 bits no se usa para direcciones IP."
+        ],
+        "topic": "1.6 — Direccionamiento IPv6"
+      },
+      {
+        "id": 15,
+        "question": "¿Qué protocolo resuelve nombres de dominio a direcciones IP?",
+        "choices": ["DHCP", "DNS", "ARP", "ICMP"],
+        "correct": 1,
+        "explanation": "DNS (Sistema de Nombres de Dominio) traduce nombres de dominio legibles por humanos a direcciones IP.",
+        "wrongExplanations": [
+          "DHCP asigna direcciones IP a dispositivos.",
+          null,
+          "ARP resuelve direcciones IP a direcciones MAC.",
+          "ICMP se usa para reporte de errores y diagnósticos."
+        ],
+        "topic": "1.7 — Servicios de red"
+      },
+      {
+        "id": 16,
+        "question": "¿Cuál es el rango de puertos bien conocidos?",
+        "choices": ["0-1023", "1024-49151", "49152-65535", "0-65535"],
+        "correct": 0,
+        "explanation": "Los puertos bien conocidos van del 0 al 1023 y están reservados para servicios comunes.",
+        "wrongExplanations": [
+          null,
+          "1024-49151 es el rango para puertos registrados.",
+          "49152-65535 es el rango para puertos dinámicos/privados.",
+          "0-65535 es el rango total de puertos, no solo los bien conocidos."
+        ],
+        "topic": "1.8 — Puertos y protocolos"
+      },
+      {
+        "id": 17,
+        "question": "¿Qué cifrado inalámbrico es más seguro?",
+        "choices": ["WEP", "WPA", "WPA2", "WPA3"],
+        "correct": 3,
+        "explanation": "WPA3 es el estándar de cifrado inalámbrico más reciente y seguro.",
+        "wrongExplanations": [
+          "WEP es el cifrado más antiguo y menos seguro.",
+          "WPA es más seguro que WEP pero menos que WPA2.",
+          "WPA2 es seguro pero WPA3 es más nuevo y más seguro.",
+          null
+        ],
+        "topic": "1.4 — Seguridad inalámbrica"
+      },
+      {
+        "id": 18,
+        "question": "¿Qué hace un hub con los datos entrantes?",
+        "choices": ["Los enruta a dispositivos específicos", "Los reenvía a todos los puertos", "Los filtra basándose en la dirección MAC", "Los cifra"],
+        "correct": 1,
+        "explanation": "Los hubs difunden datos entrantes a todos los puertos conectados, creando dominios de colisión.",
+        "wrongExplanations": [
+          "Los hubs no enrutan datos como los routers.",
+          null,
+          "Los hubs no filtran datos como los switches.",
+          "Los hubs no cifran datos."
+        ],
+        "topic": "1.2 — Dispositivos de red"
+      },
+      {
+        "id": 19,
+        "question": "¿Qué categoría de cable soporta 10 Gbps?",
+        "choices": ["Cat 5", "Cat 5e", "Cat 6", "Cat 6a"],
+        "correct": 3,
+        "explanation": "Cat 6a soporta 10 Gbps hasta 100 metros.",
+        "wrongExplanations": [
+          "Cat 5 soporta solo 100 Mbps.",
+          "Cat 5e soporta hasta 1 Gbps.",
+          "Cat 6 soporta hasta 1 Gbps (10 Gbps solo hasta 55m).",
+          null
+        ],
+        "topic": "1.3 — Cables y conectores"
+      },
+      {
+        "id": 20,
+        "question": "¿Cuál es el propósito de ARP?",
+        "choices": ["Resolver IP a direcciones MAC", "Resolver nombres de dominio", "Asignar direcciones IP", "Enrutar paquetes"],
+        "correct": 0,
+        "explanation": "ARP (Protocolo de Resolución de Direcciones) mapea direcciones IP a direcciones MAC en una red local.",
+        "wrongExplanations": [
+          null,
+          "DNS resuelve nombres de dominio a direcciones IP.",
+          "DHCP asigna direcciones IP a dispositivos.",
+          "Los routers enrutan paquetes entre redes."
+        ],
+        "topic": "1.8 — Protocolos de red"
+      },
+      {
+        "id": 21,
+        "question": "¿Qué capa OSI maneja la detección de errores?",
+        "choices": ["Física", "Enlace de datos", "Red", "Transporte"],
+        "correct": 1,
+        "explanation": "La capa de Enlace de datos proporciona detección y corrección de errores para la capa Física.",
+        "wrongExplanations": [
+          "La capa Física maneja señales eléctricas, no detección de errores.",
+          null,
+          "La capa de Red maneja enrutamiento, no detección de errores.",
+          "La capa de Transporte maneja entrega confiable, no detección básica de errores."
+        ],
+        "topic": "1.1 — Modelo OSI"
+      },
+      {
+        "id": 22,
+        "question": "¿Cuál es la distancia máxima para fibra monomodo?",
+        "choices": ["2 km", "10 km", "40+ km", "100 m"],
+        "correct": 2,
+        "explanation": "La fibra monomodo puede transmitir datos más de 40 kilómetros, haciéndola ideal para distancias largas.",
+        "wrongExplanations": [
+          "2 km es demasiado corto para las capacidades de fibra monomodo.",
+          "10 km es conservador para fibra monomodo.",
+          null,
+          "100 m es el límite para cables de cobre, no fibra."
+        ],
+        "topic": "1.3 — Cables y conectores"
+      },
+      {
+        "id": 23,
+        "question": "¿Qué dispositivo puede prevenir tormentas de broadcast?",
+        "choices": ["Hub", "Switch", "Router", "Repetidor"],
+        "correct": 2,
+        "explanation": "Los routers no reenvían tráfico de broadcast, previniendo efectivamente tormentas de broadcast entre redes.",
+        "wrongExplanations": [
+          "Los hubs en realidad propagan tormentas de broadcast.",
+          "Los switches reenvían broadcasts dentro de la misma VLAN.",
+          null,
+          "Los repetidores amplifican todas las señales incluyendo broadcasts."
+        ],
+        "topic": "1.2 — Dispositivos de red"
+      },
+      {
+        "id": 24,
+        "question": "¿Cuál es la dirección de loopback en IPv4?",
+        "choices": ["192.168.1.1", "127.0.0.1", "10.0.0.1", "0.0.0.0"],
+        "correct": 1,
+        "explanation": "127.0.0.1 es la dirección de loopback usada para probar la funcionalidad de red en la máquina local.",
+        "wrongExplanations": [
+          "192.168.1.1 es una dirección IP común de router.",
+          null,
+          "10.0.0.1 es una dirección IP privada.",
+          "0.0.0.0 representa todas las interfaces o ruta por defecto."
+        ],
+        "topic": "1.5 — Direccionamiento IPv4"
+      },
+      {
+        "id": 25,
+        "question": "¿Qué protocolo usa el puerto 22?",
+        "choices": ["Telnet", "SSH", "FTP", "SMTP"],
+        "correct": 1,
+        "explanation": "SSH (Secure Shell) usa el puerto 22 para acceso remoto seguro.",
+        "wrongExplanations": [
+          "Telnet usa el puerto 23.",
+          null,
+          "FTP usa los puertos 20 y 21.",
+          "SMTP usa el puerto 25."
+        ],
+        "topic": "1.8 — Puertos y protocolos"
+      },
+      {
+        "id": 26,
+        "question": "¿Qué significa CSMA/CD?",
+        "choices": ["Carrier Sense Multiple Access/Collision Detection", "Central System Multiple Access/Collision Detection", "Carrier Signal Multiple Access/Connection Detection", "Central Sense Multiple Access/Connection Detection"],
+        "correct": 0,
+        "explanation": "CSMA/CD es el método de control de acceso al medio usado en Ethernet tradicional para detectar y manejar colisiones.",
+        "wrongExplanations": [
+          null,
+          "Esta no es la expansión correcta de CSMA/CD.",
+          "Esta no es la expansión correcta de CSMA/CD.",
+          "Esta no es la expansión correcta de CSMA/CD."
+        ],
+        "topic": "1.1 — Fundamentos Ethernet"
+      },
+      {
+        "id": 27,
+        "question": "¿Cuál es un rango de dirección IP privada?",
+        "choices": ["172.16.0.0 - 172.31.255.255", "8.8.8.0 - 8.8.8.255", "200.1.1.0 - 200.1.1.255", "50.0.0.0 - 50.255.255.255"],
+        "correct": 0,
+        "explanation": "172.16.0.0 - 172.31.255.255 es uno de los tres rangos de direcciones IP privadas definidos en RFC 1918.",
+        "wrongExplanations": [
+          null,
+          "8.8.8.0 - 8.8.8.255 es un rango de IP pública (Google DNS).",
+          "200.1.1.0 - 200.1.1.255 es un rango de IP pública.",
+          "50.0.0.0 - 50.255.255.255 es un rango de IP pública."
+        ],
+        "topic": "1.5 — Direccionamiento IPv4"
+      },
+      {
+        "id": 28,
+        "question": "¿Cuál es el propósito de una puerta de enlace por defecto?",
+        "choices": ["Asignar direcciones IP", "Reenviar paquetes a otras redes", "Resolver nombres de dominio", "Filtrar direcciones MAC"],
+        "correct": 1,
+        "explanation": "La puerta de enlace por defecto es la interfaz del router que reenvía paquetes destinados a redes fuera de la subred local.",
+        "wrongExplanations": [
+          "DHCP asigna direcciones IP, no la puerta de enlace por defecto.",
+          null,
+          "DNS resuelve nombres de dominio, no la puerta de enlace por defecto.",
+          "Los switches filtran direcciones MAC, no la puerta de enlace por defecto."
+        ],
+        "topic": "1.5 — Configuración IPv4"
+      },
+      {
+        "id": 29,
+        "question": "¿Qué frecuencia inalámbrica tiene mejor penetración a través de paredes?",
+        "choices": ["2.4 GHz", "5 GHz", "6 GHz", "Todas son iguales"],
+        "correct": 0,
+        "explanation": "2.4 GHz tiene mejor penetración de paredes debido a su longitud de onda más larga, aunque es más propenso a interferencias.",
+        "wrongExplanations": [
+          null,
+          "5 GHz tiene longitud de onda más corta y menos penetración de paredes.",
+          "6 GHz tiene longitud de onda aún más corta y menos penetración de paredes.",
+          "Las frecuencias tienen diferentes características de penetración."
+        ],
+        "topic": "1.4 — Estándares inalámbricos"
+      },
+      {
+        "id": 30,
+        "question": "¿Qué significa MTU?",
+        "choices": ["Maximum Transmission Unit", "Multiple Transfer Unit", "Maximum Transfer Upload", "Multiple Transmission Upload"],
+        "correct": 0,
+        "explanation": "MTU es el tamaño de paquete más grande que puede ser transmitido en una sola transacción de red.",
+        "wrongExplanations": [
+          null,
+          "Esta no es la expansión correcta de MTU.",
+          "Esta no es la expansión correcta de MTU.",
+          "Esta no es la expansión correcta de MTU."
+        ],
+        "topic": "1.8 — Conceptos de red"
+      },
+      {
+        "id": 31,
+        "question": "¿Qué topología requiere terminación en ambos extremos?",
+        "choices": ["Estrella", "Anillo", "Bus", "Malla"],
+        "correct": 2,
+        "explanation": "La topología bus requiere terminadores en ambos extremos para prevenir reflexión de señales.",
+        "wrongExplanations": [
+          "La topología estrella no requiere terminadores.",
+          "La topología anillo no requiere terminadores.",
+          null,
+          "La topología malla no requiere terminadores."
+        ],
+        "topic": "1.1 — Topologías de red"
+      },
+      {
+        "id": 32,
+        "question": "¿Cuál es el tamaño estándar de trama Ethernet?",
+        "choices": ["512 bytes", "1024 bytes", "1518 bytes", "2048 bytes"],
+        "correct": 2,
+        "explanation": "Las tramas Ethernet estándar son de 1518 bytes (incluyendo 18 bytes de overhead).",
+        "wrongExplanations": [
+          "512 bytes es demasiado pequeño para tramas Ethernet estándar.",
+          "1024 bytes es demasiado pequeño para tramas Ethernet estándar.",
+          null,
+          "2048 bytes excede el tamaño estándar de trama Ethernet."
+        ],
+        "topic": "1.1 — Fundamentos Ethernet"
+      },
+      {
+        "id": 33,
+        "question": "¿Qué dispositivo puede realizar NAT?",
+        "choices": ["Hub", "Switch", "Router", "Punto de acceso"],
+        "correct": 2,
+        "explanation": "Los routers realizan NAT (Traducción de Direcciones de Red) para mapear direcciones IP privadas a direcciones IP públicas.",
+        "wrongExplanations": [
+          "Los hubs operan en la Capa 1 y no pueden realizar NAT.",
+          "Los switches operan en la Capa 2 y no pueden realizar NAT.",
+          null,
+          "Los puntos de acceso operan en la Capa 2 y no pueden realizar NAT."
+        ],
+        "topic": "1.2 — Dispositivos de red"
+      },
+      {
+        "id": 34,
+        "question": "¿Cuál es el propósito de la subred?",
+        "choices": ["Aumentar la velocidad de red", "Dividir redes en segmentos más pequeños", "Cifrar datos", "Resolver nombres de dominio"],
+        "correct": 1,
+        "explanation": "La subred divide una red en segmentos más pequeños y manejables para mejorar el rendimiento y la seguridad.",
+        "wrongExplanations": [
+          "La subred no aumenta directamente la velocidad de red.",
+          null,
+          "La subred no cifra datos.",
+          "DNS resuelve nombres de dominio, no la subred."
+        ],
+        "topic": "1.5 — Subredes"
+      },
+      {
+        "id": 35,
+        "question": "¿Qué cable usa un conector BNC?",
+        "choices": ["UTP", "Fibra óptica", "Coaxial", "STP"],
+        "correct": 2,
+        "explanation": "Los cables coaxiales usan conectores BNC (Bayonet Neill-Concelman).",
+        "wrongExplanations": [
+          "Los cables UTP usan conectores RJ-45.",
+          "Los cables de fibra óptica usan conectores LC, SC u otros conectores de fibra.",
+          null,
+          "Los cables STP usan conectores RJ-45."
+        ],
+        "topic": "1.3 — Cables y conectores"
+      },
+      {
+        "id": 36,
+        "question": "¿Qué significa PoE?",
+        "choices": ["Power over Ethernet", "Protocol over Ethernet", "Packet over Ethernet", "Port over Ethernet"],
+        "correct": 0,
+        "explanation": "PoE permite que los cables de red transporten energía eléctrica a dispositivos como teléfonos IP y puntos de acceso inalámbricos.",
+        "wrongExplanations": [
+          null,
+          "Esta no es la expansión correcta de PoE.",
+          "Esta no es la expansión correcta de PoE.",
+          "Esta no es la expansión correcta de PoE."
+        ],
+        "topic": "1.2 — Tecnologías de red"
+      },
+      {
+        "id": 37,
+        "question": "¿Qué protocolo es sin conexión?",
+        "choices": ["TCP", "UDP", "FTP", "HTTP"],
+        "correct": 1,
+        "explanation": "UDP es sin conexión y no garantiza la entrega, haciéndolo más rápido pero menos confiable que TCP.",
+        "wrongExplanations": [
+          "TCP es orientado a conexión y garantiza la entrega.",
+          null,
+          "FTP usa TCP, que es orientado a conexión.",
+          "HTTP usa TCP, que es orientado a conexión."
+        ],
+        "topic": "1.8 — Protocolos de transporte"
+      },
+      {
+        "id": 38,
+        "question": "¿Cuál es la dirección de loopback en IPv6?",
+        "choices": ["::1", "::0", "FF00::1", "FE80::1"],
+        "correct": 0,
+        "explanation": "::1 es la dirección de loopback IPv6, equivalente a 127.0.0.1 en IPv4.",
+        "wrongExplanations": [
+          null,
+          "::0 no es una dirección de loopback IPv6 válida.",
+          "FF00::1 es una dirección multicast.",
+          "FE80::1 es una dirección link-local."
+        ],
+        "topic": "1.6 — Direccionamiento IPv6"
+      },
+      {
+        "id": 39,
+        "question": "¿Qué canal inalámbrico no tiene superposición en 2.4 GHz?",
+        "choices": ["1, 6, 11", "1, 5, 9", "2, 7, 12", "3, 8, 13"],
+        "correct": 0,
+        "explanation": "Los canales 1, 6 y 11 son los únicos canales sin superposición en la banda de 2.4 GHz.",
+        "wrongExplanations": [
+          null,
+          "Los canales 1, 5, 9 tienen superposición.",
+          "Los canales 2, 7, 12 tienen superposición.",
+          "Los canales 3, 8, 13 tienen superposición."
+        ],
+        "topic": "1.4 — Estándares inalámbricos"
+      },
+      {
+        "id": 40,
+        "question": "¿Qué significa VLAN?",
+        "choices": ["Virtual Local Area Network", "Very Large Area Network", "Variable Link Access Network", "Virtual Link Area Network"],
+        "correct": 0,
+        "explanation": "Las VLANs segmentan lógicamente una red en la Capa 2 para mejorar la seguridad y el rendimiento.",
+        "wrongExplanations": [
+          null,
+          "Esta no es la expansión correcta de VLAN.",
+          "Esta no es la expansión correcta de VLAN.",
+          "Esta no es la expansión correcta de VLAN."
+        ],
+        "topic": "1.2 — Segmentación de red"
+      },
+      {
+        "id": 41,
+        "question": "¿Qué protocolo usa el puerto 25?",
+        "choices": ["POP3", "IMAP", "SMTP", "HTTP"],
+        "correct": 2,
+        "explanation": "SMTP (Simple Mail Transfer Protocol) usa el puerto 25 para enviar correo electrónico.",
+        "wrongExplanations": [
+          "POP3 usa el puerto 110.",
+          "IMAP usa el puerto 143.",
+          null,
+          "HTTP usa el puerto 80."
+        ],
+        "topic": "1.8 — Puertos y protocolos"
+      },
+      {
+        "id": 42,
+        "question": "¿Cuál es el propósito de un cable cruzado?",
+        "choices": ["Conectar diferentes tipos de dispositivos", "Conectar dispositivos similares directamente", "Extender la longitud del cable", "Proporcionar energía"],
+        "correct": 1,
+        "explanation": "Los cables cruzados conectan dispositivos similares (como dos computadoras o dos switches) directamente sin un switch.",
+        "wrongExplanations": [
+          "Los cables directos conectan diferentes tipos de dispositivos.",
+          null,
+          "Los cables cruzados no extienden la longitud del cable.",
+          "PoE proporciona energía, no los cables cruzados."
+        ],
+        "topic": "1.3 — Cables y conectores"
+      },
+      {
+        "id": 43,
+        "question": "¿Qué capa OSI es responsable del enrutamiento?",
+        "choices": ["Enlace de datos", "Red", "Transporte", "Sesión"],
+        "correct": 1,
+        "explanation": "La capa de Red (Capa 3) maneja el enrutamiento y el direccionamiento lógico.",
+        "wrongExplanations": [
+          "La capa de Enlace de datos maneja la transmisión de tramas, no el enrutamiento.",
+          null,
+          "La capa de Transporte maneja la entrega confiable, no el enrutamiento.",
+          "La capa de Sesión maneja las sesiones, no el enrutamiento."
+        ],
+        "topic": "1.1 — Modelo OSI"
+      },
+      {
+        "id": 44,
+        "question": "¿Cuál es el número máximo de hosts en una subred /24?",
+        "choices": ["254", "256", "510", "512"],
+        "correct": 0,
+        "explanation": "Una subred /24 tiene 256 direcciones, pero 2 están reservadas (red y broadcast), dejando 254 direcciones de host utilizables.",
+        "wrongExplanations": [
+          null,
+          "256 es el total de direcciones, pero 2 están reservadas.",
+          "510 sería para una subred /23.",
+          "512 sería para una subred /22."
+        ],
+        "topic": "1.5 — Subredes"
+      },
+      {
+        "id": 45,
+        "question": "¿Qué dispositivo amplifica señales sin leer datos?",
+        "choices": ["Router", "Switch", "Hub", "Repetidor"],
+        "correct": 3,
+        "explanation": "Los repetidores amplifican señales para extender la distancia de red pero no procesan ni filtran datos.",
+        "wrongExplanations": [
+          "Los routers leen y procesan datos para decisiones de enrutamiento.",
+          "Los switches leen direcciones MAC para tomar decisiones de reenvío.",
+          "Los hubs no amplifican señales, las repiten.",
+          null
+        ],
+        "topic": "1.2 — Dispositivos de red"
+      },
+      {
+        "id": 46,
+        "question": "¿Qué previene STP en redes conmutadas?",
+        "choices": ["Tormentas de broadcast", "Bucles de conmutación", "Conflictos IP", "Roturas de cable"],
+        "correct": 1,
+        "explanation": "El Protocolo de Árbol de Expansión (STP) previene bucles de conmutación que pueden causar tormentas de broadcast.",
+        "wrongExplanations": [
+          "STP previene bucles, que pueden llevar a tormentas de broadcast.",
+          null,
+          "STP no previene conflictos IP.",
+          "STP no previene roturas de cable."
+        ],
+        "topic": "1.2 — Protocolos de red"
+      },
+      {
+        "id": 47,
+        "question": "¿Cuál es una dirección IPv6 link-local?",
+        "choices": ["2001::/32", "FE80::/10", "FF00::/8", "FC00::/7"],
+        "correct": 1,
+        "explanation": "FE80::/10 es el prefijo para direcciones IPv6 link-local, usado para comunicación en un solo enlace.",
+        "wrongExplanations": [
+          "2001::/32 es una dirección unicast global.",
+          null,
+          "FF00::/8 es una dirección multicast.",
+          "FC00::/7 es una dirección local única."
+        ],
+        "topic": "1.6 — Direccionamiento IPv6"
+      },
+      {
+        "id": 48,
+        "question": "¿Cuál es el propósito de QoS?",
+        "choices": ["Cifrar tráfico", "Priorizar tráfico de red", "Asignar direcciones IP", "Bloquear tráfico malicioso"],
+        "correct": 1,
+        "explanation": "Calidad de Servicio (QoS) prioriza ciertos tipos de tráfico (como voz o video) para mejor rendimiento.",
+        "wrongExplanations": [
+          "QoS no cifra tráfico.",
+          null,
+          "DHCP asigna direcciones IP, no QoS.",
+          "Los firewalls bloquean tráfico malicioso, no QoS."
+        ],
+        "topic": "1.8 — Servicios de red"
+      },
+      {
+        "id": 49,
+        "question": "¿Qué protocolo proporciona transferencia segura de archivos?",
+        "choices": ["FTP", "TFTP", "SFTP", "HTTP"],
+        "correct": 2,
+        "explanation": "SFTP (SSH File Transfer Protocol) proporciona transferencia segura y cifrada de archivos.",
+        "wrongExplanations": [
+          "FTP no es seguro y transmite datos en texto plano.",
+          "TFTP no es seguro y no tiene autenticación.",
+          null,
+          "HTTP no está diseñado para transferencia de archivos."
+        ],
+        "topic": "1.8 — Puertos y protocolos"
+      },
+      {
+        "id": 50,
+        "question": "¿Qué controla el modo dúplex?",
+        "choices": ["Velocidad de transmisión", "Dirección del flujo de datos", "Tipo de cable usado", "Método de cifrado"],
+        "correct": 1,
+        "explanation": "El modo dúplex determina si los datos pueden fluir en una dirección (semi-dúplex) o en ambas direcciones simultáneamente (dúplex completo).",
+        "wrongExplanations": [
+          "El dúplex no controla la velocidad de transmisión.",
+          null,
+          "El dúplex no controla el tipo de cable.",
+          "El dúplex no controla el cifrado."
+        ],
+        "topic": "1.1 — Conceptos de red"
+      }
+    ],
+    "2": [
+      {
+        "id": 51,
+        "question": "¿Cuál es el propósito principal de una DMZ?",
+        "choices": ["Almacenar respaldos", "Aislar servidores públicos", "Aumentar el ancho de banda", "Proporcionar acceso inalámbrico"],
+        "correct": 1,
+        "explanation": "Una DMZ (Zona Desmilitarizada) aísla servidores públicos de la red interna por seguridad.",
+        "wrongExplanations": [
+          "DMZ no está diseñada para almacenar respaldos.",
+          null,
+          "DMZ no aumenta la capacidad de ancho de banda.",
+          "DMZ no proporciona acceso inalámbrico."
+        ],
+        "topic": "2.1 — Segmentación de red"
+      },
+      {
+        "id": 52,
+        "question": "¿Qué protocolo de enrutamiento es de vector-distancia?",
+        "choices": ["OSPF", "RIP", "BGP", "IS-IS"],
+        "correct": 1,
+        "explanation": "RIP (Protocolo de Información de Enrutamiento) es un protocolo de enrutamiento de vector-distancia que usa conteo de saltos como métrica.",
+        "wrongExplanations": [
+          "OSPF es un protocolo de estado de enlace.",
+          null,
+          "BGP es un protocolo de vector de ruta.",
+          "IS-IS es un protocolo de estado de enlace."
+        ],
+        "topic": "2.2 — Protocolos de enrutamiento"
+      },
+      {
+        "id": 53,
+        "question": "¿Qué hace la difusión SSID?",
+        "choices": ["Cifra el tráfico inalámbrico", "Hace visible la red inalámbrica", "Asigna direcciones IP", "Filtra direcciones MAC"],
+        "correct": 1,
+        "explanation": "La difusión SSID hace visible el nombre de la red inalámbrica a dispositivos cercanos.",
+        "wrongExplanations": [
+          "La difusión SSID no cifra el tráfico.",
+          null,
+          "La difusión SSID no asigna direcciones IP.",
+          "La difusión SSID no filtra direcciones MAC."
+        ],
+        "topic": "2.3 — Implementación inalámbrica"
+      },
+      {
+        "id": 54,
+        "question": "¿Qué método de balanceo de carga usa el tiempo de respuesta del servidor?",
+        "choices": ["Round-robin", "Menos conexiones", "Ponderado", "Dinámico"],
+        "correct": 3,
+        "explanation": "El balanceo de carga dinámico se ajusta basado en métricas en tiempo real como el tiempo de respuesta del servidor y la carga.",
+        "wrongExplanations": [
+          "Round-robin distribuye solicitudes secuencialmente.",
+          "Menos conexiones enruta al servidor con menos conexiones activas.",
+          "Ponderado distribuye basado en la capacidad predefinida del servidor.",
+          null
+        ],
+        "topic": "2.4 — Servicios de red"
+      },
+      {
+        "id": 55,
+        "question": "¿Cuál es el propósito del espejado de puertos?",
+        "choices": ["Aumentar el ancho de banda", "Monitorear tráfico para análisis", "Crear redundancia", "Balancear carga"],
+        "correct": 1,
+        "explanation": "El espejado de puertos (SPAN) copia tráfico de un puerto a otro para monitoreo y análisis.",
+        "wrongExplanations": [
+          "El espejado de puertos no aumenta el ancho de banda.",
+          null,
+          "El espejado de puertos no crea redundancia.",
+          "El espejado de puertos no balancea carga."
+        ],
+        "topic": "2.5 — Monitoreo de red"
+      },
+      {
+        "id": 56,
+        "question": "¿Cuál VLAN es la predeterminada en la mayoría de switches?",
+        "choices": ["VLAN 0", "VLAN 1", "VLAN 10", "VLAN 100"],
+        "correct": 1,
+        "explanation": "VLAN 1 es la VLAN predeterminada en la mayoría de switches y no puede ser eliminada.",
+        "wrongExplanations": [
+          "VLAN 0 no existe como VLAN predeterminada.",
+          null,
+          "VLAN 10 no es la VLAN predeterminada.",
+          "VLAN 100 no es la VLAN predeterminada."
+        ],
+        "topic": "2.2 — VLANs"
+      },
+      {
+        "id": 57,
+        "question": "¿Qué proporciona un servidor proxy?",
+        "choices": ["Conexión directa a internet", "Caché y filtrado", "Asignación de direcciones IP", "Acceso inalámbrico"],
+        "correct": 1,
+        "explanation": "Los servidores proxy almacenan contenido en caché y filtran solicitudes, mejorando el rendimiento y la seguridad.",
+        "wrongExplanations": [
+          "Los servidores proxy no proporcionan conexión directa a internet.",
+          null,
+          "DHCP asigna direcciones IP, no los servidores proxy.",
+          "Los servidores proxy no proporcionan acceso inalámbrico."
+        ],
+        "topic": "2.1 — Servidores de red"
+      },
+      {
+        "id": 58,
+        "question": "¿Qué protocolo configura automáticamente direcciones IPv6?",
+        "choices": ["DHCPv4", "SLAAC", "ARP", "ICMP"],
+        "correct": 1,
+        "explanation": "SLAAC (Configuración Automática de Direcciones sin Estado) permite que los dispositivos configuren automáticamente sus propias direcciones IPv6.",
+        "wrongExplanations": [
+          "DHCPv4 es para asignación de direcciones IPv4.",
+          null,
+          "ARP resuelve direcciones IP a direcciones MAC.",
+          "ICMP se usa para reporte de errores y diagnósticos."
+        ],
+        "topic": "2.3 — Configuración IPv6"
+      },
+      {
+        "id": 59,
+        "question": "¿Cuál es el propósito de un jump box?",
+        "choices": ["Aumentar ancho de banda", "Punto de acceso seguro para administración", "Balanceo de carga", "Almacenamiento de respaldo"],
+        "correct": 1,
+        "explanation": "Un jump box (host bastión) proporciona acceso seguro y controlado a sistemas en diferentes zonas de seguridad.",
+        "wrongExplanations": [
+          "Los jump boxes no aumentan el ancho de banda.",
+          null,
+          "Los jump boxes no realizan balanceo de carga.",
+          "Los jump boxes no proporcionan almacenamiento de respaldo."
+        ],
+        "topic": "2.1 — Seguridad de red"
+      },
+      {
+        "id": 60,
+        "question": "¿Qué métrica de enrutamiento usa OSPF?",
+        "choices": ["Conteo de saltos", "Ancho de banda (costo)", "Retraso", "Confiabilidad"],
+        "correct": 1,
+        "explanation": "OSPF usa costo basado en ancho de banda como su métrica de enrutamiento.",
+        "wrongExplanations": [
+          "El conteo de saltos es usado por RIP, no OSPF.",
+          null,
+          "El retraso no es la métrica principal de OSPF.",
+          "La confiabilidad no es la métrica principal de OSPF."
+        ],
+        "topic": "2.2 — Protocolos de enrutamiento"
+      },
+      {
+        "id": 61,
+        "question": "¿Cuál es el propósito del relay DHCP?",
+        "choices": ["Asignar IPs estáticas", "Reenviar solicitudes DHCP a través de subredes", "Cifrar tráfico DHCP", "Almacenar direcciones IP en caché"],
+        "correct": 1,
+        "explanation": "El relay DHCP reenvía mensajes de broadcast DHCP a través de diferentes subredes a un servidor DHCP.",
+        "wrongExplanations": [
+          "El relay DHCP no asigna IPs estáticas.",
+          null,
+          "El relay DHCP no cifra tráfico.",
+          "El relay DHCP no almacena direcciones IP en caché."
+        ],
+        "topic": "2.3 — Servicios DHCP"
+      },
+      {
+        "id": 62,
+        "question": "¿Qué autenticación inalámbrica usa un servidor RADIUS?",
+        "choices": ["WPA2-Personal", "WPA2-Enterprise", "Abierta", "WEP"],
+        "correct": 1,
+        "explanation": "WPA2-Enterprise usa autenticación 802.1X con un servidor RADIUS para autenticación centralizada de usuarios.",
+        "wrongExplanations": [
+          "WPA2-Personal usa claves precompartidas, no RADIUS.",
+          null,
+          "La autenticación abierta no usa RADIUS.",
+          "WEP no usa autenticación RADIUS."
+        ],
+        "topic": "2.1 — Seguridad inalámbrica"
+      },
+      {
+        "id": 63,
+        "question": "¿Qué requiere el enrutamiento estático?",
+        "choices": ["Actualizaciones automáticas", "Configuración manual de rutas", "Servidor DHCP", "Servidor DNS"],
+        "correct": 1,
+        "explanation": "Las rutas estáticas deben ser configuradas manualmente por un administrador y no se adaptan a cambios de red.",
+        "wrongExplanations": [
+          "Las rutas estáticas no se actualizan automáticamente.",
+          null,
+          "Las rutas estáticas no requieren DHCP.",
+          "Las rutas estáticas no requieren DNS."
+        ],
+        "topic": "2.2 — Enrutamiento estático"
+      },
+      {
+        "id": 64,
+        "question": "¿Qué protocolo se usa para sincronización de tiempo?",
+        "choices": ["SNMP", "NTP", "SMTP", "FTP"],
+        "correct": 1,
+        "explanation": "NTP (Protocolo de Tiempo de Red) sincroniza relojes entre dispositivos de red.",
+        "wrongExplanations": [
+          "SNMP se usa para gestión de red.",
+          null,
+          "SMTP se usa para correo electrónico.",
+          "FTP se usa para transferencia de archivos."
+        ],
+        "topic": "2.4 — Servicios de tiempo"
+      },
+      {
+        "id": 65,
+        "question": "¿Cuál es el propósito de un tronco VLAN?",
+        "choices": ["Transportar tráfico para una sola VLAN", "Transportar tráfico para múltiples VLANs", "Bloquear todo el tráfico", "Asignar direcciones IP"],
+        "correct": 1,
+        "explanation": "Los troncos VLAN transportan tráfico para múltiples VLANs entre switches usando etiquetado (típicamente 802.1Q).",
+        "wrongExplanations": [
+          "Los puertos de acceso transportan tráfico para una sola VLAN.",
+          null,
+          "Los troncos no bloquean todo el tráfico.",
+          "Los troncos no asignan direcciones IP."
+        ],
+        "topic": "2.2 — Troncos VLAN"
+      },
+      {
+        "id": 66,
+        "question": "¿Qué dispositivo puede priorizar tráfico VoIP?",
+        "choices": ["Hub", "Switch no gestionado", "Router con QoS", "Repetidor"],
+        "correct": 2,
+        "explanation": "Los routers con QoS pueden priorizar tráfico sensible al tiempo como VoIP sobre otros datos.",
+        "wrongExplanations": [
+          "Los hubs no pueden priorizar tráfico.",
+          "Los switches no gestionados no pueden priorizar tráfico.",
+          null,
+          "Los repetidores no pueden priorizar tráfico."
+        ],
+        "topic": "2.5 — Calidad de servicio"
+      },
+      {
+        "id": 67,
+        "question": "¿Qué proporciona la agregación de enlaces?",
+        "choices": ["Mayor ancho de banda y redundancia", "Conectividad inalámbrica", "Asignación de IP", "Resolución de nombres"],
+        "correct": 0,
+        "explanation": "La agregación de enlaces (LAG) combina múltiples enlaces físicos en un enlace lógico para mayor ancho de banda y redundancia.",
+        "wrongExplanations": [
+          null,
+          "La agregación de enlaces no proporciona conectividad inalámbrica.",
+          "La agregación de enlaces no asigna direcciones IP.",
+          "La agregación de enlaces no resuelve nombres."
+        ],
+        "topic": "2.2 — Agregación de enlaces"
+      },
+      {
+        "id": 68,
+        "question": "¿Qué protocolo previene bucles en redes conmutadas?",
+        "choices": ["RIP", "OSPF", "STP", "BGP"],
+        "correct": 2,
+        "explanation": "El Protocolo de Árbol de Expansión (STP) previene bucles bloqueando rutas redundantes en redes conmutadas.",
+        "wrongExplanations": [
+          "RIP es un protocolo de enrutamiento, no para conmutación.",
+          "OSPF es un protocolo de enrutamiento, no para conmutación.",
+          null,
+          "BGP es un protocolo de enrutamiento, no para conmutación."
+        ],
+        "topic": "2.2 — Protocolos de conmutación"
+      },
+      {
+        "id": 69,
+        "question": "¿Cuál es el propósito de una VPN sitio a sitio?",
+        "choices": ["Conectar usuarios individuales a la red", "Conectar redes completas de forma segura", "Proporcionar acceso inalámbrico", "Asignar direcciones IP"],
+        "correct": 1,
+        "explanation": "Las VPNs sitio a sitio crean conexiones seguras entre redes completas, a menudo conectando oficinas sucursales.",
+        "wrongExplanations": [
+          "Las VPNs de acceso remoto conectan usuarios individuales.",
+          null,
+          "Las VPNs no proporcionan acceso inalámbrico.",
+          "Las VPNs no asignan direcciones IP."
+        ],
+        "topic": "2.4 — VPNs"
+      },
+      {
+        "id": 70,
+        "question": "¿Qué tipo de registro DNS mapea un dominio a una dirección IP?",
+        "choices": ["CNAME", "MX", "A", "PTR"],
+        "correct": 2,
+        "explanation": "Un registro A (Address) mapea un nombre de dominio a una dirección IPv4.",
+        "wrongExplanations": [
+          "CNAME mapea alias a otros nombres de dominio.",
+          "Los registros MX especifican servidores de correo.",
+          null,
+          "Los registros PTR mapean direcciones IP a nombres de dominio."
+        ],
+        "topic": "2.4 — Servicios DNS"
+      },
+      {
+        "id": 71,
+        "question": "¿Qué hace la seguridad de puertos en un switch?",
+        "choices": ["Cifra el tráfico", "Limita dispositivos por dirección MAC", "Asigna VLANs", "Proporciona enrutamiento"],
+        "correct": 1,
+        "explanation": "La seguridad de puertos restringe qué dispositivos (por dirección MAC) pueden conectarse a puertos específicos del switch.",
+        "wrongExplanations": [
+          "La seguridad de puertos no cifra el tráfico.",
+          null,
+          "La seguridad de puertos no asigna VLANs.",
+          "La seguridad de puertos no proporciona enrutamiento."
+        ],
+        "topic": "2.1 — Seguridad de switch"
+      },
+      {
+        "id": 72,
+        "question": "¿Qué protocolo de enrutamiento es mejor para redes empresariales grandes?",
+        "choices": ["RIP", "OSPF", "Enrutamiento estático", "Enrutamiento por defecto"],
+        "correct": 1,
+        "explanation": "OSPF es un protocolo de estado de enlace que escala bien y converge rápidamente, haciéndolo ideal para empresas grandes.",
+        "wrongExplanations": [
+          "RIP tiene limitaciones para redes grandes (límite de 15 saltos).",
+          null,
+          "El enrutamiento estático no escala para redes grandes.",
+          "El enrutamiento por defecto es demasiado simplista para redes grandes."
+        ],
+        "topic": "2.2 — Protocolos de enrutamiento"
+      },
+      {
+        "id": 73,
+        "question": "¿Cuál es el propósito de la segmentación de red?",
+        "choices": ["Aumentar solo la velocidad", "Mejorar seguridad y rendimiento", "Reducir costos", "Simplificar cableado"],
+        "correct": 1,
+        "explanation": "La segmentación de red divide las redes en partes más pequeñas para mejorar la seguridad, el rendimiento y la manejabilidad.",
+        "wrongExplanations": [
+          "La segmentación mejora más que solo la velocidad.",
+          null,
+          "La segmentación puede aumentar costos debido a equipos adicionales.",
+          "La segmentación puede complicar el cableado."
+        ],
+        "topic": "2.1 — Diseño de red"
+      },
+      {
+        "id": 74,
+        "question": "¿Qué protocolo usa un controlador inalámbrico para gestionar APs?",
+        "choices": ["SNMP", "LWAPP/CAPWAP", "HTTP", "FTP"],
+        "correct": 1,
+        "explanation": "Los protocolos LWAPP o CAPWAP permiten que los controladores inalámbricos gestionen y configuren puntos de acceso centralmente.",
+        "wrongExplanations": [
+          "SNMP es para gestión general de red, no control de AP.",
+          null,
+          "HTTP es para servicios web, no gestión de AP.",
+          "FTP es para transferencia de archivos, no gestión de AP."
+        ],
+        "topic": "2.3 — Implementación inalámbrica"
+      },
+      {
+        "id": 75,
+        "question": "¿Qué proporciona HSRP?",
+        "choices": ["Balanceo de carga", "Redundancia de puerta de enlace", "Resolución DNS", "Servicios DHCP"],
+        "correct": 1,
+        "explanation": "HSRP (Protocolo de Router en Espera Activa) proporciona redundancia de puerta de enlace permitiendo que múltiples routers compartan una IP virtual.",
+        "wrongExplanations": [
+          "HSRP no proporciona balanceo de carga.",
+          null,
+          "HSRP no proporciona resolución DNS.",
+          "HSRP no proporciona servicios DHCP."
+        ],
+        "topic": "2.2 — Alta disponibilidad"
+      },
+      {
+        "id": 76,
+        "question": "¿Qué VLAN transporta tráfico de gestión por defecto?",
+        "choices": ["VLAN 0", "VLAN 1", "VLAN 99", "VLAN 1024"],
+        "correct": 1,
+        "explanation": "VLAN 1 es la VLAN por defecto y típicamente transporta tráfico de gestión, aunque la mejor práctica es cambiar esto.",
+        "wrongExplanations": [
+          "VLAN 0 no existe como VLAN por defecto.",
+          null,
+          "VLAN 99 no es la VLAN de gestión por defecto.",
+          "VLAN 1024 no es la VLAN de gestión por defecto."
+        ],
+        "topic": "2.1 — Seguridad VLAN"
+      },
+      {
+        "id": 77,
+        "question": "¿Cuál es el propósito de un filtro de contenido?",
+        "choices": ["Cifrar datos", "Bloquear sitios web inapropiados", "Asignar direcciones IP", "Enrutar paquetes"],
+        "correct": 1,
+        "explanation": "Los filtros de contenido bloquean el acceso a sitios web inapropiados o no relacionados con el negocio basándose en categorías o URLs.",
+        "wrongExplanations": [
+          "Los filtros de contenido no cifran datos.",
+          null,
+          "DHCP asigna direcciones IP, no los filtros de contenido.",
+          "Los routers enrutan paquetes, no los filtros de contenido."
+        ],
+        "topic": "2.4 — Servicios de red"
+      },
+      {
+        "id": 78,
+        "question": "¿Qué protocolo permite gestión remota de dispositivos?",
+        "choices": ["SNMP", "ARP", "DHCP", "DNS"],
+        "correct": 0,
+        "explanation": "SNMP (Protocolo Simple de Gestión de Red) permite a los administradores monitorear y gestionar dispositivos de red remotamente.",
+        "wrongExplanations": [
+          null,
+          "ARP resuelve direcciones IP a direcciones MAC.",
+          "DHCP asigna direcciones IP.",
+          "DNS resuelve nombres de dominio."
+        ],
+        "topic": "2.5 — Gestión de red"
+      },
+      {
+        "id": 79,
+        "question": "¿Qué proporciona EtherChannel?",
+        "choices": ["Conectividad inalámbrica", "Agregación de enlaces entre switches", "Resolución de nombres", "Asignación IP"],
+        "correct": 1,
+        "explanation": "EtherChannel (agregación de enlaces de Cisco) agrupa múltiples enlaces físicos en un enlace lógico.",
+        "wrongExplanations": [
+          "EtherChannel no proporciona conectividad inalámbrica.",
+          null,
+          "EtherChannel no proporciona resolución de nombres.",
+          "EtherChannel no asigna direcciones IP."
+        ],
+        "topic": "2.5 — Optimización de red"
+      },
+      {
+        "id": 80,
+        "question": "¿Qué protocolo de enrutamiento usa números de sistema autónomo?",
+        "choices": ["RIP", "OSPF", "EIGRP", "BGP"],
+        "correct": 3,
+        "explanation": "BGP (Protocolo de Puerta de Enlace de Frontera) usa números de sistema autónomo para enrutar entre redes de diferentes organizaciones.",
+        "wrongExplanations": [
+          "RIP no usa números de sistema autónomo.",
+          "OSPF no usa números de sistema autónomo.",
+          "EIGRP no usa números de sistema autónomo.",
+          null
+        ],
+        "topic": "2.2 — Protocolos de enrutamiento"
+      },
+      {
+        "id": 81,
+        "question": "¿Cuál es el propósito de un estudio de sitio inalámbrico?",
+        "choices": ["Asignar direcciones IP", "Determinar colocación óptima de AP", "Configurar VLANs", "Configurar enrutamiento"],
+        "correct": 1,
+        "explanation": "Un estudio de sitio inalámbrico identifica áreas de cobertura, fuentes de interferencia y colocación óptima de AP.",
+        "wrongExplanations": [
+          "DHCP asigna direcciones IP, no los estudios de sitio.",
+          null,
+          "Los estudios de sitio no configuran VLANs.",
+          "Los estudios de sitio no configuran enrutamiento."
+        ],
+        "topic": "2.3 — Implementación inalámbrica"
+      },
+      {
+        "id": 82,
+        "question": "¿Qué algoritmo de balanceador de carga distribuye solicitudes uniformemente?",
+        "choices": ["Menos conexiones", "Round-robin", "Ponderado", "Hash IP"],
+        "correct": 1,
+        "explanation": "Round-robin distribuye solicitudes secuencialmente y uniformemente a través de todos los servidores disponibles.",
+        "wrongExplanations": [
+          "Menos conexiones enruta al servidor con menos conexiones activas.",
+          null,
+          "Ponderado distribuye basándose en la capacidad predefinida del servidor.",
+          "Hash IP distribuye basándose en la dirección IP del cliente."
+        ],
+        "topic": "2.4 — Balanceo de carga"
+      },
+      {
+        "id": 83,
+        "question": "¿Qué logra la resumización de rutas?",
+        "choices": ["Aumenta el tamaño de la tabla de enrutamiento", "Reduce el tamaño de la tabla de enrutamiento", "Elimina el enrutamiento", "Deshabilita protocolos de enrutamiento"],
+        "correct": 1,
+        "explanation": "La resumización de rutas combina múltiples rutas en un solo anuncio, reduciendo el tamaño de la tabla de enrutamiento y la sobrecarga.",
+        "wrongExplanations": [
+          "La resumización de rutas reduce, no aumenta, el tamaño de la tabla.",
+          null,
+          "La resumización de rutas no elimina el enrutamiento.",
+          "La resumización de rutas no deshabilita protocolos."
+        ],
+        "topic": "2.2 — Optimización de enrutamiento"
+      },
+      {
+        "id": 84,
+        "question": "¿Qué estándar inalámbrico soporta MU-MIMO?",
+        "choices": ["802.11n", "802.11ac", "802.11g", "802.11a"],
+        "correct": 1,
+        "explanation": "802.11ac introdujo MU-MIMO (Múltiples Usuarios Múltiples Entradas Múltiples Salidas) para comunicación simultánea con múltiples dispositivos.",
+        "wrongExplanations": [
+          "802.11n no soporta MU-MIMO.",
+          null,
+          "802.11g no soporta MU-MIMO.",
+          "802.11a no soporta MU-MIMO."
+        ],
+        "topic": "2.3 — Estándares inalámbricos"
+      },
+      {
+        "id": 85,
+        "question": "¿Cuál es el propósito de un portal cautivo?",
+        "choices": ["Cifrar tráfico", "Requerir autenticación antes del acceso a la red", "Bloquear todo el tráfico", "Proporcionar enrutamiento"],
+        "correct": 1,
+        "explanation": "Los portales cautivos redirigen a los usuarios a una página de autenticación antes de otorgar acceso a la red.",
+        "wrongExplanations": [
+          "Los portales cautivos no cifran tráfico.",
+          null,
+          "Los portales cautivos no bloquean todo el tráfico.",
+          "Los portales cautivos no proporcionan enrutamiento."
+        ],
+        "topic": "2.3 — Seguridad inalámbrica"
+      },
+      {
+        "id": 86,
+        "question": "¿Qué protocolo proporciona conmutación automática por error para puertas de enlace?",
+        "choices": ["DHCP", "DNS", "VRRP", "SNMP"],
+        "correct": 2,
+        "explanation": "VRRP (Protocolo de Redundancia de Router Virtual) proporciona conmutación automática por error para puertas de enlace por defecto.",
+        "wrongExplanations": [
+          "DHCP asigna direcciones IP, no conmutación por error.",
+          "DNS resuelve nombres, no conmutación por error.",
+          null,
+          "SNMP gestiona dispositivos, no conmutación por error."
+        ],
+        "topic": "2.2 — Alta disponibilidad"
+      },
+      {
+        "id": 87,
+        "question": "¿Qué hace una VLAN nativa?",
+        "choices": ["Cifra todo el tráfico", "Transporta tráfico sin etiquetar en un tronco", "Bloquea todas las VLANs", "Asigna direcciones IP"],
+        "correct": 1,
+        "explanation": "La VLAN nativa transporta tráfico sin etiquetar en un puerto tronco, típicamente para compatibilidad hacia atrás.",
+        "wrongExplanations": [
+          "La VLAN nativa no cifra tráfico.",
+          null,
+          "La VLAN nativa no bloquea todas las VLANs.",
+          "La VLAN nativa no asigna direcciones IP."
+        ],
+        "topic": "2.1 — Implementación VLAN"
+      },
+      {
+        "id": 88,
+        "question": "¿Qué métrica usa RIP para selección de ruta?",
+        "choices": ["Ancho de banda", "Conteo de saltos", "Retardo", "Costo"],
+        "correct": 1,
+        "explanation": "RIP usa conteo de saltos (número de routers) como su métrica, con un máximo de 15 saltos.",
+        "wrongExplanations": [
+          "RIP no usa ancho de banda como su métrica.",
+          null,
+          "RIP no usa retardo como su métrica.",
+          "RIP no usa costo como su métrica."
+        ],
+        "topic": "2.2 — Protocolos de enrutamiento"
+      },
+      {
+        "id": 89,
+        "question": "¿Cuál es el propósito del control de acceso a la red (NAC)?",
+        "choices": ["Aumentar ancho de banda", "Aplicar política de seguridad antes del acceso a la red", "Asignar VLANs", "Proporcionar enrutamiento"],
+        "correct": 1,
+        "explanation": "NAC verifica que los dispositivos cumplan con los requisitos de seguridad antes de permitir el acceso a la red.",
+        "wrongExplanations": [
+          "NAC no aumenta ancho de banda.",
+          null,
+          "NAC puede asignar VLANs pero ese no es su propósito principal.",
+          "NAC no proporciona enrutamiento."
+        ],
+        "topic": "2.1 — Seguridad de red"
+      },
+      {
+        "id": 90,
+        "question": "¿Qué registro DNS se usa para búsquedas inversas?",
+        "choices": ["A", "CNAME", "PTR", "MX"],
+        "correct": 2,
+        "explanation": "Los registros PTR (Pointer) mapean direcciones IP de vuelta a nombres de dominio para búsquedas DNS inversas.",
+        "wrongExplanations": [
+          "Los registros A mapean nombres de dominio a direcciones IP.",
+          "Los registros CNAME mapean alias a otros nombres de dominio.",
+          null,
+          "Los registros MX especifican servidores de correo."
+        ],
+        "topic": "2.4 — Servicios DNS"
+      }
+    ],
+    "3": [
+      {
+        "id": 91,
+        "question": "¿Cuál es el propósito de la documentación de red?",
+        "choices": ["Reemplazar respaldos", "Rastrear cambios y ayudar en la resolución de problemas", "Aumentar el ancho de banda", "Eliminar el monitoreo"],
+        "correct": 1,
+        "explanation": "La documentación de red registra configuraciones, cambios y topologías para ayudar en la gestión y resolución de problemas.",
+        "wrongExplanations": [
+          "La documentación no reemplaza respaldos.",
+          null,
+          "La documentación no aumenta el ancho de banda.",
+          "La documentación no elimina el monitoreo."
+        ],
+        "topic": "3.1 — Documentación de red"
+      },
+      {
+        "id": 92,
+        "question": "¿Qué tipo de respaldo solo respalda datos cambiados desde el último respaldo?",
+        "choices": ["Completo", "Incremental", "Diferencial", "Instantánea"],
+        "correct": 1,
+        "explanation": "Los respaldos incrementales solo copian datos que han cambiado desde el último respaldo de cualquier tipo.",
+        "wrongExplanations": [
+          "Los respaldos completos copian todos los datos.",
+          null,
+          "Los respaldos diferenciales copian datos cambiados desde el último respaldo completo.",
+          "Las instantáneas capturan el estado en un punto en el tiempo."
+        ],
+        "topic": "3.2 — Estrategias de respaldo"
+      },
+      {
+        "id": 93,
+        "question": "¿Qué proporciona una línea base de rendimiento?",
+        "choices": ["Estado de seguridad actual", "Punto de referencia para comportamiento normal de red", "Programa de respaldos", "Asignaciones de direcciones IP"],
+        "correct": 1,
+        "explanation": "Una línea base de rendimiento establece métricas de comportamiento normal de red para comparación al resolver problemas.",
+        "wrongExplanations": [
+          "Las líneas base no proporcionan estado de seguridad.",
+          null,
+          "Las líneas base no proporcionan programas de respaldos.",
+          "Las líneas base no proporcionan asignaciones de IP."
+        ],
+        "topic": "3.3 — Monitoreo de red"
+      },
+      {
+        "id": 94,
+        "question": "¿Qué herramienta monitorea el tráfico de red en tiempo real?",
+        "choices": ["Probador de cables", "Analizador de protocolos", "Generador de tonos", "Multímetro"],
+        "correct": 1,
+        "explanation": "Los analizadores de protocolos (como Wireshark) capturan y analizan el tráfico de red en tiempo real.",
+        "wrongExplanations": [
+          "Los probadores de cables prueban la integridad física del cable.",
+          null,
+          "Los generadores de tonos rastrean cables.",
+          "Los multímetros miden propiedades eléctricas."
+        ],
+        "topic": "3.4 — Herramientas de monitoreo"
+      },
+      {
+        "id": 95,
+        "question": "¿Cuál es el propósito de la gestión de cambios?",
+        "choices": ["Eliminar todos los cambios", "Controlar y documentar cambios de red", "Aumentar la velocidad de red", "Reemplazar firewalls"],
+        "correct": 1,
+        "explanation": "La gestión de cambios asegura que los cambios sean planificados, aprobados, documentados y puedan ser revertidos si es necesario.",
+        "wrongExplanations": [
+          "La gestión de cambios no elimina cambios.",
+          null,
+          "La gestión de cambios no aumenta la velocidad.",
+          "La gestión de cambios no reemplaza firewalls."
+        ],
+        "topic": "3.1 — Gestión de cambios"
+      },
+      {
+        "id": 96,
+        "question": "¿Qué tipo de registro registra intentos de autenticación de usuarios?",
+        "choices": ["Registro del sistema", "Registro de seguridad", "Registro de aplicación", "Registro de rendimiento"],
+        "correct": 1,
+        "explanation": "Los registros de seguridad registran intentos de autenticación, eventos de control de acceso y actividades relacionadas con la seguridad.",
+        "wrongExplanations": [
+          "Los registros del sistema registran eventos del sistema, no autenticación.",
+          null,
+          "Los registros de aplicación registran eventos específicos de la aplicación.",
+          "Los registros de rendimiento registran métricas de rendimiento."
+        ],
+        "topic": "3.3 — Gestión de registros"
+      },
+      {
+        "id": 97,
+        "question": "¿Qué indica una notificación de trampa SNMP?",
+        "choices": ["Operación normal", "Un evento o alerta de un dispositivo", "Respaldo exitoso", "Conflicto IP"],
+        "correct": 1,
+        "explanation": "Las trampas SNMP son alertas no solicitadas enviadas desde dispositivos al sistema de gestión cuando ocurren eventos específicos.",
+        "wrongExplanations": [
+          "Las trampas SNMP indican eventos, no operación normal.",
+          null,
+          "Las trampas SNMP no indican éxito de respaldo.",
+          "Las trampas SNMP no indican específicamente conflictos IP."
+        ],
+        "topic": "3.4 — Monitoreo SNMP"
+      },
+      {
+        "id": 98,
+        "question": "¿Qué herramienta mide la utilización del ancho de banda?",
+        "choices": ["Probador de cables", "Monitor de rendimiento de red", "Generador de tonos", "Multímetro"],
+        "correct": 1,
+        "explanation": "Los monitores de rendimiento de red rastrean la utilización del ancho de banda, latencia y rendimiento general de la red.",
+        "wrongExplanations": [
+          "Los probadores de cables prueban la integridad física del cable.",
+          null,
+          "Los generadores de tonos rastrean cables.",
+          "Los multímetros miden propiedades eléctricas."
+        ],
+        "topic": "3.3 — Herramientas de rendimiento"
+      },
+      {
+        "id": 99,
+        "question": "¿Cuál es el propósito de la gestión de activos?",
+        "choices": ["Solo direcciones IP", "Hardware, software y licencias", "Contraseñas de usuario", "Horarios de respaldo"],
+        "correct": 1,
+        "explanation": "Los sistemas de gestión de activos rastrean todo el hardware, software, licencias, garantías y ubicaciones de equipos.",
+        "wrongExplanations": [
+          "La gestión de activos rastrea más que solo direcciones IP.",
+          null,
+          "La gestión de activos no rastrea contraseñas de usuario.",
+          "La gestión de activos no rastrea horarios de respaldo."
+        ],
+        "topic": "3.1 — Gestión de activos"
+      },
+      {
+        "id": 100,
+        "question": "¿Qué métrica indica problemas de rendimiento de red?",
+        "choices": ["Alto ancho de banda", "Alta latencia", "Resolución DNS rápida", "Baja tasa de errores"],
+        "correct": 1,
+        "explanation": "La alta latencia indica problemas de rendimiento de red, como congestión o problemas de conectividad.",
+        "wrongExplanations": [
+          "El alto ancho de banda indica buen rendimiento.",
+          null,
+          "La resolución DNS rápida indica buen rendimiento DNS.",
+          "La baja tasa de errores indica buena salud de la red."
+        ],
+        "topic": "3.3 — Métricas de rendimiento"
+      },
+      {
+        "id": 101,
+        "question": "¿Qué aborda la planificación de recuperación ante desastres?",
+        "choices": ["Solo respaldos diarios", "Restaurar operaciones después de una interrupción mayor", "Políticas de contraseñas", "Configuración de VLAN"],
+        "correct": 1,
+        "explanation": "Los planes de recuperación ante desastres describen procedimientos para restaurar sistemas críticos y datos después de eventos catastróficos.",
+        "wrongExplanations": [
+          "La recuperación ante desastres es más amplia que los respaldos diarios.",
+          null,
+          "La recuperación ante desastres no se enfoca en políticas de contraseñas.",
+          "La recuperación ante desastres no se enfoca en la configuración de VLAN."
+        ],
+        "topic": "3.2 — Continuidad del negocio"
+      },
+      {
+        "id": 102,
+        "question": "¿Qué herramienta prueba la continuidad del cable?",
+        "choices": ["Analizador de protocolos", "Probador de cables", "Analizador de espectro", "Escáner de puertos"],
+        "correct": 1,
+        "explanation": "Los probadores de cables verifican el cableado adecuado, continuidad e integridad del cable.",
+        "wrongExplanations": [
+          "Los analizadores de protocolos capturan tráfico de red.",
+          null,
+          "Los analizadores de espectro identifican interferencia RF.",
+          "Los escáneres de puertos identifican puertos abiertos."
+        ],
+        "topic": "3.4 — Herramientas de prueba"
+      },
+      {
+        "id": 103,
+        "question": "¿Cuál es el propósito del monitoreo de red?",
+        "choices": ["Reemplazar administradores", "Detectar problemas proactivamente", "Eliminar documentación", "Deshabilitar seguridad"],
+        "correct": 1,
+        "explanation": "El monitoreo de red rastrea continuamente el rendimiento y la disponibilidad para detectar y abordar problemas proactivamente.",
+        "wrongExplanations": [
+          "El monitoreo no reemplaza administradores.",
+          null,
+          "El monitoreo no elimina documentación.",
+          "El monitoreo no deshabilita seguridad."
+        ],
+        "topic": "3.3 — Monitoreo de red"
+      },
+      {
+        "id": 104,
+        "question": "¿Qué estrategia de respaldo proporciona la recuperación más rápida?",
+        "choices": ["Incremental", "Diferencial", "Completo", "Solo en la nube"],
+        "correct": 2,
+        "explanation": "Los respaldos completos proporcionan la recuperación más rápida ya que todos los datos están en un conjunto de respaldo, aunque tardan más en crearse.",
+        "wrongExplanations": [
+          "Los respaldos incrementales requieren múltiples pasos de restauración.",
+          "Los respaldos diferenciales requieren múltiples pasos de restauración.",
+          null,
+          "Los respaldos solo en la nube dependen de la velocidad de internet."
+        ],
+        "topic": "3.2 — Estrategias de respaldo"
+      },
+      {
+        "id": 105,
+        "question": "¿Qué rastrea un sistema de gestión de activos?",
+        "choices": ["Solo direcciones IP", "Hardware, software y licencias", "Contraseñas de usuario", "Horarios de respaldo"],
+        "correct": 1,
+        "explanation": "Los sistemas de gestión de activos rastrean todo el hardware, software, licencias, garantías y ubicaciones de equipos.",
+        "wrongExplanations": [
+          "La gestión de activos rastrea más que solo direcciones IP.",
+          null,
+          "La gestión de activos no rastrea contraseñas de usuario.",
+          "La gestión de activos no rastrea horarios de respaldo."
+        ],
+        "topic": "3.1 — Gestión de activos"
+      },
+      {
+        "id": 106,
+        "question": "¿Qué protocolo proporciona registro centralizado de autenticación?",
+        "choices": ["DHCP", "RADIUS", "DNS", "FTP"],
+        "correct": 1,
+        "explanation": "Los servidores RADIUS autentican centralmente a los usuarios y registran todos los intentos de autenticación.",
+        "wrongExplanations": [
+          "DHCP asigna direcciones IP.",
+          null,
+          "DNS resuelve nombres de dominio.",
+          "FTP transfiere archivos."
+        ],
+        "topic": "3.3 — Monitoreo de autenticación"
+      },
+      {
+        "id": 107,
+        "question": "¿Cuál es el propósito del monitoreo ambiental?",
+        "choices": ["Rastrear clima exterior", "Monitorear temperatura, humedad y condiciones en salas de red", "Probar cables", "Configurar VLANs"],
+        "correct": 1,
+        "explanation": "El monitoreo ambiental rastrea temperatura, humedad y otras condiciones que afectan el equipo de red.",
+        "wrongExplanations": [
+          "El monitoreo ambiental se enfoca en condiciones interiores.",
+          null,
+          "El monitoreo ambiental no prueba cables.",
+          "El monitoreo ambiental no configura VLANs."
+        ],
+        "topic": "3.3 — Monitoreo de instalaciones"
+      },
+      {
+        "id": 108,
+        "question": "¿Qué documento define el uso aceptable de la red?",
+        "choices": ["SLA", "AUP", "NDA", "RFP"],
+        "correct": 1,
+        "explanation": "AUP (Política de Uso Aceptable) define cómo los usuarios pueden usar los recursos de red.",
+        "wrongExplanations": [
+          "SLA define expectativas de rendimiento del servicio.",
+          null,
+          "NDA protege información confidencial.",
+          "RFP es una solicitud de propuesta."
+        ],
+        "topic": "3.1 — Documentación de políticas"
+      },
+      {
+        "id": 109,
+        "question": "¿Qué ayuda a identificar el monitoreo del ancho de banda?",
+        "choices": ["Roturas de cable", "Patrones de tráfico y congestión", "Conflictos IP", "Violaciones de contraseñas"],
+        "correct": 1,
+        "explanation": "El monitoreo del ancho de banda rastrea patrones de utilización para identificar congestión y necesidades de planificación de capacidad.",
+        "wrongExplanations": [
+          "El monitoreo del ancho de banda no identifica roturas de cable.",
+          null,
+          "El monitoreo del ancho de banda no identifica conflictos IP.",
+          "El monitoreo del ancho de banda no identifica violaciones de contraseñas."
+        ],
+        "topic": "3.3 — Monitoreo de rendimiento"
+      },
+      {
+        "id": 110,
+        "question": "¿Qué ubicación de respaldo está fuera del sitio?",
+        "choices": ["Disco local", "Recurso compartido de red", "Almacenamiento en la nube", "Unidad USB"],
+        "correct": 2,
+        "explanation": "El almacenamiento en la nube proporciona protección de respaldo fuera del sitio contra desastres locales.",
+        "wrongExplanations": [
+          "El disco local está en el sitio.",
+          "El recurso compartido de red típicamente está en el sitio.",
+          null,
+          "La unidad USB típicamente está en el sitio."
+        ],
+        "topic": "3.2 — Ubicaciones de respaldo"
+      },
+      {
+        "id": 111,
+        "question": "¿Cuál es el propósito de la gestión de parches?",
+        "choices": ["Crear nuevas redes", "Desplegar actualizaciones de seguridad y software", "Reemplazar hardware", "Eliminar datos antiguos"],
+        "correct": 1,
+        "explanation": "La gestión de parches asegura que los sistemas reciban actualizaciones de seguridad y parches de software oportunos.",
+        "wrongExplanations": [
+          "La gestión de parches no crea redes.",
+          null,
+          "La gestión de parches no reemplaza hardware.",
+          "La gestión de parches no elimina datos antiguos."
+        ],
+        "topic": "3.1 — Gestión del sistema"
+      },
+      {
+        "id": 112,
+        "question": "¿Qué alerta debería activar una respuesta inmediata?",
+        "choices": ["Actualización de estado rutinaria", "Falla crítica del sistema", "Finalización programada de respaldo", "Pico de tráfico normal"],
+        "correct": 1,
+        "explanation": "Las fallas críticas del sistema requieren atención inmediata para minimizar el tiempo de inactividad y el impacto.",
+        "wrongExplanations": [
+          "Las actualizaciones rutinarias no requieren respuesta inmediata.",
+          null,
+          "La finalización de respaldo es normal, no crítica.",
+          "Los picos de tráfico normales no requieren respuesta inmediata."
+        ],
+        "topic": "3.3 — Gestión de alertas"
+      },
+      {
+        "id": 113,
+        "question": "¿Qué significa RTO en recuperación ante desastres?",
+        "choices": ["Objetivo de Tiempo de Recuperación", "Operación en Tiempo Real", "Objetivo de Prueba Rutinaria", "Opción de Transferencia Remota"],
+        "correct": 0,
+        "explanation": "RTO define el tiempo máximo aceptable para restaurar un sistema después de una falla.",
+        "wrongExplanations": [
+          null,
+          "Esta no es la expansión correcta de RTO.",
+          "Esta no es la expansión correcta de RTO.",
+          "Esta no es la expansión correcta de RTO."
+        ],
+        "topic": "3.2 — Continuidad del negocio"
+      },
+      {
+        "id": 114,
+        "question": "¿Qué herramienta mide la fuerza de la señal Wi-Fi?",
+        "choices": ["Probador de cables", "Analizador Wi-Fi", "Multímetro", "Generador de tonos"],
+        "correct": 1,
+        "explanation": "Los analizadores Wi-Fi miden la fuerza de la señal, utilización del canal e identifican fuentes de interferencia.",
+        "wrongExplanations": [
+          "Los probadores de cables prueban cables físicos.",
+          null,
+          "Los multímetros miden propiedades eléctricas.",
+          "Los generadores de tonos rastrean cables."
+        ],
+        "topic": "3.4 — Herramientas inalámbricas"
+      },
+      {
+        "id": 115,
+        "question": "¿Cuál es el propósito de la gestión de configuración?",
+        "choices": ["Rastrear y controlar configuraciones de dispositivos", "Reemplazar toda la documentación", "Eliminar respaldos", "Deshabilitar monitoreo"],
+        "correct": 0,
+        "explanation": "La gestión de configuración rastrea, controla y documenta configuraciones de dispositivos de red y cambios.",
+        "wrongExplanations": [
+          null,
+          "La gestión de configuración no reemplaza documentación.",
+          "La gestión de configuración no elimina respaldos.",
+          "La gestión de configuración no deshabilita monitoreo."
+        ],
+        "topic": "3.1 — Gestión de configuración"
+      },
+      {
+        "id": 116,
+        "question": "¿Qué métrica mide la capacidad de respuesta de la red?",
+        "choices": ["Ancho de banda", "Latencia", "Rendimiento", "Jitter"],
+        "correct": 1,
+        "explanation": "La latencia mide el retraso de tiempo en la comunicación de red, indicando capacidad de respuesta.",
+        "wrongExplanations": [
+          "El ancho de banda mide capacidad, no capacidad de respuesta.",
+          null,
+          "El rendimiento mide la tasa de transferencia de datos.",
+          "El jitter mide la variación del retraso."
+        ],
+        "topic": "3.3 — Métricas de rendimiento"
+      },
+      {
+        "id": 117,
+        "question": "¿Qué significa RPO en planificación de respaldos?",
+        "choices": ["Objetivo de Punto de Recuperación", "Operación de Procesamiento Rutinario", "Opción de Protección en Tiempo Real", "Operación de Procedimiento Remoto"],
+        "correct": 0,
+        "explanation": "RPO define la cantidad máxima aceptable de pérdida de datos medida en tiempo.",
+        "wrongExplanations": [
+          null,
+          "Esta no es la expansión correcta de RPO.",
+          "Esta no es la expansión correcta de RPO.",
+          "Esta no es la expansión correcta de RPO."
+        ],
+        "topic": "3.2 — Continuidad del negocio"
+      },
+      {
+        "id": 118,
+        "question": "¿Qué análisis de registros ayuda a detectar incidentes de seguridad?",
+        "choices": ["Registros del clima", "Registros de eventos de seguridad", "Horarios de almuerzo", "Solo registros de acceso al edificio"],
+        "correct": 1,
+        "explanation": "Los registros de eventos de seguridad registran intentos de autenticación, violaciones de acceso y actividades sospechosas.",
+        "wrongExplanations": [
+          "Los registros del clima no ayudan a detectar incidentes de seguridad.",
+          null,
+          "Los horarios de almuerzo no ayudan a detectar incidentes de seguridad.",
+          "Los registros de acceso al edificio son solo un tipo de registro de seguridad."
+        ],
+        "topic": "3.3 — Monitoreo de seguridad"
+      },
+      {
+        "id": 119,
+        "question": "¿Cuál es el propósito de una ventana de mantenimiento?",
+        "choices": ["Cambios aleatorios en cualquier momento", "Tiempo programado para cambios planificados", "Solo reparaciones de emergencia", "Eliminar tiempo de inactividad"],
+        "correct": 1,
+        "explanation": "Las ventanas de mantenimiento son tiempos programados para cambios planificados para minimizar el impacto en el negocio.",
+        "wrongExplanations": [
+          "Las ventanas de mantenimiento son planificadas, no aleatorias.",
+          null,
+          "Las ventanas de mantenimiento son para cambios planificados, no emergencias.",
+          "Las ventanas de mantenimiento no eliminan tiempo de inactividad."
+        ],
+        "topic": "3.1 — Gestión de cambios"
+      },
+      {
+        "id": 120,
+        "question": "¿Qué herramienta ayuda a identificar cuellos de botella de red?",
+        "choices": ["Generador de tonos", "Monitor de rendimiento de red", "Probador de cables", "Herramienta de crimpado"],
+        "correct": 1,
+        "explanation": "Los monitores de rendimiento de red rastrean la utilización del ancho de banda, latencia e identifican puntos de congestión.",
+        "wrongExplanations": [
+          "Los generadores de tonos rastrean cables.",
+          null,
+          "Los probadores de cables prueban cables físicos.",
+          "Las herramientas de crimpado terminan cables."
+        ],
+        "topic": "3.3 — Herramientas de rendimiento"
+      },
+      {
+        "id": 121,
+        "question": "¿Qué debe incluirse en la documentación de incidentes?",
+        "choices": ["Solo la solución", "Síntomas, causa, solución y prevención", "Solo el nombre del usuario", "Solo el tiempo"],
+        "correct": 1,
+        "explanation": "La documentación completa de incidentes incluye síntomas, causa raíz, pasos de resolución y medidas preventivas.",
+        "wrongExplanations": [
+          "La documentación de incidentes debe incluir más que solo la solución.",
+          null,
+          "La documentación de incidentes debe incluir más que solo el nombre del usuario.",
+          "La documentación de incidentes debe incluir más que solo el tiempo."
+        ],
+        "topic": "3.1 — Prácticas de documentación"
+      },
+      {
+        "id": 122,
+        "question": "¿Qué enfoque de monitoreo es proactivo?",
+        "choices": ["Esperar quejas de usuarios", "Monitoreo continuo con alertas", "Verificaciones manuales trimestrales", "Solo revisión post-incidente"],
+        "correct": 1,
+        "explanation": "El monitoreo continuo con alertas automatizadas detecta problemas antes de que los usuarios los reporten.",
+        "wrongExplanations": [
+          "Esperar quejas es reactivo, no proactivo.",
+          null,
+          "Las verificaciones trimestrales son demasiado infrecuentes para ser proactivas.",
+          "La revisión post-incidente es reactiva, no proactiva."
+        ],
+        "topic": "3.3 — Estrategias de monitoreo"
+      },
+      {
+        "id": 123,
+        "question": "¿Cuál es la regla de respaldo 3-2-1?",
+        "choices": ["3 respaldos, 2 medios diferentes, 1 fuera del sitio", "3 servidores, 2 switches, 1 router", "3 usuarios, 2 contraseñas, 1 admin", "3 días, 2 semanas, 1 mes"],
+        "correct": 0,
+        "explanation": "La regla 3-2-1 recomienda 3 copias de datos, en 2 tipos de medios diferentes, con 1 copia fuera del sitio.",
+        "wrongExplanations": [
+          null,
+          "Esta no es la interpretación correcta de la regla 3-2-1.",
+          "Esta no es la interpretación correcta de la regla 3-2-1.",
+          "Esta no es la interpretación correcta de la regla 3-2-1."
+        ],
+        "topic": "3.2 — Mejores prácticas de respaldo"
+      },
+      {
+        "id": 124,
+        "question": "¿Qué herramienta captura paquetes para análisis?",
+        "choices": ["Crimpador", "Analizador de paquetes", "Herramienta de perforación", "Pelacables"],
+        "correct": 1,
+        "explanation": "Los analizadores de paquetes (analizadores de protocolos) capturan paquetes de red para análisis detallado.",
+        "wrongExplanations": [
+          "Los crimpadores terminan cables.",
+          null,
+          "Las herramientas de perforación terminan cables.",
+          "Los pelacables preparan cables."
+        ],
+        "topic": "3.4 — Herramientas de análisis"
+      },
+      {
+        "id": 125,
+        "question": "¿Cuál es el propósito de un manual de operaciones?",
+        "choices": ["Horarios de ejercicio", "Procedimientos operacionales paso a paso", "Planos de edificios", "Números de teléfono de usuarios"],
+        "correct": 1,
+        "explanation": "Los manuales de operaciones proporcionan procedimientos detallados paso a paso para operaciones rutinarias y resolución de problemas.",
+        "wrongExplanations": [
+          "Los manuales de operaciones no son horarios de ejercicio.",
+          null,
+          "Los manuales de operaciones no son planos de edificios.",
+          "Los manuales de operaciones no son números de teléfono de usuarios."
+        ],
+        "topic": "3.1 — Documentación operacional"
+      },
+      {
+        "id": 126,
+        "question": "¿Qué métrica indica pérdida de paquetes?",
+        "choices": ["Alto rendimiento", "Porcentaje de paquetes descartados", "Tiempo de respuesta rápido", "Ancho de banda amplio"],
+        "correct": 1,
+        "explanation": "El porcentaje de paquetes descartados indica pérdida de paquetes, a menudo debido a congestión o errores.",
+        "wrongExplanations": [
+          "El alto rendimiento indica buen rendimiento.",
+          null,
+          "El tiempo de respuesta rápido indica buen rendimiento.",
+          "El ancho de banda amplio indica buena capacidad."
+        ],
+        "topic": "3.3 — Métricas de rendimiento"
+      },
+      {
+        "id": 127,
+        "question": "¿Qué proporciona el monitoreo automatizado?",
+        "choices": ["Conciencia 24/7 sin verificación manual constante", "Eliminación de toda la documentación", "Resolución automática de problemas", "Eliminación de todos los administradores"],
+        "correct": 0,
+        "explanation": "El monitoreo automatizado proporciona vigilancia continua y alertas sin supervisión manual constante.",
+        "wrongExplanations": [
+          null,
+          "El monitoreo automatizado no elimina documentación.",
+          "El monitoreo automatizado no resuelve automáticamente problemas.",
+          "El monitoreo automatizado no elimina administradores."
+        ],
+        "topic": "3.3 — Automatización de monitoreo"
+      },
+      {
+        "id": 128,
+        "question": "¿Qué documento describe las responsabilidades del proveedor?",
+        "choices": ["AUP", "SLA", "NDA", "Política de contraseñas"],
+        "correct": 1,
+        "explanation": "Los SLA definen compromisos de servicio del proveedor, expectativas de rendimiento y responsabilidades.",
+        "wrongExplanations": [
+          "AUP define políticas de uso aceptable.",
+          null,
+          "NDA protege información confidencial.",
+          "Las políticas de contraseñas definen requisitos de contraseñas."
+        ],
+        "topic": "3.1 — Acuerdos de servicio"
+      },
+      {
+        "id": 129,
+        "question": "¿Cuál es el propósito de la planificación de capacidad?",
+        "choices": ["Reducir el tamaño de la red", "Pronosticar necesidades futuras de recursos", "Eliminar monitoreo", "Eliminar datos antiguos"],
+        "correct": 1,
+        "explanation": "La planificación de capacidad usa tendencias actuales para pronosticar requisitos futuros de recursos de red.",
+        "wrongExplanations": [
+          "La planificación de capacidad no reduce el tamaño de la red.",
+          null,
+          "La planificación de capacidad no elimina monitoreo.",
+          "La planificación de capacidad no elimina datos antiguos."
+        ],
+        "topic": "3.3 — Planificación de capacidad"
+      },
+      {
+        "id": 130,
+        "question": "¿Qué herramienta verifica la terminación adecuada del cable?",
+        "choices": ["Analizador de protocolos", "Certificador de cables", "Analizador de espectro", "Escáner de puertos"],
+        "correct": 1,
+        "explanation": "Los certificadores de cables prueban cables contra estándares de rendimiento y verifican terminación adecuada.",
+        "wrongExplanations": [
+          "Los analizadores de protocolos capturan tráfico de red.",
+          null,
+          "Los analizadores de espectro identifican interferencia RF.",
+          "Los escáneres de puertos identifican puertos abiertos."
+        ],
+        "topic": "3.4 — Herramientas de prueba"
+      }
+    ],
+    "4": [
+      {
+        "id": 131,
+        "question": "¿Cuál es la función principal de un firewall?",
+        "choices": ["Asignar direcciones IP", "Filtrar tráfico basado en reglas", "Proporcionar acceso inalámbrico", "Almacenar respaldos"],
+        "correct": 1,
+        "explanation": "Los firewalls filtran el tráfico de red basado en reglas de seguridad configuradas para bloquear acceso no autorizado.",
+        "wrongExplanations": [
+          "DHCP asigna direcciones IP, no los firewalls.",
+          null,
+          "Los puntos de acceso proporcionan acceso inalámbrico, no los firewalls.",
+          "Los servidores almacenan respaldos, no los firewalls."
+        ],
+        "topic": "4.1 — Conceptos de firewall"
+      },
+      {
+        "id": 132,
+        "question": "¿Qué ataque inunda un sistema con tráfico para hacerlo no disponible?",
+        "choices": ["Phishing", "Hombre en el medio", "DDoS", "Inyección SQL"],
+        "correct": 2,
+        "explanation": "Los ataques DDoS (Denegación de Servicio Distribuida) abruman sistemas con tráfico de múltiples fuentes.",
+        "wrongExplanations": [
+          "El phishing usa correos engañosos para robar credenciales.",
+          "El hombre en el medio intercepta comunicación.",
+          null,
+          "La inyección SQL explota vulnerabilidades de base de datos."
+        ],
+        "topic": "4.2 — Ataques de red"
+      },
+      {
+        "id": 133,
+        "question": "¿Qué significa ACL?",
+        "choices": ["Lista de Control de Acceso", "Registro de Conexión Activa", "Enlace de Control Automatizado", "Longitud Avanzada de Cable"],
+        "correct": 0,
+        "explanation": "Las ACL son conjuntos de reglas que permiten o deniegan tráfico basado en varios criterios como direcciones IP o puertos.",
+        "wrongExplanations": [
+          null,
+          "Esta no es la expansión correcta de ACL.",
+          "Esta no es la expansión correcta de ACL.",
+          "Esta no es la expansión correcta de ACL."
+        ],
+        "topic": "4.1 — Control de acceso"
+      },
+      {
+        "id": 134,
+        "question": "¿Qué principio de seguridad limita el acceso del usuario solo a lo necesario?",
+        "choices": ["Defensa en profundidad", "Privilegio mínimo", "Confianza cero", "Denegación implícita"],
+        "correct": 1,
+        "explanation": "El privilegio mínimo otorga a los usuarios solo los derechos de acceso mínimos necesarios para realizar sus funciones laborales.",
+        "wrongExplanations": [
+          "La defensa en profundidad usa múltiples capas de seguridad.",
+          null,
+          "La confianza cero asume que no hay confianza implícita.",
+          "La denegación implícita bloquea todo tráfico no autorizado."
+        ],
+        "topic": "4.3 — Principios de seguridad"
+      },
+      {
+        "id": 135,
+        "question": "¿Qué hace un IDS?",
+        "choices": ["Bloquea todo el tráfico", "Detecta y alerta sobre actividad sospechosa", "Asigna direcciones IP", "Proporciona acceso inalámbrico"],
+        "correct": 1,
+        "explanation": "IDS (Sistema de Detección de Intrusiones) monitorea el tráfico de red y alerta a los administradores sobre actividad sospechosa.",
+        "wrongExplanations": [
+          "IDS no bloquea tráfico, solo detecta.",
+          null,
+          "DHCP asigna direcciones IP, no IDS.",
+          "Los puntos de acceso proporcionan acceso inalámbrico, no IDS."
+        ],
+        "topic": "4.1 — Dispositivos de seguridad"
+      },
+      {
+        "id": 136,
+        "question": "¿Qué ataque intercepta la comunicación entre dos partes?",
+        "choices": ["DDoS", "Hombre en el medio", "Phishing", "Fuerza bruta"],
+        "correct": 1,
+        "explanation": "Los ataques de hombre en el medio interceptan y potencialmente alteran la comunicación entre dos partes sin su conocimiento.",
+        "wrongExplanations": [
+          "DDoS inunda sistemas con tráfico.",
+          null,
+          "Phishing usa correos engañosos.",
+          "Fuerza bruta prueba combinaciones de contraseñas."
+        ],
+        "topic": "4.2 — Ataques de red"
+      },
+      {
+        "id": 137,
+        "question": "¿Cuál es el propósito de la segmentación de red para seguridad?",
+        "choices": ["Aumentar velocidad", "Limitar el impacto de brechas y controlar el acceso", "Reducir costos", "Simplificar gestión"],
+        "correct": 1,
+        "explanation": "La segmentación de red enfocada en seguridad contiene brechas y controla el flujo de tráfico entre zonas de red.",
+        "wrongExplanations": [
+          "La segmentación de seguridad no aumenta principalmente la velocidad.",
+          null,
+          "La segmentación de seguridad puede aumentar costos.",
+          "La segmentación de seguridad puede complicar la gestión."
+        ],
+        "topic": "4.3 — Diseño de seguridad de red"
+      },
+      {
+        "id": 138,
+        "question": "¿Qué protocolo cifra el tráfico web?",
+        "choices": ["HTTP", "FTP", "HTTPS", "Telnet"],
+        "correct": 2,
+        "explanation": "HTTPS usa SSL/TLS para cifrar el tráfico web, protegiendo los datos en tránsito.",
+        "wrongExplanations": [
+          "HTTP transmite datos en texto plano.",
+          "FTP transmite datos en texto plano.",
+          null,
+          "Telnet transmite datos en texto plano."
+        ],
+        "topic": "4.4 — Protocolos seguros"
+      },
+      {
+        "id": 139,
+        "question": "¿Qué hace el filtrado MAC?",
+        "choices": ["Filtra por dirección IP", "Permite/bloquea dispositivos por dirección física", "Cifra datos", "Asigna VLANs"],
+        "correct": 1,
+        "explanation": "El filtrado MAC controla el acceso a la red basado en las direcciones físicas (MAC) de los dispositivos.",
+        "wrongExplanations": [
+          "El filtrado MAC usa direcciones MAC, no direcciones IP.",
+          null,
+          "El filtrado MAC no cifra datos.",
+          "El filtrado MAC no asigna VLANs."
+        ],
+        "topic": "4.1 — Seguridad inalámbrica"
+      },
+      {
+        "id": 140,
+        "question": "¿Qué ataque usa correos engañosos para robar credenciales?",
+        "choices": ["DDoS", "Phishing", "Ataque Smurf", "Envenenamiento ARP"],
+        "correct": 1,
+        "explanation": "Los ataques de phishing usan correos fraudulentos para engañar a los usuarios y hacer que revelen información sensible.",
+        "wrongExplanations": [
+          "DDoS inunda sistemas con tráfico.",
+          null,
+          "Los ataques Smurf amplifican el tráfico ICMP.",
+          "El envenenamiento ARP corrompe las tablas ARP."
+        ],
+        "topic": "4.2 — Ingeniería social"
+      },
+      {
+        "id": 141,
+        "question": "¿Cuál es la diferencia entre IDS e IPS?",
+        "choices": ["No hay diferencia", "IPS puede bloquear activamente amenazas, IDS solo detecta", "IDS es más rápido", "IPS está obsoleto"],
+        "correct": 1,
+        "explanation": "IPS (Sistema de Prevención de Intrusiones) puede bloquear automáticamente amenazas detectadas, mientras que IDS solo alerta.",
+        "wrongExplanations": [
+          "Hay diferencias significativas entre IDS e IPS.",
+          null,
+          "La velocidad no es la diferencia principal.",
+          "IPS no está obsoleto."
+        ],
+        "topic": "4.1 — Dispositivos de seguridad"
+      },
+      {
+        "id": 142,
+        "question": "¿Qué protocolo VPN proporciona seguridad fuerte?",
+        "choices": ["PPTP", "L2TP/IPsec", "Telnet", "FTP"],
+        "correct": 1,
+        "explanation": "L2TP/IPsec combina túnel con cifrado fuerte para conexiones VPN seguras.",
+        "wrongExplanations": [
+          "PPTP tiene vulnerabilidades de seguridad conocidas.",
+          null,
+          "Telnet no es seguro.",
+          "FTP no es seguro."
+        ],
+        "topic": "4.4 — Seguridad VPN"
+      },
+      {
+        "id": 143,
+        "question": "¿Qué identifica el escaneo de puertos?",
+        "choices": ["Tipos de cable", "Puertos abiertos y servicios", "Conflictos IP", "Canales inalámbricos"],
+        "correct": 1,
+        "explanation": "El escaneo de puertos identifica qué puertos están abiertos en un sistema, revelando puntos de entrada potenciales.",
+        "wrongExplanations": [
+          "El escaneo de puertos no identifica tipos de cable.",
+          null,
+          "El escaneo de puertos no identifica conflictos IP.",
+          "El escaneo de puertos no identifica canales inalámbricos."
+        ],
+        "topic": "4.2 — Ataques de reconocimiento"
+      },
+      {
+        "id": 144,
+        "question": "¿Qué medida de seguridad usa múltiples factores de autenticación?",
+        "choices": ["Inicio de sesión único", "Autenticación multifactor", "Complejidad de contraseña", "Bloqueo de cuenta"],
+        "correct": 1,
+        "explanation": "La autenticación multifactor requiere dos o más métodos de verificación (algo que sabes, tienes o eres).",
+        "wrongExplanations": [
+          "El inicio de sesión único usa un método de autenticación.",
+          null,
+          "La complejidad de contraseña es solo un factor.",
+          "El bloqueo de cuenta es un control de seguridad, no autenticación."
+        ],
+        "topic": "4.3 — Seguridad de autenticación"
+      },
+      {
+        "id": 145,
+        "question": "¿Qué es un punto de acceso rogue?",
+        "choices": ["AP autorizado", "AP no autorizado en la red", "AP roto", "AP en otro edificio"],
+        "correct": 1,
+        "explanation": "Los puntos de acceso rogue son APs no autorizados que representan riesgos de seguridad al evitar controles de red.",
+        "wrongExplanations": [
+          "Los APs rogue son no autorizados, no autorizados.",
+          null,
+          "Los APs rogue pueden ser funcionales.",
+          "Los APs rogue están en la misma red."
+        ],
+        "topic": "4.2 — Amenazas inalámbricas"
+      },
+      {
+        "id": 146,
+        "question": "¿Qué ataque explota vulnerabilidades en aplicaciones web?",
+        "choices": ["Robo físico", "Inyección SQL", "Ingeniería social", "War driving"],
+        "correct": 1,
+        "explanation": "Los ataques de inyección SQL insertan código malicioso en consultas de base de datos de aplicaciones web.",
+        "wrongExplanations": [
+          "El robo físico no es un ataque de aplicación web.",
+          null,
+          "La ingeniería social se dirige a personas, no aplicaciones.",
+          "War driving descubre redes inalámbricas."
+        ],
+        "topic": "4.2 — Ataques de aplicación"
+      },
+      {
+        "id": 147,
+        "question": "¿Qué significa denegación implícita en reglas de firewall?",
+        "choices": ["Permitir todo", "Denegar todo lo que no esté explícitamente permitido", "Permitir solo administradores", "Bloqueo aleatorio"],
+        "correct": 1,
+        "explanation": "La denegación implícita bloquea todo el tráfico excepto lo que está explícitamente permitido por las reglas del firewall.",
+        "wrongExplanations": [
+          "La denegación implícita no permite todo.",
+          null,
+          "La denegación implícita no permite solo administradores.",
+          "La denegación implícita no es aleatoria."
+        ],
+        "topic": "4.1 — Principios de firewall"
+      },
+      {
+        "id": 148,
+        "question": "¿Qué protocolo proporciona acceso remoto seguro?",
+        "choices": ["Telnet", "SSH", "HTTP", "FTP"],
+        "correct": 1,
+        "explanation": "SSH (Secure Shell) proporciona acceso remoto cifrado y gestión segura de línea de comandos.",
+        "wrongExplanations": [
+          "Telnet transmite datos en texto plano.",
+          null,
+          "HTTP transmite datos en texto plano.",
+          "FTP transmite datos en texto plano."
+        ],
+        "topic": "4.4 — Protocolos seguros"
+      },
+      {
+        "id": 149,
+        "question": "¿Qué es el envenenamiento ARP?",
+        "choices": ["Uso legítimo de ARP", "Falsificar mensajes ARP para redirigir tráfico", "Actualización del protocolo ARP", "Método de prueba de cable"],
+        "correct": 1,
+        "explanation": "El envenenamiento ARP envía mensajes ARP falsos para asociar la MAC del atacante con la IP de la víctima, redirigiendo el tráfico.",
+        "wrongExplanations": [
+          "El envenenamiento ARP es malicioso, no legítimo.",
+          null,
+          "El envenenamiento ARP no es una actualización del protocolo.",
+          "El envenenamiento ARP no es un método de prueba de cable."
+        ],
+        "topic": "4.2 — Ataques de Capa 2"
+      },
+      {
+        "id": 150,
+        "question": "¿Qué protocolo de seguridad inalámbrica es más débil?",
+        "choices": ["WPA3", "WPA2", "WPA", "WEP"],
+        "correct": 3,
+        "explanation": "WEP es el cifrado inalámbrico más antiguo y débil, fácilmente crackeable y nunca debe usarse.",
+        "wrongExplanations": [
+          "WPA3 es el cifrado más fuerte.",
+          "WPA2 es más fuerte que WEP.",
+          "WPA es más fuerte que WEP.",
+          null
+        ],
+        "topic": "4.1 — Seguridad inalámbrica"
+      },
+      {
+        "id": 151,
+        "question": "¿Qué hace un sistema SIEM?",
+        "choices": ["Asigna IPs", "Agrega y analiza registros de seguridad", "Proporciona acceso inalámbrico", "Enruta paquetes"],
+        "correct": 1,
+        "explanation": "SIEM (Gestión de Información y Eventos de Seguridad) recopila, correlaciona y analiza datos de seguridad de múltiples fuentes.",
+        "wrongExplanations": [
+          "DHCP asigna IPs, no SIEM.",
+          null,
+          "Los puntos de acceso proporcionan acceso inalámbrico, no SIEM.",
+          "Los routers enrutan paquetes, no SIEM."
+        ],
+        "topic": "4.5 — Monitoreo de seguridad"
+      },
+      {
+        "id": 152,
+        "question": "¿Qué ataque intenta repetidamente combinaciones de contraseñas?",
+        "choices": ["Phishing", "Fuerza bruta", "DDoS", "Hombre en el medio"],
+        "correct": 1,
+        "explanation": "Los ataques de fuerza bruta intentan sistemáticamente todas las combinaciones de contraseñas posibles hasta encontrar la correcta.",
+        "wrongExplanations": [
+          "Phishing usa correos engañosos.",
+          null,
+          "DDoS inunda sistemas con tráfico.",
+          "Hombre en el medio intercepta comunicación."
+        ],
+        "topic": "4.2 — Ataques de contraseñas"
+      },
+      {
+        "id": 153,
+        "question": "¿Cuál es el propósito del cifrado?",
+        "choices": ["Acelerar redes", "Proteger la confidencialidad de los datos", "Asignar VLANs", "Probar cables"],
+        "correct": 1,
+        "explanation": "El cifrado convierte los datos en formato ilegible para proteger la confidencialidad durante el almacenamiento y la transmisión.",
+        "wrongExplanations": [
+          "El cifrado puede ralentizar las redes.",
+          null,
+          "Los switches asignan VLANs, no el cifrado.",
+          "Los probadores de cables prueban cables, no el cifrado."
+        ],
+        "topic": "4.4 — Criptografía"
+      },
+      {
+        "id": 154,
+        "question": "¿Qué control de seguridad detecta acceso físico no autorizado?",
+        "choices": ["Firewall", "Sensores de movimiento", "Antivirus", "Cifrado"],
+        "correct": 1,
+        "explanation": "Los controles de seguridad física como los sensores de movimiento detectan entrada no autorizada a instalaciones seguras.",
+        "wrongExplanations": [
+          "Los firewalls filtran tráfico de red.",
+          null,
+          "El antivirus detecta malware.",
+          "El cifrado protege datos."
+        ],
+        "topic": "4.3 — Seguridad física"
+      },
+      {
+        "id": 155,
+        "question": "¿Qué usa la autenticación basada en certificados?",
+        "choices": ["Solo contraseñas", "Certificados digitales para verificación de identidad", "Solo biometría", "Direcciones IP"],
+        "correct": 1,
+        "explanation": "La autenticación basada en certificados usa certificados digitales para verificar identidad sin contraseñas.",
+        "wrongExplanations": [
+          "La autenticación basada en certificados no usa contraseñas.",
+          null,
+          "La autenticación basada en certificados no requiere biometría.",
+          "La autenticación basada en certificados no usa direcciones IP."
+        ],
+        "topic": "4.3 — Métodos de autenticación"
+      },
+      {
+        "id": 156,
+        "question": "¿Qué es un honeypot?",
+        "choices": ["Dispositivo de red real", "Sistema trampa para detectar ataques", "Tipo de firewall", "Protocolo de seguridad"],
+        "correct": 1,
+        "explanation": "Un honeypot es un sistema trampa diseñado para detectar, desviar o estudiar intentos de acceso no autorizado.",
+        "wrongExplanations": [
+          "Un honeypot no es un dispositivo de red real.",
+          null,
+          "Un honeypot no es un tipo de firewall.",
+          "Un honeypot no es un protocolo de seguridad."
+        ],
+        "topic": "4.5 — Técnicas de detección"
+      },
+      {
+        "id": 157,
+        "question": "¿Qué hace el filtrado de contenido?",
+        "choices": ["Asigna direcciones IP", "Bloquea sitios web maliciosos o inapropiados", "Enruta paquetes", "Cifra datos"],
+        "correct": 1,
+        "explanation": "El filtrado de contenido bloquea el acceso a sitios web maliciosos, inapropiados o no relacionados con el trabajo.",
+        "wrongExplanations": [
+          "DHCP asigna direcciones IP.",
+          null,
+          "Los routers enrutan paquetes.",
+          "El cifrado protege datos."
+        ],
+        "topic": "4.1 — Controles de acceso"
+      },
+      {
+        "id": 158,
+        "question": "¿Qué es la autenticación de dos factores?",
+        "choices": ["Solo contraseña", "Dos métodos de verificación", "Dos contraseñas", "Dos usuarios"],
+        "correct": 1,
+        "explanation": "La autenticación de dos factores requiere dos métodos independientes de verificación de identidad.",
+        "wrongExplanations": [
+          "La autenticación de dos factores no usa solo contraseña.",
+          null,
+          "La autenticación de dos factores no usa dos contraseñas.",
+          "La autenticación de dos factores no requiere dos usuarios."
+        ],
+        "topic": "4.3 — Autenticación multifactor"
+      },
+      {
+        "id": 159,
+        "question": "¿Qué ataque usa múltiples sistemas comprometidos?",
+        "choices": ["Phishing", "Botnet", "Fuerza bruta", "Hombre en el medio"],
+        "correct": 1,
+        "explanation": "Los ataques de botnet usan múltiples sistemas comprometidos (bots) coordinados para realizar ataques distribuidos.",
+        "wrongExplanations": [
+          "Phishing usa correos engañosos.",
+          null,
+          "Fuerza bruta prueba contraseñas.",
+          "Hombre en el medio intercepta comunicación."
+        ],
+        "topic": "4.2 — Ataques distribuidos"
+      },
+      {
+        "id": 160,
+        "question": "¿Qué protocolo proporciona autenticación y cifrado para VPNs?",
+        "choices": ["HTTP", "IPsec", "FTP", "Telnet"],
+        "correct": 1,
+        "explanation": "IPsec proporciona autenticación y cifrado para conexiones VPN seguras.",
+        "wrongExplanations": [
+          "HTTP no proporciona autenticación ni cifrado.",
+          null,
+          "FTP no proporciona autenticación ni cifrado.",
+          "Telnet no proporciona autenticación ni cifrado."
+        ],
+        "topic": "4.4 — Protocolos VPN"
+      },
+      {
+        "id": 161,
+        "question": "¿Qué es la segmentación de red?",
+        "choices": ["Conectar todas las redes", "Dividir redes en segmentos más pequeños", "Eliminar switches", "Aumentar velocidad"],
+        "correct": 1,
+        "explanation": "La segmentación de red divide redes grandes en segmentos más pequeños para mejorar seguridad y rendimiento.",
+        "wrongExplanations": [
+          "La segmentación no conecta todas las redes.",
+          null,
+          "La segmentación no elimina switches.",
+          "La segmentación puede mejorar rendimiento pero no es el propósito principal."
+        ],
+        "topic": "4.3 — Arquitectura de red"
+      },
+      {
+        "id": 162,
+        "question": "¿Qué hace un sistema de detección de intrusiones?",
+        "choices": ["Bloquea automáticamente", "Detecta y alerta sobre actividad sospechosa", "Asigna IPs", "Enruta paquetes"],
+        "correct": 1,
+        "explanation": "Los sistemas de detección de intrusiones (IDS) monitorean y alertan sobre actividad sospechosa pero no bloquean automáticamente.",
+        "wrongExplanations": [
+          "Los IDS detectan pero no bloquean automáticamente.",
+          null,
+          "DHCP asigna IPs, no IDS.",
+          "Los routers enrutan paquetes, no IDS."
+        ],
+        "topic": "4.1 — Sistemas de detección"
+      },
+      {
+        "id": 163,
+        "question": "¿Qué es el principio de menor privilegio?",
+        "choices": ["Dar acceso completo", "Dar solo el acceso mínimo necesario", "Sin restricciones", "Acceso temporal"],
+        "correct": 1,
+        "explanation": "El principio de menor privilegio otorga a usuarios y sistemas solo el acceso mínimo necesario para realizar sus funciones.",
+        "wrongExplanations": [
+          "El principio de menor privilegio no da acceso completo.",
+          null,
+          "El principio de menor privilegio no significa sin restricciones.",
+          "El principio de menor privilegio no es sobre acceso temporal."
+        ],
+        "topic": "4.3 — Principios de seguridad"
+      },
+      {
+        "id": 164,
+        "question": "¿Qué ataque explota vulnerabilidades de buffer overflow?",
+        "choices": ["Phishing", "Inyección de código", "DDoS", "Hombre en el medio"],
+        "correct": 1,
+        "explanation": "Los ataques de inyección de código explotan vulnerabilidades de buffer overflow para ejecutar código malicioso.",
+        "wrongExplanations": [
+          "Phishing usa correos engañosos.",
+          null,
+          "DDoS inunda sistemas con tráfico.",
+          "Hombre en el medio intercepta comunicación."
+        ],
+        "topic": "4.2 — Ataques de explotación"
+      },
+      {
+        "id": 165,
+        "question": "¿Qué protocolo proporciona autenticación para servicios de red?",
+        "choices": ["HTTP", "Kerberos", "FTP", "Telnet"],
+        "correct": 1,
+        "explanation": "Kerberos proporciona autenticación segura para servicios de red usando tickets cifrados.",
+        "wrongExplanations": [
+          "HTTP no proporciona autenticación segura.",
+          null,
+          "FTP no proporciona autenticación segura.",
+          "Telnet no proporciona autenticación segura."
+        ],
+        "topic": "4.4 — Protocolos de autenticación"
+      },
+      {
+        "id": 166,
+        "question": "¿Qué es la autenticación biométrica?",
+        "choices": ["Solo contraseñas", "Verificación usando características físicas", "Solo certificados", "Direcciones IP"],
+        "correct": 1,
+        "explanation": "La autenticación biométrica verifica identidad usando características físicas únicas como huellas dactilares o reconocimiento facial.",
+        "wrongExplanations": [
+          "La autenticación biométrica no usa contraseñas.",
+          null,
+          "La autenticación biométrica no usa solo certificados.",
+          "La autenticación biométrica no usa direcciones IP."
+        ],
+        "topic": "4.3 — Métodos de autenticación"
+      },
+      {
+        "id": 167,
+        "question": "¿Qué hace un sistema de prevención de intrusiones?",
+        "choices": ["Solo detecta", "Detecta y bloquea automáticamente amenazas", "Asigna IPs", "Enruta paquetes"],
+        "correct": 1,
+        "explanation": "Los sistemas de prevención de intrusiones (IPS) detectan y bloquean automáticamente amenazas en tiempo real.",
+        "wrongExplanations": [
+          "Los IPS no solo detectan, también bloquean.",
+          null,
+          "DHCP asigna IPs, no IPS.",
+          "Los routers enrutan paquetes, no IPS."
+        ],
+        "topic": "4.1 — Sistemas de prevención"
+      },
+      {
+        "id": 168,
+        "question": "¿Qué es el cifrado de extremo a extremo?",
+        "choices": ["Cifrado solo en servidor", "Cifrado desde origen hasta destino", "Cifrado solo en cliente", "Sin cifrado"],
+        "correct": 1,
+        "explanation": "El cifrado de extremo a extremo protege datos desde el punto de origen hasta el destino final.",
+        "wrongExplanations": [
+          "El cifrado de extremo a extremo no es solo en servidor.",
+          null,
+          "El cifrado de extremo a extremo no es solo en cliente.",
+          "El cifrado de extremo a extremo sí usa cifrado."
+        ],
+        "topic": "4.4 — Criptografía"
+      },
+      {
+        "id": 169,
+        "question": "¿Qué ataque usa ingeniería social para obtener información?",
+        "choices": ["DDoS", "Phishing", "Fuerza bruta", "Hombre en el medio"],
+        "correct": 1,
+        "explanation": "Los ataques de phishing usan ingeniería social para engañar a usuarios y obtener información sensible.",
+        "wrongExplanations": [
+          "DDoS inunda sistemas con tráfico.",
+          null,
+          "Fuerza bruta prueba contraseñas.",
+          "Hombre en el medio intercepta comunicación."
+        ],
+        "topic": "4.2 — Ingeniería social"
+      },
+      {
+        "id": 170,
+        "question": "¿Qué es la autenticación basada en tokens?",
+        "choices": ["Solo contraseñas", "Verificación usando tokens temporales", "Solo biometría", "Direcciones IP"],
+        "correct": 1,
+        "explanation": "La autenticación basada en tokens usa tokens temporales para verificar identidad sin contraseñas.",
+        "wrongExplanations": [
+          "La autenticación basada en tokens no usa contraseñas.",
+          null,
+          "La autenticación basada en tokens no usa solo biometría.",
+          "La autenticación basada en tokens no usa direcciones IP."
+        ],
+        "topic": "4.3 — Métodos de autenticación"
+      }
+    ],
+    "5": [
+      {
+        "id": 171,
+        "question": "¿Cuál es el PRIMER paso en la metodología de resolución de problemas de red?",
+        "choices": ["Probar la teoría", "Identificar el problema", "Implementar una solución", "Documentar hallazgos"],
+        "correct": 1,
+        "explanation": "Identificar el problema recopilando información es el primer paso en la metodología de resolución de problemas.",
+        "wrongExplanations": [
+          "Probar la teoría viene después de establecer un plan.",
+          null,
+          "Implementar una solución viene después de probar.",
+          "Documentar hallazgos es el paso final."
+        ],
+        "topic": "5.1 — Metodología de resolución de problemas"
+      },
+      {
+        "id": 172,
+        "question": "¿Qué comando muestra la ruta que toman los paquetes hacia un destino?",
+        "choices": ["ping", "ipconfig", "tracert", "netstat"],
+        "correct": 2,
+        "explanation": "Tracert (traceroute) muestra cada salto que toman los paquetes para llegar a su destino.",
+        "wrongExplanations": [
+          "Ping prueba conectividad pero no muestra rutas.",
+          "Ipconfig muestra configuración de red.",
+          null,
+          "Netstat muestra conexiones activas."
+        ],
+        "topic": "5.2 — Herramientas de línea de comandos"
+      },
+      {
+        "id": 173,
+        "question": "Un usuario reporta sin conectividad a internet. ¿Qué deberías verificar PRIMERO?",
+        "choices": ["Reemplazar el router", "Verificar conexiones físicas", "Reinstalar el SO", "Actualizar firmware"],
+        "correct": 1,
+        "explanation": "La conectividad física debe verificarse primero ya que es el problema más común y simple.",
+        "wrongExplanations": [
+          "Reemplazar hardware debería ser el último recurso.",
+          null,
+          "Reinstalar el SO es extremo para problemas de conectividad.",
+          "Actualizar firmware debería venir después de verificaciones básicas."
+        ],
+        "topic": "5.1 — Metodología de resolución de problemas"
+      },
+      {
+        "id": 174,
+        "question": "¿Qué herramienta verifica la resolución de nombres DNS?",
+        "choices": ["ping", "nslookup", "netstat", "arp"],
+        "correct": 1,
+        "explanation": "Nslookup consulta servidores DNS para verificar la resolución de nombres y resolver problemas de DNS.",
+        "wrongExplanations": [
+          "Ping prueba conectividad pero no verifica DNS.",
+          null,
+          "Netstat muestra conexiones activas.",
+          "Arp muestra mapeos de direcciones MAC."
+        ],
+        "topic": "5.2 — Resolución de problemas DNS"
+      },
+      {
+        "id": 175,
+        "question": "Un dispositivo recibe una dirección 169.254.x.x. ¿Qué indica esto?",
+        "choices": ["Asignación DHCP normal", "El servidor DHCP es inalcanzable", "IP estática configurada", "Falla de DNS"],
+        "correct": 1,
+        "explanation": "Las direcciones APIPA (169.254.x.x) indican que el dispositivo no pudo alcanzar un servidor DHCP.",
+        "wrongExplanations": [
+          "169.254.x.x no es una asignación DHCP normal.",
+          null,
+          "Las IP estáticas se configuran manualmente.",
+          "La falla de DNS no causa direcciones APIPA."
+        ],
+        "topic": "5.3 — Problemas de direccionamiento IP"
+      },
+      {
+        "id": 176,
+        "question": "¿Qué prueba el comando ping?",
+        "choices": ["Solo resolución DNS", "Conectividad básica usando ICMP", "Velocidad de ancho de banda", "Calidad del cable"],
+        "correct": 1,
+        "explanation": "Ping usa ICMP Echo Request/Reply para probar conectividad básica de red y tiempo de respuesta.",
+        "wrongExplanations": [
+          "Ping prueba conectividad, no resolución DNS.",
+          null,
+          "Ping no prueba velocidad de ancho de banda.",
+          "Ping no prueba calidad del cable."
+        ],
+        "topic": "5.1 — Comandos de diagnóstico"
+      },
+      {
+        "id": 177,
+        "question": "Los usuarios pueden hacer ping por IP pero no por nombre de host. ¿Cuál es el problema probable?",
+        "choices": ["Conexión física", "Resolución DNS", "Puerta de enlace predeterminada", "Máscara de subred"],
+        "correct": 1,
+        "explanation": "Si la IP funciona pero los nombres no, la resolución DNS está fallando al traducir nombres de host a direcciones IP.",
+        "wrongExplanations": [
+          "La conexión física afectaría también los pings por IP.",
+          null,
+          "Los problemas de puerta de enlace afectarían la conectividad externa.",
+          "Los problemas de máscara de subred afectarían también los pings por IP."
+        ],
+        "topic": "5.1 — Resolución de problemas DNS"
+      },
+      {
+        "id": 178,
+        "question": "¿Qué comando muestra las conexiones de red activas?",
+        "choices": ["ping", "tracert", "netstat", "nslookup"],
+        "correct": 2,
+        "explanation": "Netstat muestra conexiones activas, puertos en escucha y estadísticas de red.",
+        "wrongExplanations": [
+          "Ping prueba conectividad.",
+          "Tracert muestra rutas de enrutamiento.",
+          null,
+          "Nslookup consulta DNS."
+        ],
+        "topic": "5.1 — Comandos de diagnóstico"
+      },
+      {
+        "id": 179,
+        "question": "Un probador de cables muestra 'abierto' en múltiples pines. ¿Qué significa esto?",
+        "choices": ["El cable es perfecto", "Conductores rotos o faltantes", "Tipo de cable incorrecto", "El cable es muy largo"],
+        "correct": 1,
+        "explanation": "Las lecturas abiertas indican conexiones de cable rotas o faltantes.",
+        "wrongExplanations": [
+          "Las lecturas abiertas indican problemas, no perfección.",
+          null,
+          "El tipo de cable incorrecto mostraría errores diferentes.",
+          "Los problemas de longitud de cable mostrarían atenuación."
+        ],
+        "topic": "5.2 — Pruebas de cable"
+      },
+      {
+        "id": 180,
+        "question": "¿Cuál es el propósito de ipconfig /release y /renew?",
+        "choices": ["Cambiar servidores DNS", "Liberar y obtener nueva concesión DHCP", "Probar calidad del cable", "Configurar IP estática"],
+        "correct": 1,
+        "explanation": "Estos comandos liberan la concesión DHCP actual y solicitan una nueva dirección IP del servidor DHCP.",
+        "wrongExplanations": [
+          "Estos comandos no cambian servidores DNS.",
+          null,
+          "Estos comandos no prueban calidad del cable.",
+          "Estos comandos no configuran IPs estáticas."
+        ],
+        "topic": "5.1 — Comandos de configuración"
+      },
+      {
+        "id": 181,
+        "question": "Los problemas de conectividad intermitente ocurren en un puerto. ¿Qué deberías verificar?",
+        "choices": ["Configuración DNS", "Condición del cable y puerto", "Reglas de firewall", "Canales inalámbricos"],
+        "correct": 1,
+        "explanation": "Los problemas intermitentes en un puerto específico generalmente indican cables dañados o hardware de puerto defectuoso.",
+        "wrongExplanations": [
+          "La configuración DNS no causaría problemas específicos del puerto.",
+          null,
+          "Las reglas de firewall no causarían problemas intermitentes.",
+          "Los canales inalámbricos no afectan los puertos cableados."
+        ],
+        "topic": "5.2 — Problemas de conectividad"
+      },
+      {
+        "id": 182,
+        "question": "¿Qué herramienta captura y analiza paquetes de red?",
+        "choices": ["Probador de cables", "Analizador de protocolos", "Generador de tonos", "Multímetro"],
+        "correct": 1,
+        "explanation": "Los analizadores de protocolos como Wireshark capturan y analizan el tráfico de red a nivel de paquetes.",
+        "wrongExplanations": [
+          "Los probadores de cables prueban cables físicos.",
+          null,
+          "Los generadores de tonos rastrean cables.",
+          "Los multímetros miden propiedades eléctricas."
+        ],
+        "topic": "5.2 — Herramientas de análisis"
+      },
+      {
+        "id": 183,
+        "question": "Un dispositivo no puede alcanzar recursos en otras subredes. ¿Qué está probablemente mal configurado?",
+        "choices": ["SSID", "Puerta de enlace predeterminada", "Servidor DNS", "Alcance DHCP"],
+        "correct": 1,
+        "explanation": "La puerta de enlace predeterminada enruta el tráfico a otras subredes; si está mal configurada, falla la comunicación entre subredes.",
+        "wrongExplanations": [
+          "El SSID afecta la conectividad inalámbrica, no el enrutamiento.",
+          null,
+          "El servidor DNS afecta la resolución de nombres, no el enrutamiento.",
+          "El alcance DHCP afecta la asignación de IP, no el enrutamiento."
+        ],
+        "topic": "5.3 — Problemas de enrutamiento"
+      },
+      {
+        "id": 184,
+        "question": "¿Qué muestra el comando arp?",
+        "choices": ["Caché DNS", "Mapeos de dirección IP a MAC", "Tabla de enrutamiento", "Puertos abiertos"],
+        "correct": 1,
+        "explanation": "El comando arp muestra la caché ARP local que contiene mapeos de direcciones IP a MAC.",
+        "wrongExplanations": [
+          "Arp no muestra caché DNS.",
+          null,
+          "Arp no muestra tabla de enrutamiento.",
+          "Arp no muestra puertos abiertos."
+        ],
+        "topic": "5.1 — Comandos de diagnóstico"
+      },
+      {
+        "id": 185,
+        "question": "El rendimiento lento de la red afecta a todos los usuarios. ¿Qué deberías verificar PRIMERO?",
+        "choices": ["Estaciones de trabajo individuales", "Utilización del ancho de banda", "Contraseñas de usuario", "Color del cable"],
+        "correct": 1,
+        "explanation": "La lentitud generalizada sugiere problemas a nivel de red como saturación de ancho de banda o congestión.",
+        "wrongExplanations": [
+          "Las estaciones de trabajo individuales no afectarían a todos los usuarios.",
+          null,
+          "Las contraseñas de usuario no afectan el rendimiento.",
+          "El color del cable no afecta el rendimiento."
+        ],
+        "topic": "5.3 — Problemas de rendimiento"
+      },
+      {
+        "id": 186,
+        "question": "¿Qué indica un probador de cables que muestra 'pares divididos'?",
+        "choices": ["Cable perfecto", "Cables cruzados dentro de pares", "Cable muy largo", "Operación normal"],
+        "correct": 1,
+        "explanation": "Los pares divididos ocurren cuando los cables de diferentes pares se cruzan incorrectamente, causando interferencia.",
+        "wrongExplanations": [
+          "Los pares divididos indican problemas, no perfección.",
+          null,
+          "Los pares divididos no son causados por la longitud del cable.",
+          "Los pares divididos no son operación normal."
+        ],
+        "topic": "5.2 — Pruebas de cable"
+      },
+      {
+        "id": 187,
+        "question": "Un cliente inalámbrico muestra excelente señal pero velocidades lentas. ¿Qué deberías verificar?",
+        "choices": ["Nombre SSID", "Interferencia y utilización del canal", "Conexiones de cable", "Configuración del switch"],
+        "correct": 1,
+        "explanation": "Buena señal con mal rendimiento a menudo indica congestión del canal o interferencia.",
+        "wrongExplanations": [
+          "El nombre SSID no afecta el rendimiento.",
+          null,
+          "Las conexiones de cable no afectan el rendimiento inalámbrico.",
+          "La configuración del switch no afecta el rendimiento inalámbrico."
+        ],
+        "topic": "5.3 — Problemas inalámbricos"
+      },
+      {
+        "id": 188,
+        "question": "¿Qué comando limpia la caché del resolutor DNS?",
+        "choices": ["ipconfig /flushdns", "nslookup /clear", "netstat /reset", "ping /clear"],
+        "correct": 0,
+        "explanation": "Ipconfig /flushdns limpia la caché del resolutor DNS local para resolver entradas DNS obsoletas.",
+        "wrongExplanations": [
+          null,
+          "Nslookup no tiene una opción /clear.",
+          "Netstat no tiene una opción /reset.",
+          "Ping no tiene una opción /clear."
+        ],
+        "topic": "5.1 — Comandos de configuración"
+      },
+      {
+        "id": 189,
+        "question": "Aparecen alta latencia y pérdida de paquetes en un enlace. ¿Cuál es la causa probable?",
+        "choices": ["VLAN incorrecta", "Congestión de red o problemas de cable", "Nombre de host incorrecto", "Contraseña incorrecta"],
+        "correct": 1,
+        "explanation": "La latencia y pérdida de paquetes típicamente resultan de congestión, mala calidad del cable o problemas de distancia.",
+        "wrongExplanations": [
+          "Una VLAN incorrecta no causaría latencia y pérdida de paquetes.",
+          null,
+          "Un nombre de host incorrecto no causaría latencia y pérdida de paquetes.",
+          "Una contraseña incorrecta no causaría latencia y pérdida de paquetes."
+        ],
+        "topic": "5.3 — Problemas de conectividad"
+      },
+      {
+        "id": 190,
+        "question": "¿Qué herramienta localiza un cable específico en un haz?",
+        "choices": ["Analizador de protocolos", "Generador de tonos y sonda", "Certificador de cables", "Analizador de espectro"],
+        "correct": 1,
+        "explanation": "Los generadores de tonos envían una señal a través del cable que puede ser detectada por una sonda para rastrear cables.",
+        "wrongExplanations": [
+          "Los analizadores de protocolos capturan tráfico de red.",
+          null,
+          "Los certificadores de cables prueban el rendimiento del cable.",
+          "Los analizadores de espectro identifican interferencia RF."
+        ],
+        "topic": "5.2 — Herramientas de cable"
+      },
+      {
+        "id": 191,
+        "question": "Aparecen advertencias de dirección IP duplicada. ¿Qué deberías hacer?",
+        "choices": ["Ignorarlas", "Identificar y reconfigurar dispositivos en conflicto", "Reiniciar el router", "Cambiar el SSID"],
+        "correct": 1,
+        "explanation": "Las IPs duplicadas causan problemas de conectividad y deben resolverse reconfigurando un dispositivo.",
+        "wrongExplanations": [
+          "Las IPs duplicadas no deben ignorarse.",
+          null,
+          "Reiniciar el router no arreglará las IPs duplicadas.",
+          "Cambiar el SSID no arreglará las IPs duplicadas."
+        ],
+        "topic": "5.3 — Problemas de direccionamiento IP"
+      },
+      {
+        "id": 192,
+        "question": "¿Qué comando muestra la tabla de enrutamiento?",
+        "choices": ["ping", "ipconfig", "route print", "netstat"],
+        "correct": 2,
+        "explanation": "Route print muestra la tabla de enrutamiento local con rutas estáticas y dinámicas.",
+        "wrongExplanations": [
+          "Ping prueba conectividad.",
+          "Ipconfig muestra configuración de red.",
+          null,
+          "Netstat muestra conexiones activas."
+        ],
+        "topic": "5.1 — Comandos de diagnóstico"
+      },
+      {
+        "id": 193,
+        "question": "Un dispositivo muestra conectividad local pero no puede acceder a Internet. ¿Qué verificar?",
+        "choices": ["Cable de red", "Configuración de puerta de enlace", "SSID", "Contraseña WiFi"],
+        "correct": 1,
+        "explanation": "La conectividad local sin acceso a Internet generalmente indica un problema con la puerta de enlace predeterminada.",
+        "wrongExplanations": [
+          "El cable de red funcionaría para conectividad local.",
+          null,
+          "El SSID no afecta el acceso a Internet.",
+          "La contraseña WiFi no afecta el acceso a Internet."
+        ],
+        "topic": "5.3 — Problemas de conectividad"
+      },
+      {
+        "id": 194,
+        "question": "¿Qué herramienta mide la atenuación de señal en cables?",
+        "choices": ["Probador de cables básico", "Certificador de cables", "Generador de tonos", "Multímetro"],
+        "correct": 1,
+        "explanation": "Los certificadores de cables miden parámetros como atenuación, NEXT y pérdida de retorno.",
+        "wrongExplanations": [
+          "Los probadores de cables básicos solo verifican continuidad.",
+          null,
+          "Los generadores de tonos rastrean cables.",
+          "Los multímetros miden propiedades eléctricas básicas."
+        ],
+        "topic": "5.2 — Herramientas de certificación"
+      },
+      {
+        "id": 195,
+        "question": "Los usuarios reportan acceso lento a un servidor específico. ¿Qué deberías verificar?",
+        "choices": ["Configuración DNS", "Latencia de red al servidor", "Configuración de firewall", "Canal WiFi"],
+        "correct": 1,
+        "explanation": "El acceso lento a un servidor específico sugiere problemas de latencia o ancho de banda en la ruta al servidor.",
+        "wrongExplanations": [
+          "La configuración DNS afectaría la resolución de nombres, no la velocidad.",
+          null,
+          "La configuración de firewall bloquearía o permitiría acceso.",
+          "El canal WiFi no afectaría el acceso a servidores específicos."
+        ],
+        "topic": "5.3 — Problemas de rendimiento"
+      },
+      {
+        "id": 196,
+        "question": "¿Qué comando muestra información detallada de configuración de red?",
+        "choices": ["ping", "ipconfig /all", "tracert", "nslookup"],
+        "correct": 1,
+        "explanation": "Ipconfig /all muestra información detallada incluyendo IP, MAC, DNS, DHCP y configuración de puerta de enlace.",
+        "wrongExplanations": [
+          "Ping prueba conectividad.",
+          null,
+          "Tracert muestra rutas de enrutamiento.",
+          "Nslookup consulta DNS."
+        ],
+        "topic": "5.1 — Comandos de diagnóstico"
+      },
+      {
+        "id": 197,
+        "question": "Un cable muestra 'cortocircuito' en el probador. ¿Qué significa esto?",
+        "choices": ["Cable perfecto", "Conductores en contacto", "Cable muy largo", "Tipo incorrecto"],
+        "correct": 1,
+        "explanation": "Un cortocircuito indica que dos o más conductores están en contacto físico, causando problemas de señal.",
+        "wrongExplanations": [
+          "Un cortocircuito indica problemas, no perfección.",
+          null,
+          "Un cortocircuito no es causado por la longitud del cable.",
+          "Un cortocircuito no es causado por el tipo de cable."
+        ],
+        "topic": "5.2 — Pruebas de cable"
+      },
+      {
+        "id": 198,
+        "question": "¿Qué herramienta identifica interferencia RF en redes inalámbricas?",
+        "choices": ["Probador de cables", "Analizador de espectro", "Generador de tonos", "Multímetro"],
+        "correct": 1,
+        "explanation": "Los analizadores de espectro identifican fuentes de interferencia RF que pueden afectar las redes inalámbricas.",
+        "wrongExplanations": [
+          "Los probadores de cables prueban cables físicos.",
+          null,
+          "Los generadores de tonos rastrean cables.",
+          "Los multímetros miden propiedades eléctricas."
+        ],
+        "topic": "5.2 — Herramientas inalámbricas"
+      },
+      {
+        "id": 199,
+        "question": "Los usuarios no pueden acceder a recursos después de un cambio de VLAN. ¿Qué verificar?",
+        "choices": ["Configuración de cable", "Asignación de VLAN y configuración de switch", "Configuración DNS", "Canal WiFi"],
+        "correct": 1,
+        "explanation": "Los problemas de acceso después de cambios de VLAN generalmente indican configuración incorrecta de VLAN en el switch.",
+        "wrongExplanations": [
+          "La configuración de cable no cambiaría con cambios de VLAN.",
+          null,
+          "La configuración DNS no cambiaría con cambios de VLAN.",
+          "El canal WiFi no cambiaría con cambios de VLAN."
+        ],
+        "topic": "5.3 — Problemas de VLAN"
+      },
+      {
+        "id": 200,
+        "question": "¿Cuál es el ÚLTIMO paso en la metodología de resolución de problemas?",
+        "choices": ["Identificar el problema", "Probar la teoría", "Implementar una solución", "Documentar hallazgos y cambios"],
+        "correct": 3,
+        "explanation": "Documentar hallazgos y cambios es el paso final para crear un registro del problema y su solución.",
+        "wrongExplanations": [
+          "Identificar el problema es el primer paso.",
+          "Probar la teoría es un paso intermedio.",
+          "Implementar una solución es un paso intermedio.",
+          null
+        ],
+        "topic": "5.1 — Metodología de resolución de problemas"
+      }
+    ]
+  }
+}

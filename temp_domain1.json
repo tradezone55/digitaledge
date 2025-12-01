@@ -1,0 +1,702 @@
+    "1": [
+      {
+        "id": 1,
+        "question": "¿Qué dispositivo opera en la Capa 3 del OSI?",
+        "choices": ["Router", "WAP", "Switch", "Hub"],
+        "correct": 0,
+        "explanation": "Los routers operan en la Capa 3 (Capa de Red), tomando decisiones de enrutamiento basadas en direcciones IP.",
+        "wrongExplanations": [
+          null,
+          "WAP opera en la Capa 2, manejando la transmisión de tramas inalámbricas.",
+          "Los switches operan en la Capa 2, tomando decisiones basadas en direcciones MAC.",
+          "Los hubs operan en la Capa 1, simplemente repitiendo señales."
+        ],
+        "topic": "1.2 — Dispositivos de red"
+      },
+      {
+        "id": 2,
+        "question": "¿Cuál es la longitud máxima de cable para Ethernet Cat 6?",
+        "choices": ["50 metros", "100 metros", "200 metros", "500 metros"],
+        "correct": 1,
+        "explanation": "Cat 6 tiene una longitud máxima de 100 metros para un rendimiento óptimo.",
+        "wrongExplanations": [
+          "50 metros es innecesariamente corto para Cat 6.",
+          null,
+          "200 metros excede las especificaciones de Cat 6.",
+          "500 metros causaría una degradación severa de la señal."
+        ],
+        "topic": "1.3 — Cables y conectores"
+      },
+      {
+        "id": 3,
+        "question": "¿Qué protocolo opera en la Capa de Transporte?",
+        "choices": ["IP", "TCP", "Ethernet", "ARP"],
+        "correct": 1,
+        "explanation": "TCP opera en la Capa 4, proporcionando entrega confiable de datos.",
+        "wrongExplanations": [
+          "IP opera en la Capa 3 para enrutamiento.",
+          null,
+          "Ethernet opera en la Capa 2 para transmisión de tramas.",
+          "ARP opera entre las Capas 2-3 para resolución de direcciones."
+        ],
+        "topic": "1.1 — Modelo OSI"
+      },
+      {
+        "id": 4,
+        "question": "¿Qué usa un switch para reenviar tramas?",
+        "choices": ["Direcciones IP", "Direcciones MAC", "Números de puerto", "Nombres de dominio"],
+        "correct": 1,
+        "explanation": "Los switches operan en la Capa 2 y usan direcciones MAC para reenviar tramas.",
+        "wrongExplanations": [
+          "Las direcciones IP son usadas por routers en la Capa 3.",
+          null,
+          "Los números de puerto son usados por protocolos de la capa de transporte.",
+          "Los nombres de dominio son resueltos por DNS."
+        ],
+        "topic": "1.2 — Dispositivos de red"
+      },
+      {
+        "id": 5,
+        "question": "¿Qué estándar inalámbrico soporta la frecuencia de 6 GHz?",
+        "choices": ["802.11ac", "802.11ax (Wi-Fi 6E)", "802.11n", "802.11g"],
+        "correct": 1,
+        "explanation": "Wi-Fi 6E (802.11ax) se extiende a la banda de 6 GHz para reducir interferencias.",
+        "wrongExplanations": [
+          "802.11ac opera solo a 5 GHz.",
+          null,
+          "802.11n opera a 2.4 GHz y 5 GHz.",
+          "802.11g opera solo a 2.4 GHz."
+        ],
+        "topic": "1.4 — Estándares inalámbricos"
+      },
+      {
+        "id": 6,
+        "question": "¿Cuál es la máscara de subred por defecto para una red Clase C?",
+        "choices": ["255.0.0.0", "255.255.0.0", "255.255.255.0", "255.255.255.255"],
+        "correct": 2,
+        "explanation": "Las redes Clase C usan 255.255.255.0 como máscara de subred por defecto.",
+        "wrongExplanations": [
+          "255.0.0.0 es la máscara por defecto para redes Clase A.",
+          "255.255.0.0 es la máscara por defecto para redes Clase B.",
+          null,
+          "255.255.255.255 es una ruta de host, no una máscara de subred."
+        ],
+        "topic": "1.5 — Direccionamiento IPv4"
+      },
+      {
+        "id": 7,
+        "question": "¿Qué tipo de cable es inmune a EMI?",
+        "choices": ["UTP", "STP", "Coaxial", "Fibra óptica"],
+        "correct": 3,
+        "explanation": "Los cables de fibra óptica usan luz en lugar de señales eléctricas, haciéndolos inmunes a la interferencia electromagnética.",
+        "wrongExplanations": [
+          "UTP es susceptible a EMI debido a la falta de blindaje.",
+          "STP tiene cierta protección contra EMI pero no es inmune.",
+          "Los cables coaxiales pueden verse afectados por EMI.",
+          null
+        ],
+        "topic": "1.3 — Cables y conectores"
+      },
+      {
+        "id": 8,
+        "question": "¿Qué puerto usa HTTPS por defecto?",
+        "choices": ["80", "443", "8080", "22"],
+        "correct": 1,
+        "explanation": "HTTPS usa el puerto 443 para tráfico web seguro.",
+        "wrongExplanations": [
+          "El puerto 80 es usado por HTTP (sin cifrar).",
+          null,
+          "El puerto 8080 es un puerto HTTP alternativo.",
+          "El puerto 22 es usado por SSH."
+        ],
+        "topic": "1.7 — Servicios de red"
+      },
+      {
+        "id": 9,
+        "question": "¿Qué topología tiene un punto único de falla?",
+        "choices": ["Malla", "Estrella", "Anillo", "Bus"],
+        "correct": 1,
+        "explanation": "La topología estrella depende de un dispositivo central; si falla, toda la red se cae.",
+        "wrongExplanations": [
+          "La topología malla tiene múltiples rutas y ningún punto único de falla.",
+          null,
+          "La topología anillo puede continuar operando si un enlace falla.",
+          "La topología bus puede continuar con una falla de dispositivo."
+        ],
+        "topic": "1.1 — Topologías de red"
+      },
+      {
+        "id": 10,
+        "question": "¿Cuál es el rendimiento máximo de 802.11ac?",
+        "choices": ["54 Mbps", "600 Mbps", "1.3 Gbps", "9.6 Gbps"],
+        "correct": 2,
+        "explanation": "802.11ac puede alcanzar hasta 1.3 Gbps en condiciones ideales.",
+        "wrongExplanations": [
+          "54 Mbps es el máximo para 802.11g.",
+          "600 Mbps es el máximo para 802.11n.",
+          null,
+          "9.6 Gbps es el máximo teórico para 802.11ax."
+        ],
+        "topic": "1.4 — Estándares inalámbricos"
+      },
+      {
+        "id": 11,
+        "question": "¿Qué dispositivo opera tanto en la Capa 2 como en la Capa 3?",
+        "choices": ["Hub", "Switch", "Switch multicapa", "Repetidor"],
+        "correct": 2,
+        "explanation": "Los switches multicapa pueden realizar funciones tanto de conmutación (Capa 2) como de enrutamiento (Capa 3).",
+        "wrongExplanations": [
+          "Los hubs operan solo en la Capa 1.",
+          "Los switches operan solo en la Capa 2.",
+          null,
+          "Los repetidores operan solo en la Capa 1."
+        ],
+        "topic": "1.2 — Dispositivos de red"
+      },
+      {
+        "id": 12,
+        "question": "¿Qué significa DHCP?",
+        "choices": ["Dynamic Host Configuration Protocol", "Domain Host Control Protocol", "Data Host Communication Protocol", "Digital Host Configuration Process"],
+        "correct": 0,
+        "explanation": "DHCP asigna automáticamente direcciones IP a dispositivos en una red.",
+        "wrongExplanations": [
+          null,
+          "Esta no es la expansión correcta de DHCP.",
+          "Esta no es la expansión correcta de DHCP.",
+          "Esta no es la expansión correcta de DHCP."
+        ],
+        "topic": "1.7 — Servicios de red"
+      },
+      {
+        "id": 13,
+        "question": "¿Qué conector se usa para cables de fibra óptica?",
+        "choices": ["RJ-45", "BNC", "LC", "RJ-11"],
+        "correct": 2,
+        "explanation": "LC (Lucent Connector) es un tipo común de conector para cables de fibra óptica.",
+        "wrongExplanations": [
+          "RJ-45 se usa para cables de par trenzado.",
+          "BNC se usa para cables coaxiales.",
+          null,
+          "RJ-11 se usa para cables telefónicos."
+        ],
+        "topic": "1.3 — Cables y conectores"
+      },
+      {
+        "id": 14,
+        "question": "¿Cuál es la longitud de dirección IPv6?",
+        "choices": ["32 bits", "64 bits", "128 bits", "256 bits"],
+        "correct": 2,
+        "explanation": "Las direcciones IPv6 tienen 128 bits de longitud, proporcionando un espacio de direcciones mucho más grande que IPv4.",
+        "wrongExplanations": [
+          "32 bits es la longitud de las direcciones IPv4.",
+          "64 bits es la mitad de la longitud de las direcciones IPv6.",
+          null,
+          "256 bits no se usa para direcciones IP."
+        ],
+        "topic": "1.6 — Direccionamiento IPv6"
+      },
+      {
+        "id": 15,
+        "question": "¿Qué protocolo resuelve nombres de dominio a direcciones IP?",
+        "choices": ["DHCP", "DNS", "ARP", "ICMP"],
+        "correct": 1,
+        "explanation": "DNS (Sistema de Nombres de Dominio) traduce nombres de dominio legibles por humanos a direcciones IP.",
+        "wrongExplanations": [
+          "DHCP asigna direcciones IP a dispositivos.",
+          null,
+          "ARP resuelve direcciones IP a direcciones MAC.",
+          "ICMP se usa para reporte de errores y diagnósticos."
+        ],
+        "topic": "1.7 — Servicios de red"
+      },
+      {
+        "id": 16,
+        "question": "¿Cuál es el rango de puertos bien conocidos?",
+        "choices": ["0-1023", "1024-49151", "49152-65535", "0-65535"],
+        "correct": 0,
+        "explanation": "Los puertos bien conocidos van del 0 al 1023 y están reservados para servicios comunes.",
+        "wrongExplanations": [
+          null,
+          "1024-49151 es el rango para puertos registrados.",
+          "49152-65535 es el rango para puertos dinámicos/privados.",
+          "0-65535 es el rango total de puertos, no solo los bien conocidos."
+        ],
+        "topic": "1.8 — Puertos y protocolos"
+      },
+      {
+        "id": 17,
+        "question": "¿Qué cifrado inalámbrico es más seguro?",
+        "choices": ["WEP", "WPA", "WPA2", "WPA3"],
+        "correct": 3,
+        "explanation": "WPA3 es el estándar de cifrado inalámbrico más reciente y seguro.",
+        "wrongExplanations": [
+          "WEP es el cifrado más antiguo y menos seguro.",
+          "WPA es más seguro que WEP pero menos que WPA2.",
+          "WPA2 es seguro pero WPA3 es más nuevo y más seguro.",
+          null
+        ],
+        "topic": "1.4 — Seguridad inalámbrica"
+      },
+      {
+        "id": 18,
+        "question": "¿Qué hace un hub con los datos entrantes?",
+        "choices": ["Los enruta a dispositivos específicos", "Los reenvía a todos los puertos", "Los filtra basándose en la dirección MAC", "Los cifra"],
+        "correct": 1,
+        "explanation": "Los hubs difunden datos entrantes a todos los puertos conectados, creando dominios de colisión.",
+        "wrongExplanations": [
+          "Los hubs no enrutan datos como los routers.",
+          null,
+          "Los hubs no filtran datos como los switches.",
+          "Los hubs no cifran datos."
+        ],
+        "topic": "1.2 — Dispositivos de red"
+      },
+      {
+        "id": 19,
+        "question": "¿Qué categoría de cable soporta 10 Gbps?",
+        "choices": ["Cat 5", "Cat 5e", "Cat 6", "Cat 6a"],
+        "correct": 3,
+        "explanation": "Cat 6a soporta 10 Gbps hasta 100 metros.",
+        "wrongExplanations": [
+          "Cat 5 soporta solo 100 Mbps.",
+          "Cat 5e soporta hasta 1 Gbps.",
+          "Cat 6 soporta hasta 1 Gbps (10 Gbps solo hasta 55m).",
+          null
+        ],
+        "topic": "1.3 — Cables y conectores"
+      },
+      {
+        "id": 20,
+        "question": "¿Cuál es el propósito de ARP?",
+        "choices": ["Resolver IP a direcciones MAC", "Resolver nombres de dominio", "Asignar direcciones IP", "Enrutar paquetes"],
+        "correct": 0,
+        "explanation": "ARP (Protocolo de Resolución de Direcciones) mapea direcciones IP a direcciones MAC en una red local.",
+        "wrongExplanations": [
+          null,
+          "DNS resuelve nombres de dominio a direcciones IP.",
+          "DHCP asigna direcciones IP a dispositivos.",
+          "Los routers enrutan paquetes entre redes."
+        ],
+        "topic": "1.8 — Protocolos de red"
+      },
+      {
+        "id": 21,
+        "question": "¿Qué capa OSI maneja la detección de errores?",
+        "choices": ["Física", "Enlace de datos", "Red", "Transporte"],
+        "correct": 1,
+        "explanation": "La capa de Enlace de datos proporciona detección y corrección de errores para la capa Física.",
+        "wrongExplanations": [
+          "La capa Física maneja señales eléctricas, no detección de errores.",
+          null,
+          "La capa de Red maneja enrutamiento, no detección de errores.",
+          "La capa de Transporte maneja entrega confiable, no detección básica de errores."
+        ],
+        "topic": "1.1 — Modelo OSI"
+      },
+      {
+        "id": 22,
+        "question": "¿Cuál es la distancia máxima para fibra monomodo?",
+        "choices": ["2 km", "10 km", "40+ km", "100 m"],
+        "correct": 2,
+        "explanation": "La fibra monomodo puede transmitir datos más de 40 kilómetros, haciéndola ideal para distancias largas.",
+        "wrongExplanations": [
+          "2 km es demasiado corto para las capacidades de fibra monomodo.",
+          "10 km es conservador para fibra monomodo.",
+          null,
+          "100 m es el límite para cables de cobre, no fibra."
+        ],
+        "topic": "1.3 — Cables y conectores"
+      },
+      {
+        "id": 23,
+        "question": "¿Qué dispositivo puede prevenir tormentas de broadcast?",
+        "choices": ["Hub", "Switch", "Router", "Repetidor"],
+        "correct": 2,
+        "explanation": "Los routers no reenvían tráfico de broadcast, previniendo efectivamente tormentas de broadcast entre redes.",
+        "wrongExplanations": [
+          "Los hubs en realidad propagan tormentas de broadcast.",
+          "Los switches reenvían broadcasts dentro de la misma VLAN.",
+          null,
+          "Los repetidores amplifican todas las señales incluyendo broadcasts."
+        ],
+        "topic": "1.2 — Dispositivos de red"
+      },
+      {
+        "id": 24,
+        "question": "¿Cuál es la dirección de loopback en IPv4?",
+        "choices": ["192.168.1.1", "127.0.0.1", "10.0.0.1", "0.0.0.0"],
+        "correct": 1,
+        "explanation": "127.0.0.1 es la dirección de loopback usada para probar la funcionalidad de red en la máquina local.",
+        "wrongExplanations": [
+          "192.168.1.1 es una dirección IP común de router.",
+          null,
+          "10.0.0.1 es una dirección IP privada.",
+          "0.0.0.0 representa todas las interfaces o ruta por defecto."
+        ],
+        "topic": "1.5 — Direccionamiento IPv4"
+      },
+      {
+        "id": 25,
+        "question": "¿Qué protocolo usa el puerto 22?",
+        "choices": ["Telnet", "SSH", "FTP", "SMTP"],
+        "correct": 1,
+        "explanation": "SSH (Secure Shell) usa el puerto 22 para acceso remoto seguro.",
+        "wrongExplanations": [
+          "Telnet usa el puerto 23.",
+          null,
+          "FTP usa los puertos 20 y 21.",
+          "SMTP usa el puerto 25."
+        ],
+        "topic": "1.8 — Puertos y protocolos"
+      },
+      {
+        "id": 26,
+        "question": "¿Qué significa CSMA/CD?",
+        "choices": ["Carrier Sense Multiple Access/Collision Detection", "Central System Multiple Access/Collision Detection", "Carrier Signal Multiple Access/Connection Detection", "Central Sense Multiple Access/Connection Detection"],
+        "correct": 0,
+        "explanation": "CSMA/CD es el método de control de acceso al medio usado en Ethernet tradicional para detectar y manejar colisiones.",
+        "wrongExplanations": [
+          null,
+          "Esta no es la expansión correcta de CSMA/CD.",
+          "Esta no es la expansión correcta de CSMA/CD.",
+          "Esta no es la expansión correcta de CSMA/CD."
+        ],
+        "topic": "1.1 — Fundamentos Ethernet"
+      },
+      {
+        "id": 27,
+        "question": "¿Cuál es un rango de dirección IP privada?",
+        "choices": ["172.16.0.0 - 172.31.255.255", "8.8.8.0 - 8.8.8.255", "200.1.1.0 - 200.1.1.255", "50.0.0.0 - 50.255.255.255"],
+        "correct": 0,
+        "explanation": "172.16.0.0 - 172.31.255.255 es uno de los tres rangos de direcciones IP privadas definidos en RFC 1918.",
+        "wrongExplanations": [
+          null,
+          "8.8.8.0 - 8.8.8.255 es un rango de IP pública (Google DNS).",
+          "200.1.1.0 - 200.1.1.255 es un rango de IP pública.",
+          "50.0.0.0 - 50.255.255.255 es un rango de IP pública."
+        ],
+        "topic": "1.5 — Direccionamiento IPv4"
+      },
+      {
+        "id": 28,
+        "question": "¿Cuál es el propósito de una puerta de enlace por defecto?",
+        "choices": ["Asignar direcciones IP", "Reenviar paquetes a otras redes", "Resolver nombres de dominio", "Filtrar direcciones MAC"],
+        "correct": 1,
+        "explanation": "La puerta de enlace por defecto es la interfaz del router que reenvía paquetes destinados a redes fuera de la subred local.",
+        "wrongExplanations": [
+          "DHCP asigna direcciones IP, no la puerta de enlace por defecto.",
+          null,
+          "DNS resuelve nombres de dominio, no la puerta de enlace por defecto.",
+          "Los switches filtran direcciones MAC, no la puerta de enlace por defecto."
+        ],
+        "topic": "1.5 — Configuración IPv4"
+      },
+      {
+        "id": 29,
+        "question": "¿Qué frecuencia inalámbrica tiene mejor penetración a través de paredes?",
+        "choices": ["2.4 GHz", "5 GHz", "6 GHz", "Todas son iguales"],
+        "correct": 0,
+        "explanation": "2.4 GHz tiene mejor penetración de paredes debido a su longitud de onda más larga, aunque es más propenso a interferencias.",
+        "wrongExplanations": [
+          null,
+          "5 GHz tiene longitud de onda más corta y menos penetración de paredes.",
+          "6 GHz tiene longitud de onda aún más corta y menos penetración de paredes.",
+          "Las frecuencias tienen diferentes características de penetración."
+        ],
+        "topic": "1.4 — Estándares inalámbricos"
+      },
+      {
+        "id": 30,
+        "question": "¿Qué significa MTU?",
+        "choices": ["Maximum Transmission Unit", "Multiple Transfer Unit", "Maximum Transfer Upload", "Multiple Transmission Upload"],
+        "correct": 0,
+        "explanation": "MTU es el tamaño de paquete más grande que puede ser transmitido en una sola transacción de red.",
+        "wrongExplanations": [
+          null,
+          "Esta no es la expansión correcta de MTU.",
+          "Esta no es la expansión correcta de MTU.",
+          "Esta no es la expansión correcta de MTU."
+        ],
+        "topic": "1.8 — Conceptos de red"
+      },
+      {
+        "id": 31,
+        "question": "¿Qué topología requiere terminación en ambos extremos?",
+        "choices": ["Estrella", "Anillo", "Bus", "Malla"],
+        "correct": 2,
+        "explanation": "La topología bus requiere terminadores en ambos extremos para prevenir reflexión de señales.",
+        "wrongExplanations": [
+          "La topología estrella no requiere terminadores.",
+          "La topología anillo no requiere terminadores.",
+          null,
+          "La topología malla no requiere terminadores."
+        ],
+        "topic": "1.1 — Topologías de red"
+      },
+      {
+        "id": 32,
+        "question": "¿Cuál es el tamaño estándar de trama Ethernet?",
+        "choices": ["512 bytes", "1024 bytes", "1518 bytes", "2048 bytes"],
+        "correct": 2,
+        "explanation": "Las tramas Ethernet estándar son de 1518 bytes (incluyendo 18 bytes de overhead).",
+        "wrongExplanations": [
+          "512 bytes es demasiado pequeño para tramas Ethernet estándar.",
+          "1024 bytes es demasiado pequeño para tramas Ethernet estándar.",
+          null,
+          "2048 bytes excede el tamaño estándar de trama Ethernet."
+        ],
+        "topic": "1.1 — Fundamentos Ethernet"
+      },
+      {
+        "id": 33,
+        "question": "¿Qué dispositivo puede realizar NAT?",
+        "choices": ["Hub", "Switch", "Router", "Punto de acceso"],
+        "correct": 2,
+        "explanation": "Los routers realizan NAT (Traducción de Direcciones de Red) para mapear direcciones IP privadas a direcciones IP públicas.",
+        "wrongExplanations": [
+          "Los hubs operan en la Capa 1 y no pueden realizar NAT.",
+          "Los switches operan en la Capa 2 y no pueden realizar NAT.",
+          null,
+          "Los puntos de acceso operan en la Capa 2 y no pueden realizar NAT."
+        ],
+        "topic": "1.2 — Dispositivos de red"
+      },
+      {
+        "id": 34,
+        "question": "¿Cuál es el propósito de la subred?",
+        "choices": ["Aumentar la velocidad de red", "Dividir redes en segmentos más pequeños", "Cifrar datos", "Resolver nombres de dominio"],
+        "correct": 1,
+        "explanation": "La subred divide una red en segmentos más pequeños y manejables para mejorar el rendimiento y la seguridad.",
+        "wrongExplanations": [
+          "La subred no aumenta directamente la velocidad de red.",
+          null,
+          "La subred no cifra datos.",
+          "DNS resuelve nombres de dominio, no la subred."
+        ],
+        "topic": "1.5 — Subredes"
+      },
+      {
+        "id": 35,
+        "question": "¿Qué cable usa un conector BNC?",
+        "choices": ["UTP", "Fibra óptica", "Coaxial", "STP"],
+        "correct": 2,
+        "explanation": "Los cables coaxiales usan conectores BNC (Bayonet Neill-Concelman).",
+        "wrongExplanations": [
+          "Los cables UTP usan conectores RJ-45.",
+          "Los cables de fibra óptica usan conectores LC, SC u otros conectores de fibra.",
+          null,
+          "Los cables STP usan conectores RJ-45."
+        ],
+        "topic": "1.3 — Cables y conectores"
+      },
+      {
+        "id": 36,
+        "question": "¿Qué significa PoE?",
+        "choices": ["Power over Ethernet", "Protocol over Ethernet", "Packet over Ethernet", "Port over Ethernet"],
+        "correct": 0,
+        "explanation": "PoE permite que los cables de red transporten energía eléctrica a dispositivos como teléfonos IP y puntos de acceso inalámbricos.",
+        "wrongExplanations": [
+          null,
+          "Esta no es la expansión correcta de PoE.",
+          "Esta no es la expansión correcta de PoE.",
+          "Esta no es la expansión correcta de PoE."
+        ],
+        "topic": "1.2 — Tecnologías de red"
+      },
+      {
+        "id": 37,
+        "question": "¿Qué protocolo es sin conexión?",
+        "choices": ["TCP", "UDP", "FTP", "HTTP"],
+        "correct": 1,
+        "explanation": "UDP es sin conexión y no garantiza la entrega, haciéndolo más rápido pero menos confiable que TCP.",
+        "wrongExplanations": [
+          "TCP es orientado a conexión y garantiza la entrega.",
+          null,
+          "FTP usa TCP, que es orientado a conexión.",
+          "HTTP usa TCP, que es orientado a conexión."
+        ],
+        "topic": "1.8 — Protocolos de transporte"
+      },
+      {
+        "id": 38,
+        "question": "¿Cuál es la dirección de loopback en IPv6?",
+        "choices": ["::1", "::0", "FF00::1", "FE80::1"],
+        "correct": 0,
+        "explanation": "::1 es la dirección de loopback IPv6, equivalente a 127.0.0.1 en IPv4.",
+        "wrongExplanations": [
+          null,
+          "::0 no es una dirección de loopback IPv6 válida.",
+          "FF00::1 es una dirección multicast.",
+          "FE80::1 es una dirección link-local."
+        ],
+        "topic": "1.6 — Direccionamiento IPv6"
+      },
+      {
+        "id": 39,
+        "question": "¿Qué canal inalámbrico no tiene superposición en 2.4 GHz?",
+        "choices": ["1, 6, 11", "1, 5, 9", "2, 7, 12", "3, 8, 13"],
+        "correct": 0,
+        "explanation": "Los canales 1, 6 y 11 son los únicos canales sin superposición en la banda de 2.4 GHz.",
+        "wrongExplanations": [
+          null,
+          "Los canales 1, 5, 9 tienen superposición.",
+          "Los canales 2, 7, 12 tienen superposición.",
+          "Los canales 3, 8, 13 tienen superposición."
+        ],
+        "topic": "1.4 — Estándares inalámbricos"
+      },
+      {
+        "id": 40,
+        "question": "¿Qué significa VLAN?",
+        "choices": ["Virtual Local Area Network", "Very Large Area Network", "Variable Link Access Network", "Virtual Link Area Network"],
+        "correct": 0,
+        "explanation": "Las VLANs segmentan lógicamente una red en la Capa 2 para mejorar la seguridad y el rendimiento.",
+        "wrongExplanations": [
+          null,
+          "Esta no es la expansión correcta de VLAN.",
+          "Esta no es la expansión correcta de VLAN.",
+          "Esta no es la expansión correcta de VLAN."
+        ],
+        "topic": "1.2 — Segmentación de red"
+      },
+      {
+        "id": 41,
+        "question": "¿Qué protocolo usa el puerto 25?",
+        "choices": ["POP3", "IMAP", "SMTP", "HTTP"],
+        "correct": 2,
+        "explanation": "SMTP (Simple Mail Transfer Protocol) usa el puerto 25 para enviar correo electrónico.",
+        "wrongExplanations": [
+          "POP3 usa el puerto 110.",
+          "IMAP usa el puerto 143.",
+          null,
+          "HTTP usa el puerto 80."
+        ],
+        "topic": "1.8 — Puertos y protocolos"
+      },
+      {
+        "id": 42,
+        "question": "¿Cuál es el propósito de un cable cruzado?",
+        "choices": ["Conectar diferentes tipos de dispositivos", "Conectar dispositivos similares directamente", "Extender la longitud del cable", "Proporcionar energía"],
+        "correct": 1,
+        "explanation": "Los cables cruzados conectan dispositivos similares (como dos computadoras o dos switches) directamente sin un switch.",
+        "wrongExplanations": [
+          "Los cables directos conectan diferentes tipos de dispositivos.",
+          null,
+          "Los cables cruzados no extienden la longitud del cable.",
+          "PoE proporciona energía, no los cables cruzados."
+        ],
+        "topic": "1.3 — Cables y conectores"
+      },
+      {
+        "id": 43,
+        "question": "¿Qué capa OSI es responsable del enrutamiento?",
+        "choices": ["Enlace de datos", "Red", "Transporte", "Sesión"],
+        "correct": 1,
+        "explanation": "La capa de Red (Capa 3) maneja el enrutamiento y el direccionamiento lógico.",
+        "wrongExplanations": [
+          "La capa de Enlace de datos maneja la transmisión de tramas, no el enrutamiento.",
+          null,
+          "La capa de Transporte maneja la entrega confiable, no el enrutamiento.",
+          "La capa de Sesión maneja las sesiones, no el enrutamiento."
+        ],
+        "topic": "1.1 — Modelo OSI"
+      },
+      {
+        "id": 44,
+        "question": "¿Cuál es el número máximo de hosts en una subred /24?",
+        "choices": ["254", "256", "510", "512"],
+        "correct": 0,
+        "explanation": "Una subred /24 tiene 256 direcciones, pero 2 están reservadas (red y broadcast), dejando 254 direcciones de host utilizables.",
+        "wrongExplanations": [
+          null,
+          "256 es el total de direcciones, pero 2 están reservadas.",
+          "510 sería para una subred /23.",
+          "512 sería para una subred /22."
+        ],
+        "topic": "1.5 — Subredes"
+      },
+      {
+        "id": 45,
+        "question": "¿Qué dispositivo amplifica señales sin leer datos?",
+        "choices": ["Router", "Switch", "Hub", "Repetidor"],
+        "correct": 3,
+        "explanation": "Los repetidores amplifican señales para extender la distancia de red pero no procesan ni filtran datos.",
+        "wrongExplanations": [
+          "Los routers leen y procesan datos para decisiones de enrutamiento.",
+          "Los switches leen direcciones MAC para tomar decisiones de reenvío.",
+          "Los hubs no amplifican señales, las repiten.",
+          null
+        ],
+        "topic": "1.2 — Dispositivos de red"
+      },
+      {
+        "id": 46,
+        "question": "¿Qué previene STP en redes conmutadas?",
+        "choices": ["Tormentas de broadcast", "Bucles de conmutación", "Conflictos IP", "Roturas de cable"],
+        "correct": 1,
+        "explanation": "El Protocolo de Árbol de Expansión (STP) previene bucles de conmutación que pueden causar tormentas de broadcast.",
+        "wrongExplanations": [
+          "STP previene bucles, que pueden llevar a tormentas de broadcast.",
+          null,
+          "STP no previene conflictos IP.",
+          "STP no previene roturas de cable."
+        ],
+        "topic": "1.2 — Protocolos de red"
+      },
+      {
+        "id": 47,
+        "question": "¿Cuál es una dirección IPv6 link-local?",
+        "choices": ["2001::/32", "FE80::/10", "FF00::/8", "FC00::/7"],
+        "correct": 1,
+        "explanation": "FE80::/10 es el prefijo para direcciones IPv6 link-local, usado para comunicación en un solo enlace.",
+        "wrongExplanations": [
+          "2001::/32 es una dirección unicast global.",
+          null,
+          "FF00::/8 es una dirección multicast.",
+          "FC00::/7 es una dirección local única."
+        ],
+        "topic": "1.6 — Direccionamiento IPv6"
+      },
+      {
+        "id": 48,
+        "question": "¿Cuál es el propósito de QoS?",
+        "choices": ["Cifrar tráfico", "Priorizar tráfico de red", "Asignar direcciones IP", "Bloquear tráfico malicioso"],
+        "correct": 1,
+        "explanation": "Calidad de Servicio (QoS) prioriza ciertos tipos de tráfico (como voz o video) para mejor rendimiento.",
+        "wrongExplanations": [
+          "QoS no cifra tráfico.",
+          null,
+          "DHCP asigna direcciones IP, no QoS.",
+          "Los firewalls bloquean tráfico malicioso, no QoS."
+        ],
+        "topic": "1.8 — Servicios de red"
+      },
+      {
+        "id": 49,
+        "question": "¿Qué protocolo proporciona transferencia segura de archivos?",
+        "choices": ["FTP", "TFTP", "SFTP", "HTTP"],
+        "correct": 2,
+        "explanation": "SFTP (SSH File Transfer Protocol) proporciona transferencia segura y cifrada de archivos.",
+        "wrongExplanations": [
+          "FTP no es seguro y transmite datos en texto plano.",
+          "TFTP no es seguro y no tiene autenticación.",
+          null,
+          "HTTP no está diseñado para transferencia de archivos."
+        ],
+        "topic": "1.8 — Puertos y protocolos"
+      },
+      {
+        "id": 50,
+        "question": "¿Qué controla el modo dúplex?",
+        "choices": ["Velocidad de transmisión", "Dirección del flujo de datos", "Tipo de cable usado", "Método de cifrado"],
+        "correct": 1,
+        "explanation": "El modo dúplex determina si los datos pueden fluir en una dirección (semi-dúplex) o en ambas direcciones simultáneamente (dúplex completo).",
+        "wrongExplanations": [
+          "El dúplex no controla la velocidad de transmisión.",
+          null,
+          "El dúplex no controla el tipo de cable.",
+          "El dúplex no controla el cifrado."
+        ],
+        "topic": "1.1 — Conceptos de red"
+      }
+    ],

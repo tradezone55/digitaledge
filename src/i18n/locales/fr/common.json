@@ -1,0 +1,114 @@
+{
+  "buttons": {
+    "login": "Connexion",
+    "logout": "Déconnexion",
+    "logoutLoading": "Déconnexion en cours...",
+    "sendMagicLink": "Envoyer le Lien Magique",
+    "sendingMagicLink": "Envoi du lien magique...",
+    "startSession": "Démarrer la Session",
+    "next": "Suivant",
+    "finish": "Terminer",
+    "retry": "Réessayer",
+    "backToDashboard": "Retour au Tableau de Bord",
+    "advanceToNext": "Passer au Domaine {{domain}}",
+    "subscribeNow": "S'abonner Maintenant",
+    "renewSubscription": "Renouveler l'Abonnement",
+    "getEarlyAccess": "Obtenir un Accès Anticipé",
+    "seeFeatures": "Voir les Fonctionnalités",
+    "takeTimedQuiz": "Passer un Quiz Chronométré",
+    "viewExplanations": "Voir les Explications",
+    "joinNow": "Rejoindre Maintenant",
+    "talkToUs": "Nous Parler",
+    "close": "Fermer"
+  },
+  "navigation": {
+    "features": "Fonctionnalités",
+    "howItWorks": "Comment ça marche",
+    "pricing": "Tarifs",
+    "results": "Résultats"
+  },
+  "labels": {
+    "email": "E-mail",
+    "emailPlaceholder": "Entrez votre adresse e-mail",
+    "welcomeBack": "Bon Retour",
+    "currentDomain": "Domaine Actuel",
+    "questionsPerSession": "50 Q par session",
+    "time": "Temps",
+    "score": "Score",
+    "question": "Q {{current}}/{{total}}"
+  },
+  "status": {
+    "loading": "Chargement...",
+    "sessionRestored": "Session Restaurée",
+    "gracePeriodActive": "Période de Grâce Active",
+    "accessDenied": "Accès Refusé",
+    "certificationReady": "Certification Prête !"
+  },
+  "messages": {
+    "sessionRestoredDesc": "Votre session de test précédente a été restaurée. Vous pouvez continuer à partir de la question {{question}}.",
+    "gracePeriodDesc": "Votre abonnement a expiré, mais vous avez {{days}} jour{{days !== 1 ? 's' : ''}} restant{{days !== 1 ? 's' : ''}} dans votre période de grâce.",
+    "renewNow": "Renouveler maintenant",
+    "toContinueAccess": "pour continuer l'accès sans interruption.",
+    "subscriptionEnded": "Votre essai gratuit ou abonnement a pris fin. Veuillez vous abonner pour continuer à utiliser l'application.",
+    "gracePeriodExpired": "Votre abonnement a expiré, mais vous avez {{days}} jour{{days !== 1 ? 's' : ''}} pour renouveler et maintenir l'accès.",
+    "profileSetupRequired": "Veuillez d'abord compléter la configuration de votre profil",
+    "magicLinkSent": "Lien magique envoyé avec succès",
+    "magicLinkError": "Échec de l'envoi du lien magique"
+  },
+  "footer": {
+    "poweredBy": "Propulsé par",
+    "allRightsReserved": "Tous droits réservés",
+    "privacy": "Confidentialité",
+    "terms": "Conditions",
+    "contact": "Contact"
+  },
+  "access": {
+    "denied": "Accès Refusé",
+    "subscriptionExpired": "Votre abonnement a expiré, mais il vous reste {{days}} jour{{days !== 1 ? 's' : ''}} pour renouveler et maintenir l'accès.",
+    "trialEnded": "Votre essai gratuit ou abonnement a pris fin. Veuillez vous abonner pour continuer à utiliser l'application.",
+    "renewSubscription": "Renouveler l'Abonnement",
+    "subscribeNow": "S'abonner Maintenant"
+  },
+  "profile": {
+    "completeTitle": "Complétez Votre Profil",
+    "completeDescription": "Bienvenue ! Veuillez compléter votre profil pour profiter de la plateforme",
+    "fullName": "Nom Complet",
+    "fullNamePlaceholder": "Entrez votre nom complet",
+    "emailPlaceholder": "Entrez votre email",
+    "completeProfile": "Compléter le Profil",
+    "settingUpProfile": "Configuration du profil..."
+  },
+  "support": {
+    "supportOnKoFi": "Soutien sur Ko-fi"
+  },
+  "admin": {
+    "accessRequired": "Accès administrateur requis",
+    "failedToLoad": "Échec du chargement des données administrateur",
+    "retry": "Réessayer",
+    "userManagement": "Gestion des Utilisateurs",
+    "addUser": "Ajouter un Utilisateur",
+    "deleteUser": "Supprimer l'Utilisateur",
+    "deleteUserDescription": "Cette action ne peut pas être annulée",
+    "areYouSureDelete": "Êtes-vous sûr de vouloir supprimer cet utilisateur ?",
+    "deleteUserWarning": "Cela supprimera définitivement l'utilisateur et toutes ses données d'abonnement.",
+    "userDetails": "Détails de l'Utilisateur :",
+    "name": "Nom :",
+    "email": "Email :",
+    "userId": "ID Utilisateur :",
+    "cancel": "Annuler",
+    "deleting": "Suppression...",
+    "addNewUser": "Ajouter un Nouvel Utilisateur",
+    "addNewUserDescription": "Ajouter un nouvel utilisateur au système",
+    "creating": "Création...",
+    "create": "Créer",
+    "extendSubscription": "Prolonger l'Abonnement",
+    "durationMonths": "Durée (mois)",
+    "reasonOptional": "Raison (optionnelle)",
+    "reasonPlaceholder": "Entrez la raison de cette action...",
+    "user": "Utilisateur",
+    "joined": "Rejoint",
+    "status": "Statut",
+    "active": "Actif",
+    "actions": "Actions"
+  }
+}

@@ -1,7 +1,10 @@
 import { Link } from "react-router";
 import { RiHeartFill } from "@remixicon/react";
+import { useTranslation } from "react-i18next";
 
 const SupportBanner = ({ compact = false }: { compact?: boolean }) => {
+  const { t } = useTranslation(['common']);
+
   if (compact) {
     return (
       <div className="flex items-center gap-6">
@@ -40,7 +43,7 @@ const SupportBanner = ({ compact = false }: { compact?: boolean }) => {
           className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-semibold rounded-xl shadow-lg shadow-orange-500/30 transition-all duration-200"
         >
           <RiHeartFill className="w-5 h-5 text-white" />
-          <span className="text-white">Support on Ko-fi</span>
+          <span className="text-white">{t('common:support.supportOnKoFi')}</span>
         </Link>
       </div>
     </div>
