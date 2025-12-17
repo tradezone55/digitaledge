@@ -1,4 +1,4 @@
-// networkQuestions.ts
+// questionBanketworkQuestions.ts
 // Complete CompTIA Network+ Question Bank - 210 Questions
 
 export interface Question {
