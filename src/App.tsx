@@ -4,6 +4,7 @@ import { Suspense, lazy, useEffect } from "react";
 import { QueryProvider } from "./providers/QueryProvider";
 import CustomLoader from "./components/CustomLoader/page";
 import { useTranslation } from "react-i18next";
+import ProAccess from "./pages/ProAccess";
 
 // Lazy load all pages
 const Home = lazy(() => import("./pages/Home"));
@@ -64,6 +65,7 @@ const LanguageRoutes = () => {
       <Route path="/" element={<EnhancedLandingPage />} />
       <Route path="home" element={<Home />} />
       <Route path="home/demo" element={<DemoQuiz />} />
+      <Route path="/pro" element={<ProAccess />} />
     </Routes>
   );
 };
