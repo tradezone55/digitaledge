@@ -369,7 +369,7 @@ export default function EnhancedLandingPage() {
                 </ul>
                 <p className="text-gray-400 text-xs">{t('pricing.betaOffer.guarantee')}</p>
                 <Link
-                  to={getLanguagePath('home')}
+                  to="/pro"
                   className="ml-auto px-6 py-3 rounded-2xl font-bold bg-orange-500 hover:bg-orange-600 text-white transition-all duration-200"
                 >
                   {t('common:buttons.joinNow')}
@@ -556,7 +556,7 @@ export default function EnhancedLandingPage() {
                 {t('close')}
               </button>
             </div>
-            <DemoQuiz redirectTo={getLanguagePath('home')} />
+            <DemoQuiz redirectto="/pro" />
           </div>
         </div>
       )}
