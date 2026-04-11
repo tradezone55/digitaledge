@@ -48,9 +48,9 @@
     "betaOffer": {
       "badge": "Limited-Time Beta",
       "title": "Early Access (Beta)",
-      "desc": "Intro pricing during beta. Features and content may change based on feedback.",
-      "price": "Free",
-      "priceSubtext": "intro price during beta",
+      "desc": "Launch pricing — locked in for life when you join now.",
+      "price": "$14.99",
+      "priceSubtext": "one-time • purchase once, study for life",
       "features": [
         "Full access to all domains",
         "Timed quizzes & instant explanations",
