@@ -556,7 +556,7 @@ export default function EnhancedLandingPage() {
                 {t('close')}
               </button>
             </div>
-            <DemoQuiz redirectto="/home" />
+            <DemoQuiz redirectTo="/home" />
           </div>
         </div>
       )}
